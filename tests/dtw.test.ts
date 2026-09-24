@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { compareContours, dtwAlign } from "../src/core/dtw.js";
+import { compareContours, dtwAlign, warpedOverlay } from "../src/core/dtw.js";
 import type { PitchContour } from "../src/core/types.js";
 
 describe("dtwAlign", () => {
@@ -76,6 +76,18 @@ describe("compareContours", () => {
     const falling = contourFromSemitones(Array.from({ length: 30 }, (_, i) => 8 - (i / 29) * 8));
     const result = compareContours(rising, falling);
     expect(result.feedback.some((f) => f.toLowerCase().includes("opposite"))).toBe(true);
+  });
+
+  it("warpedOverlay maps the attempt onto the reference's timeline with matching values for identical contours", () => {
+    const contour = contourFromSemitones([0, 2, 4, 6, 4, 2, 0]);
+    const result = compareContours(contour, contour);
+    const overlay = warpedOverlay(result);
+    expect(overlay.length).toBeGreaterThan(0);
+    for (const point of overlay) {
+      expect(point.attemptSemitone).toBeCloseTo(point.referenceSemitone, 6);
+      expect(point.t).toBeGreaterThanOrEqual(0);
+      expect(point.t).toBeLessThanOrEqual(1);
+    }
   });
 
   it("reports insufficient signal when a contour has no voiced frames", () => {

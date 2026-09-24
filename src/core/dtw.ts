@@ -167,6 +167,43 @@ function buildFeedback(reference: DtwSample[], attempt: DtwSample[], path: DtwSt
   return feedback;
 }
 
+export interface WarpedPoint {
+  /** Reference time, normalized to [0, 1] over the reference's voiced span. */
+  t: number;
+  referenceSemitone: number;
+  /** Attempt semitone value(s) mapped onto this reference instant, averaged
+   * over every DTW step that aligns to it (a reference frame can align to
+   * several attempt frames when the attempt runs slower there). */
+  attemptSemitone: number;
+}
+
+/** Time-warps the attempt onto the reference's timeline using the DTW path,
+ * for the "overlay after alignment" visualization. */
+export function warpedOverlay(result: AlignmentResult): WarpedPoint[] {
+  const { reference, attempt, path } = result;
+  if (reference.length === 0 || path.length === 0) return [];
+  const t0 = reference[0]!.time;
+  const span = reference[reference.length - 1]!.time - t0 || 1;
+
+  const sums = new Float64Array(reference.length);
+  const counts = new Float64Array(reference.length);
+  for (const step of path) {
+    sums[step.refIndex]! += attempt[step.attemptIndex]!.semitone;
+    counts[step.refIndex]! += 1;
+  }
+
+  const out: WarpedPoint[] = [];
+  for (let i = 0; i < reference.length; i++) {
+    if (counts[i] === 0) continue;
+    out.push({
+      t: (reference[i]!.time - t0) / span,
+      referenceSemitone: reference[i]!.semitone,
+      attemptSemitone: sums[i]! / counts[i]!,
+    });
+  }
+  return out;
+}
+
 export function compareContours(reference: PitchContour, attempt: PitchContour): AlignmentResult {
   const refSamples = toDtwSamples(reference);
   const attSamples = toDtwSamples(attempt);
