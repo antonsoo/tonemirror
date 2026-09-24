@@ -86,7 +86,13 @@ export function mountApp(root: HTMLElement): void {
   // ---------------------------------------------------------------- source panel
   const statusLine = el("span", { class: "tm-status" }, ["No audio loaded yet."]);
   const recordBtn = el("button", { class: "tm-btn tm-btn-record", onclick: () => void handleRecordClick() }, ["● Record"]);
-  const fileInput = el("input", { type: "file", accept: "audio/*", style: "display:none", onchange: (e) => void handleFileSelected(e) });
+  const fileInput = el("input", {
+    type: "file",
+    accept: "audio/*",
+    class: "tm-visually-hidden",
+    "aria-label": "Choose an audio file to load",
+    onchange: (e) => void handleFileSelected(e),
+  });
   const loadBtn = el("label", { class: "tm-file-label" }, ["Load file…", fileInput]);
   const algoSelect = el(
     "select",
@@ -207,37 +213,61 @@ export function mountApp(root: HTMLElement): void {
   ]);
 
   // ---------------------------------------------------------------- built-in references panel
+  const allChipButtons: HTMLButtonElement[] = [];
+  function selectChip(button: HTMLButtonElement): void {
+    for (const b of allChipButtons) b.setAttribute("aria-pressed", String(b === button));
+  }
+
   const referenceChips = el("div", { class: "tm-chip-row" });
   for (const tone of ALL_MANDARIN_TONES) {
-    referenceChips.append(
-      el(
-        "button",
-        {
-          class: "tm-chip",
-          onclick: () => void loadSyntheticReference(`Mandarin ${mandarinToneLabel(tone)}`, mandarinToneContour(tone), 180),
+    const btn = el(
+      "button",
+      {
+        class: "tm-chip",
+        "aria-pressed": "false",
+        onclick: () => {
+          selectChip(btn);
+          void loadSyntheticReference(`Mandarin ${mandarinToneLabel(tone)}`, mandarinToneContour(tone), 180);
         },
-        [el("strong", {}, [`${mandarinToneChaoNumerals(tone)}`]), el("span", {}, [mandarinToneLabel(tone)])],
-      ),
+      },
+      [el("strong", {}, [`${mandarinToneChaoNumerals(tone)}`]), el("span", {}, [mandarinToneLabel(tone)])],
     );
+    allChipButtons.push(btn);
+    referenceChips.append(btn);
   }
   const greekChips = el("div", { class: "tm-chip-row" });
   for (const accent of ["acute", "circumflex"] as GreekAccent[]) {
-    greekChips.append(
-      el("button", { class: "tm-chip", onclick: () => void loadSyntheticReference(`Greek ${accent}`, greekAccentContour(accent), 150) }, [
-        el("strong", {}, [accent]),
-        el("span", {}, [greekAccentLabel(accent)]),
-      ]),
+    const btn = el(
+      "button",
+      {
+        class: "tm-chip",
+        "aria-pressed": "false",
+        onclick: () => {
+          selectChip(btn);
+          void loadSyntheticReference(`Greek ${accent}`, greekAccentContour(accent), 150);
+        },
+      },
+      [el("strong", {}, [accent]), el("span", {}, [greekAccentLabel(accent)])],
     );
+    allChipButtons.push(btn);
+    greekChips.append(btn);
   }
   const japaneseChips = el("div", { class: "tm-chip-row" });
   for (const pattern of ["heiban", "atamadaka", "nakadaka", "odaka"] as JapanesePattern[]) {
-    japaneseChips.append(
-      el(
-        "button",
-        { class: "tm-chip", onclick: () => void loadSyntheticReference(`Japanese ${pattern}`, japaneseAccentContour(pattern, 3), 190) },
-        [el("strong", {}, [pattern]), el("span", {}, [japaneseAccentLabel(pattern)])],
-      ),
+    const btn = el(
+      "button",
+      {
+        class: "tm-chip",
+        "aria-pressed": "false",
+        onclick: () => {
+          selectChip(btn);
+          void loadSyntheticReference(`Japanese ${pattern}`, japaneseAccentContour(pattern, 3), 190);
+        },
+      },
+      [el("strong", {}, [pattern]), el("span", {}, [japaneseAccentLabel(pattern)])],
     );
+    allChipButtons.push(btn);
+    japaneseChips.append(btn);
   }
 
   const builtInPanel = el("section", { class: "tm-panel" }, [

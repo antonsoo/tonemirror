@@ -65,7 +65,7 @@ just click one of the built-in reference chips and record yourself.
   Mandarin tones and every accent template, generated in-browser and
   labeled synthetic everywhere they appear. Recording or loading real
   native-speaker audio is one click away and clearly encouraged in the UI.
-- **Works offline after first load**, no telemetry, small bundle (~36 kB
+- **Works offline after first load**, no telemetry, small bundle (~37 kB
   of JS across the main bundle + worker + worklet, uncompressed - see
   [Bundle size](#bundle-size)).
 
@@ -248,8 +248,8 @@ every citation tone's synthetic contour.
 dist/assets/recorderWorklet-*.js   0.22 kB
 dist/index.html                    1.30 kB
 dist/assets/pitchWorker-*.js       6.16 kB
-dist/assets/index-*.css            9.56 kB (gzip 2.45 kB)
-dist/assets/index-*.js            30.00 kB (gzip 11.32 kB)
+dist/assets/index-*.css            9.81 kB (gzip 2.52 kB)
+dist/assets/index-*.js            30.27 kB (gzip 11.40 kB)
 ```
 
 No UI framework, no charting library - Canvas 2D and vanilla DOM.
