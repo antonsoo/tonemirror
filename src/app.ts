@@ -84,7 +84,7 @@ export function mountApp(root: HTMLElement): void {
   ]);
 
   // ---------------------------------------------------------------- source panel
-  const statusLine = el("span", { class: "tm-status" }, ["No audio loaded yet."]);
+  const statusLine = el("span", { class: "tm-status", role: "status", "aria-live": "polite" }, ["No audio loaded yet."]);
   const recordBtn = el("button", { class: "tm-btn tm-btn-record", onclick: () => void handleRecordClick() }, ["● Record"]);
   const fileInput = el("input", {
     type: "file",
@@ -318,6 +318,20 @@ export function mountApp(root: HTMLElement): void {
 
   // ------------------------------------------------------------ behavior
 
+  function describeMicError(err: unknown): string {
+    const name = err instanceof DOMException ? err.name : "";
+    if (name === "NotAllowedError" || name === "SecurityError") {
+      return "Microphone access was denied. Allow it in your browser's site settings, or use “Load file…” instead.";
+    }
+    if (name === "NotFoundError" || name === "OverconstrainedError") {
+      return "No microphone was found on this device. Try “Load file…” instead.";
+    }
+    if (name === "NotReadableError") {
+      return "The microphone is busy or unavailable (another app may be using it).";
+    }
+    return `Microphone unavailable: ${err instanceof Error ? err.message : String(err)}`;
+  }
+
   async function handleRecordClick(): Promise<void> {
     if (micRecorder.isRecording()) {
       recordBtn.classList.remove("is-recording");
@@ -335,7 +349,9 @@ export function mountApp(root: HTMLElement): void {
       recordBtn.textContent = "■ Stop";
       statusLine.textContent = "Recording…";
     } catch (err) {
-      statusLine.textContent = `Microphone unavailable: ${(err as Error).message}`;
+      recordBtn.classList.remove("is-recording");
+      recordBtn.textContent = "● Record";
+      statusLine.textContent = describeMicError(err);
     }
   }
 
