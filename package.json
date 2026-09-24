@@ -1,0 +1,47 @@
+{
+  "name": "tonemirror",
+  "version": "0.1.0",
+  "description": "See your intonation: record a phrase, overlay your pitch contour on a reference, and practice tones and pitch accent — entirely in the browser.",
+  "author": "Anton Soloviev",
+  "license": "MIT",
+  "type": "module",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antonsoo/tonemirror.git"
+  },
+  "homepage": "https://antonsoo.github.io/tonemirror/",
+  "keywords": [
+    "pitch-detection",
+    "yin-algorithm",
+    "prosody",
+    "tonal-languages",
+    "mandarin-tones",
+    "pitch-accent",
+    "dsp",
+    "language-learning"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "bench": "tsx scripts/accuracy-report.ts"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.6.2",
+    "eslint": "^10.11.0",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.70.1",
+    "vite": "^8.3.0",
+    "vitest": "^5.0.1"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  }
+}
