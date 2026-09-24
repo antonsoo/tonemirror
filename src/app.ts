@@ -136,6 +136,7 @@ export function mountApp(root: HTMLElement): void {
   const stage = createContourStage(stageCanvas);
   const scoreEl = el("div", { class: "tm-score" }, ["—"]);
   const feedbackList = el("ul", { class: "tm-feedback-list" });
+  const stageEmpty = el("div", { class: "tm-stage-empty" }, ["Load a reference and an attempt to see their pitch contours overlaid here."]);
 
   const stagePanel = el("section", { class: "tm-panel" }, [
     el("div", { class: "tm-panel-header" }, [
@@ -145,7 +146,7 @@ export function mountApp(root: HTMLElement): void {
         el("span", { class: "tm-legend-item" }, [el("span", { class: "tm-legend-swatch", style: "background:var(--color-attempt)" }), "your attempt"]),
       ]),
     ]),
-    el("div", { class: "tm-stage-wrap" }, [stageCanvas]),
+    el("div", { class: "tm-stage-wrap" }, [stageCanvas, stageEmpty]),
     el("div", { class: "tm-score-row" }, [
       el("div", {}, [scoreEl, el("div", { class: "tm-score-label" }, ["similarity score"])]),
       feedbackList,
@@ -154,6 +155,7 @@ export function mountApp(root: HTMLElement): void {
 
   // ---------------------------------------------------------------- analysis view panel
   const analysisCanvas = el("canvas", { class: "tm-canvas" });
+  const analysisEmpty = el("div", { class: "tm-stage-empty" }, ["Record or load audio above to see its waveform and spectrogram."]);
   const analysis = createAnalysisView(analysisCanvas, (region) => {
     loopRegion = region;
     players[focus]?.setLoopRegion(region ? { start: region.start, end: region.end } : null);
@@ -178,10 +180,10 @@ export function mountApp(root: HTMLElement): void {
 
   const analysisPanel = el("section", { class: "tm-panel" }, [
     el("div", { class: "tm-panel-header" }, [
-      el("h2", {}, ["3. Waveform, spectrogram &amp; pitch"]),
+      el("h2", {}, ["3. Waveform, spectrogram & pitch"]),
       el("span", { class: "tm-hint" }, ["Drag on the waveform to loop a region."]),
     ]),
-    el("div", { class: "tm-stage-wrap" }, [analysisCanvas]),
+    el("div", { class: "tm-stage-wrap" }, [analysisCanvas, analysisEmpty]),
     el("div", { class: "tm-playback-bar" }, [
       playBtn,
       clearLoopBtn,
@@ -281,6 +283,7 @@ export function mountApp(root: HTMLElement): void {
   );
 
   void refreshLibrary();
+  updateComparison();
   renderAnalysis();
 
   // ------------------------------------------------------------ behavior
@@ -372,6 +375,7 @@ export function mountApp(root: HTMLElement): void {
       feedbackList.replaceChildren(el("li", {}, ["Load both a reference and an attempt to see a score."]));
     }
     stage.render({ reference: ref ?? null, attempt: att ?? null, warped: alignment ? warpedOverlay(alignment) : null });
+    stageEmpty.style.display = ref || att ? "none" : "grid";
   }
 
   function renderAnalysis(): void {
@@ -386,6 +390,7 @@ export function mountApp(root: HTMLElement): void {
       playheadFraction: player && player.duration > 0 ? player.currentPositionSeconds() / player.duration : null,
       loopRegion,
     });
+    analysisEmpty.style.display = clip ? "none" : "grid";
     playBtn.disabled = !clip;
     playBtn.textContent = player?.isPlaying ? "⏸ Pause" : "▶ Play";
   }
