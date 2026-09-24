@@ -3,7 +3,6 @@
 **See your intonation.** Record a phrase, overlay your pitch contour on a
 reference, and practice tones and pitch accent - entirely in the browser.
 
-[![CI](https://github.com/antonsoo/tonemirror/actions/workflows/ci.yml/badge.svg)](https://github.com/antonsoo/tonemirror/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Live demo](https://img.shields.io/badge/live%20demo-antonsoo.github.io%2Ftonemirror-c07d1f)](https://antonsoo.github.io/tonemirror/)
 

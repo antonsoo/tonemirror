@@ -16,7 +16,7 @@ npm test
 npm run build
 ```
 
-All four must pass; CI runs the same checks.
+All four must pass; `.github/workflows/ci.yml` runs the same checks on push/PR.
 
 ## Project layout
 
