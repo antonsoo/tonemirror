@@ -274,3 +274,7 @@ Issues and PRs welcome. Run the full check (`lint`, `typecheck`, `test`,
 ## License
 
 [MIT](LICENSE) (c) 2026 Anton Soloviev
+
+---
+
+<sub>Part of [Officina](https://antonsoo.github.io/officina/), a set of small open-source tools by [Anton Soloviev](https://github.com/antonsoo).</sub>
