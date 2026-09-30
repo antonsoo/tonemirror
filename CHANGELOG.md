@@ -2,6 +2,19 @@
 
 All notable changes to this project are documented in this file.
 
+## [0.2.0] - 2026-09-30
+
+### Fixed
+
+- The peak-timing feedback measured each contour's peak as a fraction of the
+  clip from its first sample, not from where the voice starts, so a pause
+  before speaking (the usual way a recording begins) pushed the attempt's
+  peak later and produced "your pitch peak comes later" for a well-timed
+  attempt. It is now measured across each contour's voiced span.
+- A flat attempt got peak-timing advice ("try holding the rise a bit longer")
+  on top of the "yours stays flat" feedback, from wherever its jitter peaked.
+  The check now needs both contours to move at least a semitone.
+
 ## [0.1.0] - 2026-09-24
 
 Initial release.
