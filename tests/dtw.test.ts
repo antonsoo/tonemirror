@@ -44,9 +44,9 @@ describe("dtwAlign", () => {
   });
 });
 
-function contourFromSemitones(semitones: number[], hop = 0.01): PitchContour {
+function contourFromSemitones(semitones: number[], hop = 0.01, startTime = 0): PitchContour {
   return {
-    points: semitones.map((s, i) => ({ time: i * hop, f0: 150, semitone: s, voiced: true, confidence: 1 })),
+    points: semitones.map((s, i) => ({ time: startTime + i * hop, f0: 150, semitone: s, voiced: true, confidence: 1 })),
     medianF0: 150,
     hopSeconds: hop,
     frameSeconds: 0.02,
@@ -69,6 +69,27 @@ describe("compareContours", () => {
     const farScore = compareContours(rising, falling).score;
     expect(closeScore).toBeGreaterThan(farScore);
     expect(farScore).toBeLessThan(closeScore - 20);
+  });
+
+  it("times the pitch peak from the start of voicing, so a pause before speaking doesn't move it", () => {
+    // Rise to a peak 40% of the way through, then fall; the attempt has the same shape after 0.6 s of silence.
+    const shape = Array.from({ length: 50 }, (_, i) => (i <= 20 ? (i / 20) * 6 : 6 - ((i - 20) / 29) * 6));
+    const reference = contourFromSemitones(shape);
+    const attempt = contourFromSemitones(shape, 0.01, 0.6);
+    const result = compareContours(reference, attempt);
+    expect(result.feedback.some((f) => f.includes("peak"))).toBe(false);
+    // A genuinely late peak is still reported.
+    const late = Array.from({ length: 50 }, (_, i) => (i <= 40 ? (i / 40) * 6 : 6 - ((i - 40) / 9) * 6));
+    const lateResult = compareContours(reference, contourFromSemitones(late, 0.01, 0.6));
+    expect(lateResult.feedback.some((f) => f.includes("peak comes later"))).toBe(true);
+  });
+
+  it("gives no peak-timing advice for a flat attempt, only the flat-contour feedback", () => {
+    const rising = contourFromSemitones(Array.from({ length: 30 }, (_, i) => (i / 29) * 6));
+    const flat = contourFromSemitones(Array.from({ length: 30 }, (_, i) => (i % 3 === 0 ? 0.2 : 0)));
+    const result = compareContours(rising, flat);
+    expect(result.feedback.some((f) => f.includes("stays flat"))).toBe(true);
+    expect(result.feedback.some((f) => f.includes("peak"))).toBe(false);
   });
 
   it("flags a reversed direction in feedback", () => {

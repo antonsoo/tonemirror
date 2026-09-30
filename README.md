@@ -122,7 +122,9 @@ warps the attempt onto the reference's timeline for the "after alignment"
 overlay, and drives rule-based feedback: for each third of the phrase, the
 reference's and attempt's local slopes are compared for direction
 (rising/falling/flat) and steepness, plus a check on how far apart the two
-contours' pitch peaks land in time.
+contours' pitch peaks land in time, each measured across its own voiced
+span (so a pause before speaking doesn't count) and skipped when either
+contour moves less than a semitone, since a flat contour has no peak to time.
 
 ### Mandarin tone classifier
 
@@ -257,7 +259,7 @@ No UI framework, no charting library - Canvas 2D and vanilla DOM.
 
 ```sh
 npm run dev         # Vite dev server
-npm test             # Vitest (51 tests, Node - no browser needed)
+npm test             # Vitest (53 tests, Node - no browser needed)
 npm run lint          # ESLint (typescript-eslint, type-checked rules)
 npm run typecheck      # tsc --noEmit, strict mode
 npm run build            # typecheck + production build

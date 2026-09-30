@@ -110,6 +110,29 @@ function slope(samples: DtwSample[], fromIdx: number, toIdx: number): number {
   return (samples[toIdx]!.semitone - samples[fromIdx]!.semitone) / dt;
 }
 
+/** Below this pitch range (semitones) a contour has no peak worth timing. */
+const MIN_PEAK_RANGE = 1;
+
+/**
+ * Where a contour's highest point falls, as a fraction of its voiced span
+ * (first to last voiced sample), or null if the contour moves less than
+ * MIN_PEAK_RANGE. Measured from the first voiced sample, not from the clip's
+ * start, so a pause before speaking doesn't push the peak later.
+ */
+function peakFraction(samples: DtwSample[]): number | null {
+  let peakIdx = 0;
+  let min = Infinity;
+  for (let i = 0; i < samples.length; i++) {
+    const v = samples[i]!.semitone;
+    if (v > samples[peakIdx]!.semitone) peakIdx = i;
+    if (v < min) min = v;
+  }
+  if (samples[peakIdx]!.semitone - min < MIN_PEAK_RANGE) return null;
+  const t0 = samples[0]!.time;
+  const span = samples[samples.length - 1]!.time - t0;
+  return span > 0 ? (samples[peakIdx]!.time - t0) / span : null;
+}
+
 /** Simple, honest, rule-based feedback: for each third of the phrase, compare
  * the direction and steepness of the reference's pitch movement to the
  * attempt's (mapped through the DTW path), plus a check on where each
@@ -145,20 +168,19 @@ function buildFeedback(reference: DtwSample[], attempt: DtwSample[], path: DtwSt
     }
   }
 
-  // Peak-timing check: where (as a fraction of the phrase) does each contour hit its max?
-  let refPeakIdx = 0;
-  for (let i = 1; i < reference.length; i++) if (reference[i]!.semitone > reference[refPeakIdx]!.semitone) refPeakIdx = i;
-  let attPeakIdx = 0;
-  for (let i = 1; i < attempt.length; i++) if (attempt[i]!.semitone > attempt[attPeakIdx]!.semitone) attPeakIdx = i;
-
-  const refPeakFrac = reference[refPeakIdx]!.time / reference[reference.length - 1]!.time;
-  const attPeakFrac = attempt[attPeakIdx]!.time / attempt[attempt.length - 1]!.time;
-  const peakDelta = attPeakFrac - refPeakFrac;
-
-  if (peakDelta > 0.15) {
-    feedback.push("Your pitch peak comes later than the reference's - try starting the rise sooner.");
-  } else if (peakDelta < -0.15) {
-    feedback.push("Your pitch peak comes earlier than the reference's - try holding the rise a bit longer.");
+  // Peak-timing check: where, as a fraction of the voiced phrase, does each
+  // contour hit its max? Only meaningful when both contours actually move: a
+  // flat contour's "peak" is wherever the jitter happens to be highest (and
+  // the flat-vs-moving case is already reported above).
+  const refPeak = peakFraction(reference);
+  const attPeak = peakFraction(attempt);
+  if (refPeak !== null && attPeak !== null) {
+    const peakDelta = attPeak - refPeak;
+    if (peakDelta > 0.15) {
+      feedback.push("Your pitch peak comes later than the reference's - try starting the rise sooner.");
+    } else if (peakDelta < -0.15) {
+      feedback.push("Your pitch peak comes earlier than the reference's - try holding the rise a bit longer.");
+    }
   }
 
   if (feedback.length === 0) {
