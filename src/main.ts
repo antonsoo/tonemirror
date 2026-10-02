@@ -1,3 +1,4 @@
+import "./fonts/fonts.css";
 import "./style.css";
 import { mountApp } from "./app.js";
 
