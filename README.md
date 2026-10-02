@@ -277,7 +277,7 @@ No UI framework, no charting library - Canvas 2D and vanilla DOM.
 
 ```sh
 npm run dev         # Vite dev server
-npm test             # Vitest (80 tests, Node - no browser needed)
+npm test             # Vitest (Node - no browser needed)
 npm run lint          # ESLint (typescript-eslint, type-checked rules)
 npm run typecheck      # tsc --noEmit, strict mode
 npm run build            # typecheck + production build
