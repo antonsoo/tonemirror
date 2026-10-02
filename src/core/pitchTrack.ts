@@ -105,6 +105,15 @@ export function trackPitchRaw(signal: Float32Array | Float64Array, options: Pitc
     const amplitude = rms(slice);
     const time = (start + frameSize / 2) / sampleRate;
 
+    // A frame holding a NaN or infinite sample (a float WAV can carry them, and the browser's
+    // decoder passes them on) has no level and no period. YIN would answer with a NaN confidence,
+    // or call the frame voiced on a pitch read off the infinity, or return a NaN pitch that the
+    // score inherits. It is reported as an unvoiced frame of level 0.
+    if (!Number.isFinite(amplitude)) {
+      frames.push({ time, f0: null, confidence: 0, voiced: false, rms: 0 });
+      continue;
+    }
+
     if (amplitude < silenceRms) {
       frames.push({ time, f0: null, confidence: 0, voiced: false, rms: amplitude });
       continue;

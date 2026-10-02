@@ -64,7 +64,7 @@ just click one of the built-in reference chips and record yourself.
   Mandarin tones and every accent template, generated in-browser and
   labeled synthetic everywhere they appear. Recording or loading real
   native-speaker audio is one click away and clearly encouraged in the UI.
-- **Works offline after first load**, no telemetry, small bundle (~38 kB
+- **Works offline after first load**, no telemetry, small bundle (~39 kB
   of JS across the main bundle + worker + worklet, uncompressed - see
   [Bundle size](#bundle-size)).
 
@@ -125,6 +125,16 @@ reference's and attempt's local slopes are compared for direction
 contours' pitch peaks land in time, each measured across its own voiced
 span (so a pause before speaking doesn't count) and skipped when either
 contour moves less than a semitone, since a flat contour has no peak to time.
+
+The alignment keeps two rows of cumulative costs and one byte per cell for
+the backtrack, not the whole table of doubles, and gives the same path as
+the full table (`tests/robustness.test.ts` checks it against one). Its time
+and memory still grow with the two lengths multiplied, so a contour with
+more than 6,000 voiced samples (a minute of continuous speech at the 10 ms
+hop) is thinned to every second, third, ... sample before it is aligned.
+That lowered the score by up to four points on the synthetic two- to
+five-minute contours it was measured on; anything shorter is aligned
+sample for sample.
 
 ### Mandarin tone classifier
 
@@ -212,10 +222,18 @@ as regression tests; `tests/yin.test.ts`, `tests/mpm.test.ts`,
 `tests/accentTemplates.test.ts`, `tests/synth.test.ts`, and
 `tests/spectrogram.test.ts` cover the rest of the core, including DTW
 correctness on hand-computed small cases and the tone classifier against
-every citation tone's synthetic contour.
+every citation tone's synthetic contour. `tests/robustness.test.ts` covers
+what a hostile input does: samples that are NaN or infinite, and contours
+minutes long.
 
 ### Limitations and accuracy caveats
 
+- **It is built for phrases, not long recordings.** A long file loads and
+  plays, but waits on the analysis: in headless Chromium on the development
+  machine a 60 s clip took about 4 s to analyze and a 200 s clip about 13 s
+  (in the worker, so the page stays responsive), and past a minute of
+  voiced speech the comparison works on a thinned contour (see
+  [Comparison](#comparison-dtw)).
 - **Real rooms are not synthetic signals.** Background noise, reverb, and
   cross-talk all degrade pitch tracking; the noise-SNR rows above are a
   reasonable proxy but not a guarantee for any particular microphone or
@@ -247,10 +265,10 @@ every citation tone's synthetic contour.
 
 ```
 dist/assets/recorderWorklet-*.js   0.22 kB
-dist/index.html                    1.30 kB
-dist/assets/pitchWorker-*.js       6.16 kB
+dist/index.html                    2.42 kB (gzip 0.91 kB)
+dist/assets/pitchWorker-*.js       6.26 kB
 dist/assets/index-*.css            9.81 kB (gzip 2.52 kB)
-dist/assets/index-*.js            31.58 kB (gzip 11.81 kB)
+dist/assets/index-*.js            32.47 kB (gzip 12.18 kB)
 ```
 
 No UI framework, no charting library - Canvas 2D and vanilla DOM.
@@ -259,7 +277,7 @@ No UI framework, no charting library - Canvas 2D and vanilla DOM.
 
 ```sh
 npm run dev         # Vite dev server
-npm test             # Vitest (53 tests, Node - no browser needed)
+npm test             # Vitest (80 tests, Node - no browser needed)
 npm run lint          # ESLint (typescript-eslint, type-checked rules)
 npm run typecheck      # tsc --noEmit, strict mode
 npm run build            # typecheck + production build

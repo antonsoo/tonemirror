@@ -41,7 +41,9 @@ export function computeSpectrogram(
     const db = new Float64Array(mag.length);
     for (let i = 0; i < mag.length; i++) {
       const value = 20 * Math.log10(Math.max(mag[i]!, 1e-12));
-      db[i] = Math.max(value, floorDb);
+      // Not Math.max: a frame holding a NaN or infinite sample transforms to NaN (or Infinity),
+      // and that is drawn as the floor (nothing), not passed on.
+      db[i] = Number.isFinite(value) && value > floorDb ? value : floorDb;
     }
     frames.push(db);
     times.push((start + fftSize / 2) / sampleRate);

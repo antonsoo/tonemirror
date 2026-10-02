@@ -27,19 +27,15 @@ function hexToRgb(hex: string): [number, number, number] {
   return [parseInt(m[1]!, 16), parseInt(m[2]!, 16), parseInt(m[3]!, 16)];
 }
 
-function drawWaveform(ctx: CanvasRenderingContext2D, pcm: Float32Array, width: number, top: number, height: number): void {
-  const mid = top + height / 2;
-  ctx.save();
-  ctx.strokeStyle = cssVar("--color-text-muted");
-  ctx.globalAlpha = 0.85;
-  ctx.lineWidth = 1;
-  ctx.beginPath();
-  const samplesPerPixel = Math.max(1, Math.floor(pcm.length / width));
+/** Lowest and highest sample under each pixel column, as [min0, max0, min1, max1, ...]. */
+export function waveformColumns(pcm: Float32Array, width: number): Float32Array {
+  const columns = new Float32Array(width * 2);
   for (let x = 0; x < width; x++) {
-    const start = x * samplesPerPixel;
+    const start = Math.floor((x * pcm.length) / width);
+    const end = Math.floor(((x + 1) * pcm.length) / width);
     let min = 1;
     let max = -1;
-    for (let i = start; i < Math.min(pcm.length, start + samplesPerPixel); i++) {
+    for (let i = start; i < end; i++) {
       const v = pcm[i]!;
       if (v < min) min = v;
       if (v > max) max = v;
@@ -48,11 +44,85 @@ function drawWaveform(ctx: CanvasRenderingContext2D, pcm: Float32Array, width: n
       min = 0;
       max = 0;
     }
-    ctx.moveTo(x, mid + min * (height / 2));
-    ctx.lineTo(x, mid + max * (height / 2));
+    columns[x * 2] = min;
+    columns[x * 2 + 1] = max;
+  }
+  return columns;
+}
+
+// The view repaints on every animation frame while a clip plays, to move the playhead. What it
+// paints under the playhead does not change from frame to frame, so the waveform's columns and
+// the spectrogram's image are kept per clip: recomputed each frame, they cost a pass over every
+// sample and every spectrogram cell, and playback of a minute-long clip drops frames.
+const waveformCache = new WeakMap<Float32Array, { width: number; columns: Float32Array }>();
+
+function drawWaveform(ctx: CanvasRenderingContext2D, pcm: Float32Array, width: number, top: number, height: number): void {
+  const columnCount = Math.max(1, Math.floor(width));
+  let cached = waveformCache.get(pcm);
+  if (!cached || cached.width !== columnCount) {
+    cached = { width: columnCount, columns: waveformColumns(pcm, columnCount) };
+    waveformCache.set(pcm, cached);
+  }
+  const { columns } = cached;
+
+  const mid = top + height / 2;
+  ctx.save();
+  ctx.strokeStyle = cssVar("--color-text-muted");
+  ctx.globalAlpha = 0.85;
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  for (let x = 0; x < columnCount; x++) {
+    ctx.moveTo(x, mid + columns[x * 2]! * (height / 2));
+    ctx.lineTo(x, mid + columns[x * 2 + 1]! * (height / 2));
   }
   ctx.stroke();
   ctx.restore();
+}
+
+/** The widest image a spectrogram is rendered to. A longer one (over 43 s at 48 kHz) puts
+ * several frames under each column and keeps the loudest value per bin, which is also what
+ * keeps the image inside every browser's canvas size limit. */
+const MAX_SPECTROGRAM_COLUMNS = 8192;
+
+const spectrogramCache = new WeakMap<Spectrogram, { key: string; image: HTMLCanvasElement }>();
+
+function spectrogramImage(spec: Spectrogram, maxBin: number, rgb: [number, number, number]): HTMLCanvasElement {
+  const key = `${rgb.join(",")}/${maxBin}`;
+  const cached = spectrogramCache.get(spec);
+  if (cached?.key === key) return cached.image;
+
+  const frameCount = spec.frames.length;
+  const columnCount = Math.min(frameCount, MAX_SPECTROGRAM_COLUMNS);
+  const image = document.createElement("canvas");
+  image.width = columnCount;
+  image.height = maxBin;
+  const ictx = image.getContext("2d")!;
+  const imageData = ictx.createImageData(columnCount, maxBin);
+  const [r, g, b] = rgb;
+  const dbRange = 60; // display range above the floor
+  const column = new Float64Array(maxBin);
+  for (let x = 0; x < columnCount; x++) {
+    const from = Math.floor((x * frameCount) / columnCount);
+    const to = Math.max(from + 1, Math.floor(((x + 1) * frameCount) / columnCount));
+    column.set(spec.frames[from]!.subarray(0, maxBin));
+    for (let f = from + 1; f < to; f++) {
+      const frame = spec.frames[f]!;
+      for (let bin = 0; bin < maxBin; bin++) {
+        if (frame[bin]! > column[bin]!) column[bin] = frame[bin]!;
+      }
+    }
+    for (let bin = 0; bin < maxBin; bin++) {
+      const norm = Math.max(0, Math.min(1, (column[bin]! - (spec.floorDb + (90 - dbRange))) / dbRange));
+      const idx = ((maxBin - 1 - bin) * columnCount + x) * 4;
+      imageData.data[idx] = r;
+      imageData.data[idx + 1] = g;
+      imageData.data[idx + 2] = b;
+      imageData.data[idx + 3] = Math.round(norm * 255);
+    }
+  }
+  ictx.putImageData(imageData, 0, 0);
+  spectrogramCache.set(spec, { key, image });
+  return image;
 }
 
 function drawSpectrogram(
@@ -63,29 +133,10 @@ function drawSpectrogram(
   height: number,
   maxFreq: number,
 ): void {
-  const [r, g, b] = hexToRgb(cssVar("--color-text").startsWith("#") ? cssVar("--color-text") : "#888888");
+  const rgb = hexToRgb(cssVar("--color-text").startsWith("#") ? cssVar("--color-text") : "#888888");
   const maxBin = Math.min(spec.frames[0]?.length ?? 1, Math.ceil(maxFreq / spec.freqStep));
-  const off = document.createElement("canvas");
-  off.width = spec.frames.length;
-  off.height = maxBin;
-  const octx = off.getContext("2d")!;
-  const imageData = octx.createImageData(off.width, off.height);
-  const dbRange = 60; // display range above the floor
-  for (let x = 0; x < spec.frames.length; x++) {
-    const frame = spec.frames[x]!;
-    for (let bin = 0; bin < maxBin; bin++) {
-      const db = frame[bin]!;
-      const norm = Math.max(0, Math.min(1, (db - (spec.floorDb + (90 - dbRange))) / dbRange));
-      const idx = ((maxBin - 1 - bin) * off.width + x) * 4;
-      imageData.data[idx] = r;
-      imageData.data[idx + 1] = g;
-      imageData.data[idx + 2] = b;
-      imageData.data[idx + 3] = Math.round(norm * 255);
-    }
-  }
-  octx.putImageData(imageData, 0, 0);
   ctx.imageSmoothingEnabled = true;
-  ctx.drawImage(off, 0, top, width, height);
+  ctx.drawImage(spectrogramImage(spec, maxBin, rgb), 0, top, width, height);
 }
 
 function freqToY(freq: number, top: number, height: number, maxFreq: number): number {

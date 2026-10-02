@@ -30,10 +30,36 @@ export interface AlignmentResult {
 export function toDtwSamples(contour: PitchContour): DtwSample[] {
   const out: DtwSample[] = [];
   for (const p of contour.points) {
-    if (p.voiced && p.semitone !== null) out.push({ time: p.time, semitone: p.semitone });
+    // A semitone that is not a number has no distance to anything: one of them would turn the
+    // whole alignment's cost, and the score, into NaN.
+    if (p.voiced && p.semitone !== null && Number.isFinite(p.semitone)) out.push({ time: p.time, semitone: p.semitone });
   }
   return out;
 }
+
+/**
+ * The most voiced samples a contour is aligned with: a minute of continuous
+ * speech at the default 10 ms hop. Alignment takes time and memory in
+ * proportion to the two lengths multiplied, so two three-minute recordings
+ * compared sample for sample hold the page for seconds. A longer contour is
+ * thinned to every second (third, ...) sample first, which lowered the score
+ * by up to four points on the synthetic contours it was measured on.
+ * Phrases, the thing this is for, are far below the limit and are compared
+ * exactly.
+ */
+export const MAX_ALIGNED_SAMPLES = 6000;
+
+function thinned(samples: DtwSample[]): DtwSample[] {
+  if (samples.length <= MAX_ALIGNED_SAMPLES) return samples;
+  const stride = Math.ceil(samples.length / MAX_ALIGNED_SAMPLES);
+  const out: DtwSample[] = [];
+  for (let i = 0; i < samples.length; i += stride) out.push(samples[i]!);
+  return out;
+}
+
+const DIAGONAL = 0;
+const UP = 1;
+const LEFT = 2;
 
 /**
  * Classic dynamic time warping (Sakoe & Chiba's DP formulation) between two
@@ -46,17 +72,37 @@ export function dtwAlign(a: number[], b: number[]): { path: DtwStep[]; totalCost
   const m = b.length;
   if (n === 0 || m === 0) return { path: [], totalCost: 0 };
 
-  // cost[i][j] = min cumulative cost to align a[0..i) with b[0..j)
-  const cost = new Float64Array((n + 1) * (m + 1)).fill(Infinity);
-  const at = (i: number, j: number): number => i * (m + 1) + j;
-  cost[at(0, 0)] = 0;
+  // above[j] = min cumulative cost to align a[0..i-1) with b[0..j); row[j] the same for a[0..i).
+  // Filling a row needs only the row above it, so two rows are kept rather than the whole
+  // table, plus one byte per cell saying which neighbor its best path came from, which is all
+  // the backtrack reads.
+  let above = new Float64Array(m + 1).fill(Infinity);
+  let row = new Float64Array(m + 1);
+  above[0] = 0;
+  const cameFrom = new Uint8Array(n * m);
 
   for (let i = 1; i <= n; i++) {
+    const value = a[i - 1]!;
+    const offset = (i - 1) * m - 1;
+    row[0] = Infinity;
     for (let j = 1; j <= m; j++) {
-      const local = Math.abs(a[i - 1]! - b[j - 1]!);
-      const best = Math.min(cost[at(i - 1, j)]!, cost[at(i, j - 1)]!, cost[at(i - 1, j - 1)]!);
-      cost[at(i, j)] = local + best;
+      const diag = above[j - 1]!;
+      const up = above[j]!;
+      const left = row[j - 1]!;
+      const local = Math.abs(value - b[j - 1]!);
+      // Ties go to the diagonal, then to "up".
+      if (diag <= up && diag <= left) {
+        row[j] = local + diag;
+        cameFrom[offset + j] = DIAGONAL;
+      } else if (up <= left) {
+        row[j] = local + up;
+        cameFrom[offset + j] = UP;
+      } else {
+        row[j] = local + left;
+        cameFrom[offset + j] = LEFT;
+      }
     }
+    [above, row] = [row, above];
   }
 
   // Backtrack from (n,m) to (0,0).
@@ -65,13 +111,11 @@ export function dtwAlign(a: number[], b: number[]): { path: DtwStep[]; totalCost
   let j = m;
   while (i > 0 && j > 0) {
     path.push({ refIndex: i - 1, attemptIndex: j - 1 });
-    const diag = cost[at(i - 1, j - 1)]!;
-    const up = cost[at(i - 1, j)]!;
-    const left = cost[at(i, j - 1)]!;
-    if (diag <= up && diag <= left) {
+    const step = cameFrom[(i - 1) * m + (j - 1)]!;
+    if (step === DIAGONAL) {
       i--;
       j--;
-    } else if (up <= left) {
+    } else if (step === UP) {
       i--;
     } else {
       j--;
@@ -79,7 +123,7 @@ export function dtwAlign(a: number[], b: number[]): { path: DtwStep[]; totalCost
   }
   path.reverse();
 
-  return { path, totalCost: cost[at(n, m)]! };
+  return { path, totalCost: above[m]! };
 }
 
 /** Maps mean per-step semitone cost to a 0-100 score. A perfect match (cost 0)
@@ -226,9 +270,15 @@ export function warpedOverlay(result: AlignmentResult): WarpedPoint[] {
   return out;
 }
 
+/**
+ * Aligns the attempt's voiced contour to the reference's and scores it. The
+ * result's `reference` and `attempt` are the samples that were aligned (the
+ * ones `path` indexes): every voiced sample, or every k-th of a contour longer
+ * than MAX_ALIGNED_SAMPLES.
+ */
 export function compareContours(reference: PitchContour, attempt: PitchContour): AlignmentResult {
-  const refSamples = toDtwSamples(reference);
-  const attSamples = toDtwSamples(attempt);
+  const refSamples = thinned(toDtwSamples(reference));
+  const attSamples = thinned(toDtwSamples(attempt));
 
   if (refSamples.length === 0 || attSamples.length === 0) {
     return {

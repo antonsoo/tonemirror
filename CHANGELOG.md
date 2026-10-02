@@ -2,6 +2,36 @@
 
 All notable changes to this project are documented in this file.
 
+## [0.2.1] - 2026-10-01
+
+### Fixed
+
+- Playback of a long clip dropped frames: the waveform and the spectrogram
+  image were rebuilt from every sample and every spectrogram cell on each
+  animation frame, only to move the playhead. In headless Chromium a 60 s
+  clip played at about 30 frames a second and a 200 s clip at about 12.
+  Both are now computed once per clip, and both clips play at 60.
+- Comparing two long clips froze the page: the alignment filled a table of
+  doubles the size of the two contours multiplied, about 2 GB for two
+  200 s clips, which held the main thread for 2.7 s. It now keeps two rows
+  and one byte per cell, with the same path and cost as before, and a
+  contour with more than 6,000 voiced samples (a minute of speech) is
+  thinned before it is aligned. The same step now takes about 0.4 s.
+  The thinning lowers the score by a point or two (up to four on the
+  contours measured); shorter contours are aligned exactly as before.
+- A NaN or infinite sample reached the pitch detectors. A 32-bit float WAV
+  can hold them, and Chromium's decoder passes them through. With YIN, a
+  frame holding one came back with a NaN confidence, some such frames were
+  called voiced on a pitch read off the infinity, and one pattern tested
+  (an infinite sample every 700, alternating in sign) produced a NaN pitch
+  and with it a NaN similarity score. With either detector the frame's
+  level was reported as NaN or Infinity. Such a frame is now unvoiced at
+  level 0, a NaN semitone is left out of the alignment, and the
+  spectrogram draws the frame as empty.
+- The waveform was drawn from a whole number of samples per pixel, which
+  left the end of the clip off the view (and, for a clip of fewer samples
+  than pixels, drew it squeezed to the left). It now spans the view.
+
 ## [0.2.0] - 2026-09-30
 
 ### Fixed
