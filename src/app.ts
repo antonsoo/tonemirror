@@ -304,11 +304,13 @@ export function mountApp(root: HTMLElement): void {
 
   root.append(
     header,
-    hero,
-    sourcePanel,
-    stagePanel,
-    el("div", { class: "tm-two-col" }, [analysisPanel, el("div", {}, [tonePanel, builtInPanel])]),
-    libraryPanel,
+    el("main", { class: "tm-main" }, [
+      hero,
+      sourcePanel,
+      stagePanel,
+      el("div", { class: "tm-two-col" }, [analysisPanel, el("div", {}, [tonePanel, builtInPanel])]),
+      libraryPanel,
+    ]),
     footer,
   );
 

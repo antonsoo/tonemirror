@@ -322,9 +322,10 @@ button {
 }
 
 .tm-btn-record {
-  background: var(--color-danger);
+  /* The deep red in both themes: near-white text on the dark theme's lighter red is 2.7:1. */
+  background: #b0442e;
   color: #fff8f4;
-  border-color: var(--color-danger);
+  border-color: #b0442e;
 }
 
 .tm-btn-record.is-recording {
@@ -650,4 +651,9 @@ canvas.tm-canvas {
   .tm-score {
     font-size: 32px;
   }
+}
+
+/* The page's main landmark. It adds no box: its children lay out as children of the page. */
+.tm-main {
+  display: contents;
 }
