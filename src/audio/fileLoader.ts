@@ -1,7 +1,7 @@
 import type { RecordedAudio } from "./recorder.js";
 
 /** Decode a user-supplied audio file (wav/mp3/ogg/m4a - whatever the
- * browser's decodeAudioData supports) to mono PCM at its native sample rate. */
+ * browser's decodeAudioData supports) to mono PCM at the AudioContext's sample rate. */
 export async function loadAudioFile(file: File): Promise<RecordedAudio> {
   const arrayBuffer = await file.arrayBuffer();
   const context = new AudioContext();

@@ -1,10 +1,5 @@
-/**
- * Microphone capture via getUserMedia + an AudioWorklet that streams raw
- * PCM frames back to this thread (see recorderWorklet.ts for why we avoid
- * MediaRecorder's lossy codecs here).
- */
-// `?worker&url` (Vite) compiles the worklet module and gives us its final
-// built URL, so addModule() gets real transpiled JS in both dev and prod.
+/** Raw, on-device microphone capture. Each start owns its resources, including
+ * permission requests that finish after the user has cancelled. */
 import workletUrl from "./recorderWorklet.ts?worker&url";
 
 export interface RecordedAudio {
@@ -12,58 +7,109 @@ export interface RecordedAudio {
   sampleRate: number;
 }
 
+interface RecordingSession {
+  ready: Promise<void>;
+  context: AudioContext | null;
+  stream: MediaStream | null;
+  source: MediaStreamAudioSourceNode | null;
+  node: AudioWorkletNode | null;
+  chunks: Float32Array[];
+  recording: boolean;
+}
+
 export class MicRecorder {
-  private context: AudioContext | null = null;
-  private stream: MediaStream | null = null;
-  private node: AudioWorkletNode | null = null;
-  private chunks: Float32Array[] = [];
-  private recording = false;
+  private session: RecordingSession | null = null;
 
-  async start(): Promise<void> {
-    if (this.recording) return;
-    this.stream = await navigator.mediaDevices.getUserMedia({
-      audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false, channelCount: 1 },
-    });
-    this.context = new AudioContext();
-    await this.context.audioWorklet.addModule(workletUrl);
-
-    const source = this.context.createMediaStreamSource(this.stream);
-    this.node = new AudioWorkletNode(this.context, "recorder-processor", { numberOfInputs: 1, numberOfOutputs: 0 });
-    this.chunks = [];
-    this.node.port.onmessage = (event: MessageEvent<Float32Array>) => {
-      this.chunks.push(event.data);
+  start(): Promise<void> {
+    if (this.session) return this.session.ready;
+    const session: RecordingSession = {
+      ready: Promise.resolve(), context: null, stream: null, source: null,
+      node: null, chunks: [], recording: false,
     };
-    source.connect(this.node);
-    this.recording = true;
+    this.session = session;
+    session.ready = this.initialize(session);
+    return session.ready;
+  }
+
+  private assertCurrent(session: RecordingSession): void {
+    if (this.session !== session) throw new DOMException("Recording cancelled", "AbortError");
+  }
+
+  private async initialize(session: RecordingSession): Promise<void> {
+    try {
+      session.stream = await navigator.mediaDevices.getUserMedia({
+        audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false, channelCount: 1 },
+      });
+      this.assertCurrent(session);
+      const context = new AudioContext();
+      session.context = context;
+      await context.audioWorklet.addModule(workletUrl);
+      this.assertCurrent(session);
+      await context.resume();
+      this.assertCurrent(session);
+      session.source = context.createMediaStreamSource(session.stream);
+      const node = new AudioWorkletNode(context, "recorder-processor", { numberOfInputs: 1, numberOfOutputs: 0 });
+      session.node = node;
+      node.port.onmessage = (event: MessageEvent<Float32Array>) => {
+        if (this.session === session && session.recording) session.chunks.push(event.data);
+      };
+      session.source.connect(node);
+      session.recording = true;
+    } catch (error) {
+      if (this.session === session) this.session = null;
+      await this.release(session);
+      throw error;
+    }
+  }
+
+  private async release(session: RecordingSession): Promise<void> {
+    // Stop capture synchronously, before closing the context (which can reject).
+    session.recording = false;
+    session.stream?.getTracks().forEach((track) => track.stop());
+    session.stream = null;
+    session.source?.disconnect();
+    session.source = null;
+    if (session.node) {
+      session.node.port.onmessage = null;
+      session.node.port.close();
+      session.node.disconnect();
+      session.node = null;
+    }
+    const context = session.context;
+    session.context = null;
+    if (context && context.state !== "closed") {
+      try { await context.close(); } catch { /* Capture has already stopped. */ }
+    }
+  }
+
+  async cancel(): Promise<void> {
+    const session = this.session;
+    this.session = null;
+    if (session) {
+      session.chunks = [];
+      await this.release(session);
+    }
   }
 
   async stop(): Promise<RecordedAudio> {
-    if (!this.recording || !this.context) {
-      return { pcm: new Float32Array(0), sampleRate: this.context?.sampleRate ?? 48000 };
+    const session = this.session;
+    this.session = null;
+    const sampleRate = session?.context?.sampleRate ?? 48000;
+    const chunks = session?.recording ? session.chunks : [];
+    if (session) {
+      session.chunks = [];
+      await this.release(session);
     }
-    this.recording = false;
-    const sampleRate = this.context.sampleRate;
-
-    this.node?.port.close();
-    this.node?.disconnect();
-    this.stream?.getTracks().forEach((t) => t.stop());
-    await this.context.close();
-
-    const total = this.chunks.reduce((sum, c) => sum + c.length, 0);
-    const pcm = new Float32Array(total);
+    const pcm = new Float32Array(chunks.reduce((sum, chunk) => sum + chunk.length, 0));
     let offset = 0;
-    for (const chunk of this.chunks) {
+    for (const chunk of chunks) {
       pcm.set(chunk, offset);
       offset += chunk.length;
     }
-    this.chunks = [];
-    this.context = null;
-    this.node = null;
-    this.stream = null;
     return { pcm, sampleRate };
   }
 
   isRecording(): boolean {
-    return this.recording;
+    return this.session?.recording ?? false;
   }
 }

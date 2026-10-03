@@ -1,6 +1,6 @@
 /// <reference types="vitest/config" />
 import { defineConfig } from "vite";
-import { contentSecurityPolicy } from "./vite.csp";
+import { contentSecurityPolicy } from "./vite.csp.js";
 
 export default defineConfig({
   base: "/tonemirror/",

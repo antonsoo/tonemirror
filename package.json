@@ -1,6 +1,6 @@
 {
   "name": "tonemirror",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "See your intonation: record a phrase, overlay your pitch contour on a reference, and practice tones and pitch accent — entirely in the browser.",
   "author": "Anton Soloviev",
   "license": "MIT",
@@ -27,14 +27,18 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
+    "test:browser": "npm run build && playwright test",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "bench": "tsx scripts/accuracy-report.ts"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
     "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.63.0",
     "@types/node": "^26.6.2",
     "eslint": "^10.11.0",
+    "fake-indexeddb": "^6.2.5",
     "tsx": "^4.23.15",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.70.1",

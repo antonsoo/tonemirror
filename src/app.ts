@@ -32,6 +32,11 @@ interface ClipState {
 }
 
 type FocusRole = "reference" | "attempt";
+interface AudioRequest {
+  role: FocusRole;
+  version: number;
+  statusId: number;
+}
 
 export function mountApp(root: HTMLElement): void {
   applyTheme(currentTheme());
@@ -42,12 +47,18 @@ export function mountApp(root: HTMLElement): void {
   const players: Record<FocusRole, ClipPlayer | null> = { reference: null, attempt: null };
   const clips: Record<FocusRole, ClipState | null> = { reference: null, attempt: null };
   let focus: FocusRole = "attempt";
-  let loopRegion: LoopRegion | null = null;
+  const loopRegions: Record<FocusRole, LoopRegion | null> = { reference: null, attempt: null };
+  const versions: Record<FocusRole, number> = { reference: 0, attempt: 0 };
+  const analyses: Record<FocusRole, number> = { reference: 0, attempt: 0 };
+  let statusId = 0;
+  let recordingRequest: AudioRequest | null = null;
   let halfSpeed = false;
   let alignment: AlignmentResult | null = null;
   let library: StoredReference[] = [];
+  let savingReference = false;
   const micRecorder = new MicRecorder();
   let rafHandle = 0;
+  let playbackRequest = 0;
 
   function getPlaybackContext(): AudioContext {
     playbackContext ??= new AudioContext();
@@ -118,12 +129,21 @@ export function mountApp(root: HTMLElement): void {
       {
         class: "tm-tab",
         role: "tab",
+        id: `source-${role}`,
+        "aria-controls": "audio-analysis",
+        tabindex: selected ? "0" : "-1",
+        "data-role": role,
         "aria-selected": selected ? "true" : "false",
         onclick: () => {
-          focus = role;
-          for (const child of Array.from(targetTabs.children)) child.setAttribute("aria-selected", "false");
-          btn.setAttribute("aria-selected", "true");
-          renderAnalysis();
+          selectFocus(role);
+        },
+        onkeydown: (event) => {
+          const key = (event as KeyboardEvent).key;
+          if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(key)) return;
+          event.preventDefault();
+          const next = key === "Home" ? "attempt" : key === "End" ? "reference" : role === "attempt" ? "reference" : "attempt";
+          selectFocus(next);
+          targetTabs.querySelector<HTMLButtonElement>(`[data-role="${next}"]`)?.focus();
         },
       },
       [label],
@@ -132,7 +152,7 @@ export function mountApp(root: HTMLElement): void {
   }
 
   const sourcePanel = el("section", { class: "tm-panel" }, [
-    el("div", { class: "tm-panel-header" }, [el("h2", {}, ["1. Get some audio"]), el("span", { class: "tm-hint" }, ["Recording targets whichever tab is selected below."])]),
+    el("div", { class: "tm-panel-header" }, [el("h2", {}, ["1. Get some audio"]), el("span", { class: "tm-hint" }, ["Recording and file loading use the tab selected when you start."])]),
     targetTabs,
     el("div", { class: "tm-controls-row" }, [recordBtn, loadBtn, algoSelect, statusLine]),
   ]);
@@ -162,12 +182,13 @@ export function mountApp(root: HTMLElement): void {
   // ---------------------------------------------------------------- analysis view panel
   const analysisCanvas = el("canvas", { class: "tm-canvas" });
   const analysisEmpty = el("div", { class: "tm-stage-empty" }, ["Record or load audio above to see its waveform and spectrogram."]);
+  const analysisLabel = el("p", { class: "tm-hint tm-clip-label" });
   const analysis = createAnalysisView(analysisCanvas, (region) => {
-    loopRegion = region;
+    loopRegions[focus] = region;
     players[focus]?.setLoopRegion(region ? { start: region.start, end: region.end } : null);
     renderAnalysis();
   });
-  const playBtn = el("button", { class: "tm-btn tm-btn-primary", onclick: () => togglePlayback() }, ["▶ Play"]);
+  const playBtn = el("button", { class: "tm-btn tm-btn-primary", onclick: () => void togglePlayback() }, ["▶ Play"]);
   const halfSpeedToggle = el("input", {
     type: "checkbox",
     onchange: (e) => {
@@ -178,17 +199,18 @@ export function mountApp(root: HTMLElement): void {
   const clearLoopBtn = el("button", {
     class: "tm-btn",
     onclick: () => {
-      loopRegion = null;
+      loopRegions[focus] = null;
       players[focus]?.setLoopRegion(null);
       renderAnalysis();
     },
   }, ["Clear loop"]);
 
-  const analysisPanel = el("section", { class: "tm-panel" }, [
+  const analysisPanel = el("section", { class: "tm-panel", id: "audio-analysis", role: "tabpanel", "aria-labelledby": "source-attempt" }, [
     el("div", { class: "tm-panel-header" }, [
       el("h2", {}, ["3. Waveform, spectrogram & pitch"]),
       el("span", { class: "tm-hint" }, ["Drag on the waveform to loop a region."]),
     ]),
+    analysisLabel,
     el("div", { class: "tm-stage-wrap" }, [analysisCanvas, analysisEmpty]),
     el("div", { class: "tm-playback-bar" }, [
       playBtn,
@@ -288,11 +310,16 @@ export function mountApp(root: HTMLElement): void {
 
   // ---------------------------------------------------------------- library panel
   const libraryList = el("div", { class: "tm-library-list" });
+  const libraryStatus = el("p", { class: "tm-hint", role: "status", "aria-live": "polite" });
+  const retryLibraryBtn = el("button", { class: "tm-btn", hidden: true, onclick: () => void refreshLibrary() }, ["Retry saved references"]);
+  const saveBtn = el("button", { class: "tm-btn", onclick: () => void saveCurrentAttemptAsReference() }, ["Save current attempt"]);
   const libraryPanel = el("section", { class: "tm-panel" }, [
     el("div", { class: "tm-panel-header" }, [
       el("h2", {}, ["Your saved references"]),
-      el("button", { class: "tm-btn", onclick: () => void saveCurrentAttemptAsReference() }, ["Save current attempt"]),
+      saveBtn,
     ]),
+    libraryStatus,
+    retryLibraryBtn,
     libraryList,
   ]);
 
@@ -318,7 +345,55 @@ export function mountApp(root: HTMLElement): void {
   updateComparison();
   renderAnalysis();
 
+  window.addEventListener("pagehide", () => {
+    recordingRequest = null;
+    void micRecorder.cancel();
+    recordBtn.classList.remove("is-recording");
+    recordBtn.textContent = "● Record";
+    recordBtn.disabled = false;
+    players.reference?.pause();
+    players.attempt?.pause();
+    playbackRequest++;
+    cancelAnimationFrame(rafHandle);
+    worker.terminate();
+    renderAnalysis();
+  });
+
   // ------------------------------------------------------------ behavior
+
+  function selectFocus(role: FocusRole): void {
+    if (focus !== role) {
+      playbackRequest++;
+      players[focus]?.pause();
+      cancelAnimationFrame(rafHandle);
+    }
+    focus = role;
+    for (const child of Array.from(targetTabs.children)) {
+      child.setAttribute("aria-selected", String((child as HTMLElement).dataset.role === role));
+      (child as HTMLElement).tabIndex = (child as HTMLElement).dataset.role === role ? 0 : -1;
+    }
+    analysisPanel.setAttribute("aria-labelledby", `source-${role}`);
+    renderAnalysis();
+  }
+
+  function beginLoad(role: FocusRole): AudioRequest {
+    analyses[role]++;
+    return { role, version: ++versions[role], statusId: ++statusId };
+  }
+
+  function isCurrent(request: AudioRequest): boolean {
+    return versions[request.role] === request.version;
+  }
+
+  function report(request: AudioRequest, message: string): void {
+    if (isCurrent(request) && statusId === request.statusId) statusLine.textContent = message;
+  }
+
+  function resetToneResult(): void {
+    toneBadge.textContent = "?";
+    toneConfBar.style.width = "0%";
+    toneReason.textContent = "Record or load a single syllable as your attempt, then click Classify.";
+  }
 
   function describeMicError(err: unknown): string {
     const name = err instanceof DOMException ? err.name : "";
@@ -335,79 +410,126 @@ export function mountApp(root: HTMLElement): void {
   }
 
   async function handleRecordClick(): Promise<void> {
+    const previous = recordingRequest;
+    if (previous && !micRecorder.isRecording()) {
+      recordingRequest = null;
+      recordBtn.textContent = "● Record";
+      report(previous, "Microphone request cancelled.");
+      await micRecorder.cancel();
+      return;
+    }
     if (micRecorder.isRecording()) {
       recordBtn.classList.remove("is-recording");
       recordBtn.textContent = "● Record";
       recordBtn.disabled = true;
-      const { pcm, sampleRate } = await micRecorder.stop();
-      recordBtn.disabled = false;
-      await loadClip(focus, pcm, sampleRate, `Recording (${new Date().toLocaleTimeString()})`, false);
+      recordingRequest = null;
+      try {
+        const { pcm, sampleRate } = await micRecorder.stop();
+        if (previous) await loadClip(previous.role, pcm, sampleRate, `Recording (${new Date().toLocaleTimeString()})`, false, previous);
+      } catch (error) {
+        if (previous) report(previous, describeMicError(error));
+      } finally {
+        recordBtn.disabled = false;
+      }
       return;
     }
+    const request = beginLoad(focus);
+    recordingRequest = request;
     try {
-      statusLine.textContent = "Requesting microphone…";
+      recordBtn.textContent = "Cancel microphone";
+      report(request, "Requesting microphone…");
       await micRecorder.start();
+      if (recordingRequest !== request) return;
       recordBtn.classList.add("is-recording");
       recordBtn.textContent = "■ Stop";
-      statusLine.textContent = "Recording…";
+      report(request, `Recording ${request.role === "attempt" ? "your attempt" : "reference"}…`);
     } catch (err) {
+      if (recordingRequest !== request) return;
+      recordingRequest = null;
       recordBtn.classList.remove("is-recording");
       recordBtn.textContent = "● Record";
-      statusLine.textContent = describeMicError(err);
+      report(request, describeMicError(err));
     }
   }
 
   async function handleFileSelected(e: Event): Promise<void> {
     const file = (e.target as HTMLInputElement).files?.[0];
     if (!file) return;
-    statusLine.textContent = `Decoding ${file.name}…`;
+    (e.target as HTMLInputElement).value = "";
+    const request = beginLoad(focus);
+    report(request, `Decoding ${file.name}…`);
     try {
       const { pcm, sampleRate } = await loadAudioFile(file);
-      await loadClip(focus, pcm, sampleRate, file.name, false);
+      await loadClip(request.role, pcm, sampleRate, file.name, false, request);
     } catch (err) {
-      statusLine.textContent = `Could not decode ${file.name}: ${(err as Error).message}`;
+      report(request, `Could not decode ${file.name}: ${(err as Error).message}`);
     }
-    (e.target as HTMLInputElement).value = "";
   }
 
   async function loadSyntheticReference(label: string, contourPoints: Parameters<typeof synthesizeFromContour>[0], baseF0: number): Promise<void> {
     const sampleRate = 22050;
     const pcm = synthesizeFromContour(contourPoints, baseF0, { sampleRate, duration: 0.6, seed: 42 });
-    focus = "reference";
-    for (const child of Array.from(targetTabs.children)) child.setAttribute("aria-selected", child.textContent?.includes("Reference") ? "true" : "false");
+    selectFocus("reference");
     await loadClip("reference", pcm, sampleRate, label, true);
   }
 
-  async function loadClip(role: FocusRole, pcm: Float32Array, sampleRate: number, label: string, synthetic: boolean): Promise<void> {
-    statusLine.textContent = `Analyzing ${label}…`;
+  async function loadClip(role: FocusRole, pcm: Float32Array, sampleRate: number, label: string, synthetic: boolean, request = beginLoad(role)): Promise<void> {
+    if (!isCurrent(request)) return;
+    report(request, `Analyzing ${label}…`);
     const state: ClipState = { pcm, sampleRate, contour: null, spectrogram: null, label, synthetic };
     clips[role] = state;
-
-    const ctx = getPlaybackContext();
     players[role]?.stop();
-    const player = new ClipPlayer(ctx);
-    player.load(pcm, sampleRate);
-    players[role] = player;
-
-    const result = await worker.analyze(pcm, sampleRate, algorithm);
-    state.contour = result.contour;
-    state.spectrogram = result.spectrogram;
-
-    statusLine.textContent = `${label}${synthetic ? " (synthetic)" : ""} — ${pcm.length > 0 ? (pcm.length / sampleRate).toFixed(2) : "0"}s`;
+    players[role] = null;
+    if (focus === role) playbackRequest++;
+    loopRegions[role] = null;
+    if (role === "attempt") resetToneResult();
     updateComparison();
     renderAnalysis();
+    try {
+      const player = new ClipPlayer(getPlaybackContext());
+      player.load(pcm, sampleRate);
+      players[role] = player;
+      if (await analyzeClip(request, state)) {
+        report(request, `${label}${synthetic ? " (synthetic)" : ""} — ${pcm.length > 0 ? (pcm.length / sampleRate).toFixed(2) : "0"}s`);
+      }
+    } catch (error) {
+      report(request, `Could not load ${label}: ${(error as Error).message}`);
+    }
+  }
+
+  async function analyzeClip(request: AudioRequest, clip: ClipState): Promise<boolean> {
+    const generation = ++analyses[request.role];
+    clip.contour = null;
+    clip.spectrogram = null;
+    updateComparison();
+    renderAnalysis();
+    const current = (): boolean => isCurrent(request) && clips[request.role] === clip && analyses[request.role] === generation;
+    try {
+      const result = await worker.analyze(clip.pcm, clip.sampleRate, algorithm);
+      if (!current()) return false;
+      clip.contour = result.contour;
+      clip.spectrogram = result.spectrogram;
+      updateComparison();
+      renderAnalysis();
+      return true;
+    } catch (error) {
+      if (current()) report(request, (error as Error).message);
+      return false;
+    }
   }
 
   async function reanalyzeAll(): Promise<void> {
-    for (const role of ["reference", "attempt"] as FocusRole[]) {
+    const nextStatus = ++statusId;
+    resetToneResult();
+    const jobs = (["reference", "attempt"] as FocusRole[]).map(async (role) => {
       const clip = clips[role];
-      if (!clip) continue;
-      const result = await worker.analyze(clip.pcm, clip.sampleRate, algorithm);
-      clip.contour = result.contour;
-      clip.spectrogram = result.spectrogram;
+      if (!clip) return true;
+      return analyzeClip({ role, version: versions[role], statusId: nextStatus }, clip);
+    });
+    const results = await Promise.all(jobs);
+    if (statusId === nextStatus && results.every(Boolean)) {
+      statusLine.textContent = `Pitch analysis updated (${algorithm === "yin" ? "YIN" : "MPM"}).`;
     }
-    updateComparison();
-    renderAnalysis();
   }
 
   function updateComparison(): void {
@@ -436,22 +558,34 @@ export function mountApp(root: HTMLElement): void {
       contour: clip?.contour ?? null,
       durationSeconds: player?.duration ?? 0,
       playheadFraction: player && player.duration > 0 ? player.currentPositionSeconds() / player.duration : null,
-      loopRegion,
+      loopRegion: loopRegions[focus],
     });
     analysisEmpty.style.display = clip ? "none" : "grid";
-    playBtn.disabled = !clip;
+    const label = `${focus === "attempt" ? "Your attempt" : "Reference"}: ${clip ? `${clip.label}${clip.synthetic ? " (synthetic)" : ""} · ${(clip.pcm.length / clip.sampleRate).toFixed(2)}s` : "no audio loaded"}`;
+    if (analysisLabel.textContent !== label) analysisLabel.textContent = label;
+    playBtn.disabled = !clip || !player;
+    clearLoopBtn.disabled = !loopRegions[focus];
+    saveBtn.disabled = !clips.attempt || savingReference;
     playBtn.textContent = player?.isPlaying ? "⏸ Pause" : "▶ Play";
   }
 
-  function togglePlayback(): void {
+  async function togglePlayback(): Promise<void> {
+    const role = focus;
     const player = players[focus];
     if (!player) return;
+    const request = ++playbackRequest;
     if (player.isPlaying) {
       player.pause();
       cancelAnimationFrame(rafHandle);
     } else {
+      try { await getPlaybackContext().resume(); } catch {
+        statusLine.textContent = "Playback is unavailable. Try loading the clip again.";
+        return;
+      }
+      if (request !== playbackRequest || focus !== role || players[role] !== player) return;
       player.setHalfSpeed(halfSpeed);
-      if (loopRegion) player.setLoopRegion({ start: loopRegion.start, end: loopRegion.end });
+      const loopRegion = loopRegions[role];
+      player.setLoopRegion(loopRegion ? { start: loopRegion.start, end: loopRegion.end } : null);
       player.play(player.currentPositionSeconds() >= player.duration - 0.01 ? 0 : player.currentPositionSeconds(), () => renderAnalysis());
       tick();
     }
@@ -479,21 +613,43 @@ export function mountApp(root: HTMLElement): void {
   async function saveCurrentAttemptAsReference(): Promise<void> {
     const clip = clips.attempt;
     if (!clip) return;
-    const name = window.prompt("Name this reference:", clip.label) ?? clip.label;
-    await saveReference({
-      id: crypto.randomUUID(),
-      name,
-      category: "user",
-      synthetic: false,
-      pcm: clip.pcm,
-      sampleRate: clip.sampleRate,
-      createdAt: Date.now(),
-    });
-    await refreshLibrary();
+    const name = window.prompt("Name this reference:", clip.label);
+    if (name === null) return;
+    if (!name.trim()) {
+      libraryStatus.textContent = "Give the reference a name before saving.";
+      return;
+    }
+    savingReference = true;
+    saveBtn.disabled = true;
+    try {
+      await saveReference({
+        id: crypto.randomUUID(),
+        name: name.trim(),
+        category: "user",
+        synthetic: false,
+        pcm: clip.pcm,
+        sampleRate: clip.sampleRate,
+        createdAt: Date.now(),
+      });
+      if (await refreshLibrary()) libraryStatus.textContent = `Saved ${name.trim()} on this device.`;
+    } catch (error) {
+      libraryStatus.textContent = `Could not save the reference: ${(error as Error).message}`;
+    } finally {
+      savingReference = false;
+      saveBtn.disabled = !clips.attempt;
+    }
   }
 
-  async function refreshLibrary(): Promise<void> {
-    library = await listReferences();
+  async function refreshLibrary(): Promise<boolean> {
+    try {
+      library = await listReferences();
+    } catch {
+      libraryStatus.textContent = "Saved references are unavailable in this browser. You can still record, load files, and compare audio.";
+      retryLibraryBtn.hidden = false;
+      return false;
+    }
+    libraryStatus.textContent = "";
+    retryLibraryBtn.hidden = true;
     libraryList.replaceChildren(
       ...(library.length === 0
         ? [el("p", { class: "tm-hint" }, ["No saved references yet — record a native speaker once, save it, and practice against it anytime."])]
@@ -501,17 +657,25 @@ export function mountApp(root: HTMLElement): void {
             el("div", { class: "tm-library-item" }, [
               el("span", {}, [ref.name, " ", el("span", { class: "tm-badge" }, [ref.category])]),
               el("span", {}, [
-                el("button", { onclick: () => void loadClip("reference", ref.pcm, ref.sampleRate, ref.name, ref.synthetic) }, ["Use"]),
+                el("button", { onclick: () => {
+                  selectFocus("reference");
+                  void loadClip("reference", ref.pcm, ref.sampleRate, ref.name, ref.synthetic);
+                } }, ["Use"]),
                 " ",
                 el("button", { onclick: () => void removeReference(ref.id) }, ["Delete"]),
               ]),
             ]),
           )),
     );
+    return true;
   }
 
   async function removeReference(id: string): Promise<void> {
-    await deleteReference(id);
-    await refreshLibrary();
+    try {
+      await deleteReference(id);
+      await refreshLibrary();
+    } catch (error) {
+      libraryStatus.textContent = `Could not delete the reference: ${(error as Error).message}`;
+    }
   }
 }

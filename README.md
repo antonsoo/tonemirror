@@ -64,7 +64,7 @@ just click one of the built-in reference chips and record yourself.
   Mandarin tones and every accent template, generated in-browser and
   labeled synthetic everywhere they appear. Recording or loading real
   native-speaker audio is one click away and clearly encouraged in the UI.
-- **Works offline after first load**, no telemetry, small bundle (~39 kB
+- **Local processing without uploads**, no telemetry, small bundle (~44 kB
   of JS across the main bundle + worker + worklet, uncompressed - see
   [Bundle size](#bundle-size)).
 
@@ -72,6 +72,17 @@ Light and dark themes follow the system preference (with a manual toggle),
 and the layout holds up down to a 375px-wide phone:
 
 <img src="docs/assets/hero-dark.png" alt="The same contour comparison in dark mode" width="420" /> <img src="docs/assets/mobile.png" alt="tonemirror on a 375px-wide phone viewport, showing the same panels stacked vertically" width="160" />
+
+Recording and file loading use the tab selected when you start, even if you
+switch tabs while waiting. The waveform shows the current clip's name and
+duration. Switching tabs pauses playback, and each clip retains its loop.
+Arrow keys, Home, and End move between the audio tabs.
+
+**Save current attempt** stores audio only after you confirm a nonempty name;
+Cancel saves nothing. If browser storage is unavailable, audio loading,
+recording, and comparison still work. Saving errors appear beside the library,
+and **Retry saved references** retries a failed library load. Saved recordings
+belong to this browser profile and can disappear if its site data is cleared.
 
 ## How it works
 
@@ -265,10 +276,10 @@ minutes long.
 
 ```
 dist/assets/recorderWorklet-*.js   0.22 kB
-dist/index.html                    2.42 kB (gzip 0.91 kB)
+dist/index.html                    2.33 kB (gzip 0.88 kB)
 dist/assets/pitchWorker-*.js       6.26 kB
-dist/assets/index-*.css            9.81 kB (gzip 2.52 kB)
-dist/assets/index-*.js            32.47 kB (gzip 12.18 kB)
+dist/assets/index-*.css           22.77 kB (gzip 3.50 kB)
+dist/assets/index-*.js            37.30 kB (gzip 13.77 kB)
 ```
 
 No UI framework, no charting library - Canvas 2D and vanilla DOM.
@@ -281,8 +292,19 @@ npm test             # Vitest (Node - no browser needed)
 npm run lint          # ESLint (typescript-eslint, type-checked rules)
 npm run typecheck      # tsc --noEmit, strict mode
 npm run build            # typecheck + production build
+npm run test:browser       # production build + Chromium/Firefox workflows
 npm run bench              # regenerate the accuracy table above
 ```
+
+Install the browser test engines once with
+`npx playwright install chromium firefox` (CI also uses `--with-deps`).
+Unit tests cover the DSP core, playback clocks, microphone cleanup, worker
+recovery, and IndexedDB transaction failures. Browser tests cover cancelled
+saves, storage failures, overlapping file loads and algorithm changes,
+keyboard playback, and WCAG 2.1 A/AA plus axe best-practice checks at desktop
+and phone widths in both themes. Microphone lifecycle tests use Chromium's
+simulated device; they do not measure real microphone quality or permissions
+on every browser and operating system.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the project layout.
 

@@ -26,4 +26,5 @@ jobs:
         env:
           LC_ALL: de_DE.UTF-8
           LANG: de_DE.UTF-8
-      - run: npm run build
+      - run: npx playwright install --with-deps chromium firefox
+      - run: npm run test:browser

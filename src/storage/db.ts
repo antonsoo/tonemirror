@@ -31,6 +31,11 @@ function openDb(): Promise<IDBDatabase> {
     };
     req.onsuccess = () => resolve(req.result);
     req.onerror = () => reject(req.error ?? new Error("Failed to open IndexedDB"));
+    req.onblocked = () => {
+      // A late open can still succeed after rejection; do not leak that connection.
+      req.onsuccess = () => req.result.close();
+      reject(new Error("The reference library is busy in another tab. Close it and retry."));
+    };
   });
 }
 
@@ -49,24 +54,33 @@ export async function saveReference(ref: StoredReference): Promise<void> {
     createdAt: ref.createdAt,
     pcmBuffer: new Float32Array(ref.pcm).buffer,
   };
-  await new Promise<void>((resolve, reject) => {
-    const tx = db.transaction(STORE, "readwrite");
-    tx.objectStore(STORE).put(record);
-    tx.oncomplete = () => resolve();
-    tx.onerror = () => reject(tx.error ?? new Error("Failed to save reference"));
-  });
-  db.close();
+  try {
+    await new Promise<void>((resolve, reject) => {
+      const tx = db.transaction(STORE, "readwrite");
+      tx.objectStore(STORE).put(record);
+      tx.oncomplete = () => resolve();
+      tx.onerror = () => reject(tx.error ?? new Error("Failed to save reference"));
+      tx.onabort = () => reject(tx.error ?? new Error("Saving the reference was cancelled"));
+    });
+  } finally {
+    db.close();
+  }
 }
 
 export async function listReferences(): Promise<StoredReference[]> {
   const db = await openDb();
-  const records = await new Promise<StoredRecord[]>((resolve, reject) => {
-    const tx = db.transaction(STORE, "readonly");
-    const req = tx.objectStore(STORE).getAll();
-    req.onsuccess = () => resolve(req.result as StoredRecord[]);
-    req.onerror = () => reject(req.error ?? new Error("Failed to list references"));
-  });
-  db.close();
+  let records: StoredRecord[];
+  try {
+    records = await new Promise<StoredRecord[]>((resolve, reject) => {
+      const tx = db.transaction(STORE, "readonly");
+      const req = tx.objectStore(STORE).getAll();
+      tx.oncomplete = () => resolve(req.result as StoredRecord[]);
+      req.onerror = () => reject(req.error ?? new Error("Failed to list references"));
+      tx.onabort = () => reject(tx.error ?? new Error("Reading references was cancelled"));
+    });
+  } finally {
+    db.close();
+  }
   return records
     .map((r) => ({ ...r, pcm: new Float32Array(r.pcmBuffer) }))
     .sort((a, b) => b.createdAt - a.createdAt);
@@ -74,11 +88,15 @@ export async function listReferences(): Promise<StoredReference[]> {
 
 export async function deleteReference(id: string): Promise<void> {
   const db = await openDb();
-  await new Promise<void>((resolve, reject) => {
-    const tx = db.transaction(STORE, "readwrite");
-    tx.objectStore(STORE).delete(id);
-    tx.oncomplete = () => resolve();
-    tx.onerror = () => reject(tx.error ?? new Error("Failed to delete reference"));
-  });
-  db.close();
+  try {
+    await new Promise<void>((resolve, reject) => {
+      const tx = db.transaction(STORE, "readwrite");
+      tx.objectStore(STORE).delete(id);
+      tx.oncomplete = () => resolve();
+      tx.onerror = () => reject(tx.error ?? new Error("Failed to delete reference"));
+      tx.onabort = () => reject(tx.error ?? new Error("Deleting the reference was cancelled"));
+    });
+  } finally {
+    db.close();
+  }
 }

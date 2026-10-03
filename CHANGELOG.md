@@ -2,6 +2,34 @@
 
 All notable changes to this project are documented in this file.
 
+## [0.2.3] - 2026-10-03
+
+### Fixed
+
+- Cancelling the save dialog now saves nothing. Blank names are rejected;
+  storage failures are visible and the saved-reference library can retry.
+  Database connections close on failed or aborted transactions.
+- Microphone setup failures and cancelled permission requests release their
+  tracks and audio contexts, including permission grants that arrive late.
+  Concurrent starts share one capture request; leaving the page stops capture.
+- Recordings and files stay assigned to the tab selected when they started.
+  Older decoding and analysis results cannot replace newer choices. A failed
+  analysis worker reports an error and is replaced on the next analysis.
+- Pause retains the playback position. Speed changes and clearing a loop
+  preserve elapsed playback; switching tabs pauses the previous clip, and each
+  clip keeps its own loop. Pending playback cannot restart after a tab switch.
+- Replacing or reanalyzing audio clears the previous tone classification and
+  comparison while the current results are pending.
+
+### Changed
+
+- The waveform names its clip and duration. Audio tabs support arrow keys,
+  Home, and End, and saved references select the Reference tab when used.
+- Regression tests cover audio resource cleanup, playback timing, worker
+  failures, and storage transactions. Production browser tests exercise the
+  app in Chromium and Firefox, including light/dark desktop and mobile
+  accessibility checks; Chromium uses a simulated microphone for capture tests.
+
 ## [0.2.2] - 2026-10-02
 
 ### Changed

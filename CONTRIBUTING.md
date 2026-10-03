@@ -13,10 +13,13 @@ npm run dev
 npm run lint
 npm run typecheck
 npm test
-npm run build
+npx playwright install chromium firefox
+npm run test:browser
 ```
 
-All four must pass; `.github/workflows/ci.yml` runs the same checks on push/PR.
+All checks must pass. The browser command builds the production site before
+testing it. `.github/workflows/ci.yml` defines the same checks for push/PR;
+run them locally when Actions is unavailable.
 
 ## Project layout
 
@@ -30,6 +33,9 @@ All four must pass; `.github/workflows/ci.yml` runs the same checks on push/PR.
 - `src/storage/` - the IndexedDB reference library.
 - `tests/` - Vitest specs, mostly against synthetic signals with known
   ground truth (see `src/core/synth.ts` and `src/core/metrics.ts`).
+- `tests/browser/` - Playwright workflows and accessibility checks against the
+  production build. Capture tests use Chromium's simulated microphone; the
+  remaining workflows run in both Chromium and Firefox.
 - `scripts/accuracy-report.ts` - regenerates the accuracy table in
   README.md (`npm run bench`).
 

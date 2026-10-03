@@ -33,11 +33,16 @@ export class ClipPlayer {
   }
 
   setHalfSpeed(half: boolean): void {
+    // Keep time already played at its old rate before starting a new segment.
+    this.startOffsetSeconds = this.currentPositionSeconds();
+    this.startedAtContextTime = this.context.currentTime;
     this.rate = half ? 0.5 : 1;
     if (this.source) this.source.playbackRate.value = this.rate;
   }
 
   setLoopRegion(region: { start: number; end: number } | null): void {
+    this.startOffsetSeconds = this.currentPositionSeconds();
+    this.startedAtContextTime = this.context.currentTime;
     this.loop = region;
     if (this.source && this.buffer) {
       if (region) {
@@ -65,7 +70,9 @@ export class ClipPlayer {
     this.onEnded = onEnded ?? null;
     source.onended = () => {
       if (this.source === source) {
+        source.disconnect();
         this.source = null;
+        this.startOffsetSeconds = this.duration;
         this.onEnded?.();
       }
     };
@@ -78,6 +85,7 @@ export class ClipPlayer {
   pause(): number {
     const pos = this.currentPositionSeconds();
     this.stop();
+    this.startOffsetSeconds = pos;
     return pos;
   }
 
@@ -92,6 +100,8 @@ export class ClipPlayer {
       this.source.disconnect();
       this.source = null;
     }
+    this.startOffsetSeconds = 0;
+    this.onEnded = null;
   }
 
   get isPlaying(): boolean {
