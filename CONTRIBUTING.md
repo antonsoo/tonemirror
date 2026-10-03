@@ -40,3 +40,14 @@ All four must pass; `.github/workflows/ci.yml` runs the same checks on push/PR.
 - Keep `src/core/` free of DOM/Worker/browser globals so it stays testable
   in plain Node.
 - Comments explain *why*, not *what*.
+
+## Community and private reports
+
+Please follow the [Code of Conduct](CODE_OF_CONDUCT.md). Anton Soloviev
+maintains this project and handles conduct reports at
+[anton@praviel.com](mailto:anton@praviel.com).
+
+Use the bug or improvement forms for public issues. For a suspected security
+vulnerability or a conduct concern, email the maintainer privately with the
+repository name and relevant details. Do not post credentials, personal data,
+private logs, or confidential documents in a public issue.
