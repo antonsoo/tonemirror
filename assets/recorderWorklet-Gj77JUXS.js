@@ -1,0 +1,2 @@
+var e=class extends AudioWorkletProcessor{process(e){let t=e[0]?.[0];return t&&t.length>0&&this.port.postMessage(t.slice()),!0}};registerProcessor(`recorder-processor`,e);
+//# sourceMappingURL=recorderWorklet-Gj77JUXS.js.map
