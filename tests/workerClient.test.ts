@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { PitchWorkerClient } from "../src/worker/client.js";
+import { AUDIO_JOB_TIMEOUT_MS, PitchWorkerClient } from "../src/worker/client.js";
 import type { AnalyzeResponse } from "../src/worker/pitchWorker.js";
 
 class FakeWorker {
@@ -13,7 +13,7 @@ class FakeWorker {
 }
 
 beforeEach(() => { FakeWorker.instances = []; vi.stubGlobal("Worker", FakeWorker); });
-afterEach(() => vi.unstubAllGlobals());
+afterEach(() => { vi.unstubAllGlobals(); vi.useRealTimers(); });
 const pcm = new Float32Array([0.1, 0.2]);
 
 describe("analysis worker recovery", () => {
@@ -27,7 +27,11 @@ describe("analysis worker recovery", () => {
     expect(failed.terminate).toHaveBeenCalledOnce();
     const third = client.analyze(pcm, 22050, "yin");
     const fresh = FakeWorker.instances[1]!;
-    const result = { type: "analyzed", requestId: 3 } as AnalyzeResponse;
+    const result: AnalyzeResponse = {
+      type: "analyzed", requestId: 3,
+      contour: { points: [], medianF0: null, hopSeconds: 0.01, frameSeconds: 0.03, sampleRate: 22050 },
+      spectrogram: { frames: [], times: [], freqStep: 20, floorDb: -90 },
+    };
     failed.onmessage!({ data: result });
     fresh.onmessage!({ data: result });
     await expect(third).resolves.toBe(result);
@@ -64,5 +68,36 @@ describe("analysis worker recovery", () => {
     vi.stubGlobal("Worker", class { constructor() { throw new Error("worker blocked"); } });
     const client = new PitchWorkerClient();
     await expect(client.analyze(pcm, 22050, "yin")).rejects.toThrow("worker blocked");
+  });
+
+  it("stops obsolete computation and permits a fresh request", async () => {
+    const client = new PitchWorkerClient();
+    const controller = new AbortController();
+    const result = expect(client.analyze(pcm, 22050, "yin", controller.signal)).rejects.toMatchObject({ name: "AbortError" });
+    controller.abort();
+    await result;
+    expect(FakeWorker.instances[0]!.terminate).toHaveBeenCalledOnce();
+    const next = expect(client.analyze(pcm, 22050, "mpm")).rejects.toThrow("cancelled");
+    expect(FakeWorker.instances).toHaveLength(2);
+    client.terminate();
+    await next;
+  });
+
+  it("times out a silent worker and terminates it", async () => {
+    vi.useFakeTimers();
+    const client = new PitchWorkerClient();
+    const result = expect(client.analyze(pcm, 22050, "yin")).rejects.toThrow("exceeded 60 seconds");
+    await vi.advanceTimersByTimeAsync(AUDIO_JOB_TIMEOUT_MS);
+    await result;
+    expect(FakeWorker.instances[0]!.terminate).toHaveBeenCalledOnce();
+    expect(vi.getTimerCount()).toBe(0);
+  });
+
+  it("settles malformed replies instead of throwing in the event handler", async () => {
+    const client = new PitchWorkerClient();
+    const result = expect(client.analyze(pcm, 22050, "yin")).rejects.toThrow("unreadable result");
+    FakeWorker.instances[0]!.onmessage!({ data: null as unknown as AnalyzeResponse });
+    await result;
+    expect(FakeWorker.instances[0]!.terminate).toHaveBeenCalledOnce();
   });
 });

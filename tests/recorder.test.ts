@@ -1,5 +1,6 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { MicRecorder } from "../src/audio/recorder.js";
+import { MAX_AUDIO_SECONDS } from "../src/audio/limits.js";
 
 function deferred<T>() {
   let resolve!: (value: T) => void;
@@ -30,6 +31,25 @@ function setup() {
 afterEach(() => vi.unstubAllGlobals());
 
 describe("microphone ownership", () => {
+  it("stops capture at the duration limit, retaining exactly that many samples", async () => {
+    const { recorder, node, track, context } = setup();
+    const limited = vi.fn();
+    await recorder.start(limited);
+    const receive = node.port.onmessage!;
+    const count = context.sampleRate * MAX_AUDIO_SECONDS;
+    receive({ data: new Float32Array(count - 2).fill(0.25) });
+    expect(track.stop).not.toHaveBeenCalled();
+    receive({ data: new Float32Array([0.5, 0.75, 1, 1]) });
+    expect(limited).toHaveBeenCalledOnce();
+    expect(track.stop).toHaveBeenCalledOnce();
+    expect(recorder.isRecording()).toBe(false);
+    receive({ data: new Float32Array([1, 1]) });
+    const audio = await recorder.stop();
+    expect(audio.pcm).toHaveLength(count);
+    expect(Array.from(audio.pcm.slice(-2))).toEqual([0.5, 0.75]);
+    expect(audio.sampleRate).toBe(context.sampleRate);
+    expect(context.close).toHaveBeenCalledOnce();
+  });
   it("stops tracks and closes the context if loading the worklet fails", async () => {
     const { recorder, track, context } = setup();
     context.audioWorklet.addModule.mockRejectedValue(new Error("worklet failed"));

@@ -5,8 +5,9 @@ import { createAnalysisView, type LoopRegion } from "./ui/analysisView.js";
 import { PitchWorkerClient } from "./worker/client.js";
 import { MicRecorder } from "./audio/recorder.js";
 import { loadAudioFile } from "./audio/fileLoader.js";
+import { MAX_AUDIO_SECONDS, validateAudio } from "./audio/limits.js";
 import { ClipPlayer } from "./audio/playback.js";
-import { compareContours, warpedOverlay, type AlignmentResult } from "./core/dtw.js";
+import { warpedOverlay, type AlignmentResult } from "./core/dtw.js";
 import { classifyMandarinTone } from "./core/toneClassifier.js";
 import { ALL_MANDARIN_TONES, mandarinToneChaoNumerals, mandarinToneContour, mandarinToneLabel } from "./core/mandarinTones.js";
 import {
@@ -29,6 +30,7 @@ interface ClipState {
   spectrogram: Spectrogram | null;
   label: string;
   synthetic: boolean;
+  algorithm: PitchAlgorithm;
 }
 
 type FocusRole = "reference" | "attempt";
@@ -36,12 +38,14 @@ interface AudioRequest {
   role: FocusRole;
   version: number;
   statusId: number;
+  controller: AbortController;
 }
 
 export function mountApp(root: HTMLElement): void {
   applyTheme(currentTheme());
 
-  const worker = new PitchWorkerClient();
+  const workers = { reference: new PitchWorkerClient(), attempt: new PitchWorkerClient() };
+  const comparisonWorker = new PitchWorkerClient();
   let algorithm: PitchAlgorithm = "yin";
   let playbackContext: AudioContext | null = null;
   const players: Record<FocusRole, ClipPlayer | null> = { reference: null, attempt: null };
@@ -49,7 +53,11 @@ export function mountApp(root: HTMLElement): void {
   let focus: FocusRole = "attempt";
   const loopRegions: Record<FocusRole, LoopRegion | null> = { reference: null, attempt: null };
   const versions: Record<FocusRole, number> = { reference: 0, attempt: 0 };
-  const analyses: Record<FocusRole, number> = { reference: 0, attempt: 0 };
+  const loads: Record<FocusRole, AudioRequest | null> = { reference: null, attempt: null };
+  const drafts: Record<FocusRole, ClipState | null> = { reference: null, attempt: null };
+  const loadErrors: Record<FocusRole, string | null> = { reference: null, attempt: null };
+  let comparison: AbortController | null = null;
+  let comparisonPair: [PitchContour, PitchContour] | null = null;
   let statusId = 0;
   let recordingRequest: AudioRequest | null = null;
   let halfSpeed = false;
@@ -105,6 +113,8 @@ export function mountApp(root: HTMLElement): void {
     onchange: (e) => void handleFileSelected(e),
   });
   const loadBtn = el("label", { class: "tm-file-label" }, ["Load file…", fileInput]);
+  const cancelBtn = el("button", { class: "tm-btn", hidden: true, onclick: () => cancelWork() }, ["Cancel work"]);
+  const retryAudioBtn = el("button", { class: "tm-btn", hidden: true, onclick: () => void reanalyzeAll(true) }, ["Retry audio analysis"]);
   const algoSelect = el(
     "select",
     {
@@ -154,7 +164,8 @@ export function mountApp(root: HTMLElement): void {
   const sourcePanel = el("section", { class: "tm-panel" }, [
     el("div", { class: "tm-panel-header" }, [el("h2", {}, ["1. Get some audio"]), el("span", { class: "tm-hint" }, ["Recording and file loading use the tab selected when you start."])]),
     targetTabs,
-    el("div", { class: "tm-controls-row" }, [recordBtn, loadBtn, algoSelect, statusLine]),
+    el("div", { class: "tm-controls-row" }, [recordBtn, loadBtn, algoSelect, cancelBtn, retryAudioBtn, statusLine]),
+    el("p", { class: "tm-hint" }, ["Short phrases work best: up to 60 seconds and 25 MiB per file. Recordings stop at 60 seconds. A failed replacement keeps your last loaded clip."]),
   ]);
 
   // ---------------------------------------------------------------- contour stage panel
@@ -162,6 +173,8 @@ export function mountApp(root: HTMLElement): void {
   const stage = createContourStage(stageCanvas);
   const scoreEl = el("div", { class: "tm-score" }, ["—"]);
   const feedbackList = el("ul", { class: "tm-feedback-list" });
+  const comparisonNote = el("p", { class: "tm-hint tm-comparison-note", role: "status", "aria-live": "polite" });
+  const retryComparisonBtn = el("button", { class: "tm-btn", hidden: true, onclick: () => updateComparison(true) }, ["Retry comparison"]);
   const stageEmpty = el("div", { class: "tm-stage-empty" }, ["Load a reference and an attempt to see their pitch contours overlaid here."]);
 
   const stagePanel = el("section", { class: "tm-panel" }, [
@@ -177,6 +190,8 @@ export function mountApp(root: HTMLElement): void {
       el("div", {}, [scoreEl, el("div", { class: "tm-score-label" }, ["similarity score"])]),
       feedbackList,
     ]),
+    comparisonNote,
+    retryComparisonBtn,
   ]);
 
   // ---------------------------------------------------------------- analysis view panel
@@ -346,16 +361,14 @@ export function mountApp(root: HTMLElement): void {
   renderAnalysis();
 
   window.addEventListener("pagehide", () => {
-    recordingRequest = null;
-    void micRecorder.cancel();
-    recordBtn.classList.remove("is-recording");
-    recordBtn.textContent = "● Record";
-    recordBtn.disabled = false;
+    cancelWork();
     players.reference?.pause();
     players.attempt?.pause();
     playbackRequest++;
     cancelAnimationFrame(rafHandle);
-    worker.terminate();
+    workers.reference.terminate();
+    workers.attempt.terminate();
+    comparisonWorker.terminate();
     renderAnalysis();
   });
 
@@ -376,13 +389,59 @@ export function mountApp(root: HTMLElement): void {
     renderAnalysis();
   }
 
-  function beginLoad(role: FocusRole): AudioRequest {
-    analyses[role]++;
-    return { role, version: ++versions[role], statusId: ++statusId };
+  function refreshBusy(): void {
+    cancelBtn.hidden = !loads.reference && !loads.attempt && !comparison;
+    retryAudioBtn.hidden = !!loads.reference || !!loads.attempt || (!drafts.reference && !drafts.attempt);
+    sourcePanel.setAttribute("aria-busy", String(!!loads.reference || !!loads.attempt));
+    stagePanel.setAttribute("aria-busy", String(!!comparison));
+  }
+
+  function cancelRecording(): void {
+    recordingRequest = null;
+    void micRecorder.cancel();
+    recordBtn.classList.remove("is-recording");
+    recordBtn.textContent = "● Record";
+    recordBtn.disabled = false;
+  }
+
+  function cancelWork(): void {
+    for (const role of ["reference", "attempt"] as const) {
+      versions[role]++;
+      loads[role]?.controller.abort();
+      loads[role] = null;
+      drafts[role] = null;
+    }
+    cancelRecording();
+    if (comparison) {
+      comparison.abort();
+      comparison = null;
+      comparisonPair = null;
+      comparisonNote.textContent = "Comparison cancelled. Loaded audio is kept.";
+      retryComparisonBtn.hidden = false;
+    }
+    statusId++;
+    statusLine.textContent = "Cancelled. Your last loaded clips are kept.";
+    refreshBusy();
+  }
+
+  function beginLoad(role: FocusRole, nextStatus = ++statusId): AudioRequest {
+    loads[role]?.controller.abort();
+    if (recordingRequest?.role === role) cancelRecording();
+    const request = { role, version: ++versions[role], statusId: nextStatus, controller: new AbortController() };
+    loads[role] = request;
+    drafts[role] = null;
+    loadErrors[role] = null;
+    refreshBusy();
+    return request;
+  }
+
+  function finishLoad(request: AudioRequest): void {
+    if (loads[request.role] === request) loads[request.role] = null;
+    refreshBusy();
   }
 
   function isCurrent(request: AudioRequest): boolean {
-    return versions[request.role] === request.version;
+    return versions[request.role] === request.version && !request.controller.signal.aborted;
   }
 
   function report(request: AudioRequest, message: string): void {
@@ -415,22 +474,13 @@ export function mountApp(root: HTMLElement): void {
       recordingRequest = null;
       recordBtn.textContent = "● Record";
       report(previous, "Microphone request cancelled.");
+      previous.controller.abort();
+      finishLoad(previous);
       await micRecorder.cancel();
       return;
     }
     if (micRecorder.isRecording()) {
-      recordBtn.classList.remove("is-recording");
-      recordBtn.textContent = "● Record";
-      recordBtn.disabled = true;
-      recordingRequest = null;
-      try {
-        const { pcm, sampleRate } = await micRecorder.stop();
-        if (previous) await loadClip(previous.role, pcm, sampleRate, `Recording (${new Date().toLocaleTimeString()})`, false, previous);
-      } catch (error) {
-        if (previous) report(previous, describeMicError(error));
-      } finally {
-        recordBtn.disabled = false;
-      }
+      if (previous) await finishRecording(previous);
       return;
     }
     const request = beginLoad(focus);
@@ -438,7 +488,7 @@ export function mountApp(root: HTMLElement): void {
     try {
       recordBtn.textContent = "Cancel microphone";
       report(request, "Requesting microphone…");
-      await micRecorder.start();
+      await micRecorder.start(() => { if (recordingRequest === request) void finishRecording(request, true); });
       if (recordingRequest !== request) return;
       recordBtn.classList.add("is-recording");
       recordBtn.textContent = "■ Stop";
@@ -449,6 +499,24 @@ export function mountApp(root: HTMLElement): void {
       recordBtn.classList.remove("is-recording");
       recordBtn.textContent = "● Record";
       report(request, describeMicError(err));
+      finishLoad(request);
+    }
+  }
+
+  async function finishRecording(request: AudioRequest, limited = false): Promise<void> {
+    recordingRequest = null;
+    recordBtn.classList.remove("is-recording");
+    recordBtn.textContent = "● Record";
+    recordBtn.disabled = true;
+    try {
+      const { pcm, sampleRate } = await micRecorder.stop();
+      const name = limited ? `Recording (stopped at ${MAX_AUDIO_SECONDS}s limit)` : `Recording (${new Date().toLocaleTimeString()})`;
+      await loadClip(request.role, pcm, sampleRate, name, false, request);
+    } catch (error) {
+      report(request, describeMicError(error));
+    } finally {
+      recordBtn.disabled = false;
+      finishLoad(request);
     }
   }
 
@@ -459,10 +527,12 @@ export function mountApp(root: HTMLElement): void {
     const request = beginLoad(focus);
     report(request, `Decoding ${file.name}…`);
     try {
-      const { pcm, sampleRate } = await loadAudioFile(file);
+      const { pcm, sampleRate } = await loadAudioFile(file, request.controller.signal);
       await loadClip(request.role, pcm, sampleRate, file.name, false, request);
     } catch (err) {
       report(request, `Could not decode ${file.name}: ${(err as Error).message}`);
+    } finally {
+      finishLoad(request);
     }
   }
 
@@ -473,79 +543,103 @@ export function mountApp(root: HTMLElement): void {
     await loadClip("reference", pcm, sampleRate, label, true);
   }
 
-  async function loadClip(role: FocusRole, pcm: Float32Array, sampleRate: number, label: string, synthetic: boolean, request = beginLoad(role)): Promise<void> {
-    if (!isCurrent(request)) return;
+  async function loadClip(role: FocusRole, pcm: Float32Array, sampleRate: number, label: string, synthetic: boolean, request = beginLoad(role)): Promise<boolean> {
+    if (!isCurrent(request)) return false;
     report(request, `Analyzing ${label}…`);
-    const state: ClipState = { pcm, sampleRate, contour: null, spectrogram: null, label, synthetic };
-    clips[role] = state;
-    players[role]?.stop();
-    players[role] = null;
-    if (focus === role) playbackRequest++;
-    loopRegions[role] = null;
-    if (role === "attempt") resetToneResult();
-    updateComparison();
-    renderAnalysis();
+    const state: ClipState = { pcm, sampleRate, contour: null, spectrogram: null, label, synthetic, algorithm };
     try {
+      validateAudio(pcm.length, sampleRate);
+      drafts[role] = state;
+      const result = await workers[role].analyze(pcm, sampleRate, state.algorithm, request.controller.signal);
+      if (!isCurrent(request)) return false;
       const player = new ClipPlayer(getPlaybackContext());
       player.load(pcm, sampleRate);
+      players[role]?.stop();
       players[role] = player;
-      if (await analyzeClip(request, state)) {
-        report(request, `${label}${synthetic ? " (synthetic)" : ""} — ${pcm.length > 0 ? (pcm.length / sampleRate).toFixed(2) : "0"}s`);
-      }
-    } catch (error) {
-      report(request, `Could not load ${label}: ${(error as Error).message}`);
-    }
-  }
-
-  async function analyzeClip(request: AudioRequest, clip: ClipState): Promise<boolean> {
-    const generation = ++analyses[request.role];
-    clip.contour = null;
-    clip.spectrogram = null;
-    updateComparison();
-    renderAnalysis();
-    const current = (): boolean => isCurrent(request) && clips[request.role] === clip && analyses[request.role] === generation;
-    try {
-      const result = await worker.analyze(clip.pcm, clip.sampleRate, algorithm);
-      if (!current()) return false;
-      clip.contour = result.contour;
-      clip.spectrogram = result.spectrogram;
+      state.contour = result.contour;
+      state.spectrogram = result.spectrogram;
+      clips[role] = state;
+      drafts[role] = null;
+      if (focus === role) playbackRequest++;
+      loopRegions[role] = null;
+      if (role === "attempt") resetToneResult();
       updateComparison();
       renderAnalysis();
+      report(request, `${label}${synthetic ? " (synthetic)" : ""} — ${(pcm.length / sampleRate).toFixed(2)}s`);
       return true;
     } catch (error) {
-      if (current()) report(request, (error as Error).message);
+      if (isCurrent(request)) loadErrors[role] = error instanceof Error ? error.message : String(error);
+      report(request, `Could not load ${label}: ${(error as Error).message}${clips[role] ? " Previous clip kept." : ""}`);
       return false;
+    } finally {
+      finishLoad(request);
     }
   }
 
-  async function reanalyzeAll(): Promise<void> {
+  async function reanalyzeAll(onlyFailed = false): Promise<void> {
     const nextStatus = ++statusId;
     resetToneResult();
     const jobs = (["reference", "attempt"] as FocusRole[]).map(async (role) => {
-      const clip = clips[role];
+      if (onlyFailed && !drafts[role]) return true;
+      if (loads[role] && !drafts[role]) return true; // A decode/capture will use the newly selected algorithm.
+      const clip = drafts[role] ?? clips[role];
       if (!clip) return true;
-      return analyzeClip({ role, version: versions[role], statusId: nextStatus }, clip);
+      const request = beginLoad(role, nextStatus);
+      return loadClip(role, clip.pcm, clip.sampleRate, clip.label, clip.synthetic, request);
     });
     const results = await Promise.all(jobs);
     if (statusId === nextStatus && results.every(Boolean)) {
       statusLine.textContent = `Pitch analysis updated (${algorithm === "yin" ? "YIN" : "MPM"}).`;
+    } else if (statusId === nextStatus) {
+      const errors = (["reference", "attempt"] as const).filter((role) => loadErrors[role]).map((role) => `${role}: ${loadErrors[role]}`).join("; ");
+      statusLine.textContent = `Audio update incomplete. Last loaded clips kept. ${errors}`;
     }
   }
 
-  function updateComparison(): void {
+  function updateComparison(force = false): void {
     const ref = clips.reference?.contour;
     const att = clips.attempt?.contour;
+    if (!force && ref && att && comparisonPair?.[0] === ref && comparisonPair[1] === att) return;
+    comparison?.abort();
+    comparison = null;
+    alignment = null;
+    retryComparisonBtn.hidden = true;
+    scoreEl.textContent = "—";
+    comparisonNote.textContent = "";
     if (ref && att) {
-      alignment = compareContours(ref, att);
-      scoreEl.textContent = String(alignment.score);
-      feedbackList.replaceChildren(...alignment.feedback.map((f) => el("li", {}, [f])));
+      comparisonPair = [ref, att];
+      const controller = new AbortController();
+      comparison = controller;
+      const current = (): boolean => comparison === controller && !controller.signal.aborted;
+      const labels = `Reference: ${clips.reference!.label} (${clips.reference!.algorithm.toUpperCase()}); attempt: ${clips.attempt!.label} (${clips.attempt!.algorithm.toUpperCase()}).`;
+      comparisonNote.textContent = `Matching loaded contours. ${labels}`;
+      feedbackList.replaceChildren(el("li", {}, ["Matching pitch shapes… You can cancel this work."]));
+      void comparisonWorker.compare(ref, att, controller.signal).then(({ alignment: result }) => {
+        if (!current()) return;
+        alignment = result;
+        scoreEl.textContent = result.score === null ? "Unavailable" : String(result.score);
+        feedbackList.replaceChildren(...result.feedback.map((f) => el("li", {}, [f])));
+        const a = result.sampling.reference;
+        const b = result.sampling.attempt;
+        const approximate = a.aligned < a.voiced || b.aligned < b.voiced;
+        comparisonNote.textContent = `${labels} Voiced frames: ${a.voiced}/${a.frames} reference, ${b.voiced}/${b.frames} attempt. ${approximate ? `Approximate alignment uses ${a.aligned} and ${b.aligned} samples. ` : ""}The score describes pitch shape after alignment; it is not a pronunciation grade.`;
+        stage.render({ reference: ref, attempt: att, warped: warpedOverlay(result) });
+      }).catch((error: unknown) => {
+        if (!current()) return;
+        comparisonPair = null;
+        comparisonNote.textContent = `Comparison failed: ${error instanceof Error ? error.message : String(error)}`;
+        feedbackList.replaceChildren(el("li", {}, ["Your loaded audio is kept. Retry comparison when ready."]));
+        retryComparisonBtn.hidden = false;
+      }).finally(() => {
+        if (current()) { comparison = null; refreshBusy(); }
+      });
     } else {
-      alignment = null;
-      scoreEl.textContent = "—";
+      comparisonPair = null;
       feedbackList.replaceChildren(el("li", {}, ["Load both a reference and an attempt to see a score."]));
     }
-    stage.render({ reference: ref ?? null, attempt: att ?? null, warped: alignment ? warpedOverlay(alignment) : null });
+    stage.render({ reference: ref ?? null, attempt: att ?? null, warped: null });
     stageEmpty.style.display = ref || att ? "none" : "grid";
+    refreshBusy();
   }
 
   function renderAnalysis(): void {

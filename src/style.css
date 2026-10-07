@@ -211,7 +211,7 @@ button {
   display: none !important;
 }
 
-.tm-clip-label {
+.tm-clip-label, .tm-comparison-note, .tm-status {
   overflow-wrap: anywhere;
 }
 

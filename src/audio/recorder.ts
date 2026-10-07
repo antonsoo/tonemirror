@@ -1,6 +1,7 @@
 /** Raw, on-device microphone capture. Each start owns its resources, including
  * permission requests that finish after the user has cancelled. */
 import workletUrl from "./recorderWorklet.ts?worker&url";
+import { MAX_AUDIO_SECONDS, validateAudio } from "./limits.js";
 
 export interface RecordedAudio {
   pcm: Float32Array;
@@ -15,16 +16,19 @@ interface RecordingSession {
   node: AudioWorkletNode | null;
   chunks: Float32Array[];
   recording: boolean;
+  samples: number;
+  sampleRate: number;
+  onLimit: (() => void) | undefined;
 }
 
 export class MicRecorder {
   private session: RecordingSession | null = null;
 
-  start(): Promise<void> {
+  start(onLimit?: () => void): Promise<void> {
     if (this.session) return this.session.ready;
     const session: RecordingSession = {
       ready: Promise.resolve(), context: null, stream: null, source: null,
-      node: null, chunks: [], recording: false,
+      node: null, chunks: [], recording: false, samples: 0, sampleRate: 48000, onLimit,
     };
     this.session = session;
     session.ready = this.initialize(session);
@@ -42,7 +46,9 @@ export class MicRecorder {
       });
       this.assertCurrent(session);
       const context = new AudioContext();
+      session.sampleRate = context.sampleRate;
       session.context = context;
+      validateAudio(1, context.sampleRate);
       await context.audioWorklet.addModule(workletUrl);
       this.assertCurrent(session);
       await context.resume();
@@ -51,7 +57,16 @@ export class MicRecorder {
       const node = new AudioWorkletNode(context, "recorder-processor", { numberOfInputs: 1, numberOfOutputs: 0 });
       session.node = node;
       node.port.onmessage = (event: MessageEvent<Float32Array>) => {
-        if (this.session === session && session.recording) session.chunks.push(event.data);
+        if (this.session !== session || !session.recording) return;
+        const remaining = Math.floor(session.sampleRate * MAX_AUDIO_SECONDS) - session.samples;
+        const chunk = event.data.length <= remaining ? event.data : event.data.slice(0, remaining);
+        session.chunks.push(chunk);
+        session.samples += chunk.length;
+        if (session.samples >= session.sampleRate * MAX_AUDIO_SECONDS) {
+          // release stops the tracks synchronously; stop() can still retrieve the bounded capture.
+          void this.release(session);
+          session.onLimit?.();
+        }
       };
       session.source.connect(node);
       session.recording = true;
@@ -94,8 +109,8 @@ export class MicRecorder {
   async stop(): Promise<RecordedAudio> {
     const session = this.session;
     this.session = null;
-    const sampleRate = session?.context?.sampleRate ?? 48000;
-    const chunks = session?.recording ? session.chunks : [];
+    const sampleRate = session?.sampleRate ?? 48000;
+    const chunks = session?.chunks ?? [];
     if (session) {
       session.chunks = [];
       await this.release(session);

@@ -3,6 +3,31 @@ import { compareContours, dtwAlign, warpedOverlay } from "../src/core/dtw.js";
 import type { PitchContour } from "../src/core/types.js";
 
 describe("dtwAlign", () => {
+  it("matches an exhaustive path oracle for small sequences", () => {
+    const sequences: number[][] = [];
+    function generate(prefix: number[], left: number): void {
+      if (prefix.length) sequences.push(prefix);
+      if (left) for (const value of [-1, 0, 1]) generate([...prefix, value], left - 1);
+    }
+    generate([], 3);
+    for (const a of sequences) for (const b of sequences) {
+      const costs: number[] = [];
+      function walk(i: number, j: number, cost: number): void {
+        const next = cost + Math.abs(a[i]! - b[j]!);
+        if (i === a.length - 1 && j === b.length - 1) { costs.push(next); return; }
+        if (i + 1 < a.length) walk(i + 1, j, next);
+        if (j + 1 < b.length) walk(i, j + 1, next);
+        if (i + 1 < a.length && j + 1 < b.length) walk(i + 1, j + 1, next);
+      }
+      walk(0, 0, 0);
+      expect(dtwAlign(a, b).totalCost).toBe(Math.min(...costs));
+    }
+  });
+
+  it("rejects nonfinite samples and costs", () => {
+    expect(() => dtwAlign([NaN], [0])).toThrow("finite");
+    expect(() => dtwAlign([1e308], [-1e308])).toThrow("numeric range");
+  });
   it("costs zero for identical sequences (diagonal path only)", () => {
     const { path, totalCost } = dtwAlign([1, 2, 3, 4], [1, 2, 3, 4]);
     expect(totalCost).toBe(0);
@@ -55,6 +80,30 @@ function contourFromSemitones(semitones: number[], hop = 0.01, startTime = 0): P
 }
 
 describe("compareContours", () => {
+  it("does not grade a single pitch observation as a perfect match", () => {
+    const contour = contourFromSemitones([0]);
+    const result = compareContours(contour, contour);
+    expect(result.score).toBeNull();
+    expect(result.path).toEqual([]);
+    expect(result.sampling.reference).toEqual({ frames: 1, voiced: 1, aligned: 1 });
+  });
+
+  it("does not confuse a uniformly slower phrase with a shallower pitch movement", () => {
+    const shape = Array.from({ length: 30 }, (_, i) => i / 29 * 6);
+    const result = compareContours(contourFromSemitones(shape), contourFromSemitones(shape, 0.03));
+    expect(result.score).toBe(100);
+    expect(result.feedback).toEqual(["Pitch shape closely follows the reference after time alignment."]);
+  });
+
+  it("rejects contradictory time coordinates and ignores nonfinite observations", () => {
+    const contour = contourFromSemitones([0, 1, 2]);
+    contour.points[1]!.time = 0;
+    expect(() => compareContours(contour, contour)).toThrow("strictly increasing");
+    contour.points[1]!.time = NaN;
+    const result = compareContours(contour, contour);
+    expect(result.score).toBe(100);
+    expect(result.sampling.reference.voiced).toBe(2);
+  });
   it("scores an identical contour as a near-perfect match", () => {
     const contour = contourFromSemitones([0, 1, 2, 3, 4, 5, 4, 3, 2, 1, 0]);
     const result = compareContours(contour, contour);
@@ -67,6 +116,7 @@ describe("compareContours", () => {
     const falling = contourFromSemitones([6, 5, 4, 3, 2, 1, 0]);
     const closeScore = compareContours(rising, closeMatch).score;
     const farScore = compareContours(rising, falling).score;
+    if (closeScore === null || farScore === null) throw new Error("Expected measured comparisons");
     expect(closeScore).toBeGreaterThan(farScore);
     expect(farScore).toBeLessThan(closeScore - 20);
   });
@@ -120,7 +170,9 @@ describe("compareContours", () => {
       sampleRate: 22050,
     };
     const result = compareContours(contourFromSemitones([0, 1, 2]), empty);
-    expect(result.score).toBe(0);
+    expect(result.score).toBeNull();
+    expect(result.totalCost).toBeNull();
+    expect(result.meanCostPerStep).toBeNull();
     expect(result.feedback[0]).toMatch(/not enough voiced signal/i);
   });
 });

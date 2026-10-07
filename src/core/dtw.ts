@@ -16,11 +16,15 @@ export interface AlignmentResult {
   /** Warping path from (0,0) to (n-1,m-1), monotonic in both indices. */
   path: DtwStep[];
   /** Total accumulated |semitone difference| cost along the path. */
-  totalCost: number;
+  totalCost: number | null;
   /** totalCost / path length - the scale-free distance used for scoring. */
-  meanCostPerStep: number;
+  meanCostPerStep: number | null;
   /** 0-100 similarity score derived from meanCostPerStep. */
-  score: number;
+  score: number | null;
+  sampling: {
+    reference: { frames: number; voiced: number; aligned: number };
+    attempt: { frames: number; voiced: number; aligned: number };
+  };
   reference: DtwSample[];
   attempt: DtwSample[];
   feedback: string[];
@@ -32,7 +36,10 @@ export function toDtwSamples(contour: PitchContour): DtwSample[] {
   for (const p of contour.points) {
     // A semitone that is not a number has no distance to anything: one of them would turn the
     // whole alignment's cost, and the score, into NaN.
-    if (p.voiced && p.semitone !== null && Number.isFinite(p.semitone)) out.push({ time: p.time, semitone: p.semitone });
+    if (p.voiced && p.semitone !== null && Number.isFinite(p.semitone) && Number.isFinite(p.time) && p.time >= 0) {
+      if (out.length && p.time <= out[out.length - 1]!.time) throw new Error("Voiced contour times must be strictly increasing.");
+      out.push({ time: p.time, semitone: p.semitone });
+    }
   }
   return out;
 }
@@ -51,9 +58,9 @@ export const MAX_ALIGNED_SAMPLES = 6000;
 
 function thinned(samples: DtwSample[]): DtwSample[] {
   if (samples.length <= MAX_ALIGNED_SAMPLES) return samples;
-  const stride = Math.ceil(samples.length / MAX_ALIGNED_SAMPLES);
   const out: DtwSample[] = [];
-  for (let i = 0; i < samples.length; i += stride) out.push(samples[i]!);
+  // Keep both endpoints: the final pitch movement must not vanish at the limit.
+  for (let i = 0; i < MAX_ALIGNED_SAMPLES; i++) out.push(samples[Math.floor(i * (samples.length - 1) / (MAX_ALIGNED_SAMPLES - 1))]!);
   return out;
 }
 
@@ -71,6 +78,7 @@ export function dtwAlign(a: number[], b: number[]): { path: DtwStep[]; totalCost
   const n = a.length;
   const m = b.length;
   if (n === 0 || m === 0) return { path: [], totalCost: 0 };
+  if (!a.every(Number.isFinite) || !b.every(Number.isFinite)) throw new Error("DTW samples must be finite numbers.");
 
   // above[j] = min cumulative cost to align a[0..i-1) with b[0..j); row[j] the same for a[0..i).
   // Filling a row needs only the row above it, so two rows are kept rather than the whole
@@ -123,14 +131,15 @@ export function dtwAlign(a: number[], b: number[]): { path: DtwStep[]; totalCost
   }
   path.reverse();
 
+  if (!Number.isFinite(above[m]!)) throw new Error("DTW cost is outside the representable numeric range.");
   return { path, totalCost: above[m]! };
 }
 
 /** Maps mean per-step semitone cost to a 0-100 score. A perfect match (cost 0)
  * scores 100; the exponential decay means small divergences (under ~1
  * semitone average) still score highly, while a 4+ semitone average miss
- * (roughly "wrong tone entirely") drops below 25. `scale` is the "half-life"
- * in semitones, chosen empirically against the synthetic tone fixtures. */
+ * drops below 25. `scale` is the e-folding distance in semitones (2.8 maps
+ * to about 37), chosen against synthetic tone fixtures, not human judgments. */
 function costToScore(meanCostPerStep: number, scale = 2.8): number {
   return Math.round(100 * Math.exp(-meanCostPerStep / scale));
 }
@@ -151,7 +160,8 @@ function slope(samples: DtwSample[], fromIdx: number, toIdx: number): number {
   if (toIdx <= fromIdx) return 0;
   const dt = samples[toIdx]!.time - samples[fromIdx]!.time;
   if (dt <= 0) return 0;
-  return (samples[toIdx]!.semitone - samples[fromIdx]!.semitone) / dt;
+  const span = samples[samples.length - 1]!.time - samples[0]!.time;
+  return (samples[toIdx]!.semitone - samples[fromIdx]!.semitone) / (dt / span);
 }
 
 /** Below this pitch range (semitones) a contour has no peak worth timing. */
@@ -199,7 +209,7 @@ function buildFeedback(reference: DtwSample[], attempt: DtwSample[], path: DtwSt
     const refSlope = slope(reference, refStart, refEnd);
     const attSlope = slope(attempt, attStart, attEnd);
 
-    const flatThreshold = 1.5; // semitones/sec - below this we call it "flat"
+    const flatThreshold = 1.5; // semitones per voiced-span fraction; overall pace is not pitch shape
     const refDirection = refSlope > flatThreshold ? "rising" : refSlope < -flatThreshold ? "falling" : "flat";
     const attDirection = attSlope > flatThreshold ? "rising" : attSlope < -flatThreshold ? "falling" : "flat";
 
@@ -228,7 +238,7 @@ function buildFeedback(reference: DtwSample[], attempt: DtwSample[], path: DtwSt
   }
 
   if (feedback.length === 0) {
-    feedback.push("Shape and timing closely track the reference - nice work.");
+    feedback.push("Pitch shape closely follows the reference after time alignment.");
   }
   return feedback;
 }
@@ -277,15 +287,22 @@ export function warpedOverlay(result: AlignmentResult): WarpedPoint[] {
  * than MAX_ALIGNED_SAMPLES.
  */
 export function compareContours(reference: PitchContour, attempt: PitchContour): AlignmentResult {
-  const refSamples = thinned(toDtwSamples(reference));
-  const attSamples = thinned(toDtwSamples(attempt));
+  const refVoiced = toDtwSamples(reference);
+  const attVoiced = toDtwSamples(attempt);
+  const refSamples = thinned(refVoiced);
+  const attSamples = thinned(attVoiced);
+  const sampling = {
+    reference: { frames: reference.points.length, voiced: refVoiced.length, aligned: refSamples.length },
+    attempt: { frames: attempt.points.length, voiced: attVoiced.length, aligned: attSamples.length },
+  };
 
-  if (refSamples.length === 0 || attSamples.length === 0) {
+  if (refSamples.length < 2 || attSamples.length < 2) {
     return {
       path: [],
-      totalCost: 0,
-      meanCostPerStep: Infinity,
-      score: 0,
+      totalCost: null,
+      meanCostPerStep: null,
+      score: null,
+      sampling,
       reference: refSamples,
       attempt: attSamples,
       feedback: ["Not enough voiced signal to compare - try a longer or louder recording."],
@@ -300,5 +317,5 @@ export function compareContours(reference: PitchContour, attempt: PitchContour):
   const score = costToScore(meanCostPerStep);
   const feedback = buildFeedback(refSamples, attSamples, path);
 
-  return { path, totalCost, meanCostPerStep, score, reference: refSamples, attempt: attSamples, feedback };
+  return { path, totalCost, meanCostPerStep, score, sampling, reference: refSamples, attempt: attSamples, feedback };
 }

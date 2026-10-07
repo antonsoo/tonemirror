@@ -152,14 +152,16 @@ describe("compareContours on long recordings", () => {
     const exact = dtwAlign(reference, attempt);
     const exactScore = Math.round(100 * Math.exp(-exact.totalCost / exact.path.length / 2.8));
     expect(exactScore).toBeGreaterThan(60);
-    expect(Math.abs(result.score - exactScore)).toBeLessThanOrEqual(4);
+    expect(result.score).not.toBeNull();
+    expect(Math.abs(result.score! - exactScore)).toBeLessThanOrEqual(4);
+    expect(result.reference.at(-1)).toEqual({ time: (reference.length - 1) * 0.01, semitone: reference.at(-1) });
   });
 
   it("scores a long recording against itself as a match", () => {
     const contour = contourFromSemitones(speechLikeSemitones(20_000, 21));
     const result = compareContours(contour, contour);
     expect(result.score).toBe(100);
-    expect(result.feedback).toEqual(["Shape and timing closely track the reference - nice work."]);
+    expect(result.feedback).toEqual(["Pitch shape closely follows the reference after time alignment."]);
   });
 });
 
@@ -209,8 +211,8 @@ describe("samples that are not numbers", () => {
           expect(point.voiced).toBe(point.f0 !== null);
         }
         const result = compareContours(trackPitch(clean(), { sampleRate, algorithm }), contour);
-        expect(Number.isFinite(result.score)).toBe(true);
-        expect(Number.isFinite(result.totalCost)).toBe(true);
+        expect(result.score === null || Number.isFinite(result.score)).toBe(true);
+        expect(result.totalCost === null || Number.isFinite(result.totalCost)).toBe(true);
       });
     }
 

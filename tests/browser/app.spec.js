@@ -1,6 +1,7 @@
 import { test, expect } from "@playwright/test";
 import { fileURLToPath, URL } from "node:url";
 import { Buffer } from "node:buffer";
+import { writeFile, truncate } from "node:fs/promises";
 import AxeBuilder from "@axe-core/playwright";
 
 const fixture = fileURLToPath(new URL("../../examples/mandarin-tone2-attempt-late-rise.wav", import.meta.url));
@@ -20,8 +21,13 @@ async function loadAttempt(page) {
 
 test.beforeEach(async ({ page }) => {
   const errors = [];
+  const externalRequests = [];
   page.on("pageerror", (error) => errors.push(error.message));
+  page.on("request", (request) => {
+    if (/^https?:/.test(request.url()) && new URL(request.url()).origin !== "http://127.0.0.1:4192") externalRequests.push(request.url());
+  });
   await page.exposeFunction("getPageErrors", () => errors);
+  await page.exposeFunction("getExternalRequests", () => externalRequests);
   await page.addInitScript(() => {
     window.policyViolations = [];
     document.addEventListener("securitypolicyviolation", (event) => window.policyViolations.push(event.violatedDirective));
@@ -32,6 +38,7 @@ test.afterEach(async ({ page }, testInfo) => {
   if (testInfo.status === "skipped") return;
   expect(await page.evaluate(() => window.getPageErrors())).toEqual([]);
   expect(await page.evaluate(() => window.policyViolations)).toEqual([]);
+  expect(await page.evaluate(() => window.getExternalRequests())).toEqual([]);
 });
 
 test("cancel saves nothing; confirmed names persist across reload and can be deleted", async ({ page }) => {
@@ -254,7 +261,7 @@ test("new analysis clears stale tone classification and comparison", async ({ pa
   await expect(label(page)).toContainText("mandarin-tone2-attempt-late-rise.wav");
 });
 
-for (const viewport of [{ width: 1280, height: 900 }, { width: 375, height: 812 }]) {
+for (const viewport of [{ width: 1280, height: 900 }, { width: 320, height: 812 }]) {
   for (const theme of ["light", "dark"]) {
     test(`comparison remains accessible at ${viewport.width}px in ${theme}`, async ({ page }, testInfo) => {
       await page.setViewportSize(viewport);
@@ -333,4 +340,264 @@ test.describe("real microphone lifecycle with a browser-provided test device", (
     await expect(page.getByRole("button", { name: "● Record", exact: true })).toBeVisible();
     await expect(label(page)).toHaveText("Your attempt: no audio loaded");
   });
+});
+
+function silentWav(seconds, sampleRate = 8000) {
+  const samples = Math.round(seconds * sampleRate);
+  const bytes = Buffer.alloc(44 + samples * 2);
+  bytes.write("RIFF", 0);
+  bytes.writeUInt32LE(bytes.length - 8, 4);
+  bytes.write("WAVEfmt ", 8);
+  bytes.writeUInt32LE(16, 16);
+  bytes.writeUInt16LE(1, 20);
+  bytes.writeUInt16LE(1, 22);
+  bytes.writeUInt32LE(sampleRate, 24);
+  bytes.writeUInt32LE(sampleRate * 2, 28);
+  bytes.writeUInt16LE(2, 32);
+  bytes.writeUInt16LE(16, 34);
+  bytes.write("data", 36);
+  bytes.writeUInt32LE(samples * 2, 40);
+  return bytes;
+}
+
+async function referenceAndAttempt(page) {
+  await loadAttempt(page);
+  await tab(page, "Reference").click();
+  await input(page).setInputFiles(referenceFixture);
+  await expect(page.locator(".tm-score")).toHaveText(/^\d+$/);
+}
+
+test("silence has an unavailable score and visible voicing evidence", async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 900 });
+  await page.goto("./");
+  await input(page).setInputFiles({ name: "silence.wav", mimeType: "audio/wav", buffer: silentWav(0.5) });
+  await expect(status(page)).toContainText("silence.wav —");
+  await tab(page, "Reference").click();
+  await input(page).setInputFiles(referenceFixture);
+  await expect(page.locator(".tm-score")).toHaveText("Unavailable");
+  await expect(page.locator(".tm-feedback-list")).toContainText("Not enough voiced signal");
+  await expect(page.locator(".tm-comparison-note")).toContainText(/0\/\d+ attempt/);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+  expect((await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21aa", "best-practice"]).analyze()).violations).toEqual([]);
+});
+
+test("long decoded audio is refused without replacing the loaded clip", async ({ page }) => {
+  await page.addInitScript(() => {
+    window.decodeCalls = 0;
+    const decode = AudioContext.prototype.decodeAudioData;
+    AudioContext.prototype.decodeAudioData = function (...args) { window.decodeCalls++; return decode.apply(this, args); };
+  });
+  await page.goto("./");
+  await loadAttempt(page);
+  await input(page).setInputFiles({ name: "too-long.wav", mimeType: "audio/wav", buffer: silentWav(61) });
+  await expect(status(page)).toContainText("60 seconds or less");
+  await expect(label(page)).toContainText("mandarin-tone2-attempt-late-rise.wav");
+  expect(await page.evaluate(() => window.decodeCalls)).toBe(1);
+  await expect(play(page)).toBeEnabled();
+  await expect(page.getByRole("button", { name: "Cancel work" })).toBeHidden();
+  await input(page).setInputFiles(referenceFixture);
+  await expect(status(page)).toContainText("mandarin-tone2-reference.wav —");
+});
+
+test("encoded size limits apply before decoding and retain the current source", async ({ page }, testInfo) => {
+  const oversized = testInfo.outputPath("oversized.wav");
+  await writeFile(oversized, "");
+  await truncate(oversized, 25 * 1024 * 1024 + 1);
+  await page.goto("./");
+  await loadAttempt(page);
+  await input(page).setInputFiles(oversized);
+  await expect(status(page)).toContainText("25 MiB or smaller");
+  await expect(label(page)).toContainText("mandarin-tone2-attempt-late-rise.wav");
+  await expect(page.getByRole("button", { name: "Cancel work" })).toBeHidden();
+});
+
+test("cancelling a decoder returns immediately and ignores its late result", async ({ page }) => {
+  await delayFirstDecode(page);
+  await page.goto("./");
+  await input(page).setInputFiles(fixture);
+  await expect.poll(() => page.evaluate(() => typeof window.releaseDecode)).toBe("function");
+  await page.getByRole("button", { name: "Cancel work" }).click();
+  await expect(status(page)).toContainText("Cancelled");
+  await expect(label(page)).toHaveText("Your attempt: no audio loaded");
+  await input(page).setInputFiles(referenceFixture);
+  await expect(status(page)).toContainText("mandarin-tone2-reference.wav —");
+  await page.evaluate(() => window.releaseDecode());
+  await expect(label(page)).toContainText("mandarin-tone2-reference.wav");
+});
+
+test("a stuck reference worker cannot block the attempt slot", async ({ page }) => {
+  let first = true;
+  await page.route("**/pitchWorker-*.js", async (route) => {
+    if (!first) return route.continue();
+    first = false;
+    await route.fulfill({ contentType: "text/javascript", body: "self.onmessage = () => {};" });
+  });
+  await page.goto("./");
+  await tab(page, "Reference").click();
+  await input(page).setInputFiles(referenceFixture);
+  await expect(status(page)).toContainText("Analyzing");
+  await tab(page, "Your attempt").click();
+  await loadAttempt(page);
+  await expect(play(page)).toBeEnabled();
+  await page.getByRole("button", { name: "Cancel work" }).click();
+  await expect(label(page)).toContainText("mandarin-tone2-attempt-late-rise.wav");
+  await tab(page, "Reference").click();
+  await input(page).setInputFiles(referenceFixture);
+  await expect(page.locator(".tm-score")).toHaveText(/^\d+$/);
+});
+
+test("a failed analysis preserves the previous clip, score and playback", async ({ page }) => {
+  await page.addInitScript(() => {
+    const NativeWorker = Worker;
+    window.Worker = class extends NativeWorker {
+      postMessage(message, ...rest) {
+        if (window.failNextAnalysis && message.type === "analyze") {
+          window.failNextAnalysis = false;
+          throw new Error("injected replacement failure");
+        }
+        return super.postMessage(message, ...rest);
+      }
+    };
+  });
+  await page.goto("./");
+  await referenceAndAttempt(page);
+  const before = await page.locator(".tm-score").innerText();
+  await tab(page, "Your attempt").click();
+  await page.evaluate(() => { window.failNextAnalysis = true; });
+  await input(page).setInputFiles(referenceFixture);
+  await expect(status(page)).toContainText("Previous clip kept");
+  await expect(label(page)).toContainText("mandarin-tone2-attempt-late-rise.wav");
+  await expect(page.locator(".tm-score")).toHaveText(before);
+  await expect(play(page)).toBeEnabled();
+  await page.getByRole("button", { name: "Retry audio analysis" }).click();
+  await expect(status(page)).toHaveText("Pitch analysis updated (YIN).");
+  await expect(label(page)).toContainText("mandarin-tone2-reference.wav");
+  await expect(page.locator(".tm-score")).toHaveText("100");
+});
+
+test("contour matching can be cancelled and retried while page controls remain usable", async ({ page }) => {
+  await page.addInitScript(() => {
+    const NativeWorker = Worker;
+    window.holdComparison = true;
+    window.comparisonTerminations = 0;
+    window.Worker = class extends NativeWorker {
+      postMessage(message, ...rest) {
+        this.matchesContours = message.type === "compare";
+        if (this.matchesContours && window.holdComparison) { window.comparisonWaiting = true; return; }
+        return super.postMessage(message, ...rest);
+      }
+      terminate() {
+        if (this.matchesContours) window.comparisonTerminations++;
+        return super.terminate();
+      }
+    };
+  });
+  await page.goto("./");
+  await loadAttempt(page);
+  await tab(page, "Reference").click();
+  await input(page).setInputFiles(referenceFixture);
+  await expect.poll(() => page.evaluate(() => window.comparisonWaiting)).toBe(true);
+  await expect(page.locator(".tm-score")).toHaveText("—");
+  await page.getByRole("button", { name: "Toggle light/dark theme" }).click();
+  await page.getByRole("button", { name: "Cancel work" }).click();
+  await expect(page.locator(".tm-comparison-note")).toContainText("Comparison cancelled");
+  expect(await page.evaluate(() => window.comparisonTerminations)).toBe(1);
+  await page.evaluate(() => { window.holdComparison = false; });
+  await page.getByRole("button", { name: "Retry comparison" }).click();
+  await expect(page.locator(".tm-score")).toHaveText(/^\d+$/);
+  await expect(page.locator(".tm-comparison-note")).toContainText("not a pronunciation grade");
+});
+
+test("a worker timeout is recoverable and keeps the previous audio", async ({ page }) => {
+  await page.addInitScript(() => {
+    const NativeWorker = Worker;
+    window.Worker = class extends NativeWorker {
+      postMessage(message, ...rest) {
+        if (window.holdAnalysis && message.type === "analyze") { window.analysisWaiting = true; return; }
+        return super.postMessage(message, ...rest);
+      }
+    };
+  });
+  await page.goto("./");
+  await loadAttempt(page);
+  await page.clock.install();
+  await page.evaluate(() => { window.holdAnalysis = true; });
+  await input(page).setInputFiles(referenceFixture);
+  await expect.poll(() => page.evaluate(() => window.analysisWaiting)).toBe(true);
+  await page.clock.runFor(60_001);
+  await expect(status(page)).toContainText("exceeded 60 seconds");
+  await expect(label(page)).toContainText("mandarin-tone2-attempt-late-rise.wav");
+  await page.evaluate(() => { window.holdAnalysis = false; });
+  await page.getByRole("button", { name: "Retry audio analysis" }).click();
+  await expect(status(page)).toHaveText("Pitch analysis updated (YIN).");
+  await expect(label(page)).toContainText("mandarin-tone2-reference.wav");
+});
+
+test("capture stops at its sample limit and names the boundary in the loaded clip", async ({ page, browserName }) => {
+  test.skip(browserName !== "chromium", "Chromium supplies the deterministic test microphone.");
+  await page.addInitScript(() => {
+    window.limitStreams = [];
+    const NativeNode = window.AudioWorkletNode;
+    window.AudioWorkletNode = class extends NativeNode {
+      constructor(context, ...args) {
+        super(context, ...args);
+        const port = this.port;
+        const descriptor = Object.getOwnPropertyDescriptor(Object.getPrototypeOf(port), "onmessage");
+        let delivered = false;
+        Object.defineProperty(port, "onmessage", {
+          set(listener) {
+            descriptor.set.call(port, listener && ((event) => {
+              if (!delivered) {
+                delivered = true;
+                listener(new MessageEvent("message", { data: new Float32Array(context.sampleRate * 60 + 128) }));
+              } else listener(event);
+            }));
+          },
+        });
+      }
+    };
+    const NativeWorker = Worker;
+    window.Worker = class extends NativeWorker {
+      set onmessage(listener) {
+        super.onmessage = (event) => {
+          if (event.data.type === "analyzed") window.limitSpectrogram = {
+            frames: event.data.spectrogram.frames.length,
+            lastTime: event.data.spectrogram.times.at(-1),
+          };
+          listener.call(this, event);
+        };
+      }
+    };
+    const capture = navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);
+    navigator.mediaDevices.getUserMedia = async (...args) => {
+      const stream = await capture(...args);
+      window.limitStreams.push(stream);
+      return stream;
+    };
+  });
+  // Accelerate the real worklet's first delivery to 60 seconds of synthetic silence.
+  // This checks sample-budget cleanup, not physical microphone accuracy.
+  await page.goto("./");
+  await page.getByRole("button", { name: "● Record", exact: true }).click();
+  await expect(status(page)).toContainText("stopped at 60s limit", { timeout: 15_000 });
+  await expect(label(page)).toContainText("60.00s");
+  await expect(page.getByRole("button", { name: "● Record", exact: true })).toBeEnabled();
+  expect(await page.evaluate(() => window.limitStreams.every((stream) => stream.getTracks().every((track) => track.readyState === "ended")))).toBe(true);
+  const spectrogram = await page.evaluate(() => window.limitSpectrogram);
+  expect(spectrogram.frames).toBeLessThanOrEqual(4096);
+  expect(spectrogram.frames).toBeGreaterThan(4000);
+  expect(spectrogram.lastTime).toBeGreaterThan(59.95);
+});
+
+test("loaded workers can compare new local audio offline without persisting it", async ({ page, context }) => {
+  await page.goto("./");
+  await referenceAndAttempt(page);
+  await context.setOffline(true);
+  await tab(page, "Your attempt").click();
+  await input(page).setInputFiles(referenceFixture);
+  await expect(status(page)).toContainText("mandarin-tone2-reference.wav —");
+  await expect(page.locator(".tm-score")).toHaveText("100");
+  expect(await page.locator(".tm-library-item").count()).toBe(0);
+  expect(await page.evaluate(() => JSON.stringify({ local: { ...window.localStorage }, session: { ...window.sessionStorage } }))).not.toContain("mandarin");
+  await context.setOffline(false);
 });
