@@ -4,6 +4,8 @@ All notable changes to this project are documented in this file.
 
 ## Unreleased
 
+- Updated the development source-map tooling to source-map-js 1.2.2; the
+  locked dependency audit reports no vulnerabilities.
 - File reads, microphone capture and worker jobs now have explicit limits.
   PCM WAV duration is checked before native decoding; all decoded formats
   are checked before downmixing. Recordings stop at 60 seconds and say so.
