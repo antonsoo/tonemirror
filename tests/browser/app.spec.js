@@ -381,6 +381,34 @@ test("silence has an unavailable score and visible voicing evidence", async ({ p
   expect((await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21aa", "best-practice"]).analyze()).violations).toEqual([]);
 });
 
+test("a level target and rising audio do not receive reassuring feedback", async ({ page }) => {
+  // Independent PCM fixtures: a one-second 180 Hz sine and a one-octave glide.
+  // Both go through the browser decoder, pitch detector and comparison worker.
+  function signalWav(rising) {
+    const rate = 22050;
+    const bytes = silentWav(1, rate);
+    let phase = 0;
+    for (let i = 0; i < rate; i++) {
+      const frequency = rising ? 180 * 2 ** ((-6 + 12 * i / (rate - 1)) / 12) : 180;
+      phase += 2 * Math.PI * frequency / rate;
+      const fade = Math.min(1, i / 220, (rate - i - 1) / 220);
+      bytes.writeInt16LE(Math.round(8000 * fade * Math.sin(phase)), 44 + i * 2);
+    }
+    return bytes;
+  }
+  await page.goto("./");
+  await input(page).setInputFiles({ name: "rising-sine.wav", mimeType: "audio/wav", buffer: signalWav(true) });
+  await expect(status(page)).toContainText("rising-sine.wav —");
+  await tab(page, "Reference").click();
+  await input(page).setInputFiles({ name: "level-sine.wav", mimeType: "audio/wav", buffer: signalWav(false) });
+  await expect(page.locator(".tm-score")).toHaveText(/^\d+$/);
+  // The detector's tiny fluctuations in the level signal can change the DTW
+  // path length; its heuristic score need not equal the ideal contour's 33.
+  expect(Number(await page.locator(".tm-score").innerText())).toBeLessThan(70);
+  await expect(page.locator(".tm-feedback-list")).toContainText("reference stays flat but your pitch is rising");
+  await expect(page.locator(".tm-feedback-list")).not.toContainText("closely follows");
+});
+
 test("long decoded audio is refused without replacing the loaded clip", async ({ page }) => {
   await page.addInitScript(() => {
     window.decodeCalls = 0;

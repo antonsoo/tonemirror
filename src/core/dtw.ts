@@ -47,12 +47,10 @@ export function toDtwSamples(contour: PitchContour): DtwSample[] {
 /**
  * The most voiced samples a contour is aligned with: a minute of continuous
  * speech at the default 10 ms hop. Alignment takes time and memory in
- * proportion to the two lengths multiplied, so two three-minute recordings
- * compared sample for sample hold the page for seconds. A longer contour is
- * thinned to every second (third, ...) sample first, which lowered the score
- * by up to four points on the synthetic contours it was measured on.
- * Phrases, the thing this is for, are far below the limit and are compared
- * exactly.
+ * proportion to the two lengths multiplied. Longer contours supplied to the
+ * core API are sampled evenly to this size, including both endpoints. This
+ * approximation has no general error bound. Browser clips fit below the
+ * limit and keep every usable voiced point.
  */
 export const MAX_ALIGNED_SAMPLES = 6000;
 
@@ -215,10 +213,14 @@ function buildFeedback(reference: DtwSample[], attempt: DtwSample[], path: DtwSt
 
     if (refDirection !== "flat" && attDirection === "flat") {
       feedback.push(`At ${seg.name} of the phrase, the reference is ${refDirection} but yours stays flat.`);
+    } else if (refDirection === "flat" && attDirection !== "flat") {
+      feedback.push(`At ${seg.name} of the phrase, the reference stays flat but your pitch is ${attDirection}.`);
     } else if (refDirection !== "flat" && attDirection !== "flat" && refDirection !== attDirection) {
       feedback.push(`At ${seg.name} of the phrase, your pitch moves the opposite way from the reference (${refDirection} expected, you went ${attDirection}).`);
     } else if (refDirection !== "flat" && attDirection === refDirection && Math.abs(attSlope) < 0.55 * Math.abs(refSlope)) {
       feedback.push(`At ${seg.name} of the phrase, the ${refDirection === "rising" ? "rise" : "fall"} is too shallow compared to the reference.`);
+    } else if (refDirection !== "flat" && attDirection === refDirection && Math.abs(refSlope) < 0.55 * Math.abs(attSlope)) {
+      feedback.push(`At ${seg.name} of the phrase, your ${refDirection === "rising" ? "rise" : "fall"} is steeper than the reference's.`);
     }
   }
 
@@ -238,7 +240,7 @@ function buildFeedback(reference: DtwSample[], attempt: DtwSample[], path: DtwSt
   }
 
   if (feedback.length === 0) {
-    feedback.push("Pitch shape closely follows the reference after time alignment.");
+    feedback.push("No direction, steepness or peak-timing difference flagged. Compare the overlaid contours for local differences.");
   }
   return feedback;
 }
@@ -283,8 +285,8 @@ export function warpedOverlay(result: AlignmentResult): WarpedPoint[] {
 /**
  * Aligns the attempt's voiced contour to the reference's and scores it. The
  * result's `reference` and `attempt` are the samples that were aligned (the
- * ones `path` indexes): every voiced sample, or every k-th of a contour longer
- * than MAX_ALIGNED_SAMPLES.
+ * ones `path` indexes): every voiced sample, or an evenly spaced selection of
+ * MAX_ALIGNED_SAMPLES that includes both endpoints.
  */
 export function compareContours(reference: PitchContour, attempt: PitchContour): AlignmentResult {
   const refVoiced = toDtwSamples(reference);

@@ -47,8 +47,8 @@ describe("dtwAlign", () => {
   });
 
   it("computes the exact cost for a simple two-point case by hand", () => {
-    // Only one possible path (diagonal) for two equal-length sequences of
-    // length 2: cost = |0-0| + |5-10| = 5.
+    // The diagonal is the cheapest of the three possible paths:
+    // cost = |0-0| + |5-10| = 5 (the alternatives cost 10 and 15).
     const { totalCost, path } = dtwAlign([0, 5], [0, 10]);
     expect(totalCost).toBe(5);
     expect(path).toHaveLength(2);
@@ -92,7 +92,7 @@ describe("compareContours", () => {
     const shape = Array.from({ length: 30 }, (_, i) => i / 29 * 6);
     const result = compareContours(contourFromSemitones(shape), contourFromSemitones(shape, 0.03));
     expect(result.score).toBe(100);
-    expect(result.feedback).toEqual(["Pitch shape closely follows the reference after time alignment."]);
+    expect(result.feedback).toEqual(["No direction, steepness or peak-timing difference flagged. Compare the overlaid contours for local differences."]);
   });
 
   it("rejects contradictory time coordinates and ignores nonfinite observations", () => {
@@ -127,7 +127,7 @@ describe("compareContours", () => {
     const reference = contourFromSemitones(shape);
     const attempt = contourFromSemitones(shape, 0.01, 0.6);
     const result = compareContours(reference, attempt);
-    expect(result.feedback.some((f) => f.includes("peak"))).toBe(false);
+    expect(result.feedback.some((f) => f.includes("Your pitch peak"))).toBe(false);
     // A genuinely late peak is still reported.
     const late = Array.from({ length: 50 }, (_, i) => (i <= 40 ? (i / 40) * 6 : 6 - ((i - 40) / 9) * 6));
     const lateResult = compareContours(reference, contourFromSemitones(late, 0.01, 0.6));
@@ -139,7 +139,7 @@ describe("compareContours", () => {
     const flat = contourFromSemitones(Array.from({ length: 30 }, (_, i) => (i % 3 === 0 ? 0.2 : 0)));
     const result = compareContours(rising, flat);
     expect(result.feedback.some((f) => f.includes("stays flat"))).toBe(true);
-    expect(result.feedback.some((f) => f.includes("peak"))).toBe(false);
+    expect(result.feedback.some((f) => f.includes("Your pitch peak"))).toBe(false);
   });
 
   it("flags a reversed direction in feedback", () => {
@@ -147,6 +147,31 @@ describe("compareContours", () => {
     const falling = contourFromSemitones(Array.from({ length: 30 }, (_, i) => 8 - (i / 29) * 8));
     const result = compareContours(rising, falling);
     expect(result.feedback.some((f) => f.toLowerCase().includes("opposite"))).toBe(true);
+  });
+
+  it.each([1, -1])("flags movement away from a level target in direction %s", (direction) => {
+    const flat = contourFromSemitones(Array(31).fill(0) as number[]);
+    const movement = contourFromSemitones(Array.from({ length: 31 }, (_, i) => direction * (-6 + 12 * i / 30)));
+    const result = compareContours(flat, movement);
+    expect(result.score).toBeLessThan(40);
+    expect(result.feedback.some((f) => f.includes(`reference stays flat but your pitch is ${direction > 0 ? "rising" : "falling"}`))).toBe(true);
+    expect(result.feedback.some((f) => f.includes("closely follows"))).toBe(false);
+  });
+
+  it.each([1, -1])("flags excessive pitch movement in direction %s", (direction) => {
+    const small = contourFromSemitones(Array.from({ length: 31 }, (_, i) => direction * (-1 + 2 * i / 30)));
+    const wide = contourFromSemitones(Array.from({ length: 31 }, (_, i) => direction * (-6 + 12 * i / 30)));
+    const result = compareContours(small, wide);
+    expect(result.score).toBeLessThan(70);
+    expect(result.feedback.some((f) => f.includes(`${direction > 0 ? "rise" : "fall"} is steeper`))).toBe(true);
+  });
+
+  it("does not call an unflagged local pitch spike a close match", () => {
+    const flat = contourFromSemitones(Array(10).fill(0) as number[]);
+    const spike = contourFromSemitones([0, 0, 0, 0, 10, 0, 0, 0, 0, 0]);
+    const result = compareContours(flat, spike);
+    expect(result.totalCost).toBe(10);
+    expect(result.feedback).toEqual(["No direction, steepness or peak-timing difference flagged. Compare the overlaid contours for local differences."]);
   });
 
   it("warpedOverlay maps the attempt onto the reference's timeline with matching values for identical contours", () => {

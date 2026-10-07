@@ -74,5 +74,9 @@ Similarity is `round(100 * exp(-meanCost / 2.8))` on relative semitone pitch
 shape after time alignment. It is not a pronunciation grade or a probability.
 Slope feedback uses each contour's own voiced time span; uniform speaking-rate
 changes alone do not imply a shallow rise/fall. The peak-timing heuristic
-remains relative to the voiced span. Neither mechanism evaluates words,
+remains relative to the voiced span. Direction and steepness checks work in
+both directions, including movement against a level target. An absence of
+feedback does not establish a close match: localized deviations can escape
+these rules while contributing to the score and remaining in the overlay.
+Neither mechanism evaluates words,
 phonemes, tone sandhi, or how natural the speech sounds.

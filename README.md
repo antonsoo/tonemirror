@@ -64,7 +64,7 @@ just click one of the built-in reference chips and record yourself.
   Mandarin tones and every accent template, generated in-browser and
   labeled synthetic everywhere they appear. Recording or loading real
   native-speaker audio is one click away and clearly encouraged in the UI.
-- **Local processing without uploads**, no telemetry, small bundle (~51 kB
+- **Local processing without uploads**, no telemetry, small bundle (~52 kB
   of JS across the main bundle + worker + worklet, uncompressed - see
   [Bundle size](#bundle-size)).
 
@@ -154,6 +154,9 @@ contours' pitch peaks land in time, each measured across its own voiced
 span (so a pause before speaking doesn't count) and skipped when either
 contour moves less than a semitone, since a flat contour has no peak to time.
 A uniformly slower rendition is not mislabeled as a shallower pitch movement.
+The rules also flag overly steep movement and movement against a level target.
+No matched rule means no specific feedback, not a close match: local deviations
+can still contribute to the score and appear in the overlay.
 
 The alignment keeps two rows of cumulative costs and one byte per cell for
 the backtrack, not the whole table of doubles, and gives the same path as
@@ -296,9 +299,9 @@ minutes long.
 ```
 dist/assets/recorderWorklet-*.js   0.22 kB
 dist/index.html                    2.33 kB (gzip 0.88 kB)
-dist/assets/pitchWorker-*.js      10.69 kB
+dist/assets/pitchWorker-*.js      11.00 kB
 dist/assets/index-*.css           22.80 kB (gzip 3.52 kB)
-dist/assets/index-*.js            40.66 kB (gzip 14.83 kB)
+dist/assets/index-*.js            40.65 kB (gzip 14.83 kB)
 ```
 
 No UI framework, no charting library - Canvas 2D and vanilla DOM.

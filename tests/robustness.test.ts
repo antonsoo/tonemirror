@@ -161,7 +161,7 @@ describe("compareContours on long recordings", () => {
     const contour = contourFromSemitones(speechLikeSemitones(20_000, 21));
     const result = compareContours(contour, contour);
     expect(result.score).toBe(100);
-    expect(result.feedback).toEqual(["Pitch shape closely follows the reference after time alignment."]);
+    expect(result.feedback).toEqual(["No direction, steepness or peak-timing difference flagged. Compare the overlaid contours for local differences."]);
   });
 });
 

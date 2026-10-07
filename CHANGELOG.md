@@ -18,7 +18,9 @@ All notable changes to this project are documented in this file.
 - Silence and single-frame contours now produce an unavailable score, rather
   than zero or a perfect match. Results show voicing and sampling counts.
   Long-contour sampling preserves the final point. Feedback distinguishes a
-  uniformly slower phrase from a shallower pitch shape.
+  uniformly slower phrase from a shallower pitch shape. It also flags movement
+  against a level target and overly steep movement; absence of a matched
+  feedback rule is no longer described as a close pitch match.
 - Added independent exhaustive DTW path checks and browser regressions for
   cancellation, limits, separate audio slots, retained results, timeouts and
   automatic capture cleanup. Phone checks now include 320px layouts.
