@@ -46,8 +46,8 @@ just click one of the built-in reference chips and record yourself.
   detection, octave-error correction, median smoothing, and semitone
   normalization relative to the speaker's own median pitch (see
   [Why semitones](#why-semitones-not-hz) below).
-- **Comparison:** dynamic time warping between the reference's and
-  attempt's voiced frames, a 0-100 similarity score, and honest, rule-based
+- **Comparison:** cancellable dynamic time warping between the reference's and
+  attempt's voiced frames, a 0-100 pitch-shape score (unavailable without enough voicing), and rule-based
   localized feedback (direction, steepness, and peak-timing checks per
   third of the phrase).
 - **Visualization:** a signature contour "staff" (reference vs. attempt,
@@ -64,12 +64,12 @@ just click one of the built-in reference chips and record yourself.
   Mandarin tones and every accent template, generated in-browser and
   labeled synthetic everywhere they appear. Recording or loading real
   native-speaker audio is one click away and clearly encouraged in the UI.
-- **Local processing without uploads**, no telemetry, small bundle (~44 kB
+- **Local processing without uploads**, no telemetry, small bundle (~51 kB
   of JS across the main bundle + worker + worklet, uncompressed - see
   [Bundle size](#bundle-size)).
 
 Light and dark themes follow the system preference (with a manual toggle),
-and the layout holds up down to a 375px-wide phone:
+and the current browser checks cover a 320px-wide phone:
 
 <img src="docs/assets/hero-dark.png" alt="The same contour comparison in dark mode" width="420" /> <img src="docs/assets/mobile.png" alt="tonemirror on a 375px-wide phone viewport, showing the same panels stacked vertically" width="160" />
 
@@ -83,6 +83,19 @@ Cancel saves nothing. If browser storage is unavailable, audio loading,
 recording, and comparison still work. Saving errors appear beside the library,
 and **Retry saved references** retries a failed library load. Saved recordings
 belong to this browser profile and can disappear if its site data is cleared.
+
+**Cancel work** stops pending imports, pitch extraction and contour matching.
+Reference and attempt analysis have separate workers, so a stuck job in one
+slot does not block the other. A failed or cancelled replacement keeps the
+last successfully loaded clip, its playback and its comparison. **Retry audio
+analysis** retries an extracted clip after worker failure; **Retry comparison**
+retries matching without asking for the audio again. The comparison names its
+two clips and the algorithm used for each.
+
+Browser clips are limited to **60 seconds**, files to **25 MiB**, and microphone
+capture stops at 60 seconds with that boundary in the clip name. Longer imports
+are rejected, not silently shortened. See [audio boundaries](docs/audio-boundaries.md)
+for decoded-audio limits and the native decoder's allocation/cancellation limits.
 
 ## How it works
 
@@ -127,25 +140,31 @@ accent.
 `src/core/dtw.ts` runs classic dynamic time warping (Sakoe-Chiba DP,
 symmetric step pattern, absolute-difference local cost) between the two
 contours' voiced semitone sequences. The mean cost per warping step maps
-to a 0-100 score via `100 * exp(-meanCost / 2.8)` (a 2.8-semitone average
-divergence roughly halves the score). The same alignment path also time-
+to a rounded 0-100 score via `100 * exp(-meanCost / 2.8)` (a 2.8-semitone average
+divergence gives about 37). This is a descriptive pitch-shape distance, not a
+pronunciation grade or a calibrated probability. Fewer than two usable voiced
+frames in either contour leave the score and costs unavailable (`null` in the
+core result), rather than assigning silence a score of zero. The same path time-
 warps the attempt onto the reference's timeline for the "after alignment"
 overlay, and drives rule-based feedback: for each third of the phrase, the
-reference's and attempt's local slopes are compared for direction
+reference's and attempt's local slopes, normalized to each contour's voiced time
+span, are compared for direction
 (rising/falling/flat) and steepness, plus a check on how far apart the two
 contours' pitch peaks land in time, each measured across its own voiced
 span (so a pause before speaking doesn't count) and skipped when either
 contour moves less than a semitone, since a flat contour has no peak to time.
+A uniformly slower rendition is not mislabeled as a shallower pitch movement.
 
 The alignment keeps two rows of cumulative costs and one byte per cell for
 the backtrack, not the whole table of doubles, and gives the same path as
 the full table (`tests/robustness.test.ts` checks it against one). Its time
 and memory still grow with the two lengths multiplied, so a contour with
-more than 6,000 voiced samples (a minute of continuous speech at the 10 ms
-hop) is thinned to every second, third, ... sample before it is aligned.
-That lowered the score by up to four points on the synthetic two- to
-five-minute contours it was measured on; anything shorter is aligned
-sample for sample.
+more than 6,000 voiced samples is sampled evenly down to 6,000, preserving both
+endpoints. The result exposes original frame, usable voiced-frame and aligned
+sample counts. Sampling is approximate and can change the score; it has no
+general error bound. The browser's 60-second clips at the default 10 ms pitch
+hop fit below this limit. Longer contours supplied to the core API use the
+documented sampling path. Matching runs in its own cancellable worker.
 
 ### Mandarin tone classifier
 
@@ -239,12 +258,12 @@ minutes long.
 
 ### Limitations and accuracy caveats
 
-- **It is built for phrases, not long recordings.** A long file loads and
-  plays, but waits on the analysis: in headless Chromium on the development
-  machine a 60 s clip took about 4 s to analyze and a 200 s clip about 13 s
-  (in the worker, so the page stays responsive), and past a minute of
-  voiced speech the comparison works on a thinned contour (see
-  [Comparison](#comparison-dtw)).
+- **It is built for phrases, not long recordings.** The browser accepts at
+  most 60 seconds per clip, and each worker job has a 60-second timeout.
+  Spectrograms use at most 4,096 time columns across the full clip; long clips
+  have coarser spectrogram timing. Pitch tracking retains its 10 ms hop.
+  Limits and cancellation keep the app recoverable; native compressed-audio
+  decoding still allocates before the decoded dimensions can be checked.
 - **Real rooms are not synthetic signals.** Background noise, reverb, and
   cross-talk all degrade pitch tracking; the noise-SNR rows above are a
   reasonable proxy but not a guarantee for any particular microphone or
@@ -277,9 +296,9 @@ minutes long.
 ```
 dist/assets/recorderWorklet-*.js   0.22 kB
 dist/index.html                    2.33 kB (gzip 0.88 kB)
-dist/assets/pitchWorker-*.js       6.26 kB
-dist/assets/index-*.css           22.77 kB (gzip 3.50 kB)
-dist/assets/index-*.js            37.30 kB (gzip 13.77 kB)
+dist/assets/pitchWorker-*.js      10.69 kB
+dist/assets/index-*.css           22.80 kB (gzip 3.52 kB)
+dist/assets/index-*.js            40.66 kB (gzip 14.83 kB)
 ```
 
 No UI framework, no charting library - Canvas 2D and vanilla DOM.

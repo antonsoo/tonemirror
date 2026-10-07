@@ -2,6 +2,25 @@
 
 All notable changes to this project are documented in this file.
 
+## Unreleased
+
+- File reads, microphone capture and worker jobs now have explicit limits.
+  PCM WAV duration is checked before native decoding; all decoded formats
+  are checked before downmixing. Recordings stop at 60 seconds and say so.
+- Cancel stops obsolete workers and file reads. Native decode results are
+  abandoned after cancellation. Reference and attempt jobs have independent
+  ownership; matching also runs in a worker and can be cancelled or retried.
+- A replacement is committed only after analysis and playback preparation
+  succeed. Failed replacements keep the previous clip and comparison, with
+  explicit retry controls. Spectrogram storage is bounded to 4,096 columns.
+- Silence and single-frame contours now produce an unavailable score, rather
+  than zero or a perfect match. Results show voicing and sampling counts.
+  Long-contour sampling preserves the final point. Feedback distinguishes a
+  uniformly slower phrase from a shallower pitch shape.
+- Added independent exhaustive DTW path checks and browser regressions for
+  cancellation, limits, separate audio slots, retained results, timeouts and
+  automatic capture cleanup. Phone checks now include 320px layouts.
+
 ## [0.2.3] - 2026-10-03
 
 ### Fixed

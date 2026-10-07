@@ -25,8 +25,8 @@ run them locally when Actions is unavailable.
 
 - `src/core/` - pure TypeScript DSP and comparison logic (no DOM, runs in
   Node/Worker/browser alike). This is where most correctness work lives.
-- `src/worker/` - the Web Worker that runs pitch tracking + spectrogram
-  analysis off the main thread, and its typed client.
+- `src/worker/` - pitch tracking, spectrograms and contour matching off the
+  main thread, with a separate cancellable client per audio slot and comparison.
 - `src/audio/` - microphone capture (AudioWorklet), file decoding, and
   playback.
 - `src/ui/` - canvas rendering and small DOM helpers.
@@ -36,6 +36,8 @@ run them locally when Actions is unavailable.
 - `tests/browser/` - Playwright workflows and accessibility checks against the
   production build. Capture tests use Chromium's simulated microphone; the
   remaining workflows run in both Chromium and Firefox.
+  The sample-limit test accelerates one real worklet delivery with synthetic
+  silence; it is a resource/lifecycle check, not microphone-accuracy evidence.
 - `scripts/accuracy-report.ts` - regenerates the accuracy table in
   README.md (`npm run bench`).
 
