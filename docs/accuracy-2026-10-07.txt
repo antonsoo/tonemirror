@@ -1,0 +1,23 @@
+
+> tonemirror@0.2.3 bench
+> tsx scripts/accuracy-report.ts
+
+Machine: linux x64, Node v24.21.0
+Sample rate: 44100 Hz, hop: 10ms, min/max F0 search: 60-1000 Hz
+
+| Condition | Algorithm | Voicing recall | Gross error rate | Fine pitch MAE (cents) |
+|---|---|---:|---:|---:|
+| Pure tone, 220 Hz | YIN | 100.0% | 0.0% | 0.118 |
+| Pure tone, 220 Hz | MPM | 100.0% | 0.0% | 0.048 |
+| Harmonic complex, 150 Hz, missing fundamental | YIN | 100.0% | 0.0% | 0.078 |
+| Harmonic complex, 150 Hz, missing fundamental | MPM | 100.0% | 0.0% | 0.046 |
+| Harmonic complex, 180 Hz + vibrato (5 Hz, +-50 cents) | YIN | 100.0% | 0.0% | 5.4 |
+| Harmonic complex, 180 Hz + vibrato (5 Hz, +-50 cents) | MPM | 100.0% | 0.0% | 1.8 |
+| Linear glide, 150 -> 300 Hz over 1s | YIN | 100.0% | 0.0% | 6.9 |
+| Linear glide, 150 -> 300 Hz over 1s | MPM | 100.0% | 0.0% | 0.876 |
+| Harmonic complex, 180 Hz, white noise SNR 20dB | YIN | 100.0% | 0.0% | 0.266 |
+| Harmonic complex, 180 Hz, white noise SNR 20dB | MPM | 100.0% | 0.0% | 0.163 |
+| Harmonic complex, 180 Hz, white noise SNR 10dB | YIN | 100.0% | 0.0% | 2.5 |
+| Harmonic complex, 180 Hz, white noise SNR 10dB | MPM | 100.0% | 0.0% | 1.9 |
+| Harmonic complex, 180 Hz, white noise SNR 0dB | YIN | 93.8% | 64.8% | 10.9 |
+| Harmonic complex, 180 Hz, white noise SNR 0dB | MPM | 4.1% | 25.0% | 11.0 |

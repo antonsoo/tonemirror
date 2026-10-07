@@ -329,6 +329,8 @@ simulated device; they do not measure real microphone quality or permissions
 on every browser and operating system.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the project layout.
+The [2026-10-07 local verification](docs/verification-2026-10-07.md) records
+clean-install checks, browser scenarios, screenshots and artifact hashes.
 
 ## Contributing
 

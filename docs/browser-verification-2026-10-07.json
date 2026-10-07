@@ -1,0 +1,599 @@
+{
+  "implementation_commit": "d54290696f755a74aa1e34d1567d76228e1302e6",
+  "versions": {
+    "chromium": "153.0.8010.12",
+    "firefox": "155.0",
+    "playwright": "1.63.0",
+    "axe": "4.13.0"
+  },
+  "stats": {
+    "startTime": "2026-10-07T11:12:38.854Z",
+    "duration": 37129.532,
+    "expected": 51,
+    "skipped": 3,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "errors": [],
+  "checks": {
+    "page_errors": 0,
+    "csp_violations": 0,
+    "off_origin_requests": 0,
+    "axe_scenarios": 10,
+    "axe_violations_in_those_scenarios": 0,
+    "microphone_device": "Chromium simulated device; Firefox capture tests skipped",
+    "capture_limit": "Real AudioWorklet lifecycle with accelerated synthetic PCM delivery, not a hardware timing check"
+  },
+  "cases": [
+    {
+      "title": "cancel saves nothing; confirmed names persist across reload and can be deleted",
+      "project": "chromium",
+      "file": "app.spec.js",
+      "line": 44,
+      "status": "passed",
+      "duration_ms": 1826,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "denied storage leaves audio usable and the library can retry",
+      "project": "chromium",
+      "file": "app.spec.js",
+      "line": 68,
+      "status": "passed",
+      "duration_ms": 1046,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "an aborted save reports failure, writes nothing, and allows retry",
+      "project": "chromium",
+      "file": "app.spec.js",
+      "line": 86,
+      "status": "passed",
+      "duration_ms": 681,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "switching tabs during decode keeps the file in its original slot",
+      "project": "chromium",
+      "file": "app.spec.js",
+      "line": 127,
+      "status": "passed",
+      "duration_ms": 568,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "an older decode cannot replace the newer file or its status",
+      "project": "chromium",
+      "file": "app.spec.js",
+      "line": 142,
+      "status": "passed",
+      "duration_ms": 573,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "worker failure is visible and changing the algorithm starts a working replacement",
+      "project": "chromium",
+      "file": "app.spec.js",
+      "line": 156,
+      "status": "passed",
+      "duration_ms": 622,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "a late result from the previous algorithm cannot replace the current contour",
+      "project": "chromium",
+      "file": "app.spec.js",
+      "line": 172,
+      "status": "passed",
+      "duration_ms": 705,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "switching away and back cancels playback that is still waiting for audio permission",
+      "project": "chromium",
+      "file": "app.spec.js",
+      "line": 200,
+      "status": "passed",
+      "duration_ms": 659,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "keyboard tabs pause playback and keep loop regions with their own clip",
+      "project": "chromium",
+      "file": "app.spec.js",
+      "line": 221,
+      "status": "passed",
+      "duration_ms": 852,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "new analysis clears stale tone classification and comparison",
+      "project": "chromium",
+      "file": "app.spec.js",
+      "line": 247,
+      "status": "passed",
+      "duration_ms": 1055,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "comparison remains accessible at 1280px in light",
+      "project": "chromium",
+      "file": "app.spec.js",
+      "line": 266,
+      "status": "passed",
+      "duration_ms": 1838,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "comparison remains accessible at 1280px in dark",
+      "project": "chromium",
+      "file": "app.spec.js",
+      "line": 266,
+      "status": "passed",
+      "duration_ms": 1798,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "comparison remains accessible at 320px in light",
+      "project": "chromium",
+      "file": "app.spec.js",
+      "line": 266,
+      "status": "passed",
+      "duration_ms": 1633,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "comparison remains accessible at 320px in dark",
+      "project": "chromium",
+      "file": "app.spec.js",
+      "line": 266,
+      "status": "passed",
+      "duration_ms": 1649,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "silence has an unavailable score and visible voicing evidence",
+      "project": "chromium",
+      "file": "app.spec.js",
+      "line": 370,
+      "status": "passed",
+      "duration_ms": 1537,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "a level target and rising audio do not receive reassuring feedback",
+      "project": "chromium",
+      "file": "app.spec.js",
+      "line": 384,
+      "status": "passed",
+      "duration_ms": 740,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "long decoded audio is refused without replacing the loaded clip",
+      "project": "chromium",
+      "file": "app.spec.js",
+      "line": 412,
+      "status": "passed",
+      "duration_ms": 771,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "encoded size limits apply before decoding and retain the current source",
+      "project": "chromium",
+      "file": "app.spec.js",
+      "line": 430,
+      "status": "passed",
+      "duration_ms": 540,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "cancelling a decoder returns immediately and ignores its late result",
+      "project": "chromium",
+      "file": "app.spec.js",
+      "line": 442,
+      "status": "passed",
+      "duration_ms": 487,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "a stuck reference worker cannot block the attempt slot",
+      "project": "chromium",
+      "file": "app.spec.js",
+      "line": 456,
+      "status": "passed",
+      "duration_ms": 919,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "a failed analysis preserves the previous clip, score and playback",
+      "project": "chromium",
+      "file": "app.spec.js",
+      "line": 477,
+      "status": "passed",
+      "duration_ms": 1076,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "contour matching can be cancelled and retried while page controls remain usable",
+      "project": "chromium",
+      "file": "app.spec.js",
+      "line": 506,
+      "status": "passed",
+      "duration_ms": 904,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "a worker timeout is recoverable and keeps the previous audio",
+      "project": "chromium",
+      "file": "app.spec.js",
+      "line": 539,
+      "status": "passed",
+      "duration_ms": 692,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "capture stops at its sample limit and names the boundary in the loaded clip",
+      "project": "chromium",
+      "file": "app.spec.js",
+      "line": 564,
+      "status": "passed",
+      "duration_ms": 1762,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "loaded workers can compare new local audio offline without persisting it",
+      "project": "chromium",
+      "file": "app.spec.js",
+      "line": 620,
+      "status": "passed",
+      "duration_ms": 995,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "cancel saves nothing; confirmed names persist across reload and can be deleted",
+      "project": "firefox",
+      "file": "app.spec.js",
+      "line": 44,
+      "status": "passed",
+      "duration_ms": 2783,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "denied storage leaves audio usable and the library can retry",
+      "project": "firefox",
+      "file": "app.spec.js",
+      "line": 68,
+      "status": "passed",
+      "duration_ms": 2305,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "an aborted save reports failure, writes nothing, and allows retry",
+      "project": "firefox",
+      "file": "app.spec.js",
+      "line": 86,
+      "status": "passed",
+      "duration_ms": 1152,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "switching tabs during decode keeps the file in its original slot",
+      "project": "firefox",
+      "file": "app.spec.js",
+      "line": 127,
+      "status": "passed",
+      "duration_ms": 1012,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "an older decode cannot replace the newer file or its status",
+      "project": "firefox",
+      "file": "app.spec.js",
+      "line": 142,
+      "status": "passed",
+      "duration_ms": 935,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "worker failure is visible and changing the algorithm starts a working replacement",
+      "project": "firefox",
+      "file": "app.spec.js",
+      "line": 156,
+      "status": "passed",
+      "duration_ms": 865,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "a late result from the previous algorithm cannot replace the current contour",
+      "project": "firefox",
+      "file": "app.spec.js",
+      "line": 172,
+      "status": "passed",
+      "duration_ms": 1273,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "switching away and back cancels playback that is still waiting for audio permission",
+      "project": "firefox",
+      "file": "app.spec.js",
+      "line": 200,
+      "status": "passed",
+      "duration_ms": 1073,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "keyboard tabs pause playback and keep loop regions with their own clip",
+      "project": "firefox",
+      "file": "app.spec.js",
+      "line": 221,
+      "status": "passed",
+      "duration_ms": 1285,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "new analysis clears stale tone classification and comparison",
+      "project": "firefox",
+      "file": "app.spec.js",
+      "line": 247,
+      "status": "passed",
+      "duration_ms": 1491,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "comparison remains accessible at 1280px in light",
+      "project": "firefox",
+      "file": "app.spec.js",
+      "line": 266,
+      "status": "passed",
+      "duration_ms": 2567,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "comparison remains accessible at 1280px in dark",
+      "project": "firefox",
+      "file": "app.spec.js",
+      "line": 266,
+      "status": "passed",
+      "duration_ms": 2373,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "comparison remains accessible at 320px in light",
+      "project": "firefox",
+      "file": "app.spec.js",
+      "line": 266,
+      "status": "passed",
+      "duration_ms": 2293,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "comparison remains accessible at 320px in dark",
+      "project": "firefox",
+      "file": "app.spec.js",
+      "line": 266,
+      "status": "passed",
+      "duration_ms": 2578,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "silence has an unavailable score and visible voicing evidence",
+      "project": "firefox",
+      "file": "app.spec.js",
+      "line": 370,
+      "status": "passed",
+      "duration_ms": 1976,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "a level target and rising audio do not receive reassuring feedback",
+      "project": "firefox",
+      "file": "app.spec.js",
+      "line": 384,
+      "status": "passed",
+      "duration_ms": 2006,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "long decoded audio is refused without replacing the loaded clip",
+      "project": "firefox",
+      "file": "app.spec.js",
+      "line": 412,
+      "status": "passed",
+      "duration_ms": 1125,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "encoded size limits apply before decoding and retain the current source",
+      "project": "firefox",
+      "file": "app.spec.js",
+      "line": 430,
+      "status": "passed",
+      "duration_ms": 817,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "cancelling a decoder returns immediately and ignores its late result",
+      "project": "firefox",
+      "file": "app.spec.js",
+      "line": 442,
+      "status": "passed",
+      "duration_ms": 828,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "a stuck reference worker cannot block the attempt slot",
+      "project": "firefox",
+      "file": "app.spec.js",
+      "line": 456,
+      "status": "passed",
+      "duration_ms": 2465,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "a failed analysis preserves the previous clip, score and playback",
+      "project": "firefox",
+      "file": "app.spec.js",
+      "line": 477,
+      "status": "passed",
+      "duration_ms": 1574,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "contour matching can be cancelled and retried while page controls remain usable",
+      "project": "firefox",
+      "file": "app.spec.js",
+      "line": 506,
+      "status": "passed",
+      "duration_ms": 1440,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "a worker timeout is recoverable and keeps the previous audio",
+      "project": "firefox",
+      "file": "app.spec.js",
+      "line": 539,
+      "status": "passed",
+      "duration_ms": 1051,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "capture stops at its sample limit and names the boundary in the loaded clip",
+      "project": "firefox",
+      "file": "app.spec.js",
+      "line": 564,
+      "status": "skipped",
+      "duration_ms": 255,
+      "annotations": [
+        {
+          "type": "skip",
+          "description": "Chromium supplies the deterministic test microphone.",
+          "location": {
+            "file": "/tmp/claude-1000/tonemirror-review/clean/tests/browser/app.spec.js",
+            "line": 565,
+            "column": 8
+          }
+        }
+      ],
+      "errors": []
+    },
+    {
+      "title": "loaded workers can compare new local audio offline without persisting it",
+      "project": "firefox",
+      "file": "app.spec.js",
+      "line": 620,
+      "status": "passed",
+      "duration_ms": 1188,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "real microphone lifecycle with a browser-provided test device / worklet failure releases microphone tracks and the next recording succeeds",
+      "project": "chromium",
+      "file": "app.spec.js",
+      "line": 302,
+      "status": "passed",
+      "duration_ms": 1073,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "real microphone lifecycle with a browser-provided test device / cancelling a pending request releases a microphone that arrives later",
+      "project": "chromium",
+      "file": "app.spec.js",
+      "line": 326,
+      "status": "passed",
+      "duration_ms": 657,
+      "annotations": [],
+      "errors": []
+    },
+    {
+      "title": "real microphone lifecycle with a browser-provided test device / worklet failure releases microphone tracks and the next recording succeeds",
+      "project": "firefox",
+      "file": "app.spec.js",
+      "line": 302,
+      "status": "skipped",
+      "duration_ms": 269,
+      "annotations": [
+        {
+          "type": "skip",
+          "description": "Chromium supplies the deterministic test microphone.",
+          "location": {
+            "file": "/tmp/claude-1000/tonemirror-review/clean/tests/browser/app.spec.js",
+            "line": 290,
+            "column": 10
+          }
+        }
+      ],
+      "errors": []
+    },
+    {
+      "title": "real microphone lifecycle with a browser-provided test device / cancelling a pending request releases a microphone that arrives later",
+      "project": "firefox",
+      "file": "app.spec.js",
+      "line": 326,
+      "status": "skipped",
+      "duration_ms": 246,
+      "annotations": [
+        {
+          "type": "skip",
+          "description": "Chromium supplies the deterministic test microphone.",
+          "location": {
+            "file": "/tmp/claude-1000/tonemirror-review/clean/tests/browser/app.spec.js",
+            "line": 290,
+            "column": 10
+          }
+        }
+      ],
+      "errors": []
+    }
+  ]
+}
