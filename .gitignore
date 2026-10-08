@@ -6,3 +6,5 @@ coverage/
 .vite/
 test-results/
 playwright-report/
+/studies/*/cache/
+__pycache__/

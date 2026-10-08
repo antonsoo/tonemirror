@@ -3,7 +3,14 @@ import tseslint from "typescript-eslint";
 
 export default tseslint.config(
   {
-    ignores: ["dist/**", "node_modules/**", "coverage/**", "test-results/**", "playwright-report/**"],
+    ignores: [
+      "dist/**",
+      "node_modules/**",
+      "coverage/**",
+      "test-results/**",
+      "playwright-report/**",
+      "studies/**",
+    ],
   },
   js.configs.recommended,
   ...tseslint.configs.recommendedTypeChecked,
@@ -29,10 +36,25 @@ export default tseslint.config(
   },
   {
     files: ["tests/browser/**/*.js"],
-    languageOptions: { globals: Object.fromEntries([
-      "window", "document", "DOMException", "IDBFactory", "IDBObjectStore", "AudioContext", "Worker",
-      "navigator", "AudioWorklet", "AudioBufferSourceNode", "MediaStream", "ErrorEvent", "MessageEvent",
-      "PageTransitionEvent",
-    ].map((name) => [name, "readonly"])) },
+    languageOptions: {
+      globals: Object.fromEntries(
+        [
+          "window",
+          "document",
+          "DOMException",
+          "IDBFactory",
+          "IDBObjectStore",
+          "AudioContext",
+          "Worker",
+          "navigator",
+          "AudioWorklet",
+          "AudioBufferSourceNode",
+          "MediaStream",
+          "ErrorEvent",
+          "MessageEvent",
+          "PageTransitionEvent",
+        ].map((name) => [name, "readonly"]),
+      ),
+    },
   },
 );

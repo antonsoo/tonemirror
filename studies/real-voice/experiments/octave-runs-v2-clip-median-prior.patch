@@ -1,0 +1,70 @@
+diff --git a/src/core/pitchTrack.ts b/src/core/pitchTrack.ts
+index e7742d2..3a066cd 100644
+--- a/src/core/pitchTrack.ts
++++ b/src/core/pitchTrack.ts
+@@ -62,6 +62,43 @@ function correctOctaveErrors(
+   return out;
+ }
+ 
++/** Octave slips that last longer than the neighbourhood median can see. Consecutive frames 10 ms
++ * apart cannot differ by an octave, so each octave jump between neighbours is cut into runs; a run
++ * whose median sits more than `farOctaves` from the clip's own voiced median is moved by one octave
++ * if that brings it within `nearOctaves` of the median. A creaky phrase end or a doubled stretch of
++ * several frames is corrected; a run that is merely high or low in the speaker's range is not. */
++function correctOctaveRuns(f0s: (number | null)[], jump = 0.6, farOctaves = 0.6, nearOctaves = 0.5): (number | null)[] {
++  const voiced = f0s.filter((v): v is number => v !== null);
++  if (voiced.length < 8) return f0s;
++  const clipMedian = median(voiced);
++  const out = [...f0s];
++  let i = 0;
++  while (i < out.length) {
++    if (out[i] === null) {
++      i++;
++      continue;
++    }
++    let from = i;
++    for (let k = i + 1; k <= out.length; k++) {
++      const cur = k < out.length ? out[k] : null;
++      if (cur !== null && cur !== undefined && Math.abs(Math.log2(cur / out[k - 1]!)) <= jump) continue;
++      // run [from, k - 1]
++      const runMedian = median(out.slice(from, k) as number[]);
++      const off = Math.log2(runMedian / clipMedian);
++      if (Math.abs(off) > farOctaves) {
++        const shift = off > 0 ? -1 : 1;
++        if (Math.abs(off + shift) <= nearOctaves) for (let q = from; q < k; q++) out[q] = out[q]! * 2 ** shift;
++      }
++      if (cur === null || cur === undefined) {
++        i = k;
++        break;
++      }
++      from = k;
++    }
++  }
++  return out;
++}
++
+ /** Median filter over voiced values only; unvoiced (null) frames pass through
+  * untouched so voicing boundaries are not smeared. */
+ function medianSmooth(f0s: (number | null)[], windowSize: number): (number | null)[] {
+@@ -145,6 +182,11 @@ export function trackPitchRaw(signal: Float32Array | Float64Array, options: Pitc
+ /** Full pipeline: per-frame detection, octave-error correction, median
+  * smoothing, and semitone normalization relative to the contour's own voiced
+  * median F0 (see README "Why semitones" for the rationale). */
++/** The contour post-processing alone, on per-frame F0 (null = unvoiced). Exposed for the real-voice study. */
++export function postProcessF0(raw: (number | null)[], medianWindow = DEFAULTS.medianWindow): (number | null)[] {
++  return medianSmooth(correctOctaveRuns(correctOctaveErrors(raw)), medianWindow);
++}
++
+ export function trackPitch(signal: Float32Array | Float64Array, options: PitchTrackOptions): PitchContour {
+   const opts = { ...DEFAULTS, ...options };
+   const raw = trackPitchRaw(signal, opts);
+@@ -153,8 +195,7 @@ export function trackPitch(signal: Float32Array | Float64Array, options: PitchTr
+   const frameSeconds = (maxLag * 2) / opts.sampleRate;
+ 
+   let f0s: (number | null)[] = raw.map((f) => (f.voiced ? f.f0 : null));
+-  f0s = correctOctaveErrors(f0s);
+-  f0s = medianSmooth(f0s, opts.medianWindow);
++  f0s = postProcessF0(f0s, opts.medianWindow);
+ 
+   const voicedF0s = f0s.filter((v): v is number => v !== null);
+   const medianF0 = voicedF0s.length > 0 ? median(voicedF0s) : null;

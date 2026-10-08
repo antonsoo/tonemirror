@@ -4,6 +4,11 @@ All notable changes to this project are documented in this file.
 
 ## Unreleased
 
+- `studies/real-voice/`: the pitch trackers measured on speech against a
+  laryngograph reference (PTDB-TUG, 20 speakers, and the CSTR FDA database),
+  beside pYIN and Praat. Gross pitch error of the drawn contour is 1.95% (YIN)
+  and 2.10% (MPM), where the synthetic table reports 0.0%. No tracker setting
+  was changed: nothing tried on half the speakers held on the other half.
 - Updated the development source-map tooling to source-map-js 1.2.2; the
   locked dependency audit reports no vulnerabilities.
 - File reads, microphone capture and worker jobs now have explicit limits.

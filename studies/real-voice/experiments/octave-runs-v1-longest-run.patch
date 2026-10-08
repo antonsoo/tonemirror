@@ -1,0 +1,88 @@
+--- a/src/core/pitchTrack.ts
++++ b/src/core/pitchTrack.ts
+@@ -62,6 +62,63 @@
+   return out;
+ }
+ 
++/** Octave-consistent runs inside one voiced segment. Consecutive frames 10 ms apart cannot differ by
++ * an octave, so every octave jump between neighbours marks a tracking slip on one side. The shorter
++ * run is moved onto the longer one's octave, repeatedly, which fixes the slips the neighbourhood
++ * median above cannot: a halved or doubled stretch longer than four frames (a creaky phrase end,
++ * a breathy onset) whose neighbours are all slipped alike. Equal-length runs are left alone. */
++function correctOctaveRuns(f0s: (number | null)[], tolerance = 0.15, jump = 0.6): (number | null)[] {
++  const out = [...f0s];
++  let i = 0;
++  while (i < out.length) {
++    if (out[i] === null) {
++      i++;
++      continue;
++    }
++    let end = i;
++    while (end + 1 < out.length && out[end + 1] !== null) end++;
++    // split the segment [i, end] wherever consecutive frames jump by more than `jump` octaves
++    const runs: { from: number; to: number }[] = [];
++    let from = i;
++    for (let k = i + 1; k <= end; k++) {
++      if (Math.abs(Math.log2(out[k]! / out[k - 1]!)) > jump) {
++        runs.push({ from, to: k - 1 });
++        from = k;
++      }
++    }
++    runs.push({ from, to: end });
++    for (let guard = runs.length; guard > 0 && runs.length > 1; guard--) {
++      // the shortest run that has a longer neighbour an octave away
++      let best = -1;
++      let bestShift = 0;
++      for (let r = 0; r < runs.length; r++) {
++        const len = runs[r]!.to - runs[r]!.from + 1;
++        for (const nb of [r - 1, r + 1]) {
++          const other = runs[nb];
++          if (!other || other.to - other.from + 1 <= len) continue;
++          const edgeThis = out[nb < r ? runs[r]!.from : runs[r]!.to]!;
++          const edgeOther = out[nb < r ? other.to : other.from]!;
++          const lr = Math.log2(edgeThis / edgeOther);
++          const shift = Math.abs(lr - 1) <= tolerance ? -1 : Math.abs(lr + 1) <= tolerance ? 1 : 0;
++          if (shift !== 0 && (best === -1 || len < runs[best]!.to - runs[best]!.from + 1)) {
++            best = r;
++            bestShift = shift;
++          }
++        }
++      }
++      if (best === -1) break;
++      const run = runs[best]!;
++      for (let k = run.from; k <= run.to; k++) out[k] = out[k]! * 2 ** bestShift;
++      // the flipped run now joins its neighbour: merge them
++      const nb = best > 0 && Math.abs(Math.log2(out[run.from]! / out[runs[best - 1]!.to]!)) <= jump ? best - 1 : best + 1;
++      const merged = { from: Math.min(run.from, runs[nb]!.from), to: Math.max(run.to, runs[nb]!.to) };
++      runs.splice(Math.min(best, nb), 2, merged);
++    }
++    i = end + 1;
++  }
++  return out;
++}
++
+ /** Median filter over voiced values only; unvoiced (null) frames pass through
+  * untouched so voicing boundaries are not smeared. */
+ function medianSmooth(f0s: (number | null)[], windowSize: number): (number | null)[] {
+@@ -145,6 +202,11 @@
+ /** Full pipeline: per-frame detection, octave-error correction, median
+  * smoothing, and semitone normalization relative to the contour's own voiced
+  * median F0 (see README "Why semitones" for the rationale). */
++/** The contour post-processing alone, on per-frame F0 (null = unvoiced). Exposed for the real-voice study. */
++export function postProcessF0(raw: (number | null)[], medianWindow = DEFAULTS.medianWindow): (number | null)[] {
++  return medianSmooth(correctOctaveRuns(correctOctaveErrors(raw)), medianWindow);
++}
++
+ export function trackPitch(signal: Float32Array | Float64Array, options: PitchTrackOptions): PitchContour {
+   const opts = { ...DEFAULTS, ...options };
+   const raw = trackPitchRaw(signal, opts);
+@@ -153,8 +215,7 @@
+   const frameSeconds = (maxLag * 2) / opts.sampleRate;
+ 
+   let f0s: (number | null)[] = raw.map((f) => (f.voiced ? f.f0 : null));
+-  f0s = correctOctaveErrors(f0s);
+-  f0s = medianSmooth(f0s, opts.medianWindow);
++  f0s = postProcessF0(f0s, opts.medianWindow);
+ 
+   const voicedF0s = f0s.filter((v): v is number => v !== null);
+   const medianF0 = voicedF0s.length > 0 ? median(voicedF0s) : null;
