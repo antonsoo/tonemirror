@@ -1,0 +1,98 @@
+{
+  "yin_raw": {
+    "ptdb/all": {
+      "jointlyVoicedFrames": 72566,
+      "oldSymmetricCentsGrossFrames": 2708,
+      "correctedRelativeHzGrossFrames": 2698,
+      "oldGrossPercent": 3.73,
+      "correctedGrossPercent": 3.72
+    },
+    "fda/all": {
+      "jointlyVoicedFrames": 11643,
+      "oldSymmetricCentsGrossFrames": 315,
+      "correctedRelativeHzGrossFrames": 308,
+      "oldGrossPercent": 2.71,
+      "correctedGrossPercent": 2.65
+    }
+  },
+  "yin_contour": {
+    "ptdb/all": {
+      "jointlyVoicedFrames": 72566,
+      "oldSymmetricCentsGrossFrames": 1416,
+      "correctedRelativeHzGrossFrames": 1411,
+      "oldGrossPercent": 1.95,
+      "correctedGrossPercent": 1.94
+    },
+    "fda/all": {
+      "jointlyVoicedFrames": 11643,
+      "oldSymmetricCentsGrossFrames": 196,
+      "correctedRelativeHzGrossFrames": 188,
+      "oldGrossPercent": 1.68,
+      "correctedGrossPercent": 1.61
+    }
+  },
+  "mpm_raw": {
+    "ptdb/all": {
+      "jointlyVoicedFrames": 71004,
+      "oldSymmetricCentsGrossFrames": 1999,
+      "correctedRelativeHzGrossFrames": 1995,
+      "oldGrossPercent": 2.82,
+      "correctedGrossPercent": 2.81
+    },
+    "fda/all": {
+      "jointlyVoicedFrames": 11390,
+      "oldSymmetricCentsGrossFrames": 180,
+      "correctedRelativeHzGrossFrames": 172,
+      "oldGrossPercent": 1.58,
+      "correctedGrossPercent": 1.51
+    }
+  },
+  "mpm_contour": {
+    "ptdb/all": {
+      "jointlyVoicedFrames": 71004,
+      "oldSymmetricCentsGrossFrames": 1494,
+      "correctedRelativeHzGrossFrames": 1483,
+      "oldGrossPercent": 2.1,
+      "correctedGrossPercent": 2.09
+    },
+    "fda/all": {
+      "jointlyVoicedFrames": 11390,
+      "oldSymmetricCentsGrossFrames": 130,
+      "correctedRelativeHzGrossFrames": 125,
+      "oldGrossPercent": 1.14,
+      "correctedGrossPercent": 1.1
+    }
+  },
+  "pyin": {
+    "ptdb/all": {
+      "jointlyVoicedFrames": 68530,
+      "oldSymmetricCentsGrossFrames": 757,
+      "correctedRelativeHzGrossFrames": 755,
+      "oldGrossPercent": 1.1,
+      "correctedGrossPercent": 1.1
+    },
+    "fda/all": {
+      "jointlyVoicedFrames": 11260,
+      "oldSymmetricCentsGrossFrames": 61,
+      "correctedRelativeHzGrossFrames": 48,
+      "oldGrossPercent": 0.54,
+      "correctedGrossPercent": 0.43
+    }
+  },
+  "praat": {
+    "ptdb/all": {
+      "jointlyVoicedFrames": 71898,
+      "oldSymmetricCentsGrossFrames": 1590,
+      "correctedRelativeHzGrossFrames": 1587,
+      "oldGrossPercent": 2.21,
+      "correctedGrossPercent": 2.21
+    },
+    "fda/all": {
+      "jointlyVoicedFrames": 11436,
+      "oldSymmetricCentsGrossFrames": 132,
+      "correctedRelativeHzGrossFrames": 121,
+      "oldGrossPercent": 1.15,
+      "correctedGrossPercent": 1.06
+    }
+  }
+}

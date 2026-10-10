@@ -6,9 +6,19 @@ All notable changes to this project are documented in this file.
 
 - `studies/real-voice/`: the pitch trackers measured on speech against a
   laryngograph reference (PTDB-TUG, 20 speakers, and the CSTR FDA database),
-  beside pYIN and Praat. Gross pitch error of the drawn contour is 1.95% (YIN)
-  and 2.10% (MPM), where the synthetic table reports 0.0%. No tracker setting
-  was changed: nothing tried on half the speakers held on the other half.
+  beside pYIN and Praat. The fresh 580-recording comparison measures gross
+  pitch error of the drawn contour at 1.94% (YIN) and 2.09% (MPM) on PTDB-TUG.
+  No tracker setting was changed.
+- Correct the benchmark's default 20% error tolerance to use relative Hz,
+  rather than a symmetric cents interval; an 82 Hz estimate against 100 Hz
+  is an 18% error. Explicit cents tolerances remain available. The real-voice
+  scorer and diagnostic tools use the same corrected relative definition.
+- Study fetching preserves and checks the pinned manifest, verifies partial
+  downloads before saving, prepares the missing FDA extraction, and refuses
+  changed or additional cached recordings. Report assembly checks complete
+  corpus coverage and retains integer counts and frame-table hashes.
+- Secondary reference-consensus analysis now uses actual nearest frames on
+  the fitted common time basis, without extrapolating beyond either track.
 - Updated the development source-map tooling to source-map-js 1.2.2; the
   locked dependency audit reports no vulnerabilities.
 - File reads, microphone capture and worker jobs now have explicit limits.

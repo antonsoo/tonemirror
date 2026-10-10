@@ -1,7 +1,6 @@
 /**
- * Pitch-tracking accuracy metrics, following the conventions used in F0
- * estimation research (e.g. de Cheveigné & Kawahara 2002; the mir_eval
- * melody-extraction metrics): gross pitch error (GPE) rate - the fraction of
+ * Pitch-tracking accuracy measurements for the synthetic benchmark:
+ * gross pitch error (GPE) rate - the fraction of
  * voiced frames whose estimate is off by more than a set tolerance (we use
  * 20% of the reference frequency by default) - and fine pitch mean
  * absolute error (MAE) in cents, measured only over the frames that are

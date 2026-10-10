@@ -1,0 +1,16 @@
+npm notice run tonemirror@0.2.3 npx
+npm notice run 'tsx' studies/real-voice/run-tonemirror.ts . $CHECK_DIR/voice-frames 0 1
+node:fs:1884
+  const result = binding.readdir(
+                         ^
+
+Error: ENOENT: no such file or directory, scandir '$CHECK_DIR/tonemirror/studies/real-voice/cache/fda-extracted/rl'
+    at readdirSync (node:fs:1884:26)
+    at <anonymous> ($CHECK_DIR/tonemirror/studies/real-voice/run-tonemirror.ts:70:19) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'scandir',
+  path: '$CHECK_DIR/tonemirror/studies/real-voice/cache/fda-extracted/rl'
+}
+
+Node.js v26.7.0

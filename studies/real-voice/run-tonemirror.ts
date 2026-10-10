@@ -8,7 +8,7 @@
  * so every option is the default in src/core/pitchTrack.ts. Output per utterance and algorithm:
  *   raw     the per-frame detector output (trackPitchRaw): time, f0 (null if unvoiced), confidence, rms
  *   contour the plotted contour (trackPitch): time, f0 (null if unvoiced) after octave correction + median smoothing
- * Audio goes in at the corpus's native rate, as it would from a decoded file.
+ * Audio enters at the corpus's native rate. Browser decoding can resample; this study does not measure that step.
  */
 import { readFileSync, writeFileSync, mkdirSync, readdirSync } from "node:fs";
 import { join, resolve } from "node:path";
