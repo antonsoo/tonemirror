@@ -31,6 +31,5 @@ for alg,his,los in (('yin',[.5],[.5,.4,.35,.3,.25,.2]),('mpm',[.55],[.55,.45,.4,
             f=np.array(j[alg+'F0']); cf=np.array(j[alg+'Conf']); rm=np.array(j['rms'])
             v=hyst(f,cf,rm,his[0],lo)[k]; f=f[k]; r=r[k]
             rv=r>0; both=rv&v
-            cents=np.abs(1200*np.log2(np.where(both,f,1)/np.where(both,r,1)))
-            c+=[rv.sum(),(rv&~v).sum(),(~rv).sum(),(~rv&v).sum(),both.sum(),(both&(cents>GROSS_CENTS)).sum(),len(rv),0]
+            c+=[rv.sum(),(rv&~v).sum(),(~rv).sum(),(~rv&v).sum(),both.sum(),(both&gross_pitch_error(f,r)).sum(),len(rv),0]
         print(alg,'hi',his[0],'lo',lo,'V->U %.1f U->V %.1f VDE %.1f GPE %.2f'%(100*c[1]/c[0],100*c[3]/c[2],100*(c[1]+c[3])/c[6],100*c[5]/c[4]))

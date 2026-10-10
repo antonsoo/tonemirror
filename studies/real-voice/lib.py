@@ -8,7 +8,8 @@ from refs import fda_ref_at, ptdb_ref_at, read_fda_fx, read_ptdb_ref
 
 HERE = Path(__file__).resolve().parent
 CACHE = HERE / "cache"
-GROSS_CENTS = 1200 * np.log2(1.2)  # the README's 20% definition, 315.64 cents
+GROSS_RELATIVE_ERROR = 0.2
+OCTAVE_TOLERANCE_CENTS = 1200 * np.log2(1.2)
 SEX = lambda spk: "F" if spk.startswith("F") or spk == "sb" else "M"  # noqa: E731
 DEV = {f"{s}{n:02d}" for s in "FM" for n in (1, 3, 5, 7, 9)}  # odd-numbered PTDB-TUG speakers
 
@@ -50,19 +51,38 @@ def iter_utts(*dirs):
     return merged
 
 
+def gross_pitch_error(est, ref):
+    """More than 20% of reference Hz, on frames both sides call voiced.
+
+    A symmetric 315.64-cent interval would incorrectly reject 82 Hz against
+    100 Hz (18% error). Relative frequency error accepts 80 through 120 Hz.
+    """
+    return (est > 0) & (ref > 0) & (np.abs(est - ref) > GROSS_RELATIVE_ERROR * ref)
+
+
+def nearest_frames(times, values, targets):
+    """Nearest samples, with no extrapolation outside a tracker's time range."""
+    if not len(times):
+        return np.zeros_like(targets)
+    right = np.clip(np.searchsorted(times, targets), 0, len(times) - 1)
+    left = np.maximum(0, right - 1)
+    nearest = np.where(np.abs(times[left] - targets) <= np.abs(times[right] - targets), left, right)
+    return np.where((targets >= times[0]) & (targets <= times[-1]), values[nearest], 0)
+
+
 def frame_stats(est, ref):
     """Per-frame arrays -> counts. est, ref: Hz with 0 = unvoiced."""
     rv, ev = ref > 0, est > 0
     both = rv & ev
     cents = np.zeros_like(est)
     cents[both] = 1200 * np.log2(est[both] / ref[both])
-    gross = both & (np.abs(cents) > GROSS_CENTS)
+    gross = gross_pitch_error(est, ref)
     fine = both & ~gross
     return {
         "frames": len(est), "ref_voiced": int(rv.sum()), "ref_unvoiced": int((~rv).sum()),
         "both_voiced": int(both.sum()), "gross": int(gross.sum()),
-        "halving": int((gross & (np.abs(cents + 1200) <= GROSS_CENTS)).sum()),
-        "doubling": int((gross & (np.abs(cents - 1200) <= GROSS_CENTS)).sum()),
+        "halving": int((gross & (np.abs(cents + 1200) <= OCTAVE_TOLERANCE_CENTS)).sum()),
+        "doubling": int((gross & (np.abs(cents - 1200) <= OCTAVE_TOLERANCE_CENTS)).sum()),
         "miss": int((rv & ~ev).sum()), "false_alarm": int((~rv & ev).sum()),
         "fine_n": int(fine.sum()), "fine_abs_sum": float(np.abs(cents[fine]).sum()),
         "fine_sq_sum": float((cents[fine] ** 2).sum()),
@@ -85,6 +105,9 @@ def summarise(s):
     fa = s["fine_abs"]
     return {
         "frames": s["frames"], "ref_voiced_frames": s["ref_voiced"],
+        "both_voiced_frames": s["both_voiced"], "gross_error_frames": s["gross"],
+        "octave_halving_frames": s["halving"], "octave_doubling_frames": s["doubling"],
+        "voiced_called_unvoiced_frames": s["miss"], "unvoiced_called_voiced_frames": s["false_alarm"],
         "gross_error_pct": pct(s["gross"], s["both_voiced"]),
         "octave_halving_pct_of_voiced": pct(s["halving"], s["both_voiced"]),
         "octave_doubling_pct_of_voiced": pct(s["doubling"], s["both_voiced"]),

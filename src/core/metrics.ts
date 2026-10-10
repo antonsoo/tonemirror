@@ -3,7 +3,7 @@
  * estimation research (e.g. de Cheveigné & Kawahara 2002; the mir_eval
  * melody-extraction metrics): gross pitch error (GPE) rate - the fraction of
  * voiced frames whose estimate is off by more than a set tolerance (we use
- * the common 20%, i.e. roughly 3.15 semitones) - and fine pitch mean
+ * 20% of the reference frequency by default) - and fine pitch mean
  * absolute error (MAE) in cents, measured only over the frames that are
  * *not* gross errors, so a handful of octave slips don't dominate the
  * headline error metric the way a plain average would.
@@ -18,14 +18,16 @@ export interface AccuracyResult {
   voicingRecall: number;
   /** Of the frames the tracker called voiced, how many the ground truth says are actually voiced. */
   voicingPrecision: number;
-  /** Fraction of tracker-voiced, ground-truth-voiced frames with |cents error| > grossErrorCents. */
+  /** Fraction of jointly voiced frames beyond the configured error tolerance. */
   grossErrorRate: number;
   /** Mean absolute cents error over tracker-voiced, ground-truth-voiced frames that are NOT gross errors. */
   finePitchMaeCents: number;
 }
 
 export interface AccuracyOptions {
-  /** Cents threshold above which an error counts as "gross" (default ~20%, 1200*log2(1.2)). */
+  /** Relative frequency error above which an error is gross. Default 0.2 (20%). */
+  grossErrorFraction?: number;
+  /** Explicit symmetric cents tolerance, instead of a relative frequency tolerance. */
   grossErrorCents?: number;
 }
 
@@ -34,7 +36,13 @@ export function evaluateAccuracy(
   trueF0AtTime: (t: number) => number | null,
   options: AccuracyOptions = {},
 ): AccuracyResult {
-  const grossErrorCents = options.grossErrorCents ?? 1200 * Math.log2(1.2);
+  const { grossErrorCents } = options;
+  const grossErrorFraction = options.grossErrorFraction ?? 0.2;
+  if (grossErrorCents !== undefined && options.grossErrorFraction !== undefined) {
+    throw new RangeError("Choose a relative-frequency or a cents tolerance, not both.");
+  }
+  const tolerance = grossErrorCents ?? grossErrorFraction;
+  if (!Number.isFinite(tolerance) || tolerance < 0) throw new RangeError("Pitch error tolerance must be finite and nonnegative.");
 
   let totalVoicedFrames = 0;
   let trackerVoicedFrames = 0;
@@ -52,7 +60,10 @@ export function evaluateAccuracy(
     if (groundTruthVoiced && frame.voiced && frame.f0 !== null) {
       bothVoiced++;
       const cents = Math.abs(1200 * Math.log2(frame.f0 / trueF0));
-      if (cents > grossErrorCents) {
+      const gross = grossErrorCents === undefined
+        ? Math.abs(frame.f0 - trueF0) > grossErrorFraction * trueF0
+        : cents > grossErrorCents;
+      if (gross) {
         grossErrors++;
       } else {
         fineCentsSum += cents;

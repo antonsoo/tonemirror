@@ -13,7 +13,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))  # -I drops the script 
 
 import numpy as np
 
-from lib import GROSS_CENTS, iter_utts, load_ref, ref_at
+from lib import gross_pitch_error, iter_utts, load_ref, nearest_frames, ref_at
 
 align = json.loads(Path(sys.argv[1]).read_text())
 off = {c: {s: v["best_offset_ms"] / 1000 for s, v in align[c].items()} for c in align}
@@ -29,17 +29,17 @@ for u in utts.values():
         t, f = u["sys"][name]
         return t, f, ref_at(m["corpus"], ref, t, off[m["corpus"]][name])
     t, f, r = on_grid(system)
-    # other trackers sampled on the system's frame times by nearest frame
+    # Compare the same reference instant using each tracker's fitted offset,
+    # then choose its actual nearest frame, without endpoint extrapolation.
     others = []
     for name in ("pyin", "praat"):
         t2, f2 = u["sys"][name]
-        idx = np.clip(np.searchsorted(t2, t), 0, len(t2) - 1)
-        others.append(f2[idx])
+        targets = t - off[m["corpus"]][system] + off[m["corpus"]][name]
+        others.append(nearest_frames(t2, f2, targets))
     ok = (r > 0) & (f > 0)
     if m["corpus"] == "ptdb":
         ok &= (t - off["ptdb"][system]) <= (len(ref) - 1) * 0.01
-    c = np.where(ok, 1200 * np.log2(np.where(ok, f, 1) / np.where(ok, r, 1)), 0)
-    gross = ok & (np.abs(c) > GROSS_CENTS)
+    gross = ok & gross_pitch_error(f, r)
     a, b = others
     both = (a > 0) & (b > 0) & (np.abs(1200 * np.log2(np.where(a > 0, a, 1) / np.where(b > 0, b, 1))) < 50)
     side = both & (np.abs(1200 * np.log2(np.where(both, a, 1) / np.where(gross, f, 1))) < 100)

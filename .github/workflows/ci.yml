@@ -19,6 +19,8 @@ jobs:
       - run: npm run lint
       - run: npm run typecheck
       - run: npm test
+      - name: Check study source integrity without downloads
+        run: python3 -I studies/real-voice/test_sources.py
       # Node formats numbers and dates for the locale it starts in. Output that must not
       # change with the reader's locale is tested in one that writes 1.234,5.
       - name: Test again in a comma-decimal locale

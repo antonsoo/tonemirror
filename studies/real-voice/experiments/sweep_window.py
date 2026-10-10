@@ -18,8 +18,7 @@ def run(off,sex=None):
         v=(f>0)&(cf>=cut)&(rm>=0.003)
         r,f,v=r[k],f[k],v[k]
         rv=r>0; both=rv&v
-        cents=np.abs(1200*np.log2(np.where(both,f,1)/np.where(both,r,1)))
-        c+=[rv.sum(),(rv&~v).sum(),(~rv).sum(),(~rv&v).sum(),both.sum(),(both&(cents>GROSS_CENTS)).sum(),len(rv)]
+        c+=[rv.sum(),(rv&~v).sum(),(~rv).sum(),(~rv&v).sum(),both.sum(),(both&gross_pitch_error(f,r)).sum(),len(rv)]
     return c
 best=max(np.arange(0.010,0.045,0.002),key=lambda o:(lambda c:(c[4]-c[5])/c[0])(run(o)))
 for sex in (None,'M','F'):

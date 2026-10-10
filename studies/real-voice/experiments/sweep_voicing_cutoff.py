@@ -22,6 +22,5 @@ for alg,cuts in (('yin',[.3,.4,.5,.6,.7,.8]),('mpm',[.4,.5,.55,.6,.7,.8,.9])):
         for c in cuts:
             ev=(R[:,1]>0)&(R[:,2]>=c)&(R[:,3]>=rmsg)
             both=rv&ev
-            cents=np.abs(1200*np.log2(np.where(both,R[:,1],1)/np.where(both,R[:,0],1)))
-            gross=both&(cents>GROSS_CENTS)
+            gross=both&gross_pitch_error(R[:,1],R[:,0])
             print(alg,'rmsgate',rmsg,'cut',c,'V->U %.1f U->V %.1f VDE %.1f GPE %.2f'%(100*(rv&~ev).sum()/rv.sum(),100*(~rv&ev).sum()/(~rv).sum(),100*((rv&~ev).sum()+(~rv&ev).sum())/len(rv),100*gross.sum()/both.sum()))

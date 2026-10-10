@@ -11,7 +11,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))  # -I drops the script 
 
 import numpy as np
 
-from lib import GROSS_CENTS, iter_utts, load_ref, ref_at, split_of
+from lib import OCTAVE_TOLERANCE_CENTS, gross_pitch_error, iter_utts, load_ref, ref_at, split_of
 
 align = json.loads(Path(sys.argv[1]).read_text())
 offsets = {c: {s: v["best_offset_ms"] / 1000 for s, v in align[c].items()} for c in align}
@@ -72,10 +72,10 @@ for u in utts.values():
             pos = "onset(1-4)" if start[i] <= 4 else ("offset(last4)" if end[i] <= 4 else "middle")
             miss = f[i] <= 0
             cents = 0 if miss else 1200 * np.log2(f[i] / r[i])
-            gross = (not miss) and abs(cents) > GROSS_CENTS
+            gross = bool(gross_pitch_error(f[i], r[i]))
             for cat, key in (("ref band Hz", band), ("position in voiced run", pos), ("sex", sex)):
                 bump(cat, key, n=1, miss=int(miss), gross=int(gross), both=int(not miss),
-                     dbl=int(gross and abs(cents - 1200) <= GROSS_CENTS), half=int(gross and abs(cents + 1200) <= GROSS_CENTS))
+                     dbl=int(gross and abs(cents - 1200) <= OCTAVE_TOLERANCE_CENTS), half=int(gross and abs(cents + 1200) <= OCTAVE_TOLERANCE_CENTS))
         else:
             bump("unvoiced ref: est voiced", sex, n=1, fa=int(f[i] > 0))
 out = {}
