@@ -1,0 +1,36 @@
+{
+  "url": "https://antonsoo.github.io/tonemirror/",
+  "rows": [
+    {
+      "engine": "chromium",
+      "mode": "file",
+      "status": "Audio analysis failed. Try loading the clip again or changing the algorithm.",
+      "failed": [
+        {
+          "url": "https://antonsoo.github.io/tonemirror/assets/pitchWorker-C1gs6CTt.js",
+          "reason": "net::ERR_ABORTED"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "mode": "microphone",
+      "status": "Recording your attempt…",
+      "failed": [],
+      "errors": []
+    },
+    {
+      "engine": "firefox",
+      "mode": "file",
+      "status": "Audio analysis failed. Try loading the clip again or changing the algorithm.",
+      "failed": [
+        {
+          "url": "https://antonsoo.github.io/tonemirror/assets/pitchWorker-C1gs6CTt.js",
+          "reason": "NS_ERROR_OFFLINE"
+        }
+      ],
+      "errors": []
+    }
+  ]
+}

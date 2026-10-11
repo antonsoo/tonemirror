@@ -4,6 +4,12 @@ All notable changes to this project are documented in this file.
 
 ## Unreleased
 
+- Include pitch-analysis and recorder code in the initial page load. A first
+  local import, comparison, algorithm change or microphone recording can now
+  start without a connection. Recorder Blob URLs are released on success and
+  failure; microphone and worker ownership/recovery remain intact.
+  [Stopped-server reproduction](studies/offline-start/README.md).
+
 - `studies/real-voice/`: the pitch trackers measured on speech against a
   laryngograph reference (PTDB-TUG, 20 speakers, and the CSTR FDA database),
   beside pYIN and Praat. The fresh 580-recording comparison measures gross

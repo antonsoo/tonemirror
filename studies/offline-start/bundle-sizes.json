@@ -1,0 +1,41 @@
+{
+  "note": "Python gzip defaults; Vite prints its own compression measurement. Source maps excluded.",
+  "results": [
+    {
+      "revision": "before",
+      "assets": [
+        {
+          "path": "assets/index-BeaXM0BY.js",
+          "bytes": 40657,
+          "gzipBytes": 14693,
+          "sha256": "68206a90971920b2f89ded24e1117ff4d185feb9efe1e72d25fb5b1f973eb1e9"
+        },
+        {
+          "path": "assets/pitchWorker-GIHxqKa_.js",
+          "bytes": 11004,
+          "gzipBytes": 4269,
+          "sha256": "44edf70c9c46550031b6c599753092852e47b42999f44b694b21ab0304e92a94"
+        },
+        {
+          "path": "assets/recorderWorklet-Gj77JUXS.js",
+          "bytes": 224,
+          "gzipBytes": 195,
+          "sha256": "0101f70d5eb054b3cb51447344dbe3e4b6a58410181f67ef921e96429f42f12a"
+        }
+      ],
+      "totalJsBytes": 51885
+    },
+    {
+      "revision": "after",
+      "assets": [
+        {
+          "path": "assets/index-DUwSxmNy.js",
+          "bytes": 53141,
+          "gzipBytes": 18956,
+          "sha256": "139dfae0f407b5e38ad4303d715cfb9fdff3e408106d210e3e53e5989ca340c1"
+        }
+      ],
+      "totalJsBytes": 53141
+    }
+  ]
+}

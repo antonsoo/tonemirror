@@ -154,11 +154,17 @@ test("an older decode cannot replace the newer file or its status", async ({ pag
 });
 
 test("worker failure is visible and changing the algorithm starts a working replacement", async ({ page }) => {
-  let fail = true;
-  await page.route("**/pitchWorker-*.js", async (route) => {
-    if (!fail) return route.continue();
-    fail = false;
-    await route.fulfill({ contentType: "text/javascript", body: 'throw new Error("Injected worker failure");' });
+  await page.addInitScript(() => {
+    const NativeWorker = Worker;
+    let fail = true;
+    window.Worker = class extends NativeWorker {
+      constructor(url, options) {
+        const failedUrl = fail ? URL.createObjectURL(new Blob(['throw new Error("Injected worker failure");'], { type: "text/javascript" })) : null;
+        fail = false;
+        super(failedUrl ?? url, options);
+        if (failedUrl) this.addEventListener("error", () => URL.revokeObjectURL(failedUrl));
+      }
+    };
   });
   await page.goto("./");
   await input(page).setInputFiles(fixture);
@@ -454,11 +460,19 @@ test("cancelling a decoder returns immediately and ignores its late result", asy
 });
 
 test("a stuck reference worker cannot block the attempt slot", async ({ page }) => {
-  let first = true;
-  await page.route("**/pitchWorker-*.js", async (route) => {
-    if (!first) return route.continue();
-    first = false;
-    await route.fulfill({ contentType: "text/javascript", body: "self.onmessage = () => {};" });
+  await page.addInitScript(() => {
+    const NativeWorker = Worker;
+    let first = true;
+    window.Worker = class extends NativeWorker {
+      constructor(url, options) {
+        super(url, options);
+        this.hold = first;
+        first = false;
+      }
+      postMessage(...args) {
+        if (!this.hold) super.postMessage(...args);
+      }
+    };
   });
   await page.goto("./");
   await tab(page, "Reference").click();
@@ -617,13 +631,17 @@ test("capture stops at its sample limit and names the boundary in the loaded cli
   expect(spectrogram.lastTime).toBeGreaterThan(59.95);
 });
 
-test("loaded workers can compare new local audio offline without persisting it", async ({ page, context }) => {
+test("first imports, comparison and algorithm changes work offline without persisting audio", async ({ page, context }) => {
   await page.goto("./");
-  await referenceAndAttempt(page);
+  // Disconnect before any audio or worker is loaded, including the comparison worker.
   await context.setOffline(true);
+  await referenceAndAttempt(page);
   await tab(page, "Your attempt").click();
   await input(page).setInputFiles(referenceFixture);
   await expect(status(page)).toContainText("mandarin-tone2-reference.wav —");
+  await expect(page.locator(".tm-score")).toHaveText("100");
+  await page.getByLabel("Pitch detection algorithm").selectOption("mpm");
+  await expect(status(page)).toHaveText("Pitch analysis updated (MPM).");
   await expect(page.locator(".tm-score")).toHaveText("100");
   expect(await page.locator(".tm-library-item").count()).toBe(0);
   expect(await page.evaluate(() => JSON.stringify({ local: { ...window.localStorage }, session: { ...window.sessionStorage } }))).not.toContain("mandarin");

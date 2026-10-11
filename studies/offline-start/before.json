@@ -1,0 +1,77 @@
+{
+  "node": "v26.7.0",
+  "mode": "observe",
+  "results": [
+    {
+      "engine": "chromium",
+      "width": 1440,
+      "scenario": "files",
+      "serverStoppedBeforeFirstUse": true,
+      "hostedOfflineEmulation": false,
+      "firstStatus": "Could not load mandarin-tone2-reference.wav: Audio analysis failed. Try loading the clip again or changing the algorithm.",
+      "loaded": false,
+      "lateRequests": [
+        "/tonemirror/assets/pitchWorker-GIHxqKa_.js"
+      ],
+      "pageErrors": [],
+      "policyViolations": []
+    },
+    {
+      "engine": "chromium",
+      "width": 375,
+      "scenario": "files",
+      "serverStoppedBeforeFirstUse": true,
+      "hostedOfflineEmulation": false,
+      "firstStatus": "Could not load mandarin-tone2-reference.wav: Audio analysis failed. Try loading the clip again or changing the algorithm.",
+      "loaded": false,
+      "lateRequests": [
+        "/tonemirror/assets/pitchWorker-GIHxqKa_.js"
+      ],
+      "pageErrors": [],
+      "policyViolations": []
+    },
+    {
+      "engine": "chromium",
+      "width": 1440,
+      "scenario": "microphone",
+      "serverStoppedBeforeFirstUse": true,
+      "hostedOfflineEmulation": false,
+      "firstStatus": "Microphone unavailable: Failed to load worklet module script: http://localhost/tonemirror/assets/recorderWorklet-Gj77JUXS.js (Network error)",
+      "started": false,
+      "tracksEnded": true,
+      "workletFromBlob": false,
+      "workletUrlRevoked": false,
+      "lateRequests": [],
+      "pageErrors": [],
+      "policyViolations": []
+    },
+    {
+      "engine": "firefox",
+      "width": 1440,
+      "scenario": "files",
+      "serverStoppedBeforeFirstUse": true,
+      "hostedOfflineEmulation": false,
+      "firstStatus": "Could not load mandarin-tone2-reference.wav: Audio analysis failed. Try loading the clip again or changing the algorithm.",
+      "loaded": false,
+      "lateRequests": [
+        "/tonemirror/assets/pitchWorker-GIHxqKa_.js"
+      ],
+      "pageErrors": [],
+      "policyViolations": []
+    },
+    {
+      "engine": "firefox",
+      "width": 375,
+      "scenario": "files",
+      "serverStoppedBeforeFirstUse": true,
+      "hostedOfflineEmulation": false,
+      "firstStatus": "Could not load mandarin-tone2-reference.wav: Audio analysis failed. Try loading the clip again or changing the algorithm.",
+      "loaded": false,
+      "lateRequests": [
+        "/tonemirror/assets/pitchWorker-GIHxqKa_.js"
+      ],
+      "pageErrors": [],
+      "policyViolations": []
+    }
+  ]
+}

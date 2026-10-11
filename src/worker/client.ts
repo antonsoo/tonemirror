@@ -1,3 +1,4 @@
+import PitchWorker from "./pitchWorker.ts?worker&inline";
 import type { AnalyzeResponse, WorkerRequest, WorkerResponse, CompareResponse } from "./pitchWorker.js";
 import type { PitchAlgorithm, PitchContour } from "../core/types.js";
 import { validateAudio } from "../audio/limits.js";
@@ -18,7 +19,7 @@ export class PitchWorkerClient {
   private pending = new Map<number, Pending>();
 
   private createWorker(): Worker {
-    const worker = new Worker(new URL("./pitchWorker.ts", import.meta.url), { type: "module" });
+    const worker = new PitchWorker();
     this.worker = worker;
     worker.onmessage = (event: MessageEvent<WorkerResponse>) => {
       if (this.worker !== worker) return;

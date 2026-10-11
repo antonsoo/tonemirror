@@ -80,3 +80,17 @@ feedback does not establish a close match: localized deviations can escape
 these rules while contributing to the score and remaining in the overlay.
 Neither mechanism evaluates words,
 phonemes, tone sandhi, or how natural the speech sounds.
+
+
+After the initial page loads, analysis workers start from bundled local blobs.
+The recorder registers its bundled JavaScript source separately in each audio
+context and revokes the temporary Blob URL after registration settles, including
+failure. Its JavaScript retains JSDoc type checking. CSP permits local blobs for
+scripts and workers; network connections remain restricted to the same origin.
+No `eval` or general inline-script permission is added.
+
+This is not an offline installer or service worker. An uncached page reload
+still needs the site, and a font subset not loaded before disconnection falls
+back to a system font. [A real stopped-server check](../studies/offline-start/README.md)
+covers first file loads, both pitch algorithms, saved references, and a first
+microphone capture using Chromium's test device.

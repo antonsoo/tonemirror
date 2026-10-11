@@ -1,6 +1,6 @@
 /** Raw, on-device microphone capture. Each start owns its resources, including
  * permission requests that finish after the user has cancelled. */
-import workletUrl from "./recorderWorklet.ts?worker&url";
+import workletSource from "./recorderWorklet.js?raw";
 import { MAX_AUDIO_SECONDS, validateAudio } from "./limits.js";
 
 export interface RecordedAudio {
@@ -49,7 +49,14 @@ export class MicRecorder {
       session.sampleRate = context.sampleRate;
       session.context = context;
       validateAudio(1, context.sampleRate);
-      await context.audioWorklet.addModule(workletUrl);
+      // Each context registers its own processor. Bundle the small, typechecked
+      // JavaScript source so the first recording needs no post-load fetch.
+      const workletUrl = URL.createObjectURL(new Blob([workletSource], { type: "text/javascript" }));
+      try {
+        await context.audioWorklet.addModule(workletUrl);
+      } finally {
+        URL.revokeObjectURL(workletUrl);
+      }
       this.assertCurrent(session);
       await context.resume();
       this.assertCurrent(session);

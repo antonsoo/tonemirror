@@ -35,6 +35,10 @@ export default tseslint.config(
     ...tseslint.configs.disableTypeChecked,
   },
   {
+    files: ["src/audio/recorderWorklet.js"],
+    languageOptions: { globals: { AudioWorkletProcessor: "readonly", registerProcessor: "readonly" } },
+  },
+  {
     files: ["tests/browser/**/*.js"],
     languageOptions: {
       globals: Object.fromEntries(
@@ -46,6 +50,7 @@ export default tseslint.config(
           "IDBObjectStore",
           "AudioContext",
           "Worker",
+          "Blob",
           "navigator",
           "AudioWorklet",
           "AudioBufferSourceNode",

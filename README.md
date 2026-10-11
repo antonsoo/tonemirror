@@ -22,6 +22,12 @@ Nothing leaves your device: no uploads, no accounts, no analytics.
 
 _Reference: a clean, synthetic Mandarin tone 2 (rising). Attempt: a synthetic clip built with a deliberately flat start and shallow rise. Both example clips ship in [`examples/`](examples/); load `mandarin-tone2-reference.wav` as the reference and `mandarin-tone2-attempt-late-rise.wav` as the attempt to reproduce this screenshot._
 
+The source checkout supports **first imports and recordings after the page has
+loaded, even if the connection then disappears**. Pitch analysis, matching,
+algorithm changes and saved-reference use need no additional code downloads.
+[Reproduction with the static server shut down](studies/offline-start/README.md).
+Opening or reloading the page itself still requires a connection or browser cache.
+
 ## Quickstart
 
 ```sh
@@ -64,8 +70,8 @@ just click one of the built-in reference chips and record yourself.
   Mandarin tones and every accent template, generated in-browser and
   labeled synthetic everywhere they appear. Recording or loading real
   native-speaker audio is one click away and clearly encouraged in the UI.
-- **Local processing without uploads**, no telemetry, small bundle (~52 kB
-  of JS across the main bundle + worker + worklet, uncompressed - see
+- **Local processing without uploads**, no telemetry, small bundle (~53 kB
+  of JS including the bundled worker and worklet, uncompressed - see
   [Bundle size](#bundle-size)).
 
 Light and dark themes follow the system preference (with a manual toggle),
@@ -311,11 +317,9 @@ minutes long.
 `npm run build` output on this box:
 
 ```
-dist/assets/recorderWorklet-*.js   0.22 kB
-dist/index.html                    2.33 kB (gzip 0.88 kB)
-dist/assets/pitchWorker-*.js      11.00 kB
-dist/assets/index-*.css           22.80 kB (gzip 3.52 kB)
-dist/assets/index-*.js            40.65 kB (gzip 14.83 kB)
+dist/index.html                   2.34 kB (gzip 0.88 kB)
+dist/assets/index-*.css          22.80 kB (gzip 3.52 kB)
+dist/assets/index-*.js           53.13 kB (gzip 19.16 kB)
 ```
 
 No UI framework, no charting library - Canvas 2D and vanilla DOM.
