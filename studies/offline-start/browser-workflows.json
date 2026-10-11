@@ -1,0 +1,1214 @@
+{
+  "clean": {
+    "stats": {
+      "startTime": "2026-10-11T02:24:43.821Z",
+      "duration": 63402.615999999995,
+      "expected": 51,
+      "skipped": 3,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "cases": [
+      {
+        "title": "cancel saves nothing; confirmed names persist across reload and can be deleted",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 2864
+          }
+        ]
+      },
+      {
+        "title": "denied storage leaves audio usable and the library can retry",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 2255
+          }
+        ]
+      },
+      {
+        "title": "an aborted save reports failure, writes nothing, and allows retry",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 794
+          }
+        ]
+      },
+      {
+        "title": "switching tabs during decode keeps the file in its original slot",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 790
+          }
+        ]
+      },
+      {
+        "title": "an older decode cannot replace the newer file or its status",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 617
+          }
+        ]
+      },
+      {
+        "title": "worker failure is visible and changing the algorithm starts a working replacement",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 718
+          }
+        ]
+      },
+      {
+        "title": "a late result from the previous algorithm cannot replace the current contour",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 859
+          }
+        ]
+      },
+      {
+        "title": "switching away and back cancels playback that is still waiting for audio permission",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 759
+          }
+        ]
+      },
+      {
+        "title": "keyboard tabs pause playback and keep loop regions with their own clip",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 1085
+          }
+        ]
+      },
+      {
+        "title": "new analysis clears stale tone classification and comparison",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 1248
+          }
+        ]
+      },
+      {
+        "title": "comparison remains accessible at 1280px in light",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 2188
+          }
+        ]
+      },
+      {
+        "title": "comparison remains accessible at 1280px in dark",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 2143
+          }
+        ]
+      },
+      {
+        "title": "comparison remains accessible at 320px in light",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 1898
+          }
+        ]
+      },
+      {
+        "title": "comparison remains accessible at 320px in dark",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 1971
+          }
+        ]
+      },
+      {
+        "title": "silence has an unavailable score and visible voicing evidence",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 1700
+          }
+        ]
+      },
+      {
+        "title": "a level target and rising audio do not receive reassuring feedback",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 856
+          }
+        ]
+      },
+      {
+        "title": "long decoded audio is refused without replacing the loaded clip",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 747
+          }
+        ]
+      },
+      {
+        "title": "encoded size limits apply before decoding and retain the current source",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 473
+          }
+        ]
+      },
+      {
+        "title": "cancelling a decoder returns immediately and ignores its late result",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 812
+          }
+        ]
+      },
+      {
+        "title": "a stuck reference worker cannot block the attempt slot",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 1174
+          }
+        ]
+      },
+      {
+        "title": "a failed analysis preserves the previous clip, score and playback",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 1335
+          }
+        ]
+      },
+      {
+        "title": "contour matching can be cancelled and retried while page controls remain usable",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 1377
+          }
+        ]
+      },
+      {
+        "title": "a worker timeout is recoverable and keeps the previous audio",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 984
+          }
+        ]
+      },
+      {
+        "title": "capture stops at its sample limit and names the boundary in the loaded clip",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 1869
+          }
+        ]
+      },
+      {
+        "title": "first imports, comparison and algorithm changes work offline without persisting audio",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 1388
+          }
+        ]
+      },
+      {
+        "title": "cancel saves nothing; confirmed names persist across reload and can be deleted",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 4415
+          }
+        ]
+      },
+      {
+        "title": "denied storage leaves audio usable and the library can retry",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 3234
+          }
+        ]
+      },
+      {
+        "title": "an aborted save reports failure, writes nothing, and allows retry",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 1548
+          }
+        ]
+      },
+      {
+        "title": "switching tabs during decode keeps the file in its original slot",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 1209
+          }
+        ]
+      },
+      {
+        "title": "an older decode cannot replace the newer file or its status",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 1334
+          }
+        ]
+      },
+      {
+        "title": "worker failure is visible and changing the algorithm starts a working replacement",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 1299
+          }
+        ]
+      },
+      {
+        "title": "a late result from the previous algorithm cannot replace the current contour",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 2159
+          }
+        ]
+      },
+      {
+        "title": "switching away and back cancels playback that is still waiting for audio permission",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 2600
+          }
+        ]
+      },
+      {
+        "title": "keyboard tabs pause playback and keep loop regions with their own clip",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 3176
+          }
+        ]
+      },
+      {
+        "title": "new analysis clears stale tone classification and comparison",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 4005
+          }
+        ]
+      },
+      {
+        "title": "comparison remains accessible at 1280px in light",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 7082
+          }
+        ]
+      },
+      {
+        "title": "comparison remains accessible at 1280px in dark",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 6724
+          }
+        ]
+      },
+      {
+        "title": "comparison remains accessible at 320px in light",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 5132
+          }
+        ]
+      },
+      {
+        "title": "comparison remains accessible at 320px in dark",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 4709
+          }
+        ]
+      },
+      {
+        "title": "silence has an unavailable score and visible voicing evidence",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 4588
+          }
+        ]
+      },
+      {
+        "title": "a level target and rising audio do not receive reassuring feedback",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 3200
+          }
+        ]
+      },
+      {
+        "title": "long decoded audio is refused without replacing the loaded clip",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 3128
+          }
+        ]
+      },
+      {
+        "title": "encoded size limits apply before decoding and retain the current source",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 2825
+          }
+        ]
+      },
+      {
+        "title": "cancelling a decoder returns immediately and ignores its late result",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 1893
+          }
+        ]
+      },
+      {
+        "title": "a stuck reference worker cannot block the attempt slot",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 3362
+          }
+        ]
+      },
+      {
+        "title": "a failed analysis preserves the previous clip, score and playback",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 3136
+          }
+        ]
+      },
+      {
+        "title": "contour matching can be cancelled and retried while page controls remain usable",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 2707
+          }
+        ]
+      },
+      {
+        "title": "a worker timeout is recoverable and keeps the previous audio",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 1922
+          }
+        ]
+      },
+      {
+        "title": "capture stops at its sample limit and names the boundary in the loaded clip",
+        "project": "firefox",
+        "status": "skipped",
+        "attempts": [
+          {
+            "status": "skipped",
+            "durationMs": 553
+          }
+        ]
+      },
+      {
+        "title": "first imports, comparison and algorithm changes work offline without persisting audio",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 2152
+          }
+        ]
+      },
+      {
+        "title": "worklet failure releases microphone tracks and the next recording succeeds",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 1148
+          }
+        ]
+      },
+      {
+        "title": "cancelling a pending request releases a microphone that arrives later",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 655
+          }
+        ]
+      },
+      {
+        "title": "worklet failure releases microphone tracks and the next recording succeeds",
+        "project": "firefox",
+        "status": "skipped",
+        "attempts": [
+          {
+            "status": "skipped",
+            "durationMs": 444
+          }
+        ]
+      },
+      {
+        "title": "cancelling a pending request releases a microphone that arrives later",
+        "project": "firefox",
+        "status": "skipped",
+        "attempts": [
+          {
+            "status": "skipped",
+            "durationMs": 515
+          }
+        ]
+      }
+    ]
+  },
+  "hosted": {
+    "stats": {
+      "startTime": "2026-10-11T02:28:02.280Z",
+      "duration": 86040.966,
+      "expected": 51,
+      "skipped": 3,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "cases": [
+      {
+        "title": "cancel saves nothing; confirmed names persist across reload and can be deleted",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 3862
+          }
+        ]
+      },
+      {
+        "title": "denied storage leaves audio usable and the library can retry",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 3214
+          }
+        ]
+      },
+      {
+        "title": "an aborted save reports failure, writes nothing, and allows retry",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 1796
+          }
+        ]
+      },
+      {
+        "title": "switching tabs during decode keeps the file in its original slot",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 1538
+          }
+        ]
+      },
+      {
+        "title": "an older decode cannot replace the newer file or its status",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 1587
+          }
+        ]
+      },
+      {
+        "title": "worker failure is visible and changing the algorithm starts a working replacement",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 2142
+          }
+        ]
+      },
+      {
+        "title": "a late result from the previous algorithm cannot replace the current contour",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 2250
+          }
+        ]
+      },
+      {
+        "title": "switching away and back cancels playback that is still waiting for audio permission",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 1804
+          }
+        ]
+      },
+      {
+        "title": "keyboard tabs pause playback and keep loop regions with their own clip",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 2643
+          }
+        ]
+      },
+      {
+        "title": "new analysis clears stale tone classification and comparison",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 2435
+          }
+        ]
+      },
+      {
+        "title": "comparison remains accessible at 1280px in light",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 3618
+          }
+        ]
+      },
+      {
+        "title": "comparison remains accessible at 1280px in dark",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 3349
+          }
+        ]
+      },
+      {
+        "title": "comparison remains accessible at 320px in light",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 3784
+          }
+        ]
+      },
+      {
+        "title": "comparison remains accessible at 320px in dark",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 3851
+          }
+        ]
+      },
+      {
+        "title": "silence has an unavailable score and visible voicing evidence",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 3253
+          }
+        ]
+      },
+      {
+        "title": "a level target and rising audio do not receive reassuring feedback",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 2155
+          }
+        ]
+      },
+      {
+        "title": "long decoded audio is refused without replacing the loaded clip",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 1461
+          }
+        ]
+      },
+      {
+        "title": "encoded size limits apply before decoding and retain the current source",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 1455
+          }
+        ]
+      },
+      {
+        "title": "cancelling a decoder returns immediately and ignores its late result",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 1151
+          }
+        ]
+      },
+      {
+        "title": "a stuck reference worker cannot block the attempt slot",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 1524
+          }
+        ]
+      },
+      {
+        "title": "a failed analysis preserves the previous clip, score and playback",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 1547
+          }
+        ]
+      },
+      {
+        "title": "contour matching can be cancelled and retried while page controls remain usable",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 1779
+          }
+        ]
+      },
+      {
+        "title": "a worker timeout is recoverable and keeps the previous audio",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 1589
+          }
+        ]
+      },
+      {
+        "title": "capture stops at its sample limit and names the boundary in the loaded clip",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 3152
+          }
+        ]
+      },
+      {
+        "title": "first imports, comparison and algorithm changes work offline without persisting audio",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 2137
+          }
+        ]
+      },
+      {
+        "title": "cancel saves nothing; confirmed names persist across reload and can be deleted",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 5280
+          }
+        ]
+      },
+      {
+        "title": "denied storage leaves audio usable and the library can retry",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 4336
+          }
+        ]
+      },
+      {
+        "title": "an aborted save reports failure, writes nothing, and allows retry",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 2614
+          }
+        ]
+      },
+      {
+        "title": "switching tabs during decode keeps the file in its original slot",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 2571
+          }
+        ]
+      },
+      {
+        "title": "an older decode cannot replace the newer file or its status",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 2190
+          }
+        ]
+      },
+      {
+        "title": "worker failure is visible and changing the algorithm starts a working replacement",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 2726
+          }
+        ]
+      },
+      {
+        "title": "a late result from the previous algorithm cannot replace the current contour",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 3071
+          }
+        ]
+      },
+      {
+        "title": "switching away and back cancels playback that is still waiting for audio permission",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 2393
+          }
+        ]
+      },
+      {
+        "title": "keyboard tabs pause playback and keep loop regions with their own clip",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 3454
+          }
+        ]
+      },
+      {
+        "title": "new analysis clears stale tone classification and comparison",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 3760
+          }
+        ]
+      },
+      {
+        "title": "comparison remains accessible at 1280px in light",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 5868
+          }
+        ]
+      },
+      {
+        "title": "comparison remains accessible at 1280px in dark",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 6122
+          }
+        ]
+      },
+      {
+        "title": "comparison remains accessible at 320px in light",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 5881
+          }
+        ]
+      },
+      {
+        "title": "comparison remains accessible at 320px in dark",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 6495
+          }
+        ]
+      },
+      {
+        "title": "silence has an unavailable score and visible voicing evidence",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 7498
+          }
+        ]
+      },
+      {
+        "title": "a level target and rising audio do not receive reassuring feedback",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 4043
+          }
+        ]
+      },
+      {
+        "title": "long decoded audio is refused without replacing the loaded clip",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 4685
+          }
+        ]
+      },
+      {
+        "title": "encoded size limits apply before decoding and retain the current source",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 2701
+          }
+        ]
+      },
+      {
+        "title": "cancelling a decoder returns immediately and ignores its late result",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 4398
+          }
+        ]
+      },
+      {
+        "title": "a stuck reference worker cannot block the attempt slot",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 5013
+          }
+        ]
+      },
+      {
+        "title": "a failed analysis preserves the previous clip, score and playback",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 4009
+          }
+        ]
+      },
+      {
+        "title": "contour matching can be cancelled and retried while page controls remain usable",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 2667
+          }
+        ]
+      },
+      {
+        "title": "a worker timeout is recoverable and keeps the previous audio",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 2373
+          }
+        ]
+      },
+      {
+        "title": "capture stops at its sample limit and names the boundary in the loaded clip",
+        "project": "firefox",
+        "status": "skipped",
+        "attempts": [
+          {
+            "status": "skipped",
+            "durationMs": 396
+          }
+        ]
+      },
+      {
+        "title": "first imports, comparison and algorithm changes work offline without persisting audio",
+        "project": "firefox",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 2955
+          }
+        ]
+      },
+      {
+        "title": "worklet failure releases microphone tracks and the next recording succeeds",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 1750
+          }
+        ]
+      },
+      {
+        "title": "cancelling a pending request releases a microphone that arrives later",
+        "project": "chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 1403
+          }
+        ]
+      },
+      {
+        "title": "worklet failure releases microphone tracks and the next recording succeeds",
+        "project": "firefox",
+        "status": "skipped",
+        "attempts": [
+          {
+            "status": "skipped",
+            "durationMs": 502
+          }
+        ]
+      },
+      {
+        "title": "cancelling a pending request releases a microphone that arrives later",
+        "project": "firefox",
+        "status": "skipped",
+        "attempts": [
+          {
+            "status": "skipped",
+            "durationMs": 629
+          }
+        ]
+      }
+    ]
+  }
+}

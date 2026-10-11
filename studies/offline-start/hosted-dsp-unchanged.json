@@ -1,0 +1,60 @@
+{
+  "results": [
+    {
+      "engine": "chromium",
+      "width": 1440,
+      "algorithm": "yin",
+      "sha256": "668af668175d8bb3fe6b1758c9499431811908b27e07ed7be77b825d1ea244b7",
+      "matchesLocal": true
+    },
+    {
+      "engine": "chromium",
+      "width": 1440,
+      "algorithm": "mpm",
+      "sha256": "222fb8b00c568acb795fa0c3d1d53174de7c56405ae809d30a648364cfe1c296",
+      "matchesLocal": true
+    },
+    {
+      "engine": "chromium",
+      "width": 375,
+      "algorithm": "yin",
+      "sha256": "668af668175d8bb3fe6b1758c9499431811908b27e07ed7be77b825d1ea244b7",
+      "matchesLocal": true
+    },
+    {
+      "engine": "chromium",
+      "width": 375,
+      "algorithm": "mpm",
+      "sha256": "222fb8b00c568acb795fa0c3d1d53174de7c56405ae809d30a648364cfe1c296",
+      "matchesLocal": true
+    },
+    {
+      "engine": "firefox",
+      "width": 1440,
+      "algorithm": "yin",
+      "sha256": "5a7697cddbfe6aeae089906c642c8857316d48b4a5806888d94007d8290d360c",
+      "matchesLocal": true
+    },
+    {
+      "engine": "firefox",
+      "width": 1440,
+      "algorithm": "mpm",
+      "sha256": "4fa6dec8672d82e3798d43eeaa868605bbb78f1f3104feab2e4ee703740290b0",
+      "matchesLocal": true
+    },
+    {
+      "engine": "firefox",
+      "width": 375,
+      "algorithm": "yin",
+      "sha256": "5a7697cddbfe6aeae089906c642c8857316d48b4a5806888d94007d8290d360c",
+      "matchesLocal": true
+    },
+    {
+      "engine": "firefox",
+      "width": 375,
+      "algorithm": "mpm",
+      "sha256": "4fa6dec8672d82e3798d43eeaa868605bbb78f1f3104feab2e4ee703740290b0",
+      "matchesLocal": true
+    }
+  ]
+}

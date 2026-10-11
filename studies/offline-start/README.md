@@ -70,6 +70,29 @@ Desktop and phone screenshots from the actual stopped-server run were opened
 and inspected: [desktop](../../docs/assets/offline-start/offline-comparison-1440.png),
 [phone](../../docs/assets/offline-start/offline-comparison-375.png).
 
+## Clean build and public deployment
+
+Source revision `7db1976` was installed with `npm ci` in a fresh archive. Lint,
+TypeScript checking, 133 core checks, and the synthetic DSP benchmark passed.
+The full browser suite passed 51 workflows with three Firefox microphone cases
+skipped because those cases require Chromium's test audio device. The five
+stopped-server cases passed again on that clean build
+([capture](clean-offline.json)).
+
+The production build was pushed to `gh-pages` as `95b8bdc`. All 28 deployed files
+were fetched from the [live site](https://antonsoo.github.io/tonemirror/) and
+matched the clean build byte for byte ([SHA-256 receipt](served-files.json)).
+The same 51 browser workflows passed against the public URL, with the same
+three skips ([case results](browser-workflows.json)). Desktop and 320 px phone
+screenshots in both themes and engines were opened and inspected.
+
+Five additional fresh-page offline workflows passed on the public site
+([capture](hosted-after.json)); all eight file comparison payload hashes matched
+the local build ([comparison](hosted-dsp-unchanged.json)). These hosted cases use
+browser offline emulation. The stopped-server experiment above establishes the
+stronger connection-loss boundary. Neither run establishes physical microphone
+quality or pronunciation accuracy.
+
 ## Reproduce
 
 ```sh

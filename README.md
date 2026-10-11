@@ -22,7 +22,7 @@ Nothing leaves your device: no uploads, no accounts, no analytics.
 
 _Reference: a clean, synthetic Mandarin tone 2 (rising). Attempt: a synthetic clip built with a deliberately flat start and shallow rise. Both example clips ship in [`examples/`](examples/); load `mandarin-tone2-reference.wav` as the reference and `mandarin-tone2-attempt-late-rise.wav` as the attempt to reproduce this screenshot._
 
-The source checkout supports **first imports and recordings after the page has
+The source checkout and live demo support **first imports and recordings after the page has
 loaded, even if the connection then disappears**. Pitch analysis, matching,
 algorithm changes and saved-reference use need no additional code downloads.
 [Reproduction with the static server shut down](studies/offline-start/README.md).
@@ -319,7 +319,7 @@ minutes long.
 ```
 dist/index.html                   2.34 kB (gzip 0.88 kB)
 dist/assets/index-*.css          22.80 kB (gzip 3.52 kB)
-dist/assets/index-*.js           53.13 kB (gzip 19.16 kB)
+dist/assets/index-*.js           53.14 kB (gzip 19.16 kB)
 ```
 
 No UI framework, no charting library - Canvas 2D and vanilla DOM.
