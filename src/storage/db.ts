@@ -17,24 +17,53 @@ export interface StoredReference {
 }
 
 const DB_NAME = "tonemirror";
-const DB_VERSION = 1;
+const DB_VERSION = 2;
 const STORE = "references";
+const LIBRARY_INDEX = "library-metadata";
 
-function openDb(): Promise<IDBDatabase> {
+/** Browsing the library must not deserialize every recording's PCM buffer. */
+export type ReferenceSummary = Pick<StoredReference, "id" | "name" | "category" | "createdAt">;
+
+function abortError(signal?: AbortSignal): Error {
+  return signal?.reason instanceof Error ? signal.reason : new DOMException("Reading the recording was cancelled.", "AbortError");
+}
+
+function openDb(signal?: AbortSignal): Promise<IDBDatabase> {
   return new Promise((resolve, reject) => {
+    if (signal?.aborted) throw abortError(signal);
     const req = indexedDB.open(DB_NAME, DB_VERSION);
+    let abandoned = false;
+    const fail = (error: Error): void => {
+      abandoned = true;
+      signal?.removeEventListener("abort", abort);
+      reject(error);
+    };
+    const abort = (): void => {
+      fail(abortError(signal));
+      req.transaction?.abort();
+    };
+    signal?.addEventListener("abort", abort, { once: true });
     req.onupgradeneeded = () => {
+      // A blocked or cancelled open must not upgrade later behind a failed UI operation.
+      if (abandoned) { req.transaction!.abort(); return; }
       const db = req.result;
-      if (!db.objectStoreNames.contains(STORE)) {
-        db.createObjectStore(STORE, { keyPath: "id" });
+      const store = db.objectStoreNames.contains(STORE)
+        ? req.transaction!.objectStore(STORE) : db.createObjectStore(STORE, { keyPath: "id" });
+      if (!store.indexNames.contains(LIBRARY_INDEX)) {
+        // The existing records stay in place. IndexedDB builds the index atomically;
+        // key cursors expose these small fields without cloning the audio values.
+        store.createIndex(LIBRARY_INDEX, ["createdAt", "id", "name", "category"]);
       }
     };
-    req.onsuccess = () => resolve(req.result);
-    req.onerror = () => reject(req.error ?? new Error("Failed to open IndexedDB"));
+    req.onsuccess = () => {
+      signal?.removeEventListener("abort", abort);
+      if (abandoned) { req.result.close(); return; }
+      req.result.onversionchange = () => req.result.close();
+      resolve(req.result);
+    };
+    req.onerror = () => fail(req.error ?? new Error("Failed to open IndexedDB"));
     req.onblocked = () => {
-      // A late open can still succeed after rejection; do not leak that connection.
-      req.onsuccess = () => req.result.close();
-      reject(new Error("The reference library is busy in another tab. Close it and retry."));
+      fail(new Error("The reference library is busy in another tab. Close it and retry."));
     };
   });
 }
@@ -67,23 +96,61 @@ export async function saveReference(ref: StoredReference): Promise<void> {
   }
 }
 
-export async function listReferences(): Promise<StoredReference[]> {
+export async function listReferences(): Promise<ReferenceSummary[]> {
   const db = await openDb();
-  let records: StoredRecord[];
   try {
-    records = await new Promise<StoredRecord[]>((resolve, reject) => {
+    return await new Promise<ReferenceSummary[]>((resolve, reject) => {
       const tx = db.transaction(STORE, "readonly");
-      const req = tx.objectStore(STORE).getAll();
-      tx.oncomplete = () => resolve(req.result as StoredRecord[]);
+      const store = tx.objectStore(STORE);
+      const count = store.count();
+      const req = store.index(LIBRARY_INDEX).openKeyCursor();
+      const records: ReferenceSummary[] = [];
+      req.onsuccess = () => {
+        const cursor = req.result;
+        if (!cursor) return;
+        const [createdAt, id, name, category] = cursor.key as [number, string, string, ReferenceCategory];
+        records.push({ createdAt, id, name, category });
+        cursor.continue();
+      };
+      tx.oncomplete = () => {
+        // Invalid legacy metadata can be omitted by an index. Never silently hide
+        // such recordings or present their absence as an empty library.
+        if (records.length !== count.result) {
+          reject(new Error("Some saved reference metadata cannot be listed. The stored recordings have been kept."));
+        } else resolve(records.sort((a, b) => b.createdAt - a.createdAt));
+      };
       req.onerror = () => reject(req.error ?? new Error("Failed to list references"));
       tx.onabort = () => reject(tx.error ?? new Error("Reading references was cancelled"));
     });
   } finally {
     db.close();
   }
-  return records
-    .map((r) => ({ ...r, pcm: new Float32Array(r.pcmBuffer) }))
-    .sort((a, b) => b.createdAt - a.createdAt);
+}
+
+/** Load just the explicitly selected recording, preserving its owned PCM bytes. */
+export async function getReference(id: string, signal?: AbortSignal): Promise<StoredReference | null> {
+  const db = await openDb(signal);
+  let abort = (): void => {};
+  try {
+    if (signal?.aborted) throw abortError(signal);
+    const record = await new Promise<StoredRecord | undefined>((resolve, reject) => {
+      const tx = db.transaction(STORE, "readonly");
+      const req = tx.objectStore(STORE).get(id);
+      abort = () => tx.abort();
+      signal?.addEventListener("abort", abort, { once: true });
+      tx.oncomplete = () => resolve(req.result as StoredRecord | undefined);
+      req.onerror = () => reject(req.error ?? new Error("Failed to read reference"));
+      tx.onabort = () => reject(signal?.aborted ? abortError(signal) : tx.error ?? new Error("Reading the recording was cancelled"));
+    });
+    if (!record) return null;
+    const { pcmBuffer, ...metadata } = record;
+    // Decode outside the event callback so malformed bytes reject this operation.
+    if (!(pcmBuffer instanceof ArrayBuffer)) throw new Error("The saved recording has unreadable audio data.");
+    return { ...metadata, pcm: new Float32Array(pcmBuffer) };
+  } finally {
+    signal?.removeEventListener("abort", abort);
+    db.close();
+  }
 }
 
 export async function deleteReference(id: string): Promise<void> {

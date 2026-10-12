@@ -19,7 +19,7 @@ import {
   type JapanesePattern,
 } from "./core/accentTemplates.js";
 import { synthesizeFromContour } from "./core/synth.js";
-import { deleteReference, listReferences, saveReference, type StoredReference } from "./storage/db.js";
+import { deleteReference, getReference, listReferences, saveReference, type ReferenceSummary } from "./storage/db.js";
 import type { Spectrogram } from "./core/spectrogram.js";
 import type { PitchAlgorithm, PitchContour } from "./core/types.js";
 
@@ -62,7 +62,7 @@ export function mountApp(root: HTMLElement): void {
   let recordingRequest: AudioRequest | null = null;
   let halfSpeed = false;
   let alignment: AlignmentResult | null = null;
-  let library: StoredReference[] = [];
+  let library: ReferenceSummary[] = [];
   let savingReference = false;
   const micRecorder = new MicRecorder();
   let rafHandle = 0;
@@ -737,8 +737,8 @@ export function mountApp(root: HTMLElement): void {
   async function refreshLibrary(): Promise<boolean> {
     try {
       library = await listReferences();
-    } catch {
-      libraryStatus.textContent = "Saved references are unavailable in this browser. You can still record, load files, and compare audio.";
+    } catch (error) {
+      libraryStatus.textContent = `Saved references are unavailable in this browser: ${(error as Error).message}. You can still record, load files, and compare audio.`;
       retryLibraryBtn.hidden = false;
       return false;
     }
@@ -751,10 +751,7 @@ export function mountApp(root: HTMLElement): void {
             el("div", { class: "tm-library-item" }, [
               el("span", {}, [ref.name, " ", el("span", { class: "tm-badge" }, [ref.category])]),
               el("span", {}, [
-                el("button", { onclick: () => {
-                  selectFocus("reference");
-                  void loadClip("reference", ref.pcm, ref.sampleRate, ref.name, ref.synthetic);
-                } }, ["Use"]),
+                el("button", { onclick: () => void useReference(ref) }, ["Use"]),
                 " ",
                 el("button", { onclick: () => void removeReference(ref.id) }, ["Delete"]),
               ]),
@@ -762,6 +759,26 @@ export function mountApp(root: HTMLElement): void {
           )),
     );
     return true;
+  }
+
+  async function useReference(summary: ReferenceSummary): Promise<void> {
+    selectFocus("reference");
+    const request = beginLoad("reference");
+    report(request, `Reading ${summary.name}…`);
+    try {
+      const ref = await getReference(summary.id, request.controller.signal);
+      if (!isCurrent(request)) return;
+      if (!ref) throw new Error("This saved reference is no longer available. Refresh the library and choose another recording.");
+      await loadClip("reference", ref.pcm, ref.sampleRate, ref.name, ref.synthetic, request);
+    } catch (error) {
+      if (isCurrent(request)) {
+        libraryStatus.textContent = `Could not read ${summary.name}: ${(error as Error).message}`;
+        retryLibraryBtn.hidden = false;
+      }
+      report(request, `Could not load ${summary.name}: ${(error as Error).message}${clips.reference ? " Previous clip kept." : ""}`);
+    } finally {
+      finishLoad(request);
+    }
   }
 
   async function removeReference(id: string): Promise<void> {
