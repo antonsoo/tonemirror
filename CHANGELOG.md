@@ -4,6 +4,13 @@ All notable changes to this project are documented in this file.
 
 ## Unreleased
 
+- Extract a practice passage from either audio tab with **Keep region**, using
+  a dragged region or keyboard time fields. Playback, comparison, classification
+  and saving use the extracted audio. **Restore full clip** retains the source
+  across repeated trims and algorithm changes until new audio is loaded. Save
+  the focused reference directly, preserving synthetic labels. Failed and
+  cancelled edits keep the last loaded clip.
+
 - Align the playhead with native audio when resuming beyond a loop's end or
   moving a playing loop behind the cursor. These transitions enter at the loop's
   start; ordinary looping still preserves elapsed time. The reproduced browser

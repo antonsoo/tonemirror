@@ -7,6 +7,7 @@ import { MicRecorder } from "./audio/recorder.js";
 import { loadAudioFile } from "./audio/fileLoader.js";
 import { MAX_AUDIO_SECONDS, validateAudio } from "./audio/limits.js";
 import { ClipPlayer } from "./audio/playback.js";
+import { regionSamples } from "./audio/region.js";
 import { warpedOverlay, type AlignmentResult } from "./core/dtw.js";
 import { classifyMandarinTone } from "./core/toneClassifier.js";
 import { ALL_MANDARIN_TONES, mandarinToneChaoNumerals, mandarinToneContour, mandarinToneLabel } from "./core/mandarinTones.js";
@@ -23,14 +24,24 @@ import { deleteReference, getReference, listReferences, saveReference, type Refe
 import type { Spectrogram } from "./core/spectrogram.js";
 import type { PitchAlgorithm, PitchContour } from "./core/types.js";
 
-interface ClipState {
+interface ClipSource {
   pcm: Float32Array;
   sampleRate: number;
-  contour: PitchContour | null;
-  spectrogram: Spectrogram | null;
   label: string;
   synthetic: boolean;
+}
+
+interface ClipExcerpt {
+  source: ClipSource;
+  start: number; // Sample offsets in the full source, including after repeated trims.
+  end: number;
+}
+
+interface ClipState extends ClipSource {
+  contour: PitchContour | null;
+  spectrogram: Spectrogram | null;
   algorithm: PitchAlgorithm;
+  excerpt: ClipExcerpt | undefined;
 }
 
 type FocusRole = "reference" | "attempt";
@@ -201,6 +212,7 @@ export function mountApp(root: HTMLElement): void {
   const analysis = createAnalysisView(analysisCanvas, (region) => {
     loopRegions[focus] = region;
     players[focus]?.setLoopRegion(region ? { start: region.start, end: region.end } : null);
+    syncRegionFields();
     renderAnalysis();
   });
   const playBtn = el("button", { class: "tm-btn tm-btn-primary", onclick: () => void togglePlayback() }, ["▶ Play"]);
@@ -216,9 +228,30 @@ export function mountApp(root: HTMLElement): void {
     onclick: () => {
       loopRegions[focus] = null;
       players[focus]?.setLoopRegion(null);
+      syncRegionFields();
       renderAnalysis();
     },
   }, ["Clear loop"]);
+
+  const regionStart = el("input", { type: "number", min: "0", step: "any", oninput: () => refreshRegionControls() });
+  const regionEnd = el("input", { type: "number", min: "0", step: "any", oninput: () => refreshRegionControls() });
+  const regionMessage = el("p", { class: "tm-hint", id: "region-message", role: "status" });
+  const loopRegionBtn = el("button", { class: "tm-btn", onclick: () => {
+    const clip = clips[focus];
+    const bounds = readRegion();
+    if (!clip || !bounds || loads[focus]) return;
+    const region = { start: bounds.start / clip.pcm.length, end: bounds.end / clip.pcm.length };
+    loopRegions[focus] = region;
+    players[focus]?.setLoopRegion(region);
+    renderAnalysis();
+  } }, ["Loop region"]);
+  const keepRegionBtn = el("button", { class: "tm-btn", onclick: () => void keepRegion() }, ["Keep region"]);
+  const restoreClipBtn = el("button", { class: "tm-btn", hidden: true, onclick: () => void restoreFullClip() }, ["Restore full clip"]);
+  const regionControls = el("div", { class: "tm-region-controls", role: "group", "aria-label": "Practice region", "aria-describedby": "region-message" }, [
+    el("label", {}, ["Region start (s)", regionStart]),
+    el("label", {}, ["Region end (s)", regionEnd]),
+    loopRegionBtn, keepRegionBtn, restoreClipBtn,
+  ]);
 
   const analysisPanel = el("section", { class: "tm-panel", id: "audio-analysis", role: "tabpanel", "aria-labelledby": "source-attempt" }, [
     el("div", { class: "tm-panel-header" }, [
@@ -232,6 +265,8 @@ export function mountApp(root: HTMLElement): void {
       clearLoopBtn,
       el("label", { class: "tm-toggle" }, [halfSpeedToggle, "half-speed"]),
     ]),
+    regionControls,
+    regionMessage,
   ]);
 
   // ---------------------------------------------------------------- tone helper panel
@@ -327,7 +362,7 @@ export function mountApp(root: HTMLElement): void {
   const libraryList = el("div", { class: "tm-library-list" });
   const libraryStatus = el("p", { class: "tm-hint", role: "status", "aria-live": "polite" });
   const retryLibraryBtn = el("button", { class: "tm-btn", hidden: true, onclick: () => void refreshLibrary() }, ["Retry saved references"]);
-  const saveBtn = el("button", { class: "tm-btn", onclick: () => void saveCurrentAttemptAsReference() }, ["Save current attempt"]);
+  const saveBtn = el("button", { class: "tm-btn", onclick: () => void saveFocusedClipAsReference() }, ["Save current attempt"]);
   const libraryPanel = el("section", { class: "tm-panel" }, [
     el("div", { class: "tm-panel-header" }, [
       el("h2", {}, ["Your saved references"]),
@@ -386,6 +421,7 @@ export function mountApp(root: HTMLElement): void {
       (child as HTMLElement).tabIndex = (child as HTMLElement).dataset.role === role ? 0 : -1;
     }
     analysisPanel.setAttribute("aria-labelledby", `source-${role}`);
+    syncRegionFields();
     renderAnalysis();
   }
 
@@ -394,6 +430,7 @@ export function mountApp(root: HTMLElement): void {
     retryAudioBtn.hidden = !!loads.reference || !!loads.attempt || (!drafts.reference && !drafts.attempt);
     sourcePanel.setAttribute("aria-busy", String(!!loads.reference || !!loads.attempt));
     stagePanel.setAttribute("aria-busy", String(!!comparison));
+    refreshRegionControls();
   }
 
   function cancelRecording(): void {
@@ -452,6 +489,58 @@ export function mountApp(root: HTMLElement): void {
     toneBadge.textContent = "?";
     toneConfBar.style.width = "0%";
     toneReason.textContent = "Record or load a single syllable as your attempt, then click Classify.";
+  }
+
+  function syncRegionFields(): void {
+    const clip = clips[focus];
+    const duration = clip ? clip.pcm.length / clip.sampleRate : 0;
+    const region = loopRegions[focus];
+    regionStart.value = clip ? String(region ? Number((region.start * duration).toFixed(6)) : 0) : "";
+    regionEnd.value = clip ? String(region ? Math.min(duration, Number((region.end * duration).toFixed(6))) : duration) : "";
+    regionStart.max = regionEnd.max = String(duration);
+    refreshRegionControls();
+  }
+
+  function readRegion(): { start: number; end: number } | null {
+    const clip = clips[focus];
+    if (!clip || !regionStart.value.trim() || !regionEnd.value.trim()) return null;
+    try { return regionSamples(clip.pcm.length, clip.sampleRate, regionStart.valueAsNumber, regionEnd.valueAsNumber); }
+    catch { return null; }
+  }
+
+  function refreshRegionControls(): void {
+    const clip = clips[focus];
+    const bounds = readRegion();
+    const busy = !!loads[focus];
+    regionStart.disabled = regionEnd.disabled = !clip || busy;
+    loopRegionBtn.disabled = !bounds || busy;
+    keepRegionBtn.disabled = !bounds || busy || (bounds.start === 0 && bounds.end === clip?.pcm.length);
+    restoreClipBtn.hidden = !clip?.excerpt;
+    restoreClipBtn.disabled = busy;
+    saveBtn.disabled = !clip || savingReference || busy;
+    const message = !clip ? "Load or record audio to choose a practice region."
+      : !bounds ? "Enter a start and end within the clip, with the end after the start."
+      : "Loop region changes playback. Keep region uses only that audio for comparison, classification and saving. Restore full clip is available until you load new audio.";
+    if (regionMessage.textContent !== message) regionMessage.textContent = message;
+  }
+
+  async function keepRegion(): Promise<void> {
+    const role = focus;
+    const clip = clips[role];
+    const bounds = readRegion();
+    if (!clip || !bounds || loads[role] || (bounds.start === 0 && bounds.end === clip.pcm.length)) return;
+    const source = clip.excerpt?.source ?? { pcm: clip.pcm, sampleRate: clip.sampleRate, label: clip.label, synthetic: clip.synthetic };
+    const offset = clip.excerpt?.start ?? 0;
+    const excerpt = { source, start: offset + bounds.start, end: offset + bounds.end };
+    const label = `${source.label} [${(excerpt.start / source.sampleRate).toFixed(3)}–${(excerpt.end / source.sampleRate).toFixed(3)}s]`;
+    await loadClip(role, source.pcm.slice(excerpt.start, excerpt.end), source.sampleRate, label, source.synthetic, beginLoad(role), excerpt);
+  }
+
+  async function restoreFullClip(): Promise<void> {
+    const role = focus;
+    const source = clips[role]?.excerpt?.source;
+    if (!source || loads[role]) return;
+    await loadClip(role, source.pcm, source.sampleRate, source.label, source.synthetic);
   }
 
   function describeMicError(err: unknown): string {
@@ -543,10 +632,10 @@ export function mountApp(root: HTMLElement): void {
     await loadClip("reference", pcm, sampleRate, label, true);
   }
 
-  async function loadClip(role: FocusRole, pcm: Float32Array, sampleRate: number, label: string, synthetic: boolean, request = beginLoad(role)): Promise<boolean> {
+  async function loadClip(role: FocusRole, pcm: Float32Array, sampleRate: number, label: string, synthetic: boolean, request = beginLoad(role), excerpt?: ClipExcerpt): Promise<boolean> {
     if (!isCurrent(request)) return false;
     report(request, `Analyzing ${label}…`);
-    const state: ClipState = { pcm, sampleRate, contour: null, spectrogram: null, label, synthetic, algorithm };
+    const state: ClipState = { pcm, sampleRate, contour: null, spectrogram: null, label, synthetic, algorithm, excerpt };
     try {
       validateAudio(pcm.length, sampleRate);
       drafts[role] = state;
@@ -562,6 +651,7 @@ export function mountApp(root: HTMLElement): void {
       drafts[role] = null;
       if (focus === role) playbackRequest++;
       loopRegions[role] = null;
+      if (focus === role) syncRegionFields();
       if (role === "attempt") resetToneResult();
       updateComparison();
       renderAnalysis();
@@ -585,7 +675,7 @@ export function mountApp(root: HTMLElement): void {
       const clip = drafts[role] ?? clips[role];
       if (!clip) return true;
       const request = beginLoad(role, nextStatus);
-      return loadClip(role, clip.pcm, clip.sampleRate, clip.label, clip.synthetic, request);
+      return loadClip(role, clip.pcm, clip.sampleRate, clip.label, clip.synthetic, request, clip.excerpt);
     });
     const results = await Promise.all(jobs);
     if (statusId === nextStatus && results.every(Boolean)) {
@@ -659,7 +749,9 @@ export function mountApp(root: HTMLElement): void {
     if (analysisLabel.textContent !== label) analysisLabel.textContent = label;
     playBtn.disabled = !clip || !player;
     clearLoopBtn.disabled = !loopRegions[focus];
-    saveBtn.disabled = !clips.attempt || savingReference;
+    saveBtn.disabled = !clip || savingReference || !!loads[focus];
+    saveBtn.textContent = focus === "reference" ? "Save current reference" : "Save current attempt";
+    refreshRegionControls();
     playBtn.textContent = player?.isPlaying ? "⏸ Pause" : "▶ Play";
   }
 
@@ -704,9 +796,9 @@ export function mountApp(root: HTMLElement): void {
     toneReason.textContent = result.tone === null ? "Not enough voiced signal to classify." : `Sounds closest to ${result.label} — ${Math.round(result.confidence * 100)}% confidence (${result.reason}).`;
   }
 
-  async function saveCurrentAttemptAsReference(): Promise<void> {
-    const clip = clips.attempt;
-    if (!clip) return;
+  async function saveFocusedClipAsReference(): Promise<void> {
+    const clip = clips[focus];
+    if (!clip || loads[focus] || savingReference) return;
     const name = window.prompt("Name this reference:", clip.label);
     if (name === null) return;
     if (!name.trim()) {
@@ -720,7 +812,7 @@ export function mountApp(root: HTMLElement): void {
         id: crypto.randomUUID(),
         name: name.trim(),
         category: "user",
-        synthetic: false,
+        synthetic: clip.synthetic,
         pcm: clip.pcm,
         sampleRate: clip.sampleRate,
         createdAt: Date.now(),
@@ -730,7 +822,7 @@ export function mountApp(root: HTMLElement): void {
       libraryStatus.textContent = `Could not save the reference: ${(error as Error).message}`;
     } finally {
       savingReference = false;
-      saveBtn.disabled = !clips.attempt;
+      renderAnalysis();
     }
   }
 

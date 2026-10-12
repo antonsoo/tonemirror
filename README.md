@@ -70,7 +70,7 @@ just click one of the built-in reference chips and record yourself.
   Mandarin tones and every accent template, generated in-browser and
   labeled synthetic everywhere they appear. Recording or loading real
   native-speaker audio is one click away and clearly encouraged in the UI.
-- **Local processing without uploads**, no telemetry, small bundle (~55 kB
+- **Local processing without uploads**, no telemetry, small bundle (~59 kB
   of JS including the bundled worker and worklet, uncompressed - see
   [Bundle size](#bundle-size)).
 
@@ -87,7 +87,21 @@ Resuming beyond a newly selected loop starts at that loop's beginning, with the
 playhead following the audio. [Native playback and browser evidence](studies/loop-playback/README.md)
 covers loop edits and half-speed playback.
 
-**Save current attempt** stores audio only after you confirm a nonempty name;
+To practice a passage within a recording, drag on the waveform or enter
+**Region start (s)** and **Region end (s)**. **Loop region** auditions those
+bounds. **Keep region** makes that audio the current clip: comparison,
+the tone helper and saving all use the excerpt. For example, keep one syllable
+from a reference phrase, then record your attempt against that syllable.
+The name shows its time range in the original recording. Repeated trims and
+pitch-algorithm changes retain **Restore full clip** until you load new audio.
+Failed or cancelled analysis keeps the previous clip. Extraction copies the
+decoded samples without resampling; the start rounds down and the end rounds
+up to sample boundaries. A cut need not fall at a zero crossing and can click
+during playback. [Sample and browser checks](studies/practice-regions/README.md).
+
+**Save current reference** or **Save current attempt** saves the selected tab's
+clip only after you confirm a nonempty name. An excerpt saves only that audio;
+its full source and restore history are not stored in the library.
 Cancel saves nothing. If browser storage is unavailable, audio loading,
 recording, and comparison still work. Saving errors appear beside the library,
 and **Retry saved references** retries a failed library load. Saved recordings
@@ -333,8 +347,8 @@ minutes long.
 
 ```
 dist/index.html                   2.34 kB (gzip 0.88 kB)
-dist/assets/index-*.css          22.80 kB (gzip 3.52 kB)
-dist/assets/index-*.js           56.02 kB (gzip 20.12 kB)
+dist/assets/index-*.css          23.18 kB (gzip 3.58 kB)
+dist/assets/index-*.js           58.86 kB (gzip 20.98 kB)
 ```
 
 No UI framework, no charting library - Canvas 2D and vanilla DOM.

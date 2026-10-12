@@ -1,0 +1,485 @@
+{
+  "mode": "before",
+  "results": [
+    {
+      "browser": "chromium",
+      "version": "153.0.8010.12",
+      "width": 1440,
+      "fixture": {
+        "url": "http://www2.spsc.tugraz.at/databases/PTDB-TUG/SPEECH%20DATA/FEMALE/MIC/F01/mic_F01_sa1.wav",
+        "path": "ptdb/F01/mic_F01_sa1.wav",
+        "bytes": 767084,
+        "sha256": "4d06714d605aafdd4f5923170b182b25879c42fe9f5275e7c076134f4f490fc1"
+      },
+      "requestedSeconds": [
+        3,
+        4
+      ],
+      "voicedFrames": 243,
+      "sourceSamples": 352358,
+      "sampleRate": 44100,
+      "storedSamples": 352358,
+      "storedMismatches": 0,
+      "analyzedMismatches": 0,
+      "playbackMismatches": null,
+      "restoredExactly": null,
+      "offlineRequests": [],
+      "external": [],
+      "errors": [],
+      "served": {
+        "index.html": {
+          "bytes": 2342,
+          "sha256": "ecca6de0e539d1089761d9eaa04cb13f731bb967e2b7aa7a3290ceb5b1647484"
+        },
+        "assets/index-Bmc6olGg.css": {
+          "bytes": 22805,
+          "sha256": "bf38e8b5b198c4567f7bcf59a67502c22f7d1381a4a572e8fd496d1bbb22dec3"
+        },
+        "assets/index-DgY2WYVo.js": {
+          "bytes": 56274,
+          "sha256": "448d6d9677e459a4f0f3364a1a2725c966ee62ddebcd1727df635e6401f0eae5"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        }
+      }
+    },
+    {
+      "browser": "chromium",
+      "version": "153.0.8010.12",
+      "width": 1440,
+      "fixture": {
+        "url": "http://www2.spsc.tugraz.at/databases/PTDB-TUG/SPEECH%20DATA/MALE/MIC/M01/mic_M01_sa1.wav",
+        "path": "ptdb/M01/mic_M01_sa1.wav",
+        "bytes": 808364,
+        "sha256": "831c88e139267895e68f71050f668b7f32fae8676af0200bf59bfa8bdbfa8d26"
+      },
+      "requestedSeconds": [
+        3,
+        4
+      ],
+      "voicedFrames": 198,
+      "sourceSamples": 371321,
+      "sampleRate": 44100,
+      "storedSamples": 371321,
+      "storedMismatches": 0,
+      "analyzedMismatches": 0,
+      "playbackMismatches": null,
+      "restoredExactly": null,
+      "offlineRequests": [],
+      "external": [],
+      "errors": [],
+      "served": {
+        "index.html": {
+          "bytes": 2342,
+          "sha256": "ecca6de0e539d1089761d9eaa04cb13f731bb967e2b7aa7a3290ceb5b1647484"
+        },
+        "assets/index-Bmc6olGg.css": {
+          "bytes": 22805,
+          "sha256": "bf38e8b5b198c4567f7bcf59a67502c22f7d1381a4a572e8fd496d1bbb22dec3"
+        },
+        "assets/index-DgY2WYVo.js": {
+          "bytes": 56274,
+          "sha256": "448d6d9677e459a4f0f3364a1a2725c966ee62ddebcd1727df635e6401f0eae5"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        }
+      }
+    },
+    {
+      "browser": "chromium",
+      "version": "153.0.8010.12",
+      "width": 375,
+      "fixture": {
+        "url": "http://www2.spsc.tugraz.at/databases/PTDB-TUG/SPEECH%20DATA/FEMALE/MIC/F01/mic_F01_sa1.wav",
+        "path": "ptdb/F01/mic_F01_sa1.wav",
+        "bytes": 767084,
+        "sha256": "4d06714d605aafdd4f5923170b182b25879c42fe9f5275e7c076134f4f490fc1"
+      },
+      "requestedSeconds": [
+        3,
+        4
+      ],
+      "voicedFrames": 243,
+      "sourceSamples": 352358,
+      "sampleRate": 44100,
+      "storedSamples": 352358,
+      "storedMismatches": 0,
+      "analyzedMismatches": 0,
+      "playbackMismatches": null,
+      "restoredExactly": null,
+      "offlineRequests": [],
+      "external": [],
+      "errors": [],
+      "served": {
+        "index.html": {
+          "bytes": 2342,
+          "sha256": "ecca6de0e539d1089761d9eaa04cb13f731bb967e2b7aa7a3290ceb5b1647484"
+        },
+        "assets/index-Bmc6olGg.css": {
+          "bytes": 22805,
+          "sha256": "bf38e8b5b198c4567f7bcf59a67502c22f7d1381a4a572e8fd496d1bbb22dec3"
+        },
+        "assets/index-DgY2WYVo.js": {
+          "bytes": 56274,
+          "sha256": "448d6d9677e459a4f0f3364a1a2725c966ee62ddebcd1727df635e6401f0eae5"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        }
+      }
+    },
+    {
+      "browser": "chromium",
+      "version": "153.0.8010.12",
+      "width": 375,
+      "fixture": {
+        "url": "http://www2.spsc.tugraz.at/databases/PTDB-TUG/SPEECH%20DATA/MALE/MIC/M01/mic_M01_sa1.wav",
+        "path": "ptdb/M01/mic_M01_sa1.wav",
+        "bytes": 808364,
+        "sha256": "831c88e139267895e68f71050f668b7f32fae8676af0200bf59bfa8bdbfa8d26"
+      },
+      "requestedSeconds": [
+        3,
+        4
+      ],
+      "voicedFrames": 198,
+      "sourceSamples": 371321,
+      "sampleRate": 44100,
+      "storedSamples": 371321,
+      "storedMismatches": 0,
+      "analyzedMismatches": 0,
+      "playbackMismatches": null,
+      "restoredExactly": null,
+      "offlineRequests": [],
+      "external": [],
+      "errors": [],
+      "served": {
+        "index.html": {
+          "bytes": 2342,
+          "sha256": "ecca6de0e539d1089761d9eaa04cb13f731bb967e2b7aa7a3290ceb5b1647484"
+        },
+        "assets/index-Bmc6olGg.css": {
+          "bytes": 22805,
+          "sha256": "bf38e8b5b198c4567f7bcf59a67502c22f7d1381a4a572e8fd496d1bbb22dec3"
+        },
+        "assets/index-DgY2WYVo.js": {
+          "bytes": 56274,
+          "sha256": "448d6d9677e459a4f0f3364a1a2725c966ee62ddebcd1727df635e6401f0eae5"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        }
+      }
+    },
+    {
+      "browser": "firefox",
+      "version": "155.0",
+      "width": 1440,
+      "fixture": {
+        "url": "http://www2.spsc.tugraz.at/databases/PTDB-TUG/SPEECH%20DATA/FEMALE/MIC/F01/mic_F01_sa1.wav",
+        "path": "ptdb/F01/mic_F01_sa1.wav",
+        "bytes": 767084,
+        "sha256": "4d06714d605aafdd4f5923170b182b25879c42fe9f5275e7c076134f4f490fc1"
+      },
+      "requestedSeconds": [
+        3,
+        4
+      ],
+      "voicedFrames": 243,
+      "sourceSamples": 352359,
+      "sampleRate": 44100,
+      "storedSamples": 352359,
+      "storedMismatches": 0,
+      "analyzedMismatches": 0,
+      "playbackMismatches": null,
+      "restoredExactly": null,
+      "offlineRequests": [],
+      "external": [],
+      "errors": [],
+      "served": {
+        "index.html": {
+          "bytes": 2342,
+          "sha256": "ecca6de0e539d1089761d9eaa04cb13f731bb967e2b7aa7a3290ceb5b1647484"
+        },
+        "assets/index-DgY2WYVo.js": {
+          "bytes": 56274,
+          "sha256": "448d6d9677e459a4f0f3364a1a2725c966ee62ddebcd1727df635e6401f0eae5"
+        },
+        "assets/index-Bmc6olGg.css": {
+          "bytes": 22805,
+          "sha256": "bf38e8b5b198c4567f7bcf59a67502c22f7d1381a4a572e8fd496d1bbb22dec3"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        }
+      }
+    },
+    {
+      "browser": "firefox",
+      "version": "155.0",
+      "width": 1440,
+      "fixture": {
+        "url": "http://www2.spsc.tugraz.at/databases/PTDB-TUG/SPEECH%20DATA/MALE/MIC/M01/mic_M01_sa1.wav",
+        "path": "ptdb/M01/mic_M01_sa1.wav",
+        "bytes": 808364,
+        "sha256": "831c88e139267895e68f71050f668b7f32fae8676af0200bf59bfa8bdbfa8d26"
+      },
+      "requestedSeconds": [
+        3,
+        4
+      ],
+      "voicedFrames": 198,
+      "sourceSamples": 371322,
+      "sampleRate": 44100,
+      "storedSamples": 371322,
+      "storedMismatches": 0,
+      "analyzedMismatches": 0,
+      "playbackMismatches": null,
+      "restoredExactly": null,
+      "offlineRequests": [],
+      "external": [],
+      "errors": [],
+      "served": {
+        "index.html": {
+          "bytes": 2342,
+          "sha256": "ecca6de0e539d1089761d9eaa04cb13f731bb967e2b7aa7a3290ceb5b1647484"
+        },
+        "assets/index-DgY2WYVo.js": {
+          "bytes": 56274,
+          "sha256": "448d6d9677e459a4f0f3364a1a2725c966ee62ddebcd1727df635e6401f0eae5"
+        },
+        "assets/index-Bmc6olGg.css": {
+          "bytes": 22805,
+          "sha256": "bf38e8b5b198c4567f7bcf59a67502c22f7d1381a4a572e8fd496d1bbb22dec3"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        }
+      }
+    },
+    {
+      "browser": "firefox",
+      "version": "155.0",
+      "width": 375,
+      "fixture": {
+        "url": "http://www2.spsc.tugraz.at/databases/PTDB-TUG/SPEECH%20DATA/FEMALE/MIC/F01/mic_F01_sa1.wav",
+        "path": "ptdb/F01/mic_F01_sa1.wav",
+        "bytes": 767084,
+        "sha256": "4d06714d605aafdd4f5923170b182b25879c42fe9f5275e7c076134f4f490fc1"
+      },
+      "requestedSeconds": [
+        3,
+        4
+      ],
+      "voicedFrames": 243,
+      "sourceSamples": 352359,
+      "sampleRate": 44100,
+      "storedSamples": 352359,
+      "storedMismatches": 0,
+      "analyzedMismatches": 0,
+      "playbackMismatches": null,
+      "restoredExactly": null,
+      "offlineRequests": [],
+      "external": [],
+      "errors": [],
+      "served": {
+        "index.html": {
+          "bytes": 2342,
+          "sha256": "ecca6de0e539d1089761d9eaa04cb13f731bb967e2b7aa7a3290ceb5b1647484"
+        },
+        "assets/index-DgY2WYVo.js": {
+          "bytes": 56274,
+          "sha256": "448d6d9677e459a4f0f3364a1a2725c966ee62ddebcd1727df635e6401f0eae5"
+        },
+        "assets/index-Bmc6olGg.css": {
+          "bytes": 22805,
+          "sha256": "bf38e8b5b198c4567f7bcf59a67502c22f7d1381a4a572e8fd496d1bbb22dec3"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        }
+      }
+    },
+    {
+      "browser": "firefox",
+      "version": "155.0",
+      "width": 375,
+      "fixture": {
+        "url": "http://www2.spsc.tugraz.at/databases/PTDB-TUG/SPEECH%20DATA/MALE/MIC/M01/mic_M01_sa1.wav",
+        "path": "ptdb/M01/mic_M01_sa1.wav",
+        "bytes": 808364,
+        "sha256": "831c88e139267895e68f71050f668b7f32fae8676af0200bf59bfa8bdbfa8d26"
+      },
+      "requestedSeconds": [
+        3,
+        4
+      ],
+      "voicedFrames": 198,
+      "sourceSamples": 371322,
+      "sampleRate": 44100,
+      "storedSamples": 371322,
+      "storedMismatches": 0,
+      "analyzedMismatches": 0,
+      "playbackMismatches": null,
+      "restoredExactly": null,
+      "offlineRequests": [],
+      "external": [],
+      "errors": [],
+      "served": {
+        "index.html": {
+          "bytes": 2342,
+          "sha256": "ecca6de0e539d1089761d9eaa04cb13f731bb967e2b7aa7a3290ceb5b1647484"
+        },
+        "assets/index-DgY2WYVo.js": {
+          "bytes": 56274,
+          "sha256": "448d6d9677e459a4f0f3364a1a2725c966ee62ddebcd1727df635e6401f0eae5"
+        },
+        "assets/index-Bmc6olGg.css": {
+          "bytes": 22805,
+          "sha256": "bf38e8b5b198c4567f7bcf59a67502c22f7d1381a4a572e8fd496d1bbb22dec3"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        }
+      }
+    }
+  ]
+}
