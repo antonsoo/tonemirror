@@ -1,0 +1,350 @@
+{
+  "date": "2026-10-12",
+  "implementationCommit": "0ffd177cfc7e63ddee1eef2a40f74ee25a459186",
+  "environment": {
+    "node": "24.21.0",
+    "chromium": "153.0.8010.12",
+    "firefox": "155.0",
+    "platform": "WSL2 Linux"
+  },
+  "cleanArchive": {
+    "entries": 230,
+    "allMatchGitObjects": true
+  },
+  "commands": [
+    {
+      "command": "npm ci",
+      "exitCode": 0,
+      "log": {
+        "bytes": 143,
+        "sha256": "0f42d0c27fdabdc8badf51c652189fa0050a6821935243e093a537d8fdd4a3ba"
+      }
+    },
+    {
+      "command": "npm run lint",
+      "exitCode": 0,
+      "log": {
+        "bytes": 61,
+        "sha256": "ee60d41d23557ba5866f3f21bfbda01d50a829fe03fd0a79d3240a5fe6718f90"
+      }
+    },
+    {
+      "command": "npm run typecheck",
+      "exitCode": 0,
+      "log": {
+        "bytes": 70,
+        "sha256": "f1d5078d5ac8aa2d682d6b5a22c5779ed8a21d5643c15422910fb2a174e95b04"
+      }
+    },
+    {
+      "command": "npm test",
+      "exitCode": 0,
+      "log": {
+        "bytes": 525,
+        "sha256": "9d73b4218728081bce7bb1028a18fbc93e7af8498ba07e96421b9900df5bc119"
+      }
+    },
+    {
+      "command": "npm run build",
+      "exitCode": 0,
+      "log": {
+        "bytes": 2089,
+        "sha256": "4f7ed6b0b3d738a7a16d62e6687b68bfb843289cf627ace52a50087978f553fb"
+      }
+    },
+    {
+      "command": "npx playwright test",
+      "exitCode": 0,
+      "log": {
+        "bytes": 10988,
+        "sha256": "d653aba614b696f07c7d34297adef5305bfc3cde2cfa29ddeb1b216d9df4e855"
+      }
+    },
+    {
+      "command": "node studies/practice-regions/browser.mjs dist CACHE OUTPUT after",
+      "exitCode": 0,
+      "log": {
+        "bytes": 43,
+        "sha256": "acf6e981e8aa55854259462352ca4b9697cbc515584529f2f1f5604c0a322e77"
+      }
+    }
+  ],
+  "unit": {
+    "passed": 197,
+    "files": 18
+  },
+  "browser": {
+    "passed": 67,
+    "skipped": 3,
+    "skipReason": "Three microphone lifecycle/capture cases require Chromium deterministic test microphone."
+  },
+  "recordedSpeech": {
+    "beforeWorkflows": 8,
+    "afterWorkflows": 8,
+    "cleanInstallReplayWorkflows": 8,
+    "cleanReplayMatchesRecordedResults": true,
+    "allSelectedSampleMismatches": 0,
+    "allRestorationsExact": true,
+    "httpAssetsCheckedPerWorkflow": 8
+  },
+  "buildFiles": [
+    {
+      "path": "index.html",
+      "bytes": 2342,
+      "sha256": "fc0d2fdc08bb86c2c76e69d2717381371e2020460b66b2f9cbd5137f29c241cf"
+    },
+    {
+      "path": "assets/index-BTO_e6A4.css",
+      "bytes": 23188,
+      "sha256": "3ea8eb979b794e79ea4aa7ba55a6da08360030a59d32c0ca0562e895eb7fc91c"
+    },
+    {
+      "path": "assets/fraunces-latin-DihXLNYH.woff2",
+      "bytes": 67304,
+      "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+    },
+    {
+      "path": "assets/fraunces-vietnamese-Czevyj-6.woff2",
+      "bytes": 19700,
+      "sha256": "f18853f63a870ebef013e30e789d8d544f102e4acd94988e57c223d9c796ddf4"
+    },
+    {
+      "path": "assets/ibm-plex-mono-500-cyrillic-Bq9vWWag.woff2",
+      "bytes": 8460,
+      "sha256": "1d89462e86cb8e87e7e9d6f6635605bd7c3081baca6caaecee84916bf7b60edc"
+    },
+    {
+      "path": "assets/inter-vietnamese-CBcvBZtf.woff2",
+      "bytes": 10252,
+      "sha256": "5c66f9e07e90c6d4ac4922cc68d60de26c17b1858e677fb5e603fce3952b3ff2"
+    },
+    {
+      "path": "assets/index-CE8IEhx7.js",
+      "bytes": 58860,
+      "sha256": "3e64625092a0a5e66259f2f481baf395fa79adfc9cdc837974c453397a56e0e9"
+    },
+    {
+      "path": "assets/ibm-plex-mono-500-vietnamese-DZ4AoWbu.woff2",
+      "bytes": 6040,
+      "sha256": "781633d95de88040fb77141d1e65d928c87c0144691fbc74da5a64d137a7e910"
+    },
+    {
+      "path": "assets/pitchWorker-Dyhd7A7I.js.map",
+      "bytes": 61011,
+      "sha256": "133ff58b0a6eb88ea18bd8f6fa07deb9621416cf6bbf08e525614a685ba30e24"
+    },
+    {
+      "path": "assets/inter-greek-CkhJZR-_.woff2",
+      "bytes": 18996,
+      "sha256": "1be3448e292fbf05ffe176fe1e43f135013d50b1e7d324ad1a558f623d3bb6f6"
+    },
+    {
+      "path": "assets/fraunces-italic-latin-ext-C5JMU4hr.woff2",
+      "bytes": 37620,
+      "sha256": "bbf614d45de67a99e638b753611329b2cb8b5b6d8da53b2aee0267fe75cfc5c8"
+    },
+    {
+      "path": "assets/inter-cyrillic-ext-BOeWTOD4.woff2",
+      "bytes": 25960,
+      "sha256": "ca157063339ac4ad418f214f3abfed119b0798ab4d377386ce5c9e5a7a435ebd"
+    },
+    {
+      "path": "assets/inter-latin-Dx4kXJAl.woff2",
+      "bytes": 48256,
+      "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+    },
+    {
+      "path": "assets/fraunces-italic-latin-BEbM7Mn6.woff2",
+      "bytes": 42372,
+      "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+    },
+    {
+      "path": "assets/inter-greek-ext-DlzME5K_.woff2",
+      "bytes": 11232,
+      "sha256": "6e9e020a25f9b56d418f2c085b1d3c09725a4da23fe693a5b463064606732190"
+    },
+    {
+      "path": "assets/index-CE8IEhx7.js.map",
+      "bytes": 175953,
+      "sha256": "7338f617303f5fdfcd7d31546a7f04894fa347bd9a0987b0a3c03b7d00729b73"
+    },
+    {
+      "path": "assets/inter-cyrillic-DqGufNeO.woff2",
+      "bytes": 18748,
+      "sha256": "71d5ee93cc1e9f1d520a3a8b66456de18c7879d8df09d57fcd2eaff75fef0075"
+    },
+    {
+      "path": "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2",
+      "bytes": 14708,
+      "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+    },
+    {
+      "path": "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2",
+      "bytes": 13348,
+      "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
+    },
+    {
+      "path": "assets/ibm-plex-mono-500-latin-ext-CAhNIIs5.woff2",
+      "bytes": 13432,
+      "sha256": "6bb06407c97584b0867a959e05e8874693bfeb8c317de190811c51598f2d99ea"
+    },
+    {
+      "path": "assets/fraunces-latin-ext-CJcjJNj7.woff2",
+      "bytes": 59388,
+      "sha256": "a2930b27d13a228bd9ab6a49269b5f800237892ad560cb9dd7fab01b1620f88e"
+    },
+    {
+      "path": "assets/ibm-plex-mono-400-vietnamese-BulugwFq.woff2",
+      "bytes": 5868,
+      "sha256": "62632b6375305e70ddcafdd895218e6ae41a184fcd280a69c739460604ca00a9"
+    },
+    {
+      "path": "assets/fraunces-italic-vietnamese-B7PmIdA3.woff2",
+      "bytes": 12048,
+      "sha256": "b2383049df5de759100887e80450ef360e502d5b0454954fab2dcd6b322944f5"
+    },
+    {
+      "path": "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2",
+      "bytes": 14888,
+      "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+    },
+    {
+      "path": "assets/ibm-plex-mono-400-cyrillic-ext-xuaO2J-f.woff2",
+      "bytes": 6912,
+      "sha256": "f8c22ec1804bd6966b70f43ac7c327025645b4c09597117fca2a5a6c750106fe"
+    },
+    {
+      "path": "assets/inter-latin-ext-DO1Apj_S.woff2",
+      "bytes": 85068,
+      "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
+    },
+    {
+      "path": "assets/ibm-plex-mono-500-cyrillic-ext-BqneJy0T.woff2",
+      "bytes": 6972,
+      "sha256": "3febe5c7f22e4b07b4552738673c3dbe8bced2dc5f48b866edf7ccd9552d109a"
+    },
+    {
+      "path": "assets/ibm-plex-mono-400-cyrillic-BSMlKf0J.woff2",
+      "bytes": 8356,
+      "sha256": "7635422bd10ddbbcb0e0caa1154b928298f5c8319b8c00b30978d4395f4783ce"
+    }
+  ],
+  "buildFilesMatchDevelopmentAndServedAssets": true,
+  "inspectedRegressionScreenshots": [
+    {
+      "path": "app-comparison-remains-accessible-at-1280px-in-dark-chromium/comparison-dark-1280.png",
+      "bytes": 350234,
+      "sha256": "d8d196223d3b95ec9c52f9fbea0945a9317ff47cc204454fa98b92208a5df8f9"
+    },
+    {
+      "path": "app-comparison-remains-accessible-at-1280px-in-dark-firefox/comparison-dark-1280.png",
+      "bytes": 469034,
+      "sha256": "9d687e326608da5eb49725bf629130970e0b70eff7080fe435f977fdd1df4050"
+    },
+    {
+      "path": "app-comparison-remains-accessible-at-1280px-in-light-chromium/comparison-light-1280.png",
+      "bytes": 338945,
+      "sha256": "244479e0d5a4063342b370ed204ec2e701686fdf939ddc6ccf92cf4b8c3d056d"
+    },
+    {
+      "path": "app-comparison-remains-accessible-at-1280px-in-light-firefox/comparison-light-1280.png",
+      "bytes": 464910,
+      "sha256": "78039a804c972e2c337ce9f6b4b2bb414127fd4325ef5fec6c28534502e53245"
+    },
+    {
+      "path": "app-comparison-remains-accessible-at-320px-in-dark-chromium/comparison-dark-320.png",
+      "bytes": 292488,
+      "sha256": "5433a428e8b26d471b2a8811965863b67a3997c763bbe94a729c8d0882868b86"
+    },
+    {
+      "path": "app-comparison-remains-accessible-at-320px-in-dark-firefox/comparison-dark-320.png",
+      "bytes": 383746,
+      "sha256": "0eb6d6f52581857d8513f336da2d27dabccd6320352fd36eb4de17a8ff8477d9"
+    },
+    {
+      "path": "app-comparison-remains-accessible-at-320px-in-light-chromium/comparison-light-320.png",
+      "bytes": 284432,
+      "sha256": "b5224f64e856abdad28364cd47581deb1eb0f855cb2f593a21be714fb2bc5aee"
+    },
+    {
+      "path": "app-comparison-remains-accessible-at-320px-in-light-firefox/comparison-light-320.png",
+      "bytes": 384226,
+      "sha256": "c0e36baea3c19c3dc2de5395f37896f5784ed8081a099f0db43e19cc4f829542"
+    },
+    {
+      "path": "regions-extract-compare-pl-25294-d-restore-offline-at-1440px-chromium/practice-region.png",
+      "bytes": 93038,
+      "sha256": "11201441fc7329c2b383d506c56f777ba15526efeff1be470a4908dba1f84e8f"
+    },
+    {
+      "path": "regions-extract-compare-pl-25294-d-restore-offline-at-1440px-firefox/practice-region.png",
+      "bytes": 109663,
+      "sha256": "90cac966e790bb5ab850dbb7c80c9999bf5d93f55f885fd45f8b70d083fd5693"
+    },
+    {
+      "path": "regions-extract-compare-pl-5659a-nd-restore-offline-at-375px-chromium/practice-region.png",
+      "bytes": 65823,
+      "sha256": "99bd02cfe639448948badf420c77a2457266c8dfc14fd4573ed1bed3637fbbfa"
+    },
+    {
+      "path": "regions-extract-compare-pl-5659a-nd-restore-offline-at-375px-firefox/practice-region.png",
+      "bytes": 87369,
+      "sha256": "3287246e473c0dd20ddffd117bc928f3414c5c3a7f8ae54d2f0e1d54582a192e"
+    }
+  ],
+  "inspectedSpeechScreenshots": [
+    {
+      "path": "docs/assets/practice-regions/chromium-1440.png",
+      "bytes": 184817,
+      "sha256": "fb10189f8d85548314ceb86ffb47073a280479a61132527c84c2a7a3aa6428e9"
+    },
+    {
+      "path": "docs/assets/practice-regions/chromium-375.png",
+      "bytes": 124657,
+      "sha256": "64efb01d86a1759f368eb6ae09e498db286893e23688b97408bcb01a5e7961c9"
+    },
+    {
+      "path": "docs/assets/practice-regions/firefox-1440.png",
+      "bytes": 214748,
+      "sha256": "80df807c35a230ef2282c2bf00dc1decc525204ba72d0a843c6befe6c1cf04bb"
+    },
+    {
+      "path": "docs/assets/practice-regions/firefox-375.png",
+      "bytes": 153963,
+      "sha256": "d2b25535ffed3e8a22309b45916e3fd331f4ee19a93aebe290e8b8fe93239647"
+    }
+  ],
+  "sourceFiles": [
+    {
+      "path": "src/app.ts",
+      "bytes": 38980,
+      "sha256": "9aae5080e34e0a14f2c5fd73ba912e52624f89aaf86bb7e955e3b64a474201e0"
+    },
+    {
+      "path": "src/audio/region.ts",
+      "bytes": 615,
+      "sha256": "0d70ba9c247fae266d1c36b8c53eb148d9da6c6eb2f14d6c3c54dd7eff0cde4b"
+    },
+    {
+      "path": "src/style.css",
+      "bytes": 13896,
+      "sha256": "d7d3f872bc90bc83b18c0dbd71c408b48a0db5a02c4682cfb177e6cb03dd234e"
+    },
+    {
+      "path": "tests/region.test.ts",
+      "bytes": 675,
+      "sha256": "625edbfd4b9e0b99aacd2145011d691f5670ad422adabd0edf27bd04acc2cd06"
+    },
+    {
+      "path": "tests/browser/regions.spec.js",
+      "bytes": 11151,
+      "sha256": "bed6c0f005cfc7171ff147f56fff161e23f281955586cb5be39e1ffcf09716c6"
+    },
+    {
+      "path": "studies/practice-regions/browser.mjs",
+      "bytes": 9232,
+      "sha256": "e1ebb0bbd0ac7b38842958b4efd15490c7539662ed67b56d0bda5b328f98937e"
+    }
+  ],
+  "scope": "Local production builds and source only. No package release, tag or hosted deployment. English speech checks editing, not Mandarin pronunciation."
+}

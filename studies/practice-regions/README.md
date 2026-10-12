@@ -47,6 +47,16 @@ inferred from the sample-equality checks.
 
 ## Regression checks
 
+A fresh archive of implementation commit `0ffd177cfc7e63ddee1eef2a40f74ee25a459186`
+matched all 230 Git entries. On Node 24.21.0, `npm ci`, lint, type checks,
+197 unit tests, the production build and 67 browser workflows pass. Three
+existing microphone cases are skipped in Firefox because their deterministic
+test device is Chromium-specific. All 12 regression screenshots were inspected.
+All 28 build files match the earlier tested build. Repeating the eight speech
+workflows from this clean install reproduces the retained results and asset
+hashes. The [verification receipt](verification.json) records commands, build
+hashes and inspected screenshots.
+
 [`regions.spec.js`](../../tests/browser/regions.spec.js) uses a synthetic
 three-second level/rising/falling phrase. Keeping its rising second gives
 matching reference and attempt contours, clears the old tone result, and
