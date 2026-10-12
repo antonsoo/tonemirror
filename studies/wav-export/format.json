@@ -1,0 +1,73 @@
+{
+  "node": "v26.7.0",
+  "ffmpeg": "ffmpeg version 8.0 Copyright (c) 2000-2025 the FFmpeg developers",
+  "cases": [
+    {
+      "rate": 8000,
+      "samples": 8,
+      "bytes": 190,
+      "sha256": "fe46f34acab872b9aba8914934c31fb7a53aacc5a1bd94f63bfb93f3c1532953",
+      "pcmSha256": "a202c94c0dddf26ac5471b129fcfee91e7ddb4a6b7a9d0fd981512e520013ac4",
+      "ffmpegSamplesMatch": true
+    },
+    {
+      "rate": 11025,
+      "samples": 8,
+      "bytes": 190,
+      "sha256": "26a50fb18575d362444494021efafd60c7f559883e430a0d8d6d3e888ae7baf1",
+      "pcmSha256": "a202c94c0dddf26ac5471b129fcfee91e7ddb4a6b7a9d0fd981512e520013ac4",
+      "ffmpegSamplesMatch": true
+    },
+    {
+      "rate": 16000,
+      "samples": 8,
+      "bytes": 190,
+      "sha256": "b1ee0cff2b53f012a3e37625a3e4f8b6a09364372f690ba88dbd8418e3bec01c",
+      "pcmSha256": "a202c94c0dddf26ac5471b129fcfee91e7ddb4a6b7a9d0fd981512e520013ac4",
+      "ffmpegSamplesMatch": true
+    },
+    {
+      "rate": 22050,
+      "samples": 8,
+      "bytes": 190,
+      "sha256": "818a027cd5e523ed0aa74d0658211ae98cb553e834ddd5e340d04675688a194a",
+      "pcmSha256": "a202c94c0dddf26ac5471b129fcfee91e7ddb4a6b7a9d0fd981512e520013ac4",
+      "ffmpegSamplesMatch": true
+    },
+    {
+      "rate": 44100,
+      "samples": 8,
+      "bytes": 190,
+      "sha256": "33a33e54c1b61b2e71b6110769315cb1a659d731c4b1537221f3d1c9144720db",
+      "pcmSha256": "a202c94c0dddf26ac5471b129fcfee91e7ddb4a6b7a9d0fd981512e520013ac4",
+      "ffmpegSamplesMatch": true
+    },
+    {
+      "rate": 48000,
+      "samples": 8,
+      "bytes": 190,
+      "sha256": "4a90ab2c9d808c094ed4f5534db3996120eae7289fb6c215d95d9aceba8edf5d",
+      "pcmSha256": "a202c94c0dddf26ac5471b129fcfee91e7ddb4a6b7a9d0fd981512e520013ac4",
+      "ffmpegSamplesMatch": true
+    },
+    {
+      "rate": 96000,
+      "samples": 8,
+      "bytes": 190,
+      "sha256": "d314bee99241fab8d6272fd253d9ac3ebc5fdc5aa26a4187682b718061e0b05d",
+      "pcmSha256": "a202c94c0dddf26ac5471b129fcfee91e7ddb4a6b7a9d0fd981512e520013ac4",
+      "ffmpegSamplesMatch": true
+    }
+  ],
+  "maximum": {
+    "samples": 5760000,
+    "sampleRate": 96000,
+    "seconds": 60,
+    "bytes": 23040144,
+    "sha256": "e270fead86182813c4edffcda9927eecfb8b906b0d97a47e317cb2cf13e6856e",
+    "pcmSha256": "d5d79888c022e4c3595d2fe7fe4a08569e2ad842e931c5586ad22276432c8b7c",
+    "encodeMilliseconds": 71.38968999999997,
+    "ffmpegSamplesMatch": true
+  },
+  "timingScope": "One local Node encoding run on 14-vCPU WSL2 Linux with 48 GiB RAM; not a browser or cross-device latency guarantee."
+}

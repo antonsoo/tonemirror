@@ -4,6 +4,12 @@ All notable changes to this project are documented in this file.
 
 ## Unreleased
 
+- Download the focused clip as a float WAV, including microphone recordings,
+  saved references and kept excerpts. Preserve the decoded mono samples at
+  normal speed and retain synthetic-reference metadata when the file is
+  reopened. Failed download preparation leaves the loaded audio available.
+  [Recorded speech downloads and independent decoding](studies/wav-export/README.md).
+
 - Extract a practice passage from either audio tab with **Keep region**, using
   a dragged region or keyboard time fields. Playback, comparison, classification
   and saving use the extracted audio. **Restore full clip** retains the source

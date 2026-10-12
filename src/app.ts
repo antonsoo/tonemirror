@@ -8,6 +8,7 @@ import { loadAudioFile } from "./audio/fileLoader.js";
 import { MAX_AUDIO_SECONDS, validateAudio } from "./audio/limits.js";
 import { ClipPlayer } from "./audio/playback.js";
 import { regionSamples } from "./audio/region.js";
+import { encodeWav, wavFilename } from "./audio/wav.js";
 import { warpedOverlay, type AlignmentResult } from "./core/dtw.js";
 import { classifyMandarinTone } from "./core/toneClassifier.js";
 import { ALL_MANDARIN_TONES, mandarinToneChaoNumerals, mandarinToneContour, mandarinToneLabel } from "./core/mandarinTones.js";
@@ -216,6 +217,8 @@ export function mountApp(root: HTMLElement): void {
     renderAnalysis();
   });
   const playBtn = el("button", { class: "tm-btn tm-btn-primary", onclick: () => void togglePlayback() }, ["▶ Play"]);
+  const downloadNote = el("p", { class: "tm-hint", id: "download-note", role: "status" }, ["Download the current clip at normal speed. Use Keep region to export an excerpt."]);
+  const downloadBtn = el("button", { class: "tm-btn", "aria-describedby": "download-note", onclick: downloadFocusedClip }, ["Download WAV"]);
   const halfSpeedToggle = el("input", {
     type: "checkbox",
     onchange: (e) => {
@@ -264,7 +267,9 @@ export function mountApp(root: HTMLElement): void {
       playBtn,
       clearLoopBtn,
       el("label", { class: "tm-toggle" }, [halfSpeedToggle, "half-speed"]),
+      downloadBtn,
     ]),
+    downloadNote,
     regionControls,
     regionMessage,
   ]);
@@ -518,6 +523,7 @@ export function mountApp(root: HTMLElement): void {
     restoreClipBtn.hidden = !clip?.excerpt;
     restoreClipBtn.disabled = busy;
     saveBtn.disabled = !clip || savingReference || busy;
+    downloadBtn.disabled = !clip || busy;
     const message = !clip ? "Load or record audio to choose a practice region."
       : !bounds ? "Enter a start and end within the clip, with the end after the start."
       : "Loop region changes playback. Keep region uses only that audio for comparison, classification and saving. Restore full clip is available until you load new audio.";
@@ -616,8 +622,8 @@ export function mountApp(root: HTMLElement): void {
     const request = beginLoad(focus);
     report(request, `Decoding ${file.name}…`);
     try {
-      const { pcm, sampleRate } = await loadAudioFile(file, request.controller.signal);
-      await loadClip(request.role, pcm, sampleRate, file.name, false, request);
+      const { pcm, sampleRate, synthetic } = await loadAudioFile(file, request.controller.signal);
+      await loadClip(request.role, pcm, sampleRate, file.name, synthetic, request);
     } catch (err) {
       report(request, `Could not decode ${file.name}: ${(err as Error).message}`);
     } finally {
@@ -753,6 +759,27 @@ export function mountApp(root: HTMLElement): void {
     saveBtn.textContent = focus === "reference" ? "Save current reference" : "Save current attempt";
     refreshRegionControls();
     playBtn.textContent = player?.isPlaying ? "⏸ Pause" : "▶ Play";
+  }
+
+  function downloadFocusedClip(): void {
+    const clip = clips[focus];
+    if (!clip || loads[focus]) return;
+    let url: string | undefined;
+    let link: HTMLAnchorElement | undefined;
+    try {
+      const filename = wavFilename(clip.label, focus, clip.synthetic);
+      url = URL.createObjectURL(new Blob([encodeWav(clip.pcm, clip.sampleRate, clip.synthetic)], { type: "audio/wav" }));
+      link = el("a", { href: url, download: filename, hidden: true });
+      document.body.append(link);
+      link.click();
+      downloadNote.textContent = `WAV download started: ${filename}. Current clip at normal speed${clip.synthetic ? "; synthetic reference" : ""}.`;
+    } catch (error) {
+      downloadNote.textContent = `Could not prepare the WAV download: ${(error as Error).message}. Your audio is kept.`;
+    } finally {
+      link?.remove();
+      // Revoking in the same task can cancel downloads in some browsers.
+      if (url) { const created = url; window.setTimeout(() => URL.revokeObjectURL(created), 1000); }
+    }
   }
 
   async function togglePlayback(): Promise<void> {

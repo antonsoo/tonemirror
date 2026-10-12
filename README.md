@@ -43,6 +43,12 @@ just click one of the built-in reference chips and record yourself.
 
 ## Features
 
+- **Audio out (source checkout, unreleased):** **Download WAV** exports the
+  focused attempt or reference, including recordings and saved clips. Use
+  **Keep region** first to download just a passage. Downloads preserve the
+  decoded mono samples at normal speed; looping and half-speed playback do not
+  alter them. Synthetic references carry a filename and WAV metadata marker,
+  retained when reopened in ToneMirror. [Download and reload verification](studies/wav-export/README.md).
 - **Audio in:** record with the microphone, or load a wav/mp3/ogg/m4a file
   (anything the browser's `decodeAudioData` supports). Recordings you save
   are kept in IndexedDB so you can record a teacher or native speaker once
