@@ -1,0 +1,1183 @@
+{
+  "synthetic": true,
+  "fixture": {
+    "bytes": 1920044,
+    "sha256": "93885939add9a4a86a94ab4b090ff108aa08f82401d8c33a5bac106919f2bec7",
+    "sampleRate": 48000,
+    "durationSeconds": 10
+  },
+  "baseline": false,
+  "scope": "Digital native audio output and painted cursor; no microphone or acoustic validation",
+  "captures": [
+    {
+      "engine": "chromium",
+      "browser": "153.0.8010.12",
+      "width": 1440,
+      "starts": [
+        {
+          "offset": 0,
+          "loop": false,
+          "loopStart": 0,
+          "loopEnd": 0
+        },
+        {
+          "offset": 1.9999953612332875,
+          "loop": true,
+          "loopStart": 1.9999953612332875,
+          "loopEnd": 3.999990722466575
+        }
+      ],
+      "observations": [
+        {
+          "cursor": 2.1160951344759176,
+          "audio": 2.1159426867961884,
+          "errorSeconds": 0.00015244767972921736,
+          "rate": 1,
+          "contextTime": 5.630839002267574
+        },
+        {
+          "cursor": 2.127705111800181,
+          "audio": 2.1275389194488525,
+          "errorSeconds": 0.00016619235132830923,
+          "rate": 1,
+          "contextTime": 5.642448979591837
+        },
+        {
+          "cursor": 2.16253504377297,
+          "audio": 2.162361443042755,
+          "errorSeconds": 0.0001736007302146625,
+          "rate": 1,
+          "contextTime": 5.677278911564626
+        },
+        {
+          "cursor": 2.16253504377297,
+          "audio": 2.162361443042755,
+          "errorSeconds": 0.0001736007302146625,
+          "rate": 1,
+          "contextTime": 5.677278911564626
+        },
+        {
+          "cursor": 2.1973649757457583,
+          "audio": 2.1972180902957916,
+          "errorSeconds": 0.00014688544996666053,
+          "rate": 1,
+          "contextTime": 5.712108843537415
+        },
+        {
+          "cursor": 2.1973649757457583,
+          "audio": 2.1972180902957916,
+          "errorSeconds": 0.00014688544996666053,
+          "rate": 1,
+          "contextTime": 5.712108843537415
+        },
+        {
+          "cursor": 2.2321949077185477,
+          "audio": 2.232089191675186,
+          "errorSeconds": 0.00010571604336151452,
+          "rate": 1,
+          "contextTime": 5.746938775510204
+        },
+        {
+          "cursor": 2.243804885042811,
+          "audio": 2.2436314821243286,
+          "errorSeconds": 0.0001734029184823349,
+          "rate": 1,
+          "contextTime": 5.758548752834467
+        },
+        {
+          "cursor": 2.243804885042811,
+          "audio": 2.2436314821243286,
+          "errorSeconds": 0.0001734029184823349,
+          "rate": 1,
+          "contextTime": 5.758548752834467
+        },
+        {
+          "cursor": 2.2786348170155994,
+          "audio": 2.278496026992798,
+          "errorSeconds": 0.0001387900228015937,
+          "rate": 1,
+          "contextTime": 5.793378684807256
+        },
+        {
+          "cursor": 2.290244794339863,
+          "audio": 2.290058583021164,
+          "errorSeconds": 0.00018621131869922536,
+          "rate": 1,
+          "contextTime": 5.804988662131519
+        },
+        {
+          "cursor": 2.3134647489883897,
+          "audio": 2.3133687674999237,
+          "errorSeconds": 0.00009598148846601262,
+          "rate": 1,
+          "contextTime": 5.828208616780046
+        },
+        {
+          "cursor": 2.319269737650521,
+          "audio": 2.320552319288254,
+          "errorSeconds": 0.0012825816377328714,
+          "rate": 0.5,
+          "contextTime": 5.839818594104308
+        },
+        {
+          "cursor": 2.330879714974784,
+          "audio": 2.332303076982498,
+          "errorSeconds": 0.0014233620077139797,
+          "rate": 0.5,
+          "contextTime": 5.863038548752835
+        },
+        {
+          "cursor": 2.3366847036369154,
+          "audio": 2.337980568408966,
+          "errorSeconds": 0.001295864772050681,
+          "rate": 0.5,
+          "contextTime": 5.874648526077097
+        },
+        {
+          "cursor": 2.3366847036369154,
+          "audio": 2.337980568408966,
+          "errorSeconds": 0.001295864772050681,
+          "rate": 0.5,
+          "contextTime": 5.874648526077097
+        },
+        {
+          "cursor": 2.348294680961179,
+          "audio": 2.3496444523334503,
+          "errorSeconds": 0.0013497713722712135,
+          "rate": 0.5,
+          "contextTime": 5.897868480725624
+        },
+        {
+          "cursor": 2.3540996696233103,
+          "audio": 2.355414777994156,
+          "errorSeconds": 0.0013151083708455857,
+          "rate": 0.5,
+          "contextTime": 5.909478458049887
+        },
+        {
+          "cursor": 2.3657096469475736,
+          "audio": 2.3669826984405518,
+          "errorSeconds": 0.0012730514929781833,
+          "rate": 0.5,
+          "contextTime": 5.932698412698413
+        },
+        {
+          "cursor": 2.3715146356097048,
+          "audio": 2.3728513717651367,
+          "errorSeconds": 0.0013367361554319501,
+          "rate": 0.5,
+          "contextTime": 5.944308390022676
+        },
+        {
+          "cursor": 2.383124612933968,
+          "audio": 2.384398579597473,
+          "errorSeconds": 0.0012739666635050995,
+          "rate": 0.5,
+          "contextTime": 5.9675283446712015
+        },
+        {
+          "cursor": 2.3889296015960992,
+          "audio": 2.3902885615825653,
+          "errorSeconds": 0.0013589599864660684,
+          "rate": 0.5,
+          "contextTime": 5.979138321995465
+        }
+      ],
+      "policyViolations": [],
+      "overflow": 0,
+      "maxErrorSeconds": 0.0014233620077139797,
+      "toleranceSeconds": 0.064,
+      "matches": true,
+      "errors": [],
+      "offlineRequests": [],
+      "assets": {
+        "index.html": {
+          "bytes": 2342,
+          "sha256": "ecca6de0e539d1089761d9eaa04cb13f731bb967e2b7aa7a3290ceb5b1647484"
+        },
+        "assets/index-Bmc6olGg.css": {
+          "bytes": 22805,
+          "sha256": "bf38e8b5b198c4567f7bcf59a67502c22f7d1381a4a572e8fd496d1bbb22dec3"
+        },
+        "assets/index-DgY2WYVo.js": {
+          "bytes": 56274,
+          "sha256": "448d6d9677e459a4f0f3364a1a2725c966ee62ddebcd1727df635e6401f0eae5"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        },
+        "assets/fraunces-italic-vietnamese-B7PmIdA3.woff2": {
+          "bytes": 12048,
+          "sha256": "b2383049df5de759100887e80450ef360e502d5b0454954fab2dcd6b322944f5"
+        },
+        "assets/fraunces-vietnamese-Czevyj-6.woff2": {
+          "bytes": 19700,
+          "sha256": "f18853f63a870ebef013e30e789d8d544f102e4acd94988e57c223d9c796ddf4"
+        },
+        "assets/ibm-plex-mono-400-cyrillic-ext-xuaO2J-f.woff2": {
+          "bytes": 6912,
+          "sha256": "f8c22ec1804bd6966b70f43ac7c327025645b4c09597117fca2a5a6c750106fe"
+        },
+        "assets/ibm-plex-mono-400-cyrillic-BSMlKf0J.woff2": {
+          "bytes": 8356,
+          "sha256": "7635422bd10ddbbcb0e0caa1154b928298f5c8319b8c00b30978d4395f4783ce"
+        },
+        "assets/fraunces-italic-latin-ext-C5JMU4hr.woff2": {
+          "bytes": 37620,
+          "sha256": "bbf614d45de67a99e638b753611329b2cb8b5b6d8da53b2aee0267fe75cfc5c8"
+        },
+        "assets/fraunces-latin-ext-CJcjJNj7.woff2": {
+          "bytes": 59388,
+          "sha256": "a2930b27d13a228bd9ab6a49269b5f800237892ad560cb9dd7fab01b1620f88e"
+        },
+        "assets/ibm-plex-mono-400-vietnamese-BulugwFq.woff2": {
+          "bytes": 5868,
+          "sha256": "62632b6375305e70ddcafdd895218e6ae41a184fcd280a69c739460604ca00a9"
+        },
+        "assets/ibm-plex-mono-500-cyrillic-ext-BqneJy0T.woff2": {
+          "bytes": 6972,
+          "sha256": "3febe5c7f22e4b07b4552738673c3dbe8bced2dc5f48b866edf7ccd9552d109a"
+        },
+        "assets/ibm-plex-mono-500-cyrillic-Bq9vWWag.woff2": {
+          "bytes": 8460,
+          "sha256": "1d89462e86cb8e87e7e9d6f6635605bd7c3081baca6caaecee84916bf7b60edc"
+        },
+        "assets/ibm-plex-mono-500-vietnamese-DZ4AoWbu.woff2": {
+          "bytes": 6040,
+          "sha256": "781633d95de88040fb77141d1e65d928c87c0144691fbc74da5a64d137a7e910"
+        },
+        "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2": {
+          "bytes": 13348,
+          "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
+        },
+        "assets/ibm-plex-mono-500-latin-ext-CAhNIIs5.woff2": {
+          "bytes": 13432,
+          "sha256": "6bb06407c97584b0867a959e05e8874693bfeb8c317de190811c51598f2d99ea"
+        },
+        "assets/inter-cyrillic-DqGufNeO.woff2": {
+          "bytes": 18748,
+          "sha256": "71d5ee93cc1e9f1d520a3a8b66456de18c7879d8df09d57fcd2eaff75fef0075"
+        },
+        "assets/inter-greek-ext-DlzME5K_.woff2": {
+          "bytes": 11232,
+          "sha256": "6e9e020a25f9b56d418f2c085b1d3c09725a4da23fe693a5b463064606732190"
+        },
+        "assets/inter-vietnamese-CBcvBZtf.woff2": {
+          "bytes": 10252,
+          "sha256": "5c66f9e07e90c6d4ac4922cc68d60de26c17b1858e677fb5e603fce3952b3ff2"
+        },
+        "assets/inter-cyrillic-ext-BOeWTOD4.woff2": {
+          "bytes": 25960,
+          "sha256": "ca157063339ac4ad418f214f3abfed119b0798ab4d377386ce5c9e5a7a435ebd"
+        },
+        "assets/inter-greek-CkhJZR-_.woff2": {
+          "bytes": 18996,
+          "sha256": "1be3448e292fbf05ffe176fe1e43f135013d50b1e7d324ad1a558f623d3bb6f6"
+        },
+        "assets/inter-latin-ext-DO1Apj_S.woff2": {
+          "bytes": 85068,
+          "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
+        }
+      },
+      "screenshot": "chromium-1440.png"
+    },
+    {
+      "engine": "chromium",
+      "browser": "153.0.8010.12",
+      "width": 375,
+      "starts": [
+        {
+          "offset": 0,
+          "loop": false,
+          "loopStart": 0,
+          "loopEnd": 0
+        },
+        {
+          "offset": 1.999995414493682,
+          "loop": true,
+          "loopStart": 1.999995414493682,
+          "loopEnd": 3.999990828987364
+        }
+      ],
+      "observations": [
+        {
+          "cursor": 2.1160951877363128,
+          "audio": 2.1159426867961884,
+          "errorSeconds": 0.0001525009401244226,
+          "rate": 1,
+          "contextTime": 5.6656689342403626
+        },
+        {
+          "cursor": 2.139315142384839,
+          "audio": 2.1392613649368286,
+          "errorSeconds": 0.00005377744801027262,
+          "rate": 1,
+          "contextTime": 5.688888888888889
+        },
+        {
+          "cursor": 2.162535097033364,
+          "audio": 2.162361443042755,
+          "errorSeconds": 0.00017365399060897957,
+          "rate": 1,
+          "contextTime": 5.712108843537415
+        },
+        {
+          "cursor": 2.162535097033364,
+          "audio": 2.162361443042755,
+          "errorSeconds": 0.00017365399060897957,
+          "rate": 1,
+          "contextTime": 5.712108843537415
+        },
+        {
+          "cursor": 2.185755051681891,
+          "audio": 2.1856792271137238,
+          "errorSeconds": 0.00007582456816734862,
+          "rate": 1,
+          "contextTime": 5.735328798185941
+        },
+        {
+          "cursor": 2.2089750063304168,
+          "audio": 2.208796888589859,
+          "errorSeconds": 0.00017811774055775942,
+          "rate": 1,
+          "contextTime": 5.758548752834467
+        },
+        {
+          "cursor": 2.232194960978943,
+          "audio": 2.232089191675186,
+          "errorSeconds": 0.00010576930375671978,
+          "rate": 1,
+          "contextTime": 5.7817687074829935
+        },
+        {
+          "cursor": 2.232194960978943,
+          "audio": 2.232089191675186,
+          "errorSeconds": 0.00010576930375671978,
+          "rate": 1,
+          "contextTime": 5.7817687074829935
+        },
+        {
+          "cursor": 2.255414915627469,
+          "audio": 2.255377471446991,
+          "errorSeconds": 0.00003744418047801901,
+          "rate": 1,
+          "contextTime": 5.804988662131519
+        },
+        {
+          "cursor": 2.2786348702759955,
+          "audio": 2.278496026992798,
+          "errorSeconds": 0.00013884328319768713,
+          "rate": 1,
+          "contextTime": 5.828208616780046
+        },
+        {
+          "cursor": 2.2786348702759955,
+          "audio": 2.278496026992798,
+          "errorSeconds": 0.00013884328319768713,
+          "rate": 1,
+          "contextTime": 5.828208616780046
+        },
+        {
+          "cursor": 2.3018548249245216,
+          "audio": 2.301810383796692,
+          "errorSeconds": 0.00004444112782975296,
+          "rate": 1,
+          "contextTime": 5.851428571428571
+        },
+        {
+          "cursor": 2.3134648022487845,
+          "audio": 2.313368022441864,
+          "errorSeconds": 0.00009677980692046617,
+          "rate": 0.5,
+          "contextTime": 5.874648526077097
+        },
+        {
+          "cursor": 2.3250747795730473,
+          "audio": 2.324908673763275,
+          "errorSeconds": 0.0001661058097721657,
+          "rate": 0.5,
+          "contextTime": 5.897868480725624
+        },
+        {
+          "cursor": 2.3250747795730473,
+          "audio": 2.324908673763275,
+          "errorSeconds": 0.0001661058097721657,
+          "rate": 0.5,
+          "contextTime": 5.897868480725624
+        },
+        {
+          "cursor": 2.33668475689731,
+          "audio": 2.336587905883789,
+          "errorSeconds": 0.00009685101352108205,
+          "rate": 0.5,
+          "contextTime": 5.921088435374149
+        },
+        {
+          "cursor": 2.3482947342215734,
+          "audio": 2.3482364416122437,
+          "errorSeconds": 0.00005829260932976865,
+          "rate": 0.5,
+          "contextTime": 5.944308390022676
+        },
+        {
+          "cursor": 2.3482947342215734,
+          "audio": 2.3482364416122437,
+          "errorSeconds": 0.00005829260932976865,
+          "rate": 0.5,
+          "contextTime": 5.944308390022676
+        },
+        {
+          "cursor": 2.3599047115458367,
+          "audio": 2.359773814678192,
+          "errorSeconds": 0.00013089686764455877,
+          "rate": 0.5,
+          "contextTime": 5.9675283446712015
+        },
+        {
+          "cursor": 2.3715146888700995,
+          "audio": 2.3713356256484985,
+          "errorSeconds": 0.00017906322160099464,
+          "rate": 0.5,
+          "contextTime": 5.990748299319728
+        },
+        {
+          "cursor": 2.383124666194362,
+          "audio": 2.3830901086330414,
+          "errorSeconds": 0.00003455756132053622,
+          "rate": 0.5,
+          "contextTime": 6.013968253968254
+        },
+        {
+          "cursor": 2.383124666194362,
+          "audio": 2.3830901086330414,
+          "errorSeconds": 0.00003455756132053622,
+          "rate": 0.5,
+          "contextTime": 6.013968253968254
+        }
+      ],
+      "policyViolations": [],
+      "overflow": 0,
+      "maxErrorSeconds": 0.00017906322160099464,
+      "toleranceSeconds": 0.064,
+      "matches": true,
+      "errors": [],
+      "offlineRequests": [],
+      "assets": {
+        "index.html": {
+          "bytes": 2342,
+          "sha256": "ecca6de0e539d1089761d9eaa04cb13f731bb967e2b7aa7a3290ceb5b1647484"
+        },
+        "assets/index-Bmc6olGg.css": {
+          "bytes": 22805,
+          "sha256": "bf38e8b5b198c4567f7bcf59a67502c22f7d1381a4a572e8fd496d1bbb22dec3"
+        },
+        "assets/index-DgY2WYVo.js": {
+          "bytes": 56274,
+          "sha256": "448d6d9677e459a4f0f3364a1a2725c966ee62ddebcd1727df635e6401f0eae5"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        },
+        "assets/fraunces-italic-vietnamese-B7PmIdA3.woff2": {
+          "bytes": 12048,
+          "sha256": "b2383049df5de759100887e80450ef360e502d5b0454954fab2dcd6b322944f5"
+        },
+        "assets/ibm-plex-mono-400-cyrillic-ext-xuaO2J-f.woff2": {
+          "bytes": 6912,
+          "sha256": "f8c22ec1804bd6966b70f43ac7c327025645b4c09597117fca2a5a6c750106fe"
+        },
+        "assets/fraunces-vietnamese-Czevyj-6.woff2": {
+          "bytes": 19700,
+          "sha256": "f18853f63a870ebef013e30e789d8d544f102e4acd94988e57c223d9c796ddf4"
+        },
+        "assets/ibm-plex-mono-400-cyrillic-BSMlKf0J.woff2": {
+          "bytes": 8356,
+          "sha256": "7635422bd10ddbbcb0e0caa1154b928298f5c8319b8c00b30978d4395f4783ce"
+        },
+        "assets/fraunces-italic-latin-ext-C5JMU4hr.woff2": {
+          "bytes": 37620,
+          "sha256": "bbf614d45de67a99e638b753611329b2cb8b5b6d8da53b2aee0267fe75cfc5c8"
+        },
+        "assets/fraunces-latin-ext-CJcjJNj7.woff2": {
+          "bytes": 59388,
+          "sha256": "a2930b27d13a228bd9ab6a49269b5f800237892ad560cb9dd7fab01b1620f88e"
+        },
+        "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2": {
+          "bytes": 13348,
+          "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
+        },
+        "assets/ibm-plex-mono-400-vietnamese-BulugwFq.woff2": {
+          "bytes": 5868,
+          "sha256": "62632b6375305e70ddcafdd895218e6ae41a184fcd280a69c739460604ca00a9"
+        },
+        "assets/ibm-plex-mono-500-cyrillic-ext-BqneJy0T.woff2": {
+          "bytes": 6972,
+          "sha256": "3febe5c7f22e4b07b4552738673c3dbe8bced2dc5f48b866edf7ccd9552d109a"
+        },
+        "assets/ibm-plex-mono-500-cyrillic-Bq9vWWag.woff2": {
+          "bytes": 8460,
+          "sha256": "1d89462e86cb8e87e7e9d6f6635605bd7c3081baca6caaecee84916bf7b60edc"
+        },
+        "assets/ibm-plex-mono-500-vietnamese-DZ4AoWbu.woff2": {
+          "bytes": 6040,
+          "sha256": "781633d95de88040fb77141d1e65d928c87c0144691fbc74da5a64d137a7e910"
+        },
+        "assets/ibm-plex-mono-500-latin-ext-CAhNIIs5.woff2": {
+          "bytes": 13432,
+          "sha256": "6bb06407c97584b0867a959e05e8874693bfeb8c317de190811c51598f2d99ea"
+        },
+        "assets/inter-cyrillic-ext-BOeWTOD4.woff2": {
+          "bytes": 25960,
+          "sha256": "ca157063339ac4ad418f214f3abfed119b0798ab4d377386ce5c9e5a7a435ebd"
+        },
+        "assets/inter-cyrillic-DqGufNeO.woff2": {
+          "bytes": 18748,
+          "sha256": "71d5ee93cc1e9f1d520a3a8b66456de18c7879d8df09d57fcd2eaff75fef0075"
+        },
+        "assets/inter-greek-CkhJZR-_.woff2": {
+          "bytes": 18996,
+          "sha256": "1be3448e292fbf05ffe176fe1e43f135013d50b1e7d324ad1a558f623d3bb6f6"
+        },
+        "assets/inter-vietnamese-CBcvBZtf.woff2": {
+          "bytes": 10252,
+          "sha256": "5c66f9e07e90c6d4ac4922cc68d60de26c17b1858e677fb5e603fce3952b3ff2"
+        },
+        "assets/inter-greek-ext-DlzME5K_.woff2": {
+          "bytes": 11232,
+          "sha256": "6e9e020a25f9b56d418f2c085b1d3c09725a4da23fe693a5b463064606732190"
+        },
+        "assets/inter-latin-ext-DO1Apj_S.woff2": {
+          "bytes": 85068,
+          "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
+        }
+      },
+      "screenshot": "chromium-375.png"
+    },
+    {
+      "engine": "firefox",
+      "browser": "155.0",
+      "width": 1440,
+      "starts": [
+        {
+          "offset": 0,
+          "loop": false,
+          "loopStart": 0,
+          "loopEnd": 0
+        },
+        {
+          "offset": 1.9862490862341136,
+          "loop": true,
+          "loopStart": 1.9862490862341136,
+          "loopEnd": 3.989474660384758
+        }
+      ],
+      "observations": [
+        {
+          "cursor": 2.093641376483547,
+          "audio": 2.079099118709564,
+          "errorSeconds": 0.014542257773982659,
+          "rate": 1,
+          "contextTime": 5.648253968253968
+        },
+        {
+          "cursor": 2.12556881412527,
+          "audio": 2.1110214293003082,
+          "errorSeconds": 0.014547384824961984,
+          "rate": 1,
+          "contextTime": 5.680181405895691
+        },
+        {
+          "cursor": 2.12556881412527,
+          "audio": 2.1110214293003082,
+          "errorSeconds": 0.014547384824961984,
+          "rate": 1,
+          "contextTime": 5.680181405895691
+        },
+        {
+          "cursor": 2.154593757435928,
+          "audio": 2.1400487422943115,
+          "errorSeconds": 0.014545015141616435,
+          "rate": 1,
+          "contextTime": 5.709206349206349
+        },
+        {
+          "cursor": 2.154593757435928,
+          "audio": 2.1400487422943115,
+          "errorSeconds": 0.014545015141616435,
+          "rate": 1,
+          "contextTime": 5.709206349206349
+        },
+        {
+          "cursor": 2.1865211950776513,
+          "audio": 2.171975076198578,
+          "errorSeconds": 0.014546118879073422,
+          "rate": 1,
+          "contextTime": 5.7411337868480725
+        },
+        {
+          "cursor": 2.1865211950776513,
+          "audio": 2.171975076198578,
+          "errorSeconds": 0.014546118879073422,
+          "rate": 1,
+          "contextTime": 5.7411337868480725
+        },
+        {
+          "cursor": 2.2184486327193746,
+          "audio": 2.203903943300247,
+          "errorSeconds": 0.014544689419127454,
+          "rate": 1,
+          "contextTime": 5.773061224489796
+        },
+        {
+          "cursor": 2.250376070361098,
+          "audio": 2.2358286380767822,
+          "errorSeconds": 0.014547432284315764,
+          "rate": 1,
+          "contextTime": 5.804988662131519
+        },
+        {
+          "cursor": 2.250376070361098,
+          "audio": 2.2358286380767822,
+          "errorSeconds": 0.014547432284315764,
+          "rate": 1,
+          "contextTime": 5.804988662131519
+        },
+        {
+          "cursor": 2.2794010136717557,
+          "audio": 2.2648514807224274,
+          "errorSeconds": 0.01454953294932837,
+          "rate": 1,
+          "contextTime": 5.834013605442177
+        },
+        {
+          "cursor": 2.2794010136717557,
+          "audio": 2.2648514807224274,
+          "errorSeconds": 0.01454953294932837,
+          "rate": 1,
+          "contextTime": 5.834013605442177
+        },
+        {
+          "cursor": 2.311328451313479,
+          "audio": 2.296784520149231,
+          "errorSeconds": 0.014543931164248125,
+          "rate": 1,
+          "contextTime": 5.8659410430839
+        },
+        {
+          "cursor": 2.311328451313479,
+          "audio": 2.296784520149231,
+          "errorSeconds": 0.014543931164248125,
+          "rate": 0.5,
+          "contextTime": 5.8659410430839
+        },
+        {
+          "cursor": 2.3272921701343408,
+          "audio": 2.312938868999481,
+          "errorSeconds": 0.014353301134859553,
+          "rate": 0.5,
+          "contextTime": 5.897868480725624
+        },
+        {
+          "cursor": 2.3272921701343408,
+          "audio": 2.312938868999481,
+          "errorSeconds": 0.014353301134859553,
+          "rate": 0.5,
+          "contextTime": 5.897868480725624
+        },
+        {
+          "cursor": 2.3432558889552024,
+          "audio": 2.328902781009674,
+          "errorSeconds": 0.014353107945528354,
+          "rate": 0.5,
+          "contextTime": 5.929795918367347
+        },
+        {
+          "cursor": 2.3432558889552024,
+          "audio": 2.328902781009674,
+          "errorSeconds": 0.014353107945528354,
+          "rate": 0.5,
+          "contextTime": 5.929795918367347
+        },
+        {
+          "cursor": 2.357768360610531,
+          "audio": 2.3434194922447205,
+          "errorSeconds": 0.014348868365810397,
+          "rate": 0.5,
+          "contextTime": 5.958820861678005
+        },
+        {
+          "cursor": 2.357768360610531,
+          "audio": 2.3434194922447205,
+          "errorSeconds": 0.014348868365810397,
+          "rate": 0.5,
+          "contextTime": 5.958820861678005
+        },
+        {
+          "cursor": 2.3737320794313934,
+          "audio": 2.3593801259994507,
+          "errorSeconds": 0.014351953431942732,
+          "rate": 0.5,
+          "contextTime": 5.990748299319728
+        },
+        {
+          "cursor": 2.3737320794313934,
+          "audio": 2.3593801259994507,
+          "errorSeconds": 0.014351953431942732,
+          "rate": 0.5,
+          "contextTime": 5.990748299319728
+        },
+        {
+          "cursor": 2.389695798252255,
+          "audio": 2.3753467202186584,
+          "errorSeconds": 0.01434907803359664,
+          "rate": 0.5,
+          "contextTime": 6.022675736961451
+        }
+      ],
+      "policyViolations": [],
+      "overflow": 0,
+      "maxErrorSeconds": 0.01454953294932837,
+      "toleranceSeconds": 0.064,
+      "matches": true,
+      "errors": [],
+      "offlineRequests": [],
+      "assets": {
+        "index.html": {
+          "bytes": 2342,
+          "sha256": "ecca6de0e539d1089761d9eaa04cb13f731bb967e2b7aa7a3290ceb5b1647484"
+        },
+        "assets/index-DgY2WYVo.js": {
+          "bytes": 56274,
+          "sha256": "448d6d9677e459a4f0f3364a1a2725c966ee62ddebcd1727df635e6401f0eae5"
+        },
+        "assets/index-Bmc6olGg.css": {
+          "bytes": 22805,
+          "sha256": "bf38e8b5b198c4567f7bcf59a67502c22f7d1381a4a572e8fd496d1bbb22dec3"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        },
+        "assets/fraunces-italic-vietnamese-B7PmIdA3.woff2": {
+          "bytes": 12048,
+          "sha256": "b2383049df5de759100887e80450ef360e502d5b0454954fab2dcd6b322944f5"
+        },
+        "assets/fraunces-italic-latin-ext-C5JMU4hr.woff2": {
+          "bytes": 37620,
+          "sha256": "bbf614d45de67a99e638b753611329b2cb8b5b6d8da53b2aee0267fe75cfc5c8"
+        },
+        "assets/fraunces-vietnamese-Czevyj-6.woff2": {
+          "bytes": 19700,
+          "sha256": "f18853f63a870ebef013e30e789d8d544f102e4acd94988e57c223d9c796ddf4"
+        },
+        "assets/fraunces-latin-ext-CJcjJNj7.woff2": {
+          "bytes": 59388,
+          "sha256": "a2930b27d13a228bd9ab6a49269b5f800237892ad560cb9dd7fab01b1620f88e"
+        },
+        "assets/ibm-plex-mono-400-cyrillic-ext-xuaO2J-f.woff2": {
+          "bytes": 6912,
+          "sha256": "f8c22ec1804bd6966b70f43ac7c327025645b4c09597117fca2a5a6c750106fe"
+        },
+        "assets/ibm-plex-mono-400-cyrillic-BSMlKf0J.woff2": {
+          "bytes": 8356,
+          "sha256": "7635422bd10ddbbcb0e0caa1154b928298f5c8319b8c00b30978d4395f4783ce"
+        },
+        "assets/ibm-plex-mono-400-vietnamese-BulugwFq.woff2": {
+          "bytes": 5868,
+          "sha256": "62632b6375305e70ddcafdd895218e6ae41a184fcd280a69c739460604ca00a9"
+        },
+        "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2": {
+          "bytes": 13348,
+          "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
+        },
+        "assets/ibm-plex-mono-500-cyrillic-ext-BqneJy0T.woff2": {
+          "bytes": 6972,
+          "sha256": "3febe5c7f22e4b07b4552738673c3dbe8bced2dc5f48b866edf7ccd9552d109a"
+        },
+        "assets/ibm-plex-mono-500-cyrillic-Bq9vWWag.woff2": {
+          "bytes": 8460,
+          "sha256": "1d89462e86cb8e87e7e9d6f6635605bd7c3081baca6caaecee84916bf7b60edc"
+        },
+        "assets/ibm-plex-mono-500-vietnamese-DZ4AoWbu.woff2": {
+          "bytes": 6040,
+          "sha256": "781633d95de88040fb77141d1e65d928c87c0144691fbc74da5a64d137a7e910"
+        },
+        "assets/ibm-plex-mono-500-latin-ext-CAhNIIs5.woff2": {
+          "bytes": 13432,
+          "sha256": "6bb06407c97584b0867a959e05e8874693bfeb8c317de190811c51598f2d99ea"
+        },
+        "assets/inter-cyrillic-ext-BOeWTOD4.woff2": {
+          "bytes": 25960,
+          "sha256": "ca157063339ac4ad418f214f3abfed119b0798ab4d377386ce5c9e5a7a435ebd"
+        },
+        "assets/inter-greek-ext-DlzME5K_.woff2": {
+          "bytes": 11232,
+          "sha256": "6e9e020a25f9b56d418f2c085b1d3c09725a4da23fe693a5b463064606732190"
+        },
+        "assets/inter-cyrillic-DqGufNeO.woff2": {
+          "bytes": 18748,
+          "sha256": "71d5ee93cc1e9f1d520a3a8b66456de18c7879d8df09d57fcd2eaff75fef0075"
+        },
+        "assets/inter-greek-CkhJZR-_.woff2": {
+          "bytes": 18996,
+          "sha256": "1be3448e292fbf05ffe176fe1e43f135013d50b1e7d324ad1a558f623d3bb6f6"
+        },
+        "assets/inter-vietnamese-CBcvBZtf.woff2": {
+          "bytes": 10252,
+          "sha256": "5c66f9e07e90c6d4ac4922cc68d60de26c17b1858e677fb5e603fce3952b3ff2"
+        },
+        "assets/inter-latin-ext-DO1Apj_S.woff2": {
+          "bytes": 85068,
+          "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
+        }
+      },
+      "screenshot": "firefox-1440.png"
+    },
+    {
+      "engine": "firefox",
+      "browser": "155.0",
+      "width": 375,
+      "starts": [
+        {
+          "offset": 0,
+          "loop": false,
+          "loopStart": 0,
+          "loopEnd": 0
+        },
+        {
+          "offset": 1.9801980198019802,
+          "loop": true,
+          "loopStart": 1.9801980198019802,
+          "loopEnd": 3.9933993399339935
+        }
+      ],
+      "observations": [
+        {
+          "cursor": 2.0875903100514135,
+          "audio": 2.073040008544922,
+          "errorSeconds": 0.014550301506491614,
+          "rate": 1,
+          "contextTime": 5.648253968253968
+        },
+        {
+          "cursor": 2.119517747693137,
+          "audio": 2.104972004890442,
+          "errorSeconds": 0.014545742802694939,
+          "rate": 1,
+          "contextTime": 5.680181405895691
+        },
+        {
+          "cursor": 2.119517747693137,
+          "audio": 2.104972004890442,
+          "errorSeconds": 0.014545742802694939,
+          "rate": 1,
+          "contextTime": 5.680181405895691
+        },
+        {
+          "cursor": 2.1485426910037946,
+          "audio": 2.1339955925941467,
+          "errorSeconds": 0.014547098409647852,
+          "rate": 1,
+          "contextTime": 5.709206349206349
+        },
+        {
+          "cursor": 2.1485426910037946,
+          "audio": 2.1339955925941467,
+          "errorSeconds": 0.014547098409647852,
+          "rate": 1,
+          "contextTime": 5.709206349206349
+        },
+        {
+          "cursor": 2.180470128645518,
+          "audio": 2.16592013835907,
+          "errorSeconds": 0.0145499902864481,
+          "rate": 1,
+          "contextTime": 5.7411337868480725
+        },
+        {
+          "cursor": 2.2007875889629784,
+          "audio": 2.18624085187912,
+          "errorSeconds": 0.014546737083858563,
+          "rate": 1,
+          "contextTime": 5.761451247165533
+        },
+        {
+          "cursor": 2.2123975662872417,
+          "audio": 2.1978498995304108,
+          "errorSeconds": 0.014547666756830946,
+          "rate": 1,
+          "contextTime": 5.773061224489796
+        },
+        {
+          "cursor": 2.2443250039289646,
+          "audio": 2.2297748923301697,
+          "errorSeconds": 0.014550111598794935,
+          "rate": 1,
+          "contextTime": 5.804988662131519
+        },
+        {
+          "cursor": 2.2443250039289646,
+          "audio": 2.2297748923301697,
+          "errorSeconds": 0.014550111598794935,
+          "rate": 1,
+          "contextTime": 5.804988662131519
+        },
+        {
+          "cursor": 2.273349947239622,
+          "audio": 2.258802205324173,
+          "errorSeconds": 0.014547741915448942,
+          "rate": 1,
+          "contextTime": 5.834013605442177
+        },
+        {
+          "cursor": 2.273349947239622,
+          "audio": 2.258802205324173,
+          "errorSeconds": 0.014547741915448942,
+          "rate": 1,
+          "contextTime": 5.834013605442177
+        },
+        {
+          "cursor": 2.305277384881346,
+          "audio": 2.2907251119613647,
+          "errorSeconds": 0.014552272919981402,
+          "rate": 1,
+          "contextTime": 5.8659410430839
+        },
+        {
+          "cursor": 2.305277384881346,
+          "audio": 2.2907251119613647,
+          "errorSeconds": 0.014552272919981402,
+          "rate": 0.5,
+          "contextTime": 5.8659410430839
+        },
+        {
+          "cursor": 2.321241103702208,
+          "audio": 2.3068851232528687,
+          "errorSeconds": 0.014355980449339167,
+          "rate": 0.5,
+          "contextTime": 5.897868480725624
+        },
+        {
+          "cursor": 2.321241103702208,
+          "audio": 2.3068851232528687,
+          "errorSeconds": 0.014355980449339167,
+          "rate": 0.5,
+          "contextTime": 5.897868480725624
+        },
+        {
+          "cursor": 2.3372048225230695,
+          "audio": 2.322852611541748,
+          "errorSeconds": 0.014352210981321445,
+          "rate": 0.5,
+          "contextTime": 5.929795918367347
+        },
+        {
+          "cursor": 2.3372048225230695,
+          "audio": 2.322852611541748,
+          "errorSeconds": 0.014352210981321445,
+          "rate": 0.5,
+          "contextTime": 5.929795918367347
+        },
+        {
+          "cursor": 2.3517172941783975,
+          "audio": 2.3373612761497498,
+          "errorSeconds": 0.014356018028647721,
+          "rate": 0.5,
+          "contextTime": 5.958820861678005
+        },
+        {
+          "cursor": 2.3517172941783975,
+          "audio": 2.3373612761497498,
+          "errorSeconds": 0.014356018028647721,
+          "rate": 0.5,
+          "contextTime": 5.958820861678005
+        },
+        {
+          "cursor": 2.3676810129992596,
+          "audio": 2.3533298075199127,
+          "errorSeconds": 0.014351205479346874,
+          "rate": 0.5,
+          "contextTime": 5.990748299319728
+        },
+        {
+          "cursor": 2.3836447318201213,
+          "audio": 2.369295358657837,
+          "errorSeconds": 0.014349373162284351,
+          "rate": 0.5,
+          "contextTime": 6.022675736961451
+        },
+        {
+          "cursor": 2.3836447318201213,
+          "audio": 2.369295358657837,
+          "errorSeconds": 0.014349373162284351,
+          "rate": 0.5,
+          "contextTime": 6.022675736961451
+        }
+      ],
+      "policyViolations": [],
+      "overflow": 0,
+      "maxErrorSeconds": 0.014552272919981402,
+      "toleranceSeconds": 0.064,
+      "matches": true,
+      "errors": [],
+      "offlineRequests": [],
+      "assets": {
+        "index.html": {
+          "bytes": 2342,
+          "sha256": "ecca6de0e539d1089761d9eaa04cb13f731bb967e2b7aa7a3290ceb5b1647484"
+        },
+        "assets/index-DgY2WYVo.js": {
+          "bytes": 56274,
+          "sha256": "448d6d9677e459a4f0f3364a1a2725c966ee62ddebcd1727df635e6401f0eae5"
+        },
+        "assets/index-Bmc6olGg.css": {
+          "bytes": 22805,
+          "sha256": "bf38e8b5b198c4567f7bcf59a67502c22f7d1381a4a572e8fd496d1bbb22dec3"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/fraunces-italic-vietnamese-B7PmIdA3.woff2": {
+          "bytes": 12048,
+          "sha256": "b2383049df5de759100887e80450ef360e502d5b0454954fab2dcd6b322944f5"
+        },
+        "assets/fraunces-italic-latin-ext-C5JMU4hr.woff2": {
+          "bytes": 37620,
+          "sha256": "bbf614d45de67a99e638b753611329b2cb8b5b6d8da53b2aee0267fe75cfc5c8"
+        },
+        "assets/fraunces-vietnamese-Czevyj-6.woff2": {
+          "bytes": 19700,
+          "sha256": "f18853f63a870ebef013e30e789d8d544f102e4acd94988e57c223d9c796ddf4"
+        },
+        "assets/fraunces-latin-ext-CJcjJNj7.woff2": {
+          "bytes": 59388,
+          "sha256": "a2930b27d13a228bd9ab6a49269b5f800237892ad560cb9dd7fab01b1620f88e"
+        },
+        "assets/ibm-plex-mono-400-cyrillic-ext-xuaO2J-f.woff2": {
+          "bytes": 6912,
+          "sha256": "f8c22ec1804bd6966b70f43ac7c327025645b4c09597117fca2a5a6c750106fe"
+        },
+        "assets/ibm-plex-mono-400-cyrillic-BSMlKf0J.woff2": {
+          "bytes": 8356,
+          "sha256": "7635422bd10ddbbcb0e0caa1154b928298f5c8319b8c00b30978d4395f4783ce"
+        },
+        "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2": {
+          "bytes": 13348,
+          "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
+        },
+        "assets/ibm-plex-mono-500-cyrillic-ext-BqneJy0T.woff2": {
+          "bytes": 6972,
+          "sha256": "3febe5c7f22e4b07b4552738673c3dbe8bced2dc5f48b866edf7ccd9552d109a"
+        },
+        "assets/ibm-plex-mono-400-vietnamese-BulugwFq.woff2": {
+          "bytes": 5868,
+          "sha256": "62632b6375305e70ddcafdd895218e6ae41a184fcd280a69c739460604ca00a9"
+        },
+        "assets/ibm-plex-mono-500-vietnamese-DZ4AoWbu.woff2": {
+          "bytes": 6040,
+          "sha256": "781633d95de88040fb77141d1e65d928c87c0144691fbc74da5a64d137a7e910"
+        },
+        "assets/ibm-plex-mono-500-latin-ext-CAhNIIs5.woff2": {
+          "bytes": 13432,
+          "sha256": "6bb06407c97584b0867a959e05e8874693bfeb8c317de190811c51598f2d99ea"
+        },
+        "assets/ibm-plex-mono-500-cyrillic-Bq9vWWag.woff2": {
+          "bytes": 8460,
+          "sha256": "1d89462e86cb8e87e7e9d6f6635605bd7c3081baca6caaecee84916bf7b60edc"
+        },
+        "assets/inter-cyrillic-ext-BOeWTOD4.woff2": {
+          "bytes": 25960,
+          "sha256": "ca157063339ac4ad418f214f3abfed119b0798ab4d377386ce5c9e5a7a435ebd"
+        },
+        "assets/inter-cyrillic-DqGufNeO.woff2": {
+          "bytes": 18748,
+          "sha256": "71d5ee93cc1e9f1d520a3a8b66456de18c7879d8df09d57fcd2eaff75fef0075"
+        },
+        "assets/inter-greek-ext-DlzME5K_.woff2": {
+          "bytes": 11232,
+          "sha256": "6e9e020a25f9b56d418f2c085b1d3c09725a4da23fe693a5b463064606732190"
+        },
+        "assets/inter-greek-CkhJZR-_.woff2": {
+          "bytes": 18996,
+          "sha256": "1be3448e292fbf05ffe176fe1e43f135013d50b1e7d324ad1a558f623d3bb6f6"
+        },
+        "assets/inter-vietnamese-CBcvBZtf.woff2": {
+          "bytes": 10252,
+          "sha256": "5c66f9e07e90c6d4ac4922cc68d60de26c17b1858e677fb5e603fce3952b3ff2"
+        },
+        "assets/inter-latin-ext-DO1Apj_S.woff2": {
+          "bytes": 85068,
+          "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
+        }
+      },
+      "screenshot": "firefox-375.png"
+    }
+  ]
+}

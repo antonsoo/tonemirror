@@ -1,0 +1,103 @@
+{
+  "productionCommit": "d88315e13fbfcfeebbbcb1e8a33a12e7e8e8af6f",
+  "node": "24.21.0",
+  "npm": "12.0.1",
+  "source": "fresh git archive; npm ci",
+  "commands": [
+    "npm ci",
+    "npm run lint",
+    "npm run typecheck",
+    "npm test",
+    "npm run build",
+    "npx playwright test"
+  ],
+  "exitCode": 0,
+  "unitTests": 190,
+  "browserPassed": 59,
+  "browserSkipped": 3,
+  "browserSkipReason": "Firefox simulated-microphone scenarios",
+  "allScreenshotsInspected": true,
+  "cleanCheckLogSha256": "8b0e353ec5307de16ce6793d3aec60e2d07fd0567a901220eb737a40dccf1914",
+  "evidence": [
+    {
+      "path": "README.md",
+      "bytes": 6637,
+      "sha256": "fbde2304ef3e4954c9c9b0312c79cbf48d825ae42aa306320b660a4567ab44b6"
+    },
+    {
+      "path": "after/browser.json",
+      "bytes": 40825,
+      "sha256": "4e45776acfcd14837d77cc669c657375ada737d019ac3f034f4c67d43a76b4c9"
+    },
+    {
+      "path": "after/chromium-1440.png",
+      "bytes": 31694,
+      "sha256": "4d2aac72110c93b3165a1ddfe89bef58d7381c8a9276e83036a14fcbfdb1d21c"
+    },
+    {
+      "path": "after/chromium-375.png",
+      "bytes": 27018,
+      "sha256": "e8e260bfb085a187cd1e71c173638eb271e23df3cccdfb0250cdaa8bc9d1377b"
+    },
+    {
+      "path": "after/firefox-1440.png",
+      "bytes": 36238,
+      "sha256": "0f56ebb4c690a49a343b4e68c795703c531ed719ecccd24052a8612a8c41a986"
+    },
+    {
+      "path": "after/firefox-375.png",
+      "bytes": 31505,
+      "sha256": "8617e39e050ce7666f069776cce4ca0d903c8b73b6238d22b255e3628eeae7f5"
+    },
+    {
+      "path": "before/browser.json",
+      "bytes": 40543,
+      "sha256": "cfdcee06131b3c7b65f6ffed5a9d8171c49a41297b9cb70ad86cf0bca6e775c6"
+    },
+    {
+      "path": "before/chromium-1440.png",
+      "bytes": 31719,
+      "sha256": "420d932563324b961abbf5fe58b2862619d1ceb87b04d530f8c4f4569fb31dec"
+    },
+    {
+      "path": "before/chromium-375.png",
+      "bytes": 27110,
+      "sha256": "a9d1812c7fff489a7f779d3d8701b2978721f96bc4bf851c372a2ae9444f43de"
+    },
+    {
+      "path": "before/firefox-1440.png",
+      "bytes": 36327,
+      "sha256": "3e988904ec850b903d9181852bea0a3810370479c5c56cf38d7317f50f34272f"
+    },
+    {
+      "path": "before/firefox-375.png",
+      "bytes": 31368,
+      "sha256": "18148edd482c6240f5018b519e91215685bc06d3b5fbfe69492c84f1e67ef96d"
+    },
+    {
+      "path": "browser.mjs",
+      "bytes": 9565,
+      "sha256": "01f3ae1cf3c9a2cd6bb1852f415da527c3291cbb4998b14c0f4a274e55a8c258"
+    },
+    {
+      "path": "build.json",
+      "bytes": 5062,
+      "sha256": "1bc4fdc76a86574c5f230e8e6750cc782f1c4dd82a12a1dedeb20f029654202c"
+    },
+    {
+      "path": "native-after.json",
+      "bytes": 74313,
+      "sha256": "34ddc51daad5b330b502222cb0324a499f3b7fcdcef11833867bb93e4a5e4db8"
+    },
+    {
+      "path": "native-before.json",
+      "bytes": 74950,
+      "sha256": "85fb4c35b97c9e3f7ae345e84495d53acb8b362fadd005fc00f4cf0a28bf0ef3"
+    },
+    {
+      "path": "native.mjs",
+      "bytes": 9713,
+      "sha256": "d1a549479075fcc28684dd219a606cb8ad6762de03d59c5ef3ffcaa11229e6ed"
+    }
+  ]
+}

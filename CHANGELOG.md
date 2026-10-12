@@ -4,6 +4,11 @@ All notable changes to this project are documented in this file.
 
 ## Unreleased
 
+- Align the playhead with native audio when resuming beyond a loop's end or
+  moving a playing loop behind the cursor. These transitions enter at the loop's
+  start; ordinary looping still preserves elapsed time. The reproduced browser
+  mismatch exceeded one second. [Before/after audio measurements](studies/loop-playback/README.md).
+
 - Calculate large-frame YIN differences and MPM correlations with FFTs while
   keeping their existing windows and pitch-selection rules. Reuse bounded FFT tables
   and retain direct sums for small or numerically delicate cases. A paired
