@@ -85,6 +85,17 @@ in a 60-second, 96-kHz clip (23,040,144 bytes). [`format.json`](format.json) rec
 the hashes and a single local encoding time. That timing is not a browser or
 cross-device responsiveness guarantee.
 
+## Clean source verification
+
+A fresh archive of implementation commit `ec14317` matched all 244 Git entries.
+Node 24.21.0 installation, lint, type checks, 200 unit tests, build and 70 browser
+workflows passed. Four microphone cases use Chromium's test device and are
+skipped in Firefox. All 12 regression screenshots were inspected, including
+320px layouts. All 28 built files match the dedicated replay's build byte for
+byte, including its eight browser-fetched assets. A baseline rebuild using the
+same freshly installed dependency lock also matches every baseline-served asset.
+[`verification.json`](verification.json) retains the commands and hashes.
+
 ## Reproduce
 
 Install FFmpeg/FFprobe, then build this checkout with `npm ci` and `npm run build`.

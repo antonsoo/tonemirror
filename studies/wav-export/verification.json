@@ -1,0 +1,266 @@
+{
+  "sourceCommit": "ec14317783741a30fb5104e5061fa9e5736a2c39",
+  "baselineCommit": "99894ff38323064f604d3440d70978ae92c024ae",
+  "sourceArchive": {
+    "entries": 244,
+    "allMatchGitObjects": true
+  },
+  "runtime": {
+    "node": "24.21.0",
+    "npm": "12.0.1"
+  },
+  "checks": [
+    {
+      "command": "npm ci",
+      "exitCode": 0,
+      "logSha256": "3543a8e91f19898b630623502d7e97b9f5212d028e79e5696eb3748776eea010"
+    },
+    {
+      "command": "npm run lint",
+      "exitCode": 0,
+      "logSha256": "ee60d41d23557ba5866f3f21bfbda01d50a829fe03fd0a79d3240a5fe6718f90"
+    },
+    {
+      "command": "npm run typecheck",
+      "exitCode": 0,
+      "logSha256": "f1d5078d5ac8aa2d682d6b5a22c5779ed8a21d5643c15422910fb2a174e95b04"
+    },
+    {
+      "command": "npm test",
+      "exitCode": 0,
+      "logSha256": "c325146119a8f0893b4c27780ca0ef79ea2366999f3628bb75cf28716a2d45de"
+    },
+    {
+      "command": "npm run test:browser",
+      "exitCode": 0,
+      "logSha256": "45b510c7e363ee2e617178b3f41adede03636153e3aef38c2fe30e0c5f8a2bb8"
+    }
+  ],
+  "unitTests": {
+    "passed": 200,
+    "files": 19
+  },
+  "browserTests": {
+    "passed": 70,
+    "skipped": 4,
+    "skipReason": "Four microphone cases require the Chromium-provided test device and are skipped in Firefox.",
+    "screenshotsInspected": [
+      {
+        "path": "test-results/app-comparison-remains-accessible-at-1280px-in-dark-chromium/comparison-dark-1280.png",
+        "sha256": "723940208d28724e1e3ebe0b9014d8d7d6ee1f6ad403eacb8ef009c5e193fe25"
+      },
+      {
+        "path": "test-results/app-comparison-remains-accessible-at-1280px-in-dark-firefox/comparison-dark-1280.png",
+        "sha256": "9b6efc9e28a89fb1335e046fd3629d35e1cf02ed51dac3149f99db09bb65a4f2"
+      },
+      {
+        "path": "test-results/app-comparison-remains-accessible-at-1280px-in-light-chromium/comparison-light-1280.png",
+        "sha256": "e63f27b3b2f71b45ca09fb0deb9ff4f1a9f3064589d50c48981a20053ddbc255"
+      },
+      {
+        "path": "test-results/app-comparison-remains-accessible-at-1280px-in-light-firefox/comparison-light-1280.png",
+        "sha256": "43e95889c50d09ab489d89fdd9bf03e8ba17e1357e75afc8dca45e85c8a20b19"
+      },
+      {
+        "path": "test-results/app-comparison-remains-accessible-at-320px-in-dark-chromium/comparison-dark-320.png",
+        "sha256": "0006d93133d9691f2126de81472cad48460e0f3b3e7202fc094af9fbe75a9e0c"
+      },
+      {
+        "path": "test-results/app-comparison-remains-accessible-at-320px-in-dark-firefox/comparison-dark-320.png",
+        "sha256": "d73c0e254f8d93bb93b3af74f56fc7910fba861dd2d874422cb913bad9cf321b"
+      },
+      {
+        "path": "test-results/app-comparison-remains-accessible-at-320px-in-light-chromium/comparison-light-320.png",
+        "sha256": "e26772b605000b520e31f340362c64061f9d7edbc5f8b4570489fd4aec42fa7c"
+      },
+      {
+        "path": "test-results/app-comparison-remains-accessible-at-320px-in-light-firefox/comparison-light-320.png",
+        "sha256": "ac7257a2f43b013b5d592edfd905a112eda5a19c31748f4b52be36929298b7d9"
+      },
+      {
+        "path": "test-results/regions-extract-compare-pl-25294-d-restore-offline-at-1440px-chromium/practice-region.png",
+        "sha256": "e955141767f9a8858548e0985b6230392599deade462e84ac5904f32695b6fac"
+      },
+      {
+        "path": "test-results/regions-extract-compare-pl-25294-d-restore-offline-at-1440px-firefox/practice-region.png",
+        "sha256": "004de138a7d60088fe807e84408796b0e1caf360ccbea0aba2dcffe4a4814e85"
+      },
+      {
+        "path": "test-results/regions-extract-compare-pl-5659a-nd-restore-offline-at-375px-chromium/practice-region.png",
+        "sha256": "450dc070002345c5af7165c1baf376c54ab2897a2a556916bc73f2dac07616bb"
+      },
+      {
+        "path": "test-results/regions-extract-compare-pl-5659a-nd-restore-offline-at-375px-firefox/practice-region.png",
+        "sha256": "e39b55f062547649403e8692afe7a0477c2bf60d44c0249be1bef95724eefadf"
+      }
+    ]
+  },
+  "buildComparison": {
+    "files": 28,
+    "allMatchTestedBuild": true,
+    "allEightServedAssetsMatchInEveryScenario": true,
+    "filesWithHashes": [
+      {
+        "path": "dist/assets/fraunces-italic-latin-BEbM7Mn6.woff2",
+        "bytes": 42372,
+        "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+      },
+      {
+        "path": "dist/assets/fraunces-italic-latin-ext-C5JMU4hr.woff2",
+        "bytes": 37620,
+        "sha256": "bbf614d45de67a99e638b753611329b2cb8b5b6d8da53b2aee0267fe75cfc5c8"
+      },
+      {
+        "path": "dist/assets/fraunces-italic-vietnamese-B7PmIdA3.woff2",
+        "bytes": 12048,
+        "sha256": "b2383049df5de759100887e80450ef360e502d5b0454954fab2dcd6b322944f5"
+      },
+      {
+        "path": "dist/assets/fraunces-latin-DihXLNYH.woff2",
+        "bytes": 67304,
+        "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+      },
+      {
+        "path": "dist/assets/fraunces-latin-ext-CJcjJNj7.woff2",
+        "bytes": 59388,
+        "sha256": "a2930b27d13a228bd9ab6a49269b5f800237892ad560cb9dd7fab01b1620f88e"
+      },
+      {
+        "path": "dist/assets/fraunces-vietnamese-Czevyj-6.woff2",
+        "bytes": 19700,
+        "sha256": "f18853f63a870ebef013e30e789d8d544f102e4acd94988e57c223d9c796ddf4"
+      },
+      {
+        "path": "dist/assets/ibm-plex-mono-400-cyrillic-BSMlKf0J.woff2",
+        "bytes": 8356,
+        "sha256": "7635422bd10ddbbcb0e0caa1154b928298f5c8319b8c00b30978d4395f4783ce"
+      },
+      {
+        "path": "dist/assets/ibm-plex-mono-400-cyrillic-ext-xuaO2J-f.woff2",
+        "bytes": 6912,
+        "sha256": "f8c22ec1804bd6966b70f43ac7c327025645b4c09597117fca2a5a6c750106fe"
+      },
+      {
+        "path": "dist/assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2",
+        "bytes": 14708,
+        "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+      },
+      {
+        "path": "dist/assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2",
+        "bytes": 13348,
+        "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
+      },
+      {
+        "path": "dist/assets/ibm-plex-mono-400-vietnamese-BulugwFq.woff2",
+        "bytes": 5868,
+        "sha256": "62632b6375305e70ddcafdd895218e6ae41a184fcd280a69c739460604ca00a9"
+      },
+      {
+        "path": "dist/assets/ibm-plex-mono-500-cyrillic-Bq9vWWag.woff2",
+        "bytes": 8460,
+        "sha256": "1d89462e86cb8e87e7e9d6f6635605bd7c3081baca6caaecee84916bf7b60edc"
+      },
+      {
+        "path": "dist/assets/ibm-plex-mono-500-cyrillic-ext-BqneJy0T.woff2",
+        "bytes": 6972,
+        "sha256": "3febe5c7f22e4b07b4552738673c3dbe8bced2dc5f48b866edf7ccd9552d109a"
+      },
+      {
+        "path": "dist/assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2",
+        "bytes": 14888,
+        "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+      },
+      {
+        "path": "dist/assets/ibm-plex-mono-500-latin-ext-CAhNIIs5.woff2",
+        "bytes": 13432,
+        "sha256": "6bb06407c97584b0867a959e05e8874693bfeb8c317de190811c51598f2d99ea"
+      },
+      {
+        "path": "dist/assets/ibm-plex-mono-500-vietnamese-DZ4AoWbu.woff2",
+        "bytes": 6040,
+        "sha256": "781633d95de88040fb77141d1e65d928c87c0144691fbc74da5a64d137a7e910"
+      },
+      {
+        "path": "dist/assets/index-BTO_e6A4.css",
+        "bytes": 23188,
+        "sha256": "3ea8eb979b794e79ea4aa7ba55a6da08360030a59d32c0ca0562e895eb7fc91c"
+      },
+      {
+        "path": "dist/assets/index-DwvAKXAd.js",
+        "bytes": 61520,
+        "sha256": "035ba41acb1c05e39ee6dc4d4744fce80f28130fb9f214161243e63e7ab15a6d"
+      },
+      {
+        "path": "dist/assets/index-DwvAKXAd.js.map",
+        "bytes": 184658,
+        "sha256": "658c854e6605deb865e7eb9553ccf21a7115241e98b62678a3ea8b12a559fdaf"
+      },
+      {
+        "path": "dist/assets/inter-cyrillic-DqGufNeO.woff2",
+        "bytes": 18748,
+        "sha256": "71d5ee93cc1e9f1d520a3a8b66456de18c7879d8df09d57fcd2eaff75fef0075"
+      },
+      {
+        "path": "dist/assets/inter-cyrillic-ext-BOeWTOD4.woff2",
+        "bytes": 25960,
+        "sha256": "ca157063339ac4ad418f214f3abfed119b0798ab4d377386ce5c9e5a7a435ebd"
+      },
+      {
+        "path": "dist/assets/inter-greek-CkhJZR-_.woff2",
+        "bytes": 18996,
+        "sha256": "1be3448e292fbf05ffe176fe1e43f135013d50b1e7d324ad1a558f623d3bb6f6"
+      },
+      {
+        "path": "dist/assets/inter-greek-ext-DlzME5K_.woff2",
+        "bytes": 11232,
+        "sha256": "6e9e020a25f9b56d418f2c085b1d3c09725a4da23fe693a5b463064606732190"
+      },
+      {
+        "path": "dist/assets/inter-latin-Dx4kXJAl.woff2",
+        "bytes": 48256,
+        "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+      },
+      {
+        "path": "dist/assets/inter-latin-ext-DO1Apj_S.woff2",
+        "bytes": 85068,
+        "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
+      },
+      {
+        "path": "dist/assets/inter-vietnamese-CBcvBZtf.woff2",
+        "bytes": 10252,
+        "sha256": "5c66f9e07e90c6d4ac4922cc68d60de26c17b1858e677fb5e603fce3952b3ff2"
+      },
+      {
+        "path": "dist/assets/pitchWorker-Dyhd7A7I.js.map",
+        "bytes": 61011,
+        "sha256": "133ff58b0a6eb88ea18bd8f6fa07deb9621416cf6bbf08e525614a685ba30e24"
+      },
+      {
+        "path": "dist/index.html",
+        "bytes": 2342,
+        "sha256": "0c2990a551a75073cf096896164144a19f795af374c943b2f3c056f27e643548"
+      }
+    ]
+  },
+  "baselineRebuild": {
+    "dependencyLockIdentical": true,
+    "dependencyInstall": "Shared the fresh candidate node_modules installation; dependency files did not change.",
+    "command": "npm run build",
+    "exitCode": 0,
+    "allBaselineServedAssetsMatch": true,
+    "logSha256": "3da66cb1ef44a5f1e96e36ff92cabfc8ef90294356b24c166dd3ff8bd97ef4c7"
+  },
+  "evidence": {
+    "offlineBeforeWorkflows": 8,
+    "offlineAfterWorkflows": 8,
+    "actualAfterDownloads": 48,
+    "ffmpegDownloadsWithExactSampleBytes": 48,
+    "retainedBrowserReceipts": [
+      "browser-before.json",
+      "browser-after.json"
+    ],
+    "formatOracle": "format.json",
+    "microphoneScope": "Native AudioWorklet path with a browser-provided test device; not a physical microphone check."
+  },
+  "scope": "Source only. No package release, tag or hosted deployment; version 0.2.3 unchanged."
+}
