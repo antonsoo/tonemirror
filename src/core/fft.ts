@@ -25,6 +25,11 @@ export function nextPowerOfTwo(n: number): number {
  * In-place FFT. `re`/`im` are overwritten with the transform.
  * `inverse` performs the inverse transform (with 1/N scaling).
  */
+// The app repeatedly transforms the same frame sizes. Keep both directions of
+// stages up to 8192 (the largest default pitch transform at 96 kHz). The total
+// retained tables are bounded at 262,112 bytes; larger stages remain temporary.
+const twiddleCache = new Map<string, [Float64Array, Float64Array]>();
+
 export function fft(re: Float64Array, im: Float64Array, inverse = false): void {
   const n = re.length;
   if (n !== im.length) throw new Error("fft: re/im length mismatch");
@@ -53,13 +58,20 @@ export function fft(re: Float64Array, im: Float64Array, inverse = false): void {
     const half = len >> 1;
     const angleStep = (sign * 2 * Math.PI) / len;
     // Precompute twiddle factors for this stage.
-    const wRe = new Float64Array(half);
-    const wIm = new Float64Array(half);
-    for (let k = 0; k < half; k++) {
-      const angle = angleStep * k;
-      wRe[k] = Math.cos(angle);
-      wIm[k] = Math.sin(angle);
+    const key = `${len}:${inverse}`;
+    let tables = twiddleCache.get(key);
+    if (!tables) {
+      const wRe = new Float64Array(half);
+      const wIm = new Float64Array(half);
+      for (let k = 0; k < half; k++) {
+        const angle = angleStep * k;
+        wRe[k] = Math.cos(angle);
+        wIm[k] = Math.sin(angle);
+      }
+      tables = [wRe, wIm];
+      if (len <= 8192) twiddleCache.set(key, tables);
     }
+    const [wRe, wIm] = tables;
     for (let start = 0; start < n; start += len) {
       for (let k = 0; k < half; k++) {
         const evenIdx = start + k;

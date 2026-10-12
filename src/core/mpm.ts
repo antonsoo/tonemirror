@@ -15,6 +15,8 @@
  * README).
  */
 
+import { normalizedSquareDifference } from "./pitchCorrelation.js";
+
 export interface MpmResult {
   f0: number | null;
   /** Clarity of the chosen peak (NSDF value in ~[0, 1]); higher = more periodic. */
@@ -27,25 +29,6 @@ export interface MpmConfig {
   maxFrequency: number;
   /** Fraction of the global peak a key maximum must reach to be chosen. Paper suggests 0.8-0.99. */
   clarityThreshold: number;
-}
-
-/** Normalized square difference function, n(tau) for tau in [0, maxLag]. */
-function nsdf(frame: Float64Array, maxLag: number): Float64Array {
-  const n = new Float64Array(maxLag + 1);
-  const len = frame.length;
-  for (let tau = 0; tau <= maxLag; tau++) {
-    let acf = 0;
-    let energy = 0;
-    const limit = len - tau;
-    for (let j = 0; j < limit; j++) {
-      const a = frame[j]!;
-      const b = frame[j + tau]!;
-      acf += a * b;
-      energy += a * a + b * b;
-    }
-    n[tau] = energy === 0 ? 0 : (2 * acf) / energy;
-  }
-  return n;
 }
 
 interface KeyMax {
@@ -102,7 +85,7 @@ export function mpmDetect(frame: Float64Array, config: MpmConfig): MpmResult {
   const maxLag = Math.min(frame.length - 2, Math.floor(sampleRate / minFrequency));
   if (maxLag <= minLag) return { f0: null, confidence: 0 };
 
-  const n = nsdf(frame, maxLag);
+  const n = normalizedSquareDifference(frame, maxLag);
   const maxima = findKeyMaxima(n).filter((m) => m.tau >= minLag);
   if (maxima.length === 0) return { f0: null, confidence: 0 };
 

@@ -17,11 +17,10 @@
  *      ~10ms hops used here.)
  *   5. Parabolic interpolation for sub-sample lag precision.
  *
- * The implementation favors clarity over raw speed: the difference function
- * is computed directly (O(W^2) per frame). For the frame sizes used in this
- * app (a few hundred samples of lag search) this comfortably keeps up with
- * real-time analysis in a Worker.
+ * Large frames use FFT correlations for the same fixed-window difference
+ * function; small frames retain direct summation. Lag selection is unchanged.
  */
+import { differenceFunction } from "./pitchCorrelation.js";
 
 export interface YinResult {
   /** Estimated F0 in Hz, or null if no candidate lag was found at all. */
@@ -36,21 +35,6 @@ export interface YinConfig {
   maxFrequency: number;
   /** Absolute threshold for step 3, typically 0.10-0.20. */
   threshold: number;
-}
-
-/** Step 1: difference function, d(tau) for tau in [0, maxLag]. */
-function differenceFunction(frame: Float64Array, maxLag: number): Float64Array {
-  const w = frame.length - maxLag;
-  const d = new Float64Array(maxLag + 1);
-  for (let tau = 0; tau <= maxLag; tau++) {
-    let sum = 0;
-    for (let j = 0; j < w; j++) {
-      const delta = frame[j]! - frame[j + tau]!;
-      sum += delta * delta;
-    }
-    d[tau] = sum;
-  }
-  return d;
 }
 
 /** Step 2: cumulative mean normalized difference function, d'(tau). */
