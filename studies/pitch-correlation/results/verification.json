@@ -1,0 +1,122 @@
+{
+  "baseline": "a8142edebde3a9708ba1a59541e0243136016fc7",
+  "implementation": "c42283262461bfaff3ea0affba9e8abb29244dcb",
+  "cleanArchiveNode": "v24.21.0",
+  "checks": {
+    "npm ci": "pass; 140 packages added, zero reported vulnerabilities",
+    "npm run lint": "pass",
+    "npm run typecheck": "pass",
+    "npm test": "184 passed in 17 files",
+    "npm run build": "pass",
+    "playwright test": "59 passed, 3 pre-existing Firefox fake-microphone skips",
+    "npm run bench": "14 generated-signal result rows match the README table"
+  },
+  "pairedCorpus": {
+    "recordings": 580,
+    "pairedAlgorithmRuns": 1160,
+    "frames": 763220,
+    "voicedFrames": 199740,
+    "maxHz": 6.104983185650781e-11,
+    "maxConfidence": 8.04978306234716e-12,
+    "maxSemitones": 1.5134560271690134e-12,
+    "voicingChanges": 0,
+    "roundedHzChanges": 0
+  },
+  "browser": {
+    "timedUploadsPerRevision": 32,
+    "pairedUploads": 32,
+    "screenshotsInspected": 8,
+    "decodedSampleRate": 44100,
+    "bothSelfComparisonScores": 100,
+    "pageErrors": 0,
+    "cspViolations": 0,
+    "requestsAfterServerStopped": 0,
+    "byteIdenticalScreenshotPairs": 4
+  },
+  "buildInputsMatch": 85,
+  "buildFilesMatch": 28,
+  "limits": [
+    "Measurements apply to the local tested builds; no hosted deployment is asserted.",
+    "Native and browser timing fixtures differ and browser decoding resamples to 44.1 kHz here.",
+    "The 60-second file repeats a real 7.99-second phrase; it is not natural long speech.",
+    "Arithmetic is reordered, not bit-identical; the corpus replay reports unrounded deltas.",
+    "Low-rate direct paths do not show a dependable speed gain."
+  ],
+  "evidence": [
+    {
+      "path": "browser-after.json",
+      "bytes": 39445,
+      "sha256": "0a7d2ee416be90ad895bfd518a410988122b1d404c7e465af87e4ebc45766b88"
+    },
+    {
+      "path": "browser-before.json",
+      "bytes": 39472,
+      "sha256": "9545adcf6f141c3464a7a72796bd59e20aa7c1aaa6ee4834f58f5b37efc05d9b"
+    },
+    {
+      "path": "browser-comparison.json",
+      "bytes": 3445,
+      "sha256": "665f109a8106ac67fc9286ae306d542819fcf1f8087334dc685c340cd0257e31"
+    },
+    {
+      "path": "build.json",
+      "bytes": 16926,
+      "sha256": "3659d6b24b46c110b6f7458b86163e63be7253d8bf73e81c6709d332e68f9d7a"
+    },
+    {
+      "path": "cache-check.log",
+      "bytes": 92,
+      "sha256": "4d66dfa0f052ea948df2dd1823f3308acd1e83add6eea225b6ff470700db7df5"
+    },
+    {
+      "path": "clean-accuracy.log",
+      "bytes": 1346,
+      "sha256": "39ac3769dae85ec4236e2a8ada22d92ca943264252adf8cd156359fb189c386e"
+    },
+    {
+      "path": "clean-browser.log",
+      "bytes": 9815,
+      "sha256": "27428fb2feeb1c06d40ad0d6f6546185b7c86aa5fdc7432b80a643c10d20d827"
+    },
+    {
+      "path": "clean-build.log",
+      "bytes": 2089,
+      "sha256": "84c63acf050ae899adb9627f78be9c7b1caa58daef9a4d32c7b7f6f9b98c2f57"
+    },
+    {
+      "path": "clean-install.log",
+      "bytes": 143,
+      "sha256": "0f42d0c27fdabdc8badf51c652189fa0050a6821935243e093a537d8fdd4a3ba"
+    },
+    {
+      "path": "clean-lint.log",
+      "bytes": 61,
+      "sha256": "ee60d41d23557ba5866f3f21bfbda01d50a829fe03fd0a79d3240a5fe6718f90"
+    },
+    {
+      "path": "clean-typecheck.log",
+      "bytes": 70,
+      "sha256": "f1d5078d5ac8aa2d682d6b5a22c5779ed8a21d5643c15422910fb2a174e95b04"
+    },
+    {
+      "path": "clean-unit.log",
+      "bytes": 529,
+      "sha256": "6bc19998ccfd91b2d74952b892bfc8acb05de41b01d8b193d13a28625d44f9ba"
+    },
+    {
+      "path": "corpus.json",
+      "bytes": 715132,
+      "sha256": "195f0e3ec278db2672df6155749e8778e78f9de74775e344ee5a8adeada2c4d6"
+    },
+    {
+      "path": "fixture.json",
+      "bytes": 502,
+      "sha256": "429f7d1fb6140dc42aee02a26bea62099e01f9877576982c6390f802ab61b9e8"
+    },
+    {
+      "path": "native.json",
+      "bytes": 5860,
+      "sha256": "6f75afcc054243f455ce83f16b2e20cbd11cb57b0ed91b0ff9ecc6dea5b56fa9"
+    }
+  ]
+}

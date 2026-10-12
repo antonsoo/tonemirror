@@ -4,6 +4,13 @@ All notable changes to this project are documented in this file.
 
 ## Unreleased
 
+- Calculate large-frame YIN differences and MPM correlations with FFTs while
+  keeping their existing windows and pitch-selection rules. Reuse bounded FFT tables
+  and retain direct sums for small or numerically delicate cases. A paired
+  580-recording replay has no voicing changes or pitch changes at 0.001 Hz;
+  actual browser uploads take less time on the measured speech fixtures.
+  [Timings, compatibility checks and clean-build evidence](studies/pitch-correlation/README.md).
+
 - Browse saved references through a metadata-only index instead of loading
   every recording's audio. **Use** reads just the selected recording, with
   cancellation and protection against older reads replacing newer selections.

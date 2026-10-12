@@ -1,0 +1,15 @@
+npm notice run tonemirror@0.2.3 test
+npm notice run vitest run
+
+ RUN  v5.0.1 /tmp/claude-1000/tonemirror-correlation/clean
+
+
+ Test Files  17 passed (17)
+      Tests  184 passed (184)
+   Start at  02:09:51
+   Duration  3.52s (tests 63%, transform 30%, import 6%, worker 2%)
+
+  Transform  transforming modules took 2.13s · 30% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+

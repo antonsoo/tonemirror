@@ -1,0 +1,144 @@
+{
+  "pairedUploads": 32,
+  "equalFields": [
+    "browser",
+    "sampleRate",
+    "samples",
+    "frames",
+    "voiced",
+    "pcmSha256",
+    "contourRoundedSha256",
+    "spectrumSha256"
+  ],
+  "selfComparisonScores": "100 for both algorithms in all eight captures",
+  "desktopMedians": [
+    {
+      "engine": "chromium",
+      "fixture": "phrase",
+      "algorithm": "yin",
+      "runsPerRevision": 3,
+      "workerMs": {
+        "before": 395.40000000596046,
+        "after": 237.59999999403954,
+        "speedup": 1.6641414142082471
+      },
+      "uploadToReadyMs": {
+        "before": 466.4215899999999,
+        "after": 291.3641620000003,
+        "speedup": 1.6008200418279288
+      }
+    },
+    {
+      "engine": "chromium",
+      "fixture": "phrase",
+      "algorithm": "mpm",
+      "runsPerRevision": 3,
+      "workerMs": {
+        "before": 622.5,
+        "after": 250.90000000596046,
+        "speedup": 2.481068154584343
+      },
+      "uploadToReadyMs": {
+        "before": 692.7534539999997,
+        "after": 301.41859399999885,
+        "speedup": 2.2983102827425514
+      }
+    },
+    {
+      "engine": "chromium",
+      "fixture": "repeated60",
+      "algorithm": "yin",
+      "runsPerRevision": 3,
+      "workerMs": {
+        "before": 1910.699999988079,
+        "after": 1152.9000000059605,
+        "speedup": 1.6572989851489295
+      },
+      "uploadToReadyMs": {
+        "before": 2148.420400000001,
+        "after": 1385.0458170000002,
+        "speedup": 1.5511547514388115
+      }
+    },
+    {
+      "engine": "chromium",
+      "fixture": "repeated60",
+      "algorithm": "mpm",
+      "runsPerRevision": 3,
+      "workerMs": {
+        "before": 2554.0999999940395,
+        "after": 1409.2999999821186,
+        "speedup": 1.8123181721609638
+      },
+      "uploadToReadyMs": {
+        "before": 2805.852623999999,
+        "after": 1623.240953999999,
+        "speedup": 1.728549675318259
+      }
+    },
+    {
+      "engine": "firefox",
+      "fixture": "phrase",
+      "algorithm": "yin",
+      "runsPerRevision": 3,
+      "workerMs": {
+        "before": 356,
+        "after": 219,
+        "speedup": 1.6255707762557077
+      },
+      "uploadToReadyMs": {
+        "before": 545.8588850000015,
+        "after": 398.10530700000163,
+        "speedup": 1.3711419451135305
+      }
+    },
+    {
+      "engine": "firefox",
+      "fixture": "phrase",
+      "algorithm": "mpm",
+      "runsPerRevision": 3,
+      "workerMs": {
+        "before": 473,
+        "after": 280,
+        "speedup": 1.6892857142857143
+      },
+      "uploadToReadyMs": {
+        "before": 648.0321580000018,
+        "after": 448.88003200000094,
+        "speedup": 1.4436644800453062
+      }
+    },
+    {
+      "engine": "firefox",
+      "fixture": "repeated60",
+      "algorithm": "yin",
+      "runsPerRevision": 3,
+      "workerMs": {
+        "before": 2380,
+        "after": 1089,
+        "speedup": 2.1854912764003673
+      },
+      "uploadToReadyMs": {
+        "before": 3417.962581,
+        "after": 2108.0957030000027,
+        "speedup": 1.621350765117515
+      }
+    },
+    {
+      "engine": "firefox",
+      "fixture": "repeated60",
+      "algorithm": "mpm",
+      "runsPerRevision": 3,
+      "workerMs": {
+        "before": 3775,
+        "after": 1657,
+        "speedup": 2.2782136391068195
+      },
+      "uploadToReadyMs": {
+        "before": 5012.679939999987,
+        "after": 2749.609826,
+        "speedup": 1.8230513626335825
+      }
+    }
+  ]
+}

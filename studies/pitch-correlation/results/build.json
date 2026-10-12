@@ -1,0 +1,490 @@
+{
+  "coreCommit": "c42283262461bfaff3ea0affba9e8abb29244dcb",
+  "cleanNode": "v24.21.0",
+  "sourceInputsMatchingCleanArchive": 85,
+  "buildFilesMatchingDevelopmentBuild": 28,
+  "inputs": [
+    {
+      "path": "eslint.config.js",
+      "sha256": "89a8c4e7f20ffaccfec93bb9d30bf8366b82ecbac2ca26f58fc8fcae4e66a573"
+    },
+    {
+      "path": "index.html",
+      "sha256": "3ceac0b7329bbc45b35b38495870b7fc3a0242cfed1a5f7754fb3a525b99c275"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "7e5000c2c9aa5a1f2a4840e482561b7440703eb34992f706b57c943234c6bd6d"
+    },
+    {
+      "path": "package.json",
+      "sha256": "f9d7b54c084f9b24ee50e2d9101920ef886c6357c76432a626c91bca191cf415"
+    },
+    {
+      "path": "playwright.config.js",
+      "sha256": "476186399ec5febd2673fc9b07bc4e0251eee7f4fbbad73248af5eae8990d132"
+    },
+    {
+      "path": "scripts/accuracy-report.ts",
+      "sha256": "21a732e5dffb1cf5c644d3568d926946f510e2ad706359be5d4eac72b633a7a1"
+    },
+    {
+      "path": "src/app.ts",
+      "sha256": "2a05f1637b7d1a4ee187485c01b8c16490cc71d45611e2607d01402b846d3ce1"
+    },
+    {
+      "path": "src/audio/audioworklet.d.ts",
+      "sha256": "4c8de3bb462c024cd55f61cb06a7cd3f04c6af31c9a4fa023b60c5e329ca4a42"
+    },
+    {
+      "path": "src/audio/cancellation.ts",
+      "sha256": "12c36860362e31ef09d65273a4bb11e6cb70d01aba116d42b495712ebbcfb74d"
+    },
+    {
+      "path": "src/audio/fileLoader.ts",
+      "sha256": "baea8c1481c92bd9d454886f979d1cabcb308f83a5ebbeb405007b5028b49870"
+    },
+    {
+      "path": "src/audio/limits.ts",
+      "sha256": "7394efc49f1b517104daa6cecfbda80080ac0e3300351f050e274548b574e4e3"
+    },
+    {
+      "path": "src/audio/playback.ts",
+      "sha256": "34da6365d78fa8c7d6fb6a6b34be8c3c4250fa6f3d7b442c7fd4c0dd375de472"
+    },
+    {
+      "path": "src/audio/recorder.ts",
+      "sha256": "f6cdc2f841de60fda2d738cf9bcdd843a66664a5170782e5b4608bdbfbc398b8"
+    },
+    {
+      "path": "src/audio/recorderWorklet.js",
+      "sha256": "1dcc8297fd4c928556ee1f3908f110493b6aaedb734eabe5ae31fdd2caf9ae0a"
+    },
+    {
+      "path": "src/core/accentTemplates.ts",
+      "sha256": "8610660cf2a8dc4dad44fb5041ebad2f8a840ac5377d4ec922b14a7e4c893db3"
+    },
+    {
+      "path": "src/core/dtw.ts",
+      "sha256": "5d35ad085d501999010b698a7eeaea27b49921338612ef07ff4381083eac5adc"
+    },
+    {
+      "path": "src/core/fft.ts",
+      "sha256": "ed0b8b78459a6e2909f42e8d534d824842017c5766ac28d572222df23d42c331"
+    },
+    {
+      "path": "src/core/mandarinTones.ts",
+      "sha256": "c9821ce6b10f7b1f054b2bcf715fffc3b65fb0f2826b6ef43b78657dbd3e47db"
+    },
+    {
+      "path": "src/core/metrics.ts",
+      "sha256": "6cf3f5d6cb2783cde95addb50ccf029f4e86c2b32036ad32725963fcefbbf7ec"
+    },
+    {
+      "path": "src/core/mpm.ts",
+      "sha256": "51eba39acbcd37ee6ccdf870526a40968c29a4285c995efbae3ffc2a46257c5e"
+    },
+    {
+      "path": "src/core/pitchCorrelation.ts",
+      "sha256": "d8b01b9e56c5f40c565df5929348c13be33b38c6fea9199c78b26febe6ade742"
+    },
+    {
+      "path": "src/core/pitchTrack.ts",
+      "sha256": "9ac0b092f14fbaa1ba688c314ec38c4657eabfcd9f7c2e4d2704d4641557a134"
+    },
+    {
+      "path": "src/core/spectrogram.ts",
+      "sha256": "69bccb899792a603bc085f8e043dc352fc43f98c89a41caa399647f03a48c7ce"
+    },
+    {
+      "path": "src/core/synth.ts",
+      "sha256": "c69326b5e6a8ea08480e59e9738b6af472e9a922b07b02d82fe7ecb4180c4f36"
+    },
+    {
+      "path": "src/core/toneClassifier.ts",
+      "sha256": "e3f1d14c90cc29a887734963465fc986cdaf44a678fef0ac3169bac53d64bbff"
+    },
+    {
+      "path": "src/core/types.ts",
+      "sha256": "ca7fadc7dba4e3d91d2dcda33388a6124e6673179167ef1667b1a881a664c922"
+    },
+    {
+      "path": "src/core/window.ts",
+      "sha256": "8c2b06da98a3b594b33318270bc7ec58dc439d7d9062d51a921405cc58e30ea7"
+    },
+    {
+      "path": "src/core/yin.ts",
+      "sha256": "70d37175ec9330e167f689e5c7da9ebfe8d5af949cd7e0c846a55211a6fa3908"
+    },
+    {
+      "path": "src/fonts/LICENSE.txt",
+      "sha256": "11a4d861226ad2d7a42174946d51ea50c7a1744dc60eb3910aed9419dec4f770"
+    },
+    {
+      "path": "src/fonts/fonts.css",
+      "sha256": "f695529a061ac3a51591c78164df3d7b0331e0f41796c9e79a5f608335ea2cd1"
+    },
+    {
+      "path": "src/fonts/fraunces-italic-latin-ext.woff2",
+      "sha256": "bbf614d45de67a99e638b753611329b2cb8b5b6d8da53b2aee0267fe75cfc5c8"
+    },
+    {
+      "path": "src/fonts/fraunces-italic-latin.woff2",
+      "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+    },
+    {
+      "path": "src/fonts/fraunces-italic-vietnamese.woff2",
+      "sha256": "b2383049df5de759100887e80450ef360e502d5b0454954fab2dcd6b322944f5"
+    },
+    {
+      "path": "src/fonts/fraunces-latin-ext.woff2",
+      "sha256": "a2930b27d13a228bd9ab6a49269b5f800237892ad560cb9dd7fab01b1620f88e"
+    },
+    {
+      "path": "src/fonts/fraunces-latin.woff2",
+      "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+    },
+    {
+      "path": "src/fonts/fraunces-vietnamese.woff2",
+      "sha256": "f18853f63a870ebef013e30e789d8d544f102e4acd94988e57c223d9c796ddf4"
+    },
+    {
+      "path": "src/fonts/ibm-plex-mono-400-cyrillic-ext.woff2",
+      "sha256": "f8c22ec1804bd6966b70f43ac7c327025645b4c09597117fca2a5a6c750106fe"
+    },
+    {
+      "path": "src/fonts/ibm-plex-mono-400-cyrillic.woff2",
+      "sha256": "7635422bd10ddbbcb0e0caa1154b928298f5c8319b8c00b30978d4395f4783ce"
+    },
+    {
+      "path": "src/fonts/ibm-plex-mono-400-latin-ext.woff2",
+      "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
+    },
+    {
+      "path": "src/fonts/ibm-plex-mono-400-latin.woff2",
+      "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+    },
+    {
+      "path": "src/fonts/ibm-plex-mono-400-vietnamese.woff2",
+      "sha256": "62632b6375305e70ddcafdd895218e6ae41a184fcd280a69c739460604ca00a9"
+    },
+    {
+      "path": "src/fonts/ibm-plex-mono-500-cyrillic-ext.woff2",
+      "sha256": "3febe5c7f22e4b07b4552738673c3dbe8bced2dc5f48b866edf7ccd9552d109a"
+    },
+    {
+      "path": "src/fonts/ibm-plex-mono-500-cyrillic.woff2",
+      "sha256": "1d89462e86cb8e87e7e9d6f6635605bd7c3081baca6caaecee84916bf7b60edc"
+    },
+    {
+      "path": "src/fonts/ibm-plex-mono-500-latin-ext.woff2",
+      "sha256": "6bb06407c97584b0867a959e05e8874693bfeb8c317de190811c51598f2d99ea"
+    },
+    {
+      "path": "src/fonts/ibm-plex-mono-500-latin.woff2",
+      "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+    },
+    {
+      "path": "src/fonts/ibm-plex-mono-500-vietnamese.woff2",
+      "sha256": "781633d95de88040fb77141d1e65d928c87c0144691fbc74da5a64d137a7e910"
+    },
+    {
+      "path": "src/fonts/inter-cyrillic-ext.woff2",
+      "sha256": "ca157063339ac4ad418f214f3abfed119b0798ab4d377386ce5c9e5a7a435ebd"
+    },
+    {
+      "path": "src/fonts/inter-cyrillic.woff2",
+      "sha256": "71d5ee93cc1e9f1d520a3a8b66456de18c7879d8df09d57fcd2eaff75fef0075"
+    },
+    {
+      "path": "src/fonts/inter-greek-ext.woff2",
+      "sha256": "6e9e020a25f9b56d418f2c085b1d3c09725a4da23fe693a5b463064606732190"
+    },
+    {
+      "path": "src/fonts/inter-greek.woff2",
+      "sha256": "1be3448e292fbf05ffe176fe1e43f135013d50b1e7d324ad1a558f623d3bb6f6"
+    },
+    {
+      "path": "src/fonts/inter-latin-ext.woff2",
+      "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
+    },
+    {
+      "path": "src/fonts/inter-latin.woff2",
+      "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+    },
+    {
+      "path": "src/fonts/inter-vietnamese.woff2",
+      "sha256": "5c66f9e07e90c6d4ac4922cc68d60de26c17b1858e677fb5e603fce3952b3ff2"
+    },
+    {
+      "path": "src/main.ts",
+      "sha256": "6e614319040e79fd2dd6d97769a1ec8f90e635a5705f454a05ff02885887c0d6"
+    },
+    {
+      "path": "src/storage/db.ts",
+      "sha256": "3e60169f6f96e3561f471ef436fa77103dd72015d437f8d0ae4b58b6dd753617"
+    },
+    {
+      "path": "src/style.css",
+      "sha256": "7a6623bfde0ddd4b29bb235e33ff08a95273a6267975c567a9a5b18c353f5eb0"
+    },
+    {
+      "path": "src/ui/analysisView.ts",
+      "sha256": "1625c5c8bc5731e0cac3ebfc319a77c04ec79140649c70af932be9dece64df5e"
+    },
+    {
+      "path": "src/ui/canvas.ts",
+      "sha256": "475097d338ac3f327b3fbf255a5be269eb3a7c9ce4269e94e3bf7194679d2cfb"
+    },
+    {
+      "path": "src/ui/contourStage.ts",
+      "sha256": "1f1cb746efa8bacc175dd91f7e5803f223941d1ece7479bfcc6a56d12dc11e8c"
+    },
+    {
+      "path": "src/ui/dom.ts",
+      "sha256": "c34841ed1266cbd7ef358fe81c3446e38a02f96b7307a6362b06d60a4f7e5956"
+    },
+    {
+      "path": "src/ui/theme.ts",
+      "sha256": "74f1cc8dc7d455dcfaac95edc50960fd742ecdb396466aa33445657e6a9c8066"
+    },
+    {
+      "path": "src/worker/client.ts",
+      "sha256": "9c473cd5db9f2413afa5be2946bead9f0db71bbcbccbbedc85327bc252759b37"
+    },
+    {
+      "path": "src/worker/pitchWorker.ts",
+      "sha256": "1c3fb1fbb4b7ff302fa2c78a5d37a5fe8684017678c892fa7c30bc2663a88274"
+    },
+    {
+      "path": "tests/accentTemplates.test.ts",
+      "sha256": "21dee8f690cbd1292a07d8a0bf771c387b30ba53c41266ff90799c1bef4baee3"
+    },
+    {
+      "path": "tests/browser/app.spec.js",
+      "sha256": "98410b618f35ded9437b29e272fb7d8f6a02fda320612d392bcf5dd1166db1b8"
+    },
+    {
+      "path": "tests/browser/library.spec.js",
+      "sha256": "199405d38f4634826228f955a09a31e8c54a6123d848a2febe0a58e2323e00e2"
+    },
+    {
+      "path": "tests/dtw.test.ts",
+      "sha256": "4c783f4ac69caf994be36d46fb3d1c6fbdec227630d23f034aca3f23f584ae77"
+    },
+    {
+      "path": "tests/fft.test.ts",
+      "sha256": "37a9b6754d835b2f80cea56ca8e6c019fb0f7ecc3c3d9a6983fa7e97829ce8da"
+    },
+    {
+      "path": "tests/fileLoader.test.ts",
+      "sha256": "a66f3cfccffaf7a7d6194c529f450891a66bcfc707de0b555a69c0409fa6cb51"
+    },
+    {
+      "path": "tests/metrics.test.ts",
+      "sha256": "bcc81cf9a2b780945c129ed6f3349c1e3df3fdaa242227eb60a6772c4a25af8c"
+    },
+    {
+      "path": "tests/mpm.test.ts",
+      "sha256": "b906943dad1a8889d48b3d014deb2320789c5f774dfcde85d2ab19ed6ad78c5d"
+    },
+    {
+      "path": "tests/pitchCorrelation.test.ts",
+      "sha256": "fb46e2a1e58c8331f65beb618dfc957229fe2be30e879ec9df94d132b192ec4a"
+    },
+    {
+      "path": "tests/pitchTrack.test.ts",
+      "sha256": "5a8bf084f48d49ca61d1d8bf76419d0c1b6f61e9ed9ea1db4e5de857b2df9383"
+    },
+    {
+      "path": "tests/playback.test.ts",
+      "sha256": "0a0be9d2f0c16cf4fab4a0e5e826dd3f7833b9bc507551de497f7c4440924b9b"
+    },
+    {
+      "path": "tests/recorder.test.ts",
+      "sha256": "b0ab616f19b4a923695df778cd02234458157d65ef3b156b18b8220021119f2f"
+    },
+    {
+      "path": "tests/robustness.test.ts",
+      "sha256": "8ae32e665b9f7aef03ba431670d8f69bd72d37de4c3805deeec968e775ebbd1e"
+    },
+    {
+      "path": "tests/spectrogram.test.ts",
+      "sha256": "df96eeb9d4874e46ea776e331d8c4ebec37d5aac5018e3ee02f31fcae9de50b6"
+    },
+    {
+      "path": "tests/storage.test.ts",
+      "sha256": "b236868eb0ce9a9bfc3ee66a5b9ff765b0efc514788ddd7012d93e2e8603a835"
+    },
+    {
+      "path": "tests/synth.test.ts",
+      "sha256": "86c5a960ea948cbd8c83ad44b7d67488e70a63939b7d5ed447b0e9bb427f76dd"
+    },
+    {
+      "path": "tests/toneClassifier.test.ts",
+      "sha256": "885c6a82ac6479e85cbb54f6d452d120c95c386629ff0915bbccf46add2d9d1b"
+    },
+    {
+      "path": "tests/workerClient.test.ts",
+      "sha256": "67456b5e2c2dc8b90b64c3cff54a280eabca273393953682bc2536945298a63a"
+    },
+    {
+      "path": "tests/yin.test.ts",
+      "sha256": "f5232631cf9e9e1eaead389caf7396df6108f5d70b616abfba3956f7167aac2d"
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "942618f682f95b0e3040ebb109cb649f86df1f7a405038682beb3872484726d8"
+    },
+    {
+      "path": "vite.config.ts",
+      "sha256": "14e5f3f5038bf85b87a0e19f9a8edc36011dd58dcaf7f7769cd0fe670f8d71c8"
+    },
+    {
+      "path": "vite.csp.ts",
+      "sha256": "354ad3e183daf58c40a236f6f11be201a499cdeea5d2088664a68bd016eeeca8"
+    }
+  ],
+  "files": [
+    {
+      "path": "assets/fraunces-italic-latin-BEbM7Mn6.woff2",
+      "bytes": 42372,
+      "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+    },
+    {
+      "path": "assets/fraunces-italic-latin-ext-C5JMU4hr.woff2",
+      "bytes": 37620,
+      "sha256": "bbf614d45de67a99e638b753611329b2cb8b5b6d8da53b2aee0267fe75cfc5c8"
+    },
+    {
+      "path": "assets/fraunces-italic-vietnamese-B7PmIdA3.woff2",
+      "bytes": 12048,
+      "sha256": "b2383049df5de759100887e80450ef360e502d5b0454954fab2dcd6b322944f5"
+    },
+    {
+      "path": "assets/fraunces-latin-DihXLNYH.woff2",
+      "bytes": 67304,
+      "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+    },
+    {
+      "path": "assets/fraunces-latin-ext-CJcjJNj7.woff2",
+      "bytes": 59388,
+      "sha256": "a2930b27d13a228bd9ab6a49269b5f800237892ad560cb9dd7fab01b1620f88e"
+    },
+    {
+      "path": "assets/fraunces-vietnamese-Czevyj-6.woff2",
+      "bytes": 19700,
+      "sha256": "f18853f63a870ebef013e30e789d8d544f102e4acd94988e57c223d9c796ddf4"
+    },
+    {
+      "path": "assets/ibm-plex-mono-400-cyrillic-BSMlKf0J.woff2",
+      "bytes": 8356,
+      "sha256": "7635422bd10ddbbcb0e0caa1154b928298f5c8319b8c00b30978d4395f4783ce"
+    },
+    {
+      "path": "assets/ibm-plex-mono-400-cyrillic-ext-xuaO2J-f.woff2",
+      "bytes": 6912,
+      "sha256": "f8c22ec1804bd6966b70f43ac7c327025645b4c09597117fca2a5a6c750106fe"
+    },
+    {
+      "path": "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2",
+      "bytes": 14708,
+      "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+    },
+    {
+      "path": "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2",
+      "bytes": 13348,
+      "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
+    },
+    {
+      "path": "assets/ibm-plex-mono-400-vietnamese-BulugwFq.woff2",
+      "bytes": 5868,
+      "sha256": "62632b6375305e70ddcafdd895218e6ae41a184fcd280a69c739460604ca00a9"
+    },
+    {
+      "path": "assets/ibm-plex-mono-500-cyrillic-Bq9vWWag.woff2",
+      "bytes": 8460,
+      "sha256": "1d89462e86cb8e87e7e9d6f6635605bd7c3081baca6caaecee84916bf7b60edc"
+    },
+    {
+      "path": "assets/ibm-plex-mono-500-cyrillic-ext-BqneJy0T.woff2",
+      "bytes": 6972,
+      "sha256": "3febe5c7f22e4b07b4552738673c3dbe8bced2dc5f48b866edf7ccd9552d109a"
+    },
+    {
+      "path": "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2",
+      "bytes": 14888,
+      "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+    },
+    {
+      "path": "assets/ibm-plex-mono-500-latin-ext-CAhNIIs5.woff2",
+      "bytes": 13432,
+      "sha256": "6bb06407c97584b0867a959e05e8874693bfeb8c317de190811c51598f2d99ea"
+    },
+    {
+      "path": "assets/ibm-plex-mono-500-vietnamese-DZ4AoWbu.woff2",
+      "bytes": 6040,
+      "sha256": "781633d95de88040fb77141d1e65d928c87c0144691fbc74da5a64d137a7e910"
+    },
+    {
+      "path": "assets/index-Bmc6olGg.css",
+      "bytes": 22805,
+      "sha256": "bf38e8b5b198c4567f7bcf59a67502c22f7d1381a4a572e8fd496d1bbb22dec3"
+    },
+    {
+      "path": "assets/index-DCjGVEHI.js",
+      "bytes": 56021,
+      "sha256": "3fa157e8d8e6b4a7055b9e51d02926e530242dda25fcaa774453163425275a57"
+    },
+    {
+      "path": "assets/index-DCjGVEHI.js.map",
+      "bytes": 166539,
+      "sha256": "fc9f416b0b14e49c96379bdfee07c41c668d669d70ae82c928b3880b745b61f2"
+    },
+    {
+      "path": "assets/inter-cyrillic-DqGufNeO.woff2",
+      "bytes": 18748,
+      "sha256": "71d5ee93cc1e9f1d520a3a8b66456de18c7879d8df09d57fcd2eaff75fef0075"
+    },
+    {
+      "path": "assets/inter-cyrillic-ext-BOeWTOD4.woff2",
+      "bytes": 25960,
+      "sha256": "ca157063339ac4ad418f214f3abfed119b0798ab4d377386ce5c9e5a7a435ebd"
+    },
+    {
+      "path": "assets/inter-greek-CkhJZR-_.woff2",
+      "bytes": 18996,
+      "sha256": "1be3448e292fbf05ffe176fe1e43f135013d50b1e7d324ad1a558f623d3bb6f6"
+    },
+    {
+      "path": "assets/inter-greek-ext-DlzME5K_.woff2",
+      "bytes": 11232,
+      "sha256": "6e9e020a25f9b56d418f2c085b1d3c09725a4da23fe693a5b463064606732190"
+    },
+    {
+      "path": "assets/inter-latin-Dx4kXJAl.woff2",
+      "bytes": 48256,
+      "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+    },
+    {
+      "path": "assets/inter-latin-ext-DO1Apj_S.woff2",
+      "bytes": 85068,
+      "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
+    },
+    {
+      "path": "assets/inter-vietnamese-CBcvBZtf.woff2",
+      "bytes": 10252,
+      "sha256": "5c66f9e07e90c6d4ac4922cc68d60de26c17b1858e677fb5e603fce3952b3ff2"
+    },
+    {
+      "path": "assets/pitchWorker-Dyhd7A7I.js.map",
+      "bytes": 61011,
+      "sha256": "133ff58b0a6eb88ea18bd8f6fa07deb9621416cf6bbf08e525614a685ba30e24"
+    },
+    {
+      "path": "index.html",
+      "bytes": 2342,
+      "sha256": "16fde4716ed1bab86f431df5d2ee35d391157c6035adfa801cd19f33abb115d2"
+    }
+  ]
+}

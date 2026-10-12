@@ -14,6 +14,12 @@ used a symmetric 315.64-cent threshold, which wrongly counted 82 Hz against
 not changed. Lower error percentages here are a measurement correction,
 not improved pitch tracking.
 
+The later [correlation performance study](../pitch-correlation/README.md)
+replays all 580 recordings against the faster implementation without changing
+pitch decisions at the table's 0.001 Hz output precision. That study measures
+runtime and numerical compatibility; the accuracy results below remain the
+original pinned measurement.
+
 ## Inputs and provenance
 
 [`manifest.json`](manifest.json) pins 963 source files by URL, byte count and

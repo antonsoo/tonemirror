@@ -127,6 +127,11 @@ estimators are available:
   picking with a clarity threshold chosen to prefer the true fundamental
   over its octave, and parabolic interpolation. `src/core/mpm.ts`.
 
+Large frames use FFT correlations with the same lag and window definitions;
+small frames retain direct sums. A [paired replay of 580 real recordings](studies/pitch-correlation/README.md)
+found no voicing changes or pitch changes rounded to 0.001 Hz. The study retains
+before/after timings, including the small-frame cases with no speed benefit.
+
 After per-frame detection, `src/core/pitchTrack.ts` applies:
 
 1. **Octave-error correction** - a frame whose F0 is ~2x or ~0.5x its local
@@ -326,7 +331,7 @@ minutes long.
 ```
 dist/index.html                   2.34 kB (gzip 0.88 kB)
 dist/assets/index-*.css          22.80 kB (gzip 3.52 kB)
-dist/assets/index-*.js           54.99 kB (gzip 19.70 kB)
+dist/assets/index-*.js           56.02 kB (gzip 20.12 kB)
 ```
 
 No UI framework, no charting library - Canvas 2D and vanilla DOM.
