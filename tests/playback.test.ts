@@ -78,4 +78,37 @@ describe("playback timeline", () => {
     context.currentTime = 10;
     expect(player.currentPositionSeconds()).toBe(3.5);
   });
+
+  it.each([4, 5, 7, 10])("resumes at loop start when the paused position is %s seconds", (offset) => {
+    const { context, sources, player } = setup();
+    player.play();
+    context.currentTime = offset;
+    player.pause();
+    player.setLoopRegion({ start: 0.2, end: 0.4 });
+    // Selecting a region while paused does not move the paused cursor.
+    expect(player.currentPositionSeconds()).toBe(offset);
+    player.play(player.currentPositionSeconds());
+    expect(sources[1]!.start).toHaveBeenCalledWith(0, 2);
+    expect(player.currentPositionSeconds()).toBe(2);
+    context.currentTime += 1;
+    expect(player.currentPositionSeconds()).toBe(3);
+    player.setHalfSpeed(true);
+    context.currentTime += 3;
+    expect(player.currentPositionSeconds()).toBe(2.5);
+  });
+
+  it.each([null, { start: 0.2, end: 0.8 }])("follows native loop entry when a playing region moves behind the cursor (%j)", (oldLoop) => {
+    const { context, sources, player } = setup();
+    player.setLoopRegion(oldLoop);
+    player.play(5);
+    context.currentTime = 0.5;
+    player.setLoopRegion({ start: 0.2, end: 0.4 });
+    expect(player.currentPositionSeconds()).toBe(2);
+    expect(sources).toHaveLength(1);
+    context.currentTime = 1;
+    expect(player.currentPositionSeconds()).toBe(2.5);
+    player.setLoopRegion(null);
+    context.currentTime = 3;
+    expect(player.currentPositionSeconds()).toBe(4.5);
+  });
 });

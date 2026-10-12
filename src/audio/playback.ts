@@ -45,6 +45,7 @@ export class ClipPlayer {
     this.startedAtContextTime = this.context.currentTime;
     this.loop = region;
     if (this.source && this.buffer) {
+      this.startOffsetSeconds = this.loopEntryPosition(this.startOffsetSeconds);
       if (region) {
         this.source.loop = true;
         this.source.loopStart = region.start * this.buffer.duration;
@@ -76,10 +77,11 @@ export class ClipPlayer {
         this.onEnded?.();
       }
     };
-    source.start(0, fromSeconds);
+    const offset = this.loopEntryPosition(fromSeconds);
+    source.start(0, offset);
     this.source = source;
     this.startedAtContextTime = this.context.currentTime;
-    this.startOffsetSeconds = fromSeconds;
+    this.startOffsetSeconds = offset;
   }
 
   pause(): number {
@@ -122,5 +124,16 @@ export class ClipPlayer {
     const len = end - start || this.buffer.duration;
     if (pos < end) return pos;
     return start + ((pos - start) % len);
+  }
+
+  private loopEntryPosition(pos: number): number {
+    // Native playback enters at loopStart when started beyond loopEnd, or
+    // when a loop is moved behind the playing position. Only subsequent
+    // elapsed playback wraps with a remainder. Leave invalid offsets to
+    // AudioBufferSourceNode.start's validation.
+    if (this.loop && this.buffer && Number.isFinite(pos) && pos >= this.loop.end * this.buffer.duration) {
+      return this.loop.start * this.buffer.duration;
+    }
+    return pos;
   }
 }
