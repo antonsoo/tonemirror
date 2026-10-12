@@ -4,6 +4,13 @@ All notable changes to this project are documented in this file.
 
 ## Unreleased
 
+- Browse saved references through a metadata-only index instead of loading
+  every recording's audio. **Use** reads just the selected recording, with
+  cancellation and protection against older reads replacing newer selections.
+  Existing records stay in place during the atomic index upgrade. Blocked
+  upgrades, missing recordings and unreadable metadata have visible recovery
+  messages. [Before/after and byte-preservation study](studies/library-loading/README.md).
+
 - Include pitch-analysis and recorder code in the initial page load. A first
   local import, comparison, algorithm change or microphone recording can now
   start without a connection. Recorder Blob URLs are released on success and

@@ -9,6 +9,16 @@ that clip; the waveform label and comparison source names identify what is
 actually loaded. Failed extraction can be retried without selecting the file
 again.
 
+The saved-reference library lists metadata through an IndexedDB key cursor.
+Only **Use** reads the chosen recording's PCM, with the same ownership and
+cancellation rules as a file import. The first opening after upgrading the
+source creates a metadata index over the existing records atomically. Another
+old tab can block that upgrade; close it and retry the library. The upgrade
+does not rewrite the audio records. A count check reports unindexable legacy
+metadata instead of silently hiding recordings. The browser can still evict
+site data, and cancelling a read is not a promise to stop internal disk work.
+[Stored-byte and offline-browser evidence](../studies/library-loading/README.md).
+
 ```text
 file / capture / saved clip
              |

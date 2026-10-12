@@ -1,0 +1,142 @@
+# Browsing saved recordings without reading every audio buffer
+
+At source revision `c9131e6e2589b9509a566c23964bc3a635f759b5`, opening the
+library called `getAll()` on records containing both metadata and Float32 PCM.
+The app retained every recording's audio just to display its name and category.
+Saving or deleting a reference repeated that read for the whole library.
+
+This reproduction creates a version-1 library containing **100 distinct
+synthetic sine recordings**, each ten seconds long at 48 kHz mono Float32:
+192,000,000 PCM bytes total. Frequencies are `120 + 2*i` Hz. The saved synthetic
+flag, sample rate, timestamp, name, category and ID are included in the audit.
+These are generated storage fixtures, not human speech or collected user data.
+
+| Operation | Before: PCM delivered to JavaScript | After: PCM delivered to JavaScript |
+| --- | ---: | ---: |
+| Open/reload the 100-recording library | 192,000,000 bytes | 0 bytes |
+| Use one ten-second recording | 0 additional bytes; already retained | 1,920,000 bytes |
+| Delete it and refresh the other 99 entries | 190,080,000 bytes | 0 bytes |
+
+The selected audio still needs working buffers for analysis and playback. The
+table counts PCM in completed IndexedDB `get`/`getAll` results; it is **not a
+browser RSS or peak-memory measurement**, and does not count the separate audit.
+Metadata, index storage and rendered rows still grow with the entry count.
+
+## Change and migration
+
+Source revision `4f8ff330e7478b06a74c276e16152d055953bca8` adds a compound
+metadata index to the existing object store. A key cursor returns the small
+fields needed by the list. **Use** performs a single cancellable `get(id)`;
+ownership starts before that read, so a late result cannot replace a newer
+selection. Existing analysis and playback ownership are unchanged.
+
+The [Indexed Database API](https://www.w3.org/TR/IndexedDB/) defines atomic
+schema upgrades and key-only index cursors. Creating the index does not rewrite
+the application's audio records. The browser still scans existing records to
+build it once. An old tab holding the database can block that upgrade; the app
+shows the reason and a retry control. An abandoned blocked open aborts its late
+upgrade instead of changing the database after reporting failure. Version-1
+code must be refreshed before it can open an already upgraded database.
+
+An index can omit records whose metadata cannot form a valid key. The list
+compares its count with the object-store count and reports that condition;
+it does not silently present those recordings as absent. Missing selected
+records and unreadable audio reject the read, keeping the previous loaded clip.
+Storage eviction and site-data deletion remain browser/user-controlled.
+
+## Observed time, including the one-time upgrade
+
+Three navigations were measured per fresh browser profile. The first creates
+the metadata index in the repaired build; the next two reuse it. These local
+observations come from the same Chromium 153.0.8010.12 and Firefox 155.0 binaries,
+at desktop and phone widths, on 14-vCPU WSL2 Linux with 47.05 GiB RAM. The baseline
+harness ran under Node 26.7; the clean-build harness used Node 24.21. All app
+execution and IndexedDB work occurred in the browser. No other verification
+suite ran concurrently with either retained measurement.
+
+| Browser / width | First navigation before / after (ms) | Later navigations before (ms) | Later navigations after (ms) | One-time index upgrade (ms) |
+| --- | ---: | ---: | ---: | ---: |
+| Chromium / 1440 | 623 / 509 | 550, 462 | 69, 42 | 415 |
+| Chromium / 375 | 561 / 1090 | 496, 451 | 53, 50 | 1011 |
+| Firefox / 1440 | 1075 / 668 | 1180, 3134 | 53, 41 | 596 |
+| Firefox / 375 | 1083 / 634 | 1061, 1179 | 48, 46 | 568 |
+
+Navigation time is `performance.now()` when a DOM observer sees all 100 rows,
+so it includes page startup and database opening. The separate `readyElapsedMs`
+starts at the first metadata/audio read and excludes the upgrade. Those reads
+through row rendering took 4-25 ms after the change, versus 419-3100 ms before.
+The raw records retain every observation, including the slow Firefox baseline
+reload and slower first Chromium phone upgrade. These small samples are not a
+cross-device latency guarantee. Timer-lag observations are also retained but
+are not a hard responsiveness bound.
+
+## Preserved audio and failure behavior
+
+[`before.json`](before.json) and [`after.json`](after.json) retain four
+browser/width cases each. After measuring, the harness separately reads and
+SHA-256 hashes all 100 stored recordings, verifies every metadata field, then
+uses the newest reference. It checks that the worker input and playback input
+have exactly the selected PCM hash, waits for a real analysis result, and starts
+and pauses an actual audio source node. After deleting that entry, all 99
+remaining records are audited again. These audits are excluded from the
+reported application read bytes and timings.
+
+[`parity.json`](parity.json), generated by [`compare.mjs`](compare.mjs), confirms
+that stored records, ordering, remaining records, selected PCM, complete pitch
+contour and complete spectrogram hashes match the baseline in all four cases.
+Comparisons are within each browser. The local HTTP server is shut down before
+the first **Use**; there are no subsequent HTTP requests, page errors, CSP
+violations or horizontal overflow. This checks the saved-audio transport path,
+not pronunciation accuracy, human listening quality or physical audio output.
+
+The browser regressions also exercise actual queued IndexedDB reads under a
+held write transaction: cancellation keeps the previous clip; rapid selection
+loads only the newest choice. Other cases delete a record from another
+connection and hold a version-1 connection in another tab to block migration,
+then retry successfully after closing it. Storage unit checks using
+`fake-indexeddb` cover aborted upgrades, transaction aborts, denied storage,
+unindexable metadata and malformed PCM, including cancellation after request
+success but before transaction commit.
+
+Eight retained screenshots were opened and inspected. They show the real
+analysis and saved-library panels at both widths and in both browsers:
+
+| Browser | 1440 px | 375 px |
+| --- | --- | --- |
+| Chromium | [analysis](../../docs/assets/library-loading/chromium-1440-analysis.png), [library](../../docs/assets/library-loading/chromium-1440-library.png) | [analysis](../../docs/assets/library-loading/chromium-375-analysis.png), [library](../../docs/assets/library-loading/chromium-375-library.png) |
+| Firefox | [analysis](../../docs/assets/library-loading/firefox-1440-analysis.png), [library](../../docs/assets/library-loading/firefox-1440-library.png) | [analysis](../../docs/assets/library-loading/firefox-375-analysis.png), [library](../../docs/assets/library-loading/firefox-375-library.png) |
+
+## Clean artifact and reproduction
+
+A fresh archive of `4f8ff33` passed `npm ci`, lint, type checking, 140 unit checks,
+a production build and 59 browser workflows on Node 24.21. Three Firefox
+microphone cases are skipped because they require Chromium's simulated audio
+device. [`clean-checks.txt`](clean-checks.txt) retains the command output with
+only its temporary path normalized. [`verification.json`](verification.json)
+records all 61 build inputs, 28 served production files, and 27 processing,
+playback and visualization files unchanged from the baseline. The final study
+uses that clean production build. This is source and local-build evidence;
+it does not establish a new hosted deployment or package release.
+
+```sh
+npm ci
+npm run build
+node studies/library-loading/verify.mjs dist /tmp/library-after.json verify
+```
+
+The script needs the Chromium and Firefox engines used by the existing browser
+suite. It serves only a temporary loopback origin and closes its fresh profiles.
+Build `c9131e6` separately with its locked dependencies, then run the same script
+from this checkout against that baseline directory:
+
+```sh
+node studies/library-loading/verify.mjs /path/to/baseline/dist /tmp/library-before.json baseline
+node studies/library-loading/compare.mjs /tmp/library-before.json /tmp/library-after.json /tmp/library-parity.json
+```
+
+An optional fourth argument to `verify.mjs` saves panel screenshots. Full corpus
+speech accuracy was not rerun: this change leaves the 27 processing/UI files
+listed in the receipt byte-identical and checks complete analysis parity on the
+selected synthetic recording. Cancellation does not promise to preempt all
+browser-internal storage I/O, and offline use still requires an initial page
+load. No new runtime dependency is added.

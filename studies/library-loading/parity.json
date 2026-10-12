@@ -1,0 +1,76 @@
+{
+  "results": [
+    {
+      "engine": "chromium",
+      "width": 1440,
+      "version": "153.0.8010.12",
+      "sameStoredRecords": true,
+      "sameListOrder": true,
+      "sameRemainingRecordsAfterDelete": true,
+      "sameWorkerInput": true,
+      "samePlaybackInput": true,
+      "sameContourAndSpectrogram": true,
+      "recordingManifestSha256": "d950b09eec92b55fd1bd9b14203ffedd99ddc2297f21e7ee892b655a2b2de460",
+      "workerInputSha256": "e9c95c9311f413212e95bc54c077bc9fbb9262b25d6a21c9e1d59a8867166870",
+      "workerResultSha256": [
+        "2514d7d83dc8df12c4b18f4ac979be94449f4ba148635d32f76df3ae881a30c3",
+        "cf341386b618205bf315b78fb40d1b8bb4530f25290b06340f81632a39cc088f",
+        "ef8147d341230950463cec5c0f01f994aacdbeeb2846cb8412123c15ca5669b4"
+      ]
+    },
+    {
+      "engine": "chromium",
+      "width": 375,
+      "version": "153.0.8010.12",
+      "sameStoredRecords": true,
+      "sameListOrder": true,
+      "sameRemainingRecordsAfterDelete": true,
+      "sameWorkerInput": true,
+      "samePlaybackInput": true,
+      "sameContourAndSpectrogram": true,
+      "recordingManifestSha256": "d950b09eec92b55fd1bd9b14203ffedd99ddc2297f21e7ee892b655a2b2de460",
+      "workerInputSha256": "e9c95c9311f413212e95bc54c077bc9fbb9262b25d6a21c9e1d59a8867166870",
+      "workerResultSha256": [
+        "2514d7d83dc8df12c4b18f4ac979be94449f4ba148635d32f76df3ae881a30c3",
+        "cf341386b618205bf315b78fb40d1b8bb4530f25290b06340f81632a39cc088f",
+        "ef8147d341230950463cec5c0f01f994aacdbeeb2846cb8412123c15ca5669b4"
+      ]
+    },
+    {
+      "engine": "firefox",
+      "width": 1440,
+      "version": "155.0",
+      "sameStoredRecords": true,
+      "sameListOrder": true,
+      "sameRemainingRecordsAfterDelete": true,
+      "sameWorkerInput": true,
+      "samePlaybackInput": true,
+      "sameContourAndSpectrogram": true,
+      "recordingManifestSha256": "d950b09eec92b55fd1bd9b14203ffedd99ddc2297f21e7ee892b655a2b2de460",
+      "workerInputSha256": "e9c95c9311f413212e95bc54c077bc9fbb9262b25d6a21c9e1d59a8867166870",
+      "workerResultSha256": [
+        "2514d7d83dc8df12c4b18f4ac979be94449f4ba148635d32f76df3ae881a30c3",
+        "cf341386b618205bf315b78fb40d1b8bb4530f25290b06340f81632a39cc088f",
+        "d87aed8212ce9e4a1d754e2b8778f2d787507efe133a0a09902b8cd82ac47cbe"
+      ]
+    },
+    {
+      "engine": "firefox",
+      "width": 375,
+      "version": "155.0",
+      "sameStoredRecords": true,
+      "sameListOrder": true,
+      "sameRemainingRecordsAfterDelete": true,
+      "sameWorkerInput": true,
+      "samePlaybackInput": true,
+      "sameContourAndSpectrogram": true,
+      "recordingManifestSha256": "d950b09eec92b55fd1bd9b14203ffedd99ddc2297f21e7ee892b655a2b2de460",
+      "workerInputSha256": "e9c95c9311f413212e95bc54c077bc9fbb9262b25d6a21c9e1d59a8867166870",
+      "workerResultSha256": [
+        "2514d7d83dc8df12c4b18f4ac979be94449f4ba148635d32f76df3ae881a30c3",
+        "cf341386b618205bf315b78fb40d1b8bb4530f25290b06340f81632a39cc088f",
+        "d87aed8212ce9e4a1d754e2b8778f2d787507efe133a0a09902b8cd82ac47cbe"
+      ]
+    }
+  ]
+}

@@ -70,7 +70,7 @@ just click one of the built-in reference chips and record yourself.
   Mandarin tones and every accent template, generated in-browser and
   labeled synthetic everywhere they appear. Recording or loading real
   native-speaker audio is one click away and clearly encouraged in the UI.
-- **Local processing without uploads**, no telemetry, small bundle (~53 kB
+- **Local processing without uploads**, no telemetry, small bundle (~55 kB
   of JS including the bundled worker and worklet, uncompressed - see
   [Bundle size](#bundle-size)).
 
@@ -89,6 +89,13 @@ Cancel saves nothing. If browser storage is unavailable, audio loading,
 recording, and comparison still work. Saving errors appear beside the library,
 and **Retry saved references** retries a failed library load. Saved recordings
 belong to this browser profile and can disappear if its site data is cleared.
+
+Browsing saved references reads only their names and categories; **Use** loads
+the selected recording, and **Cancel work** can cancel that read. Existing
+libraries gain a metadata index on first opening this source version. If another
+old tab blocks that upgrade, close it and retry. The stored recordings stay in
+place. [Reproduction and migration checks](studies/library-loading/README.md)
+cover a synthetic 100-recording library with 192 MB of audio.
 
 **Cancel work** stops pending imports, pitch extraction and contour matching.
 Reference and attempt analysis have separate workers, so a stuck job in one
@@ -319,7 +326,7 @@ minutes long.
 ```
 dist/index.html                   2.34 kB (gzip 0.88 kB)
 dist/assets/index-*.css          22.80 kB (gzip 3.52 kB)
-dist/assets/index-*.js           53.14 kB (gzip 19.16 kB)
+dist/assets/index-*.js           54.99 kB (gzip 19.70 kB)
 ```
 
 No UI framework, no charting library - Canvas 2D and vanilla DOM.

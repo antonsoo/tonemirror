@@ -1,0 +1,841 @@
+{
+  "checkedAtUtc": "2026-10-12T01:02:44.577722+00:00",
+  "baselineSource": "c9131e6e2589b9509a566c23964bc3a635f759b5",
+  "testedSource": "4f8ff330e7478b06a74c276e16152d055953bca8",
+  "cleanNode": "v24.21.0",
+  "machine": {
+    "platform": "WSL2 Linux",
+    "logicalCpus": 14,
+    "ramGiB": 47.05
+  },
+  "commands": [
+    "npm ci",
+    "npm run lint",
+    "npm run typecheck",
+    "npm test",
+    "npm run test:browser"
+  ],
+  "results": {
+    "unitTests": 140,
+    "browserPassed": 59,
+    "browserSkipped": 3,
+    "skips": "Firefox cases requiring the Chromium simulated microphone"
+  },
+  "inputs": [
+    {
+      "path": "index.html",
+      "bytes": 1929,
+      "sha256": "3ceac0b7329bbc45b35b38495870b7fc3a0242cfed1a5f7754fb3a525b99c275",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 99655,
+      "sha256": "7e5000c2c9aa5a1f2a4840e482561b7440703eb34992f706b57c943234c6bd6d",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "package.json",
+      "bytes": 1371,
+      "sha256": "f9d7b54c084f9b24ee50e2d9101920ef886c6357c76432a626c91bca191cf415",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/app.ts",
+      "bytes": 34197,
+      "sha256": "2a05f1637b7d1a4ee187485c01b8c16490cc71d45611e2607d01402b846d3ce1",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/audio/audioworklet.d.ts",
+      "bytes": 515,
+      "sha256": "4c8de3bb462c024cd55f61cb06a7cd3f04c6af31c9a4fa023b60c5e329ca4a42",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/audio/cancellation.ts",
+      "bytes": 579,
+      "sha256": "12c36860362e31ef09d65273a4bb11e6cb70d01aba116d42b495712ebbcfb74d",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/audio/fileLoader.ts",
+      "bytes": 3847,
+      "sha256": "baea8c1481c92bd9d454886f979d1cabcb308f83a5ebbeb405007b5028b49870",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/audio/limits.ts",
+      "bytes": 1178,
+      "sha256": "7394efc49f1b517104daa6cecfbda80080ac0e3300351f050e274548b574e4e3",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/audio/playback.ts",
+      "bytes": 3945,
+      "sha256": "34da6365d78fa8c7d6fb6a6b34be8c3c4250fa6f3d7b442c7fd4c0dd375de472",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/audio/recorder.ts",
+      "bytes": 4876,
+      "sha256": "f6cdc2f841de60fda2d738cf9bcdd843a66664a5170782e5b4608bdbfbc398b8",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/audio/recorderWorklet.js",
+      "bytes": 1037,
+      "sha256": "1dcc8297fd4c928556ee1f3908f110493b6aaedb734eabe5ae31fdd2caf9ae0a",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/core/accentTemplates.ts",
+      "bytes": 5732,
+      "sha256": "8610660cf2a8dc4dad44fb5041ebad2f8a840ac5377d4ec922b14a7e4c893db3",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/core/dtw.ts",
+      "bytes": 13363,
+      "sha256": "5d35ad085d501999010b698a7eeaea27b49921338612ef07ff4381083eac5adc",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/core/fft.ts",
+      "bytes": 3300,
+      "sha256": "d23bd5d3ac87e751992c153738b9f84d8076a3e9bea83a94df4273e97a6d2fa8",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/core/mandarinTones.ts",
+      "bytes": 2233,
+      "sha256": "c9821ce6b10f7b1f054b2bcf715fffc3b65fb0f2826b6ef43b78657dbd3e47db",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/core/metrics.ts",
+      "bytes": 3208,
+      "sha256": "6cf3f5d6cb2783cde95addb50ccf029f4e86c2b32036ad32725963fcefbbf7ec",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/core/mpm.ts",
+      "bytes": 4240,
+      "sha256": "5fcc814c16dbf588496516f1e7a7da88925d60d507c3272a9a5e824abec50454",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/core/pitchTrack.ts",
+      "bytes": 6591,
+      "sha256": "9ac0b092f14fbaa1ba688c314ec38c4657eabfcd9f7c2e4d2704d4641557a134",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/core/spectrogram.ts",
+      "bytes": 1809,
+      "sha256": "69bccb899792a603bc085f8e043dc352fc43f98c89a41caa399647f03a48c7ce",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/core/synth.ts",
+      "bytes": 7055,
+      "sha256": "c69326b5e6a8ea08480e59e9738b6af472e9a922b07b02d82fe7ecb4180c4f36",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/core/toneClassifier.ts",
+      "bytes": 4895,
+      "sha256": "e3f1d14c90cc29a887734963465fc986cdaf44a678fef0ac3169bac53d64bbff",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/core/types.ts",
+      "bytes": 2289,
+      "sha256": "ca7fadc7dba4e3d91d2dcda33388a6124e6673179167ef1667b1a881a664c922",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/core/window.ts",
+      "bytes": 728,
+      "sha256": "8c2b06da98a3b594b33318270bc7ec58dc439d7d9062d51a921405cc58e30ea7",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/core/yin.ts",
+      "bytes": 4627,
+      "sha256": "be243b915e1eb4d0fed2c78bf69105ea64ad4c7e9e62571dff3ba9946c679e4d",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/fonts/LICENSE.txt",
+      "bytes": 13969,
+      "sha256": "11a4d861226ad2d7a42174946d51ea50c7a1744dc60eb3910aed9419dec4f770",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/fonts/fonts.css",
+      "bytes": 15336,
+      "sha256": "f695529a061ac3a51591c78164df3d7b0331e0f41796c9e79a5f608335ea2cd1",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/fonts/fraunces-italic-latin-ext.woff2",
+      "bytes": 37620,
+      "sha256": "bbf614d45de67a99e638b753611329b2cb8b5b6d8da53b2aee0267fe75cfc5c8",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/fonts/fraunces-italic-latin.woff2",
+      "bytes": 42372,
+      "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/fonts/fraunces-italic-vietnamese.woff2",
+      "bytes": 12048,
+      "sha256": "b2383049df5de759100887e80450ef360e502d5b0454954fab2dcd6b322944f5",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/fonts/fraunces-latin-ext.woff2",
+      "bytes": 59388,
+      "sha256": "a2930b27d13a228bd9ab6a49269b5f800237892ad560cb9dd7fab01b1620f88e",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/fonts/fraunces-latin.woff2",
+      "bytes": 67304,
+      "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/fonts/fraunces-vietnamese.woff2",
+      "bytes": 19700,
+      "sha256": "f18853f63a870ebef013e30e789d8d544f102e4acd94988e57c223d9c796ddf4",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/fonts/ibm-plex-mono-400-cyrillic-ext.woff2",
+      "bytes": 6912,
+      "sha256": "f8c22ec1804bd6966b70f43ac7c327025645b4c09597117fca2a5a6c750106fe",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/fonts/ibm-plex-mono-400-cyrillic.woff2",
+      "bytes": 8356,
+      "sha256": "7635422bd10ddbbcb0e0caa1154b928298f5c8319b8c00b30978d4395f4783ce",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/fonts/ibm-plex-mono-400-latin-ext.woff2",
+      "bytes": 13348,
+      "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/fonts/ibm-plex-mono-400-latin.woff2",
+      "bytes": 14708,
+      "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/fonts/ibm-plex-mono-400-vietnamese.woff2",
+      "bytes": 5868,
+      "sha256": "62632b6375305e70ddcafdd895218e6ae41a184fcd280a69c739460604ca00a9",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/fonts/ibm-plex-mono-500-cyrillic-ext.woff2",
+      "bytes": 6972,
+      "sha256": "3febe5c7f22e4b07b4552738673c3dbe8bced2dc5f48b866edf7ccd9552d109a",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/fonts/ibm-plex-mono-500-cyrillic.woff2",
+      "bytes": 8460,
+      "sha256": "1d89462e86cb8e87e7e9d6f6635605bd7c3081baca6caaecee84916bf7b60edc",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/fonts/ibm-plex-mono-500-latin-ext.woff2",
+      "bytes": 13432,
+      "sha256": "6bb06407c97584b0867a959e05e8874693bfeb8c317de190811c51598f2d99ea",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/fonts/ibm-plex-mono-500-latin.woff2",
+      "bytes": 14888,
+      "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/fonts/ibm-plex-mono-500-vietnamese.woff2",
+      "bytes": 6040,
+      "sha256": "781633d95de88040fb77141d1e65d928c87c0144691fbc74da5a64d137a7e910",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/fonts/inter-cyrillic-ext.woff2",
+      "bytes": 25960,
+      "sha256": "ca157063339ac4ad418f214f3abfed119b0798ab4d377386ce5c9e5a7a435ebd",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/fonts/inter-cyrillic.woff2",
+      "bytes": 18748,
+      "sha256": "71d5ee93cc1e9f1d520a3a8b66456de18c7879d8df09d57fcd2eaff75fef0075",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/fonts/inter-greek-ext.woff2",
+      "bytes": 11232,
+      "sha256": "6e9e020a25f9b56d418f2c085b1d3c09725a4da23fe693a5b463064606732190",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/fonts/inter-greek.woff2",
+      "bytes": 18996,
+      "sha256": "1be3448e292fbf05ffe176fe1e43f135013d50b1e7d324ad1a558f623d3bb6f6",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/fonts/inter-latin-ext.woff2",
+      "bytes": 85068,
+      "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/fonts/inter-latin.woff2",
+      "bytes": 48256,
+      "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/fonts/inter-vietnamese.woff2",
+      "bytes": 10252,
+      "sha256": "5c66f9e07e90c6d4ac4922cc68d60de26c17b1858e677fb5e603fce3952b3ff2",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/main.ts",
+      "bytes": 159,
+      "sha256": "6e614319040e79fd2dd6d97769a1ec8f90e635a5705f454a05ff02885887c0d6",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/storage/db.ts",
+      "bytes": 6717,
+      "sha256": "3e60169f6f96e3561f471ef436fa77103dd72015d437f8d0ae4b58b6dd753617",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/style.css",
+      "bytes": 13430,
+      "sha256": "7a6623bfde0ddd4b29bb235e33ff08a95273a6267975c567a9a5b18c353f5eb0",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/ui/analysisView.ts",
+      "bytes": 9445,
+      "sha256": "1625c5c8bc5731e0cac3ebfc319a77c04ec79140649c70af932be9dece64df5e",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/ui/canvas.ts",
+      "bytes": 940,
+      "sha256": "475097d338ac3f327b3fbf255a5be269eb3a7c9ce4269e94e3bf7194679d2cfb",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/ui/contourStage.ts",
+      "bytes": 7792,
+      "sha256": "1f1cb746efa8bacc175dd91f7e5803f223941d1ece7479bfcc6a56d12dc11e8c",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/ui/dom.ts",
+      "bytes": 1034,
+      "sha256": "c34841ed1266cbd7ef358fe81c3446e38a02f96b7307a6362b06d60a4f7e5956",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/ui/theme.ts",
+      "bytes": 1031,
+      "sha256": "74f1cc8dc7d455dcfaac95edc50960fd742ecdb396466aa33445657e6a9c8066",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/worker/client.ts",
+      "bytes": 4426,
+      "sha256": "9c473cd5db9f2413afa5be2946bead9f0db71bbcbccbbedc85327bc252759b37",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "src/worker/pitchWorker.ts",
+      "bytes": 2235,
+      "sha256": "1c3fb1fbb4b7ff302fa2c78a5d37a5fe8684017678c892fa7c30bc2663a88274",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 775,
+      "sha256": "942618f682f95b0e3040ebb109cb649f86df1f7a405038682beb3872484726d8",
+      "matchesCleanArchive": true
+    },
+    {
+      "path": "vite.config.ts",
+      "bytes": 477,
+      "sha256": "14e5f3f5038bf85b87a0e19f9a8edc36011dd58dcaf7f7769cd0fe670f8d71c8",
+      "matchesCleanArchive": true
+    }
+  ],
+  "unchangedProcessing": [
+    {
+      "path": "src/core/accentTemplates.ts",
+      "sha256": "8610660cf2a8dc4dad44fb5041ebad2f8a840ac5377d4ec922b14a7e4c893db3",
+      "matchesBaseline": true
+    },
+    {
+      "path": "src/core/dtw.ts",
+      "sha256": "5d35ad085d501999010b698a7eeaea27b49921338612ef07ff4381083eac5adc",
+      "matchesBaseline": true
+    },
+    {
+      "path": "src/core/fft.ts",
+      "sha256": "d23bd5d3ac87e751992c153738b9f84d8076a3e9bea83a94df4273e97a6d2fa8",
+      "matchesBaseline": true
+    },
+    {
+      "path": "src/core/mandarinTones.ts",
+      "sha256": "c9821ce6b10f7b1f054b2bcf715fffc3b65fb0f2826b6ef43b78657dbd3e47db",
+      "matchesBaseline": true
+    },
+    {
+      "path": "src/core/metrics.ts",
+      "sha256": "6cf3f5d6cb2783cde95addb50ccf029f4e86c2b32036ad32725963fcefbbf7ec",
+      "matchesBaseline": true
+    },
+    {
+      "path": "src/core/mpm.ts",
+      "sha256": "5fcc814c16dbf588496516f1e7a7da88925d60d507c3272a9a5e824abec50454",
+      "matchesBaseline": true
+    },
+    {
+      "path": "src/core/pitchTrack.ts",
+      "sha256": "9ac0b092f14fbaa1ba688c314ec38c4657eabfcd9f7c2e4d2704d4641557a134",
+      "matchesBaseline": true
+    },
+    {
+      "path": "src/core/spectrogram.ts",
+      "sha256": "69bccb899792a603bc085f8e043dc352fc43f98c89a41caa399647f03a48c7ce",
+      "matchesBaseline": true
+    },
+    {
+      "path": "src/core/synth.ts",
+      "sha256": "c69326b5e6a8ea08480e59e9738b6af472e9a922b07b02d82fe7ecb4180c4f36",
+      "matchesBaseline": true
+    },
+    {
+      "path": "src/core/toneClassifier.ts",
+      "sha256": "e3f1d14c90cc29a887734963465fc986cdaf44a678fef0ac3169bac53d64bbff",
+      "matchesBaseline": true
+    },
+    {
+      "path": "src/core/types.ts",
+      "sha256": "ca7fadc7dba4e3d91d2dcda33388a6124e6673179167ef1667b1a881a664c922",
+      "matchesBaseline": true
+    },
+    {
+      "path": "src/core/window.ts",
+      "sha256": "8c2b06da98a3b594b33318270bc7ec58dc439d7d9062d51a921405cc58e30ea7",
+      "matchesBaseline": true
+    },
+    {
+      "path": "src/core/yin.ts",
+      "sha256": "be243b915e1eb4d0fed2c78bf69105ea64ad4c7e9e62571dff3ba9946c679e4d",
+      "matchesBaseline": true
+    },
+    {
+      "path": "src/audio/audioworklet.d.ts",
+      "sha256": "4c8de3bb462c024cd55f61cb06a7cd3f04c6af31c9a4fa023b60c5e329ca4a42",
+      "matchesBaseline": true
+    },
+    {
+      "path": "src/audio/cancellation.ts",
+      "sha256": "12c36860362e31ef09d65273a4bb11e6cb70d01aba116d42b495712ebbcfb74d",
+      "matchesBaseline": true
+    },
+    {
+      "path": "src/audio/fileLoader.ts",
+      "sha256": "baea8c1481c92bd9d454886f979d1cabcb308f83a5ebbeb405007b5028b49870",
+      "matchesBaseline": true
+    },
+    {
+      "path": "src/audio/limits.ts",
+      "sha256": "7394efc49f1b517104daa6cecfbda80080ac0e3300351f050e274548b574e4e3",
+      "matchesBaseline": true
+    },
+    {
+      "path": "src/audio/playback.ts",
+      "sha256": "34da6365d78fa8c7d6fb6a6b34be8c3c4250fa6f3d7b442c7fd4c0dd375de472",
+      "matchesBaseline": true
+    },
+    {
+      "path": "src/audio/recorder.ts",
+      "sha256": "f6cdc2f841de60fda2d738cf9bcdd843a66664a5170782e5b4608bdbfbc398b8",
+      "matchesBaseline": true
+    },
+    {
+      "path": "src/audio/recorderWorklet.js",
+      "sha256": "1dcc8297fd4c928556ee1f3908f110493b6aaedb734eabe5ae31fdd2caf9ae0a",
+      "matchesBaseline": true
+    },
+    {
+      "path": "src/worker/client.ts",
+      "sha256": "9c473cd5db9f2413afa5be2946bead9f0db71bbcbccbbedc85327bc252759b37",
+      "matchesBaseline": true
+    },
+    {
+      "path": "src/worker/pitchWorker.ts",
+      "sha256": "1c3fb1fbb4b7ff302fa2c78a5d37a5fe8684017678c892fa7c30bc2663a88274",
+      "matchesBaseline": true
+    },
+    {
+      "path": "src/ui/analysisView.ts",
+      "sha256": "1625c5c8bc5731e0cac3ebfc319a77c04ec79140649c70af932be9dece64df5e",
+      "matchesBaseline": true
+    },
+    {
+      "path": "src/ui/canvas.ts",
+      "sha256": "475097d338ac3f327b3fbf255a5be269eb3a7c9ce4269e94e3bf7194679d2cfb",
+      "matchesBaseline": true
+    },
+    {
+      "path": "src/ui/contourStage.ts",
+      "sha256": "1f1cb746efa8bacc175dd91f7e5803f223941d1ece7479bfcc6a56d12dc11e8c",
+      "matchesBaseline": true
+    },
+    {
+      "path": "src/ui/dom.ts",
+      "sha256": "c34841ed1266cbd7ef358fe81c3446e38a02f96b7307a6362b06d60a4f7e5956",
+      "matchesBaseline": true
+    },
+    {
+      "path": "src/ui/theme.ts",
+      "sha256": "74f1cc8dc7d455dcfaac95edc50960fd742ecdb396466aa33445657e6a9c8066",
+      "matchesBaseline": true
+    }
+  ],
+  "servedFiles": [
+    {
+      "path": "assets/fraunces-italic-latin-BEbM7Mn6.woff2",
+      "bytes": 42372,
+      "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3",
+      "matchesCleanBuildAndLocalPreview": true
+    },
+    {
+      "path": "assets/fraunces-italic-latin-ext-C5JMU4hr.woff2",
+      "bytes": 37620,
+      "sha256": "bbf614d45de67a99e638b753611329b2cb8b5b6d8da53b2aee0267fe75cfc5c8",
+      "matchesCleanBuildAndLocalPreview": true
+    },
+    {
+      "path": "assets/fraunces-italic-vietnamese-B7PmIdA3.woff2",
+      "bytes": 12048,
+      "sha256": "b2383049df5de759100887e80450ef360e502d5b0454954fab2dcd6b322944f5",
+      "matchesCleanBuildAndLocalPreview": true
+    },
+    {
+      "path": "assets/fraunces-latin-DihXLNYH.woff2",
+      "bytes": 67304,
+      "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783",
+      "matchesCleanBuildAndLocalPreview": true
+    },
+    {
+      "path": "assets/fraunces-latin-ext-CJcjJNj7.woff2",
+      "bytes": 59388,
+      "sha256": "a2930b27d13a228bd9ab6a49269b5f800237892ad560cb9dd7fab01b1620f88e",
+      "matchesCleanBuildAndLocalPreview": true
+    },
+    {
+      "path": "assets/fraunces-vietnamese-Czevyj-6.woff2",
+      "bytes": 19700,
+      "sha256": "f18853f63a870ebef013e30e789d8d544f102e4acd94988e57c223d9c796ddf4",
+      "matchesCleanBuildAndLocalPreview": true
+    },
+    {
+      "path": "assets/ibm-plex-mono-400-cyrillic-BSMlKf0J.woff2",
+      "bytes": 8356,
+      "sha256": "7635422bd10ddbbcb0e0caa1154b928298f5c8319b8c00b30978d4395f4783ce",
+      "matchesCleanBuildAndLocalPreview": true
+    },
+    {
+      "path": "assets/ibm-plex-mono-400-cyrillic-ext-xuaO2J-f.woff2",
+      "bytes": 6912,
+      "sha256": "f8c22ec1804bd6966b70f43ac7c327025645b4c09597117fca2a5a6c750106fe",
+      "matchesCleanBuildAndLocalPreview": true
+    },
+    {
+      "path": "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2",
+      "bytes": 14708,
+      "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7",
+      "matchesCleanBuildAndLocalPreview": true
+    },
+    {
+      "path": "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2",
+      "bytes": 13348,
+      "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb",
+      "matchesCleanBuildAndLocalPreview": true
+    },
+    {
+      "path": "assets/ibm-plex-mono-400-vietnamese-BulugwFq.woff2",
+      "bytes": 5868,
+      "sha256": "62632b6375305e70ddcafdd895218e6ae41a184fcd280a69c739460604ca00a9",
+      "matchesCleanBuildAndLocalPreview": true
+    },
+    {
+      "path": "assets/ibm-plex-mono-500-cyrillic-Bq9vWWag.woff2",
+      "bytes": 8460,
+      "sha256": "1d89462e86cb8e87e7e9d6f6635605bd7c3081baca6caaecee84916bf7b60edc",
+      "matchesCleanBuildAndLocalPreview": true
+    },
+    {
+      "path": "assets/ibm-plex-mono-500-cyrillic-ext-BqneJy0T.woff2",
+      "bytes": 6972,
+      "sha256": "3febe5c7f22e4b07b4552738673c3dbe8bced2dc5f48b866edf7ccd9552d109a",
+      "matchesCleanBuildAndLocalPreview": true
+    },
+    {
+      "path": "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2",
+      "bytes": 14888,
+      "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22",
+      "matchesCleanBuildAndLocalPreview": true
+    },
+    {
+      "path": "assets/ibm-plex-mono-500-latin-ext-CAhNIIs5.woff2",
+      "bytes": 13432,
+      "sha256": "6bb06407c97584b0867a959e05e8874693bfeb8c317de190811c51598f2d99ea",
+      "matchesCleanBuildAndLocalPreview": true
+    },
+    {
+      "path": "assets/ibm-plex-mono-500-vietnamese-DZ4AoWbu.woff2",
+      "bytes": 6040,
+      "sha256": "781633d95de88040fb77141d1e65d928c87c0144691fbc74da5a64d137a7e910",
+      "matchesCleanBuildAndLocalPreview": true
+    },
+    {
+      "path": "assets/index-Bmc6olGg.css",
+      "bytes": 22805,
+      "sha256": "bf38e8b5b198c4567f7bcf59a67502c22f7d1381a4a572e8fd496d1bbb22dec3",
+      "matchesCleanBuildAndLocalPreview": true
+    },
+    {
+      "path": "assets/index-Y7d9oIwv.js",
+      "bytes": 54995,
+      "sha256": "279156c771d621618402b97389822e989c715181e1af5b137c6703075994a08c",
+      "matchesCleanBuildAndLocalPreview": true
+    },
+    {
+      "path": "assets/index-Y7d9oIwv.js.map",
+      "bytes": 166539,
+      "sha256": "e692b949398406a5ca26303cb116f77a614bc80bb88e773be1f73ab5a87f351e",
+      "matchesCleanBuildAndLocalPreview": true
+    },
+    {
+      "path": "assets/inter-cyrillic-DqGufNeO.woff2",
+      "bytes": 18748,
+      "sha256": "71d5ee93cc1e9f1d520a3a8b66456de18c7879d8df09d57fcd2eaff75fef0075",
+      "matchesCleanBuildAndLocalPreview": true
+    },
+    {
+      "path": "assets/inter-cyrillic-ext-BOeWTOD4.woff2",
+      "bytes": 25960,
+      "sha256": "ca157063339ac4ad418f214f3abfed119b0798ab4d377386ce5c9e5a7a435ebd",
+      "matchesCleanBuildAndLocalPreview": true
+    },
+    {
+      "path": "assets/inter-greek-CkhJZR-_.woff2",
+      "bytes": 18996,
+      "sha256": "1be3448e292fbf05ffe176fe1e43f135013d50b1e7d324ad1a558f623d3bb6f6",
+      "matchesCleanBuildAndLocalPreview": true
+    },
+    {
+      "path": "assets/inter-greek-ext-DlzME5K_.woff2",
+      "bytes": 11232,
+      "sha256": "6e9e020a25f9b56d418f2c085b1d3c09725a4da23fe693a5b463064606732190",
+      "matchesCleanBuildAndLocalPreview": true
+    },
+    {
+      "path": "assets/inter-latin-Dx4kXJAl.woff2",
+      "bytes": 48256,
+      "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62",
+      "matchesCleanBuildAndLocalPreview": true
+    },
+    {
+      "path": "assets/inter-latin-ext-DO1Apj_S.woff2",
+      "bytes": 85068,
+      "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956",
+      "matchesCleanBuildAndLocalPreview": true
+    },
+    {
+      "path": "assets/inter-vietnamese-CBcvBZtf.woff2",
+      "bytes": 10252,
+      "sha256": "5c66f9e07e90c6d4ac4922cc68d60de26c17b1858e677fb5e603fce3952b3ff2",
+      "matchesCleanBuildAndLocalPreview": true
+    },
+    {
+      "path": "assets/pitchWorker-GIHxqKa_.js.map",
+      "bytes": 54450,
+      "sha256": "5ee8a65efde6ec81d09bc20d8998ad4212b4dc702038e5b13818102eb6e79020",
+      "matchesCleanBuildAndLocalPreview": true
+    },
+    {
+      "path": "index.html",
+      "bytes": 2342,
+      "sha256": "5eb62f06b0c9bfc4e7fe0df46ef65d403039d0dc298eabfd5aad3543e877b915",
+      "matchesCleanBuildAndLocalPreview": true
+    }
+  ],
+  "baselineProductionFiles": [
+    {
+      "path": "assets/fraunces-italic-latin-BEbM7Mn6.woff2",
+      "bytes": 42372,
+      "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+    },
+    {
+      "path": "assets/fraunces-italic-latin-ext-C5JMU4hr.woff2",
+      "bytes": 37620,
+      "sha256": "bbf614d45de67a99e638b753611329b2cb8b5b6d8da53b2aee0267fe75cfc5c8"
+    },
+    {
+      "path": "assets/fraunces-italic-vietnamese-B7PmIdA3.woff2",
+      "bytes": 12048,
+      "sha256": "b2383049df5de759100887e80450ef360e502d5b0454954fab2dcd6b322944f5"
+    },
+    {
+      "path": "assets/fraunces-latin-DihXLNYH.woff2",
+      "bytes": 67304,
+      "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+    },
+    {
+      "path": "assets/fraunces-latin-ext-CJcjJNj7.woff2",
+      "bytes": 59388,
+      "sha256": "a2930b27d13a228bd9ab6a49269b5f800237892ad560cb9dd7fab01b1620f88e"
+    },
+    {
+      "path": "assets/fraunces-vietnamese-Czevyj-6.woff2",
+      "bytes": 19700,
+      "sha256": "f18853f63a870ebef013e30e789d8d544f102e4acd94988e57c223d9c796ddf4"
+    },
+    {
+      "path": "assets/ibm-plex-mono-400-cyrillic-BSMlKf0J.woff2",
+      "bytes": 8356,
+      "sha256": "7635422bd10ddbbcb0e0caa1154b928298f5c8319b8c00b30978d4395f4783ce"
+    },
+    {
+      "path": "assets/ibm-plex-mono-400-cyrillic-ext-xuaO2J-f.woff2",
+      "bytes": 6912,
+      "sha256": "f8c22ec1804bd6966b70f43ac7c327025645b4c09597117fca2a5a6c750106fe"
+    },
+    {
+      "path": "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2",
+      "bytes": 14708,
+      "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+    },
+    {
+      "path": "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2",
+      "bytes": 13348,
+      "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
+    },
+    {
+      "path": "assets/ibm-plex-mono-400-vietnamese-BulugwFq.woff2",
+      "bytes": 5868,
+      "sha256": "62632b6375305e70ddcafdd895218e6ae41a184fcd280a69c739460604ca00a9"
+    },
+    {
+      "path": "assets/ibm-plex-mono-500-cyrillic-Bq9vWWag.woff2",
+      "bytes": 8460,
+      "sha256": "1d89462e86cb8e87e7e9d6f6635605bd7c3081baca6caaecee84916bf7b60edc"
+    },
+    {
+      "path": "assets/ibm-plex-mono-500-cyrillic-ext-BqneJy0T.woff2",
+      "bytes": 6972,
+      "sha256": "3febe5c7f22e4b07b4552738673c3dbe8bced2dc5f48b866edf7ccd9552d109a"
+    },
+    {
+      "path": "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2",
+      "bytes": 14888,
+      "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+    },
+    {
+      "path": "assets/ibm-plex-mono-500-latin-ext-CAhNIIs5.woff2",
+      "bytes": 13432,
+      "sha256": "6bb06407c97584b0867a959e05e8874693bfeb8c317de190811c51598f2d99ea"
+    },
+    {
+      "path": "assets/ibm-plex-mono-500-vietnamese-DZ4AoWbu.woff2",
+      "bytes": 6040,
+      "sha256": "781633d95de88040fb77141d1e65d928c87c0144691fbc74da5a64d137a7e910"
+    },
+    {
+      "path": "assets/index-Bmc6olGg.css",
+      "bytes": 22805,
+      "sha256": "bf38e8b5b198c4567f7bcf59a67502c22f7d1381a4a572e8fd496d1bbb22dec3"
+    },
+    {
+      "path": "assets/index-DUwSxmNy.js",
+      "bytes": 53141,
+      "sha256": "139dfae0f407b5e38ad4303d715cfb9fdff3e408106d210e3e53e5989ca340c1"
+    },
+    {
+      "path": "assets/index-DUwSxmNy.js.map",
+      "bytes": 160304,
+      "sha256": "93fe648d3ea8185c4bd1dab133e664ccc08843d35daee5570c14091243851c79"
+    },
+    {
+      "path": "assets/inter-cyrillic-DqGufNeO.woff2",
+      "bytes": 18748,
+      "sha256": "71d5ee93cc1e9f1d520a3a8b66456de18c7879d8df09d57fcd2eaff75fef0075"
+    },
+    {
+      "path": "assets/inter-cyrillic-ext-BOeWTOD4.woff2",
+      "bytes": 25960,
+      "sha256": "ca157063339ac4ad418f214f3abfed119b0798ab4d377386ce5c9e5a7a435ebd"
+    },
+    {
+      "path": "assets/inter-greek-CkhJZR-_.woff2",
+      "bytes": 18996,
+      "sha256": "1be3448e292fbf05ffe176fe1e43f135013d50b1e7d324ad1a558f623d3bb6f6"
+    },
+    {
+      "path": "assets/inter-greek-ext-DlzME5K_.woff2",
+      "bytes": 11232,
+      "sha256": "6e9e020a25f9b56d418f2c085b1d3c09725a4da23fe693a5b463064606732190"
+    },
+    {
+      "path": "assets/inter-latin-Dx4kXJAl.woff2",
+      "bytes": 48256,
+      "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+    },
+    {
+      "path": "assets/inter-latin-ext-DO1Apj_S.woff2",
+      "bytes": 85068,
+      "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
+    },
+    {
+      "path": "assets/inter-vietnamese-CBcvBZtf.woff2",
+      "bytes": 10252,
+      "sha256": "5c66f9e07e90c6d4ac4922cc68d60de26c17b1858e677fb5e603fce3952b3ff2"
+    },
+    {
+      "path": "assets/pitchWorker-GIHxqKa_.js.map",
+      "bytes": 54450,
+      "sha256": "5ee8a65efde6ec81d09bc20d8998ad4212b4dc702038e5b13818102eb6e79020"
+    },
+    {
+      "path": "index.html",
+      "bytes": 2342,
+      "sha256": "b48428f0069ae968e10a89dced02b503cc5cc667ecdbf096cb6d031f6586172d"
+    }
+  ]
+}
