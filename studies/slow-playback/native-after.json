@@ -10,7 +10,7 @@
           "inputSamples": 48000,
           "inputSeconds": 1,
           "lastAudibleSecond": 2,
-          "preparationMs": 41.200000000186265,
+          "preparationMs": 38.299999999813735,
           "finite": true,
           "probes": [
             {
@@ -26,7 +26,7 @@
           "inputSamples": 96000,
           "inputSeconds": 2,
           "lastAudibleSecond": 4,
-          "preparationMs": 42.59999999962747,
+          "preparationMs": 42,
           "finite": true,
           "probes": [
             {
@@ -66,7 +66,7 @@
           "inputSamples": 96000,
           "inputSeconds": 2,
           "lastAudibleSecond": 3.724375,
-          "preparationMs": 37.799999999813735,
+          "preparationMs": 35.10000000055879,
           "finite": true,
           "probes": [
             {
@@ -97,7 +97,7 @@
           "inputSamples": 48000,
           "inputSeconds": 1,
           "lastAudibleSecond": 2,
-          "preparationMs": 63,
+          "preparationMs": 37,
           "finite": true,
           "probes": [
             {
@@ -113,7 +113,7 @@
           "inputSamples": 96000,
           "inputSeconds": 2,
           "lastAudibleSecond": 4,
-          "preparationMs": 69,
+          "preparationMs": 45,
           "finite": true,
           "probes": [
             {
@@ -153,7 +153,7 @@
           "inputSamples": 96000,
           "inputSeconds": 2,
           "lastAudibleSecond": 3.724375,
-          "preparationMs": 51,
+          "preparationMs": 44,
           "finite": true,
           "probes": [
             {

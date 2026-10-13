@@ -1,0 +1,298 @@
+{
+  "implementationCommit": "bf893b3eb0f610a20d5c3fa3ed0826e23b363e95",
+  "baselineCommit": "96f6b5f118f8270129556853ef6a20103090109a",
+  "sourceArchive": {
+    "bytes": 12195840,
+    "sha256": "96025282dfaae1914f0a6a47ec50dc29bdbf8f39285c31cea9c388551b39e36d",
+    "regularFiles": 264,
+    "allArchivedSourceBytesPreservedAfterInstallAndChecks": true
+  },
+  "node": "v24.21.0",
+  "npm": "12.0.1",
+  "commands": [
+    {
+      "command": "npm ci",
+      "exitCode": 0,
+      "log": {
+        "bytes": 143,
+        "sha256": "bc5311b4bdec06f34381d1ec828b1e18b1a88583241ef1c5b7201010805d43b8"
+      }
+    },
+    {
+      "command": "npm run lint",
+      "exitCode": 0,
+      "log": {
+        "bytes": 61,
+        "sha256": "ee60d41d23557ba5866f3f21bfbda01d50a829fe03fd0a79d3240a5fe6718f90"
+      }
+    },
+    {
+      "command": "npm run typecheck",
+      "exitCode": 0,
+      "log": {
+        "bytes": 70,
+        "sha256": "f1d5078d5ac8aa2d682d6b5a22c5779ed8a21d5643c15422910fb2a174e95b04"
+      }
+    },
+    {
+      "command": "npm test",
+      "exitCode": 0,
+      "log": {
+        "bytes": 276,
+        "sha256": "d7f0bb2218430d02af4ae4fbfbdae8d1cf32b9360cde864a7ed0e79a32e4e394"
+      }
+    },
+    {
+      "command": "npm run build",
+      "exitCode": 0,
+      "log": {
+        "bytes": 2115,
+        "sha256": "34f3e0d3908ecf8a8ea3c661ab9b3b4c3929e95bfb6fa0cee7928a5f76f35a61"
+      }
+    },
+    {
+      "command": "npm run bench",
+      "exitCode": 0,
+      "log": {
+        "bytes": 1346,
+        "sha256": "39ac3769dae85ec4236e2a8ada22d92ca943264252adf8cd156359fb189c386e"
+      }
+    },
+    {
+      "command": "npx playwright test",
+      "exitCode": 0,
+      "log": {
+        "bytes": 13982,
+        "sha256": "3fed0ec4d83f5dcc17f10eddcea3c21f323acdb2f5d7f594735b66d0b1081b9a"
+      }
+    },
+    {
+      "command": "node studies/slow-playback/native.mjs . OUTPUT after",
+      "exitCode": 0,
+      "log": {
+        "bytes": 3578,
+        "sha256": "6556c5f33f6869bdfee85ced9250d5ba0b37ca82d84d5997acb38ac756ef914c"
+      }
+    },
+    {
+      "command": "node studies/slow-playback/browser.mjs dist SPEECH_CACHE OUTPUT",
+      "exitCode": 0,
+      "log": {
+        "bytes": 480,
+        "sha256": "422bc9fc440f90f378afce395cb9aa1f30d1db64a0067ba4988e3c464b43e82b"
+      }
+    }
+  ],
+  "unit": {
+    "passed": 211,
+    "files": 20
+  },
+  "browserSuite": {
+    "passed": 86,
+    "skipped": 4,
+    "skipReason": "Four deterministic microphone scenarios are Chromium-only; Firefox has no supplied test microphone."
+  },
+  "browserStudy": "browser-after.json",
+  "nativeRender": "native-after.json",
+  "allBuiltFilesMatchWorkspaceBuild": true,
+  "assets": [
+    {
+      "path": "assets/fraunces-italic-latin-BEbM7Mn6.woff2",
+      "bytes": 42372,
+      "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+    },
+    {
+      "path": "assets/fraunces-italic-latin-ext-C5JMU4hr.woff2",
+      "bytes": 37620,
+      "sha256": "bbf614d45de67a99e638b753611329b2cb8b5b6d8da53b2aee0267fe75cfc5c8"
+    },
+    {
+      "path": "assets/fraunces-italic-vietnamese-B7PmIdA3.woff2",
+      "bytes": 12048,
+      "sha256": "b2383049df5de759100887e80450ef360e502d5b0454954fab2dcd6b322944f5"
+    },
+    {
+      "path": "assets/fraunces-latin-DihXLNYH.woff2",
+      "bytes": 67304,
+      "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+    },
+    {
+      "path": "assets/fraunces-latin-ext-CJcjJNj7.woff2",
+      "bytes": 59388,
+      "sha256": "a2930b27d13a228bd9ab6a49269b5f800237892ad560cb9dd7fab01b1620f88e"
+    },
+    {
+      "path": "assets/fraunces-vietnamese-Czevyj-6.woff2",
+      "bytes": 19700,
+      "sha256": "f18853f63a870ebef013e30e789d8d544f102e4acd94988e57c223d9c796ddf4"
+    },
+    {
+      "path": "assets/ibm-plex-mono-400-cyrillic-BSMlKf0J.woff2",
+      "bytes": 8356,
+      "sha256": "7635422bd10ddbbcb0e0caa1154b928298f5c8319b8c00b30978d4395f4783ce"
+    },
+    {
+      "path": "assets/ibm-plex-mono-400-cyrillic-ext-xuaO2J-f.woff2",
+      "bytes": 6912,
+      "sha256": "f8c22ec1804bd6966b70f43ac7c327025645b4c09597117fca2a5a6c750106fe"
+    },
+    {
+      "path": "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2",
+      "bytes": 14708,
+      "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+    },
+    {
+      "path": "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2",
+      "bytes": 13348,
+      "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
+    },
+    {
+      "path": "assets/ibm-plex-mono-400-vietnamese-BulugwFq.woff2",
+      "bytes": 5868,
+      "sha256": "62632b6375305e70ddcafdd895218e6ae41a184fcd280a69c739460604ca00a9"
+    },
+    {
+      "path": "assets/ibm-plex-mono-500-cyrillic-Bq9vWWag.woff2",
+      "bytes": 8460,
+      "sha256": "1d89462e86cb8e87e7e9d6f6635605bd7c3081baca6caaecee84916bf7b60edc"
+    },
+    {
+      "path": "assets/ibm-plex-mono-500-cyrillic-ext-BqneJy0T.woff2",
+      "bytes": 6972,
+      "sha256": "3febe5c7f22e4b07b4552738673c3dbe8bced2dc5f48b866edf7ccd9552d109a"
+    },
+    {
+      "path": "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2",
+      "bytes": 14888,
+      "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+    },
+    {
+      "path": "assets/ibm-plex-mono-500-latin-ext-CAhNIIs5.woff2",
+      "bytes": 13432,
+      "sha256": "6bb06407c97584b0867a959e05e8874693bfeb8c317de190811c51598f2d99ea"
+    },
+    {
+      "path": "assets/ibm-plex-mono-500-vietnamese-DZ4AoWbu.woff2",
+      "bytes": 6040,
+      "sha256": "781633d95de88040fb77141d1e65d928c87c0144691fbc74da5a64d137a7e910"
+    },
+    {
+      "path": "assets/index-8-vv7zR2.js",
+      "bytes": 157815,
+      "sha256": "8edf88967aa7db2e5cf237afd45ccc565fb25b27b5c78ebaa6f22408a8e63a12"
+    },
+    {
+      "path": "assets/index-8-vv7zR2.js.map",
+      "bytes": 192227,
+      "sha256": "c657f85fb2b5dac0de5bec35a8db18c78abbe310e8052183f22f5cd1139ad2d3"
+    },
+    {
+      "path": "assets/index-BTO_e6A4.css",
+      "bytes": 23188,
+      "sha256": "3ea8eb979b794e79ea4aa7ba55a6da08360030a59d32c0ca0562e895eb7fc91c"
+    },
+    {
+      "path": "assets/inter-cyrillic-DqGufNeO.woff2",
+      "bytes": 18748,
+      "sha256": "71d5ee93cc1e9f1d520a3a8b66456de18c7879d8df09d57fcd2eaff75fef0075"
+    },
+    {
+      "path": "assets/inter-cyrillic-ext-BOeWTOD4.woff2",
+      "bytes": 25960,
+      "sha256": "ca157063339ac4ad418f214f3abfed119b0798ab4d377386ce5c9e5a7a435ebd"
+    },
+    {
+      "path": "assets/inter-greek-CkhJZR-_.woff2",
+      "bytes": 18996,
+      "sha256": "1be3448e292fbf05ffe176fe1e43f135013d50b1e7d324ad1a558f623d3bb6f6"
+    },
+    {
+      "path": "assets/inter-greek-ext-DlzME5K_.woff2",
+      "bytes": 11232,
+      "sha256": "6e9e020a25f9b56d418f2c085b1d3c09725a4da23fe693a5b463064606732190"
+    },
+    {
+      "path": "assets/inter-latin-Dx4kXJAl.woff2",
+      "bytes": 48256,
+      "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+    },
+    {
+      "path": "assets/inter-latin-ext-DO1Apj_S.woff2",
+      "bytes": 85068,
+      "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
+    },
+    {
+      "path": "assets/inter-vietnamese-CBcvBZtf.woff2",
+      "bytes": 10252,
+      "sha256": "5c66f9e07e90c6d4ac4922cc68d60de26c17b1858e677fb5e603fce3952b3ff2"
+    },
+    {
+      "path": "assets/pitchWorker-Dyhd7A7I.js.map",
+      "bytes": 61011,
+      "sha256": "133ff58b0a6eb88ea18bd8f6fa07deb9621416cf6bbf08e525614a685ba30e24"
+    },
+    {
+      "path": "assets/slowPlaybackWorker-CjVF_WT-.js.map",
+      "bytes": 111890,
+      "sha256": "06c67457558e2e8f260ae1c429ea27b3e7df6820b21f1e0304cfe52319d0308f"
+    },
+    {
+      "path": "audio-licenses.txt",
+      "bytes": 2311,
+      "sha256": "0e65aef65567f3eb05cf55c4100adf0bde2fee2357a055edaf84298c9e167be3"
+    },
+    {
+      "path": "index.html",
+      "bytes": 2361,
+      "sha256": "415f563a9cc8da6ac123a712f424d3553261dc8ac57a7336928f8ed7ff239af9"
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "docs/assets/slow-playback-chromium-1440.png",
+      "bytes": 235372,
+      "sha256": "81ddd2c339720caf32103219c877b8b06a05741a1409da9b21c4aa6b04b6c9dd",
+      "visuallyInspected": true
+    },
+    {
+      "path": "docs/assets/slow-playback-chromium-375.png",
+      "bytes": 148655,
+      "sha256": "221fe7b0a8de40a60fa4e78f1863e022dfa61c922c1a039a399f2a2987375da8",
+      "visuallyInspected": true
+    },
+    {
+      "path": "docs/assets/slow-playback-firefox-1440.png",
+      "bytes": 304221,
+      "sha256": "407b42fd03cd493f13ec840f540b2956f451ba94ac83cc9d6ca70eab937ee7d5",
+      "visuallyInspected": true
+    },
+    {
+      "path": "docs/assets/slow-playback-firefox-375.png",
+      "bytes": 203564,
+      "sha256": "a3df284d5cd85a5ea9edb86e59ad601bf70fde7cac92ba59b37c4700348809f5",
+      "visuallyInspected": true
+    }
+  ],
+  "wasm": {
+    "bytes": 64494,
+    "sha256": "83869197b3c5ebf9fc8c517a1586aef1ecf77404842218d62b9c0e82882d8ca3",
+    "identicalToPinnedUpstreamPayload": true
+  },
+  "corpus": {
+    "pinnedSourcesVerified": 963,
+    "pinnedBytes": 366357392,
+    "speechRecordingsRendered": 480,
+    "speakers": 20,
+    "results": "results.json",
+    "audioRedistributed": false
+  },
+  "notes": [
+    "An initial ES module wrapper retained CommonJS registration, which Vitest rejected. Replacing that registration with the ESM export fixed the integration; embedded WASM is unchanged.",
+    "The long-clip browser study initially assumed the file sample rate. The browser decoded to 44.1 kHz; the assertion now uses the actual decoded frame count.",
+    "The native study had a syntax typo and one invocation omitted its required mode argument; both were corrected before retaining results.",
+    "The first clean-check command had an unquoted PATH containing Windows directories with spaces and never started npm; the quoted command completed the full sequence.",
+    "After this implementation commit, the final source commit adds documentation and evidence only.",
+    "Headless audio rendering and pitch measurements are not human listening or physical microphone validation."
+  ],
+  "scope": "Local clean web build and source evidence; no package release or hosted deployment."
+}

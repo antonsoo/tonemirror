@@ -97,7 +97,17 @@ The recorder registers its bundled JavaScript source separately in each audio
 context and revokes the temporary Blob URL after registration settles, including
 failure. Its JavaScript retains JSDoc type checking. CSP permits local blobs for
 scripts and workers; network connections remain restricted to the same origin.
-No `eval` or general inline-script permission is added.
+JavaScript `eval` and general inline scripts remain disallowed. The bundled
+Signalsmith Stretch engine uses the narrower `wasm-unsafe-eval` permission to
+compile its embedded WASM inside a worker.
+
+Half-speed preparation uses the same 60-second source limit, with an output
+of exactly twice the decoded mono frame count (up to 120 seconds of playback).
+It has a 60-second deadline and a disposable worker so cancellation releases
+the engine's memory. The preview is held only by the current clip's player;
+source PCM, saved audio and exported WAVs are unchanged. It consumes additional
+memory and can introduce time-stretching artifacts. See the
+[measured speech and browser checks](../studies/slow-playback/README.md).
 
 This is not an offline installer or service worker. An uncached page reload
 still needs the site, and a font subset not loaded before disconnection falls

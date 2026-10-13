@@ -1,0 +1,398 @@
+{
+  "results": [
+    {
+      "engine": "chromium",
+      "browser": "153.0.8010.12",
+      "width": 1440,
+      "fixture": {
+        "url": "http://www2.spsc.tugraz.at/databases/PTDB-TUG/SPEECH%20DATA/FEMALE/MIC/F01/mic_F01_sa1.wav",
+        "path": "ptdb/F01/mic_F01_sa1.wav",
+        "bytes": 767084,
+        "sha256": "4d06714d605aafdd4f5923170b182b25879c42fe9f5275e7c076134f4f490fc1"
+      },
+      "axeViolations": 0,
+      "overflow": false,
+      "pageErrors": [],
+      "externalRequests": [],
+      "requestsAfterDisconnect": [],
+      "violations": [],
+      "jobs": 1,
+      "terminated": 1,
+      "starts": [
+        {
+          "samples": 704716,
+          "rate": 44100,
+          "nativeRate": 1,
+          "offset": 0,
+          "loopStart": 6,
+          "loopEnd": 8
+        },
+        {
+          "samples": 704716,
+          "rate": 44100,
+          "nativeRate": 1,
+          "offset": 0.02321995464852611,
+          "loopStart": 6,
+          "loopEnd": 8
+        }
+      ],
+      "elapsed": [
+        184.6000000005588
+      ],
+      "decoded": {
+        "samples": 352358,
+        "rate": 44100
+      },
+      "longClip": {
+        "cancellationRoundTripMs": 45.486368999999286,
+        "violations": [],
+        "jobs": 3,
+        "terminated": 3,
+        "starts": [
+          {
+            "samples": 704716,
+            "rate": 44100,
+            "nativeRate": 1,
+            "offset": 0,
+            "loopStart": 6,
+            "loopEnd": 8
+          },
+          {
+            "samples": 704716,
+            "rate": 44100,
+            "nativeRate": 1,
+            "offset": 0.02321995464852611,
+            "loopStart": 6,
+            "loopEnd": 8
+          },
+          {
+            "samples": 5291998,
+            "rate": 44100,
+            "nativeRate": 1,
+            "offset": 0,
+            "loopStart": 0,
+            "loopEnd": 0
+          }
+        ],
+        "elapsed": [
+          184.6000000005588,
+          1132.7000000001863
+        ],
+        "decoded": {
+          "samples": 2645999,
+          "rate": 44100
+        }
+      },
+      "served": {
+        "index.html": {
+          "bytes": 2361,
+          "sha256": "415f563a9cc8da6ac123a712f424d3553261dc8ac57a7336928f8ed7ff239af9"
+        },
+        "assets/index-BTO_e6A4.css": {
+          "bytes": 23188,
+          "sha256": "3ea8eb979b794e79ea4aa7ba55a6da08360030a59d32c0ca0562e895eb7fc91c"
+        },
+        "assets/index-8-vv7zR2.js": {
+          "bytes": 157815,
+          "sha256": "8edf88967aa7db2e5cf237afd45ccc565fb25b27b5c78ebaa6f22408a8e63a12"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        }
+      }
+    },
+    {
+      "engine": "chromium",
+      "browser": "153.0.8010.12",
+      "width": 375,
+      "fixture": {
+        "url": "http://www2.spsc.tugraz.at/databases/PTDB-TUG/SPEECH%20DATA/FEMALE/MIC/F01/mic_F01_sa1.wav",
+        "path": "ptdb/F01/mic_F01_sa1.wav",
+        "bytes": 767084,
+        "sha256": "4d06714d605aafdd4f5923170b182b25879c42fe9f5275e7c076134f4f490fc1"
+      },
+      "axeViolations": 0,
+      "overflow": false,
+      "pageErrors": [],
+      "externalRequests": [],
+      "requestsAfterDisconnect": [],
+      "violations": [],
+      "jobs": 1,
+      "terminated": 1,
+      "starts": [
+        {
+          "samples": 704716,
+          "rate": 44100,
+          "nativeRate": 1,
+          "offset": 0,
+          "loopStart": 6,
+          "loopEnd": 8
+        },
+        {
+          "samples": 704716,
+          "rate": 44100,
+          "nativeRate": 1,
+          "offset": 0.09287981859410432,
+          "loopStart": 6,
+          "loopEnd": 8
+        }
+      ],
+      "elapsed": [
+        194
+      ],
+      "decoded": {
+        "samples": 352358,
+        "rate": 44100
+      },
+      "longClip": null,
+      "served": {
+        "index.html": {
+          "bytes": 2361,
+          "sha256": "415f563a9cc8da6ac123a712f424d3553261dc8ac57a7336928f8ed7ff239af9"
+        },
+        "assets/index-BTO_e6A4.css": {
+          "bytes": 23188,
+          "sha256": "3ea8eb979b794e79ea4aa7ba55a6da08360030a59d32c0ca0562e895eb7fc91c"
+        },
+        "assets/index-8-vv7zR2.js": {
+          "bytes": 157815,
+          "sha256": "8edf88967aa7db2e5cf237afd45ccc565fb25b27b5c78ebaa6f22408a8e63a12"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        }
+      }
+    },
+    {
+      "engine": "firefox",
+      "browser": "155.0",
+      "width": 1440,
+      "fixture": {
+        "url": "http://www2.spsc.tugraz.at/databases/PTDB-TUG/SPEECH%20DATA/FEMALE/MIC/F01/mic_F01_sa1.wav",
+        "path": "ptdb/F01/mic_F01_sa1.wav",
+        "bytes": 767084,
+        "sha256": "4d06714d605aafdd4f5923170b182b25879c42fe9f5275e7c076134f4f490fc1"
+      },
+      "axeViolations": 0,
+      "overflow": false,
+      "pageErrors": [],
+      "externalRequests": [],
+      "requestsAfterDisconnect": [],
+      "violations": [],
+      "jobs": 1,
+      "terminated": 1,
+      "starts": [
+        {
+          "samples": 704718,
+          "rate": 44100,
+          "nativeRate": 1,
+          "offset": 0,
+          "loopStart": 6,
+          "loopEnd": 8
+        },
+        {
+          "samples": 704718,
+          "rate": 44100,
+          "nativeRate": 1,
+          "offset": 0.031927437641723344,
+          "loopStart": 6,
+          "loopEnd": 8
+        }
+      ],
+      "elapsed": [
+        161
+      ],
+      "decoded": {
+        "samples": 352359,
+        "rate": 44100
+      },
+      "longClip": {
+        "cancellationRoundTripMs": 48.750505999998495,
+        "violations": [],
+        "jobs": 3,
+        "terminated": 3,
+        "starts": [
+          {
+            "samples": 704718,
+            "rate": 44100,
+            "nativeRate": 1,
+            "offset": 0,
+            "loopStart": 6,
+            "loopEnd": 8
+          },
+          {
+            "samples": 704718,
+            "rate": 44100,
+            "nativeRate": 1,
+            "offset": 0.031927437641723344,
+            "loopStart": 6,
+            "loopEnd": 8
+          },
+          {
+            "samples": 5292000,
+            "rate": 44100,
+            "nativeRate": 1,
+            "offset": 0,
+            "loopStart": 0,
+            "loopEnd": 0
+          }
+        ],
+        "elapsed": [
+          161,
+          1009
+        ],
+        "decoded": {
+          "samples": 2646000,
+          "rate": 44100
+        }
+      },
+      "served": {
+        "index.html": {
+          "bytes": 2361,
+          "sha256": "415f563a9cc8da6ac123a712f424d3553261dc8ac57a7336928f8ed7ff239af9"
+        },
+        "assets/index-8-vv7zR2.js": {
+          "bytes": 157815,
+          "sha256": "8edf88967aa7db2e5cf237afd45ccc565fb25b27b5c78ebaa6f22408a8e63a12"
+        },
+        "assets/index-BTO_e6A4.css": {
+          "bytes": 23188,
+          "sha256": "3ea8eb979b794e79ea4aa7ba55a6da08360030a59d32c0ca0562e895eb7fc91c"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        }
+      }
+    },
+    {
+      "engine": "firefox",
+      "browser": "155.0",
+      "width": 375,
+      "fixture": {
+        "url": "http://www2.spsc.tugraz.at/databases/PTDB-TUG/SPEECH%20DATA/FEMALE/MIC/F01/mic_F01_sa1.wav",
+        "path": "ptdb/F01/mic_F01_sa1.wav",
+        "bytes": 767084,
+        "sha256": "4d06714d605aafdd4f5923170b182b25879c42fe9f5275e7c076134f4f490fc1"
+      },
+      "axeViolations": 0,
+      "overflow": false,
+      "pageErrors": [],
+      "externalRequests": [],
+      "requestsAfterDisconnect": [],
+      "violations": [],
+      "jobs": 1,
+      "terminated": 1,
+      "starts": [
+        {
+          "samples": 704718,
+          "rate": 44100,
+          "nativeRate": 1,
+          "offset": 0,
+          "loopStart": 6,
+          "loopEnd": 8
+        },
+        {
+          "samples": 704718,
+          "rate": 44100,
+          "nativeRate": 1,
+          "offset": 0.02902494331065758,
+          "loopStart": 6,
+          "loopEnd": 8
+        }
+      ],
+      "elapsed": [
+        162
+      ],
+      "decoded": {
+        "samples": 352359,
+        "rate": 44100
+      },
+      "longClip": null,
+      "served": {
+        "index.html": {
+          "bytes": 2361,
+          "sha256": "415f563a9cc8da6ac123a712f424d3553261dc8ac57a7336928f8ed7ff239af9"
+        },
+        "assets/index-BTO_e6A4.css": {
+          "bytes": 23188,
+          "sha256": "3ea8eb979b794e79ea4aa7ba55a6da08360030a59d32c0ca0562e895eb7fc91c"
+        },
+        "assets/index-8-vv7zR2.js": {
+          "bytes": 157815,
+          "sha256": "8edf88967aa7db2e5cf237afd45ccc565fb25b27b5c78ebaa6f22408a8e63a12"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        }
+      }
+    }
+  ]
+}

@@ -96,8 +96,40 @@ loads its fonts, then shuts down the server and disables network access before
 importing real speech or preparing a preview. It checks keyboard controls,
 cached pause/resume, loop mapping, axe and overflow in Chromium and Firefox
 at 1440px dark and 375px light. At desktop it also cancels a real 60-second
-preparation and successfully retries it. Screenshots and a clean-install
-verification receipt accompany the final source evidence.
+preparation and successfully retries it. In the clean build, cancellation's
+control round trip took 45-49 ms; retry preparation took 1.01-1.13 seconds.
+The eight-second speech preview took 161-194 ms across the four runs. These
+single observations include worker startup and are not mobile-device benchmarks.
+
+[browser-after.json](browser-after.json) retains all four workflows and served
+asset hashes. There were no observed page errors, external requests, requests
+after disconnection, CSP violations, horizontal overflow or axe violations.
+All four screenshots were inspected:
+
+| Browser | Desktop dark | Phone light |
+| --- | --- | --- |
+| Chromium 153.0.8010.12 | [1440px](../../docs/assets/slow-playback-chromium-1440.png) | [375px](../../docs/assets/slow-playback-chromium-375.png) |
+| Firefox 155.0 | [1440px](../../docs/assets/slow-playback-firefox-1440.png) | [375px](../../docs/assets/slow-playback-firefox-375.png) |
+
+## Clean source verification
+
+[verification.json](verification.json) records a fresh 264-file archive of
+implementation `bf893b3eb0f610a20d5c3fa3ed0826e23b363e95`. With Node 24.21.0 and
+npm 12.0.1, a locked install, lint, type checking, all 211 unit checks, build,
+the accuracy report and all 86 browser checks passed. Four Firefox microphone
+cases are explicitly skipped because the deterministic microphone is supplied
+only by Chromium. The 16 new playback cases run in both engines.
+
+All archived source files remained byte-identical after the checks. All 30
+built files match the workspace build; the browser study checks the eight
+assets it actually fetched in each run. The JS bundle is 157.81 kB (66.37 kB
+gzip), up from 58.86 kB. The final evidence commit changes documentation and
+receipts only. No package release or hosted deployment is part of this work.
+
+The receipt also records corrected study/integration assumptions: ESM versus
+CommonJS registration, browser decoding at the context sample rate, and an
+initial shell invocation that never reached installation. Retained results
+come from the completed checks, not those failed attempts.
 
 ## Replay
 

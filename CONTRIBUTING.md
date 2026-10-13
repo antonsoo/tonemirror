@@ -27,10 +27,15 @@ run them locally when Actions is unavailable.
   Node/Worker/browser alike). This is where most correctness work lives.
 - `src/worker/` - pitch tracking, spectrograms and contour matching off the
   main thread, with a separate cancellable client per audio slot and comparison.
+  Slow playback uses a disposable worker per preparation, terminated on completion
+  or cancellation.
 - `src/audio/` - microphone capture (AudioWorklet), file decoding, and
   playback.
 - `src/ui/` - canvas rendering and small DOM helpers.
 - `src/storage/` - the IndexedDB reference library.
+- `src/vendor/` - pinned Signalsmith Stretch WASM and its narrow declarations.
+  Preserve upstream hashes and MIT notices when updating the embedded engine;
+  the pitch, speech and native-playback replays are in `studies/slow-playback/`.
 - `tests/` - Vitest specs, mostly against synthetic signals with known
   ground truth (see `src/core/synth.ts` and `src/core/metrics.ts`).
 - `tests/browser/` - Playwright workflows and accessibility checks against the
