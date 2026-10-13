@@ -3,6 +3,8 @@ import { applyTheme, currentTheme, toggleTheme } from "./ui/theme.js";
 import { createContourStage } from "./ui/contourStage.js";
 import { createAnalysisView, type LoopRegion } from "./ui/analysisView.js";
 import { PitchWorkerClient } from "./worker/client.js";
+import { prepareSlowPlayback } from "./worker/slowPlaybackClient.js";
+import { abortable } from "./audio/cancellation.js";
 import { MicRecorder } from "./audio/recorder.js";
 import { loadAudioFile } from "./audio/fileLoader.js";
 import { MAX_AUDIO_SECONDS, validateAudio } from "./audio/limits.js";
@@ -79,6 +81,7 @@ export function mountApp(root: HTMLElement): void {
   const micRecorder = new MicRecorder();
   let rafHandle = 0;
   let playbackRequest = 0;
+  let playbackPreparation: AbortController | null = null;
 
   function getPlaybackContext(): AudioContext {
     playbackContext ??= new AudioContext();
@@ -222,10 +225,18 @@ export function mountApp(root: HTMLElement): void {
   const halfSpeedToggle = el("input", {
     type: "checkbox",
     onchange: (e) => {
+      const player = players[focus];
+      const resume = player?.isPlaying || playbackPreparation !== null;
+      cancelPlaybackPreparation();
+      player?.pause();
+      cancelAnimationFrame(rafHandle);
       halfSpeed = (e.target as HTMLInputElement).checked;
-      players[focus]?.setHalfSpeed(halfSpeed);
+      if (!halfSpeed) player?.setHalfSpeed(false);
+      if (resume) void togglePlayback();
+      renderAnalysis();
     },
   });
+  const playbackNote = el("p", { class: "tm-hint", role: "status", id: "playback-note" });
   const clearLoopBtn = el("button", {
     class: "tm-btn",
     onclick: () => {
@@ -266,9 +277,10 @@ export function mountApp(root: HTMLElement): void {
     el("div", { class: "tm-playback-bar" }, [
       playBtn,
       clearLoopBtn,
-      el("label", { class: "tm-toggle" }, [halfSpeedToggle, "half-speed"]),
+      el("label", { class: "tm-toggle" }, [halfSpeedToggle, "half-speed, same pitch"]),
       downloadBtn,
     ]),
+    playbackNote,
     downloadNote,
     regionControls,
     regionMessage,
@@ -382,6 +394,7 @@ export function mountApp(root: HTMLElement): void {
   const footer = el("footer", { class: "tm-footer" }, [
     el("span", {}, ["Runs entirely in your browser. No audio ever leaves this device."]),
     el("a", { href: "https://github.com/antonsoo/tonemirror", target: "_blank", rel: "noreferrer" }, ["Source on GitHub"]),
+    el("a", { href: `${import.meta.env.BASE_URL}audio-licenses.txt`, target: "_blank", rel: "noreferrer" }, ["Audio licenses"]),
   ]);
 
   root.append(
@@ -404,7 +417,6 @@ export function mountApp(root: HTMLElement): void {
     cancelWork();
     players.reference?.pause();
     players.attempt?.pause();
-    playbackRequest++;
     cancelAnimationFrame(rafHandle);
     workers.reference.terminate();
     workers.attempt.terminate();
@@ -416,7 +428,7 @@ export function mountApp(root: HTMLElement): void {
 
   function selectFocus(role: FocusRole): void {
     if (focus !== role) {
-      playbackRequest++;
+      cancelPlaybackPreparation();
       players[focus]?.pause();
       cancelAnimationFrame(rafHandle);
     }
@@ -447,6 +459,7 @@ export function mountApp(root: HTMLElement): void {
   }
 
   function cancelWork(): void {
+    cancelPlaybackPreparation();
     for (const role of ["reference", "attempt"] as const) {
       versions[role]++;
       loads[role]?.controller.abort();
@@ -464,9 +477,11 @@ export function mountApp(root: HTMLElement): void {
     statusId++;
     statusLine.textContent = "Cancelled. Your last loaded clips are kept.";
     refreshBusy();
+    renderAnalysis();
   }
 
   function beginLoad(role: FocusRole, nextStatus = ++statusId): AudioRequest {
+    if (role === focus) { cancelPlaybackPreparation(); renderAnalysis(); }
     loads[role]?.controller.abort();
     if (recordingRequest?.role === role) cancelRecording();
     const request = { role, version: ++versions[role], statusId: nextStatus, controller: new AbortController() };
@@ -655,7 +670,7 @@ export function mountApp(root: HTMLElement): void {
       state.spectrogram = result.spectrogram;
       clips[role] = state;
       drafts[role] = null;
-      if (focus === role) playbackRequest++;
+      if (focus === role) cancelPlaybackPreparation();
       loopRegions[role] = null;
       if (focus === role) syncRegionFields();
       if (role === "attempt") resetToneResult();
@@ -758,7 +773,7 @@ export function mountApp(root: HTMLElement): void {
     saveBtn.disabled = !clip || savingReference || !!loads[focus];
     saveBtn.textContent = focus === "reference" ? "Save current reference" : "Save current attempt";
     refreshRegionControls();
-    playBtn.textContent = player?.isPlaying ? "⏸ Pause" : "▶ Play";
+    playBtn.textContent = playbackPreparation ? "Cancel playback" : player?.isPlaying ? "⏸ Pause" : "▶ Play";
   }
 
   function downloadFocusedClip(): void {
@@ -782,27 +797,54 @@ export function mountApp(root: HTMLElement): void {
     }
   }
 
+  function cancelPlaybackPreparation(): number {
+    playbackRequest++;
+    playbackPreparation?.abort();
+    playbackPreparation = null;
+    playbackNote.textContent = "";
+    return playbackRequest;
+  }
+
   async function togglePlayback(): Promise<void> {
     const role = focus;
     const player = players[focus];
-    if (!player) return;
-    const request = ++playbackRequest;
-    if (player.isPlaying) {
+    const clip = clips[focus];
+    if (!player || !clip) return;
+    if (player.isPlaying || playbackPreparation) {
+      cancelPlaybackPreparation();
       player.pause();
       cancelAnimationFrame(rafHandle);
-    } else {
-      try { await getPlaybackContext().resume(); } catch {
-        statusLine.textContent = "Playback is unavailable. Try loading the clip again.";
-        return;
+      renderAnalysis();
+      return;
+    }
+    const request = cancelPlaybackPreparation();
+    const controller = new AbortController();
+    playbackPreparation = controller;
+    const current = (): boolean => request === playbackRequest && focus === role && players[role] === player && !controller.signal.aborted;
+    renderAnalysis();
+    try {
+      await abortable(getPlaybackContext().resume(), controller.signal);
+      if (!current()) return;
+      if (halfSpeed && !player.hasHalfSpeedBuffer) {
+        playbackNote.textContent = "Preparing same-pitch half-speed audio on this device…";
+        const slow = await prepareSlowPlayback(clip.pcm, clip.sampleRate, controller.signal);
+        if (!current()) return;
+        player.loadHalfSpeed(slow);
       }
-      if (request !== playbackRequest || focus !== role || players[role] !== player) return;
+      if (!current()) return;
       player.setHalfSpeed(halfSpeed);
       const loopRegion = loopRegions[role];
       player.setLoopRegion(loopRegion ? { start: loopRegion.start, end: loopRegion.end } : null);
+      playbackPreparation = null;
+      playbackNote.textContent = halfSpeed ? "Half-speed with pitch preserved. The playhead follows the original clip time." : "";
       player.play(player.currentPositionSeconds() >= player.duration - 0.01 ? 0 : player.currentPositionSeconds(), () => renderAnalysis());
       tick();
+    } catch (error) {
+      if (current()) playbackNote.textContent = `Playback unavailable: ${(error as Error).message} Try again or turn off half-speed.`;
+    } finally {
+      if (playbackPreparation === controller) playbackPreparation = null;
+      if (current()) renderAnalysis();
     }
-    renderAnalysis();
   }
 
   function tick(): void {

@@ -64,7 +64,8 @@ just click one of the built-in reference chips and record yourself.
   third of the phrase).
 - **Visualization:** a signature contour "staff" (reference vs. attempt,
   after DTW alignment) plus a waveform + own-FFT spectrogram view with a
-  synced playhead, a draggable loop region, and half-speed playback.
+  synced playhead, a draggable loop region, and half-speed playback that
+  preserves pitch instead of lowering the voice an octave.
 - **Mandarin tone helper:** a heuristic classifier for isolated syllables
   (tone 1 high-level, tone 2 rising, tone 3 low/dipping, tone 4 falling,
   neutral), reporting a confidence and the shape feature that drove the
@@ -76,8 +77,8 @@ just click one of the built-in reference chips and record yourself.
   Mandarin tones and every accent template, generated in-browser and
   labeled synthetic everywhere they appear. Recording or loading real
   native-speaker audio is one click away and clearly encouraged in the UI.
-- **Local processing without uploads**, no telemetry, small bundle (~59 kB
-  of JS including the bundled worker and worklet, uncompressed - see
+- **Local processing without uploads**, no telemetry, ~158 kB
+  of JS including workers, worklet and the pitch-preserving audio engine, uncompressed - see
   [Bundle size](#bundle-size)).
 
 Light and dark themes follow the system preference (with a manual toggle),
@@ -92,6 +93,15 @@ Arrow keys, Home, and End move between the audio tabs.
 Resuming beyond a newly selected loop starts at that loop's beginning, with the
 playhead following the audio. [Native playback and browser evidence](studies/loop-playback/README.md)
 covers loop edits and half-speed playback.
+
+**Half-speed, same pitch** prepares a playback preview on your device the
+first time you play each clip slowly. Preparation can be cancelled, and the
+preview is reused until that clip changes. Loop bounds and the playhead stay
+in the original recording's time. Analysis, saved references and WAV downloads
+keep the original samples. The MIT-licensed
+[Signalsmith Stretch](src/vendor/README.md) engine is bundled for offline use;
+its worker stops on cancellation, failure or a 60-second timeout.
+[Rendered audio, recorded-speech measurements and browser checks](studies/slow-playback/README.md).
 
 To practice a passage within a recording, drag on the waveform or enter
 **Region start (s)** and **Region end (s)**. **Loop region** auditions those
@@ -120,7 +130,8 @@ old tab blocks that upgrade, close it and retry. The stored recordings stay in
 place. [Reproduction and migration checks](studies/library-loading/README.md)
 cover a synthetic 100-recording library with 192 MB of audio.
 
-**Cancel work** stops pending imports, pitch extraction and contour matching.
+**Cancel work** stops pending imports, pitch extraction, contour matching and
+slow-playback preparation.
 Reference and attempt analysis have separate workers, so a stuck job in one
 slot does not block the other. A failed or cancelled replacement keeps the
 last successfully loaded clip, its playback and its comparison. **Retry audio
@@ -252,6 +263,18 @@ the synthetic references land at their intended frequency.
 
 ## Accuracy and limitations
 
+**Slowed audio is a listening aid.** Time stretching can soften consonants,
+change amplitudes and produce artifacts, particularly on short excerpts or
+abrupt boundaries. In a 480-recording check, an independent pitch tracker
+measured a 7.37-cent median absolute difference between original and slowed
+speech; 3.23% of jointly voiced frames differed by more than 100 cents.
+This is not a listening study or a pronunciation-accuracy claim. Full methods,
+denominators and per-recording results are in the
+[half-speed study](studies/slow-playback/README.md). Normal-speed playback and
+the analysis plots retain the original audio. The preview takes additional
+memory (twice the original mono frame count) and preparation time; on a slow
+device, use a shorter practice region if preparation times out.
+
 ### Measured accuracy
 
 **On real voices** ([the study](studies/real-voice/README.md)): against a
@@ -352,9 +375,9 @@ minutes long.
 `npm run build` output on this box:
 
 ```
-dist/index.html                   2.34 kB (gzip 0.88 kB)
+dist/index.html                   2.36 kB (gzip 0.89 kB)
 dist/assets/index-*.css          23.18 kB (gzip 3.58 kB)
-dist/assets/index-*.js           58.86 kB (gzip 20.98 kB)
+dist/assets/index-*.js          157.81 kB (gzip 66.37 kB)
 ```
 
 No UI framework, no charting library - Canvas 2D and vanilla DOM.

@@ -4,12 +4,13 @@ export interface PlaybackState {
   durationSeconds: number;
 }
 
-/** Thin wrapper around an AudioBufferSourceNode for one PCM clip, supporting
- * loop regions and a half-speed toggle (via playbackRate - naive, so pitch
- * drops with speed, which is fine for "listen to the shape slower"). */
+/** Web Audio playback with a source-time cursor and optional prepared slow audio.
+ * Both buffers play at native rate; half speed uses twice-length, same-pitch PCM.
+ */
 export class ClipPlayer {
   private context: AudioContext;
   private buffer: AudioBuffer | null = null;
+  private slowBuffer: AudioBuffer | null = null;
   private source: AudioBufferSourceNode | null = null;
   private startedAtContextTime = 0;
   private startOffsetSeconds = 0;
@@ -26,6 +27,19 @@ export class ClipPlayer {
     const buffer = this.context.createBuffer(1, Math.max(1, pcm.length), sampleRate);
     buffer.copyToChannel(Float32Array.from(pcm), 0);
     this.buffer = buffer;
+    this.slowBuffer = null;
+    this.rate = 1;
+  }
+
+  get hasHalfSpeedBuffer(): boolean { return this.slowBuffer !== null; }
+
+  loadHalfSpeed(pcm: Float32Array): void {
+    if (!this.buffer || pcm.length !== this.buffer.length * 2 || !pcm.every(Number.isFinite)) {
+      throw new Error("The slow playback preview does not match the current clip.");
+    }
+    const buffer = this.context.createBuffer(1, pcm.length, this.buffer.sampleRate);
+    buffer.getChannelData(0).set(pcm);
+    this.slowBuffer = buffer;
   }
 
   get duration(): number {
@@ -33,11 +47,15 @@ export class ClipPlayer {
   }
 
   setHalfSpeed(half: boolean): void {
-    // Keep time already played at its old rate before starting a new segment.
-    this.startOffsetSeconds = this.currentPositionSeconds();
-    this.startedAtContextTime = this.context.currentTime;
-    this.rate = half ? 0.5 : 1;
-    if (this.source) this.source.playbackRate.value = this.rate;
+    const next = half ? 0.5 : 1;
+    if (next === this.rate) return;
+    if (half && !this.slowBuffer) throw new Error("Prepare same-pitch audio before enabling half-speed.");
+    const position = this.currentPositionSeconds();
+    const playing = this.isPlaying;
+    const ended = this.onEnded;
+    this.rate = next;
+    if (playing) this.play(position, ended ?? undefined);
+    else this.startOffsetSeconds = position;
   }
 
   setLoopRegion(region: { start: number; end: number } | null): void {
@@ -48,8 +66,8 @@ export class ClipPlayer {
       this.startOffsetSeconds = this.loopEntryPosition(this.startOffsetSeconds);
       if (region) {
         this.source.loop = true;
-        this.source.loopStart = region.start * this.buffer.duration;
-        this.source.loopEnd = region.end * this.buffer.duration;
+        this.source.loopStart = region.start * this.source.buffer!.duration;
+        this.source.loopEnd = region.end * this.source.buffer!.duration;
       } else {
         this.source.loop = false;
       }
@@ -60,12 +78,12 @@ export class ClipPlayer {
     if (!this.buffer) return;
     this.stop();
     const source = this.context.createBufferSource();
-    source.buffer = this.buffer;
-    source.playbackRate.value = this.rate;
+    source.buffer = this.rate === 0.5 ? this.slowBuffer! : this.buffer;
+    source.playbackRate.value = 1;
     if (this.loop) {
       source.loop = true;
-      source.loopStart = this.loop.start * this.buffer.duration;
-      source.loopEnd = this.loop.end * this.buffer.duration;
+      source.loopStart = this.loop.start * source.buffer.duration;
+      source.loopEnd = this.loop.end * source.buffer.duration;
     }
     source.connect(this.context.destination);
     this.onEnded = onEnded ?? null;
@@ -78,7 +96,7 @@ export class ClipPlayer {
       }
     };
     const offset = this.loopEntryPosition(fromSeconds);
-    source.start(0, offset);
+    source.start(0, offset / this.rate);
     this.source = source;
     this.startedAtContextTime = this.context.currentTime;
     this.startOffsetSeconds = offset;

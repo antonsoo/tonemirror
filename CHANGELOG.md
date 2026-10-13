@@ -4,6 +4,14 @@ All notable changes to this project are documented in this file.
 
 ## Unreleased
 
+- Preserve the voice's pitch during half-speed playback. Prepare and cache a
+  local preview with the MIT-licensed Signalsmith Stretch engine; allow
+  cancellation and recover from preparation failures. Loop bounds and the
+  playhead retain original clip time, while analysis, saving and WAV export
+  retain original samples. A native browser reproduction changes a 440 Hz
+  source from the old 220 Hz result to 440 Hz at twice the duration.
+  [Speech measurements, offline controls and limitations](studies/slow-playback/README.md).
+
 - Download the focused clip as a float WAV, including microphone recordings,
   saved references and kept excerpts. Preserve the decoded mono samples at
   normal speed and retain synthetic-reference metadata when the file is

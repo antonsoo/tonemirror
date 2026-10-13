@@ -11,10 +11,11 @@ async function hashSource(script: string): Promise<string> {
  *
  * The page says nothing you give it leaves your browser. This makes the browser hold it to
  * that: styles and fonts load from the page's own origin, scripts and workers also
- * allow local blobs for the bundled recorder and analysis code, and
+ * allow local blobs for the bundled recorder, analysis and slow-playback code, and
  * `connect-src 'self'` means no script on the page, not even one injected through a bug in
  * how it renders your file, can send anything to another host. Inline scripts in index.html
- * are allowed by their hash; inline event handlers and `eval` are not allowed at all.
+ * are allowed by their hash; inline event handlers and JavaScript `eval` are not allowed.
+ * The app adds `wasm-unsafe-eval` for its bundled audio engine, without permitting JS eval.
  *
  * `'unsafe-inline'` is for styles only: the page sets `style` attributes on what it renders.
  *

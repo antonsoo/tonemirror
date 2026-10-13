@@ -12,15 +12,41 @@ function setup() {
   }
   const context = {
     currentTime: 0, destination: {},
-    createBuffer: (_channels: number, length: number, rate: number) => ({ duration: length / rate, copyToChannel: vi.fn() }),
+    createBuffer: (_channels: number, length: number, rate: number) => ({ length, sampleRate: rate, duration: length / rate, copyToChannel: vi.fn(), getChannelData: () => new Float32Array(length) }),
     createBufferSource: () => { const node = source(); sources.push(node); return node; },
   };
   const player = new ClipPlayer(context as unknown as AudioContext);
   player.load(new Float32Array(1000), 100);
+  player.loadHalfSpeed(new Float32Array(2000));
   return { context, sources, player };
 }
 
 describe("playback timeline", () => {
+  it("uses the prepared samples at native rate while offsets and loops keep source time", () => {
+    const { player, sources, context } = setup();
+    player.setHalfSpeed(true);
+    player.setLoopRegion({ start: 0.2, end: 0.4 });
+    player.play(3);
+    expect(sources[0]!.playbackRate.value).toBe(1);
+    expect(sources[0]!.start).toHaveBeenCalledWith(0, 6);
+    expect(sources[0]!.loopStart).toBe(4);
+    expect(sources[0]!.loopEnd).toBe(8);
+    context.currentTime = 3;
+    expect(player.currentPositionSeconds()).toBe(2.5);
+    player.setHalfSpeed(false);
+    expect(sources[1]!.start).toHaveBeenCalledWith(0, 2.5);
+    expect(sources[1]!.loopStart).toBe(2);
+    expect(sources[1]!.loopEnd).toBe(4);
+  });
+
+  it("does not reuse prepared audio after a different clip is loaded", () => {
+    const { player } = setup();
+    player.setHalfSpeed(true);
+    player.load(new Float32Array(1000), 100);
+    expect(player.hasHalfSpeedBuffer).toBe(false);
+    expect(() => player.setHalfSpeed(true)).toThrow("Prepare");
+    expect(() => player.loadHalfSpeed(new Float32Array(1000))).toThrow("does not match");
+  });
   it("preserves the paused position until resumed and resets on stop", () => {
     const { context, sources, player } = setup();
     player.play();
@@ -73,7 +99,7 @@ describe("playback timeline", () => {
     context.currentTime = 8;
     expect(player.currentPositionSeconds()).toBe(2.5);
     player.setLoopRegion(null);
-    expect(sources[0]!.loop).toBe(false);
+    expect(sources.at(-1)!.loop).toBe(false);
     expect(player.currentPositionSeconds()).toBe(2.5);
     context.currentTime = 10;
     expect(player.currentPositionSeconds()).toBe(3.5);

@@ -1,0 +1,36 @@
+{
+  "revision": "a670068d9aeb64913331d5cc29337b19a457a7df",
+  "files": [
+    {
+      "path": "LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/Signalsmith-Audio/signalsmith-stretch/a670068d9aeb64913331d5cc29337b19a457a7df/LICENSE.txt",
+      "bytes": 1093,
+      "sha256": "ee2ef82481ffb445ecdd4b3a4c1f82c0cddb2da8fe39d8e8dc384fffb3e7f06f"
+    },
+    {
+      "path": "web/emscripten/compile.sh",
+      "url": "https://raw.githubusercontent.com/Signalsmith-Audio/signalsmith-stretch/a670068d9aeb64913331d5cc29337b19a457a7df/web/emscripten/compile.sh",
+      "bytes": 1674,
+      "sha256": "7ada65b1e125a361cb1222c346c966b548fc7580e0643ccbb268cddde1a60fd7"
+    },
+    {
+      "path": "web/emscripten/main.cpp",
+      "url": "https://raw.githubusercontent.com/Signalsmith-Audio/signalsmith-stretch/a670068d9aeb64913331d5cc29337b19a457a7df/web/emscripten/main.cpp",
+      "bytes": 2606,
+      "sha256": "50b1e459020d8e73ba3228c7a60cc0cafa75f32d1bc2ea8408e775de176f9073"
+    },
+    {
+      "path": "web/emscripten/main.js",
+      "url": "https://raw.githubusercontent.com/Signalsmith-Audio/signalsmith-stretch/a670068d9aeb64913331d5cc29337b19a457a7df/web/emscripten/main.js",
+      "bytes": 98451,
+      "sha256": "f4af9d616062c67dbfe6a98d9bfd39f0149246f02c111122a10936f5c63d5cf6"
+    },
+    {
+      "path": "linear/LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/Signalsmith-Audio/linear/146b26f91b48835d665fa0498d64d9617818d27a/LICENSE.txt",
+      "bytes": 1074,
+      "sha256": "072b5e9eb5b22880bdf6256324654cf3ce53dba828edb911921121e1be09d9c3"
+    }
+  ],
+  "patch": "Replaced trailing CommonJS/AMD registration with ESM default export; upstream WASM bytes are unchanged."
+}

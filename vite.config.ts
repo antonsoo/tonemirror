@@ -4,7 +4,7 @@ import { contentSecurityPolicy } from "./vite.csp.js";
 
 export default defineConfig({
   base: "/tonemirror/",
-  plugins: [contentSecurityPolicy()],
+  plugins: [contentSecurityPolicy({ "script-src": ["'wasm-unsafe-eval'"] })],
   build: {
     target: "es2022",
     sourcemap: true,

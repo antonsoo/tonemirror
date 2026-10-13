@@ -1,0 +1,179 @@
+{
+  "mode": "before",
+  "results": [
+    {
+      "engine": "chromium",
+      "browser": "153.0.8010.12",
+      "cases": [
+        {
+          "kind": "tone",
+          "inputSamples": 48000,
+          "inputSeconds": 1,
+          "lastAudibleSecond": 2,
+          "preparationMs": 0,
+          "finite": true,
+          "probes": [
+            {
+              "outputSecond": 1,
+              "expectedHz": 440,
+              "measuredHz": 220.00000022920514,
+              "cents": -1199.9999981963285
+            }
+          ]
+        },
+        {
+          "kind": "chirp",
+          "inputSamples": 96000,
+          "inputSeconds": 2,
+          "lastAudibleSecond": 4,
+          "preparationMs": 0,
+          "finite": true,
+          "probes": [
+            {
+              "outputSecond": 0.5,
+              "expectedHz": 247.5,
+              "measuredHz": 123.75785444037594,
+              "cents": -1199.8901216718923
+            },
+            {
+              "outputSecond": 1,
+              "expectedHz": 275,
+              "measuredHz": 137.44383783765866,
+              "cents": -1200.7072706181127
+            },
+            {
+              "outputSecond": 2,
+              "expectedHz": 330,
+              "measuredHz": 164.99461161260356,
+              "cents": -1200.0565376488153
+            },
+            {
+              "outputSecond": 3,
+              "expectedHz": 385,
+              "measuredHz": 192.53141605216612,
+              "cents": -1199.7174851866603
+            },
+            {
+              "outputSecond": 3.5,
+              "expectedHz": 412.5,
+              "measuredHz": 206.25444129979928,
+              "cents": -1199.9627207435115
+            }
+          ]
+        },
+        {
+          "kind": "bursts",
+          "inputSamples": 96000,
+          "inputSeconds": 2,
+          "lastAudibleSecond": 3.6284375,
+          "preparationMs": 0,
+          "finite": true,
+          "probes": [
+            {
+              "expectedSecond": 0.5,
+              "energyCentroidSecond": 0.49999999999999784,
+              "errorMs": -2.1649348980190553e-12
+            },
+            {
+              "expectedSecond": 2,
+              "energyCentroidSecond": 1.9999999999999727,
+              "errorMs": -2.731148640577885e-11
+            },
+            {
+              "expectedSecond": 3.5,
+              "energyCentroidSecond": 3.499999999999972,
+              "errorMs": -2.7977620220553945e-11
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "engine": "firefox",
+      "browser": "155.0",
+      "cases": [
+        {
+          "kind": "tone",
+          "inputSamples": 48000,
+          "inputSeconds": 1,
+          "lastAudibleSecond": 2.0001041666666666,
+          "preparationMs": 2,
+          "finite": true,
+          "probes": [
+            {
+              "outputSecond": 1,
+              "expectedHz": 440,
+              "measuredHz": 220.00000552346017,
+              "cents": -1199.9999565345354
+            }
+          ]
+        },
+        {
+          "kind": "chirp",
+          "inputSamples": 96000,
+          "inputSeconds": 2,
+          "lastAudibleSecond": 4.000104166666667,
+          "preparationMs": 0,
+          "finite": true,
+          "probes": [
+            {
+              "outputSecond": 0.5,
+              "expectedHz": 247.5,
+              "measuredHz": 123.75796777495978,
+              "cents": -1199.8885362484734
+            },
+            {
+              "outputSecond": 1,
+              "expectedHz": 275,
+              "measuredHz": 137.44382589678102,
+              "cents": -1200.7074210246726
+            },
+            {
+              "outputSecond": 2,
+              "expectedHz": 330,
+              "measuredHz": 164.99437321269517,
+              "cents": -1200.0590391022433
+            },
+            {
+              "outputSecond": 3,
+              "expectedHz": 385,
+              "measuredHz": 192.53127452389438,
+              "cents": -1199.7187578031403
+            },
+            {
+              "outputSecond": 3.5,
+              "expectedHz": 412.5,
+              "measuredHz": 206.2543141717865,
+              "cents": -1199.9637878158653
+            }
+          ]
+        },
+        {
+          "kind": "bursts",
+          "inputSamples": 96000,
+          "inputSeconds": 2,
+          "lastAudibleSecond": 3.6284375,
+          "preparationMs": 0,
+          "finite": true,
+          "probes": [
+            {
+              "expectedSecond": 0.5,
+              "energyCentroidSecond": 0.5000000943419147,
+              "errorMs": 0.0000943419147247937
+            },
+            {
+              "expectedSecond": 2,
+              "energyCentroidSecond": 2.0000000943419134,
+              "errorMs": 0.00009434191339252607
+            },
+            {
+              "expectedSecond": 3.5,
+              "energyCentroidSecond": 3.500000094341899,
+              "errorMs": 0.00009434189918167135
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

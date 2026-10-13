@@ -10,6 +10,7 @@ export default tseslint.config(
       "test-results/**",
       "playwright-report/**",
       "studies/**",
+      "src/vendor/*.mjs",
     ],
   },
   js.configs.recommended,
