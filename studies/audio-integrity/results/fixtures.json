@@ -1,0 +1,66 @@
+{
+  "producer": "Constructed float WAVE fixtures",
+  "ffmpeg": "ffmpeg version 8.0 Copyright (c) 2000-2025 the FFmpeg developers",
+  "records": [
+    {
+      "fixture": "infinity-middle.wav",
+      "bytes": 176458,
+      "sha256": "e5170279dc8871169836536bca609c2a368d5f9863d7c61a65ad2a1964a8c1ad",
+      "codec": "pcm_f32le",
+      "frames": 44100,
+      "sampleRate": 44100,
+      "channels": 1,
+      "nonFiniteSamples": 11025,
+      "ffmpegSamplesMatchSourceBytes": true,
+      "pcmSha256": "e4304678e1a8dd72b41c7ac196eac6112592dc6ea9b0b84b345532f0dc1dca59"
+    },
+    {
+      "fixture": "nan-last.wav",
+      "bytes": 176458,
+      "sha256": "6dbd51d8b2d0b81e8eb3eb1afd86e75eb8aa08fb64fef79a576a068b1b21fbba",
+      "codec": "pcm_f32le",
+      "frames": 44100,
+      "sampleRate": 44100,
+      "channels": 1,
+      "nonFiniteSamples": 1,
+      "ffmpegSamplesMatchSourceBytes": true,
+      "pcmSha256": "98645e5d65c6e5d85d5ed1370689adffe5a96c389f02ef89b67f6a732fe653dc"
+    },
+    {
+      "fixture": "nan-middle.wav",
+      "bytes": 176458,
+      "sha256": "2c877e500d5f5b371847d4fd8ee02dbafb32675d2cf349d52dae67a818cdca4d",
+      "codec": "pcm_f32le",
+      "frames": 44100,
+      "sampleRate": 44100,
+      "channels": 1,
+      "nonFiniteSamples": 11025,
+      "ffmpegSamplesMatchSourceBytes": true,
+      "pcmSha256": "02ac68a3414d71bfc4eaed483dd69a18875891a4297d7c16ffe0f2fdb9a48e66"
+    },
+    {
+      "fixture": "negative-infinity-middle.wav",
+      "bytes": 176458,
+      "sha256": "b9548c5ae5ebd3e0319764e394de7f7cbdec2874adca66f843a2f3ff8249f407",
+      "codec": "pcm_f32le",
+      "frames": 44100,
+      "sampleRate": 44100,
+      "channels": 1,
+      "nonFiniteSamples": 11025,
+      "ffmpegSamplesMatchSourceBytes": true,
+      "pcmSha256": "2cecc47c8c8a323cce93a69e9a24f5c2b07d73ddea8bb199ac307397f04c87fd"
+    },
+    {
+      "fixture": "valid.wav",
+      "bytes": 176458,
+      "sha256": "7c7eba3a1388fe073d1c4b7480e9a771ea82532782a8406c8b4f8c39e8e40019",
+      "codec": "pcm_f32le",
+      "frames": 44100,
+      "sampleRate": 44100,
+      "channels": 1,
+      "nonFiniteSamples": 0,
+      "ffmpegSamplesMatchSourceBytes": true,
+      "pcmSha256": "7471cf2e8a1f90143dd5838e31d7c3ea4da9c6af02d1984ba0093fa1e7414a20"
+    }
+  ]
+}

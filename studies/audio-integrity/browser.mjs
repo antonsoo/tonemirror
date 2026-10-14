@@ -74,7 +74,7 @@ for (const [engine, type] of Object.entries({ chromium, firefox })) {
           })());
         });
         await page.addInitScript(() => {
-          window.audioStudy = { jobs: [], decodes: [], pending: [], violations: [], workerCount: 0, role: 'attempt' };
+          window.audioStudy = { jobs: [], decodes: [], playbacks: [], pending: [], violations: [], workerCount: 0, role: 'attempt' };
           const digest = async bytes => Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', bytes)), value => value.toString(16).padStart(2, '0')).join('');
           document.addEventListener('securitypolicyviolation', event => window.audioStudy.violations.push(event.violatedDirective));
           const NativeContext = AudioContext;
@@ -91,6 +91,16 @@ for (const [engine, type] of Object.entries({ chromium, firefox })) {
             }
           };
           const NativeWorker = Worker;
+          const nativeStart = AudioBufferSourceNode.prototype.start;
+          AudioBufferSourceNode.prototype.start = function (...args) {
+            const copy = this.buffer.getChannelData(0).slice();
+            const record = { samples: copy.length, sampleRate: this.buffer.sampleRate,
+              nonFinite: copy.reduce((count, value) => count + Number(!Number.isFinite(value)), 0),
+              playbackRate: this.playbackRate.value };
+            window.audioStudy.playbacks.push(record);
+            window.audioStudy.pending.push(digest(copy.buffer).then(pcmSha256 => { record.pcmSha256 = pcmSha256; }));
+            return nativeStart.apply(this, args);
+          };
           window.Worker = class extends NativeWorker {
             constructor(...args) {
               super(...args); this.id = ++window.audioStudy.workerCount; this.records = new Map();
@@ -135,7 +145,7 @@ for (const [engine, type] of Object.entries({ chromium, firefox })) {
         const tab = role => page.getByRole('tab', { name: role === 'reference' ? 'Reference' : 'Your attempt', exact: true });
         async function select(role) { await tab(role).click(); await page.evaluate(role => { window.audioStudy.role = role; }, role); }
         async function waitComplete() {
-          await page.waitForFunction(() => !/Decoding|Analyzing/.test(document.querySelector('.tm-status').textContent));
+          await page.waitForFunction(() => !/Reading|Decoding|Analyzing/.test(document.querySelector('.tm-status').textContent));
           await page.waitForFunction(() => window.audioStudy.jobs.at(-1)?.state !== 'pending');
           await page.waitForFunction(() => !document.querySelector('.tm-comparison-note').textContent.includes('Comparing'));
           await page.evaluate(async () => Promise.all(window.audioStudy.pending));
@@ -182,7 +192,9 @@ for (const [engine, type] of Object.entries({ chromium, firefox })) {
           }
           for (const item of seeded) {
             await good('attempt'); await good('reference');
+            const jobsBefore = await page.evaluate(() => window.audioStudy.jobs.length);
             await page.locator('.tm-library-item').filter({ hasText: item.name }).getByRole('button', { name: 'Use', exact: true }).click();
+            await page.waitForFunction(count => window.audioStudy.jobs.length > count, jobsBefore);
             await capture('saved', item.id, 'reference', algorithm, true);
           }
           // The preserved audio remains exportable, or baseline exposes its delayed failure.
@@ -190,6 +202,22 @@ for (const [engine, type] of Object.entries({ chromium, firefox })) {
             const expected = await page.evaluate(() => ({
               sha256: window.audioStudy.jobs.filter(job => job.role === 'reference' && job.state === 'analyzed').at(-1).pcmSha256,
             }));
+            const played = [];
+            for (const halfSpeed of [false, true]) {
+              await page.getByLabel('half-speed').setChecked(halfSpeed);
+              const before = await page.evaluate(() => window.audioStudy.playbacks.length);
+              await page.getByRole('button', { name: '▶ Play', exact: true }).click();
+              await expect(page.getByRole('button', { name: '⏸ Pause', exact: true })).toBeVisible();
+              await page.waitForFunction(count => window.audioStudy.playbacks.length > count, before);
+              await page.getByRole('button', { name: '⏸ Pause', exact: true }).click();
+              await page.evaluate(async () => Promise.all(window.audioStudy.pending));
+              const playback = await page.evaluate(() => window.audioStudy.playbacks.at(-1));
+              assert.equal(playback.nonFinite, 0); assert.equal(playback.playbackRate, 1);
+              assert.equal(playback.samples, halfSpeed ? 88200 : 44100);
+              if (!halfSpeed) assert.equal(playback.pcmSha256, expected.sha256);
+              played.push({ halfSpeed, ...playback });
+            }
+            await page.getByLabel('half-speed').uncheck();
             const event = page.waitForEvent('download'); await page.getByRole('button', { name: 'Download WAV', exact: true }).click();
             const download = await event; const path = resolve(output, `${engine}-${width}-${algorithm}.wav`); await download.saveAs(path);
             const bytes = await readFile(path), view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
@@ -200,14 +228,27 @@ for (const [engine, type] of Object.entries({ chromium, firefox })) {
               at += 8 + size + size % 2;
             }
             assert(data); assert.equal(sha(data), expected.sha256);
-            exports.push({ algorithm, bytes: bytes.length, sha256: sha(bytes), pcmSha256: sha(data), previousValidPcmMatches: true });
+            exports.push({ algorithm, bytes: bytes.length, sha256: sha(bytes), pcmSha256: sha(data), previousValidPcmMatches: true, playbacks: played });
             page.once('dialog', dialog => dialog.accept(`Preserved ${algorithm} reference`));
             await page.getByRole('button', { name: 'Save current reference', exact: true }).click();
             await expect(page.locator('.tm-library-list')).toContainText(`Preserved ${algorithm} reference`);
+            const savedClip = await page.evaluate(async name => {
+              const db = await new Promise(resolve => { const request = indexedDB.open('tonemirror'); request.onsuccess = () => resolve(request.result); });
+              const records = await new Promise(resolve => {
+                const request = db.transaction('references').objectStore('references').getAll(); request.onsuccess = () => resolve(request.result);
+              });
+              db.close();
+              const record = records.find(record => record.name === name);
+              if (!record) throw new Error('The preserved clip was not saved.');
+              return { name, sampleRate: record.sampleRate, bytes: record.pcmBuffer.byteLength,
+                pcmSha256: Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', record.pcmBuffer)), value => value.toString(16).padStart(2, '0')).join('') };
+            }, `Preserved ${algorithm} reference`);
+            assert.equal(savedClip.pcmSha256, expected.sha256);
+            exports.at(-1).savedClip = savedClip;
           } else {
             await page.getByRole('button', { name: 'Download WAV', exact: true }).click();
-            await expect(status).toContainText('invalid audio samples');
-            exports.push({ algorithm, delayedExportFailure: await status.innerText() });
+            await expect(page.locator('#download-note')).toContainText('invalid audio samples');
+            exports.push({ algorithm, delayedExportFailure: await page.locator('#download-note').innerText() });
           }
           await good('reference'); await good('attempt');
           await expect(page.locator('.tm-score')).toHaveText('100');

@@ -1,0 +1,68 @@
+{
+  "artifacts": [
+    {
+      "name": "chromium-1440-mpm.wav",
+      "bytes": 176544,
+      "sha256": "fb5665dd08bd3d0b512a536d1bc8fe08fff47cd2ee670b636b446898792244a7",
+      "decodedPcmSha256": "7471cf2e8a1f90143dd5838e31d7c3ea4da9c6af02d1984ba0093fa1e7414a20",
+      "frames": 44100,
+      "ffmpegMatchesPreservedClip": true
+    },
+    {
+      "name": "chromium-1440-yin.wav",
+      "bytes": 176544,
+      "sha256": "fb5665dd08bd3d0b512a536d1bc8fe08fff47cd2ee670b636b446898792244a7",
+      "decodedPcmSha256": "7471cf2e8a1f90143dd5838e31d7c3ea4da9c6af02d1984ba0093fa1e7414a20",
+      "frames": 44100,
+      "ffmpegMatchesPreservedClip": true
+    },
+    {
+      "name": "chromium-375-mpm.wav",
+      "bytes": 176544,
+      "sha256": "fb5665dd08bd3d0b512a536d1bc8fe08fff47cd2ee670b636b446898792244a7",
+      "decodedPcmSha256": "7471cf2e8a1f90143dd5838e31d7c3ea4da9c6af02d1984ba0093fa1e7414a20",
+      "frames": 44100,
+      "ffmpegMatchesPreservedClip": true
+    },
+    {
+      "name": "chromium-375-yin.wav",
+      "bytes": 176544,
+      "sha256": "fb5665dd08bd3d0b512a536d1bc8fe08fff47cd2ee670b636b446898792244a7",
+      "decodedPcmSha256": "7471cf2e8a1f90143dd5838e31d7c3ea4da9c6af02d1984ba0093fa1e7414a20",
+      "frames": 44100,
+      "ffmpegMatchesPreservedClip": true
+    },
+    {
+      "name": "firefox-1440-mpm.wav",
+      "bytes": 176544,
+      "sha256": "fb5665dd08bd3d0b512a536d1bc8fe08fff47cd2ee670b636b446898792244a7",
+      "decodedPcmSha256": "7471cf2e8a1f90143dd5838e31d7c3ea4da9c6af02d1984ba0093fa1e7414a20",
+      "frames": 44100,
+      "ffmpegMatchesPreservedClip": true
+    },
+    {
+      "name": "firefox-1440-yin.wav",
+      "bytes": 176544,
+      "sha256": "fb5665dd08bd3d0b512a536d1bc8fe08fff47cd2ee670b636b446898792244a7",
+      "decodedPcmSha256": "7471cf2e8a1f90143dd5838e31d7c3ea4da9c6af02d1984ba0093fa1e7414a20",
+      "frames": 44100,
+      "ffmpegMatchesPreservedClip": true
+    },
+    {
+      "name": "firefox-375-mpm.wav",
+      "bytes": 176544,
+      "sha256": "fb5665dd08bd3d0b512a536d1bc8fe08fff47cd2ee670b636b446898792244a7",
+      "decodedPcmSha256": "7471cf2e8a1f90143dd5838e31d7c3ea4da9c6af02d1984ba0093fa1e7414a20",
+      "frames": 44100,
+      "ffmpegMatchesPreservedClip": true
+    },
+    {
+      "name": "firefox-375-yin.wav",
+      "bytes": 176544,
+      "sha256": "fb5665dd08bd3d0b512a536d1bc8fe08fff47cd2ee670b636b446898792244a7",
+      "decodedPcmSha256": "7471cf2e8a1f90143dd5838e31d7c3ea4da9c6af02d1984ba0093fa1e7414a20",
+      "frames": 44100,
+      "ffmpegMatchesPreservedClip": true
+    }
+  ]
+}

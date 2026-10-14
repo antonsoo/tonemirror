@@ -1,0 +1,1474 @@
+{
+  "date": "2026-10-14",
+  "baselineCommit": "a952c734e9f5d6cfb9ea234ce91c9930dc8b51f4",
+  "implementationCommit": "b835699f8fea26255f8c421650aa9dccf598cf84",
+  "scope": "Private browser application source and production-build verification. No registry release, tag or hosted deployment. Constructed damaged audio fixtures, not production incidents or a phonetic accuracy benchmark.",
+  "cleanNode": "v24.21.0",
+  "workingNode": "v26.7.0",
+  "baselineArchiveFilesMatched": 270,
+  "cleanArchiveFilesMatched": 274,
+  "cleanArchiveInputs": {
+    ".editorconfig": "a91f1b150e3e82830fb1b4e16a9ef470daf5d71f9e1935a80fdceda8f3bccb8b",
+    ".github/ISSUE_TEMPLATE/bug_report.yml": "fe63c04c85c800b243f3424f1ac1713a21a18f2ba56544968c94fcb7e8ddb7d1",
+    ".github/ISSUE_TEMPLATE/config.yml": "4657cd0da7e4c7359a9575048e2f3bf6c9705bdc995aacb917267f8531021238",
+    ".github/ISSUE_TEMPLATE/feature_request.yml": "9ff3614521160bc7434f99650560044cd860e35baf636b41ac4c0172b1765f5d",
+    ".github/workflows/ci.yml": "04c4294abd2c97f7bb3e569eb20c0e3276a934a8ce15fd2585a367c998587cd1",
+    ".github/workflows/pages.yml": "6b19e7cc058826eb57f59263e91165c0ea56986e3483d3abeba8215ac223ef87",
+    ".gitignore": "8bd982f641b377c6a7a3844be64a3ecb2ba021594385ab73521859deb010261d",
+    "CHANGELOG.md": "370e02cf0e03b5749aca409172cefd48fb1fbb9911f396c65808e259413a646c",
+    "CODE_OF_CONDUCT.md": "6b369c78390cf7bf6559a69635b319849551aee768fb19a18303f4fc86375686",
+    "CONTRIBUTING.md": "3a76b8fd055b2f74a253dfdff7f8284f06e87fd5f24b3b248e21d950b8df9990",
+    "LICENSE": "e26144be8673d69c175126ad8dcd9ed78431464f0b97120b799dc75ec7edb647",
+    "README.md": "41632bc4438fef107462aa1669b1b96d2974e02e3e4ef02cba75b543ed37bb02",
+    "docs/accuracy-2026-10-07.txt": "35129102c1721db7b9b53f6ece7fbe464ba34e658cdf445ed6291e3c5c183165",
+    "docs/assets/audio-desktop-2026-10-07.png": "fa096181373a4490a5ede120c94461cb5eefe513a64d69522ac848209ad8a806",
+    "docs/assets/audio-mobile-2026-10-07.png": "d7821310c8d03e85c6ccb1f9bd24a32aa90dc59caf9f4a6a3e98b8e45cf6ab77",
+    "docs/assets/hero-dark.png": "12408595f37dfc827afb793ce4df1b57a0b728cca3aa98077c0c50970f67f468",
+    "docs/assets/hero.png": "a68cb6e82f2ad83b9487b474a8ef54bd3854df22b83a45a5eb104b658656aad1",
+    "docs/assets/library-loading/chromium-1440-analysis.png": "29d54c03c002e0f85d36861799256681f291f95cafc48815a9f550129bf6e99d",
+    "docs/assets/library-loading/chromium-1440-library.png": "58d3d2b5dd3d428371f6e804106c41ee53b196fb7e51284d30cd7b70ca9581c2",
+    "docs/assets/library-loading/chromium-375-analysis.png": "3b0192747de745517203a258a6fcc973548f5d391377a8727f3b6190f420b739",
+    "docs/assets/library-loading/chromium-375-library.png": "8f46ef8ddb6051d4c906da3c82631072ba519fdc6584c211471c78c2de597882",
+    "docs/assets/library-loading/firefox-1440-analysis.png": "18047547ef520dc82f281cf430f567fef8c65cbe8469a4e4dfd766e9a2278f9f",
+    "docs/assets/library-loading/firefox-1440-library.png": "b70769bda4e7fa34cedf6a78173b8beec5bfa3ee0fbb955287cdf1021b323775",
+    "docs/assets/library-loading/firefox-375-analysis.png": "d443f8c247d0c29a4675d63357164287c7bf205c8d8d44ecbab4eb8a0eb67632",
+    "docs/assets/library-loading/firefox-375-library.png": "86ca4b950f867a159bc09e09c439caddcd379b5e85d905256e4321c649ca5ac8",
+    "docs/assets/mobile.png": "80e718fe5731a52cded9f4c80cf0054f0bf4cd39dec1400fa9b4ddad2bc80f8b",
+    "docs/assets/offline-start/offline-comparison-1440.png": "2fd842e004f4181d2d07d2109bafbc101aeef82da87ba4a5ca76321b46971469",
+    "docs/assets/offline-start/offline-comparison-375.png": "88f632eec022969640c8b5f548acc99c48a9a38e7afd04b488bdba0bf4a51244",
+    "docs/assets/og.png": "45792bb2b332201b9f50d8fcbbe84598b84f89388c89e67f396d04ba1701c5d2",
+    "docs/assets/pitch-correlation/after/chromium-1440.png": "5ce521a50a8b728a0add5e5075453d8c523e150993180bde90ae5ed0dd12107f",
+    "docs/assets/pitch-correlation/after/chromium-375.png": "d7baf2a44762195df6de6cff20c920761c455d4fe0441ec675da9d7bcb5ffb69",
+    "docs/assets/pitch-correlation/after/firefox-1440.png": "bed83c04483a928ef309398d8f2224675ac545d42c12251096cca4cb920b7c93",
+    "docs/assets/pitch-correlation/after/firefox-375.png": "38b7fd0ca0157e6e632835048a8b3c42cfc0d6c8649a4b0f2dc8317d4f1085a3",
+    "docs/assets/pitch-correlation/before/chromium-1440.png": "5ce521a50a8b728a0add5e5075453d8c523e150993180bde90ae5ed0dd12107f",
+    "docs/assets/pitch-correlation/before/chromium-375.png": "d7baf2a44762195df6de6cff20c920761c455d4fe0441ec675da9d7bcb5ffb69",
+    "docs/assets/pitch-correlation/before/firefox-1440.png": "bed83c04483a928ef309398d8f2224675ac545d42c12251096cca4cb920b7c93",
+    "docs/assets/pitch-correlation/before/firefox-375.png": "38b7fd0ca0157e6e632835048a8b3c42cfc0d6c8649a4b0f2dc8317d4f1085a3",
+    "docs/assets/practice-regions/chromium-1440.png": "fb10189f8d85548314ceb86ffb47073a280479a61132527c84c2a7a3aa6428e9",
+    "docs/assets/practice-regions/chromium-375.png": "64efb01d86a1759f368eb6ae09e498db286893e23688b97408bcb01a5e7961c9",
+    "docs/assets/practice-regions/firefox-1440.png": "80df807c35a230ef2282c2bf00dc1decc525204ba72d0a843c6befe6c1cf04bb",
+    "docs/assets/practice-regions/firefox-375.png": "d2b25535ffed3e8a22309b45916e3fd331f4ee19a93aebe290e8b8fe93239647",
+    "docs/assets/slow-playback-chromium-1440.png": "81ddd2c339720caf32103219c877b8b06a05741a1409da9b21c4aa6b04b6c9dd",
+    "docs/assets/slow-playback-chromium-375.png": "221fe7b0a8de40a60fa4e78f1863e022dfa61c922c1a039a399f2a2987375da8",
+    "docs/assets/slow-playback-firefox-1440.png": "407b42fd03cd493f13ec840f540b2956f451ba94ac83cc9d6ca70eab937ee7d5",
+    "docs/assets/slow-playback-firefox-375.png": "a3df284d5cd85a5ea9edb86e59ad601bf70fde7cac92ba59b37c4700348809f5",
+    "docs/assets/wav-export/after-chromium-1440.png": "1d5cdc1188838072e0e72bf4c663cdb3ca39f199d91d98590d74bf8fb8502ff1",
+    "docs/assets/wav-export/after-chromium-375.png": "616fdab93bf2236e93f8715c0c42506052548e4ca948ee99695d7dec100a832e",
+    "docs/assets/wav-export/after-firefox-375.png": "4f82ef1894e0b5bfeff240406ba237abebf7b40dcb8bec58857a73aa965ec161",
+    "docs/assets/wav-export/before-chromium-1440.png": "e6456741733faada2a94b3a7a4bbac86b0c4c228cd9e3e19c09ffde7d50f2aa2",
+    "docs/audio-boundaries.md": "d30c65dd67d30b5f68edc047d8f69cf3b85b6a88dba7a19a110129ea96b842e1",
+    "docs/browser-verification-2026-10-07.json": "c0eb700e316fabed05b5639402aee81293b08856f4224ca0132bdc585eaeb325",
+    "docs/evidence/source-2026-10-10/missing-fda-before.txt": "93775d932760df099c4c7d07007e5334c31fbd5729a9c84958c0995b268ac4d4",
+    "docs/evidence/source-2026-10-10/scoring-comparison.json": "1cf7d5ee75a25dd3c943d76f4d41e98dc6eeeeb7bccd2857d56e96377817c4a9",
+    "docs/evidence/source-2026-10-10/synthetic-benchmark.txt": "9747f2faffb8bd3aacc03d54c03777d82a0005fc9a80d4f0d450dd41b4c7b5fa",
+    "docs/evidence/source-2026-10-10/verification.json": "c452cf6f277ebf30928a00ceae275e2c47cf92728221ebe2109b91835b54f846",
+    "docs/verification-2026-10-07.json": "26c15be2ef4fd8e8fe5070c7b43b712916205c3102cfb7af464ba22c41af1ae6",
+    "docs/verification-2026-10-07.md": "ccfab85e1bd698c822d0769bb5fb5471412bb77367f58ab1c019220e1f8e40cc",
+    "docs/verification-2026-10-10.md": "43fc42dd6413dd9292216e70ae749069b00eabac8bf579964f4016c33d359408",
+    "eslint.config.js": "287fc82dd59094a6037cdf4971a10c4c16bd53ff9708eab984fbb5abc11aefec",
+    "examples/README.md": "e0e88d64fbcb726451b95baacf8b87e6313e9fd79f7f8848fdccbc9c1f3a0dbe",
+    "examples/mandarin-tone2-attempt-late-rise.wav": "555e9eca1315079071cbf6d779fe85113d988e403acc53d4fcc506ec1029e51e",
+    "examples/mandarin-tone2-reference.wav": "9da3c07e770a66cd21e0b7e7e1534be11afd082f5fd2e77c1a67d8573da2b1e9",
+    "index.html": "3ceac0b7329bbc45b35b38495870b7fc3a0242cfed1a5f7754fb3a525b99c275",
+    "package-lock.json": "7e5000c2c9aa5a1f2a4840e482561b7440703eb34992f706b57c943234c6bd6d",
+    "package.json": "f9d7b54c084f9b24ee50e2d9101920ef886c6357c76432a626c91bca191cf415",
+    "playwright.config.js": "476186399ec5febd2673fc9b07bc4e0251eee7f4fbbad73248af5eae8990d132",
+    "public/audio-licenses.txt": "0e65aef65567f3eb05cf55c4100adf0bde2fee2357a055edaf84298c9e167be3",
+    "scripts/accuracy-report.ts": "21a732e5dffb1cf5c644d3568d926946f510e2ad706359be5d4eac72b633a7a1",
+    "src/app.ts": "04efc4f9b163ed978bfc60e6fd1bc2ce1df711ccda4207882f8019be63cd3948",
+    "src/audio/audioworklet.d.ts": "4c8de3bb462c024cd55f61cb06a7cd3f04c6af31c9a4fa023b60c5e329ca4a42",
+    "src/audio/cancellation.ts": "12c36860362e31ef09d65273a4bb11e6cb70d01aba116d42b495712ebbcfb74d",
+    "src/audio/fileLoader.ts": "44452831eb450b281a806f462f6bc41920e82eaf6db873a4fb157b3ed9cb8dc3",
+    "src/audio/limits.ts": "461a1e0b31acccddf23da3172d7fd95199078fec5eccbc5544fe91f70cc9e8ac",
+    "src/audio/playback.ts": "00cb1c64fc5adeb7092845829a629e6135c8e72b6bc298d6acbb818746232ecf",
+    "src/audio/recorder.ts": "f6cdc2f841de60fda2d738cf9bcdd843a66664a5170782e5b4608bdbfbc398b8",
+    "src/audio/recorderWorklet.js": "1dcc8297fd4c928556ee1f3908f110493b6aaedb734eabe5ae31fdd2caf9ae0a",
+    "src/audio/region.ts": "0d70ba9c247fae266d1c36b8c53eb148d9da6c6eb2f14d6c3c54dd7eff0cde4b",
+    "src/audio/slowPlayback.ts": "946be4e7f0e2f6c79cb749506c7d93ca6e30d11369d673dd6ae3c665389d29aa",
+    "src/audio/wav.ts": "e644f028a134e69599d2253718eaf1e1c67f6a0a8de8e14276830ecbfb34102f",
+    "src/core/accentTemplates.ts": "8610660cf2a8dc4dad44fb5041ebad2f8a840ac5377d4ec922b14a7e4c893db3",
+    "src/core/dtw.ts": "5d35ad085d501999010b698a7eeaea27b49921338612ef07ff4381083eac5adc",
+    "src/core/fft.ts": "ed0b8b78459a6e2909f42e8d534d824842017c5766ac28d572222df23d42c331",
+    "src/core/mandarinTones.ts": "c9821ce6b10f7b1f054b2bcf715fffc3b65fb0f2826b6ef43b78657dbd3e47db",
+    "src/core/metrics.ts": "6cf3f5d6cb2783cde95addb50ccf029f4e86c2b32036ad32725963fcefbbf7ec",
+    "src/core/mpm.ts": "51eba39acbcd37ee6ccdf870526a40968c29a4285c995efbae3ffc2a46257c5e",
+    "src/core/pitchCorrelation.ts": "d8b01b9e56c5f40c565df5929348c13be33b38c6fea9199c78b26febe6ade742",
+    "src/core/pitchTrack.ts": "9ac0b092f14fbaa1ba688c314ec38c4657eabfcd9f7c2e4d2704d4641557a134",
+    "src/core/spectrogram.ts": "69bccb899792a603bc085f8e043dc352fc43f98c89a41caa399647f03a48c7ce",
+    "src/core/synth.ts": "c69326b5e6a8ea08480e59e9738b6af472e9a922b07b02d82fe7ecb4180c4f36",
+    "src/core/toneClassifier.ts": "e3f1d14c90cc29a887734963465fc986cdaf44a678fef0ac3169bac53d64bbff",
+    "src/core/types.ts": "ca7fadc7dba4e3d91d2dcda33388a6124e6673179167ef1667b1a881a664c922",
+    "src/core/window.ts": "8c2b06da98a3b594b33318270bc7ec58dc439d7d9062d51a921405cc58e30ea7",
+    "src/core/yin.ts": "70d37175ec9330e167f689e5c7da9ebfe8d5af949cd7e0c846a55211a6fa3908",
+    "src/fonts/LICENSE.txt": "11a4d861226ad2d7a42174946d51ea50c7a1744dc60eb3910aed9419dec4f770",
+    "src/fonts/fonts.css": "f695529a061ac3a51591c78164df3d7b0331e0f41796c9e79a5f608335ea2cd1",
+    "src/fonts/fraunces-italic-latin-ext.woff2": "bbf614d45de67a99e638b753611329b2cb8b5b6d8da53b2aee0267fe75cfc5c8",
+    "src/fonts/fraunces-italic-latin.woff2": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3",
+    "src/fonts/fraunces-italic-vietnamese.woff2": "b2383049df5de759100887e80450ef360e502d5b0454954fab2dcd6b322944f5",
+    "src/fonts/fraunces-latin-ext.woff2": "a2930b27d13a228bd9ab6a49269b5f800237892ad560cb9dd7fab01b1620f88e",
+    "src/fonts/fraunces-latin.woff2": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783",
+    "src/fonts/fraunces-vietnamese.woff2": "f18853f63a870ebef013e30e789d8d544f102e4acd94988e57c223d9c796ddf4",
+    "src/fonts/ibm-plex-mono-400-cyrillic-ext.woff2": "f8c22ec1804bd6966b70f43ac7c327025645b4c09597117fca2a5a6c750106fe",
+    "src/fonts/ibm-plex-mono-400-cyrillic.woff2": "7635422bd10ddbbcb0e0caa1154b928298f5c8319b8c00b30978d4395f4783ce",
+    "src/fonts/ibm-plex-mono-400-latin-ext.woff2": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb",
+    "src/fonts/ibm-plex-mono-400-latin.woff2": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7",
+    "src/fonts/ibm-plex-mono-400-vietnamese.woff2": "62632b6375305e70ddcafdd895218e6ae41a184fcd280a69c739460604ca00a9",
+    "src/fonts/ibm-plex-mono-500-cyrillic-ext.woff2": "3febe5c7f22e4b07b4552738673c3dbe8bced2dc5f48b866edf7ccd9552d109a",
+    "src/fonts/ibm-plex-mono-500-cyrillic.woff2": "1d89462e86cb8e87e7e9d6f6635605bd7c3081baca6caaecee84916bf7b60edc",
+    "src/fonts/ibm-plex-mono-500-latin-ext.woff2": "6bb06407c97584b0867a959e05e8874693bfeb8c317de190811c51598f2d99ea",
+    "src/fonts/ibm-plex-mono-500-latin.woff2": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22",
+    "src/fonts/ibm-plex-mono-500-vietnamese.woff2": "781633d95de88040fb77141d1e65d928c87c0144691fbc74da5a64d137a7e910",
+    "src/fonts/inter-cyrillic-ext.woff2": "ca157063339ac4ad418f214f3abfed119b0798ab4d377386ce5c9e5a7a435ebd",
+    "src/fonts/inter-cyrillic.woff2": "71d5ee93cc1e9f1d520a3a8b66456de18c7879d8df09d57fcd2eaff75fef0075",
+    "src/fonts/inter-greek-ext.woff2": "6e9e020a25f9b56d418f2c085b1d3c09725a4da23fe693a5b463064606732190",
+    "src/fonts/inter-greek.woff2": "1be3448e292fbf05ffe176fe1e43f135013d50b1e7d324ad1a558f623d3bb6f6",
+    "src/fonts/inter-latin-ext.woff2": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956",
+    "src/fonts/inter-latin.woff2": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62",
+    "src/fonts/inter-vietnamese.woff2": "5c66f9e07e90c6d4ac4922cc68d60de26c17b1858e677fb5e603fce3952b3ff2",
+    "src/main.ts": "6e614319040e79fd2dd6d97769a1ec8f90e635a5705f454a05ff02885887c0d6",
+    "src/storage/db.ts": "3e60169f6f96e3561f471ef436fa77103dd72015d437f8d0ae4b58b6dd753617",
+    "src/style.css": "d7d3f872bc90bc83b18c0dbd71c408b48a0db5a02c4682cfb177e6cb03dd234e",
+    "src/ui/analysisView.ts": "1625c5c8bc5731e0cac3ebfc319a77c04ec79140649c70af932be9dece64df5e",
+    "src/ui/canvas.ts": "475097d338ac3f327b3fbf255a5be269eb3a7c9ce4269e94e3bf7194679d2cfb",
+    "src/ui/contourStage.ts": "1f1cb746efa8bacc175dd91f7e5803f223941d1ece7479bfcc6a56d12dc11e8c",
+    "src/ui/dom.ts": "c34841ed1266cbd7ef358fe81c3446e38a02f96b7307a6362b06d60a4f7e5956",
+    "src/ui/theme.ts": "74f1cc8dc7d455dcfaac95edc50960fd742ecdb396466aa33445657e6a9c8066",
+    "src/vendor/README.md": "530dcb8d234cfe2572293e3aa3ab69fd334a93b1d2125fb4fab7b0dda296324a",
+    "src/vendor/signalsmith-stretch.d.mts": "4f279ab590ed7f0b37949835092c438858014204ab568405ba0245f87fc69a4a",
+    "src/vendor/signalsmith-stretch.mjs": "a83ddd811bb36f61757133536b505d5b81281b89bb707cc385914836fc16d3a2",
+    "src/worker/client.ts": "9c473cd5db9f2413afa5be2946bead9f0db71bbcbccbbedc85327bc252759b37",
+    "src/worker/pitchWorker.ts": "662c31b2e897853db3b15ff37d88223d91c94c69a1dd979754295f678b3708d3",
+    "src/worker/slowPlaybackClient.ts": "16178f3bc91d162980b9d63cae60daa0bb79d2497aaa551e8dd164f636dc16a3",
+    "src/worker/slowPlaybackWorker.ts": "083b592f5a32ca596de89736ed375f756baa7255586f39c26eda9148fc339a50",
+    "studies/audio-integrity/README.md": "88bafc4d829180af9ac15fcd114020d3139128f7a0554f7d3213db626678bac5",
+    "studies/audio-integrity/browser.mjs": "288d94b3f27f8c7835e490c4549a59551a011f07d98b40fd68c30f3da7ed8fd1",
+    "studies/audio-integrity/fixtures.mjs": "42118ca8a99562b34e9af88a52cc146899f32b8b3d2cedc15b07ce1173f80195",
+    "studies/library-loading/README.md": "753e8e10e4c970bd3bb909c3b73ddeb497c68242d751bbe089ae784b178ea92d",
+    "studies/library-loading/after.json": "eea35d9190f14d8ee6f609d00063bb5182c591811a14a9655f655ca707342a6b",
+    "studies/library-loading/before.json": "f7d604a5c65f30cb059cacc08c61c5118f508cc44a4f81f773ee15bd69ccb253",
+    "studies/library-loading/clean-checks.txt": "6daeea496f6c0e061436c083774786a5163f5e67914f67104f1d6abbb9af3fb6",
+    "studies/library-loading/compare.mjs": "433f94e40bf4a2c7457fc6103f1d4ca7f35f1b674fdb12832835c2de19bb8cde",
+    "studies/library-loading/parity.json": "b7d272b985768de3353faea6deb19735dd2dde28b11f5e76b99cb39a3234b801",
+    "studies/library-loading/verification.json": "783f2e864474ef589487760924929a5515db4cc2cf4ed7884247bec8ce6118b2",
+    "studies/library-loading/verify.mjs": "466f1463d1a919ebe2c2b223f78ef0775253c659d0fe35f32faa547d71539176",
+    "studies/loop-playback/README.md": "fbde2304ef3e4954c9c9b0312c79cbf48d825ae42aa306320b660a4567ab44b6",
+    "studies/loop-playback/after/browser.json": "4e45776acfcd14837d77cc669c657375ada737d019ac3f034f4c67d43a76b4c9",
+    "studies/loop-playback/after/chromium-1440.png": "4d2aac72110c93b3165a1ddfe89bef58d7381c8a9276e83036a14fcbfdb1d21c",
+    "studies/loop-playback/after/chromium-375.png": "e8e260bfb085a187cd1e71c173638eb271e23df3cccdfb0250cdaa8bc9d1377b",
+    "studies/loop-playback/after/firefox-1440.png": "0f56ebb4c690a49a343b4e68c795703c531ed719ecccd24052a8612a8c41a986",
+    "studies/loop-playback/after/firefox-375.png": "8617e39e050ce7666f069776cce4ca0d903c8b73b6238d22b255e3628eeae7f5",
+    "studies/loop-playback/before/browser.json": "cfdcee06131b3c7b65f6ffed5a9d8171c49a41297b9cb70ad86cf0bca6e775c6",
+    "studies/loop-playback/before/chromium-1440.png": "420d932563324b961abbf5fe58b2862619d1ceb87b04d530f8c4f4569fb31dec",
+    "studies/loop-playback/before/chromium-375.png": "a9d1812c7fff489a7f779d3d8701b2978721f96bc4bf851c372a2ae9444f43de",
+    "studies/loop-playback/before/firefox-1440.png": "3e988904ec850b903d9181852bea0a3810370479c5c56cf38d7317f50f34272f",
+    "studies/loop-playback/before/firefox-375.png": "18148edd482c6240f5018b519e91215685bc06d3b5fbfe69492c84f1e67ef96d",
+    "studies/loop-playback/browser.mjs": "01f3ae1cf3c9a2cd6bb1852f415da527c3291cbb4998b14c0f4a274e55a8c258",
+    "studies/loop-playback/build.json": "1bc4fdc76a86574c5f230e8e6750cc782f1c4dd82a12a1dedeb20f029654202c",
+    "studies/loop-playback/native-after.json": "34ddc51daad5b330b502222cb0324a499f3b7fcdcef11833867bb93e4a5e4db8",
+    "studies/loop-playback/native-before.json": "85fb4c35b97c9e3f7ae345e84495d53acb8b362fadd005fc00f4cf0a28bf0ef3",
+    "studies/loop-playback/native.mjs": "d1a549479075fcc28684dd219a606cb8ad6762de03d59c5ef3ffcaa11229e6ed",
+    "studies/loop-playback/verification.json": "3123471073c9f65f1fd9b165aae6303dcef069bbd794238413032cbbd3e9c9fe",
+    "studies/offline-start/README.md": "6d3203b92870eb3a49d43825c64140617224600e5182016eda6822d23db54403",
+    "studies/offline-start/after.json": "61cc06c4fd92f1690b122838e6a2b1565ee40141bf67cedb005c42b6b9e7e643",
+    "studies/offline-start/before.json": "e72a5eb9169ba21d8cca659195339d7174d3e0e8fad610443d06a42a4a473588",
+    "studies/offline-start/browser-workflows.json": "f457e96068bd989a4a49d9aa85861c21106f929fb75d6f7f197e9c3d8c8f6f71",
+    "studies/offline-start/bundle-sizes.json": "f5b7f3f2b9e865bbafc012eae5f0e87b1f365218a6d20df9a88b8cbeeaec740c",
+    "studies/offline-start/clean-offline.json": "981ec8d9457b14df07788d9dc648b76e4106c8b225f3cdbd51d1556c54c15aa3",
+    "studies/offline-start/dsp-unchanged.json": "25e1c3870eb8d97cbfdf585b5b88106bade9c1a953c43fc9efdb29b3f89aa59f",
+    "studies/offline-start/hosted-after.json": "5a22134ba4f1af396ba7a3e769db809f0830452a7ee7e1366dfdbd4680d1810f",
+    "studies/offline-start/hosted-before.json": "bd35fe752884775b8ec2c753b3f7e5dc44b69e78baa9f41ae16db6a93722c12a",
+    "studies/offline-start/hosted-dsp-unchanged.json": "da2f10cd75475e5e5b6881bfe7dbf6cc19238f36c70750b0608295a05325b65b",
+    "studies/offline-start/online-before.json": "0a01f9c02b1d1ca2c3421a1729dfb4fe0041db6ac442ab0b205630616b47b59e",
+    "studies/offline-start/served-files.json": "69e3b7f3ed66a05a4f515938f7b72f8e413bc0bfa368b332d3e7f7e36d5decf5",
+    "studies/offline-start/verify.mjs": "4f9294a74bc96a8f5379c531ec6e1e7d779c81185d648c9a13ee759112eeb1b5",
+    "studies/pitch-correlation/README.md": "1a9cc8abc886c39926b7bb915be7fd835c3160277dac6505e713b787172fb730",
+    "studies/pitch-correlation/benchmark.ts": "397ca5ef31dc404a62082d586a540e12ac1f8a2e397ae8eaefa8230d1ae550a2",
+    "studies/pitch-correlation/browser.mjs": "36eebb30071cb3685bb8ee899c07a035a84c5b4a01692c304689daf5a5bd44f7",
+    "studies/pitch-correlation/compare-browser.py": "7cf21d8384f7ff693db356968ec51d252a6b8723bffa1f8e7b2d191c24946204",
+    "studies/pitch-correlation/compare-corpus.ts": "fb7d20475cc7d4ebbe685d9e2a6581b88c3d3e205107c3a664604e1c043afd95",
+    "studies/pitch-correlation/fixtures.py": "8a816e04262233b40e0f6b9536fe31a7e0a7ef3f31b79110eff7672160b22c64",
+    "studies/pitch-correlation/results/browser-after.json": "0a7d2ee416be90ad895bfd518a410988122b1d404c7e465af87e4ebc45766b88",
+    "studies/pitch-correlation/results/browser-before.json": "9545adcf6f141c3464a7a72796bd59e20aa7c1aaa6ee4834f58f5b37efc05d9b",
+    "studies/pitch-correlation/results/browser-comparison.json": "665f109a8106ac67fc9286ae306d542819fcf1f8087334dc685c340cd0257e31",
+    "studies/pitch-correlation/results/build.json": "3659d6b24b46c110b6f7458b86163e63be7253d8bf73e81c6709d332e68f9d7a",
+    "studies/pitch-correlation/results/cache-check.log": "4d66dfa0f052ea948df2dd1823f3308acd1e83add6eea225b6ff470700db7df5",
+    "studies/pitch-correlation/results/clean-accuracy.log": "39ac3769dae85ec4236e2a8ada22d92ca943264252adf8cd156359fb189c386e",
+    "studies/pitch-correlation/results/clean-browser.log": "27428fb2feeb1c06d40ad0d6f6546185b7c86aa5fdc7432b80a643c10d20d827",
+    "studies/pitch-correlation/results/clean-build.log": "84c63acf050ae899adb9627f78be9c7b1caa58daef9a4d32c7b7f6f9b98c2f57",
+    "studies/pitch-correlation/results/clean-install.log": "0f42d0c27fdabdc8badf51c652189fa0050a6821935243e093a537d8fdd4a3ba",
+    "studies/pitch-correlation/results/clean-lint.log": "ee60d41d23557ba5866f3f21bfbda01d50a829fe03fd0a79d3240a5fe6718f90",
+    "studies/pitch-correlation/results/clean-typecheck.log": "f1d5078d5ac8aa2d682d6b5a22c5779ed8a21d5643c15422910fb2a174e95b04",
+    "studies/pitch-correlation/results/clean-unit.log": "6bc19998ccfd91b2d74952b892bfc8acb05de41b01d8b193d13a28625d44f9ba",
+    "studies/pitch-correlation/results/corpus.json": "195f0e3ec278db2672df6155749e8778e78f9de74775e344ee5a8adeada2c4d6",
+    "studies/pitch-correlation/results/fixture.json": "429f7d1fb6140dc42aee02a26bea62099e01f9877576982c6390f802ab61b9e8",
+    "studies/pitch-correlation/results/native.json": "6f75afcc054243f455ce83f16b2e20cbd11cb57b0ed91b0ff9ecc6dea5b56fa9",
+    "studies/pitch-correlation/results/verification.json": "5908fe690b1329f49bef83d57150a81521523f1601595b87d7305e073785d239",
+    "studies/practice-regions/README.md": "7f78431a95d00c8bf23c1d424f6cfa50b25e48c4e6255e707976278ef30b5a58",
+    "studies/practice-regions/after.json": "a3e7d9fbba40cf0e93cde1351a3b72175d27b033c5e1b9321c8272d57f46e954",
+    "studies/practice-regions/before.json": "fcdba9973ff013262a7703e812122ad7208abd3c21563fc4eb091ee75adbf6e4",
+    "studies/practice-regions/browser.mjs": "e1ebb0bbd0ac7b38842958b4efd15490c7539662ed67b56d0bda5b328f98937e",
+    "studies/practice-regions/verification.json": "86c4e687f1e6ee496789de5f073fef9fb9dd1e2650bef48187d26545bac30c42",
+    "studies/real-voice/README.md": "364da8969cbd2d59215c7bd5f2058d1a720581716650aa07c8c9710127c505a1",
+    "studies/real-voice/align.json": "5ea94666cf58e79c155e6815e2a6fabede4be7c4fd28299a38ed0f2b8eaf0772",
+    "studies/real-voice/align.py": "dcc27e645b67e62a6a40a37207aa5e8eadb0c1e581e923ea036c1ed434052524",
+    "studies/real-voice/assemble.py": "943d4802951517d9547ae6b6f46d21518e7b6903ebe612ad826a0b3461fca962",
+    "studies/real-voice/baselines.py": "68422db53f121986e28dcb3f2540e6c2226c3e580c92572b89a1d3e7c96dba7f",
+    "studies/real-voice/consensus.py": "dcbca2355dc60e33fe4aafb1976b42af58ecb30c28086ff79c9585c5d7fce832",
+    "studies/real-voice/diagnose.py": "c222cc7c2a1037ab895e4928843dc01a2b627b48c5a0fa56db694aece17e980a",
+    "studies/real-voice/experiments/octave-runs-v1-longest-run.patch": "066631921ae675ae1fa2aab877c56a854b40de30adb54ca65df61af209502689",
+    "studies/real-voice/experiments/octave-runs-v2-clip-median-prior.patch": "cd5917e9b9451e24cb6fd189d450b4771b974071b6e21d9ecfd4b4b1056746d1",
+    "studies/real-voice/experiments/sweep_hysteresis.py": "933e02cd579b0eb7bf312ff3f920c0cbc56b2a6f0d52594902b6a2043cbbd521",
+    "studies/real-voice/experiments/sweep_voicing_cutoff.py": "54b812b07c9703f0c43ce32606799fdd051fa3fde3c163b937f1845d7255e17a",
+    "studies/real-voice/experiments/sweep_window.py": "014519227b9c2884b9e472507f5b988aa9066938746782b405ad7d34a1db5c33",
+    "studies/real-voice/explore-candidates.ts": "02da5c046955c5ba81964486201b5bf4b374ce9bea53be32827d50f5538b123b",
+    "studies/real-voice/explore-minima.ts": "c235c5c72d8a3e381093dff8a5291f7763affabacc58bf70066406f3abe9fe01",
+    "studies/real-voice/fetch.py": "21d74e646755446b875c00f2470cc88a9b2efbd263a2041c13f4905383022554",
+    "studies/real-voice/lab-postprocess.ts": "fe6f713be6f5a088f59414484a88733dbc4e70a835362961c5bb702131e26432",
+    "studies/real-voice/lib.py": "294d62ac5eee52a2b45af1cba6eea4f5d84aea4aed6b65dd29f2ded1cdc08463",
+    "studies/real-voice/manifest.json": "072ec462eb7a113873d949c7609377202a3df3508ed330193cc5edb907687d75",
+    "studies/real-voice/refs.py": "833caa174459c2b5ca09dd1198fa48d535d530bd4c1784db018e228e0920315d",
+    "studies/real-voice/requirements.txt": "b1ac91dbdf907b070f2b4b87afeffaa4ed9bee720059c5198d232b0030ab48d2",
+    "studies/real-voice/results.json": "38b341b89286b6432324ada7e873263a6256d09aa6175d7d5f1d75be2e538042",
+    "studies/real-voice/run-tonemirror.ts": "64f97e355eafa6774c5b617a537bf1083a56dab7085812df221cfb18fdcde8e9",
+    "studies/real-voice/score.py": "8a72f46886bb00d94ae2f82aa075b8e80767e30eb122d4ff7bf564a59f955815",
+    "studies/real-voice/test_metrics.py": "8fa9e06ad4fa7ad47161d7883b6e36adb400f780d2bf9ea799e424e0ba209ee9",
+    "studies/real-voice/test_sources.py": "267d59962776e601e3296f019c4fecef0b130642dd87f45bc8c7f17590bf7bc9",
+    "studies/slow-playback/README.md": "124059ec392bcfdc274463fdade83f4096a279cd0befb0ed7000754902f2c53f",
+    "studies/slow-playback/baseline.json": "6bc15ab868309a97a462ad0f66e996c928eaadac72bc839166ea175338632076",
+    "studies/slow-playback/browser-after.json": "e3474b2f4d5714cb4d21d75a8060e8510cce4b893baf17517276f317d9a3796c",
+    "studies/slow-playback/browser.mjs": "f13d473582b1d49b6ad92d6b1dc6a3f32491c7cfe342174129dc3e66eb6c7ae5",
+    "studies/slow-playback/native-after.json": "53aa67f920cd3be74138da0be14c13a25804d800f2df2fb2ab235e9f8815691c",
+    "studies/slow-playback/native-before.json": "bfa7341906f8095045d4015d3462eaad231123ad56a75178da9c6e849467688a",
+    "studies/slow-playback/native.mjs": "82edf2478191ec1d0e627561977ff3c13fdac440283415fec78e75348e18ebb5",
+    "studies/slow-playback/render.ts": "ba60da0295ac49fd0acae9d672c6559c4a3fe9f654b0adc4f0cbb19380ac1dab",
+    "studies/slow-playback/results.json": "1fbcba12782246b4deffd843af4babb6b8c4f00e95873d9c9a71b45a2cc81993",
+    "studies/slow-playback/score.py": "5286f90a07318c68daa09e7176050809d5a4086bdb831b80bc001b7a5e86033c",
+    "studies/slow-playback/upstream.json": "3f4a03f8e21fd61946d061538e07e1ab14dc4795c755e0a47bb4926032f9be00",
+    "studies/slow-playback/verification.json": "0a60cf9cab8e5db0b26daadfc250b2f6690634c686906994cd7db3b534cd1138",
+    "studies/wav-export/README.md": "61b62d026bf6a755e6167540cf461267c467015ecf16abf4abeb5cac7cc4d70c",
+    "studies/wav-export/browser-after.json": "7e883869ec8326f668d9083681feefa6b655f615e7ad5436fab987f3d9194c13",
+    "studies/wav-export/browser-before.json": "76037fc7178ba96e92022982744e13969fee792dbcd146fd14951091f4d47e0c",
+    "studies/wav-export/browser.mjs": "586fbb9f8e4370bbd026e1a51aa2428d2c3327f7bde854710825da8c142f3f88",
+    "studies/wav-export/format-check.mjs": "7f6e67be76af4827fd7d09123f4e95a707b31d3f7e4a4580200665749259289c",
+    "studies/wav-export/format.json": "77c53afcb265e059f1e94c8a0e7e212a7372fe7b59ee3d61c5e453fe522ffe96",
+    "studies/wav-export/verification.json": "31fa33fb2ccc8d54ab844d2f54838ec8ff4996de0d74496ed4b62ce55f222ab4",
+    "tests/accentTemplates.test.ts": "21dee8f690cbd1292a07d8a0bf771c387b30ba53c41266ff90799c1bef4baee3",
+    "tests/browser/app.spec.js": "98410b618f35ded9437b29e272fb7d8f6a02fda320612d392bcf5dd1166db1b8",
+    "tests/browser/audio-integrity.spec.js": "f273dcafd2d84be1e532179726dcb0135c955e51c376b347885d3d773a52cef2",
+    "tests/browser/library.spec.js": "199405d38f4634826228f955a09a31e8c54a6123d848a2febe0a58e2323e00e2",
+    "tests/browser/regions.spec.js": "bed6c0f005cfc7171ff147f56fff161e23f281955586cb5be39e1ffcf09716c6",
+    "tests/browser/slow-playback.spec.js": "3c526139d21a2e6188a80ccf52c53b61dd9fe27a80f087093021c1a7e0890a9f",
+    "tests/browser/wav.spec.js": "90f834274e28f7e7f3db0a7030ae4a8f80074a0f14e40527317ed29aec73daae",
+    "tests/dtw.test.ts": "4c783f4ac69caf994be36d46fb3d1c6fbdec227630d23f034aca3f23f584ae77",
+    "tests/fft.test.ts": "37a9b6754d835b2f80cea56ca8e6c019fb0f7ecc3c3d9a6983fa7e97829ce8da",
+    "tests/fileLoader.test.ts": "e9f958e51de0721d4f9fcecd68bd70670a42e71e9d9731078d4fb3cd67847124",
+    "tests/metrics.test.ts": "bcc81cf9a2b780945c129ed6f3349c1e3df3fdaa242227eb60a6772c4a25af8c",
+    "tests/mpm.test.ts": "b906943dad1a8889d48b3d014deb2320789c5f774dfcde85d2ab19ed6ad78c5d",
+    "tests/pitchCorrelation.test.ts": "fb46e2a1e58c8331f65beb618dfc957229fe2be30e879ec9df94d132b192ec4a",
+    "tests/pitchTrack.test.ts": "5a8bf084f48d49ca61d1d8bf76419d0c1b6f61e9ed9ea1db4e5de857b2df9383",
+    "tests/playback.test.ts": "b2e1c780eb3b21a7910aeb65568cd453ea61fa5e1a092060929cb576e2df28b3",
+    "tests/recorder.test.ts": "b0ab616f19b4a923695df778cd02234458157d65ef3b156b18b8220021119f2f",
+    "tests/region.test.ts": "625edbfd4b9e0b99aacd2145011d691f5670ad422adabd0edf27bd04acc2cd06",
+    "tests/robustness.test.ts": "8ae32e665b9f7aef03ba431670d8f69bd72d37de4c3805deeec968e775ebbd1e",
+    "tests/slowPlayback.test.ts": "85b4de228f11671a8edf9c994d521167b6063b916da940583247d584a12d0f4d",
+    "tests/spectrogram.test.ts": "df96eeb9d4874e46ea776e331d8c4ebec37d5aac5018e3ee02f31fcae9de50b6",
+    "tests/storage.test.ts": "b236868eb0ce9a9bfc3ee66a5b9ff765b0efc514788ddd7012d93e2e8603a835",
+    "tests/synth.test.ts": "86c5a960ea948cbd8c83ad44b7d67488e70a63939b7d5ed447b0e9bb427f76dd",
+    "tests/toneClassifier.test.ts": "885c6a82ac6479e85cbb54f6d452d120c95c386629ff0915bbccf46add2d9d1b",
+    "tests/wav.test.ts": "1428d30c0e3f770784d85249dfcd1fa2f3e1bb3dc0bedc56f4a003ddcaf767b9",
+    "tests/workerClient.test.ts": "67456b5e2c2dc8b90b64c3cff54a280eabca273393953682bc2536945298a63a",
+    "tests/yin.test.ts": "f5232631cf9e9e1eaead389caf7396df6108f5d70b616abfba3956f7167aac2d",
+    "tsconfig.json": "942618f682f95b0e3040ebb109cb649f86df1f7a405038682beb3872484726d8",
+    "vite.config.ts": "e552e0cb5147ee0baa56bd09ad75c464b89dbfca5f1d0f055b1900816d6472c5",
+    "vite.csp.ts": "d97b4996880dbbba5ae7872bc95fb73db7713c12e379669f9c9604978edfa003"
+  },
+  "identicalNode24And26BuildFiles": 30,
+  "buildFiles": {
+    "assets/fraunces-italic-latin-BEbM7Mn6.woff2": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3",
+    "assets/fraunces-italic-latin-ext-C5JMU4hr.woff2": "bbf614d45de67a99e638b753611329b2cb8b5b6d8da53b2aee0267fe75cfc5c8",
+    "assets/fraunces-italic-vietnamese-B7PmIdA3.woff2": "b2383049df5de759100887e80450ef360e502d5b0454954fab2dcd6b322944f5",
+    "assets/fraunces-latin-DihXLNYH.woff2": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783",
+    "assets/fraunces-latin-ext-CJcjJNj7.woff2": "a2930b27d13a228bd9ab6a49269b5f800237892ad560cb9dd7fab01b1620f88e",
+    "assets/fraunces-vietnamese-Czevyj-6.woff2": "f18853f63a870ebef013e30e789d8d544f102e4acd94988e57c223d9c796ddf4",
+    "assets/ibm-plex-mono-400-cyrillic-BSMlKf0J.woff2": "7635422bd10ddbbcb0e0caa1154b928298f5c8319b8c00b30978d4395f4783ce",
+    "assets/ibm-plex-mono-400-cyrillic-ext-xuaO2J-f.woff2": "f8c22ec1804bd6966b70f43ac7c327025645b4c09597117fca2a5a6c750106fe",
+    "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7",
+    "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb",
+    "assets/ibm-plex-mono-400-vietnamese-BulugwFq.woff2": "62632b6375305e70ddcafdd895218e6ae41a184fcd280a69c739460604ca00a9",
+    "assets/ibm-plex-mono-500-cyrillic-Bq9vWWag.woff2": "1d89462e86cb8e87e7e9d6f6635605bd7c3081baca6caaecee84916bf7b60edc",
+    "assets/ibm-plex-mono-500-cyrillic-ext-BqneJy0T.woff2": "3febe5c7f22e4b07b4552738673c3dbe8bced2dc5f48b866edf7ccd9552d109a",
+    "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22",
+    "assets/ibm-plex-mono-500-latin-ext-CAhNIIs5.woff2": "6bb06407c97584b0867a959e05e8874693bfeb8c317de190811c51598f2d99ea",
+    "assets/ibm-plex-mono-500-vietnamese-DZ4AoWbu.woff2": "781633d95de88040fb77141d1e65d928c87c0144691fbc74da5a64d137a7e910",
+    "assets/index-BHZdsKGB.js": "d2b3b68397ccf3b51164d03d230f4a19c381edb80a7764563622ada3a6e70381",
+    "assets/index-BHZdsKGB.js.map": "b79809aa19c8753d2ebdd49e16a8ad66b775ef30c2d86c54784dbbe0d8ce7d8d",
+    "assets/index-BTO_e6A4.css": "3ea8eb979b794e79ea4aa7ba55a6da08360030a59d32c0ca0562e895eb7fc91c",
+    "assets/inter-cyrillic-DqGufNeO.woff2": "71d5ee93cc1e9f1d520a3a8b66456de18c7879d8df09d57fcd2eaff75fef0075",
+    "assets/inter-cyrillic-ext-BOeWTOD4.woff2": "ca157063339ac4ad418f214f3abfed119b0798ab4d377386ce5c9e5a7a435ebd",
+    "assets/inter-greek-CkhJZR-_.woff2": "1be3448e292fbf05ffe176fe1e43f135013d50b1e7d324ad1a558f623d3bb6f6",
+    "assets/inter-greek-ext-DlzME5K_.woff2": "6e9e020a25f9b56d418f2c085b1d3c09725a4da23fe693a5b463064606732190",
+    "assets/inter-latin-Dx4kXJAl.woff2": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62",
+    "assets/inter-latin-ext-DO1Apj_S.woff2": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956",
+    "assets/inter-vietnamese-CBcvBZtf.woff2": "5c66f9e07e90c6d4ac4922cc68d60de26c17b1858e677fb5e603fce3952b3ff2",
+    "assets/pitchWorker-CPJHvETi.js.map": "d169b7b5f65f9f7e727ad4ccede52765501485922e176171e3c49f4e0eaa12b5",
+    "assets/slowPlaybackWorker-CjVF_WT-.js.map": "606ac6478f6330d0be3ea438416ca295e1d40739ad656ec41b8393b10e2a615a",
+    "audio-licenses.txt": "0e65aef65567f3eb05cf55c4100adf0bde2fee2357a055edaf84298c9e167be3",
+    "index.html": "aff29a6eb0bd0bcdad041f9d280ebd9a3a76bce1d167099f24337396c9e65eb0"
+  },
+  "checks": [
+    {
+      "name": "clean-install",
+      "command": "npm ci --ignore-scripts",
+      "exit": 0,
+      "logBytes": 143,
+      "logSha256": "0f42d0c27fdabdc8badf51c652189fa0050a6821935243e093a537d8fdd4a3ba"
+    },
+    {
+      "name": "clean-lint",
+      "command": "npm run lint",
+      "exit": 0,
+      "logBytes": 37,
+      "logSha256": "c48ffa9d87b793b150ba31629b1aa8cf440f41ca30af5e37937a7784d9239335"
+    },
+    {
+      "name": "clean-types",
+      "command": "npm run typecheck",
+      "exit": 0,
+      "logBytes": 46,
+      "logSha256": "fbc2e592a2227d90e84f194d940d8366e9382fd65e8588a0d4d2dc2a5310978b"
+    },
+    {
+      "name": "clean-tests",
+      "command": "npm test",
+      "exit": 0,
+      "logBytes": 509,
+      "logSha256": "6d4c035ef7643cdf4c869c2b5fb0653d0dc38956b8192b2b1482a80ceacb68d1"
+    },
+    {
+      "name": "voice-source-integrity",
+      "command": "python3 -I studies/real-voice/test_sources.py",
+      "exit": 0,
+      "logBytes": 273,
+      "logSha256": "05230a37d21197c880aaca6028f4195db746b6d29ab6226bd2cf9c9796b1a159"
+    },
+    {
+      "name": "clean-tests-german",
+      "command": "LC_ALL=de_DE.UTF-8 LANG=de_DE.UTF-8 npm test",
+      "exit": 0,
+      "logBytes": 509,
+      "logSha256": "04cc559caebce1aa3d2e12e356cf336385ac9c6a1a72c7c33de12363a50fe0dc"
+    },
+    {
+      "name": "clean-browser",
+      "command": "npm run test:browser",
+      "exit": 0,
+      "logBytes": 16472,
+      "logSha256": "f2f025aff918925ab5d7fbb066d0232e884639292dca80088d9eb3d4ab2e684b"
+    },
+    {
+      "name": "node26-build",
+      "command": "npm run build",
+      "exit": 0,
+      "logBytes": 2115,
+      "logSha256": "3cea4e18278ce52270047140f94be0e8e6337a332ca2d6d687f27ae3324e85e3"
+    },
+    {
+      "name": "native-before",
+      "command": "node studies/audio-integrity/browser.mjs <baseline-dist> <output> before",
+      "exit": 0,
+      "logBytes": 64,
+      "logSha256": "991e15df1bcb4e07afb58a512e058e5f348242f618c838c18d4c7bf20433a3c1"
+    },
+    {
+      "name": "native-after",
+      "command": "node studies/audio-integrity/browser.mjs <clean-dist> <output> after",
+      "exit": 0,
+      "logBytes": 62,
+      "logSha256": "7fda7923360ce86e85480a5bc6a7b5727249987f40215166d41913c0d4304a4f"
+    }
+  ],
+  "suite": {
+    "unitTestsPerDefaultAndGermanLocale": 211,
+    "voiceSourceIntegrityTests": 7,
+    "browserPassed": 90,
+    "browserSkipped": 4,
+    "skipScope": "Four Firefox microphone cases are excluded because the deterministic test microphone is Chromium-only. No physical microphone or speaker validation is claimed.",
+    "ciScreenshotsInspected": {
+      "app-comparison-remains-accessible-at-1280px-in-dark-chromium/comparison-dark-1280.png": "90e062c34530afcf7ffa8941839a09f635e66c1506a07e0286bb927cb213211d",
+      "app-comparison-remains-accessible-at-1280px-in-dark-firefox/comparison-dark-1280.png": "62f8ad1112fde1f23856da3764922a067d39b2aaad16dbcff70aaeb301750728",
+      "app-comparison-remains-accessible-at-1280px-in-light-chromium/comparison-light-1280.png": "9c06e01664c879db6dfc84dab76e59c0f07e616dc0848c01012b48ba9b5e913e",
+      "app-comparison-remains-accessible-at-1280px-in-light-firefox/comparison-light-1280.png": "3527b2869630d577af30044a8468cb8df2726f06a813d0a597a02338987fb53d",
+      "app-comparison-remains-accessible-at-320px-in-dark-chromium/comparison-dark-320.png": "ee22e29fc38260d9284f74c45878f3bd22e53fe31003b1fbbfd4c450ba58fb79",
+      "app-comparison-remains-accessible-at-320px-in-dark-firefox/comparison-dark-320.png": "ff1182a571411ec7163b9faabacebc8701bc28074b3b05c809122c5b0e7fe3ef",
+      "app-comparison-remains-accessible-at-320px-in-light-chromium/comparison-light-320.png": "c78732069b2cd7b06eaea3164498e7e9c6d6cb2cb3658fbac4ced8b34cbc531b",
+      "app-comparison-remains-accessible-at-320px-in-light-firefox/comparison-light-320.png": "19a31cbcf55301b177db5294433db3b13631be420b47bddc8ad4e1caec23b9a6",
+      "regions-extract-compare-pl-25294-d-restore-offline-at-1440px-chromium/practice-region.png": "a42a02ba3410b4b11001320ebd6f5f180fdbe4db509fa95191e6283d2e686155",
+      "regions-extract-compare-pl-25294-d-restore-offline-at-1440px-firefox/practice-region.png": "32b0e5f04ca15bb1c08f363c80faa6897c783c90d4afa9e1210c8b316bfb6cab",
+      "regions-extract-compare-pl-5659a-nd-restore-offline-at-375px-chromium/practice-region.png": "1c50aec5cec652e8e3ef986df192787434908c2815bfd6d2196373f0b8925a16",
+      "regions-extract-compare-pl-5659a-nd-restore-offline-at-375px-firefox/practice-region.png": "c7f6b7788414b1c019be17aba9a5f65fd06e19b261c05505c8e3ac95fa85f01f"
+    }
+  },
+  "replay": {
+    "workflowsPerPhase": 128,
+    "beforeDisagreements": 80,
+    "afterDisagreements": 0,
+    "all128SubmittedPcmDigestsUnchanged": true,
+    "all48ValidContourAndSpectrogramDigestsAndScoresUnchanged": true,
+    "controls": [
+      [
+        "chromium",
+        1440,
+        "yin",
+        "attempt",
+        "control",
+        "finite-voice"
+      ],
+      [
+        "chromium",
+        1440,
+        "yin",
+        "attempt",
+        "control",
+        "genuine-silence-gap"
+      ],
+      [
+        "chromium",
+        1440,
+        "yin",
+        "attempt",
+        "control",
+        "complete-silence"
+      ],
+      [
+        "chromium",
+        1440,
+        "yin",
+        "reference",
+        "control",
+        "finite-voice"
+      ],
+      [
+        "chromium",
+        1440,
+        "yin",
+        "reference",
+        "control",
+        "genuine-silence-gap"
+      ],
+      [
+        "chromium",
+        1440,
+        "yin",
+        "reference",
+        "control",
+        "complete-silence"
+      ],
+      [
+        "chromium",
+        1440,
+        "mpm",
+        "attempt",
+        "control",
+        "finite-voice"
+      ],
+      [
+        "chromium",
+        1440,
+        "mpm",
+        "attempt",
+        "control",
+        "genuine-silence-gap"
+      ],
+      [
+        "chromium",
+        1440,
+        "mpm",
+        "attempt",
+        "control",
+        "complete-silence"
+      ],
+      [
+        "chromium",
+        1440,
+        "mpm",
+        "reference",
+        "control",
+        "finite-voice"
+      ],
+      [
+        "chromium",
+        1440,
+        "mpm",
+        "reference",
+        "control",
+        "genuine-silence-gap"
+      ],
+      [
+        "chromium",
+        1440,
+        "mpm",
+        "reference",
+        "control",
+        "complete-silence"
+      ],
+      [
+        "chromium",
+        375,
+        "yin",
+        "attempt",
+        "control",
+        "finite-voice"
+      ],
+      [
+        "chromium",
+        375,
+        "yin",
+        "attempt",
+        "control",
+        "genuine-silence-gap"
+      ],
+      [
+        "chromium",
+        375,
+        "yin",
+        "attempt",
+        "control",
+        "complete-silence"
+      ],
+      [
+        "chromium",
+        375,
+        "yin",
+        "reference",
+        "control",
+        "finite-voice"
+      ],
+      [
+        "chromium",
+        375,
+        "yin",
+        "reference",
+        "control",
+        "genuine-silence-gap"
+      ],
+      [
+        "chromium",
+        375,
+        "yin",
+        "reference",
+        "control",
+        "complete-silence"
+      ],
+      [
+        "chromium",
+        375,
+        "mpm",
+        "attempt",
+        "control",
+        "finite-voice"
+      ],
+      [
+        "chromium",
+        375,
+        "mpm",
+        "attempt",
+        "control",
+        "genuine-silence-gap"
+      ],
+      [
+        "chromium",
+        375,
+        "mpm",
+        "attempt",
+        "control",
+        "complete-silence"
+      ],
+      [
+        "chromium",
+        375,
+        "mpm",
+        "reference",
+        "control",
+        "finite-voice"
+      ],
+      [
+        "chromium",
+        375,
+        "mpm",
+        "reference",
+        "control",
+        "genuine-silence-gap"
+      ],
+      [
+        "chromium",
+        375,
+        "mpm",
+        "reference",
+        "control",
+        "complete-silence"
+      ],
+      [
+        "firefox",
+        1440,
+        "yin",
+        "attempt",
+        "control",
+        "finite-voice"
+      ],
+      [
+        "firefox",
+        1440,
+        "yin",
+        "attempt",
+        "control",
+        "genuine-silence-gap"
+      ],
+      [
+        "firefox",
+        1440,
+        "yin",
+        "attempt",
+        "control",
+        "complete-silence"
+      ],
+      [
+        "firefox",
+        1440,
+        "yin",
+        "reference",
+        "control",
+        "finite-voice"
+      ],
+      [
+        "firefox",
+        1440,
+        "yin",
+        "reference",
+        "control",
+        "genuine-silence-gap"
+      ],
+      [
+        "firefox",
+        1440,
+        "yin",
+        "reference",
+        "control",
+        "complete-silence"
+      ],
+      [
+        "firefox",
+        1440,
+        "mpm",
+        "attempt",
+        "control",
+        "finite-voice"
+      ],
+      [
+        "firefox",
+        1440,
+        "mpm",
+        "attempt",
+        "control",
+        "genuine-silence-gap"
+      ],
+      [
+        "firefox",
+        1440,
+        "mpm",
+        "attempt",
+        "control",
+        "complete-silence"
+      ],
+      [
+        "firefox",
+        1440,
+        "mpm",
+        "reference",
+        "control",
+        "finite-voice"
+      ],
+      [
+        "firefox",
+        1440,
+        "mpm",
+        "reference",
+        "control",
+        "genuine-silence-gap"
+      ],
+      [
+        "firefox",
+        1440,
+        "mpm",
+        "reference",
+        "control",
+        "complete-silence"
+      ],
+      [
+        "firefox",
+        375,
+        "yin",
+        "attempt",
+        "control",
+        "finite-voice"
+      ],
+      [
+        "firefox",
+        375,
+        "yin",
+        "attempt",
+        "control",
+        "genuine-silence-gap"
+      ],
+      [
+        "firefox",
+        375,
+        "yin",
+        "attempt",
+        "control",
+        "complete-silence"
+      ],
+      [
+        "firefox",
+        375,
+        "yin",
+        "reference",
+        "control",
+        "finite-voice"
+      ],
+      [
+        "firefox",
+        375,
+        "yin",
+        "reference",
+        "control",
+        "genuine-silence-gap"
+      ],
+      [
+        "firefox",
+        375,
+        "yin",
+        "reference",
+        "control",
+        "complete-silence"
+      ],
+      [
+        "firefox",
+        375,
+        "mpm",
+        "attempt",
+        "control",
+        "finite-voice"
+      ],
+      [
+        "firefox",
+        375,
+        "mpm",
+        "attempt",
+        "control",
+        "genuine-silence-gap"
+      ],
+      [
+        "firefox",
+        375,
+        "mpm",
+        "attempt",
+        "control",
+        "complete-silence"
+      ],
+      [
+        "firefox",
+        375,
+        "mpm",
+        "reference",
+        "control",
+        "finite-voice"
+      ],
+      [
+        "firefox",
+        375,
+        "mpm",
+        "reference",
+        "control",
+        "genuine-silence-gap"
+      ],
+      [
+        "firefox",
+        375,
+        "mpm",
+        "reference",
+        "control",
+        "complete-silence"
+      ]
+    ],
+    "invalidInputsRejected": [
+      [
+        "chromium",
+        1440,
+        "yin",
+        "attempt",
+        "file",
+        "nan-middle"
+      ],
+      [
+        "chromium",
+        1440,
+        "yin",
+        "attempt",
+        "file",
+        "infinity-middle"
+      ],
+      [
+        "chromium",
+        1440,
+        "yin",
+        "attempt",
+        "file",
+        "negative-infinity-middle"
+      ],
+      [
+        "chromium",
+        1440,
+        "yin",
+        "attempt",
+        "file",
+        "nan-last"
+      ],
+      [
+        "chromium",
+        1440,
+        "yin",
+        "reference",
+        "file",
+        "nan-middle"
+      ],
+      [
+        "chromium",
+        1440,
+        "yin",
+        "reference",
+        "file",
+        "infinity-middle"
+      ],
+      [
+        "chromium",
+        1440,
+        "yin",
+        "reference",
+        "file",
+        "negative-infinity-middle"
+      ],
+      [
+        "chromium",
+        1440,
+        "yin",
+        "reference",
+        "file",
+        "nan-last"
+      ],
+      [
+        "chromium",
+        1440,
+        "yin",
+        "reference",
+        "saved",
+        "legacy-nan"
+      ],
+      [
+        "chromium",
+        1440,
+        "yin",
+        "reference",
+        "saved",
+        "legacy-infinity"
+      ],
+      [
+        "chromium",
+        1440,
+        "mpm",
+        "attempt",
+        "file",
+        "nan-middle"
+      ],
+      [
+        "chromium",
+        1440,
+        "mpm",
+        "attempt",
+        "file",
+        "infinity-middle"
+      ],
+      [
+        "chromium",
+        1440,
+        "mpm",
+        "attempt",
+        "file",
+        "negative-infinity-middle"
+      ],
+      [
+        "chromium",
+        1440,
+        "mpm",
+        "attempt",
+        "file",
+        "nan-last"
+      ],
+      [
+        "chromium",
+        1440,
+        "mpm",
+        "reference",
+        "file",
+        "nan-middle"
+      ],
+      [
+        "chromium",
+        1440,
+        "mpm",
+        "reference",
+        "file",
+        "infinity-middle"
+      ],
+      [
+        "chromium",
+        1440,
+        "mpm",
+        "reference",
+        "file",
+        "negative-infinity-middle"
+      ],
+      [
+        "chromium",
+        1440,
+        "mpm",
+        "reference",
+        "file",
+        "nan-last"
+      ],
+      [
+        "chromium",
+        1440,
+        "mpm",
+        "reference",
+        "saved",
+        "legacy-nan"
+      ],
+      [
+        "chromium",
+        1440,
+        "mpm",
+        "reference",
+        "saved",
+        "legacy-infinity"
+      ],
+      [
+        "chromium",
+        375,
+        "yin",
+        "attempt",
+        "file",
+        "nan-middle"
+      ],
+      [
+        "chromium",
+        375,
+        "yin",
+        "attempt",
+        "file",
+        "infinity-middle"
+      ],
+      [
+        "chromium",
+        375,
+        "yin",
+        "attempt",
+        "file",
+        "negative-infinity-middle"
+      ],
+      [
+        "chromium",
+        375,
+        "yin",
+        "attempt",
+        "file",
+        "nan-last"
+      ],
+      [
+        "chromium",
+        375,
+        "yin",
+        "reference",
+        "file",
+        "nan-middle"
+      ],
+      [
+        "chromium",
+        375,
+        "yin",
+        "reference",
+        "file",
+        "infinity-middle"
+      ],
+      [
+        "chromium",
+        375,
+        "yin",
+        "reference",
+        "file",
+        "negative-infinity-middle"
+      ],
+      [
+        "chromium",
+        375,
+        "yin",
+        "reference",
+        "file",
+        "nan-last"
+      ],
+      [
+        "chromium",
+        375,
+        "yin",
+        "reference",
+        "saved",
+        "legacy-nan"
+      ],
+      [
+        "chromium",
+        375,
+        "yin",
+        "reference",
+        "saved",
+        "legacy-infinity"
+      ],
+      [
+        "chromium",
+        375,
+        "mpm",
+        "attempt",
+        "file",
+        "nan-middle"
+      ],
+      [
+        "chromium",
+        375,
+        "mpm",
+        "attempt",
+        "file",
+        "infinity-middle"
+      ],
+      [
+        "chromium",
+        375,
+        "mpm",
+        "attempt",
+        "file",
+        "negative-infinity-middle"
+      ],
+      [
+        "chromium",
+        375,
+        "mpm",
+        "attempt",
+        "file",
+        "nan-last"
+      ],
+      [
+        "chromium",
+        375,
+        "mpm",
+        "reference",
+        "file",
+        "nan-middle"
+      ],
+      [
+        "chromium",
+        375,
+        "mpm",
+        "reference",
+        "file",
+        "infinity-middle"
+      ],
+      [
+        "chromium",
+        375,
+        "mpm",
+        "reference",
+        "file",
+        "negative-infinity-middle"
+      ],
+      [
+        "chromium",
+        375,
+        "mpm",
+        "reference",
+        "file",
+        "nan-last"
+      ],
+      [
+        "chromium",
+        375,
+        "mpm",
+        "reference",
+        "saved",
+        "legacy-nan"
+      ],
+      [
+        "chromium",
+        375,
+        "mpm",
+        "reference",
+        "saved",
+        "legacy-infinity"
+      ],
+      [
+        "firefox",
+        1440,
+        "yin",
+        "attempt",
+        "file",
+        "nan-middle"
+      ],
+      [
+        "firefox",
+        1440,
+        "yin",
+        "attempt",
+        "file",
+        "infinity-middle"
+      ],
+      [
+        "firefox",
+        1440,
+        "yin",
+        "attempt",
+        "file",
+        "negative-infinity-middle"
+      ],
+      [
+        "firefox",
+        1440,
+        "yin",
+        "attempt",
+        "file",
+        "nan-last"
+      ],
+      [
+        "firefox",
+        1440,
+        "yin",
+        "reference",
+        "file",
+        "nan-middle"
+      ],
+      [
+        "firefox",
+        1440,
+        "yin",
+        "reference",
+        "file",
+        "infinity-middle"
+      ],
+      [
+        "firefox",
+        1440,
+        "yin",
+        "reference",
+        "file",
+        "negative-infinity-middle"
+      ],
+      [
+        "firefox",
+        1440,
+        "yin",
+        "reference",
+        "file",
+        "nan-last"
+      ],
+      [
+        "firefox",
+        1440,
+        "yin",
+        "reference",
+        "saved",
+        "legacy-nan"
+      ],
+      [
+        "firefox",
+        1440,
+        "yin",
+        "reference",
+        "saved",
+        "legacy-infinity"
+      ],
+      [
+        "firefox",
+        1440,
+        "mpm",
+        "attempt",
+        "file",
+        "nan-middle"
+      ],
+      [
+        "firefox",
+        1440,
+        "mpm",
+        "attempt",
+        "file",
+        "infinity-middle"
+      ],
+      [
+        "firefox",
+        1440,
+        "mpm",
+        "attempt",
+        "file",
+        "negative-infinity-middle"
+      ],
+      [
+        "firefox",
+        1440,
+        "mpm",
+        "attempt",
+        "file",
+        "nan-last"
+      ],
+      [
+        "firefox",
+        1440,
+        "mpm",
+        "reference",
+        "file",
+        "nan-middle"
+      ],
+      [
+        "firefox",
+        1440,
+        "mpm",
+        "reference",
+        "file",
+        "infinity-middle"
+      ],
+      [
+        "firefox",
+        1440,
+        "mpm",
+        "reference",
+        "file",
+        "negative-infinity-middle"
+      ],
+      [
+        "firefox",
+        1440,
+        "mpm",
+        "reference",
+        "file",
+        "nan-last"
+      ],
+      [
+        "firefox",
+        1440,
+        "mpm",
+        "reference",
+        "saved",
+        "legacy-nan"
+      ],
+      [
+        "firefox",
+        1440,
+        "mpm",
+        "reference",
+        "saved",
+        "legacy-infinity"
+      ],
+      [
+        "firefox",
+        375,
+        "yin",
+        "attempt",
+        "file",
+        "nan-middle"
+      ],
+      [
+        "firefox",
+        375,
+        "yin",
+        "attempt",
+        "file",
+        "infinity-middle"
+      ],
+      [
+        "firefox",
+        375,
+        "yin",
+        "attempt",
+        "file",
+        "negative-infinity-middle"
+      ],
+      [
+        "firefox",
+        375,
+        "yin",
+        "attempt",
+        "file",
+        "nan-last"
+      ],
+      [
+        "firefox",
+        375,
+        "yin",
+        "reference",
+        "file",
+        "nan-middle"
+      ],
+      [
+        "firefox",
+        375,
+        "yin",
+        "reference",
+        "file",
+        "infinity-middle"
+      ],
+      [
+        "firefox",
+        375,
+        "yin",
+        "reference",
+        "file",
+        "negative-infinity-middle"
+      ],
+      [
+        "firefox",
+        375,
+        "yin",
+        "reference",
+        "file",
+        "nan-last"
+      ],
+      [
+        "firefox",
+        375,
+        "yin",
+        "reference",
+        "saved",
+        "legacy-nan"
+      ],
+      [
+        "firefox",
+        375,
+        "yin",
+        "reference",
+        "saved",
+        "legacy-infinity"
+      ],
+      [
+        "firefox",
+        375,
+        "mpm",
+        "attempt",
+        "file",
+        "nan-middle"
+      ],
+      [
+        "firefox",
+        375,
+        "mpm",
+        "attempt",
+        "file",
+        "infinity-middle"
+      ],
+      [
+        "firefox",
+        375,
+        "mpm",
+        "attempt",
+        "file",
+        "negative-infinity-middle"
+      ],
+      [
+        "firefox",
+        375,
+        "mpm",
+        "attempt",
+        "file",
+        "nan-last"
+      ],
+      [
+        "firefox",
+        375,
+        "mpm",
+        "reference",
+        "file",
+        "nan-middle"
+      ],
+      [
+        "firefox",
+        375,
+        "mpm",
+        "reference",
+        "file",
+        "infinity-middle"
+      ],
+      [
+        "firefox",
+        375,
+        "mpm",
+        "reference",
+        "file",
+        "negative-infinity-middle"
+      ],
+      [
+        "firefox",
+        375,
+        "mpm",
+        "reference",
+        "file",
+        "nan-last"
+      ],
+      [
+        "firefox",
+        375,
+        "mpm",
+        "reference",
+        "saved",
+        "legacy-nan"
+      ],
+      [
+        "firefox",
+        375,
+        "mpm",
+        "reference",
+        "saved",
+        "legacy-infinity"
+      ]
+    ],
+    "nativeFileCases": 64,
+    "nativeSavedCases": 16,
+    "viewsPerPhase": 4,
+    "servedAndLoadedFilesPerView": 26,
+    "normalAndHalfSpeedPlaybackChecks": 16,
+    "normalPlaybackBuffersMatchPreservedPcm": true,
+    "normalSpeedExportsAndNativeSavedClipsMatchPreservedPcm": 8,
+    "legacyPcmBytesUnchanged": true
+  },
+  "screenshotsInspected": {
+    "after-chromium-1440.png": "8d0889d6c7bd093b082ee4c1658f1b492cc77bb4d54fe6adb9ee5b4935b4062f",
+    "after-chromium-375.png": "c20698e8de39bd404b9a2abf812e304eb6c11b517213550fa0f04bc0b2790652",
+    "after-firefox-1440.png": "fe1e7844bb2e7652fbd282786ef1bad7a9e228ae53c66e29419200afee001996",
+    "after-firefox-375.png": "c2161cb728dbdd2c7d53fa8591731b9ccb470c505f308d5cb190815445ad7ba1",
+    "before-chromium-1440.png": "b2c137d16592662bda6c9d1681dad593ae8c36a995066865bed9cf8968c3283c",
+    "before-chromium-375.png": "f62f8a9e069f60cded82b59afaeab41aa8dc62e5d7384dd37f5bdaf013a9ed5e",
+    "before-firefox-1440.png": "dac25c2014cff2be08ae42bfb8135c6d2f4464d456c8d4a24766d9f3bfaf6a6d",
+    "before-firefox-375.png": "960b9f62d8665985f920da0e6f08ebb707d27131843bd2677bc66c00b1ebff5e"
+  },
+  "fixtureOracle": "fixtures.json records independent FFmpeg decoding of all five float WAVE fixtures, including the exact source PCM bytes and non-finite counts.",
+  "exportOracle": "exports.json records independent FFmpeg decoding of all eight preserved-clip exports. One captured constructed sine-wave export is preserved-clip.wav.",
+  "verificationNotes": [
+    "The clean archive contains the implementation and regression sources. The final evidence driver additionally corrects observation waits and checks saved/playback/export bytes; those changes do not alter compiled application code.",
+    "The first probe used the wrong accessible tab name; its rerun used Your attempt. The first replay assumed a zero-valued gap would score 100; native analysis returns 87, so the control requires valid analysis and final before/after score identity. No phonetic target score is invented.",
+    "The export failure appears in download-note rather than the general status. The saved-record observer initially read the prior job during Reading. Final captures wait for a new analysis request and its terminal worker result; both baseline and corrected captures were rerun. No application change resolved these harness issues.",
+    "Non-finite PCM is rejected in the worker before pitch/spectrogram analysis and clip commit. Lower-level pitch/DTW routines retain their existing partial-signal behavior; 48 valid native controls are bit-identical.",
+    "decodeAudioData is still native and cannot be preempted or constrained to a general allocation ceiling. Validation does not certify that an encoded file is intact or that a recording is human speech."
+  ]
+}
