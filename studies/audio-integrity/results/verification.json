@@ -2,7 +2,7 @@
   "date": "2026-10-14",
   "baselineCommit": "a952c734e9f5d6cfb9ea234ce91c9930dc8b51f4",
   "implementationCommit": "b835699f8fea26255f8c421650aa9dccf598cf84",
-  "scope": "Private browser application source and production-build verification. No registry release, tag or hosted deployment. Constructed damaged audio fixtures, not production incidents or a phonetic accuracy benchmark.",
+  "scope": "Browser application source and production-build verification; package.json is marked private for npm. No registry release, tag or hosted deployment. Constructed damaged audio fixtures, not production incidents or a phonetic accuracy benchmark.",
   "cleanNode": "v24.21.0",
   "workingNode": "v26.7.0",
   "baselineArchiveFilesMatched": 270,
