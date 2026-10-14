@@ -18,6 +18,12 @@ or *"your pitch peak comes later than the reference's."*
 
 Nothing leaves your device: no uploads, no accounts, no analytics.
 
+The source checkout rejects **non-finite decoded audio samples** before a new
+clip is committed. A damaged file or saved recording leaves the previous clip
+available for comparison, playback, saving and export. Real silence remains
+valid audio. [Native decoder and worker reproduction](studies/audio-integrity/README.md)
+documents this unreleased correction.
+
 ![Reference (gold) and attempt (teal) pitch contours overlaid after DTW alignment, with a similarity score and rule-based feedback](docs/assets/hero.png)
 
 _Reference: a clean, synthetic Mandarin tone 2 (rising). Attempt: a synthetic clip built with a deliberately flat start and shallow rise. Both example clips ship in [`examples/`](examples/); load `mandarin-tone2-reference.wav` as the reference and `mandarin-tone2-attempt-late-rise.wav` as the attempt to reproduce this screenshot._

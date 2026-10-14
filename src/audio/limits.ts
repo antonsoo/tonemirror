@@ -5,6 +5,15 @@ export const MAX_DECODED_BYTES = 64 * 1024 * 1024;
 export const MAX_AUDIO_CHANNELS = 8;
 export const MAX_SPECTROGRAM_FRAMES = 4096;
 
+/** Check the complete clip in its worker before treating damaged PCM as silence. */
+export function validateAudioSamples(pcm: Float32Array): void {
+  for (let i = 0; i < pcm.length; i++) {
+    if (!Number.isFinite(pcm[i])) {
+      throw new Error("This clip contains invalid audio samples. Choose an undamaged recording.");
+    }
+  }
+}
+
 export function validateAudio(length: number, sampleRate: number, channels = 1): void {
   if (!Number.isInteger(sampleRate) || sampleRate < 8000 || sampleRate > 96000) {
     throw new Error("Use audio with a sample rate between 8 and 96 kHz.");

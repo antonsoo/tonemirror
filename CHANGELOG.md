@@ -4,6 +4,10 @@ All notable changes to this project are documented in this file.
 
 ## Unreleased
 
+- Reject non-finite decoded PCM in the analysis worker before replacing a clip.
+  Damaged imports and saved recordings keep the previous valid audio and its
+  comparison, saving and export; finite silence remains valid input.
+
 - Preserve the voice's pitch during half-speed playback. Prepare and cache a
   local preview with the MIT-licensed Signalsmith Stretch engine; allow
   cancellation and recover from preparation failures. Loop bounds and the

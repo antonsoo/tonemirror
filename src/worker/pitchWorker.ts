@@ -2,7 +2,7 @@
 import { trackPitch } from "../core/pitchTrack.js";
 import { computeSpectrogram } from "../core/spectrogram.js";
 import { compareContours, type AlignmentResult } from "../core/dtw.js";
-import { MAX_SPECTROGRAM_FRAMES, validateAudio } from "../audio/limits.js";
+import { MAX_SPECTROGRAM_FRAMES, validateAudio, validateAudioSamples } from "../audio/limits.js";
 import type { PitchAlgorithm, PitchContour } from "../core/types.js";
 
 export interface AnalyzeRequest {
@@ -40,6 +40,7 @@ self.onmessage = (event: MessageEvent<WorkerRequest>) => {
       self.postMessage(response);
     } else if (msg.type === "analyze") {
       validateAudio(msg.pcm.length, msg.sampleRate);
+      validateAudioSamples(msg.pcm);
       const contour = trackPitch(msg.pcm, { sampleRate: msg.sampleRate, algorithm: msg.algorithm });
       const hopSize = Math.max(256, Math.ceil((msg.pcm.length - 1024) / (MAX_SPECTROGRAM_FRAMES - 1)));
       const spectrogram = computeSpectrogram(msg.pcm, msg.sampleRate, { fftSize: 1024, hopSize });

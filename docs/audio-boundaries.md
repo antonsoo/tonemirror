@@ -26,7 +26,7 @@ file / capture / saved clip
        validate dimensions
              |
              v
-     analyze in slot worker ---- failure / cancel ---> keep previous clip
+     validate PCM + analyze ---- failure / cancel ---> keep previous clip
              |
              v
       prepare playback buffer
@@ -52,6 +52,7 @@ reference remains an explicit, named action. The theme preference is remembered.
 | Sample rate | Integer 8,000-96,000 Hz |
 | Channels | 1-8; downmixed by channel average |
 | Decoded PCM | At most 64 MiB across channels before making a mono copy |
+| Sample values | The complete clip must contain finite PCM values before analysis/commit; invalid replacements keep the previous clip |
 | Microphone | Stops and releases capture at 60 seconds of received samples; the clip name records the limit |
 | Worker job | 60-second timeout, with explicit cancel and retry |
 | Spectrogram | At most 4,096 time columns covering the clip; adaptive hop for long clips |
@@ -66,6 +67,15 @@ works on complete file data and offers no AbortSignal argument. Cancelling
 abandons the result, observes any late rejection and closes the context;
 it does not claim to preempt native codec allocation. Decoding also resamples
 to the audio context's sample rate. Saved clips are validated on use.
+
+The slot worker scans the whole mono PCM buffer before pitch or spectrogram
+analysis, including a trailing sample beyond the final analysis window.
+NaN and infinite values reject that replacement instead of being treated as
+unvoiced audio. This also covers saved recordings from older source versions;
+their stored bytes are preserved. Finite zero samples and genuine silence keep
+their existing behavior. The standalone pitch routines retain their robust
+handling of partial caller-supplied signals.
+[Native decoding, saved-byte and worker evidence](../studies/audio-integrity/README.md).
 
 The recorder's cap counts received samples, not elapsed wall-clock time: a
 suspended audio context does not invent missing samples. The browser tests
