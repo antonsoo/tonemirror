@@ -105,7 +105,7 @@ describe("playback timeline", () => {
     expect(player.currentPositionSeconds()).toBe(3.5);
   });
 
-  it.each([4, 5, 7, 10])("resumes at loop start when the paused position is %s seconds", (offset) => {
+  it.each([0, 1, 4, 5, 7, 10])("resumes at loop start when the paused position is %s seconds", (offset) => {
     const { context, sources, player } = setup();
     player.play();
     context.currentTime = offset;
@@ -123,18 +123,50 @@ describe("playback timeline", () => {
     expect(player.currentPositionSeconds()).toBe(2.5);
   });
 
-  it.each([null, { start: 0.2, end: 0.8 }])("follows native loop entry when a playing region moves behind the cursor (%j)", (oldLoop) => {
+  it.each([null, { start: 0.2, end: 0.8 }])("restarts at loop entry when a playing region moves behind the cursor (%j)", (oldLoop) => {
     const { context, sources, player } = setup();
     player.setLoopRegion(oldLoop);
     player.play(5);
     context.currentTime = 0.5;
     player.setLoopRegion({ start: 0.2, end: 0.4 });
     expect(player.currentPositionSeconds()).toBe(2);
-    expect(sources).toHaveLength(1);
+    expect(sources).toHaveLength(2);
+    expect(sources[0]!.stop).toHaveBeenCalledOnce();
+    expect(sources[1]!.start).toHaveBeenCalledWith(0, 2);
     context.currentTime = 1;
     expect(player.currentPositionSeconds()).toBe(2.5);
     player.setLoopRegion(null);
     context.currentTime = 3;
     expect(player.currentPositionSeconds()).toBe(4.5);
+  });
+
+  it.each([false, true])("skips pre-roll when selecting a passage during playback (half speed: %s)", (half) => {
+    const { context, sources, player } = setup();
+    const ended = vi.fn();
+    player.setHalfSpeed(half);
+    player.play(0, ended);
+    context.currentTime = 0.5;
+    player.setLoopRegion({ start: 0.2, end: 0.4 });
+    expect(player.currentPositionSeconds()).toBe(2);
+    expect(sources).toHaveLength(2);
+    expect(sources[0]!.stop).toHaveBeenCalledOnce();
+    expect(sources[0]!.disconnect).toHaveBeenCalledOnce();
+    expect(sources[1]!.start).toHaveBeenCalledWith(0, half ? 4 : 2);
+    expect(sources[1]!.loopStart).toBe(half ? 4 : 2);
+    context.currentTime = 1;
+    expect(player.currentPositionSeconds()).toBe(half ? 2.25 : 2.5);
+    player.setLoopRegion(null);
+    sources[1]!.onended!();
+    expect(ended).toHaveBeenCalledOnce();
+  });
+
+  it.each([false, true])("starts the first playback within its selection (half speed: %s)", (half) => {
+    const { player, sources } = setup();
+    player.setHalfSpeed(half);
+    player.setLoopRegion({ start: 0.2, end: 0.4 });
+    expect(player.currentPositionSeconds()).toBe(0);
+    player.play(player.currentPositionSeconds());
+    expect(sources[0]!.start).toHaveBeenCalledWith(0, half ? 4 : 2);
+    expect(player.currentPositionSeconds()).toBe(2);
   });
 });

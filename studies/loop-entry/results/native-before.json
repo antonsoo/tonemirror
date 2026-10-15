@@ -1,0 +1,2231 @@
+{
+  "baseline": true,
+  "synthetic": true,
+  "sourceSha256": "00cb1c64fc5adeb7092845829a629e6135c8e72b6bc298d6acbb818746232ecf",
+  "driverSha256": "f200d99d209c21afd35f9750a40fd8f21213b3ee45fc638d1dc7010c030dfb8d",
+  "offlineCases": 84,
+  "offlineMatches": 60,
+  "liveCases": 20,
+  "liveMatches": 12,
+  "scope": "Native digital rendering and source-time cursor; prepared synthetic ramps test half-speed coordinates, not acoustic or stretch quality.",
+  "results": [
+    {
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "offline": [
+        {
+          "sampleRate": 8000,
+          "half": false,
+          "offset": 0,
+          "expectedStart": 1,
+          "cursorStart": 0,
+          "cursorEnd": 0.512,
+          "expectedEnd": 1.512,
+          "firstSample": 0.05000000074505806,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 4096,
+          "maxSampleDifference": 0.1250000074505806,
+          "matches": false
+        },
+        {
+          "sampleRate": 8000,
+          "half": false,
+          "offset": 0.5,
+          "expectedStart": 1,
+          "cursorStart": 0.5,
+          "cursorEnd": 1.012,
+          "expectedEnd": 1.512,
+          "firstSample": 0.11249999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 4096,
+          "maxSampleDifference": 0.0625000074505806,
+          "matches": false
+        },
+        {
+          "sampleRate": 8000,
+          "half": false,
+          "offset": 1,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.512,
+          "expectedEnd": 1.512,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 8000,
+          "half": false,
+          "offset": 1.5,
+          "expectedStart": 1.5,
+          "cursorStart": 1.5,
+          "cursorEnd": 1.012,
+          "expectedEnd": 1.012,
+          "firstSample": 0.23749999701976776,
+          "expectedFirstSample": 0.23749999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 8000,
+          "half": false,
+          "offset": 2,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.512,
+          "expectedEnd": 1.512,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 8000,
+          "half": false,
+          "offset": 3,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.512,
+          "expectedEnd": 1.512,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 8000,
+          "half": false,
+          "offset": 4,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.512,
+          "expectedEnd": 1.512,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 8000,
+          "half": true,
+          "offset": 0,
+          "expectedStart": 1,
+          "cursorStart": 0,
+          "cursorEnd": 0.256,
+          "expectedEnd": 1.256,
+          "firstSample": 0.05000000074505806,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 4096,
+          "maxSampleDifference": 0.1250000074505806,
+          "matches": false
+        },
+        {
+          "sampleRate": 8000,
+          "half": true,
+          "offset": 0.5,
+          "expectedStart": 1,
+          "cursorStart": 0.5,
+          "cursorEnd": 0.756,
+          "expectedEnd": 1.256,
+          "firstSample": 0.11249999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 4096,
+          "maxSampleDifference": 0.0625000074505806,
+          "matches": false
+        },
+        {
+          "sampleRate": 8000,
+          "half": true,
+          "offset": 1,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.256,
+          "expectedEnd": 1.256,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 8000,
+          "half": true,
+          "offset": 1.5,
+          "expectedStart": 1.5,
+          "cursorStart": 1.5,
+          "cursorEnd": 1.756,
+          "expectedEnd": 1.756,
+          "firstSample": 0.23749999701976776,
+          "expectedFirstSample": 0.23749999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 8000,
+          "half": true,
+          "offset": 2,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.256,
+          "expectedEnd": 1.256,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 8000,
+          "half": true,
+          "offset": 3,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.256,
+          "expectedEnd": 1.256,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 8000,
+          "half": true,
+          "offset": 4,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.256,
+          "expectedEnd": 1.256,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 44100,
+          "half": false,
+          "offset": 0,
+          "expectedStart": 1,
+          "cursorStart": 0,
+          "cursorEnd": 0.09287981859410431,
+          "expectedEnd": 1.0928798185941042,
+          "firstSample": 0.05000000074505806,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 4096,
+          "maxSampleDifference": 0.1250000074505806,
+          "matches": false
+        },
+        {
+          "sampleRate": 44100,
+          "half": false,
+          "offset": 0.5,
+          "expectedStart": 1,
+          "cursorStart": 0.5,
+          "cursorEnd": 0.5928798185941043,
+          "expectedEnd": 1.0928798185941042,
+          "firstSample": 0.11249999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 4096,
+          "maxSampleDifference": 0.0625000074505806,
+          "matches": false
+        },
+        {
+          "sampleRate": 44100,
+          "half": false,
+          "offset": 1,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.0928798185941042,
+          "expectedEnd": 1.0928798185941042,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 44100,
+          "half": false,
+          "offset": 1.5,
+          "expectedStart": 1.5,
+          "cursorStart": 1.5,
+          "cursorEnd": 1.5928798185941042,
+          "expectedEnd": 1.5928798185941044,
+          "firstSample": 0.23749999701976776,
+          "expectedFirstSample": 0.23749999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 44100,
+          "half": false,
+          "offset": 2,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.0928798185941042,
+          "expectedEnd": 1.0928798185941042,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 44100,
+          "half": false,
+          "offset": 3,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.0928798185941042,
+          "expectedEnd": 1.0928798185941042,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 44100,
+          "half": false,
+          "offset": 4,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.0928798185941042,
+          "expectedEnd": 1.0928798185941042,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 44100,
+          "half": true,
+          "offset": 0,
+          "expectedStart": 1,
+          "cursorStart": 0,
+          "cursorEnd": 0.046439909297052155,
+          "expectedEnd": 1.0464399092970522,
+          "firstSample": 0.05000000074505806,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 4096,
+          "maxSampleDifference": 0.1250000074505806,
+          "matches": false
+        },
+        {
+          "sampleRate": 44100,
+          "half": true,
+          "offset": 0.5,
+          "expectedStart": 1,
+          "cursorStart": 0.5,
+          "cursorEnd": 0.5464399092970521,
+          "expectedEnd": 1.0464399092970522,
+          "firstSample": 0.11249999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 4096,
+          "maxSampleDifference": 0.0625000074505806,
+          "matches": false
+        },
+        {
+          "sampleRate": 44100,
+          "half": true,
+          "offset": 1,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.0464399092970522,
+          "expectedEnd": 1.0464399092970522,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 44100,
+          "half": true,
+          "offset": 1.5,
+          "expectedStart": 1.5,
+          "cursorStart": 1.5,
+          "cursorEnd": 1.5464399092970522,
+          "expectedEnd": 1.5464399092970522,
+          "firstSample": 0.23749999701976776,
+          "expectedFirstSample": 0.23749999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 44100,
+          "half": true,
+          "offset": 2,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.0464399092970522,
+          "expectedEnd": 1.0464399092970522,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 44100,
+          "half": true,
+          "offset": 3,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.0464399092970522,
+          "expectedEnd": 1.0464399092970522,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 44100,
+          "half": true,
+          "offset": 4,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.0464399092970522,
+          "expectedEnd": 1.0464399092970522,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 48000,
+          "half": false,
+          "offset": 0,
+          "expectedStart": 1,
+          "cursorStart": 0,
+          "cursorEnd": 0.08533333333333333,
+          "expectedEnd": 1.0853333333333333,
+          "firstSample": 0.05000000074505806,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 4096,
+          "maxSampleDifference": 0.1250000074505806,
+          "matches": false
+        },
+        {
+          "sampleRate": 48000,
+          "half": false,
+          "offset": 0.5,
+          "expectedStart": 1,
+          "cursorStart": 0.5,
+          "cursorEnd": 0.5853333333333334,
+          "expectedEnd": 1.0853333333333333,
+          "firstSample": 0.11249999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 4096,
+          "maxSampleDifference": 0.0625000074505806,
+          "matches": false
+        },
+        {
+          "sampleRate": 48000,
+          "half": false,
+          "offset": 1,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.0853333333333333,
+          "expectedEnd": 1.0853333333333333,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 48000,
+          "half": false,
+          "offset": 1.5,
+          "expectedStart": 1.5,
+          "cursorStart": 1.5,
+          "cursorEnd": 1.5853333333333333,
+          "expectedEnd": 1.5853333333333333,
+          "firstSample": 0.23749999701976776,
+          "expectedFirstSample": 0.23749999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 48000,
+          "half": false,
+          "offset": 2,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.0853333333333333,
+          "expectedEnd": 1.0853333333333333,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 48000,
+          "half": false,
+          "offset": 3,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.0853333333333333,
+          "expectedEnd": 1.0853333333333333,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 48000,
+          "half": false,
+          "offset": 4,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.0853333333333333,
+          "expectedEnd": 1.0853333333333333,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 48000,
+          "half": true,
+          "offset": 0,
+          "expectedStart": 1,
+          "cursorStart": 0,
+          "cursorEnd": 0.042666666666666665,
+          "expectedEnd": 1.0426666666666666,
+          "firstSample": 0.05000000074505806,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 4096,
+          "maxSampleDifference": 0.1250000074505806,
+          "matches": false
+        },
+        {
+          "sampleRate": 48000,
+          "half": true,
+          "offset": 0.5,
+          "expectedStart": 1,
+          "cursorStart": 0.5,
+          "cursorEnd": 0.5426666666666666,
+          "expectedEnd": 1.0426666666666666,
+          "firstSample": 0.11249999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 4096,
+          "maxSampleDifference": 0.0625000074505806,
+          "matches": false
+        },
+        {
+          "sampleRate": 48000,
+          "half": true,
+          "offset": 1,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.0426666666666666,
+          "expectedEnd": 1.0426666666666666,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 48000,
+          "half": true,
+          "offset": 1.5,
+          "expectedStart": 1.5,
+          "cursorStart": 1.5,
+          "cursorEnd": 1.5426666666666666,
+          "expectedEnd": 1.5426666666666666,
+          "firstSample": 0.23749999701976776,
+          "expectedFirstSample": 0.23749999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 48000,
+          "half": true,
+          "offset": 2,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.0426666666666666,
+          "expectedEnd": 1.0426666666666666,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 48000,
+          "half": true,
+          "offset": 3,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.0426666666666666,
+          "expectedEnd": 1.0426666666666666,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 48000,
+          "half": true,
+          "offset": 4,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.0426666666666666,
+          "expectedEnd": 1.0426666666666666,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        }
+      ],
+      "live": [
+        {
+          "scenario": "enable-before-start",
+          "half": false,
+          "before": 0.176,
+          "immediatelyAfter": 0.176,
+          "observations": [
+            {
+              "native": 0.3038750052452087,
+              "cursor": 0.304,
+              "errorSeconds": 0.00012499475479127442,
+              "inside": false
+            },
+            {
+              "native": 0.33587501049041746,
+              "cursor": 0.33599999999999997,
+              "errorSeconds": 0.0001249895095825071,
+              "inside": false
+            },
+            {
+              "native": 0.3678750157356262,
+              "cursor": 0.368,
+              "errorSeconds": 0.00012498426437379528,
+              "inside": false
+            },
+            {
+              "native": 0.4318750262260437,
+              "cursor": 0.432,
+              "errorSeconds": 0.00012497377395631615,
+              "inside": false
+            },
+            {
+              "native": 0.4798750042915344,
+              "cursor": 0.48,
+              "errorSeconds": 0.0001249957084655806,
+              "inside": false
+            },
+            {
+              "native": 0.5278749823570251,
+              "cursor": 0.528,
+              "errorSeconds": 0.0001250176429749006,
+              "inside": false
+            }
+          ],
+          "maxErrorSeconds": 0.0001250176429749006,
+          "toleranceSeconds": 0.064,
+          "matches": false
+        },
+        {
+          "scenario": "enable-before-start",
+          "half": true,
+          "before": 0.088,
+          "immediatelyAfter": 0.088,
+          "observations": [
+            {
+              "native": 0.15993747711181638,
+              "cursor": 0.16,
+              "errorSeconds": 0.00006252288818361929,
+              "inside": false
+            },
+            {
+              "native": 0.18393752574920652,
+              "cursor": 0.184,
+              "errorSeconds": 0.00006247425079347613,
+              "inside": false
+            },
+            {
+              "native": 0.21593747138977049,
+              "cursor": 0.216,
+              "errorSeconds": 0.00006252861022951195,
+              "inside": false
+            },
+            {
+              "native": 0.23993752002716062,
+              "cursor": 0.24,
+              "errorSeconds": 0.00006247997283936879,
+              "inside": false
+            },
+            {
+              "native": 0.263937509059906,
+              "cursor": 0.264,
+              "errorSeconds": 0.00006249094009402878,
+              "inside": false
+            },
+            {
+              "native": 0.28793749809265134,
+              "cursor": 0.288,
+              "errorSeconds": 0.00006250190734863326,
+              "inside": false
+            }
+          ],
+          "maxErrorSeconds": 0.00006252861022951195,
+          "toleranceSeconds": 0.064,
+          "matches": false
+        },
+        {
+          "scenario": "move-start-ahead",
+          "half": false,
+          "before": 0.5760000000000001,
+          "immediatelyAfter": 0.5760000000000001,
+          "observations": [
+            {
+              "native": 0.7198749542236328,
+              "cursor": 0.7200000000000001,
+              "errorSeconds": 0.00012504577636729408,
+              "inside": false
+            },
+            {
+              "native": 0.7678750514984131,
+              "cursor": 0.768,
+              "errorSeconds": 0.00012494850158695225,
+              "inside": false
+            },
+            {
+              "native": 0.831874942779541,
+              "cursor": 0.8320000000000001,
+              "errorSeconds": 0.0001250572204590794,
+              "inside": false
+            },
+            {
+              "native": 0.8798750400543213,
+              "cursor": 0.8800000000000001,
+              "errorSeconds": 0.0001249599456788486,
+              "inside": false
+            },
+            {
+              "native": 0.927875018119812,
+              "cursor": 0.9280000000000002,
+              "errorSeconds": 0.00012498188018816858,
+              "inside": false
+            },
+            {
+              "native": 0.9758749961853027,
+              "cursor": 0.976,
+              "errorSeconds": 0.0001250038146972665,
+              "inside": false
+            }
+          ],
+          "maxErrorSeconds": 0.0001250572204590794,
+          "toleranceSeconds": 0.064,
+          "matches": false
+        },
+        {
+          "scenario": "move-start-ahead",
+          "half": true,
+          "before": 0.488,
+          "immediatelyAfter": 0.488,
+          "observations": [
+            {
+              "native": 0.5599375128746032,
+              "cursor": 0.56,
+              "errorSeconds": 0.00006248712539680401,
+              "inside": false
+            },
+            {
+              "native": 0.5839375019073486,
+              "cursor": 0.584,
+              "errorSeconds": 0.00006249809265135298,
+              "inside": false
+            },
+            {
+              "native": 0.6159374475479126,
+              "cursor": 0.616,
+              "errorSeconds": 0.00006255245208741655,
+              "inside": false
+            },
+            {
+              "native": 0.6399374961853027,
+              "cursor": 0.64,
+              "errorSeconds": 0.00006250381469730115,
+              "inside": false
+            },
+            {
+              "native": 0.6639375448226928,
+              "cursor": 0.664,
+              "errorSeconds": 0.00006245517730718575,
+              "inside": false
+            },
+            {
+              "native": 0.6879374742507934,
+              "cursor": 0.688,
+              "errorSeconds": 0.0000625257492065101,
+              "inside": false
+            }
+          ],
+          "maxErrorSeconds": 0.00006255245208741655,
+          "toleranceSeconds": 0.064,
+          "matches": false
+        },
+        {
+          "scenario": "enable-after-end",
+          "half": false,
+          "before": 3.176,
+          "immediatelyAfter": 1,
+          "observations": [
+            {
+              "native": 1.1438749790191651,
+              "cursor": 1.1440000000000001,
+              "errorSeconds": 0.00012502098083500002,
+              "inside": true
+            },
+            {
+              "native": 1.1918749570846559,
+              "cursor": 1.192,
+              "errorSeconds": 0.00012504291534409795,
+              "inside": true
+            },
+            {
+              "native": 1.2558749675750733,
+              "cursor": 1.256,
+              "errorSeconds": 0.00012503242492667432,
+              "inside": true
+            },
+            {
+              "native": 1.303874945640564,
+              "cursor": 1.304,
+              "errorSeconds": 0.0001250543594359943,
+              "inside": true
+            },
+            {
+              "native": 1.3518750429153443,
+              "cursor": 1.352,
+              "errorSeconds": 0.0001249570846557635,
+              "inside": true
+            },
+            {
+              "native": 1.399875020980835,
+              "cursor": 1.4,
+              "errorSeconds": 0.00012497901916486143,
+              "inside": true
+            }
+          ],
+          "maxErrorSeconds": 0.0001250543594359943,
+          "toleranceSeconds": 0.064,
+          "matches": true
+        },
+        {
+          "scenario": "enable-after-end",
+          "half": true,
+          "before": 3.088,
+          "immediatelyAfter": 1,
+          "observations": [
+            {
+              "native": 1.0719375371932984,
+              "cursor": 1.072,
+              "errorSeconds": 0.00006246280670163529,
+              "inside": true
+            },
+            {
+              "native": 1.095937466621399,
+              "cursor": 1.096,
+              "errorSeconds": 0.00006253337860107067,
+              "inside": true
+            },
+            {
+              "native": 1.1279375314712525,
+              "cursor": 1.1280000000000001,
+              "errorSeconds": 0.00006246852874758346,
+              "inside": true
+            },
+            {
+              "native": 1.1519374608993531,
+              "cursor": 1.152,
+              "errorSeconds": 0.0000625391006467968,
+              "inside": true
+            },
+            {
+              "native": 1.1759375095367433,
+              "cursor": 1.176,
+              "errorSeconds": 0.0000624904632566814,
+              "inside": true
+            },
+            {
+              "native": 1.1999375581741334,
+              "cursor": 1.2,
+              "errorSeconds": 0.00006244182586656599,
+              "inside": true
+            }
+          ],
+          "maxErrorSeconds": 0.0000625391006467968,
+          "toleranceSeconds": 0.064,
+          "matches": true
+        },
+        {
+          "scenario": "enable-inside",
+          "half": false,
+          "before": 1.376,
+          "immediatelyAfter": 1.376,
+          "observations": [
+            {
+              "native": 1.5198750257492066,
+              "cursor": 1.52,
+              "errorSeconds": 0.00012497425079338598,
+              "inside": true
+            },
+            {
+              "native": 1.5678750038146974,
+              "cursor": 1.5679999999999998,
+              "errorSeconds": 0.0001249961853024839,
+              "inside": true
+            },
+            {
+              "native": 1.6318748950958253,
+              "cursor": 1.632,
+              "errorSeconds": 0.00012510490417461106,
+              "inside": true
+            },
+            {
+              "native": 1.6798749923706056,
+              "cursor": 1.68,
+              "errorSeconds": 0.00012500762939438026,
+              "inside": true
+            },
+            {
+              "native": 1.7278750896453858,
+              "cursor": 1.728,
+              "errorSeconds": 0.00012491035461414945,
+              "inside": true
+            },
+            {
+              "native": 1.775874948501587,
+              "cursor": 1.7759999999999998,
+              "errorSeconds": 0.00012505149841279817,
+              "inside": true
+            }
+          ],
+          "maxErrorSeconds": 0.00012510490417461106,
+          "toleranceSeconds": 0.064,
+          "matches": true
+        },
+        {
+          "scenario": "enable-inside",
+          "half": true,
+          "before": 1.288,
+          "immediatelyAfter": 1.288,
+          "observations": [
+            {
+              "native": 1.3599375247955323,
+              "cursor": 1.36,
+              "errorSeconds": 0.00006247520446778232,
+              "inside": true
+            },
+            {
+              "native": 1.383937454223633,
+              "cursor": 1.3840000000000001,
+              "errorSeconds": 0.0000625457763672177,
+              "inside": true
+            },
+            {
+              "native": 1.4159375190734864,
+              "cursor": 1.416,
+              "errorSeconds": 0.00006248092651350845,
+              "inside": true
+            },
+            {
+              "native": 1.439937448501587,
+              "cursor": 1.44,
+              "errorSeconds": 0.00006255149841294383,
+              "inside": true
+            },
+            {
+              "native": 1.4639374971389771,
+              "cursor": 1.464,
+              "errorSeconds": 0.00006250286102282843,
+              "inside": true
+            },
+            {
+              "native": 1.4879375457763673,
+              "cursor": 1.488,
+              "errorSeconds": 0.00006245422363271302,
+              "inside": true
+            }
+          ],
+          "maxErrorSeconds": 0.00006255149841294383,
+          "toleranceSeconds": 0.064,
+          "matches": true
+        },
+        {
+          "scenario": "clear-loop",
+          "half": false,
+          "before": 1.076,
+          "immediatelyAfter": 1.076,
+          "observations": [
+            {
+              "native": 1.219874954223633,
+              "cursor": 1.2200000000000002,
+              "errorSeconds": 0.00012504577636729408,
+              "inside": true
+            },
+            {
+              "native": 1.2678750514984132,
+              "cursor": 1.268,
+              "errorSeconds": 0.00012494850158684123,
+              "inside": true
+            },
+            {
+              "native": 1.331874942779541,
+              "cursor": 1.332,
+              "errorSeconds": 0.0001250572204589684,
+              "inside": true
+            },
+            {
+              "native": 1.3798750400543214,
+              "cursor": 1.3800000000000001,
+              "errorSeconds": 0.00012495994567873758,
+              "inside": true
+            },
+            {
+              "native": 1.427875018119812,
+              "cursor": 1.4280000000000002,
+              "errorSeconds": 0.00012498188018805756,
+              "inside": true
+            },
+            {
+              "native": 1.4758749961853028,
+              "cursor": 1.476,
+              "errorSeconds": 0.0001250038146971555,
+              "inside": true
+            }
+          ],
+          "maxErrorSeconds": 0.0001250572204589684,
+          "toleranceSeconds": 0.064,
+          "matches": true
+        },
+        {
+          "scenario": "clear-loop",
+          "half": true,
+          "before": 1.988,
+          "immediatelyAfter": 1.988,
+          "observations": [
+            {
+              "native": 2.059937572479248,
+              "cursor": 2.06,
+              "errorSeconds": 0.0000624275207519176,
+              "inside": true
+            },
+            {
+              "native": 2.0839375019073487,
+              "cursor": 2.084,
+              "errorSeconds": 0.00006249809265135298,
+              "inside": true
+            },
+            {
+              "native": 2.1159375667572022,
+              "cursor": 2.116,
+              "errorSeconds": 0.00006243324279786577,
+              "inside": true
+            },
+            {
+              "native": 2.139937496185303,
+              "cursor": 2.14,
+              "errorSeconds": 0.00006250381469730115,
+              "inside": true
+            },
+            {
+              "native": 2.1639374256134034,
+              "cursor": 2.164,
+              "errorSeconds": 0.00006257438659673653,
+              "inside": true
+            },
+            {
+              "native": 2.187937593460083,
+              "cursor": 2.188,
+              "errorSeconds": 0.00006240653991707035,
+              "inside": true
+            }
+          ],
+          "maxErrorSeconds": 0.00006257438659673653,
+          "toleranceSeconds": 0.064,
+          "matches": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "engine": "firefox",
+      "version": "155.0",
+      "offline": [
+        {
+          "sampleRate": 8000,
+          "half": false,
+          "offset": 0,
+          "expectedStart": 1,
+          "cursorStart": 0,
+          "cursorEnd": 0.512,
+          "expectedEnd": 1.512,
+          "firstSample": 0.05000000074505806,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 4096,
+          "maxSampleDifference": 0.1250000074505806,
+          "matches": false
+        },
+        {
+          "sampleRate": 8000,
+          "half": false,
+          "offset": 0.5,
+          "expectedStart": 1,
+          "cursorStart": 0.5,
+          "cursorEnd": 1.012,
+          "expectedEnd": 1.512,
+          "firstSample": 0.11249999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 4096,
+          "maxSampleDifference": 0.0625000074505806,
+          "matches": false
+        },
+        {
+          "sampleRate": 8000,
+          "half": false,
+          "offset": 1,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.512,
+          "expectedEnd": 1.512,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 8000,
+          "half": false,
+          "offset": 1.5,
+          "expectedStart": 1.5,
+          "cursorStart": 1.5,
+          "cursorEnd": 1.012,
+          "expectedEnd": 1.012,
+          "firstSample": 0.23749999701976776,
+          "expectedFirstSample": 0.23749999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 8000,
+          "half": false,
+          "offset": 2,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.512,
+          "expectedEnd": 1.512,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 8000,
+          "half": false,
+          "offset": 3,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.512,
+          "expectedEnd": 1.512,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 8000,
+          "half": false,
+          "offset": 4,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.512,
+          "expectedEnd": 1.512,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 8000,
+          "half": true,
+          "offset": 0,
+          "expectedStart": 1,
+          "cursorStart": 0,
+          "cursorEnd": 0.256,
+          "expectedEnd": 1.256,
+          "firstSample": 0.05000000074505806,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 4096,
+          "maxSampleDifference": 0.1250000074505806,
+          "matches": false
+        },
+        {
+          "sampleRate": 8000,
+          "half": true,
+          "offset": 0.5,
+          "expectedStart": 1,
+          "cursorStart": 0.5,
+          "cursorEnd": 0.756,
+          "expectedEnd": 1.256,
+          "firstSample": 0.11249999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 4096,
+          "maxSampleDifference": 0.0625000074505806,
+          "matches": false
+        },
+        {
+          "sampleRate": 8000,
+          "half": true,
+          "offset": 1,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.256,
+          "expectedEnd": 1.256,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 8000,
+          "half": true,
+          "offset": 1.5,
+          "expectedStart": 1.5,
+          "cursorStart": 1.5,
+          "cursorEnd": 1.756,
+          "expectedEnd": 1.756,
+          "firstSample": 0.23749999701976776,
+          "expectedFirstSample": 0.23749999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 8000,
+          "half": true,
+          "offset": 2,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.256,
+          "expectedEnd": 1.256,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 8000,
+          "half": true,
+          "offset": 3,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.256,
+          "expectedEnd": 1.256,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 8000,
+          "half": true,
+          "offset": 4,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.256,
+          "expectedEnd": 1.256,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 44100,
+          "half": false,
+          "offset": 0,
+          "expectedStart": 1,
+          "cursorStart": 0,
+          "cursorEnd": 0.09287981859410431,
+          "expectedEnd": 1.0928798185941042,
+          "firstSample": 0.05000000074505806,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 4096,
+          "maxSampleDifference": 0.1250000074505806,
+          "matches": false
+        },
+        {
+          "sampleRate": 44100,
+          "half": false,
+          "offset": 0.5,
+          "expectedStart": 1,
+          "cursorStart": 0.5,
+          "cursorEnd": 0.5928798185941043,
+          "expectedEnd": 1.0928798185941042,
+          "firstSample": 0.11249999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 4096,
+          "maxSampleDifference": 0.0625000074505806,
+          "matches": false
+        },
+        {
+          "sampleRate": 44100,
+          "half": false,
+          "offset": 1,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.0928798185941042,
+          "expectedEnd": 1.0928798185941042,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 44100,
+          "half": false,
+          "offset": 1.5,
+          "expectedStart": 1.5,
+          "cursorStart": 1.5,
+          "cursorEnd": 1.5928798185941042,
+          "expectedEnd": 1.5928798185941044,
+          "firstSample": 0.23749999701976776,
+          "expectedFirstSample": 0.23749999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 44100,
+          "half": false,
+          "offset": 2,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.0928798185941042,
+          "expectedEnd": 1.0928798185941042,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 44100,
+          "half": false,
+          "offset": 3,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.0928798185941042,
+          "expectedEnd": 1.0928798185941042,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 44100,
+          "half": false,
+          "offset": 4,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.0928798185941042,
+          "expectedEnd": 1.0928798185941042,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 44100,
+          "half": true,
+          "offset": 0,
+          "expectedStart": 1,
+          "cursorStart": 0,
+          "cursorEnd": 0.046439909297052155,
+          "expectedEnd": 1.0464399092970522,
+          "firstSample": 0.05000000074505806,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 4096,
+          "maxSampleDifference": 0.1250000074505806,
+          "matches": false
+        },
+        {
+          "sampleRate": 44100,
+          "half": true,
+          "offset": 0.5,
+          "expectedStart": 1,
+          "cursorStart": 0.5,
+          "cursorEnd": 0.5464399092970521,
+          "expectedEnd": 1.0464399092970522,
+          "firstSample": 0.11249999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 4096,
+          "maxSampleDifference": 0.0625000074505806,
+          "matches": false
+        },
+        {
+          "sampleRate": 44100,
+          "half": true,
+          "offset": 1,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.0464399092970522,
+          "expectedEnd": 1.0464399092970522,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 44100,
+          "half": true,
+          "offset": 1.5,
+          "expectedStart": 1.5,
+          "cursorStart": 1.5,
+          "cursorEnd": 1.5464399092970522,
+          "expectedEnd": 1.5464399092970522,
+          "firstSample": 0.23749999701976776,
+          "expectedFirstSample": 0.23749999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 44100,
+          "half": true,
+          "offset": 2,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.0464399092970522,
+          "expectedEnd": 1.0464399092970522,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 44100,
+          "half": true,
+          "offset": 3,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.0464399092970522,
+          "expectedEnd": 1.0464399092970522,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 44100,
+          "half": true,
+          "offset": 4,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.0464399092970522,
+          "expectedEnd": 1.0464399092970522,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 48000,
+          "half": false,
+          "offset": 0,
+          "expectedStart": 1,
+          "cursorStart": 0,
+          "cursorEnd": 0.08533333333333333,
+          "expectedEnd": 1.0853333333333333,
+          "firstSample": 0.05000000074505806,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 4096,
+          "maxSampleDifference": 0.1250000074505806,
+          "matches": false
+        },
+        {
+          "sampleRate": 48000,
+          "half": false,
+          "offset": 0.5,
+          "expectedStart": 1,
+          "cursorStart": 0.5,
+          "cursorEnd": 0.5853333333333334,
+          "expectedEnd": 1.0853333333333333,
+          "firstSample": 0.11249999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 4096,
+          "maxSampleDifference": 0.0625000074505806,
+          "matches": false
+        },
+        {
+          "sampleRate": 48000,
+          "half": false,
+          "offset": 1,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.0853333333333333,
+          "expectedEnd": 1.0853333333333333,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 48000,
+          "half": false,
+          "offset": 1.5,
+          "expectedStart": 1.5,
+          "cursorStart": 1.5,
+          "cursorEnd": 1.5853333333333333,
+          "expectedEnd": 1.5853333333333333,
+          "firstSample": 0.23749999701976776,
+          "expectedFirstSample": 0.23749999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 48000,
+          "half": false,
+          "offset": 2,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.0853333333333333,
+          "expectedEnd": 1.0853333333333333,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 48000,
+          "half": false,
+          "offset": 3,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.0853333333333333,
+          "expectedEnd": 1.0853333333333333,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 48000,
+          "half": false,
+          "offset": 4,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.0853333333333333,
+          "expectedEnd": 1.0853333333333333,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 48000,
+          "half": true,
+          "offset": 0,
+          "expectedStart": 1,
+          "cursorStart": 0,
+          "cursorEnd": 0.042666666666666665,
+          "expectedEnd": 1.0426666666666666,
+          "firstSample": 0.05000000074505806,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 4096,
+          "maxSampleDifference": 0.1250000074505806,
+          "matches": false
+        },
+        {
+          "sampleRate": 48000,
+          "half": true,
+          "offset": 0.5,
+          "expectedStart": 1,
+          "cursorStart": 0.5,
+          "cursorEnd": 0.5426666666666666,
+          "expectedEnd": 1.0426666666666666,
+          "firstSample": 0.11249999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 4096,
+          "maxSampleDifference": 0.0625000074505806,
+          "matches": false
+        },
+        {
+          "sampleRate": 48000,
+          "half": true,
+          "offset": 1,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.0426666666666666,
+          "expectedEnd": 1.0426666666666666,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 48000,
+          "half": true,
+          "offset": 1.5,
+          "expectedStart": 1.5,
+          "cursorStart": 1.5,
+          "cursorEnd": 1.5426666666666666,
+          "expectedEnd": 1.5426666666666666,
+          "firstSample": 0.23749999701976776,
+          "expectedFirstSample": 0.23749999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 48000,
+          "half": true,
+          "offset": 2,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.0426666666666666,
+          "expectedEnd": 1.0426666666666666,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 48000,
+          "half": true,
+          "offset": 3,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.0426666666666666,
+          "expectedEnd": 1.0426666666666666,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        },
+        {
+          "sampleRate": 48000,
+          "half": true,
+          "offset": 4,
+          "expectedStart": 1,
+          "cursorStart": 1,
+          "cursorEnd": 1.0426666666666666,
+          "expectedEnd": 1.0426666666666666,
+          "firstSample": 0.17499999701976776,
+          "expectedFirstSample": 0.17499999701976776,
+          "frames": 4096,
+          "sampleMismatches": 0,
+          "maxSampleDifference": 0,
+          "matches": true
+        }
+      ],
+      "live": [
+        {
+          "scenario": "enable-before-start",
+          "half": false,
+          "before": 0.176,
+          "immediatelyAfter": 0.176,
+          "observations": [
+            {
+              "native": 0.28787497282028196,
+              "cursor": 0.28800000000000003,
+              "errorSeconds": 0.00012502717971807353,
+              "inside": false
+            },
+            {
+              "native": 0.3198749780654907,
+              "cursor": 0.31999999999999995,
+              "errorSeconds": 0.0001250219345092507,
+              "inside": false
+            },
+            {
+              "native": 0.35187498331069944,
+              "cursor": 0.352,
+              "errorSeconds": 0.00012501668930053889,
+              "inside": false
+            },
+            {
+              "native": 0.4158749938011169,
+              "cursor": 0.41600000000000004,
+              "errorSeconds": 0.00012500619888311526,
+              "inside": false
+            },
+            {
+              "native": 0.44787499904632566,
+              "cursor": 0.448,
+              "errorSeconds": 0.00012500095367434794,
+              "inside": false
+            },
+            {
+              "native": 0.4798750042915344,
+              "cursor": 0.48000000000000004,
+              "errorSeconds": 0.00012499570846563612,
+              "inside": false
+            }
+          ],
+          "maxErrorSeconds": 0.00012502717971807353,
+          "toleranceSeconds": 0.064,
+          "matches": false
+        },
+        {
+          "scenario": "enable-before-start",
+          "half": true,
+          "before": 0.07999999999999999,
+          "immediatelyAfter": 0.07999999999999999,
+          "observations": [
+            {
+              "native": 0.1439375042915344,
+              "cursor": 0.144,
+              "errorSeconds": 0.0000624957084655875,
+              "inside": false
+            },
+            {
+              "native": 0.15993747711181638,
+              "cursor": 0.16,
+              "errorSeconds": 0.00006252288818361929,
+              "inside": false
+            },
+            {
+              "native": 0.17593750953674314,
+              "cursor": 0.176,
+              "errorSeconds": 0.00006249046325684793,
+              "inside": false
+            },
+            {
+              "native": 0.19193748235702512,
+              "cursor": 0.192,
+              "errorSeconds": 0.00006251764297487972,
+              "inside": false
+            },
+            {
+              "native": 0.21593747138977049,
+              "cursor": 0.216,
+              "errorSeconds": 0.00006252861022951195,
+              "inside": false
+            },
+            {
+              "native": 0.23993752002716062,
+              "cursor": 0.24,
+              "errorSeconds": 0.00006247997283936879,
+              "inside": false
+            }
+          ],
+          "maxErrorSeconds": 0.00006252861022951195,
+          "toleranceSeconds": 0.064,
+          "matches": false
+        },
+        {
+          "scenario": "move-start-ahead",
+          "half": false,
+          "before": 0.56,
+          "immediatelyAfter": 0.56,
+          "observations": [
+            {
+              "native": 0.6878750085830688,
+              "cursor": 0.6880000000000001,
+              "errorSeconds": 0.0001249914169312305,
+              "inside": false
+            },
+            {
+              "native": 0.7358749866485595,
+              "cursor": 0.736,
+              "errorSeconds": 0.00012501335144043946,
+              "inside": false
+            },
+            {
+              "native": 0.7838749647140503,
+              "cursor": 0.784,
+              "errorSeconds": 0.00012503528594975943,
+              "inside": false
+            },
+            {
+              "native": 0.831874942779541,
+              "cursor": 0.8320000000000001,
+              "errorSeconds": 0.0001250572204590794,
+              "inside": false
+            },
+            {
+              "native": 0.8798750400543213,
+              "cursor": 0.8800000000000001,
+              "errorSeconds": 0.0001249599456788486,
+              "inside": false
+            },
+            {
+              "native": 0.927875018119812,
+              "cursor": 0.9280000000000002,
+              "errorSeconds": 0.00012498188018816858,
+              "inside": false
+            }
+          ],
+          "maxErrorSeconds": 0.0001250572204590794,
+          "toleranceSeconds": 0.064,
+          "matches": false
+        },
+        {
+          "scenario": "move-start-ahead",
+          "half": true,
+          "before": 0.488,
+          "immediatelyAfter": 0.488,
+          "observations": [
+            {
+              "native": 0.5519374966621399,
+              "cursor": 0.552,
+              "errorSeconds": 0.00006250333786017581,
+              "inside": false
+            },
+            {
+              "native": 0.5759374856948852,
+              "cursor": 0.576,
+              "errorSeconds": 0.00006251430511472478,
+              "inside": false
+            },
+            {
+              "native": 0.591937518119812,
+              "cursor": 0.592,
+              "errorSeconds": 0.00006248188018798118,
+              "inside": false
+            },
+            {
+              "native": 0.623937463760376,
+              "cursor": 0.624,
+              "errorSeconds": 0.00006253623962404475,
+              "inside": false
+            },
+            {
+              "native": 0.6399374961853027,
+              "cursor": 0.64,
+              "errorSeconds": 0.00006250381469730115,
+              "inside": false
+            },
+            {
+              "native": 0.6559375286102295,
+              "cursor": 0.656,
+              "errorSeconds": 0.00006247138977055755,
+              "inside": false
+            }
+          ],
+          "maxErrorSeconds": 0.00006253623962404475,
+          "toleranceSeconds": 0.064,
+          "matches": false
+        },
+        {
+          "scenario": "enable-after-end",
+          "half": false,
+          "before": 3.176,
+          "immediatelyAfter": 1,
+          "observations": [
+            {
+              "native": 1.1438749790191651,
+              "cursor": 1.144,
+              "errorSeconds": 0.00012502098083477797,
+              "inside": true
+            },
+            {
+              "native": 1.1918749570846559,
+              "cursor": 1.192,
+              "errorSeconds": 0.00012504291534409795,
+              "inside": true
+            },
+            {
+              "native": 1.2398750543594361,
+              "cursor": 1.24,
+              "errorSeconds": 0.00012494564056386714,
+              "inside": true
+            },
+            {
+              "native": 1.2878750324249268,
+              "cursor": 1.288,
+              "errorSeconds": 0.00012496757507318712,
+              "inside": true
+            },
+            {
+              "native": 1.3358750104904176,
+              "cursor": 1.336,
+              "errorSeconds": 0.0001249895095825071,
+              "inside": true
+            },
+            {
+              "native": 1.3838749885559083,
+              "cursor": 1.384,
+              "errorSeconds": 0.00012501144409160503,
+              "inside": true
+            }
+          ],
+          "maxErrorSeconds": 0.00012504291534409795,
+          "toleranceSeconds": 0.064,
+          "matches": true
+        },
+        {
+          "scenario": "enable-after-end",
+          "half": true,
+          "before": 3.088,
+          "immediatelyAfter": 1,
+          "observations": [
+            {
+              "native": 1.0719375371932984,
+              "cursor": 1.072,
+              "errorSeconds": 0.00006246280670163529,
+              "inside": true
+            },
+            {
+              "native": 1.0879374504089356,
+              "cursor": 1.088,
+              "errorSeconds": 0.00006254959106444247,
+              "inside": true
+            },
+            {
+              "native": 1.1039374828338624,
+              "cursor": 1.104,
+              "errorSeconds": 0.00006251716613769887,
+              "inside": true
+            },
+            {
+              "native": 1.135937547683716,
+              "cursor": 1.1360000000000001,
+              "errorSeconds": 0.00006245231628421166,
+              "inside": true
+            },
+            {
+              "native": 1.1599374771118165,
+              "cursor": 1.16,
+              "errorSeconds": 0.000062522888183425,
+              "inside": true
+            },
+            {
+              "native": 1.1839375257492066,
+              "cursor": 1.184,
+              "errorSeconds": 0.0000624742507933096,
+              "inside": true
+            }
+          ],
+          "maxErrorSeconds": 0.00006254959106444247,
+          "toleranceSeconds": 0.064,
+          "matches": true
+        },
+        {
+          "scenario": "enable-inside",
+          "half": false,
+          "before": 1.376,
+          "immediatelyAfter": 1.376,
+          "observations": [
+            {
+              "native": 1.5038749933242799,
+              "cursor": 1.504,
+              "errorSeconds": 0.00012500667572012958,
+              "inside": true
+            },
+            {
+              "native": 1.5518749713897706,
+              "cursor": 1.5519999999999998,
+              "errorSeconds": 0.0001250286102292275,
+              "inside": true
+            },
+            {
+              "native": 1.5838750362396241,
+              "cursor": 1.5839999999999999,
+              "errorSeconds": 0.0001249637603757403,
+              "inside": true
+            },
+            {
+              "native": 1.6318748950958253,
+              "cursor": 1.632,
+              "errorSeconds": 0.00012510490417461106,
+              "inside": true
+            },
+            {
+              "native": 1.6638749599456788,
+              "cursor": 1.664,
+              "errorSeconds": 0.00012504005432112386,
+              "inside": true
+            },
+            {
+              "native": 1.6958750247955323,
+              "cursor": 1.696,
+              "errorSeconds": 0.00012497520446763666,
+              "inside": true
+            }
+          ],
+          "maxErrorSeconds": 0.00012510490417461106,
+          "toleranceSeconds": 0.064,
+          "matches": true
+        },
+        {
+          "scenario": "enable-inside",
+          "half": true,
+          "before": 1.28,
+          "immediatelyAfter": 1.28,
+          "observations": [
+            {
+              "native": 1.3439374923706056,
+              "cursor": 1.344,
+              "errorSeconds": 0.00006250762939452592,
+              "inside": true
+            },
+            {
+              "native": 1.3679375410079957,
+              "cursor": 1.368,
+              "errorSeconds": 0.00006245899200441052,
+              "inside": true
+            },
+            {
+              "native": 1.3919374704360963,
+              "cursor": 1.3920000000000001,
+              "errorSeconds": 0.0000625295639038459,
+              "inside": true
+            },
+            {
+              "native": 1.4159375190734864,
+              "cursor": 1.416,
+              "errorSeconds": 0.00006248092651350845,
+              "inside": true
+            },
+            {
+              "native": 1.439937448501587,
+              "cursor": 1.44,
+              "errorSeconds": 0.00006255149841294383,
+              "inside": true
+            },
+            {
+              "native": 1.4559374809265138,
+              "cursor": 1.456,
+              "errorSeconds": 0.00006251907348620023,
+              "inside": true
+            }
+          ],
+          "maxErrorSeconds": 0.00006255149841294383,
+          "toleranceSeconds": 0.064,
+          "matches": true
+        },
+        {
+          "scenario": "clear-loop",
+          "half": false,
+          "before": 1.076,
+          "immediatelyAfter": 1.076,
+          "observations": [
+            {
+              "native": 1.2038750410079957,
+              "cursor": 1.2040000000000002,
+              "errorSeconds": 0.0001249589920044869,
+              "inside": true
+            },
+            {
+              "native": 1.2358749866485597,
+              "cursor": 1.236,
+              "errorSeconds": 0.00012501335144032844,
+              "inside": true
+            },
+            {
+              "native": 1.2838749647140504,
+              "cursor": 1.284,
+              "errorSeconds": 0.0001250352859496484,
+              "inside": true
+            },
+            {
+              "native": 1.3478749752044679,
+              "cursor": 1.348,
+              "errorSeconds": 0.00012502479553222479,
+              "inside": true
+            },
+            {
+              "native": 1.3798750400543214,
+              "cursor": 1.3800000000000001,
+              "errorSeconds": 0.00012495994567873758,
+              "inside": true
+            },
+            {
+              "native": 1.4118749856948853,
+              "cursor": 1.4120000000000001,
+              "errorSeconds": 0.00012501430511480116,
+              "inside": true
+            }
+          ],
+          "maxErrorSeconds": 0.0001250352859496484,
+          "toleranceSeconds": 0.064,
+          "matches": true
+        },
+        {
+          "scenario": "clear-loop",
+          "half": true,
+          "before": 1.988,
+          "immediatelyAfter": 1.988,
+          "observations": [
+            {
+              "native": 2.051937437057495,
+              "cursor": 2.052,
+              "errorSeconds": 0.00006256294250484018,
+              "inside": true
+            },
+            {
+              "native": 2.067937469482422,
+              "cursor": 2.068,
+              "errorSeconds": 0.00006253051757809658,
+              "inside": true
+            },
+            {
+              "native": 2.0839375019073487,
+              "cursor": 2.084,
+              "errorSeconds": 0.00006249809265135298,
+              "inside": true
+            },
+            {
+              "native": 2.1079374313354493,
+              "cursor": 2.108,
+              "errorSeconds": 0.00006256866455078836,
+              "inside": true
+            },
+            {
+              "native": 2.131937599182129,
+              "cursor": 2.132,
+              "errorSeconds": 0.00006240081787112217,
+              "inside": true
+            },
+            {
+              "native": 2.1559375286102296,
+              "cursor": 2.156,
+              "errorSeconds": 0.00006247138977055755,
+              "inside": true
+            }
+          ],
+          "maxErrorSeconds": 0.00006256866455078836,
+          "toleranceSeconds": 0.064,
+          "matches": true
+        }
+      ],
+      "errors": []
+    }
+  ]
+}

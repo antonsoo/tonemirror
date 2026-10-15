@@ -96,9 +96,11 @@ Recording and file loading use the tab selected when you start, even if you
 switch tabs while waiting. The waveform shows the current clip's name and
 duration. Switching tabs pauses playback, and each clip retains its loop.
 Arrow keys, Home, and End move between the audio tabs.
-Resuming beyond a newly selected loop starts at that loop's beginning, with the
-playhead following the audio. [Native playback and browser evidence](studies/loop-playback/README.md)
-covers loop edits and half-speed playback.
+Starting or resuming outside a selected loop enters at its beginning. Moving a
+loop past a playing cursor moves the audio and cursor together. Selecting a loop
+while paused keeps that position until Play. [First-playback evidence](studies/loop-entry/README.md)
+and the [earlier cursor study](studies/loop-playback/README.md) cover native
+audio, live edits and half-speed coordinates.
 
 **Half-speed, same pitch** prepares a playback preview on your device the
 first time you play each clip slowly. Preparation can be cancelled, and the

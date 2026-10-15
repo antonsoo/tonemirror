@@ -59,11 +59,20 @@ export class ClipPlayer {
   }
 
   setLoopRegion(region: { start: number; end: number } | null): void {
-    this.startOffsetSeconds = this.currentPositionSeconds();
-    this.startedAtContextTime = this.context.currentTime;
+    const position = this.currentPositionSeconds();
+    const playing = this.isPlaying;
+    const ended = this.onEnded;
     this.loop = region;
+    const entry = this.loopEntryPosition(position);
+    if (playing && entry !== position) {
+      // Changing loopStart does not skip audio before it in a running native
+      // node. Restart at the selected passage so audio and cursor move together.
+      this.play(entry, ended ?? undefined);
+      return;
+    }
+    this.startOffsetSeconds = position;
+    this.startedAtContextTime = this.context.currentTime;
     if (this.source && this.buffer) {
-      this.startOffsetSeconds = this.loopEntryPosition(this.startOffsetSeconds);
       if (region) {
         this.source.loop = true;
         this.source.loopStart = region.start * this.source.buffer!.duration;
@@ -145,11 +154,11 @@ export class ClipPlayer {
   }
 
   private loopEntryPosition(pos: number): number {
-    // Native playback enters at loopStart when started beyond loopEnd, or
-    // when a loop is moved behind the playing position. Only subsequent
-    // elapsed playback wraps with a remainder. Leave invalid offsets to
-    // AudioBufferSourceNode.start's validation.
-    if (this.loop && this.buffer && Number.isFinite(pos) && pos >= this.loop.end * this.buffer.duration) {
+    // Enter the selected passage from either side. Native looping alone plays
+    // a pre-roll when the offset precedes loopStart. Keep a paused cursor until
+    // play() applies this rule, and leave invalid offsets to native validation.
+    if (this.loop && this.buffer && Number.isFinite(pos) && pos >= 0 &&
+        (pos < this.loop.start * this.buffer.duration || pos >= this.loop.end * this.buffer.duration)) {
       return this.loop.start * this.buffer.duration;
     }
     return pos;

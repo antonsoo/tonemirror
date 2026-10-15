@@ -57,6 +57,7 @@ test.beforeEach(async ({ page }) => {
     AudioBufferSourceNode.prototype.start = function (...args) {
       window.regionProbe.playback = this.buffer.getChannelData(0).slice();
       window.regionProbe.loop = { enabled: this.loop, start: this.loopStart, end: this.loopEnd };
+      window.regionProbe.offset = args[1] ?? 0;
       return start.apply(this, args);
     };
   });
@@ -65,6 +66,33 @@ test.beforeEach(async ({ page }) => {
 test.afterEach(async ({ page }) => {
   expect(await page.evaluate(() => window.regionProbe.errors)).toEqual([]);
   expect(await page.evaluate(() => window.regionProbe.violations)).toEqual([]);
+});
+
+test("first playback and active edits enter the chosen passage at both speeds", async ({ page, context }) => {
+  await page.goto("./");
+  await context.setOffline(true);
+  await input(page).setInputFiles(phrase());
+  await expect(button(page, "▶ Play")).toBeEnabled();
+  await region(page, 1, 2);
+  await button(page, "Loop region").click();
+  await button(page, "▶ Play").click();
+  expect(await page.evaluate(() => window.regionProbe.offset)).toBe(1);
+  await region(page, 2.4, 2.8);
+  await button(page, "Loop region").click();
+  expect(await page.evaluate(() => window.regionProbe.offset)).toBeCloseTo(2.4, 5);
+  await expect(button(page, "⏸ Pause")).toBeVisible();
+  await button(page, "Clear loop").click();
+  await expect(button(page, "⏸ Pause")).toBeVisible();
+  await button(page, "⏸ Pause").click();
+  await input(page).setInputFiles(phrase());
+  await expect(button(page, "▶ Play")).toBeEnabled();
+  await region(page, 1, 2);
+  await button(page, "Loop region").click();
+  await page.getByRole("checkbox", { name: "half-speed, same pitch", exact: true }).check();
+  await button(page, "▶ Play").click();
+  await expect(page.locator("#playback-note")).toContainText("pitch preserved");
+  expect(await page.evaluate(() => window.regionProbe.offset)).toBe(2);
+  expect(await page.evaluate(() => window.regionProbe.loop)).toEqual({ enabled: true, start: 2, end: 4 });
 });
 
 for (const width of [1440, 375]) test(`extract, compare, play, save and restore offline at ${width}px`, async ({ page, context }, testInfo) => {

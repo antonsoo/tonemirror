@@ -4,6 +4,12 @@ All notable changes to this project are documented in this file.
 
 ## Unreleased
 
+- Start playback inside the selected practice loop even when the playhead is
+  before it. Native loop bounds alone played the earlier audio once. Move a
+  running source into a newly selected passage together with its cursor;
+  preserve paused positions until Play and retain half-speed source coordinates.
+  [Actual rendered samples and offline app workflows](studies/loop-entry/README.md).
+
 - Reject non-finite decoded PCM in the analysis worker before replacing a clip.
   Damaged imports and saved recordings keep the previous valid audio and its
   comparison, saving and export; finite silence remains valid input.

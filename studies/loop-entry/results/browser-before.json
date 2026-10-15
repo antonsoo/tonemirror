@@ -1,0 +1,1738 @@
+{
+  "synthetic": true,
+  "fixture": {
+    "bytes": 768044,
+    "sha256": "1ae7f9f4031ea9541c2f7b3f6ef5f2186e20885f8ed3c982a4367142f72199a1",
+    "sampleRate": 48000,
+    "durationSeconds": 4
+  },
+  "baseline": true,
+  "scope": "Normal-speed native audio and painted cursor; actual prepared half-speed node offsets; exact original PCM export. No microphone or acoustic validation.",
+  "captures": [
+    {
+      "engine": "chromium",
+      "browser": "153.0.8010.12",
+      "width": 1440,
+      "starts": [
+        {
+          "offset": 0,
+          "loop": true,
+          "loopStart": 1,
+          "loopEnd": 2,
+          "nativeRate": 1
+        },
+        {
+          "offset": 0.5108390022675737,
+          "loop": true,
+          "loopStart": 1,
+          "loopEnd": 2,
+          "nativeRate": 1
+        },
+        {
+          "offset": 0,
+          "loop": true,
+          "loopStart": 2,
+          "loopEnd": 4,
+          "nativeRate": 1
+        }
+      ],
+      "policyViolations": [],
+      "overflow": 0,
+      "first": {
+        "observations": [
+          {
+            "cursor": 0.13931972789115646,
+            "audio": 0.13928804397583006,
+            "errorSeconds": 0.00003168391532640258,
+            "rate": 1,
+            "contextTime": 0.3599092970521542
+          },
+          {
+            "cursor": 0.16253968253968257,
+            "audio": 0.16247657537460325,
+            "errorSeconds": 0.00006310716507931802,
+            "rate": 1,
+            "contextTime": 0.3831292517006803
+          },
+          {
+            "cursor": 0.18575963718820862,
+            "audio": 0.1857213735580444,
+            "errorSeconds": 0.000038263630164209195,
+            "rate": 1,
+            "contextTime": 0.40634920634920635
+          },
+          {
+            "cursor": 0.18575963718820862,
+            "audio": 0.1857213735580444,
+            "errorSeconds": 0.000038263630164209195,
+            "rate": 1,
+            "contextTime": 0.40634920634920635
+          },
+          {
+            "cursor": 0.20897959183673467,
+            "audio": 0.20891270637512205,
+            "errorSeconds": 0.00006688546161262576,
+            "rate": 1,
+            "contextTime": 0.4295691609977324
+          },
+          {
+            "cursor": 0.23219954648526078,
+            "audio": 0.23215208053588865,
+            "errorSeconds": 0.000047465949372133,
+            "rate": 1,
+            "contextTime": 0.4527891156462585
+          },
+          {
+            "cursor": 0.23219954648526078,
+            "audio": 0.23215208053588865,
+            "errorSeconds": 0.000047465949372133,
+            "rate": 1,
+            "contextTime": 0.4527891156462585
+          },
+          {
+            "cursor": 0.278639455782313,
+            "audio": 0.27858070135116575,
+            "errorSeconds": 0.00005875443114722323,
+            "rate": 1,
+            "contextTime": 0.4992290249433107
+          },
+          {
+            "cursor": 0.3018594104308391,
+            "audio": 0.30182865858078,
+            "errorSeconds": 0.000030751850059074215,
+            "rate": 1,
+            "contextTime": 0.5224489795918368
+          },
+          {
+            "cursor": 0.3018594104308391,
+            "audio": 0.30182865858078,
+            "errorSeconds": 0.000030751850059074215,
+            "rate": 1,
+            "contextTime": 0.5224489795918368
+          },
+          {
+            "cursor": 0.3250793650793651,
+            "audio": 0.3250092625617981,
+            "errorSeconds": 0.00007010251756700558,
+            "rate": 1,
+            "contextTime": 0.5456689342403628
+          },
+          {
+            "cursor": 0.3250793650793651,
+            "audio": 0.33661667108535764,
+            "errorSeconds": 0.011537306005992565,
+            "rate": 1,
+            "contextTime": 0.5572789115646258
+          }
+        ],
+        "inside": false,
+        "maxErrorSeconds": 0.011537306005992565
+      },
+      "moved": {
+        "observations": [
+          {
+            "cursor": 0.8359183673469388,
+            "audio": 0.8358111143112182,
+            "errorSeconds": 0.00010725303572056699,
+            "rate": 1,
+            "contextTime": 1.3815873015873017
+          },
+          {
+            "cursor": 0.8591383219954647,
+            "audio": 0.859056806564331,
+            "errorSeconds": 0.00008151543113366078,
+            "rate": 1,
+            "contextTime": 1.4048072562358276
+          },
+          {
+            "cursor": 0.8823582766439908,
+            "audio": 0.8823231220245361,
+            "errorSeconds": 0.00003515461945469145,
+            "rate": 1,
+            "contextTime": 1.4280272108843537
+          },
+          {
+            "cursor": 0.9055782312925168,
+            "audio": 0.9054771423339844,
+            "errorSeconds": 0.00010108895853244704,
+            "rate": 1,
+            "contextTime": 1.4512471655328798
+          },
+          {
+            "cursor": 0.9287981859410431,
+            "audio": 0.9287562131881714,
+            "errorSeconds": 0.00004197275287176616,
+            "rate": 1,
+            "contextTime": 1.474467120181406
+          },
+          {
+            "cursor": 0.9287981859410431,
+            "audio": 0.9287562131881714,
+            "errorSeconds": 0.00004197275287176616,
+            "rate": 1,
+            "contextTime": 1.474467120181406
+          },
+          {
+            "cursor": 0.9520181405895691,
+            "audio": 0.9519006967544555,
+            "errorSeconds": 0.00011744383511358425,
+            "rate": 1,
+            "contextTime": 1.497687074829932
+          },
+          {
+            "cursor": 0.9752380952380952,
+            "audio": 0.9751833438873291,
+            "errorSeconds": 0.00005475135076615789,
+            "rate": 1,
+            "contextTime": 1.5209070294784581
+          },
+          {
+            "cursor": 0.9752380952380952,
+            "audio": 0.9751833438873291,
+            "errorSeconds": 0.00005475135076615789,
+            "rate": 1,
+            "contextTime": 1.5209070294784581
+          },
+          {
+            "cursor": 0.9752380952380952,
+            "audio": 0.9751833438873291,
+            "errorSeconds": 0.00005475135076615789,
+            "rate": 1,
+            "contextTime": 1.5209070294784581
+          },
+          {
+            "cursor": 1.0216780045351472,
+            "audio": 1.0216052293777467,
+            "errorSeconds": 0.00007277515740056195,
+            "rate": 1,
+            "contextTime": 1.5673469387755101
+          },
+          {
+            "cursor": 1.0448979591836733,
+            "audio": 1.0448632001876832,
+            "errorSeconds": 0.00003475899599014731,
+            "rate": 1,
+            "contextTime": 1.5905668934240362
+          }
+        ],
+        "inside": false,
+        "maxErrorSeconds": 0.00011744383511358425
+      },
+      "cleared": {
+        "observations": [
+          {
+            "cursor": 1.3931972789115645,
+            "audio": 1.3931257486343385,
+            "errorSeconds": 0.00007153027722606176,
+            "rate": 1,
+            "contextTime": 1.9388662131519274
+          },
+          {
+            "cursor": 1.3931972789115645,
+            "audio": 1.3931257486343385,
+            "errorSeconds": 0.00007153027722606176,
+            "rate": 1,
+            "contextTime": 1.9388662131519274
+          },
+          {
+            "cursor": 1.4164172335600906,
+            "audio": 1.4162633180618287,
+            "errorSeconds": 0.00015391549826193618,
+            "rate": 1,
+            "contextTime": 1.9620861678004535
+          },
+          {
+            "cursor": 1.4396371882086167,
+            "audio": 1.439540958404541,
+            "errorSeconds": 0.00009622980407564263,
+            "rate": 1,
+            "contextTime": 1.9853061224489796
+          },
+          {
+            "cursor": 1.4396371882086167,
+            "audio": 1.439540958404541,
+            "errorSeconds": 0.00009622980407564263,
+            "rate": 1,
+            "contextTime": 1.9853061224489796
+          },
+          {
+            "cursor": 1.4628571428571426,
+            "audio": 1.4628182411193849,
+            "errorSeconds": 0.000038901737757779387,
+            "rate": 1,
+            "contextTime": 2.0085260770975055
+          },
+          {
+            "cursor": 1.4628571428571426,
+            "audio": 1.4859527111053468,
+            "errorSeconds": 0.023095568248204135,
+            "rate": 1,
+            "contextTime": 2.0317460317460316
+          },
+          {
+            "cursor": 1.5092970521541949,
+            "audio": 1.5092519283294679,
+            "errorSeconds": 0.00004512382472698917,
+            "rate": 1,
+            "contextTime": 2.0549659863945577
+          },
+          {
+            "cursor": 1.532517006802721,
+            "audio": 1.532366728782654,
+            "errorSeconds": 0.0001502780200670628,
+            "rate": 1,
+            "contextTime": 2.078185941043084
+          },
+          {
+            "cursor": 1.532517006802721,
+            "audio": 1.532366728782654,
+            "errorSeconds": 0.0001502780200670628,
+            "rate": 1,
+            "contextTime": 2.078185941043084
+          },
+          {
+            "cursor": 1.555736961451247,
+            "audio": 1.5556777477264405,
+            "errorSeconds": 0.000059213724806550516,
+            "rate": 1,
+            "contextTime": 2.10140589569161
+          },
+          {
+            "cursor": 1.555736961451247,
+            "audio": 1.5556777477264405,
+            "errorSeconds": 0.000059213724806550516,
+            "rate": 1,
+            "contextTime": 2.10140589569161
+          },
+          {
+            "cursor": 1.5789569160997732,
+            "audio": 1.578790044784546,
+            "errorSeconds": 0.00016687131522719056,
+            "rate": 1,
+            "contextTime": 2.124625850340136
+          }
+        ],
+        "inside": true,
+        "maxErrorSeconds": 0.023095568248204135
+      },
+      "clearRetainsNode": true,
+      "half": {
+        "offset": 0,
+        "loop": true,
+        "loopStart": 2,
+        "loopEnd": 4,
+        "nativeRate": 1,
+        "matches": false
+      },
+      "original": {
+        "samples": 176399,
+        "sha256": "cc11a3a36ebe7f8fed1aa65d074d1cf5e57725a84d777fd35ab38ccaa8800fa3"
+      },
+      "exportMatches": true,
+      "maxErrorSeconds": 0.023095568248204135,
+      "toleranceSeconds": 0.064,
+      "matches": false,
+      "errors": [],
+      "offlineRequests": [],
+      "assets": {
+        "index.html": {
+          "bytes": 2361,
+          "sha256": "aff29a6eb0bd0bcdad041f9d280ebd9a3a76bce1d167099f24337396c9e65eb0"
+        },
+        "assets/index-BTO_e6A4.css": {
+          "bytes": 23188,
+          "sha256": "3ea8eb979b794e79ea4aa7ba55a6da08360030a59d32c0ca0562e895eb7fc91c"
+        },
+        "assets/index-BHZdsKGB.js": {
+          "bytes": 157979,
+          "sha256": "d2b3b68397ccf3b51164d03d230f4a19c381edb80a7764563622ada3a6e70381"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        },
+        "assets/fraunces-italic-vietnamese-B7PmIdA3.woff2": {
+          "bytes": 12048,
+          "sha256": "b2383049df5de759100887e80450ef360e502d5b0454954fab2dcd6b322944f5"
+        },
+        "assets/ibm-plex-mono-400-cyrillic-BSMlKf0J.woff2": {
+          "bytes": 8356,
+          "sha256": "7635422bd10ddbbcb0e0caa1154b928298f5c8319b8c00b30978d4395f4783ce"
+        },
+        "assets/fraunces-italic-latin-ext-C5JMU4hr.woff2": {
+          "bytes": 37620,
+          "sha256": "bbf614d45de67a99e638b753611329b2cb8b5b6d8da53b2aee0267fe75cfc5c8"
+        },
+        "assets/fraunces-vietnamese-Czevyj-6.woff2": {
+          "bytes": 19700,
+          "sha256": "f18853f63a870ebef013e30e789d8d544f102e4acd94988e57c223d9c796ddf4"
+        },
+        "assets/ibm-plex-mono-400-cyrillic-ext-xuaO2J-f.woff2": {
+          "bytes": 6912,
+          "sha256": "f8c22ec1804bd6966b70f43ac7c327025645b4c09597117fca2a5a6c750106fe"
+        },
+        "assets/fraunces-latin-ext-CJcjJNj7.woff2": {
+          "bytes": 59388,
+          "sha256": "a2930b27d13a228bd9ab6a49269b5f800237892ad560cb9dd7fab01b1620f88e"
+        },
+        "assets/ibm-plex-mono-400-vietnamese-BulugwFq.woff2": {
+          "bytes": 5868,
+          "sha256": "62632b6375305e70ddcafdd895218e6ae41a184fcd280a69c739460604ca00a9"
+        },
+        "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2": {
+          "bytes": 13348,
+          "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
+        },
+        "assets/ibm-plex-mono-500-cyrillic-ext-BqneJy0T.woff2": {
+          "bytes": 6972,
+          "sha256": "3febe5c7f22e4b07b4552738673c3dbe8bced2dc5f48b866edf7ccd9552d109a"
+        },
+        "assets/ibm-plex-mono-500-cyrillic-Bq9vWWag.woff2": {
+          "bytes": 8460,
+          "sha256": "1d89462e86cb8e87e7e9d6f6635605bd7c3081baca6caaecee84916bf7b60edc"
+        },
+        "assets/ibm-plex-mono-500-latin-ext-CAhNIIs5.woff2": {
+          "bytes": 13432,
+          "sha256": "6bb06407c97584b0867a959e05e8874693bfeb8c317de190811c51598f2d99ea"
+        },
+        "assets/ibm-plex-mono-500-vietnamese-DZ4AoWbu.woff2": {
+          "bytes": 6040,
+          "sha256": "781633d95de88040fb77141d1e65d928c87c0144691fbc74da5a64d137a7e910"
+        },
+        "assets/inter-cyrillic-DqGufNeO.woff2": {
+          "bytes": 18748,
+          "sha256": "71d5ee93cc1e9f1d520a3a8b66456de18c7879d8df09d57fcd2eaff75fef0075"
+        },
+        "assets/inter-cyrillic-ext-BOeWTOD4.woff2": {
+          "bytes": 25960,
+          "sha256": "ca157063339ac4ad418f214f3abfed119b0798ab4d377386ce5c9e5a7a435ebd"
+        },
+        "assets/inter-greek-ext-DlzME5K_.woff2": {
+          "bytes": 11232,
+          "sha256": "6e9e020a25f9b56d418f2c085b1d3c09725a4da23fe693a5b463064606732190"
+        },
+        "assets/inter-greek-CkhJZR-_.woff2": {
+          "bytes": 18996,
+          "sha256": "1be3448e292fbf05ffe176fe1e43f135013d50b1e7d324ad1a558f623d3bb6f6"
+        },
+        "assets/inter-vietnamese-CBcvBZtf.woff2": {
+          "bytes": 10252,
+          "sha256": "5c66f9e07e90c6d4ac4922cc68d60de26c17b1858e677fb5e603fce3952b3ff2"
+        },
+        "assets/inter-latin-ext-DO1Apj_S.woff2": {
+          "bytes": 85068,
+          "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
+        }
+      },
+      "screenshot": "chromium-1440.png"
+    },
+    {
+      "engine": "chromium",
+      "browser": "153.0.8010.12",
+      "width": 375,
+      "starts": [
+        {
+          "offset": 0,
+          "loop": true,
+          "loopStart": 1,
+          "loopEnd": 2,
+          "nativeRate": 1
+        },
+        {
+          "offset": 0.4179591836734694,
+          "loop": true,
+          "loopStart": 1,
+          "loopEnd": 2,
+          "nativeRate": 1
+        },
+        {
+          "offset": 0,
+          "loop": true,
+          "loopStart": 2,
+          "loopEnd": 4,
+          "nativeRate": 1
+        }
+      ],
+      "policyViolations": [],
+      "overflow": 0,
+      "first": {
+        "observations": [
+          {
+            "cursor": 0.11609977324263034,
+            "audio": 0.11604425907135008,
+            "errorSeconds": 0.00005551417128026037,
+            "rate": 1,
+            "contextTime": 0.26702947845804986
+          },
+          {
+            "cursor": 0.13931972789115646,
+            "audio": 0.13928804397583006,
+            "errorSeconds": 0.00003168391532640258,
+            "rate": 1,
+            "contextTime": 0.29024943310657597
+          },
+          {
+            "cursor": 0.1625396825396825,
+            "audio": 0.16247657537460325,
+            "errorSeconds": 0.0000631071650792625,
+            "rate": 1,
+            "contextTime": 0.313469387755102
+          },
+          {
+            "cursor": 0.18575963718820862,
+            "audio": 0.1857213735580444,
+            "errorSeconds": 0.000038263630164209195,
+            "rate": 1,
+            "contextTime": 0.33668934240362813
+          },
+          {
+            "cursor": 0.20897959183673467,
+            "audio": 0.20891270637512205,
+            "errorSeconds": 0.00006688546161262576,
+            "rate": 1,
+            "contextTime": 0.3599092970521542
+          },
+          {
+            "cursor": 0.20897959183673467,
+            "audio": 0.20891270637512205,
+            "errorSeconds": 0.00006688546161262576,
+            "rate": 1,
+            "contextTime": 0.3599092970521542
+          },
+          {
+            "cursor": 0.23219954648526078,
+            "audio": 0.23215208053588865,
+            "errorSeconds": 0.000047465949372133,
+            "rate": 1,
+            "contextTime": 0.3831292517006803
+          },
+          {
+            "cursor": 0.25541950113378686,
+            "audio": 0.2553911566734314,
+            "errorSeconds": 0.00002834446035548943,
+            "rate": 1,
+            "contextTime": 0.40634920634920635
+          },
+          {
+            "cursor": 0.25541950113378686,
+            "audio": 0.2553911566734314,
+            "errorSeconds": 0.00002834446035548943,
+            "rate": 1,
+            "contextTime": 0.40634920634920635
+          },
+          {
+            "cursor": 0.27863945578231286,
+            "audio": 0.27858070135116575,
+            "errorSeconds": 0.00005875443114711221,
+            "rate": 1,
+            "contextTime": 0.4295691609977324
+          },
+          {
+            "cursor": 0.30185941043083897,
+            "audio": 0.30182865858078,
+            "errorSeconds": 0.00003075185005896319,
+            "rate": 1,
+            "contextTime": 0.4527891156462585
+          },
+          {
+            "cursor": 0.30185941043083897,
+            "audio": 0.30182865858078,
+            "errorSeconds": 0.00003075185005896319,
+            "rate": 1,
+            "contextTime": 0.4527891156462585
+          }
+        ],
+        "inside": false,
+        "maxErrorSeconds": 0.00006688546161262576
+      },
+      "moved": {
+        "observations": [
+          {
+            "cursor": 0.5108390022675737,
+            "audio": 0.5108050465583801,
+            "errorSeconds": 0.000033955709193622674,
+            "rate": 1,
+            "contextTime": 0.9868480725623583
+          },
+          {
+            "cursor": 0.5340589569160998,
+            "audio": 0.533973491191864,
+            "errorSeconds": 0.00008546572423584475,
+            "rate": 1,
+            "contextTime": 1.0100680272108844
+          },
+          {
+            "cursor": 0.5340589569160998,
+            "audio": 0.533973491191864,
+            "errorSeconds": 0.00008546572423584475,
+            "rate": 1,
+            "contextTime": 1.0100680272108844
+          },
+          {
+            "cursor": 0.557278911564626,
+            "audio": 0.5572373032569885,
+            "errorSeconds": 0.00004160830763744183,
+            "rate": 1,
+            "contextTime": 1.0332879818594105
+          },
+          {
+            "cursor": 0.580498866213152,
+            "audio": 0.5804044365882873,
+            "errorSeconds": 0.0000944296248647225,
+            "rate": 1,
+            "contextTime": 1.0565079365079366
+          },
+          {
+            "cursor": 0.580498866213152,
+            "audio": 0.5804044365882873,
+            "errorSeconds": 0.0000944296248647225,
+            "rate": 1,
+            "contextTime": 1.0565079365079366
+          },
+          {
+            "cursor": 0.6037188208616779,
+            "audio": 0.6036653280258178,
+            "errorSeconds": 0.00005349283586009168,
+            "rate": 1,
+            "contextTime": 1.0797278911564625
+          },
+          {
+            "cursor": 0.626938775510204,
+            "audio": 0.6268440246582031,
+            "errorSeconds": 0.00009475085200094657,
+            "rate": 1,
+            "contextTime": 1.1029478458049886
+          },
+          {
+            "cursor": 0.626938775510204,
+            "audio": 0.6268440246582031,
+            "errorSeconds": 0.00009475085200094657,
+            "rate": 1,
+            "contextTime": 1.1029478458049886
+          },
+          {
+            "cursor": 0.6501587301587302,
+            "audio": 0.6500898361206054,
+            "errorSeconds": 0.00006889403812471162,
+            "rate": 1,
+            "contextTime": 1.1261678004535147
+          },
+          {
+            "cursor": 0.6733786848072563,
+            "audio": 0.6733460187911987,
+            "errorSeconds": 0.0000326660160575587,
+            "rate": 1,
+            "contextTime": 1.1493877551020408
+          },
+          {
+            "cursor": 0.6965986394557824,
+            "audio": 0.6965125560760498,
+            "errorSeconds": 0.00008608337973259328,
+            "rate": 1,
+            "contextTime": 1.172607709750567
+          }
+        ],
+        "inside": false,
+        "maxErrorSeconds": 0.00009475085200094657
+      },
+      "cleared": {
+        "observations": [
+          {
+            "cursor": 0.8126984126984127,
+            "audio": 0.8126357555389404,
+            "errorSeconds": 0.00006265715947229022,
+            "rate": 1,
+            "contextTime": 1.2887074829931973
+          },
+          {
+            "cursor": 0.8359183673469388,
+            "audio": 0.8358111143112182,
+            "errorSeconds": 0.00010725303572056699,
+            "rate": 1,
+            "contextTime": 1.3119274376417234
+          },
+          {
+            "cursor": 0.8475283446712019,
+            "audio": 0.859056806564331,
+            "errorSeconds": 0.011528461893129172,
+            "rate": 1,
+            "contextTime": 1.3351473922902495
+          },
+          {
+            "cursor": 0.8591383219954649,
+            "audio": 0.859056806564331,
+            "errorSeconds": 0.00008151543113388282,
+            "rate": 1,
+            "contextTime": 1.3351473922902495
+          },
+          {
+            "cursor": 0.882358276643991,
+            "audio": 0.8823231220245361,
+            "errorSeconds": 0.000035154619454913494,
+            "rate": 1,
+            "contextTime": 1.3583673469387756
+          },
+          {
+            "cursor": 0.905578231292517,
+            "audio": 0.9054771423339844,
+            "errorSeconds": 0.00010108895853266908,
+            "rate": 1,
+            "contextTime": 1.3815873015873017
+          },
+          {
+            "cursor": 0.9287981859410431,
+            "audio": 0.9287562131881714,
+            "errorSeconds": 0.00004197275287176616,
+            "rate": 1,
+            "contextTime": 1.4048072562358276
+          },
+          {
+            "cursor": 0.9287981859410431,
+            "audio": 0.9287562131881714,
+            "errorSeconds": 0.00004197275287176616,
+            "rate": 1,
+            "contextTime": 1.4048072562358276
+          },
+          {
+            "cursor": 0.9520181405895691,
+            "audio": 0.9519006967544555,
+            "errorSeconds": 0.00011744383511358425,
+            "rate": 1,
+            "contextTime": 1.4280272108843537
+          },
+          {
+            "cursor": 0.9752380952380953,
+            "audio": 0.9751833438873291,
+            "errorSeconds": 0.000054751350766268914,
+            "rate": 1,
+            "contextTime": 1.4512471655328798
+          },
+          {
+            "cursor": 0.9752380952380953,
+            "audio": 0.9751833438873291,
+            "errorSeconds": 0.000054751350766268914,
+            "rate": 1,
+            "contextTime": 1.4512471655328798
+          },
+          {
+            "cursor": 0.9984580498866213,
+            "audio": 0.9983327150344848,
+            "errorSeconds": 0.00012533485213650497,
+            "rate": 1,
+            "contextTime": 1.474467120181406
+          }
+        ],
+        "inside": true,
+        "maxErrorSeconds": 0.011528461893129172
+      },
+      "clearRetainsNode": true,
+      "half": {
+        "offset": 0,
+        "loop": true,
+        "loopStart": 2,
+        "loopEnd": 4,
+        "nativeRate": 1,
+        "matches": false
+      },
+      "original": {
+        "samples": 176399,
+        "sha256": "cc11a3a36ebe7f8fed1aa65d074d1cf5e57725a84d777fd35ab38ccaa8800fa3"
+      },
+      "exportMatches": true,
+      "maxErrorSeconds": 0.011528461893129172,
+      "toleranceSeconds": 0.064,
+      "matches": false,
+      "errors": [],
+      "offlineRequests": [],
+      "assets": {
+        "index.html": {
+          "bytes": 2361,
+          "sha256": "aff29a6eb0bd0bcdad041f9d280ebd9a3a76bce1d167099f24337396c9e65eb0"
+        },
+        "assets/index-BTO_e6A4.css": {
+          "bytes": 23188,
+          "sha256": "3ea8eb979b794e79ea4aa7ba55a6da08360030a59d32c0ca0562e895eb7fc91c"
+        },
+        "assets/index-BHZdsKGB.js": {
+          "bytes": 157979,
+          "sha256": "d2b3b68397ccf3b51164d03d230f4a19c381edb80a7764563622ada3a6e70381"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/fraunces-italic-latin-ext-C5JMU4hr.woff2": {
+          "bytes": 37620,
+          "sha256": "bbf614d45de67a99e638b753611329b2cb8b5b6d8da53b2aee0267fe75cfc5c8"
+        },
+        "assets/fraunces-italic-vietnamese-B7PmIdA3.woff2": {
+          "bytes": 12048,
+          "sha256": "b2383049df5de759100887e80450ef360e502d5b0454954fab2dcd6b322944f5"
+        },
+        "assets/fraunces-vietnamese-Czevyj-6.woff2": {
+          "bytes": 19700,
+          "sha256": "f18853f63a870ebef013e30e789d8d544f102e4acd94988e57c223d9c796ddf4"
+        },
+        "assets/fraunces-latin-ext-CJcjJNj7.woff2": {
+          "bytes": 59388,
+          "sha256": "a2930b27d13a228bd9ab6a49269b5f800237892ad560cb9dd7fab01b1620f88e"
+        },
+        "assets/ibm-plex-mono-400-cyrillic-ext-xuaO2J-f.woff2": {
+          "bytes": 6912,
+          "sha256": "f8c22ec1804bd6966b70f43ac7c327025645b4c09597117fca2a5a6c750106fe"
+        },
+        "assets/ibm-plex-mono-400-cyrillic-BSMlKf0J.woff2": {
+          "bytes": 8356,
+          "sha256": "7635422bd10ddbbcb0e0caa1154b928298f5c8319b8c00b30978d4395f4783ce"
+        },
+        "assets/ibm-plex-mono-400-vietnamese-BulugwFq.woff2": {
+          "bytes": 5868,
+          "sha256": "62632b6375305e70ddcafdd895218e6ae41a184fcd280a69c739460604ca00a9"
+        },
+        "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2": {
+          "bytes": 13348,
+          "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
+        },
+        "assets/ibm-plex-mono-500-cyrillic-ext-BqneJy0T.woff2": {
+          "bytes": 6972,
+          "sha256": "3febe5c7f22e4b07b4552738673c3dbe8bced2dc5f48b866edf7ccd9552d109a"
+        },
+        "assets/ibm-plex-mono-500-vietnamese-DZ4AoWbu.woff2": {
+          "bytes": 6040,
+          "sha256": "781633d95de88040fb77141d1e65d928c87c0144691fbc74da5a64d137a7e910"
+        },
+        "assets/ibm-plex-mono-500-cyrillic-Bq9vWWag.woff2": {
+          "bytes": 8460,
+          "sha256": "1d89462e86cb8e87e7e9d6f6635605bd7c3081baca6caaecee84916bf7b60edc"
+        },
+        "assets/ibm-plex-mono-500-latin-ext-CAhNIIs5.woff2": {
+          "bytes": 13432,
+          "sha256": "6bb06407c97584b0867a959e05e8874693bfeb8c317de190811c51598f2d99ea"
+        },
+        "assets/inter-cyrillic-ext-BOeWTOD4.woff2": {
+          "bytes": 25960,
+          "sha256": "ca157063339ac4ad418f214f3abfed119b0798ab4d377386ce5c9e5a7a435ebd"
+        },
+        "assets/inter-cyrillic-DqGufNeO.woff2": {
+          "bytes": 18748,
+          "sha256": "71d5ee93cc1e9f1d520a3a8b66456de18c7879d8df09d57fcd2eaff75fef0075"
+        },
+        "assets/inter-greek-ext-DlzME5K_.woff2": {
+          "bytes": 11232,
+          "sha256": "6e9e020a25f9b56d418f2c085b1d3c09725a4da23fe693a5b463064606732190"
+        },
+        "assets/inter-vietnamese-CBcvBZtf.woff2": {
+          "bytes": 10252,
+          "sha256": "5c66f9e07e90c6d4ac4922cc68d60de26c17b1858e677fb5e603fce3952b3ff2"
+        },
+        "assets/inter-greek-CkhJZR-_.woff2": {
+          "bytes": 18996,
+          "sha256": "1be3448e292fbf05ffe176fe1e43f135013d50b1e7d324ad1a558f623d3bb6f6"
+        },
+        "assets/inter-latin-ext-DO1Apj_S.woff2": {
+          "bytes": 85068,
+          "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
+        }
+      },
+      "screenshot": "chromium-375.png"
+    },
+    {
+      "engine": "firefox",
+      "browser": "155.0",
+      "width": 1440,
+      "starts": [
+        {
+          "offset": 0,
+          "loop": true,
+          "loopStart": 1,
+          "loopEnd": 2,
+          "nativeRate": 1
+        },
+        {
+          "offset": 0.5979138321995464,
+          "loop": true,
+          "loopStart": 1,
+          "loopEnd": 2,
+          "nativeRate": 1
+        },
+        {
+          "offset": 0,
+          "loop": true,
+          "loopStart": 2,
+          "loopEnd": 4,
+          "nativeRate": 1
+        }
+      ],
+      "policyViolations": [],
+      "overflow": 0,
+      "first": {
+        "observations": [
+          {
+            "cursor": 0.1422222222222222,
+            "audio": 0.14219514131546018,
+            "errorSeconds": 0.00002708090676201147,
+            "rate": 1,
+            "contextTime": 0.446984126984127
+          },
+          {
+            "cursor": 0.1422222222222222,
+            "audio": 0.14219514131546018,
+            "errorSeconds": 0.00002708090676201147,
+            "rate": 1,
+            "contextTime": 0.446984126984127
+          },
+          {
+            "cursor": 0.1422222222222222,
+            "audio": 0.14219514131546018,
+            "errorSeconds": 0.00002708090676201147,
+            "rate": 1,
+            "contextTime": 0.446984126984127
+          },
+          {
+            "cursor": 0.19156462585034012,
+            "audio": 0.19153568744659422,
+            "errorSeconds": 0.00002893840374590395,
+            "rate": 1,
+            "contextTime": 0.4963265306122449
+          },
+          {
+            "cursor": 0.19156462585034012,
+            "audio": 0.19153568744659422,
+            "errorSeconds": 0.00002893840374590395,
+            "rate": 1,
+            "contextTime": 0.4963265306122449
+          },
+          {
+            "cursor": 0.19156462585034012,
+            "audio": 0.19153568744659422,
+            "errorSeconds": 0.00002893840374590395,
+            "rate": 1,
+            "contextTime": 0.4963265306122449
+          },
+          {
+            "cursor": 0.2234920634920635,
+            "audio": 0.2234643459320068,
+            "errorSeconds": 0.000027717560056678137,
+            "rate": 1,
+            "contextTime": 0.5282539682539683
+          },
+          {
+            "cursor": 0.2438095238095238,
+            "audio": 0.2437810659408569,
+            "errorSeconds": 0.000028457868666897923,
+            "rate": 1,
+            "contextTime": 0.5485714285714286
+          },
+          {
+            "cursor": 0.2438095238095238,
+            "audio": 0.2437810659408569,
+            "errorSeconds": 0.000028457868666897923,
+            "rate": 1,
+            "contextTime": 0.5485714285714286
+          },
+          {
+            "cursor": 0.27283446712018133,
+            "audio": 0.27280483245849607,
+            "errorSeconds": 0.000029634661685262742,
+            "rate": 1,
+            "contextTime": 0.5775963718820861
+          },
+          {
+            "cursor": 0.27283446712018133,
+            "audio": 0.27280483245849607,
+            "errorSeconds": 0.000029634661685262742,
+            "rate": 1,
+            "contextTime": 0.5775963718820861
+          },
+          {
+            "cursor": 0.3047619047619048,
+            "audio": 0.30473349094390867,
+            "errorSeconds": 0.000028413817996120194,
+            "rate": 1,
+            "contextTime": 0.6095238095238096
+          },
+          {
+            "cursor": 0.3047619047619048,
+            "audio": 0.30473349094390867,
+            "errorSeconds": 0.000028413817996120194,
+            "rate": 1,
+            "contextTime": 0.6095238095238096
+          }
+        ],
+        "inside": false,
+        "maxErrorSeconds": 0.000029634661685262742
+      },
+      "moved": {
+        "observations": [
+          {
+            "cursor": 0.7778684807256234,
+            "audio": 0.7778364181518554,
+            "errorSeconds": 0.00003206257376797694,
+            "rate": 1,
+            "contextTime": 1.6341043083900226
+          },
+          {
+            "cursor": 0.7952834467120181,
+            "audio": 0.7952509880065918,
+            "errorSeconds": 0.00003245870542634144,
+            "rate": 1,
+            "contextTime": 1.6515192743764173
+          },
+          {
+            "cursor": 0.7952834467120181,
+            "audio": 0.7952509880065918,
+            "errorSeconds": 0.00003245870542634144,
+            "rate": 1,
+            "contextTime": 1.6515192743764173
+          },
+          {
+            "cursor": 0.8272108843537415,
+            "audio": 0.8271757125854492,
+            "errorSeconds": 0.00003517176829226365,
+            "rate": 1,
+            "contextTime": 1.6834467120181407
+          },
+          {
+            "cursor": 0.8591383219954648,
+            "audio": 0.8591054439544678,
+            "errorSeconds": 0.00003287804099705305,
+            "rate": 1,
+            "contextTime": 1.715374149659864
+          },
+          {
+            "cursor": 0.8591383219954648,
+            "audio": 0.8591054439544678,
+            "errorSeconds": 0.00003287804099705305,
+            "rate": 1,
+            "contextTime": 1.715374149659864
+          },
+          {
+            "cursor": 0.870748299319728,
+            "audio": 0.8707134485244751,
+            "errorSeconds": 0.00003485079525289425,
+            "rate": 1,
+            "contextTime": 1.726984126984127
+          },
+          {
+            "cursor": 0.9026757369614512,
+            "audio": 0.9026421070098877,
+            "errorSeconds": 0.00003362995156352966,
+            "rate": 1,
+            "contextTime": 1.7589115646258504
+          },
+          {
+            "cursor": 0.9026757369614512,
+            "audio": 0.9026421070098877,
+            "errorSeconds": 0.00003362995156352966,
+            "rate": 1,
+            "contextTime": 1.7589115646258504
+          },
+          {
+            "cursor": 0.952018140589569,
+            "audio": 0.951982831954956,
+            "errorSeconds": 0.000035308634612984946,
+            "rate": 1,
+            "contextTime": 1.8082539682539682
+          },
+          {
+            "cursor": 0.952018140589569,
+            "audio": 0.957789397239685,
+            "errorSeconds": 0.005771256650116019,
+            "rate": 1,
+            "contextTime": 1.8082539682539682
+          },
+          {
+            "cursor": 0.9839455782312923,
+            "audio": 0.9839108943939209,
+            "errorSeconds": 0.00003468383737137426,
+            "rate": 1,
+            "contextTime": 1.8401814058956916
+          }
+        ],
+        "inside": false,
+        "maxErrorSeconds": 0.005771256650116019
+      },
+      "cleared": {
+        "observations": [
+          {
+            "cursor": 1.2451700680272109,
+            "audio": 1.2451306343078614,
+            "errorSeconds": 0.000039433719349446505,
+            "rate": 1,
+            "contextTime": 2.10140589569161
+          },
+          {
+            "cursor": 1.2451700680272109,
+            "audio": 1.2451306343078614,
+            "errorSeconds": 0.000039433719349446505,
+            "rate": 1,
+            "contextTime": 2.10140589569161
+          },
+          {
+            "cursor": 1.2770975056689342,
+            "audio": 1.2770612001419068,
+            "errorSeconds": 0.000036305527027380435,
+            "rate": 1,
+            "contextTime": 2.1333333333333333
+          },
+          {
+            "cursor": 1.2770975056689342,
+            "audio": 1.2770612001419068,
+            "errorSeconds": 0.000036305527027380435,
+            "rate": 1,
+            "contextTime": 2.1333333333333333
+          },
+          {
+            "cursor": 1.3090249433106576,
+            "audio": 1.3089853286743165,
+            "errorSeconds": 0.00003961463634105655,
+            "rate": 1,
+            "contextTime": 2.1652607709750566
+          },
+          {
+            "cursor": 1.326439909297052,
+            "audio": 1.3263996601104737,
+            "errorSeconds": 0.000040249186578300566,
+            "rate": 1,
+            "contextTime": 2.182675736961451
+          },
+          {
+            "cursor": 1.326439909297052,
+            "audio": 1.3263996601104737,
+            "errorSeconds": 0.000040249186578300566,
+            "rate": 1,
+            "contextTime": 2.182675736961451
+          },
+          {
+            "cursor": 1.3583673469387754,
+            "audio": 1.3583307027816773,
+            "errorSeconds": 0.00003664415709803137,
+            "rate": 1,
+            "contextTime": 2.2146031746031745
+          },
+          {
+            "cursor": 1.3786848072562359,
+            "audio": 1.3786456346511842,
+            "errorSeconds": 0.000039172605051707166,
+            "rate": 1,
+            "contextTime": 2.234920634920635
+          },
+          {
+            "cursor": 1.4077097505668936,
+            "audio": 1.4076683282852174,
+            "errorSeconds": 0.00004142228167625106,
+            "rate": 1,
+            "contextTime": 2.2639455782312927
+          },
+          {
+            "cursor": 1.4077097505668936,
+            "audio": 1.4076683282852174,
+            "errorSeconds": 0.00004142228167625106,
+            "rate": 1,
+            "contextTime": 2.2639455782312927
+          },
+          {
+            "cursor": 1.439637188208617,
+            "audio": 1.4395991325378419,
+            "errorSeconds": 0.00003805567077508343,
+            "rate": 1,
+            "contextTime": 2.295873015873016
+          },
+          {
+            "cursor": 1.570249433106576,
+            "audio": 1.570206618309021,
+            "errorSeconds": 0.00004281479755485762,
+            "rate": 1,
+            "contextTime": 2.426485260770975
+          }
+        ],
+        "inside": true,
+        "maxErrorSeconds": 0.00004281479755485762
+      },
+      "clearRetainsNode": true,
+      "half": {
+        "offset": 0,
+        "loop": true,
+        "loopStart": 2,
+        "loopEnd": 4,
+        "nativeRate": 1,
+        "matches": false
+      },
+      "original": {
+        "samples": 176400,
+        "sha256": "20173b35de41439e6a0e60a5ba7435fe980b3d99ab26627f16ce5cc66bd79c37"
+      },
+      "exportMatches": true,
+      "maxErrorSeconds": 0.005771256650116019,
+      "toleranceSeconds": 0.064,
+      "matches": false,
+      "errors": [],
+      "offlineRequests": [],
+      "assets": {
+        "index.html": {
+          "bytes": 2361,
+          "sha256": "aff29a6eb0bd0bcdad041f9d280ebd9a3a76bce1d167099f24337396c9e65eb0"
+        },
+        "assets/index-BHZdsKGB.js": {
+          "bytes": 157979,
+          "sha256": "d2b3b68397ccf3b51164d03d230f4a19c381edb80a7764563622ada3a6e70381"
+        },
+        "assets/index-BTO_e6A4.css": {
+          "bytes": 23188,
+          "sha256": "3ea8eb979b794e79ea4aa7ba55a6da08360030a59d32c0ca0562e895eb7fc91c"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/fraunces-italic-vietnamese-B7PmIdA3.woff2": {
+          "bytes": 12048,
+          "sha256": "b2383049df5de759100887e80450ef360e502d5b0454954fab2dcd6b322944f5"
+        },
+        "assets/fraunces-vietnamese-Czevyj-6.woff2": {
+          "bytes": 19700,
+          "sha256": "f18853f63a870ebef013e30e789d8d544f102e4acd94988e57c223d9c796ddf4"
+        },
+        "assets/fraunces-latin-ext-CJcjJNj7.woff2": {
+          "bytes": 59388,
+          "sha256": "a2930b27d13a228bd9ab6a49269b5f800237892ad560cb9dd7fab01b1620f88e"
+        },
+        "assets/fraunces-italic-latin-ext-C5JMU4hr.woff2": {
+          "bytes": 37620,
+          "sha256": "bbf614d45de67a99e638b753611329b2cb8b5b6d8da53b2aee0267fe75cfc5c8"
+        },
+        "assets/ibm-plex-mono-400-cyrillic-ext-xuaO2J-f.woff2": {
+          "bytes": 6912,
+          "sha256": "f8c22ec1804bd6966b70f43ac7c327025645b4c09597117fca2a5a6c750106fe"
+        },
+        "assets/ibm-plex-mono-400-cyrillic-BSMlKf0J.woff2": {
+          "bytes": 8356,
+          "sha256": "7635422bd10ddbbcb0e0caa1154b928298f5c8319b8c00b30978d4395f4783ce"
+        },
+        "assets/ibm-plex-mono-400-vietnamese-BulugwFq.woff2": {
+          "bytes": 5868,
+          "sha256": "62632b6375305e70ddcafdd895218e6ae41a184fcd280a69c739460604ca00a9"
+        },
+        "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2": {
+          "bytes": 13348,
+          "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
+        },
+        "assets/ibm-plex-mono-500-cyrillic-ext-BqneJy0T.woff2": {
+          "bytes": 6972,
+          "sha256": "3febe5c7f22e4b07b4552738673c3dbe8bced2dc5f48b866edf7ccd9552d109a"
+        },
+        "assets/inter-cyrillic-ext-BOeWTOD4.woff2": {
+          "bytes": 25960,
+          "sha256": "ca157063339ac4ad418f214f3abfed119b0798ab4d377386ce5c9e5a7a435ebd"
+        },
+        "assets/ibm-plex-mono-500-vietnamese-DZ4AoWbu.woff2": {
+          "bytes": 6040,
+          "sha256": "781633d95de88040fb77141d1e65d928c87c0144691fbc74da5a64d137a7e910"
+        },
+        "assets/ibm-plex-mono-500-latin-ext-CAhNIIs5.woff2": {
+          "bytes": 13432,
+          "sha256": "6bb06407c97584b0867a959e05e8874693bfeb8c317de190811c51598f2d99ea"
+        },
+        "assets/ibm-plex-mono-500-cyrillic-Bq9vWWag.woff2": {
+          "bytes": 8460,
+          "sha256": "1d89462e86cb8e87e7e9d6f6635605bd7c3081baca6caaecee84916bf7b60edc"
+        },
+        "assets/inter-cyrillic-DqGufNeO.woff2": {
+          "bytes": 18748,
+          "sha256": "71d5ee93cc1e9f1d520a3a8b66456de18c7879d8df09d57fcd2eaff75fef0075"
+        },
+        "assets/inter-greek-ext-DlzME5K_.woff2": {
+          "bytes": 11232,
+          "sha256": "6e9e020a25f9b56d418f2c085b1d3c09725a4da23fe693a5b463064606732190"
+        },
+        "assets/inter-greek-CkhJZR-_.woff2": {
+          "bytes": 18996,
+          "sha256": "1be3448e292fbf05ffe176fe1e43f135013d50b1e7d324ad1a558f623d3bb6f6"
+        },
+        "assets/inter-vietnamese-CBcvBZtf.woff2": {
+          "bytes": 10252,
+          "sha256": "5c66f9e07e90c6d4ac4922cc68d60de26c17b1858e677fb5e603fce3952b3ff2"
+        },
+        "assets/inter-latin-ext-DO1Apj_S.woff2": {
+          "bytes": 85068,
+          "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
+        }
+      },
+      "screenshot": "firefox-1440.png"
+    },
+    {
+      "engine": "firefox",
+      "browser": "155.0",
+      "width": 375,
+      "starts": [
+        {
+          "offset": 0,
+          "loop": true,
+          "loopStart": 1,
+          "loopEnd": 2,
+          "nativeRate": 1
+        },
+        {
+          "offset": 0.4876190476190476,
+          "loop": true,
+          "loopStart": 1,
+          "loopEnd": 2,
+          "nativeRate": 1
+        },
+        {
+          "offset": 0,
+          "loop": true,
+          "loopStart": 2,
+          "loopEnd": 4,
+          "nativeRate": 1
+        }
+      ],
+      "policyViolations": [],
+      "overflow": 0,
+      "first": {
+        "observations": [
+          {
+            "cursor": 0.18285714285714288,
+            "audio": 0.18282864093780515,
+            "errorSeconds": 0.000028501919337731163,
+            "rate": 1,
+            "contextTime": 0.37732426303854877
+          },
+          {
+            "cursor": 0.18285714285714288,
+            "audio": 0.18282864093780515,
+            "errorSeconds": 0.000028501919337731163,
+            "rate": 1,
+            "contextTime": 0.37732426303854877
+          },
+          {
+            "cursor": 0.21188208616780044,
+            "audio": 0.21185383796691892,
+            "errorSeconds": 0.000028248200881514363,
+            "rate": 1,
+            "contextTime": 0.40634920634920635
+          },
+          {
+            "cursor": 0.2321995464852608,
+            "audio": 0.23217186927795408,
+            "errorSeconds": 0.000027677207306731066,
+            "rate": 1,
+            "contextTime": 0.4266666666666667
+          },
+          {
+            "cursor": 0.2321995464852608,
+            "audio": 0.23217186927795408,
+            "errorSeconds": 0.000027677207306731066,
+            "rate": 1,
+            "contextTime": 0.4266666666666667
+          },
+          {
+            "cursor": 0.24380952380952384,
+            "audio": 0.2437810659408569,
+            "errorSeconds": 0.00002845786866692568,
+            "rate": 1,
+            "contextTime": 0.4382766439909297
+          },
+          {
+            "cursor": 0.26412698412698415,
+            "audio": 0.2640973091125488,
+            "errorSeconds": 0.00002967501443534859,
+            "rate": 1,
+            "contextTime": 0.45859410430839004
+          },
+          {
+            "cursor": 0.29315192743764173,
+            "audio": 0.2931227445602417,
+            "errorSeconds": 0.000029182877400057983,
+            "rate": 1,
+            "contextTime": 0.4876190476190476
+          },
+          {
+            "cursor": 0.3250793650793651,
+            "audio": 0.32505027055740354,
+            "errorSeconds": 0.000029094521961536834,
+            "rate": 1,
+            "contextTime": 0.519546485260771
+          },
+          {
+            "cursor": 0.3250793650793651,
+            "audio": 0.32505027055740354,
+            "errorSeconds": 0.000029094521961536834,
+            "rate": 1,
+            "contextTime": 0.519546485260771
+          },
+          {
+            "cursor": 0.33668934240362813,
+            "audio": 0.3366591691970825,
+            "errorSeconds": 0.000030173206545636155,
+            "rate": 1,
+            "contextTime": 0.531156462585034
+          },
+          {
+            "cursor": 0.3570068027210884,
+            "audio": 0.3569770812988281,
+            "errorSeconds": 0.000029721422260320374,
+            "rate": 1,
+            "contextTime": 0.5514739229024943
+          }
+        ],
+        "inside": false,
+        "maxErrorSeconds": 0.000030173206545636155
+      },
+      "moved": {
+        "observations": [
+          {
+            "cursor": 0.9113832199546485,
+            "audio": 0.9113491535186767,
+            "errorSeconds": 0.00003406643597181347,
+            "rate": 1,
+            "contextTime": 1.5180045351473923
+          },
+          {
+            "cursor": 0.9113832199546485,
+            "audio": 0.9113491535186767,
+            "errorSeconds": 0.00003406643597181347,
+            "rate": 1,
+            "contextTime": 1.5180045351473923
+          },
+          {
+            "cursor": 0.9433106575963718,
+            "audio": 0.9432750701904297,
+            "errorSeconds": 0.000035587405942116845,
+            "rate": 1,
+            "contextTime": 1.5499319727891157
+          },
+          {
+            "cursor": 0.9433106575963718,
+            "audio": 0.9432750701904297,
+            "errorSeconds": 0.000035587405942116845,
+            "rate": 1,
+            "contextTime": 1.5499319727891157
+          },
+          {
+            "cursor": 0.9752380952380953,
+            "audio": 0.9752036094665527,
+            "errorSeconds": 0.0000344857715426361,
+            "rate": 1,
+            "contextTime": 1.581859410430839
+          },
+          {
+            "cursor": 1.0071655328798186,
+            "audio": 1.007129168510437,
+            "errorSeconds": 0.0000363643693814808,
+            "rate": 1,
+            "contextTime": 1.6137868480725623
+          },
+          {
+            "cursor": 1.0071655328798186,
+            "audio": 1.007129168510437,
+            "errorSeconds": 0.0000363643693814808,
+            "rate": 1,
+            "contextTime": 1.6137868480725623
+          },
+          {
+            "cursor": 1.0565079365079366,
+            "audio": 1.056472396850586,
+            "errorSeconds": 0.000035539657350591725,
+            "rate": 1,
+            "contextTime": 1.6631292517006804
+          },
+          {
+            "cursor": 1.0565079365079366,
+            "audio": 1.056472396850586,
+            "errorSeconds": 0.000035539657350591725,
+            "rate": 1,
+            "contextTime": 1.6631292517006804
+          },
+          {
+            "cursor": 1.08843537414966,
+            "audio": 1.088398551940918,
+            "errorSeconds": 0.00003682220874190456,
+            "rate": 1,
+            "contextTime": 1.6950566893424037
+          },
+          {
+            "cursor": 1.08843537414966,
+            "audio": 1.088398551940918,
+            "errorSeconds": 0.00003682220874190456,
+            "rate": 1,
+            "contextTime": 1.6950566893424037
+          },
+          {
+            "cursor": 1.1174603174603175,
+            "audio": 1.1174217224121095,
+            "errorSeconds": 0.000038595048208023286,
+            "rate": 1,
+            "contextTime": 1.7240816326530612
+          }
+        ],
+        "inside": false,
+        "maxErrorSeconds": 0.000038595048208023286
+      },
+      "cleared": {
+        "observations": [
+          {
+            "cursor": 1.486077097505669,
+            "audio": 1.4860393762588502,
+            "errorSeconds": 0.0000377212468187782,
+            "rate": 1,
+            "contextTime": 2.0926984126984127
+          },
+          {
+            "cursor": 1.5499319727891157,
+            "audio": 1.549893355369568,
+            "errorSeconds": 0.00003861741954769293,
+            "rate": 1,
+            "contextTime": 2.1565532879818594
+          },
+          {
+            "cursor": 1.581859410430839,
+            "audio": 1.5818174839019776,
+            "errorSeconds": 0.00004192652886136905,
+            "rate": 1,
+            "contextTime": 2.1884807256235828
+          },
+          {
+            "cursor": 1.581859410430839,
+            "audio": 1.5818174839019776,
+            "errorSeconds": 0.00004192652886136905,
+            "rate": 1,
+            "contextTime": 2.1884807256235828
+          },
+          {
+            "cursor": 1.5992743764172335,
+            "audio": 1.5992315769195558,
+            "errorSeconds": 0.000042799497677714626,
+            "rate": 1,
+            "contextTime": 2.2058956916099772
+          },
+          {
+            "cursor": 1.5992743764172335,
+            "audio": 1.5992315769195558,
+            "errorSeconds": 0.000042799497677714626,
+            "rate": 1,
+            "contextTime": 2.2058956916099772
+          },
+          {
+            "cursor": 1.6312018140589568,
+            "audio": 1.631162738800049,
+            "errorSeconds": 0.00003907525890789465,
+            "rate": 1,
+            "contextTime": 2.2378231292517006
+          },
+          {
+            "cursor": 1.692154195011338,
+            "audio": 1.692113733291626,
+            "errorSeconds": 0.00004046171971183732,
+            "rate": 1,
+            "contextTime": 2.2987755102040817
+          },
+          {
+            "cursor": 1.692154195011338,
+            "audio": 1.692113733291626,
+            "errorSeconds": 0.00004046171971183732,
+            "rate": 1,
+            "contextTime": 2.2987755102040817
+          },
+          {
+            "cursor": 1.692154195011338,
+            "audio": 1.692113733291626,
+            "errorSeconds": 0.00004046171971183732,
+            "rate": 1,
+            "contextTime": 2.2987755102040817
+          },
+          {
+            "cursor": 1.7240816326530612,
+            "audio": 1.7240386962890626,
+            "errorSeconds": 0.00004293636399865797,
+            "rate": 1,
+            "contextTime": 2.330702947845805
+          },
+          {
+            "cursor": 1.7443990929705218,
+            "audio": 1.7443545818328858,
+            "errorSeconds": 0.00004451113763592751,
+            "rate": 1,
+            "contextTime": 2.3510204081632655
+          }
+        ],
+        "inside": true,
+        "maxErrorSeconds": 0.00004451113763592751
+      },
+      "clearRetainsNode": true,
+      "half": {
+        "offset": 0,
+        "loop": true,
+        "loopStart": 2,
+        "loopEnd": 4,
+        "nativeRate": 1,
+        "matches": false
+      },
+      "original": {
+        "samples": 176400,
+        "sha256": "20173b35de41439e6a0e60a5ba7435fe980b3d99ab26627f16ce5cc66bd79c37"
+      },
+      "exportMatches": true,
+      "maxErrorSeconds": 0.00004451113763592751,
+      "toleranceSeconds": 0.064,
+      "matches": false,
+      "errors": [],
+      "offlineRequests": [],
+      "assets": {
+        "index.html": {
+          "bytes": 2361,
+          "sha256": "aff29a6eb0bd0bcdad041f9d280ebd9a3a76bce1d167099f24337396c9e65eb0"
+        },
+        "assets/index-BHZdsKGB.js": {
+          "bytes": 157979,
+          "sha256": "d2b3b68397ccf3b51164d03d230f4a19c381edb80a7764563622ada3a6e70381"
+        },
+        "assets/index-BTO_e6A4.css": {
+          "bytes": 23188,
+          "sha256": "3ea8eb979b794e79ea4aa7ba55a6da08360030a59d32c0ca0562e895eb7fc91c"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        },
+        "assets/fraunces-italic-vietnamese-B7PmIdA3.woff2": {
+          "bytes": 12048,
+          "sha256": "b2383049df5de759100887e80450ef360e502d5b0454954fab2dcd6b322944f5"
+        },
+        "assets/fraunces-italic-latin-ext-C5JMU4hr.woff2": {
+          "bytes": 37620,
+          "sha256": "bbf614d45de67a99e638b753611329b2cb8b5b6d8da53b2aee0267fe75cfc5c8"
+        },
+        "assets/fraunces-latin-ext-CJcjJNj7.woff2": {
+          "bytes": 59388,
+          "sha256": "a2930b27d13a228bd9ab6a49269b5f800237892ad560cb9dd7fab01b1620f88e"
+        },
+        "assets/ibm-plex-mono-400-cyrillic-ext-xuaO2J-f.woff2": {
+          "bytes": 6912,
+          "sha256": "f8c22ec1804bd6966b70f43ac7c327025645b4c09597117fca2a5a6c750106fe"
+        },
+        "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2": {
+          "bytes": 13348,
+          "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
+        },
+        "assets/ibm-plex-mono-400-cyrillic-BSMlKf0J.woff2": {
+          "bytes": 8356,
+          "sha256": "7635422bd10ddbbcb0e0caa1154b928298f5c8319b8c00b30978d4395f4783ce"
+        },
+        "assets/ibm-plex-mono-400-vietnamese-BulugwFq.woff2": {
+          "bytes": 5868,
+          "sha256": "62632b6375305e70ddcafdd895218e6ae41a184fcd280a69c739460604ca00a9"
+        },
+        "assets/fraunces-vietnamese-Czevyj-6.woff2": {
+          "bytes": 19700,
+          "sha256": "f18853f63a870ebef013e30e789d8d544f102e4acd94988e57c223d9c796ddf4"
+        },
+        "assets/ibm-plex-mono-500-cyrillic-ext-BqneJy0T.woff2": {
+          "bytes": 6972,
+          "sha256": "3febe5c7f22e4b07b4552738673c3dbe8bced2dc5f48b866edf7ccd9552d109a"
+        },
+        "assets/ibm-plex-mono-500-latin-ext-CAhNIIs5.woff2": {
+          "bytes": 13432,
+          "sha256": "6bb06407c97584b0867a959e05e8874693bfeb8c317de190811c51598f2d99ea"
+        },
+        "assets/ibm-plex-mono-500-vietnamese-DZ4AoWbu.woff2": {
+          "bytes": 6040,
+          "sha256": "781633d95de88040fb77141d1e65d928c87c0144691fbc74da5a64d137a7e910"
+        },
+        "assets/inter-cyrillic-DqGufNeO.woff2": {
+          "bytes": 18748,
+          "sha256": "71d5ee93cc1e9f1d520a3a8b66456de18c7879d8df09d57fcd2eaff75fef0075"
+        },
+        "assets/inter-cyrillic-ext-BOeWTOD4.woff2": {
+          "bytes": 25960,
+          "sha256": "ca157063339ac4ad418f214f3abfed119b0798ab4d377386ce5c9e5a7a435ebd"
+        },
+        "assets/ibm-plex-mono-500-cyrillic-Bq9vWWag.woff2": {
+          "bytes": 8460,
+          "sha256": "1d89462e86cb8e87e7e9d6f6635605bd7c3081baca6caaecee84916bf7b60edc"
+        },
+        "assets/inter-greek-ext-DlzME5K_.woff2": {
+          "bytes": 11232,
+          "sha256": "6e9e020a25f9b56d418f2c085b1d3c09725a4da23fe693a5b463064606732190"
+        },
+        "assets/inter-greek-CkhJZR-_.woff2": {
+          "bytes": 18996,
+          "sha256": "1be3448e292fbf05ffe176fe1e43f135013d50b1e7d324ad1a558f623d3bb6f6"
+        },
+        "assets/inter-vietnamese-CBcvBZtf.woff2": {
+          "bytes": 10252,
+          "sha256": "5c66f9e07e90c6d4ac4922cc68d60de26c17b1858e677fb5e603fce3952b3ff2"
+        },
+        "assets/inter-latin-ext-DO1Apj_S.woff2": {
+          "bytes": 85068,
+          "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
+        }
+      },
+      "screenshot": "firefox-375.png"
+    }
+  ]
+}
