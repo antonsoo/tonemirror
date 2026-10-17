@@ -117,5 +117,8 @@ uses a browser-provided fake device. An earlier full browser invocation
 ended with SIGTERM and has no completed result; the receipt retains that
 interruption. No cause in the product was established. The completed run
 was separate. All 14 pitch-core source files match baseline `5860bd8`.
-The 30 build files match the working build, and all five [clean screenshots](results/clean-screenshots.json)
-are byte-identical to the inspected captures.
+The 30 build files match the working build. Three [clean screenshots](results/clean-screenshots.json)
+match the working captures byte for byte; two Chromium captures differ around
+the listening control. Both were visually inspected, and the clean versions
+are retained. An initial writeup claimed all five were identical before the
+comparison completed; this receipt corrects that claim.
