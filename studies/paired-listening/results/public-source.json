@@ -1,12 +1,12 @@
 {
-  "checkedAt": "2026-10-17T07:48:51.964928+00:00",
-  "localMain": "171e6619c6c8044881338d0304aba4dc1d47b0af",
-  "remoteMain": "171e6619c6c8044881338d0304aba4dc1d47b0af",
+  "checkedAt": "2026-10-17T07:56:22.557694+00:00",
+  "localMain": "f49ecf376c61fa99d9d85a9b58aaeeeae254e847",
+  "remoteMain": "f49ecf376c61fa99d9d85a9b58aaeeeae254e847",
   "cleanTreeAtCapture": true,
   "files": [
     {
       "file": "src/app.ts",
-      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/171e6619c6c8044881338d0304aba4dc1d47b0af/src/app.ts",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/f49ecf376c61fa99d9d85a9b58aaeeeae254e847/src/app.ts",
       "httpStatus": 200,
       "bytes": 51951,
       "sha256": "da719f5a35ec90822238356fe6f33b63c342e5a55ebf812e8a4c93384563f86d",
@@ -14,7 +14,7 @@
     },
     {
       "file": "src/audio/pairedPlayback.ts",
-      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/171e6619c6c8044881338d0304aba4dc1d47b0af/src/audio/pairedPlayback.ts",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/f49ecf376c61fa99d9d85a9b58aaeeeae254e847/src/audio/pairedPlayback.ts",
       "httpStatus": 200,
       "bytes": 4038,
       "sha256": "743dd89a3fdfd628a179c394dec0fbbf8376f49f28b944ea6e41eb472ed696c1",
@@ -22,7 +22,7 @@
     },
     {
       "file": "src/audio/limits.ts",
-      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/171e6619c6c8044881338d0304aba4dc1d47b0af/src/audio/limits.ts",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/f49ecf376c61fa99d9d85a9b58aaeeeae254e847/src/audio/limits.ts",
       "httpStatus": 200,
       "bytes": 1516,
       "sha256": "461a1e0b31acccddf23da3172d7fd95199078fec5eccbc5544fe91f70cc9e8ac",
@@ -30,7 +30,7 @@
     },
     {
       "file": "src/style.css",
-      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/171e6619c6c8044881338d0304aba4dc1d47b0af/src/style.css",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/f49ecf376c61fa99d9d85a9b58aaeeeae254e847/src/style.css",
       "httpStatus": 200,
       "bytes": 14862,
       "sha256": "4eb2577ca9e4d2d37a00272ba78232439889b09938a91ab2c9121fa5d5414701",
@@ -38,7 +38,7 @@
     },
     {
       "file": "tests/browser/paired-listening.spec.js",
-      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/171e6619c6c8044881338d0304aba4dc1d47b0af/tests/browser/paired-listening.spec.js",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/f49ecf376c61fa99d9d85a9b58aaeeeae254e847/tests/browser/paired-listening.spec.js",
       "httpStatus": 200,
       "bytes": 11004,
       "sha256": "26b2b54885796c38416106312c540c8cab626649fbcc6570bb1e18f37201e441",
@@ -46,7 +46,7 @@
     },
     {
       "file": "studies/paired-listening/native.mjs",
-      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/171e6619c6c8044881338d0304aba4dc1d47b0af/studies/paired-listening/native.mjs",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/f49ecf376c61fa99d9d85a9b58aaeeeae254e847/studies/paired-listening/native.mjs",
       "httpStatus": 200,
       "bytes": 9383,
       "sha256": "553d2d61d647253b772fe33f9b573e8df3ab22e452293aed8837b7311fceba24",
@@ -54,15 +54,15 @@
     },
     {
       "file": "studies/paired-listening/browser.mjs",
-      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/171e6619c6c8044881338d0304aba4dc1d47b0af/studies/paired-listening/browser.mjs",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/f49ecf376c61fa99d9d85a9b58aaeeeae254e847/studies/paired-listening/browser.mjs",
       "httpStatus": 200,
-      "bytes": 11840,
-      "sha256": "7b5ba4411a7077916911c7f6335fa70de4033f506b7d040286207982d43fb5d6",
+      "bytes": 12439,
+      "sha256": "695c51797e16eee71a97b713bc74158d578889f313cffcecb78100d7874acb1d",
       "state": "verified"
     },
     {
       "file": "studies/paired-listening/results/native.json",
-      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/171e6619c6c8044881338d0304aba4dc1d47b0af/studies/paired-listening/results/native.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/f49ecf376c61fa99d9d85a9b58aaeeeae254e847/studies/paired-listening/results/native.json",
       "httpStatus": 200,
       "bytes": 68200,
       "sha256": "a3595983b42b7840733343345df6e57b7993d54d99b721588b2d24e225e30e71",
@@ -70,7 +70,7 @@
     },
     {
       "file": "studies/paired-listening/results/clean-checks.json",
-      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/171e6619c6c8044881338d0304aba4dc1d47b0af/studies/paired-listening/results/clean-checks.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/f49ecf376c61fa99d9d85a9b58aaeeeae254e847/studies/paired-listening/results/clean-checks.json",
       "httpStatus": 200,
       "bytes": 10265,
       "sha256": "77153e3839b5e6da74e2fc2c267958ae5ffc89e97fa9a5b0ae057d7262e68be9",
@@ -78,7 +78,7 @@
     },
     {
       "file": "studies/paired-listening/results/clean-screenshots.json",
-      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/171e6619c6c8044881338d0304aba4dc1d47b0af/studies/paired-listening/results/clean-screenshots.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/f49ecf376c61fa99d9d85a9b58aaeeeae254e847/studies/paired-listening/results/clean-screenshots.json",
       "httpStatus": 200,
       "bytes": 2313,
       "sha256": "52147a682bec801235ed0468da3b84aee4081be6e772f60918025aab3533c232",
@@ -86,15 +86,15 @@
     },
     {
       "file": "studies/paired-listening/README.md",
-      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/171e6619c6c8044881338d0304aba4dc1d47b0af/studies/paired-listening/README.md",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/f49ecf376c61fa99d9d85a9b58aaeeeae254e847/studies/paired-listening/README.md",
       "httpStatus": 200,
-      "bytes": 6969,
-      "sha256": "52d18873717569a9093663fa50c66a6d57bbfa18702223a7cf4307b214f9896b",
+      "bytes": 8228,
+      "sha256": "6149ee7b9c563390d26631c8a6b015d57972f527d2a2bc39b36724c5532fa677",
       "state": "verified"
     },
     {
       "file": "docs/assets/paired-listening/paired-listening.png",
-      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/171e6619c6c8044881338d0304aba4dc1d47b0af/docs/assets/paired-listening/paired-listening.png",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/f49ecf376c61fa99d9d85a9b58aaeeeae254e847/docs/assets/paired-listening/paired-listening.png",
       "httpStatus": 200,
       "bytes": 95439,
       "sha256": "d661c4cc7c63201f15c7eb155e0eb8505726a271241fa75271726249c164f2be",
@@ -102,7 +102,7 @@
     },
     {
       "file": "public/audio-licenses.txt",
-      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/171e6619c6c8044881338d0304aba4dc1d47b0af/public/audio-licenses.txt",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/f49ecf376c61fa99d9d85a9b58aaeeeae254e847/public/audio-licenses.txt",
       "httpStatus": 200,
       "bytes": 3262,
       "sha256": "5fac2b782635cc55572e1254efd1c8cefda87f457470aac9ae2134988dfd2680",
@@ -110,7 +110,7 @@
     },
     {
       "file": "package-lock.json",
-      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/171e6619c6c8044881338d0304aba4dc1d47b0af/package-lock.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/f49ecf376c61fa99d9d85a9b58aaeeeae254e847/package-lock.json",
       "httpStatus": 200,
       "bytes": 99655,
       "sha256": "7e5000c2c9aa5a1f2a4840e482561b7440703eb34992f706b57c943234c6bd6d",
@@ -118,7 +118,7 @@
     },
     {
       "file": "README.md",
-      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/171e6619c6c8044881338d0304aba4dc1d47b0af/README.md",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/f49ecf376c61fa99d9d85a9b58aaeeeae254e847/README.md",
       "httpStatus": 200,
       "bytes": 26421,
       "sha256": "bec5385f4a19876474ca6a829657bc1535e144c01dfa009df1e0b2c88d4843fe",
