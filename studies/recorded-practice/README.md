@@ -118,4 +118,23 @@ tracking or scoring. The [desktop capture](../../docs/assets/recorded-practice/r
 [Chromium phone](../../docs/assets/recorded-practice/chromium-375.png),
 [Firefox desktop](../../docs/assets/recorded-practice/firefox-1440.png) and
 [Firefox phone](../../docs/assets/recorded-practice/firefox-375.png) were visually
-inspected. Publication status is verified separately.
+inspected.
+
+## Publication
+
+The source and [live demo](https://antonsoo.github.io/tonemirror/) include this
+addition. Pages commit `3174c9c` deploys the clean build above. The
+[canonical HTTP check](results/hosted-bytes.json) matched all 30 production
+files, including the root page before and after the pass and explicit
+`index.html`. The [hosted browser replay](results/hosted-browser.json) repeated
+the four contexts and 48 exact WAV exports. Its five screenshots
+[byte-match the inspected local captures](results/hosted-screenshots.json).
+
+The browser verifier checks response bodies during startup, before changing
+pages. The first hosted attempt exposed a verifier race while reading a body
+after navigation; that incomplete attempt is not counted as a successful
+capture. Reload and subsequent library use are exercised separately from
+startup-byte verification. No runtime change was needed for that race.
+
+The application remains npm-private at version 0.2.3. No registry release,
+release tag or remote CI result is implied by source or Pages publication.

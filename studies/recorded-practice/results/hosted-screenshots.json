@@ -1,0 +1,35 @@
+{
+  "captures": [
+    {
+      "file": "docs/assets/recorded-practice/chromium-1440.png",
+      "sha256": "558bdaafdd559b1ea8ca6054e90de0ca8a78e1afd82708ae1e400317b0f0319a",
+      "hostedCaptureMatches": true,
+      "bytes": 492144
+    },
+    {
+      "file": "docs/assets/recorded-practice/chromium-375.png",
+      "sha256": "d3c3cbb0936592e8ea6bd5a5c080a477767780afa7792c5efcf1e7898aab2c6b",
+      "hostedCaptureMatches": true,
+      "bytes": 402967
+    },
+    {
+      "file": "docs/assets/recorded-practice/firefox-1440.png",
+      "sha256": "3cbfe1d54d23d338684cd5f4660fa0129d13c5d4e52727f28042a7045585bb07",
+      "hostedCaptureMatches": true,
+      "bytes": 645141
+    },
+    {
+      "file": "docs/assets/recorded-practice/firefox-375.png",
+      "sha256": "4093216405b8de17914a5402997d1ef5947e20f42b58c79b818bda7378ab60f3",
+      "hostedCaptureMatches": true,
+      "bytes": 553831
+    },
+    {
+      "file": "docs/assets/recorded-practice/recorded-practice.png",
+      "sha256": "5248f40419cb6b8acebcde329a19bea8b1f81061d5e7781d0583199f6cb0d01c",
+      "hostedCaptureMatches": true,
+      "bytes": 181601
+    }
+  ],
+  "scope": "Hosted screenshots byte-match the five local production screenshots already visually inspected. No duplicate image copies are retained."
+}

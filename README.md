@@ -18,7 +18,7 @@ or *"your pitch peak comes later than the reference's."*
 
 Nothing leaves your device: no uploads, no accounts, no analytics.
 
-**Start with recorded speech.** The source checkout includes four isolated
+**Start with recorded speech.** The source checkout and live demo include four isolated
 Mandarin tones spoken on *ma*. Load mā, má, mǎ or mà, listen, and record your
 own attempt. The original recording is bundled for offline use; its author,
 license and selected source interval travel with saved clips and WAV exports.

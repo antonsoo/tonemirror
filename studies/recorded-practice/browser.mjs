@@ -49,8 +49,9 @@ for (const [engineName, engine] of Object.entries({ chromium, firefox })) {
   const browser = await engine.launch();
   try {
     for (const width of [1440, 375]) {
-      const errors = [], csp = [], external = [], offlineRequests = [], assets = {}, pending = [];
+      const errors = [], csp = [], external = [], offlineRequests = [], assets = {}, pending = [], assetErrors = [];
       let disconnected = false;
+      let captureStartupAssets = true;
       const server = createServer(async (request, response) => {
         const file = new URL(request.url, 'http://localhost').pathname.replace(/^\/tonemirror\//, '') || 'index.html';
         const path = resolve(dist, file);
@@ -74,13 +75,13 @@ for (const [engineName, engine] of Object.entries({ chromium, firefox })) {
           if (new URL(request.url()).origin !== origin) external.push(request.url());
         });
         page.on('response', response => {
-          if (disconnected || response.status() !== 200 || !response.url().startsWith(origin)) return;
+          if (!captureStartupAssets || response.status() !== 200 || !response.url().startsWith(origin)) return;
           pending.push((async () => {
             const file = new URL(response.url()).pathname.replace(/^\/tonemirror\//, '') || 'index.html';
             const bytes = await response.body();
             assert.equal(hash(bytes), hash(await readFile(resolve(dist, file))));
             assets[file] = { bytes: bytes.length, sha256: hash(bytes) };
-          })());
+          })().catch(error => assetErrors.push(error.message)));
         });
         await page.addInitScript(() => {
           window.recordedProbe = { inputs: [], contours: [] };
@@ -105,7 +106,12 @@ for (const [engineName, engine] of Object.entries({ chromium, firefox })) {
           await Promise.all(['400 24px Fraunces', '500 24px Fraunces', '600 24px Fraunces', 'italic 500 24px Fraunces'].map(font => document.fonts.load(font)));
           await document.fonts.ready;
         });
-        await Promise.all(pending);
+        for (let settled = 0; settled < pending.length;) {
+          const batch = pending.slice(settled); settled = pending.length;
+          await Promise.all(batch);
+        }
+        captureStartupAssets = false;
+        assert.deepEqual(assetErrors, []);
         await context.setOffline(true); disconnected = true;
         const button = name => page.getByRole('button', { name, exact: true });
         const label = page.locator('.tm-clip-label'), creditText = page.locator('.tm-audio-credit');
@@ -220,7 +226,7 @@ for (const [engineName, engine] of Object.entries({ chromium, firefox })) {
         await expect(creditText).toContainText('3.150–3.550s');
         const reloaded = await download('reloaded'); assert.equal(reloaded.sha256, saved.sha256);
         csp.push(...await page.evaluate(() => window.recordedCsp ?? []));
-        assert.deepEqual(errors, []); assert.deepEqual(csp, []); assert.deepEqual(external, []); assert.deepEqual(offlineRequests, []);
+        assert.deepEqual(errors, []); assert.deepEqual(csp, []); assert.deepEqual(external, []); assert.deepEqual(offlineRequests, []); assert.deepEqual(assetErrors, []);
         results.push({ browser: engineName, version: browser.version(), width, decoded, tones, exports, contrastScore: score,
           contrast: 'Recorded tone 2 as reference and recorded tone 4 as attempt; no learner recording or pronunciation accuracy claim.',
           pageErrors: errors, cspViolations: csp, externalRequests: external, requestsWhileOffline: offlineRequests, axeViolations: axe.length, overflow, served: assets });
