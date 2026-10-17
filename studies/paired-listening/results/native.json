@@ -2399,14 +2399,14 @@
             "role": "reference",
             "positionSeconds": 0
           },
-          "stoppedAt": 0.021333333333333333,
+          "stoppedAt": 0.0026666666666666666,
           "starts": [
-            0.05133333333333333,
-            0.6413333333333333
+            0.03266666666666666,
+            0.6226666666666667
           ],
           "stops": [
-            0.021333333333333333,
-            0.021333333333333333
+            0.0026666666666666666,
+            0.0026666666666666666
           ],
           "peakAfterStop": 0,
           "observations": 26,
@@ -2423,19 +2423,19 @@
           "stateBeforeStop": {
             "phase": "reference",
             "role": "reference",
-            "positionSeconds": 0.1406666666666667
+            "positionSeconds": 0.12733333333333335
           },
-          "stoppedAt": 0.18133333333333335,
+          "stoppedAt": 0.168,
           "starts": [
             0.04066666666666666,
             0.6306666666666667
           ],
           "stops": [
-            0.18133333333333335,
-            0.18133333333333335
+            0.168,
+            0.168
           ],
           "peakAfterStop": 0,
-          "observations": 20,
+          "observations": 22,
           "finalState": {
             "phase": "idle",
             "role": null,
@@ -2451,17 +2451,17 @@
             "role": null,
             "positionSeconds": null
           },
-          "stoppedAt": 0.4693333333333333,
+          "stoppedAt": 0.4613333333333333,
           "starts": [
-            0.05133333333333333,
-            0.6413333333333333
+            0.04066666666666666,
+            0.6306666666666667
           ],
           "stops": [
-            0.4693333333333333,
-            0.4693333333333333
+            0.4613333333333333,
+            0.4613333333333333
           ],
           "peakAfterStop": 0,
-          "observations": 12,
+          "observations": 13,
           "finalState": {
             "phase": "idle",
             "role": null,

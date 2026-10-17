@@ -108,3 +108,14 @@ The native harness uses the esbuild version pinned transitively in the
 application lockfile to bundle the source; production gains no dependency.
 The private application version remains 0.2.3. Build, public-source and hosted
 verification receipts are recorded separately when those checks complete.
+
+The [clean source-archive receipt](results/clean-checks.json) identifies
+`9d61ca5` and Node 24.21.0. Install, lint, types, 223 unit assertions,
+106 browser scenarios, the recorded offline workflow and native rendering
+all passed. Four existing Firefox microphone cases remain skipped; Chromium
+uses a browser-provided fake device. An earlier full browser invocation
+ended with SIGTERM and has no completed result; the receipt retains that
+interruption. No cause in the product was established. The completed run
+was separate. All 14 pitch-core source files match baseline `5860bd8`.
+The 30 build files match the working build, and all five [clean screenshots](results/clean-screenshots.json)
+are byte-identical to the inspected captures.
