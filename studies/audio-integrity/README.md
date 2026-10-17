@@ -108,6 +108,7 @@ and its terminal response; both phases were rerun. The delayed export diagnostic
 is asserted at its actual `download-note` element. These harness corrections did
 not alter the application fix or hide an unresolved browser failure.
 
-The application's package is marked private for npm. The correction is verified
-public source and a local production build; no npm release, tag or hosted
-deployment is part of it.
+The application's package is marked private for npm. The original correction was verified
+as public source and a local production build. The later
+[deployment review](../wav-export/publication/README.md) confirms the hosted
+files match the tested source build. No npm release or tag was created.

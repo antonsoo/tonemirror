@@ -1,0 +1,22 @@
+[
+  {
+    "file": "firefox-1440.png",
+    "byte_identical_to_inspected_local": true,
+    "sha256": "4d58e9c660976131daa940514d0f6a12e69c2c287d9111a2f37946175b3e5ff9"
+  },
+  {
+    "file": "chromium-375.png",
+    "byte_identical_to_inspected_local": true,
+    "sha256": "bc1e703df315ac52aab909e29dc023c6862df82041bda81f72e2bf2e03360b48"
+  },
+  {
+    "file": "firefox-375.png",
+    "byte_identical_to_inspected_local": true,
+    "sha256": "7a6c484e8f9d250711be38e7a0e4e8a0e8ed910bf62838f29124c1b895ec013e"
+  },
+  {
+    "file": "chromium-1440.png",
+    "byte_identical_to_inspected_local": false,
+    "sha256": "40eb7f206c99b66a6e4364a034f324da897fd7360afb36899003f770bdb9490b"
+  }
+]

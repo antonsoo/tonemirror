@@ -18,11 +18,11 @@ or *"your pitch peak comes later than the reference's."*
 
 Nothing leaves your device: no uploads, no accounts, no analytics.
 
-The source checkout rejects **non-finite decoded audio samples** before a new
+The source checkout and live demo reject **non-finite decoded audio samples** before a new
 clip is committed. A damaged file or saved recording leaves the previous clip
 available for comparison, playback, saving and export. Real silence remains
 valid audio. [Native decoder and worker reproduction](studies/audio-integrity/README.md)
-documents this unreleased correction.
+documents the correction; [hosted build verification](studies/wav-export/publication/README.md) records its deployment.
 
 ![Reference (gold) and attempt (teal) pitch contours overlaid after DTW alignment, with a similarity score and rule-based feedback](docs/assets/hero.png)
 
@@ -49,7 +49,7 @@ just click one of the built-in reference chips and record yourself.
 
 ## Features
 
-- **Audio out (source checkout, unreleased):** **Download WAV** exports the
+- **Audio out:** **Download WAV** exports the
   focused attempt or reference, including recordings and saved clips. Use
   **Keep region** first to download just a passage. Downloads preserve the
   decoded mono samples at normal speed; looping and half-speed playback do not

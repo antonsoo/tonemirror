@@ -1,0 +1,1231 @@
+{
+  "mode": "after",
+  "origin": "https://antonsoo.github.io",
+  "ffmpeg": "ffmpeg version 8.0 Copyright (c) 2000-2025 the FFmpeg developers",
+  "results": [
+    {
+      "browser": "chromium",
+      "version": "153.0.8010.12",
+      "width": 1440,
+      "fixture": {
+        "url": "http://www2.spsc.tugraz.at/databases/PTDB-TUG/SPEECH%20DATA/FEMALE/MIC/F01/mic_F01_sa1.wav",
+        "path": "ptdb/F01/mic_F01_sa1.wav",
+        "bytes": 767084,
+        "sha256": "4d06714d605aafdd4f5923170b182b25879c42fe9f5275e7c076134f4f490fc1"
+      },
+      "mode": "after",
+      "headingFontsLoadedBeforeOffline": true,
+      "hasRegionControls": true,
+      "exportControlCount": 1,
+      "exports": [
+        {
+          "stage": "full",
+          "filename": "tonemirror-attempt-mic_F01_sa1.wav",
+          "bytes": 1409576,
+          "sha256": "7cf8c1506feeb85582b144768bb73a48d803a69634a9212ba8dc70538ae16600",
+          "sampleRate": 44100,
+          "samples": 352358,
+          "pcmSha256": "bb153c728ad11f4976272314603b550337d77777b109c2b3dfda57b2439b48b0",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "looped",
+          "filename": "tonemirror-attempt-mic_F01_sa1.wav",
+          "bytes": 1409576,
+          "sha256": "7cf8c1506feeb85582b144768bb73a48d803a69634a9212ba8dc70538ae16600",
+          "sampleRate": 44100,
+          "samples": 352358,
+          "pcmSha256": "bb153c728ad11f4976272314603b550337d77777b109c2b3dfda57b2439b48b0",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "excerpt",
+          "filename": "tonemirror-attempt-mic_F01_sa1.wav [3.000–4.000s].wav",
+          "bytes": 176544,
+          "sha256": "b0a89ee4cc7483e152a67881d24b0e8e55135772f58fafb08fbc889d8fbcf753",
+          "sampleRate": 44100,
+          "samples": 44100,
+          "pcmSha256": "3fc91d4f16070d438b7e875b8b622b224b9d72789d4963053a98d023fb43980b",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "restored",
+          "filename": "tonemirror-attempt-mic_F01_sa1.wav",
+          "bytes": 1409576,
+          "sha256": "7cf8c1506feeb85582b144768bb73a48d803a69634a9212ba8dc70538ae16600",
+          "sampleRate": 44100,
+          "samples": 352358,
+          "pcmSha256": "bb153c728ad11f4976272314603b550337d77777b109c2b3dfda57b2439b48b0",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "saved",
+          "filename": "tonemirror-reference-Recorded speech excerpt.wav",
+          "bytes": 176544,
+          "sha256": "b0a89ee4cc7483e152a67881d24b0e8e55135772f58fafb08fbc889d8fbcf753",
+          "sampleRate": 44100,
+          "samples": 44100,
+          "pcmSha256": "3fc91d4f16070d438b7e875b8b622b224b9d72789d4963053a98d023fb43980b",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "synthetic",
+          "filename": "tonemirror-synthetic-reference-Mandarin Tone 1 - high level.wav",
+          "bytes": 53078,
+          "sha256": "bea2197cccdc35cdf97fcba91af40464eed650c176f3f690f8fd4ce704e628c3",
+          "sampleRate": 22050,
+          "samples": 13230,
+          "pcmSha256": "e64a21bf0e77572cdd99d087f635d6986c6d4e8798deafdaf212374256f7f6ca",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror synthetic pitch reference; not recorded speech."
+          }
+        }
+      ],
+      "axeViolations": 0,
+      "overflow": false,
+      "pageErrors": [],
+      "cspViolations": [],
+      "externalRequests": [],
+      "requestsAfterDisconnect": [],
+      "served": {
+        "index.html": {
+          "bytes": 2361,
+          "sha256": "00a08c796484799cc9b6d2dd89b943b439ab667dbefe7494a3e8b71d6a0e522a"
+        },
+        "assets/index-BTO_e6A4.css": {
+          "bytes": 23188,
+          "sha256": "3ea8eb979b794e79ea4aa7ba55a6da08360030a59d32c0ca0562e895eb7fc91c"
+        },
+        "assets/index-Buia93ni.js": {
+          "bytes": 158070,
+          "sha256": "1b5415225f15388378dc46c18ff3a93ccf3817df287251487bc71a0fab531dab"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        }
+      }
+    },
+    {
+      "browser": "chromium",
+      "version": "153.0.8010.12",
+      "width": 1440,
+      "fixture": {
+        "url": "http://www2.spsc.tugraz.at/databases/PTDB-TUG/SPEECH%20DATA/MALE/MIC/M01/mic_M01_sa1.wav",
+        "path": "ptdb/M01/mic_M01_sa1.wav",
+        "bytes": 808364,
+        "sha256": "831c88e139267895e68f71050f668b7f32fae8676af0200bf59bfa8bdbfa8d26"
+      },
+      "mode": "after",
+      "headingFontsLoadedBeforeOffline": true,
+      "hasRegionControls": true,
+      "exportControlCount": 1,
+      "exports": [
+        {
+          "stage": "full",
+          "filename": "tonemirror-attempt-mic_M01_sa1.wav",
+          "bytes": 1485428,
+          "sha256": "d8ba4742df44dd68077e2dbc6ce9521add6c7b7b7198b7bdffe21e6c78ff4ef1",
+          "sampleRate": 44100,
+          "samples": 371321,
+          "pcmSha256": "da8512e1b244a81dae20e40eb2868c738daef75ba81547ff983a9166fb326d2a",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "looped",
+          "filename": "tonemirror-attempt-mic_M01_sa1.wav",
+          "bytes": 1485428,
+          "sha256": "d8ba4742df44dd68077e2dbc6ce9521add6c7b7b7198b7bdffe21e6c78ff4ef1",
+          "sampleRate": 44100,
+          "samples": 371321,
+          "pcmSha256": "da8512e1b244a81dae20e40eb2868c738daef75ba81547ff983a9166fb326d2a",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "excerpt",
+          "filename": "tonemirror-attempt-mic_M01_sa1.wav [3.000–4.000s].wav",
+          "bytes": 176544,
+          "sha256": "5e15955720f2377a2fa0facf3c07a1e34a7857d2eab4d0ead7f9c632a6de5bb3",
+          "sampleRate": 44100,
+          "samples": 44100,
+          "pcmSha256": "c13fe1070383eb7ae33b8f8a49df60327ccaa264e3b1a9ea05293209e3f39b95",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "restored",
+          "filename": "tonemirror-attempt-mic_M01_sa1.wav",
+          "bytes": 1485428,
+          "sha256": "d8ba4742df44dd68077e2dbc6ce9521add6c7b7b7198b7bdffe21e6c78ff4ef1",
+          "sampleRate": 44100,
+          "samples": 371321,
+          "pcmSha256": "da8512e1b244a81dae20e40eb2868c738daef75ba81547ff983a9166fb326d2a",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "saved",
+          "filename": "tonemirror-reference-Recorded speech excerpt.wav",
+          "bytes": 176544,
+          "sha256": "5e15955720f2377a2fa0facf3c07a1e34a7857d2eab4d0ead7f9c632a6de5bb3",
+          "sampleRate": 44100,
+          "samples": 44100,
+          "pcmSha256": "c13fe1070383eb7ae33b8f8a49df60327ccaa264e3b1a9ea05293209e3f39b95",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "synthetic",
+          "filename": "tonemirror-synthetic-reference-Mandarin Tone 1 - high level.wav",
+          "bytes": 53078,
+          "sha256": "bea2197cccdc35cdf97fcba91af40464eed650c176f3f690f8fd4ce704e628c3",
+          "sampleRate": 22050,
+          "samples": 13230,
+          "pcmSha256": "e64a21bf0e77572cdd99d087f635d6986c6d4e8798deafdaf212374256f7f6ca",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror synthetic pitch reference; not recorded speech."
+          }
+        }
+      ],
+      "axeViolations": 0,
+      "overflow": false,
+      "pageErrors": [],
+      "cspViolations": [],
+      "externalRequests": [],
+      "requestsAfterDisconnect": [],
+      "served": {
+        "index.html": {
+          "bytes": 2361,
+          "sha256": "00a08c796484799cc9b6d2dd89b943b439ab667dbefe7494a3e8b71d6a0e522a"
+        },
+        "assets/index-BTO_e6A4.css": {
+          "bytes": 23188,
+          "sha256": "3ea8eb979b794e79ea4aa7ba55a6da08360030a59d32c0ca0562e895eb7fc91c"
+        },
+        "assets/index-Buia93ni.js": {
+          "bytes": 158070,
+          "sha256": "1b5415225f15388378dc46c18ff3a93ccf3817df287251487bc71a0fab531dab"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        }
+      }
+    },
+    {
+      "browser": "chromium",
+      "version": "153.0.8010.12",
+      "width": 375,
+      "fixture": {
+        "url": "http://www2.spsc.tugraz.at/databases/PTDB-TUG/SPEECH%20DATA/FEMALE/MIC/F01/mic_F01_sa1.wav",
+        "path": "ptdb/F01/mic_F01_sa1.wav",
+        "bytes": 767084,
+        "sha256": "4d06714d605aafdd4f5923170b182b25879c42fe9f5275e7c076134f4f490fc1"
+      },
+      "mode": "after",
+      "headingFontsLoadedBeforeOffline": true,
+      "hasRegionControls": true,
+      "exportControlCount": 1,
+      "exports": [
+        {
+          "stage": "full",
+          "filename": "tonemirror-attempt-mic_F01_sa1.wav",
+          "bytes": 1409576,
+          "sha256": "7cf8c1506feeb85582b144768bb73a48d803a69634a9212ba8dc70538ae16600",
+          "sampleRate": 44100,
+          "samples": 352358,
+          "pcmSha256": "bb153c728ad11f4976272314603b550337d77777b109c2b3dfda57b2439b48b0",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "looped",
+          "filename": "tonemirror-attempt-mic_F01_sa1.wav",
+          "bytes": 1409576,
+          "sha256": "7cf8c1506feeb85582b144768bb73a48d803a69634a9212ba8dc70538ae16600",
+          "sampleRate": 44100,
+          "samples": 352358,
+          "pcmSha256": "bb153c728ad11f4976272314603b550337d77777b109c2b3dfda57b2439b48b0",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "excerpt",
+          "filename": "tonemirror-attempt-mic_F01_sa1.wav [3.000–4.000s].wav",
+          "bytes": 176544,
+          "sha256": "b0a89ee4cc7483e152a67881d24b0e8e55135772f58fafb08fbc889d8fbcf753",
+          "sampleRate": 44100,
+          "samples": 44100,
+          "pcmSha256": "3fc91d4f16070d438b7e875b8b622b224b9d72789d4963053a98d023fb43980b",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "restored",
+          "filename": "tonemirror-attempt-mic_F01_sa1.wav",
+          "bytes": 1409576,
+          "sha256": "7cf8c1506feeb85582b144768bb73a48d803a69634a9212ba8dc70538ae16600",
+          "sampleRate": 44100,
+          "samples": 352358,
+          "pcmSha256": "bb153c728ad11f4976272314603b550337d77777b109c2b3dfda57b2439b48b0",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "saved",
+          "filename": "tonemirror-reference-Recorded speech excerpt.wav",
+          "bytes": 176544,
+          "sha256": "b0a89ee4cc7483e152a67881d24b0e8e55135772f58fafb08fbc889d8fbcf753",
+          "sampleRate": 44100,
+          "samples": 44100,
+          "pcmSha256": "3fc91d4f16070d438b7e875b8b622b224b9d72789d4963053a98d023fb43980b",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "synthetic",
+          "filename": "tonemirror-synthetic-reference-Mandarin Tone 1 - high level.wav",
+          "bytes": 53078,
+          "sha256": "bea2197cccdc35cdf97fcba91af40464eed650c176f3f690f8fd4ce704e628c3",
+          "sampleRate": 22050,
+          "samples": 13230,
+          "pcmSha256": "e64a21bf0e77572cdd99d087f635d6986c6d4e8798deafdaf212374256f7f6ca",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror synthetic pitch reference; not recorded speech."
+          }
+        }
+      ],
+      "axeViolations": 0,
+      "overflow": false,
+      "pageErrors": [],
+      "cspViolations": [],
+      "externalRequests": [],
+      "requestsAfterDisconnect": [],
+      "served": {
+        "index.html": {
+          "bytes": 2361,
+          "sha256": "00a08c796484799cc9b6d2dd89b943b439ab667dbefe7494a3e8b71d6a0e522a"
+        },
+        "assets/index-BTO_e6A4.css": {
+          "bytes": 23188,
+          "sha256": "3ea8eb979b794e79ea4aa7ba55a6da08360030a59d32c0ca0562e895eb7fc91c"
+        },
+        "assets/index-Buia93ni.js": {
+          "bytes": 158070,
+          "sha256": "1b5415225f15388378dc46c18ff3a93ccf3817df287251487bc71a0fab531dab"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        }
+      }
+    },
+    {
+      "browser": "chromium",
+      "version": "153.0.8010.12",
+      "width": 375,
+      "fixture": {
+        "url": "http://www2.spsc.tugraz.at/databases/PTDB-TUG/SPEECH%20DATA/MALE/MIC/M01/mic_M01_sa1.wav",
+        "path": "ptdb/M01/mic_M01_sa1.wav",
+        "bytes": 808364,
+        "sha256": "831c88e139267895e68f71050f668b7f32fae8676af0200bf59bfa8bdbfa8d26"
+      },
+      "mode": "after",
+      "headingFontsLoadedBeforeOffline": true,
+      "hasRegionControls": true,
+      "exportControlCount": 1,
+      "exports": [
+        {
+          "stage": "full",
+          "filename": "tonemirror-attempt-mic_M01_sa1.wav",
+          "bytes": 1485428,
+          "sha256": "d8ba4742df44dd68077e2dbc6ce9521add6c7b7b7198b7bdffe21e6c78ff4ef1",
+          "sampleRate": 44100,
+          "samples": 371321,
+          "pcmSha256": "da8512e1b244a81dae20e40eb2868c738daef75ba81547ff983a9166fb326d2a",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "looped",
+          "filename": "tonemirror-attempt-mic_M01_sa1.wav",
+          "bytes": 1485428,
+          "sha256": "d8ba4742df44dd68077e2dbc6ce9521add6c7b7b7198b7bdffe21e6c78ff4ef1",
+          "sampleRate": 44100,
+          "samples": 371321,
+          "pcmSha256": "da8512e1b244a81dae20e40eb2868c738daef75ba81547ff983a9166fb326d2a",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "excerpt",
+          "filename": "tonemirror-attempt-mic_M01_sa1.wav [3.000–4.000s].wav",
+          "bytes": 176544,
+          "sha256": "5e15955720f2377a2fa0facf3c07a1e34a7857d2eab4d0ead7f9c632a6de5bb3",
+          "sampleRate": 44100,
+          "samples": 44100,
+          "pcmSha256": "c13fe1070383eb7ae33b8f8a49df60327ccaa264e3b1a9ea05293209e3f39b95",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "restored",
+          "filename": "tonemirror-attempt-mic_M01_sa1.wav",
+          "bytes": 1485428,
+          "sha256": "d8ba4742df44dd68077e2dbc6ce9521add6c7b7b7198b7bdffe21e6c78ff4ef1",
+          "sampleRate": 44100,
+          "samples": 371321,
+          "pcmSha256": "da8512e1b244a81dae20e40eb2868c738daef75ba81547ff983a9166fb326d2a",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "saved",
+          "filename": "tonemirror-reference-Recorded speech excerpt.wav",
+          "bytes": 176544,
+          "sha256": "5e15955720f2377a2fa0facf3c07a1e34a7857d2eab4d0ead7f9c632a6de5bb3",
+          "sampleRate": 44100,
+          "samples": 44100,
+          "pcmSha256": "c13fe1070383eb7ae33b8f8a49df60327ccaa264e3b1a9ea05293209e3f39b95",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "synthetic",
+          "filename": "tonemirror-synthetic-reference-Mandarin Tone 1 - high level.wav",
+          "bytes": 53078,
+          "sha256": "bea2197cccdc35cdf97fcba91af40464eed650c176f3f690f8fd4ce704e628c3",
+          "sampleRate": 22050,
+          "samples": 13230,
+          "pcmSha256": "e64a21bf0e77572cdd99d087f635d6986c6d4e8798deafdaf212374256f7f6ca",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror synthetic pitch reference; not recorded speech."
+          }
+        }
+      ],
+      "axeViolations": 0,
+      "overflow": false,
+      "pageErrors": [],
+      "cspViolations": [],
+      "externalRequests": [],
+      "requestsAfterDisconnect": [],
+      "served": {
+        "index.html": {
+          "bytes": 2361,
+          "sha256": "00a08c796484799cc9b6d2dd89b943b439ab667dbefe7494a3e8b71d6a0e522a"
+        },
+        "assets/index-BTO_e6A4.css": {
+          "bytes": 23188,
+          "sha256": "3ea8eb979b794e79ea4aa7ba55a6da08360030a59d32c0ca0562e895eb7fc91c"
+        },
+        "assets/index-Buia93ni.js": {
+          "bytes": 158070,
+          "sha256": "1b5415225f15388378dc46c18ff3a93ccf3817df287251487bc71a0fab531dab"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        }
+      }
+    },
+    {
+      "browser": "firefox",
+      "version": "155.0",
+      "width": 1440,
+      "fixture": {
+        "url": "http://www2.spsc.tugraz.at/databases/PTDB-TUG/SPEECH%20DATA/FEMALE/MIC/F01/mic_F01_sa1.wav",
+        "path": "ptdb/F01/mic_F01_sa1.wav",
+        "bytes": 767084,
+        "sha256": "4d06714d605aafdd4f5923170b182b25879c42fe9f5275e7c076134f4f490fc1"
+      },
+      "mode": "after",
+      "headingFontsLoadedBeforeOffline": true,
+      "hasRegionControls": true,
+      "exportControlCount": 1,
+      "exports": [
+        {
+          "stage": "full",
+          "filename": "tonemirror-attempt-mic_F01_sa1.wav",
+          "bytes": 1409580,
+          "sha256": "03fcbead379a48b58c573a77a9a3aa8a443c8d3e29d1f1d65822caf1536535cf",
+          "sampleRate": 44100,
+          "samples": 352359,
+          "pcmSha256": "1e7fcc082f14aebc77de3981ff46a99a81f907236e52f851e5d7b5b2c6a970d2",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "looped",
+          "filename": "tonemirror-attempt-mic_F01_sa1.wav",
+          "bytes": 1409580,
+          "sha256": "03fcbead379a48b58c573a77a9a3aa8a443c8d3e29d1f1d65822caf1536535cf",
+          "sampleRate": 44100,
+          "samples": 352359,
+          "pcmSha256": "1e7fcc082f14aebc77de3981ff46a99a81f907236e52f851e5d7b5b2c6a970d2",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "excerpt",
+          "filename": "tonemirror-attempt-mic_F01_sa1.wav [3.000–4.000s].wav",
+          "bytes": 176544,
+          "sha256": "53148f990bf40d6caa1cafc72806ee5374be438e5a7b266db7699a083de50ff7",
+          "sampleRate": 44100,
+          "samples": 44100,
+          "pcmSha256": "f40f6fe339410316accdc3fe327b682ff7d1ebe8bccda10431d32dd1c84714c9",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "restored",
+          "filename": "tonemirror-attempt-mic_F01_sa1.wav",
+          "bytes": 1409580,
+          "sha256": "03fcbead379a48b58c573a77a9a3aa8a443c8d3e29d1f1d65822caf1536535cf",
+          "sampleRate": 44100,
+          "samples": 352359,
+          "pcmSha256": "1e7fcc082f14aebc77de3981ff46a99a81f907236e52f851e5d7b5b2c6a970d2",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "saved",
+          "filename": "tonemirror-reference-Recorded speech excerpt.wav",
+          "bytes": 176544,
+          "sha256": "53148f990bf40d6caa1cafc72806ee5374be438e5a7b266db7699a083de50ff7",
+          "sampleRate": 44100,
+          "samples": 44100,
+          "pcmSha256": "f40f6fe339410316accdc3fe327b682ff7d1ebe8bccda10431d32dd1c84714c9",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "synthetic",
+          "filename": "tonemirror-synthetic-reference-Mandarin Tone 1 - high level.wav",
+          "bytes": 53078,
+          "sha256": "bea2197cccdc35cdf97fcba91af40464eed650c176f3f690f8fd4ce704e628c3",
+          "sampleRate": 22050,
+          "samples": 13230,
+          "pcmSha256": "e64a21bf0e77572cdd99d087f635d6986c6d4e8798deafdaf212374256f7f6ca",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror synthetic pitch reference; not recorded speech."
+          }
+        }
+      ],
+      "axeViolations": 0,
+      "overflow": false,
+      "pageErrors": [],
+      "cspViolations": [],
+      "externalRequests": [],
+      "requestsAfterDisconnect": [],
+      "served": {
+        "index.html": {
+          "bytes": 2361,
+          "sha256": "00a08c796484799cc9b6d2dd89b943b439ab667dbefe7494a3e8b71d6a0e522a"
+        },
+        "assets/index-BTO_e6A4.css": {
+          "bytes": 23188,
+          "sha256": "3ea8eb979b794e79ea4aa7ba55a6da08360030a59d32c0ca0562e895eb7fc91c"
+        },
+        "assets/index-Buia93ni.js": {
+          "bytes": 158070,
+          "sha256": "1b5415225f15388378dc46c18ff3a93ccf3817df287251487bc71a0fab531dab"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        }
+      }
+    },
+    {
+      "browser": "firefox",
+      "version": "155.0",
+      "width": 1440,
+      "fixture": {
+        "url": "http://www2.spsc.tugraz.at/databases/PTDB-TUG/SPEECH%20DATA/MALE/MIC/M01/mic_M01_sa1.wav",
+        "path": "ptdb/M01/mic_M01_sa1.wav",
+        "bytes": 808364,
+        "sha256": "831c88e139267895e68f71050f668b7f32fae8676af0200bf59bfa8bdbfa8d26"
+      },
+      "mode": "after",
+      "headingFontsLoadedBeforeOffline": true,
+      "hasRegionControls": true,
+      "exportControlCount": 1,
+      "exports": [
+        {
+          "stage": "full",
+          "filename": "tonemirror-attempt-mic_M01_sa1.wav",
+          "bytes": 1485432,
+          "sha256": "515a3e532b0ae067f407a8740a67fc0e156364c1295fbd25a833ed4c9451835b",
+          "sampleRate": 44100,
+          "samples": 371322,
+          "pcmSha256": "1b1fdd713b7dee88ca2037329ffc801ddb516774d64ee605df80f1407a30585c",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "looped",
+          "filename": "tonemirror-attempt-mic_M01_sa1.wav",
+          "bytes": 1485432,
+          "sha256": "515a3e532b0ae067f407a8740a67fc0e156364c1295fbd25a833ed4c9451835b",
+          "sampleRate": 44100,
+          "samples": 371322,
+          "pcmSha256": "1b1fdd713b7dee88ca2037329ffc801ddb516774d64ee605df80f1407a30585c",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "excerpt",
+          "filename": "tonemirror-attempt-mic_M01_sa1.wav [3.000–4.000s].wav",
+          "bytes": 176544,
+          "sha256": "adffd684c2a440dff0b4d5f355436c3590b517b4f44023da81c86f5526776083",
+          "sampleRate": 44100,
+          "samples": 44100,
+          "pcmSha256": "d9a91216d3b82351e48db78225120f0ae1e1c361cd9b7ebb606c2f970b8a12c4",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "restored",
+          "filename": "tonemirror-attempt-mic_M01_sa1.wav",
+          "bytes": 1485432,
+          "sha256": "515a3e532b0ae067f407a8740a67fc0e156364c1295fbd25a833ed4c9451835b",
+          "sampleRate": 44100,
+          "samples": 371322,
+          "pcmSha256": "1b1fdd713b7dee88ca2037329ffc801ddb516774d64ee605df80f1407a30585c",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "saved",
+          "filename": "tonemirror-reference-Recorded speech excerpt.wav",
+          "bytes": 176544,
+          "sha256": "adffd684c2a440dff0b4d5f355436c3590b517b4f44023da81c86f5526776083",
+          "sampleRate": 44100,
+          "samples": 44100,
+          "pcmSha256": "d9a91216d3b82351e48db78225120f0ae1e1c361cd9b7ebb606c2f970b8a12c4",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "synthetic",
+          "filename": "tonemirror-synthetic-reference-Mandarin Tone 1 - high level.wav",
+          "bytes": 53078,
+          "sha256": "bea2197cccdc35cdf97fcba91af40464eed650c176f3f690f8fd4ce704e628c3",
+          "sampleRate": 22050,
+          "samples": 13230,
+          "pcmSha256": "e64a21bf0e77572cdd99d087f635d6986c6d4e8798deafdaf212374256f7f6ca",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror synthetic pitch reference; not recorded speech."
+          }
+        }
+      ],
+      "axeViolations": 0,
+      "overflow": false,
+      "pageErrors": [],
+      "cspViolations": [],
+      "externalRequests": [],
+      "requestsAfterDisconnect": [],
+      "served": {
+        "index.html": {
+          "bytes": 2361,
+          "sha256": "00a08c796484799cc9b6d2dd89b943b439ab667dbefe7494a3e8b71d6a0e522a"
+        },
+        "assets/index-BTO_e6A4.css": {
+          "bytes": 23188,
+          "sha256": "3ea8eb979b794e79ea4aa7ba55a6da08360030a59d32c0ca0562e895eb7fc91c"
+        },
+        "assets/index-Buia93ni.js": {
+          "bytes": 158070,
+          "sha256": "1b5415225f15388378dc46c18ff3a93ccf3817df287251487bc71a0fab531dab"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        }
+      }
+    },
+    {
+      "browser": "firefox",
+      "version": "155.0",
+      "width": 375,
+      "fixture": {
+        "url": "http://www2.spsc.tugraz.at/databases/PTDB-TUG/SPEECH%20DATA/FEMALE/MIC/F01/mic_F01_sa1.wav",
+        "path": "ptdb/F01/mic_F01_sa1.wav",
+        "bytes": 767084,
+        "sha256": "4d06714d605aafdd4f5923170b182b25879c42fe9f5275e7c076134f4f490fc1"
+      },
+      "mode": "after",
+      "headingFontsLoadedBeforeOffline": true,
+      "hasRegionControls": true,
+      "exportControlCount": 1,
+      "exports": [
+        {
+          "stage": "full",
+          "filename": "tonemirror-attempt-mic_F01_sa1.wav",
+          "bytes": 1409580,
+          "sha256": "03fcbead379a48b58c573a77a9a3aa8a443c8d3e29d1f1d65822caf1536535cf",
+          "sampleRate": 44100,
+          "samples": 352359,
+          "pcmSha256": "1e7fcc082f14aebc77de3981ff46a99a81f907236e52f851e5d7b5b2c6a970d2",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "looped",
+          "filename": "tonemirror-attempt-mic_F01_sa1.wav",
+          "bytes": 1409580,
+          "sha256": "03fcbead379a48b58c573a77a9a3aa8a443c8d3e29d1f1d65822caf1536535cf",
+          "sampleRate": 44100,
+          "samples": 352359,
+          "pcmSha256": "1e7fcc082f14aebc77de3981ff46a99a81f907236e52f851e5d7b5b2c6a970d2",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "excerpt",
+          "filename": "tonemirror-attempt-mic_F01_sa1.wav [3.000–4.000s].wav",
+          "bytes": 176544,
+          "sha256": "53148f990bf40d6caa1cafc72806ee5374be438e5a7b266db7699a083de50ff7",
+          "sampleRate": 44100,
+          "samples": 44100,
+          "pcmSha256": "f40f6fe339410316accdc3fe327b682ff7d1ebe8bccda10431d32dd1c84714c9",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "restored",
+          "filename": "tonemirror-attempt-mic_F01_sa1.wav",
+          "bytes": 1409580,
+          "sha256": "03fcbead379a48b58c573a77a9a3aa8a443c8d3e29d1f1d65822caf1536535cf",
+          "sampleRate": 44100,
+          "samples": 352359,
+          "pcmSha256": "1e7fcc082f14aebc77de3981ff46a99a81f907236e52f851e5d7b5b2c6a970d2",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "saved",
+          "filename": "tonemirror-reference-Recorded speech excerpt.wav",
+          "bytes": 176544,
+          "sha256": "53148f990bf40d6caa1cafc72806ee5374be438e5a7b266db7699a083de50ff7",
+          "sampleRate": 44100,
+          "samples": 44100,
+          "pcmSha256": "f40f6fe339410316accdc3fe327b682ff7d1ebe8bccda10431d32dd1c84714c9",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "synthetic",
+          "filename": "tonemirror-synthetic-reference-Mandarin Tone 1 - high level.wav",
+          "bytes": 53078,
+          "sha256": "bea2197cccdc35cdf97fcba91af40464eed650c176f3f690f8fd4ce704e628c3",
+          "sampleRate": 22050,
+          "samples": 13230,
+          "pcmSha256": "e64a21bf0e77572cdd99d087f635d6986c6d4e8798deafdaf212374256f7f6ca",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror synthetic pitch reference; not recorded speech."
+          }
+        }
+      ],
+      "axeViolations": 0,
+      "overflow": false,
+      "pageErrors": [],
+      "cspViolations": [],
+      "externalRequests": [],
+      "requestsAfterDisconnect": [],
+      "served": {
+        "index.html": {
+          "bytes": 2361,
+          "sha256": "00a08c796484799cc9b6d2dd89b943b439ab667dbefe7494a3e8b71d6a0e522a"
+        },
+        "assets/index-BTO_e6A4.css": {
+          "bytes": 23188,
+          "sha256": "3ea8eb979b794e79ea4aa7ba55a6da08360030a59d32c0ca0562e895eb7fc91c"
+        },
+        "assets/index-Buia93ni.js": {
+          "bytes": 158070,
+          "sha256": "1b5415225f15388378dc46c18ff3a93ccf3817df287251487bc71a0fab531dab"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        }
+      }
+    },
+    {
+      "browser": "firefox",
+      "version": "155.0",
+      "width": 375,
+      "fixture": {
+        "url": "http://www2.spsc.tugraz.at/databases/PTDB-TUG/SPEECH%20DATA/MALE/MIC/M01/mic_M01_sa1.wav",
+        "path": "ptdb/M01/mic_M01_sa1.wav",
+        "bytes": 808364,
+        "sha256": "831c88e139267895e68f71050f668b7f32fae8676af0200bf59bfa8bdbfa8d26"
+      },
+      "mode": "after",
+      "headingFontsLoadedBeforeOffline": true,
+      "hasRegionControls": true,
+      "exportControlCount": 1,
+      "exports": [
+        {
+          "stage": "full",
+          "filename": "tonemirror-attempt-mic_M01_sa1.wav",
+          "bytes": 1485432,
+          "sha256": "515a3e532b0ae067f407a8740a67fc0e156364c1295fbd25a833ed4c9451835b",
+          "sampleRate": 44100,
+          "samples": 371322,
+          "pcmSha256": "1b1fdd713b7dee88ca2037329ffc801ddb516774d64ee605df80f1407a30585c",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "looped",
+          "filename": "tonemirror-attempt-mic_M01_sa1.wav",
+          "bytes": 1485432,
+          "sha256": "515a3e532b0ae067f407a8740a67fc0e156364c1295fbd25a833ed4c9451835b",
+          "sampleRate": 44100,
+          "samples": 371322,
+          "pcmSha256": "1b1fdd713b7dee88ca2037329ffc801ddb516774d64ee605df80f1407a30585c",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "excerpt",
+          "filename": "tonemirror-attempt-mic_M01_sa1.wav [3.000–4.000s].wav",
+          "bytes": 176544,
+          "sha256": "adffd684c2a440dff0b4d5f355436c3590b517b4f44023da81c86f5526776083",
+          "sampleRate": 44100,
+          "samples": 44100,
+          "pcmSha256": "d9a91216d3b82351e48db78225120f0ae1e1c361cd9b7ebb606c2f970b8a12c4",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "restored",
+          "filename": "tonemirror-attempt-mic_M01_sa1.wav",
+          "bytes": 1485432,
+          "sha256": "515a3e532b0ae067f407a8740a67fc0e156364c1295fbd25a833ed4c9451835b",
+          "sampleRate": 44100,
+          "samples": 371322,
+          "pcmSha256": "1b1fdd713b7dee88ca2037329ffc801ddb516774d64ee605df80f1407a30585c",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "saved",
+          "filename": "tonemirror-reference-Recorded speech excerpt.wav",
+          "bytes": 176544,
+          "sha256": "adffd684c2a440dff0b4d5f355436c3590b517b4f44023da81c86f5526776083",
+          "sampleRate": 44100,
+          "samples": 44100,
+          "pcmSha256": "d9a91216d3b82351e48db78225120f0ae1e1c361cd9b7ebb606c2f970b8a12c4",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror decoded mono audio; normal speed."
+          }
+        },
+        {
+          "stage": "synthetic",
+          "filename": "tonemirror-synthetic-reference-Mandarin Tone 1 - high level.wav",
+          "bytes": 53078,
+          "sha256": "bea2197cccdc35cdf97fcba91af40464eed650c176f3f690f8fd4ce704e628c3",
+          "sampleRate": 22050,
+          "samples": 13230,
+          "pcmSha256": "e64a21bf0e77572cdd99d087f635d6986c6d4e8798deafdaf212374256f7f6ca",
+          "ffmpegSamplesMatch": true,
+          "codec": "pcm_f32le",
+          "channels": 1,
+          "metadata": {
+            "encoder": "ToneMirror",
+            "comment": "ToneMirror synthetic pitch reference; not recorded speech."
+          }
+        }
+      ],
+      "axeViolations": 0,
+      "overflow": false,
+      "pageErrors": [],
+      "cspViolations": [],
+      "externalRequests": [],
+      "requestsAfterDisconnect": [],
+      "served": {
+        "index.html": {
+          "bytes": 2361,
+          "sha256": "00a08c796484799cc9b6d2dd89b943b439ab667dbefe7494a3e8b71d6a0e522a"
+        },
+        "assets/index-BTO_e6A4.css": {
+          "bytes": 23188,
+          "sha256": "3ea8eb979b794e79ea4aa7ba55a6da08360030a59d32c0ca0562e895eb7fc91c"
+        },
+        "assets/index-Buia93ni.js": {
+          "bytes": 158070,
+          "sha256": "1b5415225f15388378dc46c18ff3a93ccf3817df287251487bc71a0fab531dab"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        }
+      }
+    }
+  ]
+}

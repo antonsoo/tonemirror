@@ -44,3 +44,30 @@ The harness compares fetched public bytes with `dist`, disconnects before the
 first import, and verifies real downloads. A `before` replay against an older
 build records absent region/export controls explicitly. Hosted freshness is
 verified separately below. No registry release or tag is created.
+
+## Verified public deployment
+
+Pages revision `f0e71cb617cf53b30334dca49e5c99507dd0e90d` serves the reviewed
+build. [All 30 canonical hosted files](hosted-bytes.json) match it byte for byte,
+including HTML, code, workers, worklet, pitch-preserving playback engine, fonts
+and examples. This is a separate check from the branch push or an HTTP 200.
+
+The [actual public replay](wav-public-after/browser.json) repeats all eight
+recorded-speech workflows in fresh Chromium/Firefox contexts after disconnecting
+before the first import. Every one of the 48 WAV downloads passes FFprobe and
+FFmpeg sample verification. The first saved/reference/excerpt/synthetic workflows
+need no analysis HTTP requests. No page/CSP errors, accessibility violations or
+horizontal overflow occurred. Three hosted screenshots are byte-identical to
+the inspected local images; the remaining Chromium desktop capture was opened
+and inspected separately. [Image hashes](wav-public-after/images.json).
+
+| Workflow | Before deployment | Public after |
+| --- | --- | --- |
+| First recorded-speech import offline | Available | Available |
+| Keep one-second passage / restore full clip | Controls absent | Samples verified |
+| Download full, kept or saved clip | Control absent | Samples verified |
+| Loop / half-speed download | Control absent | Original-speed samples verified |
+| Reopen renamed synthetic download | Export absent | Synthetic marker retained |
+
+The package remains private for npm. Deployment does not create a registry
+release, tag, physical microphone result or language-learning accuracy claim.

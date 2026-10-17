@@ -109,5 +109,6 @@ npm exec playwright test tests/browser/wav.spec.js
 
 For a baseline replay, build `99894ff` separately and pass its `dist` with mode
 `before`. The scripts write WAVs, screenshots and JSON into the chosen scratch
-directory. Source publication does not deploy the hosted app; version 0.2.3 is
-unchanged.
+directory. The subsequent [public deployment review](publication/README.md)
+verifies canonical hosted bytes and 48 real offline WAV downloads. Version 0.2.3
+is unchanged; no registry release or tag was created.
