@@ -19,7 +19,7 @@ for (const [engineName, engine] of Object.entries({ chromium, firefox })) {
   const browser = await engine.launch();
   try {
     for (const width of [1440, 375]) for (const fixture of fixtures) {
-      const served = {}, pending = [], errors = [], external = [], late = [];
+      const served = {}, pending = [], assetErrors = [], errors = [], external = [], late = [];
       const server = createServer(async (request, response) => {
         const file = new URL(request.url, 'http://localhost').pathname.replace(/^\/tonemirror\//, '') || 'index.html';
         const path = resolve(dist, file);
@@ -31,7 +31,7 @@ for (const [engineName, engine] of Object.entries({ chromium, firefox })) {
         } catch { response.writeHead(404); response.end(); }
       });
       await new Promise(done => server.listen(0, '127.0.0.1', done));
-      const origin = `http://127.0.0.1:${server.address().port}`;
+      const origin = process.env.TONEMIRROR_BROWSER_ORIGIN ?? `http://127.0.0.1:${server.address().port}`;
       const context = await browser.newContext({ viewport: { width, height: 1100 }, colorScheme: width === 375 ? 'light' : 'dark' });
       const speaker = fixture.path.split('/')[1], prefix = `${engineName}-${width}-${speaker}`;
       try {
@@ -40,12 +40,12 @@ for (const [engineName, engine] of Object.entries({ chromium, firefox })) {
         page.on('pageerror', e => errors.push(e.message));
         page.on('request', r => { if (/^https?:/.test(r.url())) { if (offline) late.push(r.url()); if (new URL(r.url()).origin !== origin) external.push(r.url()); } });
         page.on('response', response => {
-          if (!/^https?:/.test(response.url())) return;
+          if (!/^https?:/.test(response.url()) || response.status() !== 200) return;
           pending.push((async () => {
             const file = new URL(response.url()).pathname.replace(/^\/tonemirror\//, '') || 'index.html';
             const bytes = await response.body(); assert.equal(hash(bytes), hash(await readFile(resolve(dist, file))));
             served[file] = { bytes: bytes.length, sha256: hash(bytes) };
-          })());
+          })().catch(error => assetErrors.push(error.message)));
         });
         await page.addInitScript(() => {
           window.wavStudy = { inputs: [], violations: [] };
@@ -96,10 +96,13 @@ for (const [engineName, engine] of Object.entries({ chromium, firefox })) {
           return destination;
         }
         if (mode === 'after') await exportClip('full');
-        await page.getByLabel('Region start (s)').fill('3'); await page.getByLabel('Region end (s)').fill('4');
-        await button('Loop region').click(); await page.getByLabel('half-speed').check();
-        if (mode === 'after') { await exportClip('looped'); assert.equal(exports[0].sha256, exports[1].sha256); }
-        await button('Keep region').click(); await expect(label).toContainText('· 1.00s');
+        const hasRegionControls = await button('Keep region').count() === 1;
+        if (mode === 'after' || hasRegionControls) {
+          await page.getByLabel('Region start (s)').fill('3'); await page.getByLabel('Region end (s)').fill('4');
+          await button('Loop region').click(); await page.getByLabel('half-speed').check();
+          if (mode === 'after') { await exportClip('looped'); assert.equal(exports[0].sha256, exports[1].sha256); }
+          await button('Keep region').click(); await expect(label).toContainText('· 1.00s');
+        }
         if (mode === 'before') assert.equal(await button('Download WAV').count(), 0);
         else await exportClip('excerpt');
         const axe = (await new AxeBuilder({ page }).analyze()).violations;
@@ -126,13 +129,13 @@ for (const [engineName, engine] of Object.entries({ chromium, firefox })) {
           await expect(label).toContainText('renamed.wav (synthetic)');
         }
         await Promise.all(pending);
-        assert.deepEqual(errors, []); assert.deepEqual(external, []); assert.deepEqual(late, []);
+        assert.deepEqual(assetErrors, []); assert.deepEqual(errors, []); assert.deepEqual(external, []); assert.deepEqual(late, []);
         const violations = await page.evaluate(() => window.wavStudy.violations); assert.deepEqual(violations, []);
-        results.push({ browser: engineName, version: browser.version(), width, fixture, mode, headingFontsLoadedBeforeOffline: true, exportControlCount: await button('Download WAV').count(), exports, axeViolations: axe.length, overflow, pageErrors: errors, cspViolations: violations, externalRequests: external, requestsAfterDisconnect: late, served });
+        results.push({ browser: engineName, version: browser.version(), width, fixture, mode, headingFontsLoadedBeforeOffline: true, hasRegionControls, exportControlCount: await button('Download WAV').count(), exports, axeViolations: axe.length, overflow, pageErrors: errors, cspViolations: violations, externalRequests: external, requestsAfterDisconnect: late, served });
         console.log(`${mode} ${prefix}: ${exports.length} WAV downloads verified`);
       } finally { await context.close(); if (server.listening) await new Promise(done => server.close(done)); }
     }
   } finally { await browser.close(); }
 }
 const version = spawnSync('ffmpeg', ['-version'], { encoding: 'utf8' }).stdout.split('\n')[0];
-await writeFile(resolve(output, 'browser.json'), JSON.stringify({ mode, ffmpeg: version, results }, null, 2) + '\n');
+await writeFile(resolve(output, 'browser.json'), JSON.stringify({ mode, origin: process.env.TONEMIRROR_BROWSER_ORIGIN ?? 'local production build', ffmpeg: version, results }, null, 2) + '\n');

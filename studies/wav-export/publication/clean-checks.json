@@ -1,0 +1,139 @@
+{
+  "source": {
+    "repository": "tonemirror",
+    "revision": "07754ca184f3e94e5217e9e58b8f72286aa00a1c",
+    "clean_tree": true
+  },
+  "rows": [
+    {
+      "name": "node",
+      "command": [
+        "node",
+        "--version"
+      ],
+      "exit": 0,
+      "seconds": 0.03651913098292425,
+      "log_sha256": "f2ec568164f99546161909b0189b57bb5be3e80f8e2ccd8a51a4aed8c4055a04",
+      "tail": [
+        "v24.21.0"
+      ]
+    },
+    {
+      "name": "npm",
+      "command": [
+        "npm",
+        "--version"
+      ],
+      "exit": 0,
+      "seconds": 0.22091459104558453,
+      "log_sha256": "005206ab803f8881d8227540b7980b37e723b69a8849edb31734a90b7e7964e2",
+      "tail": [
+        "11.19.0"
+      ]
+    },
+    {
+      "name": "install",
+      "command": [
+        "npm",
+        "ci"
+      ],
+      "exit": 0,
+      "seconds": 6.382674821012188,
+      "log_sha256": "de637eff03753046f69b23c6b7a68218f7f135117285390d2291544111c022d2",
+      "tail": [
+        "",
+        "40 packages are looking for funding",
+        "  run `npm fund` for details",
+        "",
+        "found 0 vulnerabilities"
+      ]
+    },
+    {
+      "name": "lint",
+      "command": [
+        "npm",
+        "run",
+        "lint"
+      ],
+      "exit": 0,
+      "seconds": 20.755646472040098,
+      "log_sha256": "c48ffa9d87b793b150ba31629b1aa8cf440f41ca30af5e37937a7784d9239335",
+      "tail": [
+        "",
+        "> tonemirror@0.2.3 lint",
+        "> eslint .",
+        ""
+      ]
+    },
+    {
+      "name": "types",
+      "command": [
+        "npm",
+        "run",
+        "typecheck"
+      ],
+      "exit": 0,
+      "seconds": 5.634348041028716,
+      "log_sha256": "fbc2e592a2227d90e84f194d940d8366e9382fd65e8588a0d4d2dc2a5310978b",
+      "tail": [
+        "",
+        "> tonemirror@0.2.3 typecheck",
+        "> tsc --noEmit",
+        ""
+      ]
+    },
+    {
+      "name": "tests",
+      "command": [
+        "npm",
+        "test"
+      ],
+      "exit": 0,
+      "seconds": 8.178790850972291,
+      "log_sha256": "9450ad5f74eac5e3995168e891c1608ec34c73c85986939c0892ba1f631308c2",
+      "tail": [
+        "",
+        "  Transform  transforming modules took 7.12s \u00b7 37% of tracked time, re-done on every run",
+        "             persist transforms across runs with fsModuleCache: true",
+        "             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns",
+        ""
+      ]
+    },
+    {
+      "name": "build",
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "exit": 0,
+      "seconds": 6.451841856003739,
+      "log_sha256": "94034517a773be90429c443c594b91cb16f89b3cd275687c888b56e1b18ce69b",
+      "tail": [
+        "dist/assets/inter-latin-ext-DO1Apj_S.woff2                  85.06 kB",
+        "dist/assets/index-BTO_e6A4.css                              23.18 kB \u2502 gzip:  3.58 kB",
+        "dist/assets/index-Buia93ni.js                              158.07 kB \u2502 gzip: 66.44 kB \u2502 map: 193.11 kB",
+        "",
+        "\u2713 built in 1.08s"
+      ]
+    },
+    {
+      "name": "browser",
+      "command": [
+        "npm",
+        "run",
+        "test:browser"
+      ],
+      "exit": 0,
+      "seconds": 194.60286175698275,
+      "log_sha256": "150c712776ccd746a8b3b809ec7a301f073e70eb8421e127b718a77b70fa308a",
+      "tail": [
+        "  -  96 [firefox] \u203a tests/browser/wav.spec.js:86:1 \u203a microphone capture can leave browser storage as exact-sample WAV",
+        "  \u2713  95 [firefox] \u203a tests/browser/wav.spec.js:54:1 \u203a downloads focused audio, preserves synthetic provenance after rename and leaves audio after export failure (11.7s)",
+        "",
+        "  4 skipped",
+        "  92 passed (3.1m)"
+      ]
+    }
+  ]
+}
