@@ -49,8 +49,12 @@ for (const [engineName, engine] of Object.entries({ chromium, firefox })) {
           })().catch(error => assetErrors.push(error.message)));
         });
         await page.addInitScript(() => {
-          window.pairEvidence = { inputs: [], starts: [], nodes: [], stops: [], csp: [], slowJobs: 0 };
+          window.pairEvidence = { inputs: [], starts: [], nodes: [], stops: [], csp: [], slowJobs: 0, phases: [] };
           document.addEventListener('securitypolicyviolation', event => window.pairEvidence.csp.push(event.violatedDirective));
+          document.addEventListener('DOMContentLoaded', () => {
+            const note = document.querySelector('#paired-listening-status');
+            new MutationObserver(() => window.pairEvidence.phases.push(note.textContent)).observe(note, { childList: true, subtree: true, characterData: true });
+          });
           const NativeWorker = Worker;
           window.Worker = class extends NativeWorker {
             postMessage(message, ...rest) {
@@ -89,12 +93,13 @@ for (const [engineName, engine] of Object.entries({ chromium, firefox })) {
           return path;
         }
         async function startPair() {
+          await page.evaluate(() => { window.pairEvidence.phases = []; });
           await button('Play reference then attempt').click(); await expect(note).toHaveText('Listening to the reference.');
         }
         async function finishPair() {
-          await expect(note).toHaveText('Brief pause before your attempt.');
-          await expect(note).toHaveText('Listening to your attempt.');
           await expect(note).toHaveText('Finished listening to the reference and your attempt.');
+          const phases = await page.evaluate(() => window.pairEvidence.phases);
+          for (const phase of ['Listening to the reference.', 'Brief pause before your attempt.', 'Listening to your attempt.', 'Finished listening to the reference and your attempt.']) assert.ok(phases.includes(phase), JSON.stringify(phases));
         }
         async function region(start, end) {
           await page.getByLabel('Region start (s)').fill(String(start)); await page.getByLabel('Region end (s)').fill(String(end));
@@ -143,7 +148,7 @@ for (const [engineName, engine] of Object.entries({ chromium, firefox })) {
           const starts = [];
           for (const [i, row] of p.starts.slice(-2).entries()) starts.push({ index: row.index, when: row.when, samples: row.pcm.length, rate: row.rate,
             sha256: await sha(row.pcm), expectedSha256: await sha(expected[i]), playbackRate: row.playbackRate, loop: row.loop });
-          return { starts, analysisJobs: p.inputs.length, slowJobs: p.slowJobs, csp: p.csp };
+          return { starts, analysisJobs: p.inputs.length, slowJobs: p.slowJobs, csp: p.csp, phases: p.phases };
         });
         assert.ok(selected.starts.every(row => row.sha256 === row.expectedSha256 && row.playbackRate === 1 && !row.loop));
         assert.equal(selected.analysisJobs, 3); assert.equal(selected.slowJobs, 0);

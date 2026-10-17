@@ -1,0 +1,50 @@
+{
+  "screenshots": [
+    {
+      "file": "chromium-1440.png",
+      "bytes": 500934,
+      "sha256": "83a699256460946be9fa881413042b53ead61ff679caa040a67578f93b34d9a1",
+      "byteEqualInspectedCleanCapture": false,
+      "pixelDifferenceBounds": [
+        170,
+        884,
+        391,
+        924
+      ]
+    },
+    {
+      "file": "chromium-375.png",
+      "bytes": 413014,
+      "sha256": "1b86d98e214da4115b5a1f2c589c192c2ad414a64f128efd419b7ae96d8f1eaf",
+      "byteEqualInspectedCleanCapture": false,
+      "pixelDifferenceBounds": [
+        32,
+        1529,
+        257,
+        1571
+      ]
+    },
+    {
+      "file": "firefox-1440.png",
+      "bytes": 661650,
+      "sha256": "306d82ccc316216f8f46fc425466efd80f585d2fde14ccfc0a852f2c2a19e9ff",
+      "byteEqualInspectedCleanCapture": true,
+      "pixelDifferenceBounds": null
+    },
+    {
+      "file": "firefox-375.png",
+      "bytes": 574788,
+      "sha256": "3135d959ea09ad631854d52c7f4d8050c021424f0d78dcc9944285b1d84a9d1b",
+      "byteEqualInspectedCleanCapture": true,
+      "pixelDifferenceBounds": null
+    },
+    {
+      "file": "paired-listening.png",
+      "bytes": 95439,
+      "sha256": "d661c4cc7c63201f15c7eb155e0eb8505726a271241fa75271726249c164f2be",
+      "byteEqualInspectedCleanCapture": true,
+      "pixelDifferenceBounds": null
+    }
+  ],
+  "scope": "Canonical hosted browser workflow. Compare against the visually inspected clean captures; byte equality is reported per file, not assumed."
+}

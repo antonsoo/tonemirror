@@ -122,3 +122,22 @@ match the working captures byte for byte; two Chromium captures differ around
 the listening control. Both were visually inspected, and the clean versions
 are retained. An initial writeup claimed all five were identical before the
 comparison completed; this receipt corrects that claim.
+
+The new listening control is deployed at the [canonical demo](https://antonsoo.github.io/tonemirror/).
+`gh-pages` was fast-forwarded to `d3a3144` from the clean `9d61ca5` build.
+The [canonical HTTP receipt](results/hosted-bytes.json) matches all 30 build
+files, root before/after, and explicit `index.html`. The completed
+[hosted replay](results/hosted-browser.json) passed all four contexts and
+12 downloads after disconnecting before the first input. Three
+[hosted screenshots](results/hosted-screenshots.json) match clean captures
+byte for byte; two Chromium captures differ near the listening control and
+were separately inspected. Public source is checked in the
+[pinned-file receipt](results/public-source.json); this private application's
+version remains 0.2.3 and no registry release or remote CI result is claimed.
+
+An initial hosted replay sampled past the brief gap status and ended
+incomplete. The recorder now observes status text changes in the DOM and
+checks their order after completion, avoiding transient polling intervals.
+The [local replay with that recorder](results/observed-browser.json) also
+passes all four contexts. Native source start times and PCM comparisons,
+rather than UI sampling, establish the actual gap and passage order.

@@ -1,0 +1,844 @@
+{
+  "results": [
+    {
+      "engine": "chromium",
+      "width": 1440,
+      "offlineBeforeFirstInput": true,
+      "scope": "Recorded rising reference versus recorded falling example from the same attributed source; not a learner performance.",
+      "fullPassages": [
+        {
+          "samples": 41895,
+          "rate": 44100,
+          "when": 0.5292290249433107,
+          "playbackRate": 1,
+          "loop": false,
+          "matches": true
+        },
+        {
+          "samples": 33075,
+          "rate": 44100,
+          "when": 1.8292290249433107,
+          "playbackRate": 1,
+          "loop": false,
+          "matches": true
+        }
+      ],
+      "selectedPassages": {
+        "starts": [
+          {
+            "index": 4,
+            "when": 4.732040816326531,
+            "samples": 19846,
+            "rate": 44100,
+            "sha256": "f6cc27bdbed5eccf90c0c63e241d0ee0de00dd621698ba6a380a99b2ab092de1",
+            "expectedSha256": "f6cc27bdbed5eccf90c0c63e241d0ee0de00dd621698ba6a380a99b2ab092de1",
+            "playbackRate": 1,
+            "loop": false
+          },
+          {
+            "index": 5,
+            "when": 5.532063492063492,
+            "samples": 15435,
+            "rate": 44100,
+            "sha256": "032c60a262a4a68b4e3a6ca5a952b27add022db35b3fce06840cead5827cd493",
+            "expectedSha256": "032c60a262a4a68b4e3a6ca5a952b27add022db35b3fce06840cead5827cd493",
+            "playbackRate": 1,
+            "loop": false
+          }
+        ],
+        "analysisJobs": 3,
+        "slowJobs": 0,
+        "csp": [],
+        "phases": [
+          "Preparing to listen…",
+          "Listening to the reference.",
+          "Brief pause before your attempt.",
+          "Listening to your attempt.",
+          "Finished listening to the reference and your attempt."
+        ]
+      },
+      "cancellation": {
+        "starts": [
+          {
+            "index": 2,
+            "when": 4.406961451247166
+          },
+          {
+            "index": 3,
+            "when": 5.206984126984127
+          }
+        ],
+        "stops": [
+          {
+            "index": 2,
+            "at": 4.655600907029479
+          },
+          {
+            "index": 3,
+            "at": 4.655600907029479
+          }
+        ]
+      },
+      "downloads": [
+        {
+          "file": "chromium-1440-falling-original.wav",
+          "bytes": 132798,
+          "sha256": "6b7410e328233fc75f4fe8145b09c9e1f4ed2c5445ce7594493b72b9215bedd0",
+          "filename": "tonemirror-reference-Recorded Mandarin mà (tone 4).wav"
+        },
+        {
+          "file": "chromium-1440-attempt-before.wav",
+          "bytes": 132798,
+          "sha256": "6b7410e328233fc75f4fe8145b09c9e1f4ed2c5445ce7594493b72b9215bedd0",
+          "filename": "tonemirror-attempt-chromium-1440-falling-original.wav"
+        },
+        {
+          "file": "chromium-1440-attempt-after.wav",
+          "bytes": 132798,
+          "sha256": "6b7410e328233fc75f4fe8145b09c9e1f4ed2c5445ce7594493b72b9215bedd0",
+          "filename": "tonemirror-attempt-chromium-1440-falling-original.wav"
+        }
+      ],
+      "assets": {
+        "index.html": {
+          "bytes": 2361,
+          "sha256": "82912d270709b1ad4e6479bdff1ea08d283864c86bd1ba7e5c5fd0a64d6adc5d"
+        },
+        "assets/index-C-m6Smcz.css": {
+          "bytes": 23892,
+          "sha256": "f104cc095558bbda156bc258860e0c98aade3a2dd1c493ae85bc6f572c88f670"
+        },
+        "assets/index-Dv38E5nD.js": {
+          "bytes": 271092,
+          "sha256": "c4f61543a32a25ae9d546cf37c16141c24433e0a21cc15d39bf26eba6c152bb5"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2": {
+          "bytes": 13348,
+          "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
+        },
+        "assets/inter-latin-ext-DO1Apj_S.woff2": {
+          "bytes": 85068,
+          "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/fraunces-vietnamese-Czevyj-6.woff2": {
+          "bytes": 19700,
+          "sha256": "f18853f63a870ebef013e30e789d8d544f102e4acd94988e57c223d9c796ddf4"
+        },
+        "assets/fraunces-italic-latin-ext-C5JMU4hr.woff2": {
+          "bytes": 37620,
+          "sha256": "bbf614d45de67a99e638b753611329b2cb8b5b6d8da53b2aee0267fe75cfc5c8"
+        },
+        "assets/fraunces-italic-vietnamese-B7PmIdA3.woff2": {
+          "bytes": 12048,
+          "sha256": "b2383049df5de759100887e80450ef360e502d5b0454954fab2dcd6b322944f5"
+        },
+        "assets/inter-cyrillic-DqGufNeO.woff2": {
+          "bytes": 18748,
+          "sha256": "71d5ee93cc1e9f1d520a3a8b66456de18c7879d8df09d57fcd2eaff75fef0075"
+        },
+        "assets/fraunces-latin-ext-CJcjJNj7.woff2": {
+          "bytes": 59388,
+          "sha256": "a2930b27d13a228bd9ab6a49269b5f800237892ad560cb9dd7fab01b1620f88e"
+        },
+        "assets/inter-greek-CkhJZR-_.woff2": {
+          "bytes": 18996,
+          "sha256": "1be3448e292fbf05ffe176fe1e43f135013d50b1e7d324ad1a558f623d3bb6f6"
+        },
+        "assets/inter-cyrillic-ext-BOeWTOD4.woff2": {
+          "bytes": 25960,
+          "sha256": "ca157063339ac4ad418f214f3abfed119b0798ab4d377386ce5c9e5a7a435ebd"
+        },
+        "assets/ibm-plex-mono-400-vietnamese-BulugwFq.woff2": {
+          "bytes": 5868,
+          "sha256": "62632b6375305e70ddcafdd895218e6ae41a184fcd280a69c739460604ca00a9"
+        },
+        "assets/inter-greek-ext-DlzME5K_.woff2": {
+          "bytes": 11232,
+          "sha256": "6e9e020a25f9b56d418f2c085b1d3c09725a4da23fe693a5b463064606732190"
+        },
+        "assets/ibm-plex-mono-500-vietnamese-DZ4AoWbu.woff2": {
+          "bytes": 6040,
+          "sha256": "781633d95de88040fb77141d1e65d928c87c0144691fbc74da5a64d137a7e910"
+        },
+        "assets/ibm-plex-mono-400-cyrillic-ext-xuaO2J-f.woff2": {
+          "bytes": 6912,
+          "sha256": "f8c22ec1804bd6966b70f43ac7c327025645b4c09597117fca2a5a6c750106fe"
+        },
+        "assets/ibm-plex-mono-400-cyrillic-BSMlKf0J.woff2": {
+          "bytes": 8356,
+          "sha256": "7635422bd10ddbbcb0e0caa1154b928298f5c8319b8c00b30978d4395f4783ce"
+        },
+        "assets/ibm-plex-mono-500-cyrillic-ext-BqneJy0T.woff2": {
+          "bytes": 6972,
+          "sha256": "3febe5c7f22e4b07b4552738673c3dbe8bced2dc5f48b866edf7ccd9552d109a"
+        },
+        "assets/ibm-plex-mono-500-cyrillic-Bq9vWWag.woff2": {
+          "bytes": 8460,
+          "sha256": "1d89462e86cb8e87e7e9d6f6635605bd7c3081baca6caaecee84916bf7b60edc"
+        },
+        "assets/inter-vietnamese-CBcvBZtf.woff2": {
+          "bytes": 10252,
+          "sha256": "5c66f9e07e90c6d4ac4922cc68d60de26c17b1858e677fb5e603fce3952b3ff2"
+        },
+        "assets/ibm-plex-mono-500-latin-ext-CAhNIIs5.woff2": {
+          "bytes": 13432,
+          "sha256": "6bb06407c97584b0867a959e05e8874693bfeb8c317de190811c51598f2d99ea"
+        }
+      },
+      "pageErrors": [],
+      "externalRequests": [],
+      "offlineRequests": [],
+      "axeViolations": []
+    },
+    {
+      "engine": "chromium",
+      "width": 375,
+      "offlineBeforeFirstInput": true,
+      "scope": "Recorded rising reference versus recorded falling example from the same attributed source; not a learner performance.",
+      "fullPassages": [
+        {
+          "samples": 41895,
+          "rate": 44100,
+          "when": 0.5988888888888889,
+          "playbackRate": 1,
+          "loop": false,
+          "matches": true
+        },
+        {
+          "samples": 33075,
+          "rate": 44100,
+          "when": 1.898888888888889,
+          "playbackRate": 1,
+          "loop": false,
+          "matches": true
+        }
+      ],
+      "selectedPassages": {
+        "starts": [
+          {
+            "index": 4,
+            "when": 4.894580498866214,
+            "samples": 19846,
+            "rate": 44100,
+            "sha256": "f6cc27bdbed5eccf90c0c63e241d0ee0de00dd621698ba6a380a99b2ab092de1",
+            "expectedSha256": "f6cc27bdbed5eccf90c0c63e241d0ee0de00dd621698ba6a380a99b2ab092de1",
+            "playbackRate": 1,
+            "loop": false
+          },
+          {
+            "index": 5,
+            "when": 5.6946031746031744,
+            "samples": 15435,
+            "rate": 44100,
+            "sha256": "032c60a262a4a68b4e3a6ca5a952b27add022db35b3fce06840cead5827cd493",
+            "expectedSha256": "032c60a262a4a68b4e3a6ca5a952b27add022db35b3fce06840cead5827cd493",
+            "playbackRate": 1,
+            "loop": false
+          }
+        ],
+        "analysisJobs": 3,
+        "slowJobs": 0,
+        "csp": [],
+        "phases": [
+          "Preparing to listen…",
+          "Listening to the reference.",
+          "Brief pause before your attempt.",
+          "Listening to your attempt.",
+          "Finished listening to the reference and your attempt."
+        ]
+      },
+      "cancellation": {
+        "starts": [
+          {
+            "index": 2,
+            "when": 4.569501133786848
+          },
+          {
+            "index": 3,
+            "when": 5.369523809523809
+          }
+        ],
+        "stops": [
+          {
+            "index": 2,
+            "at": 4.818140589569161
+          },
+          {
+            "index": 3,
+            "at": 4.818140589569161
+          }
+        ]
+      },
+      "downloads": [
+        {
+          "file": "chromium-375-falling-original.wav",
+          "bytes": 132798,
+          "sha256": "6b7410e328233fc75f4fe8145b09c9e1f4ed2c5445ce7594493b72b9215bedd0",
+          "filename": "tonemirror-reference-Recorded Mandarin mà (tone 4).wav"
+        },
+        {
+          "file": "chromium-375-attempt-before.wav",
+          "bytes": 132798,
+          "sha256": "6b7410e328233fc75f4fe8145b09c9e1f4ed2c5445ce7594493b72b9215bedd0",
+          "filename": "tonemirror-attempt-chromium-375-falling-original.wav"
+        },
+        {
+          "file": "chromium-375-attempt-after.wav",
+          "bytes": 132798,
+          "sha256": "6b7410e328233fc75f4fe8145b09c9e1f4ed2c5445ce7594493b72b9215bedd0",
+          "filename": "tonemirror-attempt-chromium-375-falling-original.wav"
+        }
+      ],
+      "assets": {
+        "index.html": {
+          "bytes": 2361,
+          "sha256": "82912d270709b1ad4e6479bdff1ea08d283864c86bd1ba7e5c5fd0a64d6adc5d"
+        },
+        "assets/index-C-m6Smcz.css": {
+          "bytes": 23892,
+          "sha256": "f104cc095558bbda156bc258860e0c98aade3a2dd1c493ae85bc6f572c88f670"
+        },
+        "assets/index-Dv38E5nD.js": {
+          "bytes": 271092,
+          "sha256": "c4f61543a32a25ae9d546cf37c16141c24433e0a21cc15d39bf26eba6c152bb5"
+        },
+        "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2": {
+          "bytes": 13348,
+          "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        },
+        "assets/inter-latin-ext-DO1Apj_S.woff2": {
+          "bytes": 85068,
+          "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
+        },
+        "assets/fraunces-italic-vietnamese-B7PmIdA3.woff2": {
+          "bytes": 12048,
+          "sha256": "b2383049df5de759100887e80450ef360e502d5b0454954fab2dcd6b322944f5"
+        },
+        "assets/fraunces-italic-latin-ext-C5JMU4hr.woff2": {
+          "bytes": 37620,
+          "sha256": "bbf614d45de67a99e638b753611329b2cb8b5b6d8da53b2aee0267fe75cfc5c8"
+        },
+        "assets/fraunces-vietnamese-Czevyj-6.woff2": {
+          "bytes": 19700,
+          "sha256": "f18853f63a870ebef013e30e789d8d544f102e4acd94988e57c223d9c796ddf4"
+        },
+        "assets/inter-vietnamese-CBcvBZtf.woff2": {
+          "bytes": 10252,
+          "sha256": "5c66f9e07e90c6d4ac4922cc68d60de26c17b1858e677fb5e603fce3952b3ff2"
+        },
+        "assets/inter-greek-CkhJZR-_.woff2": {
+          "bytes": 18996,
+          "sha256": "1be3448e292fbf05ffe176fe1e43f135013d50b1e7d324ad1a558f623d3bb6f6"
+        },
+        "assets/ibm-plex-mono-400-vietnamese-BulugwFq.woff2": {
+          "bytes": 5868,
+          "sha256": "62632b6375305e70ddcafdd895218e6ae41a184fcd280a69c739460604ca00a9"
+        },
+        "assets/ibm-plex-mono-500-cyrillic-Bq9vWWag.woff2": {
+          "bytes": 8460,
+          "sha256": "1d89462e86cb8e87e7e9d6f6635605bd7c3081baca6caaecee84916bf7b60edc"
+        },
+        "assets/inter-cyrillic-ext-BOeWTOD4.woff2": {
+          "bytes": 25960,
+          "sha256": "ca157063339ac4ad418f214f3abfed119b0798ab4d377386ce5c9e5a7a435ebd"
+        },
+        "assets/inter-greek-ext-DlzME5K_.woff2": {
+          "bytes": 11232,
+          "sha256": "6e9e020a25f9b56d418f2c085b1d3c09725a4da23fe693a5b463064606732190"
+        },
+        "assets/ibm-plex-mono-400-cyrillic-ext-xuaO2J-f.woff2": {
+          "bytes": 6912,
+          "sha256": "f8c22ec1804bd6966b70f43ac7c327025645b4c09597117fca2a5a6c750106fe"
+        },
+        "assets/ibm-plex-mono-400-cyrillic-BSMlKf0J.woff2": {
+          "bytes": 8356,
+          "sha256": "7635422bd10ddbbcb0e0caa1154b928298f5c8319b8c00b30978d4395f4783ce"
+        },
+        "assets/ibm-plex-mono-500-cyrillic-ext-BqneJy0T.woff2": {
+          "bytes": 6972,
+          "sha256": "3febe5c7f22e4b07b4552738673c3dbe8bced2dc5f48b866edf7ccd9552d109a"
+        },
+        "assets/ibm-plex-mono-500-vietnamese-DZ4AoWbu.woff2": {
+          "bytes": 6040,
+          "sha256": "781633d95de88040fb77141d1e65d928c87c0144691fbc74da5a64d137a7e910"
+        },
+        "assets/ibm-plex-mono-500-latin-ext-CAhNIIs5.woff2": {
+          "bytes": 13432,
+          "sha256": "6bb06407c97584b0867a959e05e8874693bfeb8c317de190811c51598f2d99ea"
+        },
+        "assets/fraunces-latin-ext-CJcjJNj7.woff2": {
+          "bytes": 59388,
+          "sha256": "a2930b27d13a228bd9ab6a49269b5f800237892ad560cb9dd7fab01b1620f88e"
+        },
+        "assets/inter-cyrillic-DqGufNeO.woff2": {
+          "bytes": 18748,
+          "sha256": "71d5ee93cc1e9f1d520a3a8b66456de18c7879d8df09d57fcd2eaff75fef0075"
+        }
+      },
+      "pageErrors": [],
+      "externalRequests": [],
+      "offlineRequests": [],
+      "axeViolations": []
+    },
+    {
+      "engine": "firefox",
+      "width": 1440,
+      "offlineBeforeFirstInput": true,
+      "scope": "Recorded rising reference versus recorded falling example from the same attributed source; not a learner performance.",
+      "fullPassages": [
+        {
+          "samples": 41895,
+          "rate": 44100,
+          "when": 1.6524943310657596,
+          "playbackRate": 1,
+          "loop": false,
+          "matches": true
+        },
+        {
+          "samples": 33075,
+          "rate": 44100,
+          "when": 2.95249433106576,
+          "playbackRate": 1,
+          "loop": false,
+          "matches": true
+        }
+      ],
+      "selectedPassages": {
+        "starts": [
+          {
+            "index": 4,
+            "when": 6.522879818594104,
+            "samples": 19846,
+            "rate": 44100,
+            "sha256": "8bc80054f5b32845cdef481e6add1c52187838d1243d6220d7c6f381b873a47b",
+            "expectedSha256": "8bc80054f5b32845cdef481e6add1c52187838d1243d6220d7c6f381b873a47b",
+            "playbackRate": 1,
+            "loop": false
+          },
+          {
+            "index": 5,
+            "when": 7.322902494331065,
+            "samples": 15435,
+            "rate": 44100,
+            "sha256": "08b999453d9b33d1c396d7ae290bf62c6617a4c435e0114cffefe9933a6a3037",
+            "expectedSha256": "08b999453d9b33d1c396d7ae290bf62c6617a4c435e0114cffefe9933a6a3037",
+            "playbackRate": 1,
+            "loop": false
+          }
+        ],
+        "analysisJobs": 3,
+        "slowJobs": 0,
+        "csp": [],
+        "phases": [
+          "Preparing to listen…",
+          "Listening to the reference.",
+          "Brief pause before your attempt.",
+          "Listening to your attempt.",
+          "Finished listening to the reference and your attempt."
+        ]
+      },
+      "cancellation": {
+        "starts": [
+          {
+            "index": 2,
+            "when": 6.2732653061224495
+          },
+          {
+            "index": 3,
+            "when": 7.07328798185941
+          }
+        ],
+        "stops": [
+          {
+            "index": 2,
+            "at": 6.4
+          },
+          {
+            "index": 3,
+            "at": 6.4
+          }
+        ]
+      },
+      "downloads": [
+        {
+          "file": "firefox-1440-falling-original.wav",
+          "bytes": 132798,
+          "sha256": "5eeb1c80cc68b103597e4c0d805602b8783677336204ed452e138a3d7ff87bec",
+          "filename": "tonemirror-reference-Recorded Mandarin mà (tone 4).wav"
+        },
+        {
+          "file": "firefox-1440-attempt-before.wav",
+          "bytes": 132798,
+          "sha256": "5eeb1c80cc68b103597e4c0d805602b8783677336204ed452e138a3d7ff87bec",
+          "filename": "tonemirror-attempt-firefox-1440-falling-original.wav"
+        },
+        {
+          "file": "firefox-1440-attempt-after.wav",
+          "bytes": 132798,
+          "sha256": "5eeb1c80cc68b103597e4c0d805602b8783677336204ed452e138a3d7ff87bec",
+          "filename": "tonemirror-attempt-firefox-1440-falling-original.wav"
+        }
+      ],
+      "assets": {
+        "index.html": {
+          "bytes": 2361,
+          "sha256": "82912d270709b1ad4e6479bdff1ea08d283864c86bd1ba7e5c5fd0a64d6adc5d"
+        },
+        "assets/index-C-m6Smcz.css": {
+          "bytes": 23892,
+          "sha256": "f104cc095558bbda156bc258860e0c98aade3a2dd1c493ae85bc6f572c88f670"
+        },
+        "assets/index-Dv38E5nD.js": {
+          "bytes": 271092,
+          "sha256": "c4f61543a32a25ae9d546cf37c16141c24433e0a21cc15d39bf26eba6c152bb5"
+        },
+        "assets/inter-latin-ext-DO1Apj_S.woff2": {
+          "bytes": 85068,
+          "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2": {
+          "bytes": 13348,
+          "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        },
+        "assets/fraunces-italic-vietnamese-B7PmIdA3.woff2": {
+          "bytes": 12048,
+          "sha256": "b2383049df5de759100887e80450ef360e502d5b0454954fab2dcd6b322944f5"
+        },
+        "assets/fraunces-italic-latin-ext-C5JMU4hr.woff2": {
+          "bytes": 37620,
+          "sha256": "bbf614d45de67a99e638b753611329b2cb8b5b6d8da53b2aee0267fe75cfc5c8"
+        },
+        "assets/fraunces-vietnamese-Czevyj-6.woff2": {
+          "bytes": 19700,
+          "sha256": "f18853f63a870ebef013e30e789d8d544f102e4acd94988e57c223d9c796ddf4"
+        },
+        "assets/ibm-plex-mono-400-cyrillic-ext-xuaO2J-f.woff2": {
+          "bytes": 6912,
+          "sha256": "f8c22ec1804bd6966b70f43ac7c327025645b4c09597117fca2a5a6c750106fe"
+        },
+        "assets/ibm-plex-mono-400-vietnamese-BulugwFq.woff2": {
+          "bytes": 5868,
+          "sha256": "62632b6375305e70ddcafdd895218e6ae41a184fcd280a69c739460604ca00a9"
+        },
+        "assets/ibm-plex-mono-400-cyrillic-BSMlKf0J.woff2": {
+          "bytes": 8356,
+          "sha256": "7635422bd10ddbbcb0e0caa1154b928298f5c8319b8c00b30978d4395f4783ce"
+        },
+        "assets/ibm-plex-mono-500-cyrillic-ext-BqneJy0T.woff2": {
+          "bytes": 6972,
+          "sha256": "3febe5c7f22e4b07b4552738673c3dbe8bced2dc5f48b866edf7ccd9552d109a"
+        },
+        "assets/fraunces-latin-ext-CJcjJNj7.woff2": {
+          "bytes": 59388,
+          "sha256": "a2930b27d13a228bd9ab6a49269b5f800237892ad560cb9dd7fab01b1620f88e"
+        },
+        "assets/ibm-plex-mono-500-vietnamese-DZ4AoWbu.woff2": {
+          "bytes": 6040,
+          "sha256": "781633d95de88040fb77141d1e65d928c87c0144691fbc74da5a64d137a7e910"
+        },
+        "assets/inter-cyrillic-ext-BOeWTOD4.woff2": {
+          "bytes": 25960,
+          "sha256": "ca157063339ac4ad418f214f3abfed119b0798ab4d377386ce5c9e5a7a435ebd"
+        },
+        "assets/ibm-plex-mono-500-latin-ext-CAhNIIs5.woff2": {
+          "bytes": 13432,
+          "sha256": "6bb06407c97584b0867a959e05e8874693bfeb8c317de190811c51598f2d99ea"
+        },
+        "assets/ibm-plex-mono-500-cyrillic-Bq9vWWag.woff2": {
+          "bytes": 8460,
+          "sha256": "1d89462e86cb8e87e7e9d6f6635605bd7c3081baca6caaecee84916bf7b60edc"
+        },
+        "assets/inter-greek-CkhJZR-_.woff2": {
+          "bytes": 18996,
+          "sha256": "1be3448e292fbf05ffe176fe1e43f135013d50b1e7d324ad1a558f623d3bb6f6"
+        },
+        "assets/inter-vietnamese-CBcvBZtf.woff2": {
+          "bytes": 10252,
+          "sha256": "5c66f9e07e90c6d4ac4922cc68d60de26c17b1858e677fb5e603fce3952b3ff2"
+        },
+        "assets/inter-cyrillic-DqGufNeO.woff2": {
+          "bytes": 18748,
+          "sha256": "71d5ee93cc1e9f1d520a3a8b66456de18c7879d8df09d57fcd2eaff75fef0075"
+        },
+        "assets/inter-greek-ext-DlzME5K_.woff2": {
+          "bytes": 11232,
+          "sha256": "6e9e020a25f9b56d418f2c085b1d3c09725a4da23fe693a5b463064606732190"
+        }
+      },
+      "pageErrors": [],
+      "externalRequests": [],
+      "offlineRequests": [],
+      "axeViolations": []
+    },
+    {
+      "engine": "firefox",
+      "width": 375,
+      "offlineBeforeFirstInput": true,
+      "scope": "Recorded rising reference versus recorded falling example from the same attributed source; not a learner performance.",
+      "fullPassages": [
+        {
+          "samples": 41895,
+          "rate": 44100,
+          "when": 1.092312925170068,
+          "playbackRate": 1,
+          "loop": false,
+          "matches": true
+        },
+        {
+          "samples": 33075,
+          "rate": 44100,
+          "when": 2.392312925170068,
+          "playbackRate": 1,
+          "loop": false,
+          "matches": true
+        }
+      ],
+      "selectedPassages": {
+        "starts": [
+          {
+            "index": 4,
+            "when": 6.090408163265306,
+            "samples": 19846,
+            "rate": 44100,
+            "sha256": "8bc80054f5b32845cdef481e6add1c52187838d1243d6220d7c6f381b873a47b",
+            "expectedSha256": "8bc80054f5b32845cdef481e6add1c52187838d1243d6220d7c6f381b873a47b",
+            "playbackRate": 1,
+            "loop": false
+          },
+          {
+            "index": 5,
+            "when": 6.890430839002267,
+            "samples": 15435,
+            "rate": 44100,
+            "sha256": "08b999453d9b33d1c396d7ae290bf62c6617a4c435e0114cffefe9933a6a3037",
+            "expectedSha256": "08b999453d9b33d1c396d7ae290bf62c6617a4c435e0114cffefe9933a6a3037",
+            "playbackRate": 1,
+            "loop": false
+          }
+        ],
+        "analysisJobs": 3,
+        "slowJobs": 0,
+        "csp": [],
+        "phases": [
+          "Preparing to listen…",
+          "Listening to the reference.",
+          "Brief pause before your attempt.",
+          "Listening to your attempt.",
+          "Finished listening to the reference and your attempt."
+        ]
+      },
+      "cancellation": {
+        "starts": [
+          {
+            "index": 2,
+            "when": 5.837891156462585
+          },
+          {
+            "index": 3,
+            "when": 6.637913832199546
+          }
+        ],
+        "stops": [
+          {
+            "index": 2,
+            "at": 5.964625850340136
+          },
+          {
+            "index": 3,
+            "at": 5.964625850340136
+          }
+        ]
+      },
+      "downloads": [
+        {
+          "file": "firefox-375-falling-original.wav",
+          "bytes": 132798,
+          "sha256": "5eeb1c80cc68b103597e4c0d805602b8783677336204ed452e138a3d7ff87bec",
+          "filename": "tonemirror-reference-Recorded Mandarin mà (tone 4).wav"
+        },
+        {
+          "file": "firefox-375-attempt-before.wav",
+          "bytes": 132798,
+          "sha256": "5eeb1c80cc68b103597e4c0d805602b8783677336204ed452e138a3d7ff87bec",
+          "filename": "tonemirror-attempt-firefox-375-falling-original.wav"
+        },
+        {
+          "file": "firefox-375-attempt-after.wav",
+          "bytes": 132798,
+          "sha256": "5eeb1c80cc68b103597e4c0d805602b8783677336204ed452e138a3d7ff87bec",
+          "filename": "tonemirror-attempt-firefox-375-falling-original.wav"
+        }
+      ],
+      "assets": {
+        "index.html": {
+          "bytes": 2361,
+          "sha256": "82912d270709b1ad4e6479bdff1ea08d283864c86bd1ba7e5c5fd0a64d6adc5d"
+        },
+        "assets/index-C-m6Smcz.css": {
+          "bytes": 23892,
+          "sha256": "f104cc095558bbda156bc258860e0c98aade3a2dd1c493ae85bc6f572c88f670"
+        },
+        "assets/index-Dv38E5nD.js": {
+          "bytes": 271092,
+          "sha256": "c4f61543a32a25ae9d546cf37c16141c24433e0a21cc15d39bf26eba6c152bb5"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2": {
+          "bytes": 13348,
+          "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        },
+        "assets/inter-latin-ext-DO1Apj_S.woff2": {
+          "bytes": 85068,
+          "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        },
+        "assets/fraunces-italic-vietnamese-B7PmIdA3.woff2": {
+          "bytes": 12048,
+          "sha256": "b2383049df5de759100887e80450ef360e502d5b0454954fab2dcd6b322944f5"
+        },
+        "assets/fraunces-italic-latin-ext-C5JMU4hr.woff2": {
+          "bytes": 37620,
+          "sha256": "bbf614d45de67a99e638b753611329b2cb8b5b6d8da53b2aee0267fe75cfc5c8"
+        },
+        "assets/fraunces-vietnamese-Czevyj-6.woff2": {
+          "bytes": 19700,
+          "sha256": "f18853f63a870ebef013e30e789d8d544f102e4acd94988e57c223d9c796ddf4"
+        },
+        "assets/ibm-plex-mono-400-cyrillic-BSMlKf0J.woff2": {
+          "bytes": 8356,
+          "sha256": "7635422bd10ddbbcb0e0caa1154b928298f5c8319b8c00b30978d4395f4783ce"
+        },
+        "assets/ibm-plex-mono-400-cyrillic-ext-xuaO2J-f.woff2": {
+          "bytes": 6912,
+          "sha256": "f8c22ec1804bd6966b70f43ac7c327025645b4c09597117fca2a5a6c750106fe"
+        },
+        "assets/fraunces-latin-ext-CJcjJNj7.woff2": {
+          "bytes": 59388,
+          "sha256": "a2930b27d13a228bd9ab6a49269b5f800237892ad560cb9dd7fab01b1620f88e"
+        },
+        "assets/ibm-plex-mono-400-vietnamese-BulugwFq.woff2": {
+          "bytes": 5868,
+          "sha256": "62632b6375305e70ddcafdd895218e6ae41a184fcd280a69c739460604ca00a9"
+        },
+        "assets/ibm-plex-mono-500-vietnamese-DZ4AoWbu.woff2": {
+          "bytes": 6040,
+          "sha256": "781633d95de88040fb77141d1e65d928c87c0144691fbc74da5a64d137a7e910"
+        },
+        "assets/ibm-plex-mono-500-cyrillic-ext-BqneJy0T.woff2": {
+          "bytes": 6972,
+          "sha256": "3febe5c7f22e4b07b4552738673c3dbe8bced2dc5f48b866edf7ccd9552d109a"
+        },
+        "assets/ibm-plex-mono-500-cyrillic-Bq9vWWag.woff2": {
+          "bytes": 8460,
+          "sha256": "1d89462e86cb8e87e7e9d6f6635605bd7c3081baca6caaecee84916bf7b60edc"
+        },
+        "assets/inter-greek-ext-DlzME5K_.woff2": {
+          "bytes": 11232,
+          "sha256": "6e9e020a25f9b56d418f2c085b1d3c09725a4da23fe693a5b463064606732190"
+        },
+        "assets/inter-cyrillic-DqGufNeO.woff2": {
+          "bytes": 18748,
+          "sha256": "71d5ee93cc1e9f1d520a3a8b66456de18c7879d8df09d57fcd2eaff75fef0075"
+        },
+        "assets/ibm-plex-mono-500-latin-ext-CAhNIIs5.woff2": {
+          "bytes": 13432,
+          "sha256": "6bb06407c97584b0867a959e05e8874693bfeb8c317de190811c51598f2d99ea"
+        },
+        "assets/inter-cyrillic-ext-BOeWTOD4.woff2": {
+          "bytes": 25960,
+          "sha256": "ca157063339ac4ad418f214f3abfed119b0798ab4d377386ce5c9e5a7a435ebd"
+        },
+        "assets/inter-greek-CkhJZR-_.woff2": {
+          "bytes": 18996,
+          "sha256": "1be3448e292fbf05ffe176fe1e43f135013d50b1e7d324ad1a558f623d3bb6f6"
+        },
+        "assets/inter-vietnamese-CBcvBZtf.woff2": {
+          "bytes": 10252,
+          "sha256": "5c66f9e07e90c6d4ac4922cc68d60de26c17b1858e677fb5e603fce3952b3ff2"
+        }
+      },
+      "pageErrors": [],
+      "externalRequests": [],
+      "offlineRequests": [],
+      "axeViolations": []
+    }
+  ]
+}
