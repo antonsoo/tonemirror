@@ -1,0 +1,121 @@
+{
+  "checkedAtUtc": "2026-10-17T06:58:51.862012+00:00",
+  "sourceCommit": "1e06b63c9d7ed0ee060635c27a9c9a783fe361f8",
+  "remoteMain": "1e06b63c9d7ed0ee060635c27a9c9a783fe361f8",
+  "cleanTreeAtCheck": true,
+  "files": [
+    {
+      "file": "src/app.ts",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/1e06b63c9d7ed0ee060635c27a9c9a783fe361f8/src/app.ts",
+      "bytes": 47131,
+      "sha256": "fc59f9f546855074018048ee9e71d6b58b061a1c430aaf778e343a8fcaaec32f",
+      "matches": true
+    },
+    {
+      "file": "src/audio/credit.ts",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/1e06b63c9d7ed0ee060635c27a9c9a783fe361f8/src/audio/credit.ts",
+      "bytes": 2585,
+      "sha256": "f2b7560e0d519fdfcfd73088857619caec08f27b8e1ff03057d5f123d9e8fb1c",
+      "matches": true
+    },
+    {
+      "file": "src/audio/wav.ts",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/1e06b63c9d7ed0ee060635c27a9c9a783fe361f8/src/audio/wav.ts",
+      "bytes": 3410,
+      "sha256": "56f6e413f3435affef7ed89c922c1f0d62c74e187c61f5e0296169512c96e9bb",
+      "matches": true
+    },
+    {
+      "file": "src/audio/fileLoader.ts",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/1e06b63c9d7ed0ee060635c27a9c9a783fe361f8/src/audio/fileLoader.ts",
+      "bytes": 6243,
+      "sha256": "a341fb1a4f6f6c9124158d12570e5847b9cfab533818f410e190df2468d45a8e",
+      "matches": true
+    },
+    {
+      "file": "src/storage/db.ts",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/1e06b63c9d7ed0ee060635c27a9c9a783fe361f8/src/storage/db.ts",
+      "bytes": 7209,
+      "sha256": "c39f89432778b12d7e306b7bc49835efdc53e949c00d829d73dfa7ea9a4386ba",
+      "matches": true
+    },
+    {
+      "file": "src/references/recorded.ts",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/1e06b63c9d7ed0ee060635c27a9c9a783fe361f8/src/references/recorded.ts",
+      "bytes": 1283,
+      "sha256": "d1ffd877b216e3020ee8e15e47ec9f9d8eb8fa4921181b30d85bc1e242f54f12",
+      "matches": true
+    },
+    {
+      "file": "src/references/FourMandarinTones.ogg",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/1e06b63c9d7ed0ee060635c27a9c9a783fe361f8/src/references/FourMandarinTones.ogg",
+      "bytes": 77622,
+      "sha256": "e857c893662741a9c99e527a1c54df52eb386fb83df021cb9a42faee77af9049",
+      "matches": true
+    },
+    {
+      "file": "public/audio-licenses.txt",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/1e06b63c9d7ed0ee060635c27a9c9a783fe361f8/public/audio-licenses.txt",
+      "bytes": 3262,
+      "sha256": "5fac2b782635cc55572e1254efd1c8cefda87f457470aac9ae2134988dfd2680",
+      "matches": true
+    },
+    {
+      "file": "studies/recorded-practice/source.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/1e06b63c9d7ed0ee060635c27a9c9a783fe361f8/studies/recorded-practice/source.json",
+      "bytes": 1500,
+      "sha256": "6dae8118c2a1eb1dfa45af13c5d2dc907dc8d44a9c2b7bce4c2b1509e2b59fae",
+      "matches": true
+    },
+    {
+      "file": "studies/recorded-practice/README.md",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/1e06b63c9d7ed0ee060635c27a9c9a783fe361f8/studies/recorded-practice/README.md",
+      "bytes": 7695,
+      "sha256": "e0685097121b605afa3b29c15862dcbd93b5f8d5cadd08a210a3d2e1a94c379e",
+      "matches": true
+    },
+    {
+      "file": "studies/recorded-practice/results/clean-checks.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/1e06b63c9d7ed0ee060635c27a9c9a783fe361f8/studies/recorded-practice/results/clean-checks.json",
+      "bytes": 9776,
+      "sha256": "f35e63a8ffc10c6e42397976e8bf43951e9eeb4212934f11484df468d05438ed",
+      "matches": true
+    },
+    {
+      "file": "studies/recorded-practice/results/browser.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/1e06b63c9d7ed0ee060635c27a9c9a783fe361f8/studies/recorded-practice/results/browser.json",
+      "bytes": 83329,
+      "sha256": "fbeb4a608d699222a62aea456458c8a2f0fe9ae9128a0a2526e62c6d1ccabac7",
+      "matches": true
+    },
+    {
+      "file": "studies/recorded-practice/results/hosted-bytes.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/1e06b63c9d7ed0ee060635c27a9c9a783fe361f8/studies/recorded-practice/results/hosted-bytes.json",
+      "bytes": 14774,
+      "sha256": "e0a0405a4d1bf362f32bc29c5a6eba74f4f1f442b313eec484287b62f4c0e320",
+      "matches": true
+    },
+    {
+      "file": "studies/recorded-practice/results/hosted-browser.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/1e06b63c9d7ed0ee060635c27a9c9a783fe361f8/studies/recorded-practice/results/hosted-browser.json",
+      "bytes": 83333,
+      "sha256": "96fe2d09ccb43ddf024849a6a466c780721c0bf4068ba86c4866ecf65442969f",
+      "matches": true
+    },
+    {
+      "file": "studies/recorded-practice/results/credited-excerpt.wav",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/1e06b63c9d7ed0ee060635c27a9c9a783fe361f8/studies/recorded-practice/results/credited-excerpt.wav",
+      "bytes": 26974,
+      "sha256": "6e365b794c49c515c651522d2d2e181751ecede349ed29aecb96d23c6865681d",
+      "matches": true
+    },
+    {
+      "file": "docs/assets/recorded-practice/recorded-practice.png",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/1e06b63c9d7ed0ee060635c27a9c9a783fe361f8/docs/assets/recorded-practice/recorded-practice.png",
+      "bytes": 181601,
+      "sha256": "5248f40419cb6b8acebcde329a19bea8b1f81061d5e7781d0583199f6cb0d01c",
+      "matches": true
+    }
+  ],
+  "scope": "Pinned public source and evidence bytes match this clean synchronized checkout. Pages and browser verification are recorded separately. npm-private application; no registry release, release tag or remote CI result is claimed."
+}

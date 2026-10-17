@@ -124,6 +124,9 @@ inspected.
 
 The source and [live demo](https://antonsoo.github.io/tonemirror/) include this
 addition. Pages commit `3174c9c` deploys the clean build above. The
+[public source check](results/public-source.json) verifies 16 pinned source,
+recording and evidence files at `1e06b63`, with a clean checkout matching
+`origin/main`. The
 [canonical HTTP check](results/hosted-bytes.json) matched all 30 production
 files, including the root page before and after the pass and explicit
 `index.html`. The [hosted browser replay](results/hosted-browser.json) repeated
