@@ -1,6 +1,6 @@
 {
   "sourceSha256": "e857c893662741a9c99e527a1c54df52eb386fb83df021cb9a42faee77af9049",
-  "node": "v26.7.0",
+  "node": "v24.21.0",
   "ffmpeg": "ffmpeg version 8.0 Copyright (c) 2000-2025 the FFmpeg developers",
   "scope": "Original recording decoded by FFmpeg at its native 44100 Hz, channel average to mono. App pitch algorithms unchanged. Source tone labels are not independent F0 ground truth; helper strengths are not probabilities.",
   "decoded": {

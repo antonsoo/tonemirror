@@ -64,7 +64,7 @@ do not cover regional variation, coarticulation, tone sandhi or ordinary speech.
 The four-tone sequence contains four syllables and should not be passed to the
 single-syllable tone helper as one example.
 
-A native-rate replay with the unchanged pitch methods shows a useful limitation:
+A [native-rate replay](results/contours.json) with the unchanged pitch methods shows a useful limitation:
 the helper calls the recording's first tone **tone 2**, with heuristic strengths
 about 0.38 for YIN and 0.42 for MPM. Both call the next three examples 2, 3 and 4.
 These values are not calibrated probabilities. The first-tone contour has a
@@ -95,5 +95,27 @@ The visual contrast uses the recorded rising tone as reference and the recorded
 falling tone as the attempt. It is a comparison of two source examples, not a
 learner recording or evidence that a similarity score measures pronunciation.
 
-Clean-checkout results and final captures will be retained beside this replay.
-This is a source addition; publication status is verified separately.
+A [fresh archive of `b370f5d`](results/clean-checks.json), installed with `npm ci`
+under Node 24.21.0, passed lint, strict type checking, 223 unit tests, the
+production build, and 96 browser scenarios. Four Firefox microphone scenarios
+remain skipped because the deterministic test device is Chromium-specific.
+The source-integrity helper's fixture checks passed too; it does not download
+or verify the complete speech corpus in this fresh archive.
+
+The [recorded-practice browser receipt](results/browser.json) retains all four
+desktop/phone contexts and 48 exact-sample WAV downloads. Independent decoding
+of all 48 files with FFmpeg produced [the same sample hashes](results/independent-decoding.json).
+[One actual credited excerpt](results/credited-excerpt.wav) is retained under
+the recording's CC BY-SA 4.0 license. Every selected crop also matched a
+separate browser-native decode of the original Ogg file. No HTTP requests
+occurred while disconnected, and there were no page errors, CSP violations,
+axe violations or horizontal overflow in these four contexts.
+
+All 30 production files matched the working build byte for byte. All 14
+`src/core/*.ts` DSP/analysis files matched the previous public source; this
+addition changes the available references and their credit handling, not pitch
+tracking or scoring. The [desktop capture](../../docs/assets/recorded-practice/recorded-practice.png),
+[Chromium phone](../../docs/assets/recorded-practice/chromium-375.png),
+[Firefox desktop](../../docs/assets/recorded-practice/firefox-1440.png) and
+[Firefox phone](../../docs/assets/recorded-practice/firefox-375.png) were visually
+inspected. Publication status is verified separately.

@@ -1,0 +1,11 @@
+{
+  "exportsDecoded": 48,
+  "sampleHashesMatch": true,
+  "ffmpeg": "ffmpeg version 8.0 Copyright (c) 2000-2025 the FFmpeg developers",
+  "representative": {
+    "file": "credited-excerpt.wav",
+    "bytes": 26974,
+    "sha256": "6e365b794c49c515c651522d2d2e181751ecede349ed29aecb96d23c6865681d"
+  },
+  "browserReceiptSha256": "fbeb4a608d699222a62aea456458c8a2f0fe9ae9128a0a2526e62c6d1ccabac7"
+}

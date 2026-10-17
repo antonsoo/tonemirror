@@ -1,0 +1,1796 @@
+{
+  "source": {
+    "schemaVersion": 1,
+    "recording": {
+      "file": "src/references/FourMandarinTones.ogg",
+      "title": "FourMandarinTones.ogg",
+      "creator": "Wolfdog",
+      "recorded": "2019-10-26",
+      "sourcePage": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+      "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a3/FourMandarinTones.ogg",
+      "sourceUpload": "2019-10-26T11:46:00Z",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "bytes": 77622,
+      "sha1": "db81e637a2f1908eacb7244845fbf9162e410ec8",
+      "sha256": "e857c893662741a9c99e527a1c54df52eb386fb83df021cb9a42faee77af9049",
+      "synthetic": false,
+      "language": "Mandarin Chinese",
+      "scope": "The source identifies the syllable ma spoken in four tones. It does not establish the speaker's native language or provide phonetic or F0 ground truth."
+    },
+    "selections": [
+      {
+        "tone": 1,
+        "syllable": "mā",
+        "start": 0.4,
+        "end": 1.25
+      },
+      {
+        "tone": 2,
+        "syllable": "má",
+        "start": 1.7,
+        "end": 2.65
+      },
+      {
+        "tone": 3,
+        "syllable": "mǎ",
+        "start": 3.05,
+        "end": 4.05
+      },
+      {
+        "tone": 4,
+        "syllable": "mà",
+        "start": 4.5,
+        "end": 5.25
+      }
+    ],
+    "selectionRule": "Manually chosen quiet gaps around each isolated syllable; not phonetic onset/offset labels. Crop start floors and end ceils at the decoded sample rate."
+  },
+  "origin": "local production build",
+  "results": [
+    {
+      "browser": "chromium",
+      "version": "153.0.8010.12",
+      "width": 1440,
+      "decoded": {
+        "rate": 44100,
+        "channels": 2,
+        "samples": 250948
+      },
+      "tones": [
+        {
+          "tone": 1,
+          "syllable": "mā",
+          "start": 17640,
+          "end": 55125,
+          "exact": true,
+          "sha256": "f7ef7668a002f2036189680e8a0db11464260ffbe60ac60ee3ea54c8d7c5c469",
+          "frames": 82,
+          "voiced": 64,
+          "medianF0": 171.58097193143666
+        },
+        {
+          "tone": 2,
+          "syllable": "má",
+          "start": 74970,
+          "end": 116865,
+          "exact": true,
+          "sha256": "4f5d004e1960117b39ba25f08c2614150061d765a40926dc114da75aa4cf21a0",
+          "frames": 92,
+          "voiced": 71,
+          "medianF0": 96.34773043813415
+        },
+        {
+          "tone": 3,
+          "syllable": "mǎ",
+          "start": 134505,
+          "end": 178605,
+          "exact": true,
+          "sha256": "2f12c03e603bf10c5fee9a008776ee1d312ca15c3321ea272f695e9b08871c56",
+          "frames": 97,
+          "voiced": 58,
+          "medianF0": 119.14759072848051
+        },
+        {
+          "tone": 4,
+          "syllable": "mà",
+          "start": 198450,
+          "end": 231525,
+          "exact": true,
+          "sha256": "36869226b943f90bbb4feb374222600ba4164ca1fd9de9f449b5c4649c96eac2",
+          "frames": 72,
+          "voiced": 34,
+          "medianF0": 154.85689853447593
+        }
+      ],
+      "exports": [
+        {
+          "stage": "tone1",
+          "filename": "tonemirror-reference-Recorded Mandarin mā (tone 1).wav",
+          "bytes": 150438,
+          "sha256": "73818a2be5d57c3b4d6c87b137f310d1f5c204f1c38ea3896a8b9a02063df1a0",
+          "pcm": {
+            "sha256": "f7ef7668a002f2036189680e8a0db11464260ffbe60ac60ee3ea54c8d7c5c469",
+            "samples": 37485,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 0.4,
+              "end": 1.25
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":0.4,\"end\":1.25}}"
+          }
+        },
+        {
+          "stage": "tone2",
+          "filename": "tonemirror-reference-Recorded Mandarin má (tone 2).wav",
+          "bytes": 168078,
+          "sha256": "6af40656d5092f4a09207985355b887b9e861c48c3ff349aef45938c3e65a2a8",
+          "pcm": {
+            "sha256": "4f5d004e1960117b39ba25f08c2614150061d765a40926dc114da75aa4cf21a0",
+            "samples": 41895,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 1.7,
+              "end": 2.65
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":1.7,\"end\":2.65}}"
+          }
+        },
+        {
+          "stage": "tone3",
+          "filename": "tonemirror-reference-Recorded Mandarin mǎ (tone 3).wav",
+          "bytes": 176900,
+          "sha256": "e64b6ceb549c82a5ac19f0a3f568da43fa932240d862fcdb718a006ab240d998",
+          "pcm": {
+            "sha256": "2f12c03e603bf10c5fee9a008776ee1d312ca15c3321ea272f695e9b08871c56",
+            "samples": 44100,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 3.05,
+              "end": 4.05
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":3.05,\"end\":4.05}}"
+          }
+        },
+        {
+          "stage": "tone4",
+          "filename": "tonemirror-reference-Recorded Mandarin mà (tone 4).wav",
+          "bytes": 132798,
+          "sha256": "6b7410e328233fc75f4fe8145b09c9e1f4ed2c5445ce7594493b72b9215bedd0",
+          "pcm": {
+            "sha256": "36869226b943f90bbb4feb374222600ba4164ca1fd9de9f449b5c4649c96eac2",
+            "samples": 33075,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 4.5,
+              "end": 5.25
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":4.5,\"end\":5.25}}"
+          }
+        },
+        {
+          "stage": "full",
+          "filename": "tonemirror-reference-Recorded Mandarin- four tones.wav",
+          "bytes": 1004256,
+          "sha256": "277684c6b5b6d9e5d61c6e874421241831905f7856f905f428bd860352c5de14",
+          "pcm": {
+            "sha256": "c94d13a85dcb1eac5dac2d708bbb60b84092d9c0687e5940d0c82bb88524c73a",
+            "samples": 250948,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\"}"
+          }
+        },
+        {
+          "stage": "crop",
+          "filename": "tonemirror-reference-Recorded Mandarin- four tones [3.150–3.550s].wav",
+          "bytes": 71060,
+          "sha256": "9597d3bf329eb42e02313f88a655855a00b0d5f1607a30a4927a5a3e9d14f67d",
+          "pcm": {
+            "sha256": "f9c54ebd60752049f8790b1517a7946f1f2f9c1465ddcad68ca850356c3120c3",
+            "samples": 17640,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 3.15,
+              "end": 3.55
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":3.15,\"end\":3.55}}"
+          }
+        },
+        {
+          "stage": "restored",
+          "filename": "tonemirror-reference-Recorded Mandarin- four tones.wav",
+          "bytes": 1004256,
+          "sha256": "277684c6b5b6d9e5d61c6e874421241831905f7856f905f428bd860352c5de14",
+          "pcm": {
+            "sha256": "c94d13a85dcb1eac5dac2d708bbb60b84092d9c0687e5940d0c82bb88524c73a",
+            "samples": 250948,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\"}"
+          }
+        },
+        {
+          "stage": "saved",
+          "filename": "tonemirror-reference-Recorded mǎ excerpt.wav",
+          "bytes": 71060,
+          "sha256": "9597d3bf329eb42e02313f88a655855a00b0d5f1607a30a4927a5a3e9d14f67d",
+          "pcm": {
+            "sha256": "f9c54ebd60752049f8790b1517a7946f1f2f9c1465ddcad68ca850356c3120c3",
+            "samples": 17640,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 3.15,
+              "end": 3.55
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":3.15,\"end\":3.55}}"
+          }
+        },
+        {
+          "stage": "mpm",
+          "filename": "tonemirror-reference-Recorded mǎ excerpt.wav",
+          "bytes": 71060,
+          "sha256": "9597d3bf329eb42e02313f88a655855a00b0d5f1607a30a4927a5a3e9d14f67d",
+          "pcm": {
+            "sha256": "f9c54ebd60752049f8790b1517a7946f1f2f9c1465ddcad68ca850356c3120c3",
+            "samples": 17640,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 3.15,
+              "end": 3.55
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":3.15,\"end\":3.55}}"
+          }
+        },
+        {
+          "stage": "recrop",
+          "filename": "tonemirror-reference-Recorded mǎ excerpt [0.050–0.200s].wav",
+          "bytes": 26974,
+          "sha256": "6e365b794c49c515c651522d2d2e181751ecede349ed29aecb96d23c6865681d",
+          "pcm": {
+            "sha256": "88fa30114135ae44f902a8ce574e0125c95a08faa7c9b56a3041e82fc6b60063",
+            "samples": 6615,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 3.1999999999999997,
+              "end": 3.35
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":3.1999999999999997,\"end\":3.35}}"
+          }
+        },
+        {
+          "stage": "reimported",
+          "filename": "tonemirror-attempt-chromium-1440-tone4.wav",
+          "bytes": 132798,
+          "sha256": "6b7410e328233fc75f4fe8145b09c9e1f4ed2c5445ce7594493b72b9215bedd0",
+          "pcm": {
+            "sha256": "36869226b943f90bbb4feb374222600ba4164ca1fd9de9f449b5c4649c96eac2",
+            "samples": 33075,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 4.5,
+              "end": 5.25
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":4.5,\"end\":5.25}}"
+          }
+        },
+        {
+          "stage": "reloaded",
+          "filename": "tonemirror-reference-Recorded mǎ excerpt.wav",
+          "bytes": 71060,
+          "sha256": "9597d3bf329eb42e02313f88a655855a00b0d5f1607a30a4927a5a3e9d14f67d",
+          "pcm": {
+            "sha256": "f9c54ebd60752049f8790b1517a7946f1f2f9c1465ddcad68ca850356c3120c3",
+            "samples": 17640,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 3.15,
+              "end": 3.55
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":3.15,\"end\":3.55}}"
+          }
+        }
+      ],
+      "contrastScore": "41",
+      "contrast": "Recorded tone 2 as reference and recorded tone 4 as attempt; no learner recording or pronunciation accuracy claim.",
+      "pageErrors": [],
+      "cspViolations": [],
+      "externalRequests": [],
+      "requestsWhileOffline": [],
+      "axeViolations": 0,
+      "overflow": false,
+      "served": {
+        "index.html": {
+          "bytes": 2361,
+          "sha256": "97a1560ef79305acc8b3858a487ae3cecfa6cb0236dd2e9f81bd9f89e10f7ee2"
+        },
+        "assets/index-D28YvLsM.css": {
+          "bytes": 23754,
+          "sha256": "79e90241f2e31d8d30b0f99eb4680c8a8534c71e7c8faae046fc6aeb57ccc8c3"
+        },
+        "assets/index-BiXXvUAg.js": {
+          "bytes": 267016,
+          "sha256": "5df3e6c483bd79c7b42305a8bded25fc400fb5742df6e4c3f5645a4441a70d28"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        },
+        "assets/inter-latin-ext-DO1Apj_S.woff2": {
+          "bytes": 85068,
+          "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
+        },
+        "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2": {
+          "bytes": 13348,
+          "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
+        }
+      }
+    },
+    {
+      "browser": "chromium",
+      "version": "153.0.8010.12",
+      "width": 375,
+      "decoded": {
+        "rate": 44100,
+        "channels": 2,
+        "samples": 250948
+      },
+      "tones": [
+        {
+          "tone": 1,
+          "syllable": "mā",
+          "start": 17640,
+          "end": 55125,
+          "exact": true,
+          "sha256": "f7ef7668a002f2036189680e8a0db11464260ffbe60ac60ee3ea54c8d7c5c469",
+          "frames": 82,
+          "voiced": 64,
+          "medianF0": 171.58097193143666
+        },
+        {
+          "tone": 2,
+          "syllable": "má",
+          "start": 74970,
+          "end": 116865,
+          "exact": true,
+          "sha256": "4f5d004e1960117b39ba25f08c2614150061d765a40926dc114da75aa4cf21a0",
+          "frames": 92,
+          "voiced": 71,
+          "medianF0": 96.34773043813415
+        },
+        {
+          "tone": 3,
+          "syllable": "mǎ",
+          "start": 134505,
+          "end": 178605,
+          "exact": true,
+          "sha256": "2f12c03e603bf10c5fee9a008776ee1d312ca15c3321ea272f695e9b08871c56",
+          "frames": 97,
+          "voiced": 58,
+          "medianF0": 119.14759072848051
+        },
+        {
+          "tone": 4,
+          "syllable": "mà",
+          "start": 198450,
+          "end": 231525,
+          "exact": true,
+          "sha256": "36869226b943f90bbb4feb374222600ba4164ca1fd9de9f449b5c4649c96eac2",
+          "frames": 72,
+          "voiced": 34,
+          "medianF0": 154.85689853447593
+        }
+      ],
+      "exports": [
+        {
+          "stage": "tone1",
+          "filename": "tonemirror-reference-Recorded Mandarin mā (tone 1).wav",
+          "bytes": 150438,
+          "sha256": "73818a2be5d57c3b4d6c87b137f310d1f5c204f1c38ea3896a8b9a02063df1a0",
+          "pcm": {
+            "sha256": "f7ef7668a002f2036189680e8a0db11464260ffbe60ac60ee3ea54c8d7c5c469",
+            "samples": 37485,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 0.4,
+              "end": 1.25
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":0.4,\"end\":1.25}}"
+          }
+        },
+        {
+          "stage": "tone2",
+          "filename": "tonemirror-reference-Recorded Mandarin má (tone 2).wav",
+          "bytes": 168078,
+          "sha256": "6af40656d5092f4a09207985355b887b9e861c48c3ff349aef45938c3e65a2a8",
+          "pcm": {
+            "sha256": "4f5d004e1960117b39ba25f08c2614150061d765a40926dc114da75aa4cf21a0",
+            "samples": 41895,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 1.7,
+              "end": 2.65
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":1.7,\"end\":2.65}}"
+          }
+        },
+        {
+          "stage": "tone3",
+          "filename": "tonemirror-reference-Recorded Mandarin mǎ (tone 3).wav",
+          "bytes": 176900,
+          "sha256": "e64b6ceb549c82a5ac19f0a3f568da43fa932240d862fcdb718a006ab240d998",
+          "pcm": {
+            "sha256": "2f12c03e603bf10c5fee9a008776ee1d312ca15c3321ea272f695e9b08871c56",
+            "samples": 44100,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 3.05,
+              "end": 4.05
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":3.05,\"end\":4.05}}"
+          }
+        },
+        {
+          "stage": "tone4",
+          "filename": "tonemirror-reference-Recorded Mandarin mà (tone 4).wav",
+          "bytes": 132798,
+          "sha256": "6b7410e328233fc75f4fe8145b09c9e1f4ed2c5445ce7594493b72b9215bedd0",
+          "pcm": {
+            "sha256": "36869226b943f90bbb4feb374222600ba4164ca1fd9de9f449b5c4649c96eac2",
+            "samples": 33075,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 4.5,
+              "end": 5.25
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":4.5,\"end\":5.25}}"
+          }
+        },
+        {
+          "stage": "full",
+          "filename": "tonemirror-reference-Recorded Mandarin- four tones.wav",
+          "bytes": 1004256,
+          "sha256": "277684c6b5b6d9e5d61c6e874421241831905f7856f905f428bd860352c5de14",
+          "pcm": {
+            "sha256": "c94d13a85dcb1eac5dac2d708bbb60b84092d9c0687e5940d0c82bb88524c73a",
+            "samples": 250948,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\"}"
+          }
+        },
+        {
+          "stage": "crop",
+          "filename": "tonemirror-reference-Recorded Mandarin- four tones [3.150–3.550s].wav",
+          "bytes": 71060,
+          "sha256": "9597d3bf329eb42e02313f88a655855a00b0d5f1607a30a4927a5a3e9d14f67d",
+          "pcm": {
+            "sha256": "f9c54ebd60752049f8790b1517a7946f1f2f9c1465ddcad68ca850356c3120c3",
+            "samples": 17640,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 3.15,
+              "end": 3.55
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":3.15,\"end\":3.55}}"
+          }
+        },
+        {
+          "stage": "restored",
+          "filename": "tonemirror-reference-Recorded Mandarin- four tones.wav",
+          "bytes": 1004256,
+          "sha256": "277684c6b5b6d9e5d61c6e874421241831905f7856f905f428bd860352c5de14",
+          "pcm": {
+            "sha256": "c94d13a85dcb1eac5dac2d708bbb60b84092d9c0687e5940d0c82bb88524c73a",
+            "samples": 250948,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\"}"
+          }
+        },
+        {
+          "stage": "saved",
+          "filename": "tonemirror-reference-Recorded mǎ excerpt.wav",
+          "bytes": 71060,
+          "sha256": "9597d3bf329eb42e02313f88a655855a00b0d5f1607a30a4927a5a3e9d14f67d",
+          "pcm": {
+            "sha256": "f9c54ebd60752049f8790b1517a7946f1f2f9c1465ddcad68ca850356c3120c3",
+            "samples": 17640,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 3.15,
+              "end": 3.55
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":3.15,\"end\":3.55}}"
+          }
+        },
+        {
+          "stage": "mpm",
+          "filename": "tonemirror-reference-Recorded mǎ excerpt.wav",
+          "bytes": 71060,
+          "sha256": "9597d3bf329eb42e02313f88a655855a00b0d5f1607a30a4927a5a3e9d14f67d",
+          "pcm": {
+            "sha256": "f9c54ebd60752049f8790b1517a7946f1f2f9c1465ddcad68ca850356c3120c3",
+            "samples": 17640,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 3.15,
+              "end": 3.55
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":3.15,\"end\":3.55}}"
+          }
+        },
+        {
+          "stage": "recrop",
+          "filename": "tonemirror-reference-Recorded mǎ excerpt [0.050–0.200s].wav",
+          "bytes": 26974,
+          "sha256": "6e365b794c49c515c651522d2d2e181751ecede349ed29aecb96d23c6865681d",
+          "pcm": {
+            "sha256": "88fa30114135ae44f902a8ce574e0125c95a08faa7c9b56a3041e82fc6b60063",
+            "samples": 6615,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 3.1999999999999997,
+              "end": 3.35
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":3.1999999999999997,\"end\":3.35}}"
+          }
+        },
+        {
+          "stage": "reimported",
+          "filename": "tonemirror-attempt-chromium-375-tone4.wav",
+          "bytes": 132798,
+          "sha256": "6b7410e328233fc75f4fe8145b09c9e1f4ed2c5445ce7594493b72b9215bedd0",
+          "pcm": {
+            "sha256": "36869226b943f90bbb4feb374222600ba4164ca1fd9de9f449b5c4649c96eac2",
+            "samples": 33075,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 4.5,
+              "end": 5.25
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":4.5,\"end\":5.25}}"
+          }
+        },
+        {
+          "stage": "reloaded",
+          "filename": "tonemirror-reference-Recorded mǎ excerpt.wav",
+          "bytes": 71060,
+          "sha256": "9597d3bf329eb42e02313f88a655855a00b0d5f1607a30a4927a5a3e9d14f67d",
+          "pcm": {
+            "sha256": "f9c54ebd60752049f8790b1517a7946f1f2f9c1465ddcad68ca850356c3120c3",
+            "samples": 17640,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 3.15,
+              "end": 3.55
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":3.15,\"end\":3.55}}"
+          }
+        }
+      ],
+      "contrastScore": "41",
+      "contrast": "Recorded tone 2 as reference and recorded tone 4 as attempt; no learner recording or pronunciation accuracy claim.",
+      "pageErrors": [],
+      "cspViolations": [],
+      "externalRequests": [],
+      "requestsWhileOffline": [],
+      "axeViolations": 0,
+      "overflow": false,
+      "served": {
+        "index.html": {
+          "bytes": 2361,
+          "sha256": "97a1560ef79305acc8b3858a487ae3cecfa6cb0236dd2e9f81bd9f89e10f7ee2"
+        },
+        "assets/index-D28YvLsM.css": {
+          "bytes": 23754,
+          "sha256": "79e90241f2e31d8d30b0f99eb4680c8a8534c71e7c8faae046fc6aeb57ccc8c3"
+        },
+        "assets/index-BiXXvUAg.js": {
+          "bytes": 267016,
+          "sha256": "5df3e6c483bd79c7b42305a8bded25fc400fb5742df6e4c3f5645a4441a70d28"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        },
+        "assets/inter-latin-ext-DO1Apj_S.woff2": {
+          "bytes": 85068,
+          "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
+        },
+        "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2": {
+          "bytes": 13348,
+          "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
+        }
+      }
+    },
+    {
+      "browser": "firefox",
+      "version": "155.0",
+      "width": 1440,
+      "decoded": {
+        "rate": 44100,
+        "channels": 2,
+        "samples": 250948
+      },
+      "tones": [
+        {
+          "tone": 1,
+          "syllable": "mā",
+          "start": 17640,
+          "end": 55125,
+          "exact": true,
+          "sha256": "b7677e6d10bcb64748a9d1bbabf4aaf0383f52d4ebc8240f27f8209a505a38bb",
+          "frames": 82,
+          "voiced": 64,
+          "medianF0": 171.58097199513205
+        },
+        {
+          "tone": 2,
+          "syllable": "má",
+          "start": 74970,
+          "end": 116865,
+          "exact": true,
+          "sha256": "52f5c5caeb033f9193155a80785dd2ce450aaccd095d732c249d73245124b85b",
+          "frames": 92,
+          "voiced": 71,
+          "medianF0": 96.34773044900928
+        },
+        {
+          "tone": 3,
+          "syllable": "mǎ",
+          "start": 134505,
+          "end": 178605,
+          "exact": true,
+          "sha256": "f8d11c4fa2c4feff0b0fd146f77e09a43fe21bb55d62085a619cc4ca1e6cf182",
+          "frames": 97,
+          "voiced": 58,
+          "medianF0": 119.14759049240581
+        },
+        {
+          "tone": 4,
+          "syllable": "mà",
+          "start": 198450,
+          "end": 231525,
+          "exact": true,
+          "sha256": "9ccb2fd9f19ed13f9dc5dbb5eee1ef49380533b37d906484b0aa18e6db1e7531",
+          "frames": 72,
+          "voiced": 34,
+          "medianF0": 154.85689848451273
+        }
+      ],
+      "exports": [
+        {
+          "stage": "tone1",
+          "filename": "tonemirror-reference-Recorded Mandarin mā (tone 1).wav",
+          "bytes": 150438,
+          "sha256": "82a8ba244a127427d44ce2d959eecf9aae5d2d67b9170882b99a561cd913fe2e",
+          "pcm": {
+            "sha256": "b7677e6d10bcb64748a9d1bbabf4aaf0383f52d4ebc8240f27f8209a505a38bb",
+            "samples": 37485,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 0.4,
+              "end": 1.25
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":0.4,\"end\":1.25}}"
+          }
+        },
+        {
+          "stage": "tone2",
+          "filename": "tonemirror-reference-Recorded Mandarin má (tone 2).wav",
+          "bytes": 168078,
+          "sha256": "b2359dd5117f539cb86e243c77c7e7f5201e4cfccfe0f9d2ab3925ee7112c64c",
+          "pcm": {
+            "sha256": "52f5c5caeb033f9193155a80785dd2ce450aaccd095d732c249d73245124b85b",
+            "samples": 41895,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 1.7,
+              "end": 2.65
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":1.7,\"end\":2.65}}"
+          }
+        },
+        {
+          "stage": "tone3",
+          "filename": "tonemirror-reference-Recorded Mandarin mǎ (tone 3).wav",
+          "bytes": 176900,
+          "sha256": "a018f236ade28bc396820c82fb431e73a243642c07b74a47ab35dafcd31ca56a",
+          "pcm": {
+            "sha256": "f8d11c4fa2c4feff0b0fd146f77e09a43fe21bb55d62085a619cc4ca1e6cf182",
+            "samples": 44100,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 3.05,
+              "end": 4.05
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":3.05,\"end\":4.05}}"
+          }
+        },
+        {
+          "stage": "tone4",
+          "filename": "tonemirror-reference-Recorded Mandarin mà (tone 4).wav",
+          "bytes": 132798,
+          "sha256": "5eeb1c80cc68b103597e4c0d805602b8783677336204ed452e138a3d7ff87bec",
+          "pcm": {
+            "sha256": "9ccb2fd9f19ed13f9dc5dbb5eee1ef49380533b37d906484b0aa18e6db1e7531",
+            "samples": 33075,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 4.5,
+              "end": 5.25
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":4.5,\"end\":5.25}}"
+          }
+        },
+        {
+          "stage": "full",
+          "filename": "tonemirror-reference-Recorded Mandarin- four tones.wav",
+          "bytes": 1004256,
+          "sha256": "c7fb4e0523fef1606fa806527683605ec05af998ed05a7578cb431dc768d1865",
+          "pcm": {
+            "sha256": "50c5e19a7e96334f7cc72b3625b5e470afc985c2bbbc246c665bfb4a4609bbac",
+            "samples": 250948,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\"}"
+          }
+        },
+        {
+          "stage": "crop",
+          "filename": "tonemirror-reference-Recorded Mandarin- four tones [3.150–3.550s].wav",
+          "bytes": 71060,
+          "sha256": "85c0b11164e765f43fba97fc032ed56d67bfbf12a4cef70eee18aab297039c56",
+          "pcm": {
+            "sha256": "ff4656517fd1fefb6f307c0ce3030dd29dacb7ccbe00429bf566d59c83ceb4b9",
+            "samples": 17640,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 3.15,
+              "end": 3.55
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":3.15,\"end\":3.55}}"
+          }
+        },
+        {
+          "stage": "restored",
+          "filename": "tonemirror-reference-Recorded Mandarin- four tones.wav",
+          "bytes": 1004256,
+          "sha256": "c7fb4e0523fef1606fa806527683605ec05af998ed05a7578cb431dc768d1865",
+          "pcm": {
+            "sha256": "50c5e19a7e96334f7cc72b3625b5e470afc985c2bbbc246c665bfb4a4609bbac",
+            "samples": 250948,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\"}"
+          }
+        },
+        {
+          "stage": "saved",
+          "filename": "tonemirror-reference-Recorded mǎ excerpt.wav",
+          "bytes": 71060,
+          "sha256": "85c0b11164e765f43fba97fc032ed56d67bfbf12a4cef70eee18aab297039c56",
+          "pcm": {
+            "sha256": "ff4656517fd1fefb6f307c0ce3030dd29dacb7ccbe00429bf566d59c83ceb4b9",
+            "samples": 17640,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 3.15,
+              "end": 3.55
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":3.15,\"end\":3.55}}"
+          }
+        },
+        {
+          "stage": "mpm",
+          "filename": "tonemirror-reference-Recorded mǎ excerpt.wav",
+          "bytes": 71060,
+          "sha256": "85c0b11164e765f43fba97fc032ed56d67bfbf12a4cef70eee18aab297039c56",
+          "pcm": {
+            "sha256": "ff4656517fd1fefb6f307c0ce3030dd29dacb7ccbe00429bf566d59c83ceb4b9",
+            "samples": 17640,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 3.15,
+              "end": 3.55
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":3.15,\"end\":3.55}}"
+          }
+        },
+        {
+          "stage": "recrop",
+          "filename": "tonemirror-reference-Recorded mǎ excerpt [0.050–0.200s].wav",
+          "bytes": 26974,
+          "sha256": "6c8d7f4294d1db72222f51c1a986782b2f3bebb0ae403f9293dff7e9830b1e65",
+          "pcm": {
+            "sha256": "46efb83d4372abf34cd373340569b29cba6fff75832803f6c614831993259261",
+            "samples": 6615,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 3.1999999999999997,
+              "end": 3.35
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":3.1999999999999997,\"end\":3.35}}"
+          }
+        },
+        {
+          "stage": "reimported",
+          "filename": "tonemirror-attempt-firefox-1440-tone4.wav",
+          "bytes": 132798,
+          "sha256": "5eeb1c80cc68b103597e4c0d805602b8783677336204ed452e138a3d7ff87bec",
+          "pcm": {
+            "sha256": "9ccb2fd9f19ed13f9dc5dbb5eee1ef49380533b37d906484b0aa18e6db1e7531",
+            "samples": 33075,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 4.5,
+              "end": 5.25
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":4.5,\"end\":5.25}}"
+          }
+        },
+        {
+          "stage": "reloaded",
+          "filename": "tonemirror-reference-Recorded mǎ excerpt.wav",
+          "bytes": 71060,
+          "sha256": "85c0b11164e765f43fba97fc032ed56d67bfbf12a4cef70eee18aab297039c56",
+          "pcm": {
+            "sha256": "ff4656517fd1fefb6f307c0ce3030dd29dacb7ccbe00429bf566d59c83ceb4b9",
+            "samples": 17640,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 3.15,
+              "end": 3.55
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":3.15,\"end\":3.55}}"
+          }
+        }
+      ],
+      "contrastScore": "41",
+      "contrast": "Recorded tone 2 as reference and recorded tone 4 as attempt; no learner recording or pronunciation accuracy claim.",
+      "pageErrors": [],
+      "cspViolations": [],
+      "externalRequests": [],
+      "requestsWhileOffline": [],
+      "axeViolations": 0,
+      "overflow": false,
+      "served": {
+        "index.html": {
+          "bytes": 2361,
+          "sha256": "97a1560ef79305acc8b3858a487ae3cecfa6cb0236dd2e9f81bd9f89e10f7ee2"
+        },
+        "assets/index-BiXXvUAg.js": {
+          "bytes": 267016,
+          "sha256": "5df3e6c483bd79c7b42305a8bded25fc400fb5742df6e4c3f5645a4441a70d28"
+        },
+        "assets/index-D28YvLsM.css": {
+          "bytes": 23754,
+          "sha256": "79e90241f2e31d8d30b0f99eb4680c8a8534c71e7c8faae046fc6aeb57ccc8c3"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        },
+        "assets/inter-latin-ext-DO1Apj_S.woff2": {
+          "bytes": 85068,
+          "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
+        },
+        "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2": {
+          "bytes": 13348,
+          "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        }
+      }
+    },
+    {
+      "browser": "firefox",
+      "version": "155.0",
+      "width": 375,
+      "decoded": {
+        "rate": 44100,
+        "channels": 2,
+        "samples": 250948
+      },
+      "tones": [
+        {
+          "tone": 1,
+          "syllable": "mā",
+          "start": 17640,
+          "end": 55125,
+          "exact": true,
+          "sha256": "b7677e6d10bcb64748a9d1bbabf4aaf0383f52d4ebc8240f27f8209a505a38bb",
+          "frames": 82,
+          "voiced": 64,
+          "medianF0": 171.58097199513205
+        },
+        {
+          "tone": 2,
+          "syllable": "má",
+          "start": 74970,
+          "end": 116865,
+          "exact": true,
+          "sha256": "52f5c5caeb033f9193155a80785dd2ce450aaccd095d732c249d73245124b85b",
+          "frames": 92,
+          "voiced": 71,
+          "medianF0": 96.34773044900928
+        },
+        {
+          "tone": 3,
+          "syllable": "mǎ",
+          "start": 134505,
+          "end": 178605,
+          "exact": true,
+          "sha256": "f8d11c4fa2c4feff0b0fd146f77e09a43fe21bb55d62085a619cc4ca1e6cf182",
+          "frames": 97,
+          "voiced": 58,
+          "medianF0": 119.14759049240581
+        },
+        {
+          "tone": 4,
+          "syllable": "mà",
+          "start": 198450,
+          "end": 231525,
+          "exact": true,
+          "sha256": "9ccb2fd9f19ed13f9dc5dbb5eee1ef49380533b37d906484b0aa18e6db1e7531",
+          "frames": 72,
+          "voiced": 34,
+          "medianF0": 154.85689848451273
+        }
+      ],
+      "exports": [
+        {
+          "stage": "tone1",
+          "filename": "tonemirror-reference-Recorded Mandarin mā (tone 1).wav",
+          "bytes": 150438,
+          "sha256": "82a8ba244a127427d44ce2d959eecf9aae5d2d67b9170882b99a561cd913fe2e",
+          "pcm": {
+            "sha256": "b7677e6d10bcb64748a9d1bbabf4aaf0383f52d4ebc8240f27f8209a505a38bb",
+            "samples": 37485,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 0.4,
+              "end": 1.25
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":0.4,\"end\":1.25}}"
+          }
+        },
+        {
+          "stage": "tone2",
+          "filename": "tonemirror-reference-Recorded Mandarin má (tone 2).wav",
+          "bytes": 168078,
+          "sha256": "b2359dd5117f539cb86e243c77c7e7f5201e4cfccfe0f9d2ab3925ee7112c64c",
+          "pcm": {
+            "sha256": "52f5c5caeb033f9193155a80785dd2ce450aaccd095d732c249d73245124b85b",
+            "samples": 41895,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 1.7,
+              "end": 2.65
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":1.7,\"end\":2.65}}"
+          }
+        },
+        {
+          "stage": "tone3",
+          "filename": "tonemirror-reference-Recorded Mandarin mǎ (tone 3).wav",
+          "bytes": 176900,
+          "sha256": "a018f236ade28bc396820c82fb431e73a243642c07b74a47ab35dafcd31ca56a",
+          "pcm": {
+            "sha256": "f8d11c4fa2c4feff0b0fd146f77e09a43fe21bb55d62085a619cc4ca1e6cf182",
+            "samples": 44100,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 3.05,
+              "end": 4.05
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":3.05,\"end\":4.05}}"
+          }
+        },
+        {
+          "stage": "tone4",
+          "filename": "tonemirror-reference-Recorded Mandarin mà (tone 4).wav",
+          "bytes": 132798,
+          "sha256": "5eeb1c80cc68b103597e4c0d805602b8783677336204ed452e138a3d7ff87bec",
+          "pcm": {
+            "sha256": "9ccb2fd9f19ed13f9dc5dbb5eee1ef49380533b37d906484b0aa18e6db1e7531",
+            "samples": 33075,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 4.5,
+              "end": 5.25
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":4.5,\"end\":5.25}}"
+          }
+        },
+        {
+          "stage": "full",
+          "filename": "tonemirror-reference-Recorded Mandarin- four tones.wav",
+          "bytes": 1004256,
+          "sha256": "c7fb4e0523fef1606fa806527683605ec05af998ed05a7578cb431dc768d1865",
+          "pcm": {
+            "sha256": "50c5e19a7e96334f7cc72b3625b5e470afc985c2bbbc246c665bfb4a4609bbac",
+            "samples": 250948,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\"}"
+          }
+        },
+        {
+          "stage": "crop",
+          "filename": "tonemirror-reference-Recorded Mandarin- four tones [3.150–3.550s].wav",
+          "bytes": 71060,
+          "sha256": "85c0b11164e765f43fba97fc032ed56d67bfbf12a4cef70eee18aab297039c56",
+          "pcm": {
+            "sha256": "ff4656517fd1fefb6f307c0ce3030dd29dacb7ccbe00429bf566d59c83ceb4b9",
+            "samples": 17640,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 3.15,
+              "end": 3.55
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":3.15,\"end\":3.55}}"
+          }
+        },
+        {
+          "stage": "restored",
+          "filename": "tonemirror-reference-Recorded Mandarin- four tones.wav",
+          "bytes": 1004256,
+          "sha256": "c7fb4e0523fef1606fa806527683605ec05af998ed05a7578cb431dc768d1865",
+          "pcm": {
+            "sha256": "50c5e19a7e96334f7cc72b3625b5e470afc985c2bbbc246c665bfb4a4609bbac",
+            "samples": 250948,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\"}"
+          }
+        },
+        {
+          "stage": "saved",
+          "filename": "tonemirror-reference-Recorded mǎ excerpt.wav",
+          "bytes": 71060,
+          "sha256": "85c0b11164e765f43fba97fc032ed56d67bfbf12a4cef70eee18aab297039c56",
+          "pcm": {
+            "sha256": "ff4656517fd1fefb6f307c0ce3030dd29dacb7ccbe00429bf566d59c83ceb4b9",
+            "samples": 17640,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 3.15,
+              "end": 3.55
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":3.15,\"end\":3.55}}"
+          }
+        },
+        {
+          "stage": "mpm",
+          "filename": "tonemirror-reference-Recorded mǎ excerpt.wav",
+          "bytes": 71060,
+          "sha256": "85c0b11164e765f43fba97fc032ed56d67bfbf12a4cef70eee18aab297039c56",
+          "pcm": {
+            "sha256": "ff4656517fd1fefb6f307c0ce3030dd29dacb7ccbe00429bf566d59c83ceb4b9",
+            "samples": 17640,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 3.15,
+              "end": 3.55
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":3.15,\"end\":3.55}}"
+          }
+        },
+        {
+          "stage": "recrop",
+          "filename": "tonemirror-reference-Recorded mǎ excerpt [0.050–0.200s].wav",
+          "bytes": 26974,
+          "sha256": "6c8d7f4294d1db72222f51c1a986782b2f3bebb0ae403f9293dff7e9830b1e65",
+          "pcm": {
+            "sha256": "46efb83d4372abf34cd373340569b29cba6fff75832803f6c614831993259261",
+            "samples": 6615,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 3.1999999999999997,
+              "end": 3.35
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":3.1999999999999997,\"end\":3.35}}"
+          }
+        },
+        {
+          "stage": "reimported",
+          "filename": "tonemirror-attempt-firefox-375-tone4.wav",
+          "bytes": 132798,
+          "sha256": "5eeb1c80cc68b103597e4c0d805602b8783677336204ed452e138a3d7ff87bec",
+          "pcm": {
+            "sha256": "9ccb2fd9f19ed13f9dc5dbb5eee1ef49380533b37d906484b0aa18e6db1e7531",
+            "samples": 33075,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 4.5,
+              "end": 5.25
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":4.5,\"end\":5.25}}"
+          }
+        },
+        {
+          "stage": "reloaded",
+          "filename": "tonemirror-reference-Recorded mǎ excerpt.wav",
+          "bytes": 71060,
+          "sha256": "85c0b11164e765f43fba97fc032ed56d67bfbf12a4cef70eee18aab297039c56",
+          "pcm": {
+            "sha256": "ff4656517fd1fefb6f307c0ce3030dd29dacb7ccbe00429bf566d59c83ceb4b9",
+            "samples": 17640,
+            "rate": 44100
+          },
+          "credit": {
+            "title": "FourMandarinTones.ogg",
+            "creator": "Wolfdog (2019)",
+            "sourceUrl": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+            "licenseName": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "excerpt": {
+              "start": 3.15,
+              "end": 3.55
+            }
+          },
+          "info": {
+            "ISFT": "ToneMirror",
+            "ICMT": "ToneMirror decoded mono audio; normal speed.",
+            "IART": "Wolfdog (2019)",
+            "ICOP": "ToneMirror audio credit v1: {\"title\":\"FourMandarinTones.ogg\",\"creator\":\"Wolfdog (2019)\",\"sourceUrl\":\"https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205\",\"licenseName\":\"CC BY-SA 4.0\",\"licenseUrl\":\"https://creativecommons.org/licenses/by-sa/4.0/\",\"excerpt\":{\"start\":3.15,\"end\":3.55}}"
+          }
+        }
+      ],
+      "contrastScore": "41",
+      "contrast": "Recorded tone 2 as reference and recorded tone 4 as attempt; no learner recording or pronunciation accuracy claim.",
+      "pageErrors": [],
+      "cspViolations": [],
+      "externalRequests": [],
+      "requestsWhileOffline": [],
+      "axeViolations": 0,
+      "overflow": false,
+      "served": {
+        "index.html": {
+          "bytes": 2361,
+          "sha256": "97a1560ef79305acc8b3858a487ae3cecfa6cb0236dd2e9f81bd9f89e10f7ee2"
+        },
+        "assets/index-D28YvLsM.css": {
+          "bytes": 23754,
+          "sha256": "79e90241f2e31d8d30b0f99eb4680c8a8534c71e7c8faae046fc6aeb57ccc8c3"
+        },
+        "assets/index-BiXXvUAg.js": {
+          "bytes": 267016,
+          "sha256": "5df3e6c483bd79c7b42305a8bded25fc400fb5742df6e4c3f5645a4441a70d28"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        },
+        "assets/inter-latin-ext-DO1Apj_S.woff2": {
+          "bytes": 85068,
+          "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2": {
+          "bytes": 13348,
+          "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        }
+      }
+    }
+  ]
+}

@@ -30,9 +30,11 @@ available for comparison, playback, saving and export. Real silence remains
 valid audio. [Native decoder and worker reproduction](studies/audio-integrity/README.md)
 documents the correction; [hosted build verification](studies/wav-export/publication/README.md) records its deployment.
 
-![Reference (gold) and attempt (teal) pitch contours overlaid after DTW alignment, with a similarity score and rule-based feedback](docs/assets/hero.png)
+![Recorded Mandarin practice: choose a syllable, listen, and compare two actual recorded contours](docs/assets/recorded-practice/recorded-practice.png)
 
-_Reference: a clean, synthetic Mandarin tone 2 (rising). Attempt: a synthetic clip built with a deliberately flat start and shallow rise. Both example clips ship in [`examples/`](examples/); load `mandarin-tone2-reference.wav` as the reference and `mandarin-tone2-attempt-late-rise.wav` as the attempt to reproduce this screenshot._
+_Recorded má (rising) as reference; recorded mà (falling) loaded as the attempt.
+Both are excerpts from the credited source recording, not a learner study.
+The plot includes pitch-tracker errors; the shape score is not a pronunciation grade._
 
 The source checkout and live demo support **first imports and recordings after the page has
 loaded, even if the connection then disappears**. Pitch analysis, matching,
@@ -44,7 +46,7 @@ Opening or reloading the page itself still requires a connection or browser cach
 
 ```sh
 git clone https://github.com/antonsoo/tonemirror.git && cd tonemirror
-npm install
+npm ci
 npm run dev
 ```
 
@@ -395,9 +397,9 @@ minutes long.
 `npm run build` output on this box:
 
 ```
-dist/index.html                   2.36 kB (gzip 0.89 kB)
+dist/index.html                   2.36 kB (gzip 0.90 kB)
 dist/assets/index-*.css          23.75 kB (gzip 3.70 kB)
-dist/assets/index-*.js          266.85 kB (gzip 144.87 kB)
+dist/assets/index-*.js          267.01 kB (gzip 144.90 kB)
 ```
 
 No UI framework, no charting library - Canvas 2D and vanilla DOM.
