@@ -1,0 +1,181 @@
+{
+  "sourceSha256": "e857c893662741a9c99e527a1c54df52eb386fb83df021cb9a42faee77af9049",
+  "node": "v26.7.0",
+  "ffmpeg": "ffmpeg version 8.0 Copyright (c) 2000-2025 the FFmpeg developers",
+  "scope": "Original recording decoded by FFmpeg at its native 44100 Hz, channel average to mono. App pitch algorithms unchanged. Source tone labels are not independent F0 ground truth; helper strengths are not probabilities.",
+  "decoded": {
+    "sampleRate": 44100,
+    "samples": 250948,
+    "sha256": "4cc8f277f84db69fc5588e35e7c3e83cec57dbfb2d975a525f049287d4dcc74b"
+  },
+  "results": [
+    {
+      "tone": 1,
+      "syllable": "mā",
+      "start": 0.4,
+      "end": 1.25,
+      "algorithm": "yin",
+      "samples": 37485,
+      "frames": 82,
+      "voiced": 65,
+      "medianF0": 171.5809719399352,
+      "frequencyRange": [
+        152.9979927764783,
+        173.8535181582298
+      ],
+      "helper": {
+        "tone": 2,
+        "label": "tone 2 (rising)",
+        "confidence": 0.3803637791281927,
+        "reason": "rising trend (r=0.38)"
+      }
+    },
+    {
+      "tone": 1,
+      "syllable": "mā",
+      "start": 0.4,
+      "end": 1.25,
+      "algorithm": "mpm",
+      "samples": 37485,
+      "frames": 82,
+      "voiced": 66,
+      "medianF0": 171.4618554573736,
+      "frequencyRange": [
+        153.03948080595782,
+        173.84747902905943
+      ],
+      "helper": {
+        "tone": 2,
+        "label": "tone 2 (rising)",
+        "confidence": 0.4230279229757123,
+        "reason": "rising trend (r=0.42)"
+      }
+    },
+    {
+      "tone": 2,
+      "syllable": "má",
+      "start": 1.7,
+      "end": 2.65,
+      "algorithm": "yin",
+      "samples": 41895,
+      "frames": 92,
+      "voiced": 72,
+      "medianF0": 96.32045836204065,
+      "frequencyRange": [
+        88.00913857056292,
+        154.9511955998302
+      ],
+      "helper": {
+        "tone": 2,
+        "label": "tone 2 (rising)",
+        "confidence": 0.9268257073294077,
+        "reason": "rising trend (r=0.93)"
+      }
+    },
+    {
+      "tone": 2,
+      "syllable": "má",
+      "start": 1.7,
+      "end": 2.65,
+      "algorithm": "mpm",
+      "samples": 41895,
+      "frames": 92,
+      "voiced": 70,
+      "medianF0": 96.27619110348733,
+      "frequencyRange": [
+        87.91445529519967,
+        155.26457279832533
+      ],
+      "helper": {
+        "tone": 2,
+        "label": "tone 2 (rising)",
+        "confidence": 0.9260258611050544,
+        "reason": "rising trend (r=0.93)"
+      }
+    },
+    {
+      "tone": 3,
+      "syllable": "mǎ",
+      "start": 3.05,
+      "end": 4.05,
+      "algorithm": "yin",
+      "samples": 44100,
+      "frames": 97,
+      "voiced": 59,
+      "medianF0": 119.24556236110368,
+      "frequencyRange": [
+        65.47542801717982,
+        229.84294012771278
+      ],
+      "helper": {
+        "tone": 3,
+        "label": "tone 3 (low/dipping)",
+        "confidence": 0.496837908994494,
+        "reason": "dips to its minimum 60% through the syllable"
+      }
+    },
+    {
+      "tone": 3,
+      "syllable": "mǎ",
+      "start": 3.05,
+      "end": 4.05,
+      "algorithm": "mpm",
+      "samples": 44100,
+      "frames": 97,
+      "voiced": 49,
+      "medianF0": 121.26249854599483,
+      "frequencyRange": [
+        63.162795921921685,
+        135.88337584832428
+      ],
+      "helper": {
+        "tone": 3,
+        "label": "tone 3 (low/dipping)",
+        "confidence": 0.9259869951495541,
+        "reason": "dips to its minimum 67% through the syllable"
+      }
+    },
+    {
+      "tone": 4,
+      "syllable": "mà",
+      "start": 4.5,
+      "end": 5.25,
+      "algorithm": "yin",
+      "samples": 33075,
+      "frames": 72,
+      "voiced": 34,
+      "medianF0": 154.8568985293848,
+      "frequencyRange": [
+        62.89974588042775,
+        185.09051235416317
+      ],
+      "helper": {
+        "tone": 4,
+        "label": "tone 4 (falling)",
+        "confidence": 0.6038407708178489,
+        "reason": "falling trend (r=-0.60)"
+      }
+    },
+    {
+      "tone": 4,
+      "syllable": "mà",
+      "start": 4.5,
+      "end": 5.25,
+      "algorithm": "mpm",
+      "samples": 33075,
+      "frames": 72,
+      "voiced": 25,
+      "medianF0": 160.89235244005718,
+      "frequencyRange": [
+        63.99460040522386,
+        184.17933652836754
+      ],
+      "helper": {
+        "tone": 4,
+        "label": "tone 4 (falling)",
+        "confidence": 0.6482801369327664,
+        "reason": "falling trend (r=-0.65)"
+      }
+    }
+  ]
+}

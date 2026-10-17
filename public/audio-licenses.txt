@@ -1,3 +1,21 @@
+Recorded Mandarin practice
+
+FourMandarinTones.ogg by Wolfdog, 26 October 2019
+Original: https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205
+License: Creative Commons Attribution-ShareAlike 4.0 International
+https://creativecommons.org/licenses/by-sa/4.0/
+Original file SHA-256:
+e857c893662741a9c99e527a1c54df52eb386fb83df021cb9a42faee77af9049
+
+The original Ogg file is bundled unchanged. Playback and analysis decode it
+to mono at the browser's sample rate. Individual-tone buttons select excerpts
+at 0.400-1.250, 1.700-2.650, 3.050-4.050, and 4.500-5.250 seconds.
+Downloaded WAV copies contain decoded mono samples and, if selected, an
+excerpt. These adaptations of the recording remain CC BY-SA 4.0. WAV INFO
+metadata retains the author, source, license, and excerpt bounds.
+The recording's license is separate from the MIT license of ToneMirror's code.
+No endorsement by the recording's creator is implied.
+
 Signalsmith Stretch
 https://github.com/Signalsmith-Audio/signalsmith-stretch
 

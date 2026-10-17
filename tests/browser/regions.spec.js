@@ -76,6 +76,9 @@ test("first playback and active edits enter the chosen passage at both speeds", 
   await region(page, 1, 2);
   await button(page, "Loop region").click();
   await button(page, "▶ Play").click();
+  // Firefox may complete AudioContext.resume after the click has returned.
+  // Observe actual playback before reading the native source's start offset.
+  await expect(button(page, "⏸ Pause")).toBeVisible();
   expect(await page.evaluate(() => window.regionProbe.offset)).toBe(1);
   await region(page, 2.4, 2.8);
   await button(page, "Loop region").click();

@@ -1,6 +1,7 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { loadAudioFile } from "../src/audio/fileLoader.js";
 import { MAX_AUDIO_SECONDS, MAX_FILE_BYTES, validateAudio } from "../src/audio/limits.js";
+import { encodeWav } from "../src/audio/wav.js";
 
 class Reader {
   static instances: Reader[] = [];
@@ -90,5 +91,25 @@ describe("bounded audio decoding", () => {
   it("accepts the exact duration boundary and rejects one excess sample", () => {
     expect(() => validateAudio(48000 * MAX_AUDIO_SECONDS, 48000)).not.toThrow();
     expect(() => validateAudio(48000 * MAX_AUDIO_SECONDS + 1, 48000)).toThrow("60 seconds");
+  });
+
+  it("keeps exported source, license and original crop coordinates through a native decoder", async () => {
+    const { file } = setup();
+    const credit = { title: "An example", creator: "A speaker", sourceUrl: "https://example.org/audio", licenseName: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/", excerpt: { start: 1.7, end: 2.65 } };
+    const result = loadAudioFile(file);
+    Reader.instances[0]!.result = encodeWav(new Float32Array([0.25]), 22050, false, credit);
+    expect((await result).credit).toEqual(credit);
+  });
+
+  it("refuses damaged recognized credits before decoding instead of silently exporting an uncredited copy", async () => {
+    const { file, constructor } = setup();
+    const credit = { title: "An example", creator: "A speaker", sourceUrl: "https://example.org/audio", licenseName: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" };
+    const bytes = encodeWav(new Float32Array([0.25]), 22050, false, credit);
+    const view = new Uint8Array(bytes), text = new TextDecoder().decode(bytes);
+    view[text.indexOf('{"title"')] = 0x5b; // Corrupt the JSON, preserving the recognized credit marker.
+    const result = loadAudioFile(file);
+    Reader.instances[0]!.result = bytes;
+    await expect(result).rejects.toThrow("audio credit is unreadable");
+    expect(constructor).not.toHaveBeenCalled();
   });
 });

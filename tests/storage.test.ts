@@ -11,6 +11,13 @@ beforeEach(() => vi.stubGlobal("indexedDB", new IDBFactory()));
 afterEach(() => { vi.restoreAllMocks(); vi.unstubAllGlobals(); });
 
 describe("local reference storage", () => {
+  it("preserves recording credits while keeping them out of the metadata-only library index", async () => {
+    const credit = { title: "An example", creator: "A speaker", sourceUrl: "https://example.org/audio", licenseName: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/", excerpt: { start: 1.7, end: 2.65 } };
+    await saveReference({ ...reference, credit });
+    expect((await listReferences())[0]).not.toHaveProperty("credit");
+    expect((await getReference(reference.id))!.credit).toEqual(credit);
+    expect((await getReference(reference.id))!.pcm).toEqual(reference.pcm);
+  });
   it("round-trips owned PCM, orders recent references first, and deletes", async () => {
     await saveReference(reference);
     await saveReference({ ...reference, id: "second", createdAt: 2 });

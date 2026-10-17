@@ -18,6 +18,12 @@ or *"your pitch peak comes later than the reference's."*
 
 Nothing leaves your device: no uploads, no accounts, no analytics.
 
+**Start with recorded speech.** The source checkout includes four isolated
+Mandarin tones spoken on *ma*. Load mā, má, mǎ or mà, listen, and record your
+own attempt. The original recording is bundled for offline use; its author,
+license and selected source interval travel with saved clips and WAV exports.
+[Recording, walkthrough and limits](studies/recorded-practice/README.md).
+
 The source checkout and live demo reject **non-finite decoded audio samples** before a new
 clip is committed. A damaged file or saved recording leaves the previous clip
 available for comparison, playback, saving and export. Real silence remains
@@ -49,6 +55,12 @@ just click one of the built-in reference chips and record yourself.
 
 ## Features
 
+- **Recorded Mandarin practice:** four tone excerpts and the full sequence from
+  [Wolfdog's 2019 recording](https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205),
+  under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+  Listen directly from the audio panel. Save, crop or download a reference
+  with its credit intact. These are one speaker's isolated examples, with
+  no claim of verified native-speaker status or pronunciation grading.
 - **Audio out:** **Download WAV** exports the
   focused attempt or reference, including recordings and saved clips. Use
   **Keep region** first to download just a passage. Downloads preserve the
@@ -79,11 +91,11 @@ just click one of the built-in reference chips and record yourself.
 - **Pitch-accent templates:** Ancient Greek acute (rise) and circumflex
   (rise-fall), reconstruction-based; Japanese heiban/atamadaka/nakadaka/
   odaka as target shapes over a word's morae plus a following particle.
-- **Built-in references:** synthetic harmonic-complex voices for the four
+- **Generated patterns:** synthetic harmonic-complex voices for the four
   Mandarin tones and every accent template, generated in-browser and
   labeled synthetic everywhere they appear. Recording or loading real
   native-speaker audio is one click away and clearly encouraged in the UI.
-- **Local processing without uploads**, no telemetry, ~158 kB
+- **Local processing without uploads**, no telemetry, ~267 kB
   of JS including workers, worklet and the pitch-preserving audio engine, uncompressed - see
   [Bundle size](#bundle-size)).
 
@@ -384,11 +396,13 @@ minutes long.
 
 ```
 dist/index.html                   2.36 kB (gzip 0.89 kB)
-dist/assets/index-*.css          23.18 kB (gzip 3.58 kB)
-dist/assets/index-*.js          157.81 kB (gzip 66.37 kB)
+dist/assets/index-*.css          23.75 kB (gzip 3.70 kB)
+dist/assets/index-*.js          266.85 kB (gzip 144.87 kB)
 ```
 
 No UI framework, no charting library - Canvas 2D and vanilla DOM.
+The JavaScript includes the 77,622-byte original Ogg recording as base64 so
+the first recorded-reference selection needs no network request after load.
 
 ## Development
 

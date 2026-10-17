@@ -2,6 +2,7 @@
  * Minimal IndexedDB wrapper for the local reference library. No dependency -
  * everything stays on-device, nothing is uploaded anywhere.
  */
+import { CREDIT_COMMENT_PREFIX, parseAudioCredit, type AudioCredit } from "../audio/credit.js";
 
 export type ReferenceCategory = "user" | "mandarin" | "greek" | "japanese";
 
@@ -11,6 +12,7 @@ export interface StoredReference {
   category: ReferenceCategory;
   /** True for the built-in generated references (always labeled as such in the UI). */
   synthetic: boolean;
+  credit?: AudioCredit | undefined;
   pcm: Float32Array;
   sampleRate: number;
   createdAt: number;
@@ -79,6 +81,7 @@ export async function saveReference(ref: StoredReference): Promise<void> {
     name: ref.name,
     category: ref.category,
     synthetic: ref.synthetic,
+    ...(ref.credit ? { credit: ref.credit } : {}),
     sampleRate: ref.sampleRate,
     createdAt: ref.createdAt,
     pcmBuffer: new Float32Array(ref.pcm).buffer,
@@ -146,6 +149,11 @@ export async function getReference(id: string, signal?: AbortSignal): Promise<St
     const { pcmBuffer, ...metadata } = record;
     // Decode outside the event callback so malformed bytes reject this operation.
     if (!(pcmBuffer instanceof ArrayBuffer)) throw new Error("The saved recording has unreadable audio data.");
+    if (metadata.credit !== undefined) {
+      const credit = parseAudioCredit(`${CREDIT_COMMENT_PREFIX}${JSON.stringify(metadata.credit)}`);
+      if (!credit) throw new Error("The saved recording has unreadable audio credit metadata. Its stored audio has been kept.");
+      metadata.credit = credit;
+    }
     return { ...metadata, pcm: new Float32Array(pcmBuffer) };
   } finally {
     signal?.removeEventListener("abort", abort);

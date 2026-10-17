@@ -10,7 +10,7 @@ const input = (page) => page.getByLabel("Choose an audio file to load");
 const status = (page) => page.locator(".tm-status");
 const label = (page) => page.locator(".tm-clip-label");
 const save = (page) => page.getByRole("button", { name: "Save current attempt" });
-const play = (page) => page.getByRole("button", { name: /Play|Pause/ });
+const play = (page) => page.locator("#audio-analysis").getByRole("button", { name: /Play|Pause/ });
 const tab = (page, name) => page.getByRole("tab", { name, exact: true });
 const library = (page) => page.locator("section").filter({ has: page.getByRole("heading", { name: "Your saved references" }) });
 

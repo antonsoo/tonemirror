@@ -4,6 +4,13 @@ All notable changes to this project are documented in this file.
 
 ## Unreleased
 
+- Practice with a recorded Mandarin voice: load any of four isolated tones or
+  the full sequence and listen from the audio panel, including first use offline.
+  Bundle Wolfdog's original recording under CC BY-SA 4.0. Carry its source,
+  author, license and original excerpt coordinates through repeated trims,
+  saved references, algorithm changes and renamed WAV reimports. Recognized
+  damaged credits fail visibly while keeping the previous loaded clip.
+
 - Start playback inside the selected practice loop even when the playhead is
   before it. Native loop bounds alone played the earlier audio once. Move a
   running source into a newly selected passage together with its cursor;

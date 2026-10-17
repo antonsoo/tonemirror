@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "recording": {
+    "file": "src/references/FourMandarinTones.ogg",
+    "title": "FourMandarinTones.ogg",
+    "creator": "Wolfdog",
+    "recorded": "2019-10-26",
+    "sourcePage": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a3/FourMandarinTones.ogg",
+    "sourceUpload": "2019-10-26T11:46:00Z",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "bytes": 77622,
+    "sha1": "db81e637a2f1908eacb7244845fbf9162e410ec8",
+    "sha256": "e857c893662741a9c99e527a1c54df52eb386fb83df021cb9a42faee77af9049",
+    "synthetic": false,
+    "language": "Mandarin Chinese",
+    "scope": "The source identifies the syllable ma spoken in four tones. It does not establish the speaker's native language or provide phonetic or F0 ground truth."
+  },
+  "selections": [
+    {
+      "tone": 1,
+      "syllable": "mā",
+      "start": 0.4,
+      "end": 1.25
+    },
+    {
+      "tone": 2,
+      "syllable": "má",
+      "start": 1.7,
+      "end": 2.65
+    },
+    {
+      "tone": 3,
+      "syllable": "mǎ",
+      "start": 3.05,
+      "end": 4.05
+    },
+    {
+      "tone": 4,
+      "syllable": "mà",
+      "start": 4.5,
+      "end": 5.25
+    }
+  ],
+  "selectionRule": "Manually chosen quiet gaps around each isolated syllable; not phonetic onset/offset labels. Crop start floors and end ceils at the decoded sample rate."
+}

@@ -11,6 +11,8 @@ import { MAX_AUDIO_SECONDS, validateAudio } from "./audio/limits.js";
 import { ClipPlayer } from "./audio/playback.js";
 import { regionSamples } from "./audio/region.js";
 import { encodeWav, wavFilename } from "./audio/wav.js";
+import { excerptCredit, type AudioCredit } from "./audio/credit.js";
+import { recordedAudioFile, RECORDED_CREDIT, RECORDED_TONES } from "./references/recorded.js";
 import { warpedOverlay, type AlignmentResult } from "./core/dtw.js";
 import { classifyMandarinTone } from "./core/toneClassifier.js";
 import { ALL_MANDARIN_TONES, mandarinToneChaoNumerals, mandarinToneContour, mandarinToneLabel } from "./core/mandarinTones.js";
@@ -32,6 +34,7 @@ interface ClipSource {
   sampleRate: number;
   label: string;
   synthetic: boolean;
+  credit?: AudioCredit | undefined;
 }
 
 interface ClipExcerpt {
@@ -78,6 +81,7 @@ export function mountApp(root: HTMLElement): void {
   let alignment: AlignmentResult | null = null;
   let library: ReferenceSummary[] = [];
   let savingReference = false;
+  let renderedCredit: AudioCredit | undefined;
   const micRecorder = new MicRecorder();
   let rafHandle = 0;
   let playbackRequest = 0;
@@ -176,11 +180,42 @@ export function mountApp(root: HTMLElement): void {
     return btn;
   }
 
+  const allChipButtons: HTMLButtonElement[] = [];
+  const recordedButtons = el("div", { class: "tm-recorded-tones", role: "group", "aria-label": "Recorded Mandarin references" });
+  for (const selection of [...RECORDED_TONES, null]) {
+    const btn = el("button", {
+      class: "tm-recorded-tone", "aria-pressed": "false",
+      "aria-label": selection ? `Load recorded ${selection.syllable}, tone ${selection.tone}` : "Load recorded four-tone sequence",
+      onclick: () => { void loadRecordedReference(selection, btn); },
+    }, [
+      el("strong", { lang: "cmn-Latn" }, [selection?.syllable ?? "All four"]),
+      el("span", {}, [selection ? `Tone ${selection.tone} · ${selection.label}` : "Full recording"]),
+    ]);
+    allChipButtons.push(btn);
+    recordedButtons.append(btn);
+  }
+  const recordedPlayBtn = el("button", {
+    class: "tm-btn", disabled: true,
+    onclick: () => { selectFocus("reference"); void togglePlayback(); },
+  }, ["Play reference"]);
+
   const sourcePanel = el("section", { class: "tm-panel" }, [
     el("div", { class: "tm-panel-header" }, [el("h2", {}, ["1. Get some audio"]), el("span", { class: "tm-hint" }, ["Recording and file loading use the tab selected when you start."])]),
     targetTabs,
     el("div", { class: "tm-controls-row" }, [recordBtn, loadBtn, algoSelect, cancelBtn, retryAudioBtn, statusLine]),
     el("p", { class: "tm-hint" }, ["Short phrases work best: up to 60 seconds and 25 MiB per file. Recordings stop at 60 seconds. A failed replacement keeps your last loaded clip."]),
+    el("div", { class: "tm-recorded-practice" }, [
+      el("h3", {}, ["Practice with a recorded voice"]),
+      el("p", { class: "tm-hint" }, ["Choose mā, má, mǎ or mà as your reference. Listen, then switch to Your attempt and record the same syllable."]),
+      recordedButtons,
+      recordedPlayBtn,
+      el("p", { class: "tm-hint tm-recording-credit" }, [
+        "Recording by Wolfdog (2019). ",
+        el("a", { href: RECORDED_CREDIT.sourceUrl, target: "_blank", rel: "noreferrer" }, ["Original and source details"]), ". ",
+        el("a", { href: RECORDED_CREDIT.licenseUrl, target: "_blank", rel: "noreferrer" }, [RECORDED_CREDIT.licenseName]),
+        ". Individual tones are excerpts. One speaker’s isolated examples; pronunciation varies in connected speech.",
+      ]),
+    ]),
   ]);
 
   // ---------------------------------------------------------------- contour stage panel
@@ -213,6 +248,7 @@ export function mountApp(root: HTMLElement): void {
   const analysisCanvas = el("canvas", { class: "tm-canvas" });
   const analysisEmpty = el("div", { class: "tm-stage-empty" }, ["Record or load audio above to see its waveform and spectrogram."]);
   const analysisLabel = el("p", { class: "tm-hint tm-clip-label" });
+  const audioCredit = el("p", { class: "tm-hint tm-audio-credit", hidden: true });
   const analysis = createAnalysisView(analysisCanvas, (region) => {
     loopRegions[focus] = region;
     players[focus]?.setLoopRegion(region ? { start: region.start, end: region.end } : null);
@@ -273,6 +309,7 @@ export function mountApp(root: HTMLElement): void {
       el("span", { class: "tm-hint" }, ["Drag on the waveform to loop a region."]),
     ]),
     analysisLabel,
+    audioCredit,
     el("div", { class: "tm-stage-wrap" }, [analysisCanvas, analysisEmpty]),
     el("div", { class: "tm-playback-bar" }, [
       playBtn,
@@ -302,7 +339,6 @@ export function mountApp(root: HTMLElement): void {
   ]);
 
   // ---------------------------------------------------------------- built-in references panel
-  const allChipButtons: HTMLButtonElement[] = [];
   function selectChip(button: HTMLButtonElement): void {
     for (const b of allChipButtons) b.setAttribute("aria-pressed", String(b === button));
   }
@@ -532,6 +568,8 @@ export function mountApp(root: HTMLElement): void {
     const clip = clips[focus];
     const bounds = readRegion();
     const busy = !!loads[focus];
+    recordedPlayBtn.disabled = !clips.reference || !!loads.reference;
+    recordedPlayBtn.textContent = focus === "reference" && (players.reference?.isPlaying || playbackPreparation) ? "Pause reference" : "Play reference";
     regionStart.disabled = regionEnd.disabled = !clip || busy;
     loopRegionBtn.disabled = !bounds || busy;
     keepRegionBtn.disabled = !bounds || busy || (bounds.start === 0 && bounds.end === clip?.pcm.length);
@@ -550,18 +588,19 @@ export function mountApp(root: HTMLElement): void {
     const clip = clips[role];
     const bounds = readRegion();
     if (!clip || !bounds || loads[role] || (bounds.start === 0 && bounds.end === clip.pcm.length)) return;
-    const source = clip.excerpt?.source ?? { pcm: clip.pcm, sampleRate: clip.sampleRate, label: clip.label, synthetic: clip.synthetic };
+    const source = clip.excerpt?.source ?? { pcm: clip.pcm, sampleRate: clip.sampleRate, label: clip.label, synthetic: clip.synthetic, credit: clip.credit };
     const offset = clip.excerpt?.start ?? 0;
     const excerpt = { source, start: offset + bounds.start, end: offset + bounds.end };
     const label = `${source.label} [${(excerpt.start / source.sampleRate).toFixed(3)}–${(excerpt.end / source.sampleRate).toFixed(3)}s]`;
-    await loadClip(role, source.pcm.slice(excerpt.start, excerpt.end), source.sampleRate, label, source.synthetic, beginLoad(role), excerpt);
+    const credit = excerptCredit(source.credit, excerpt.start / source.sampleRate, excerpt.end / source.sampleRate);
+    await loadClip(role, { ...source, pcm: source.pcm.slice(excerpt.start, excerpt.end), label, credit }, beginLoad(role), excerpt);
   }
 
   async function restoreFullClip(): Promise<void> {
     const role = focus;
     const source = clips[role]?.excerpt?.source;
     if (!source || loads[role]) return;
-    await loadClip(role, source.pcm, source.sampleRate, source.label, source.synthetic);
+    await loadClip(role, source);
   }
 
   function describeMicError(err: unknown): string {
@@ -621,7 +660,7 @@ export function mountApp(root: HTMLElement): void {
     try {
       const { pcm, sampleRate } = await micRecorder.stop();
       const name = limited ? `Recording (stopped at ${MAX_AUDIO_SECONDS}s limit)` : `Recording (${new Date().toLocaleTimeString()})`;
-      await loadClip(request.role, pcm, sampleRate, name, false, request);
+      await loadClip(request.role, { pcm, sampleRate, label: name, synthetic: false }, request);
     } catch (error) {
       report(request, describeMicError(error));
     } finally {
@@ -637,8 +676,8 @@ export function mountApp(root: HTMLElement): void {
     const request = beginLoad(focus);
     report(request, `Decoding ${file.name}…`);
     try {
-      const { pcm, sampleRate, synthetic } = await loadAudioFile(file, request.controller.signal);
-      await loadClip(request.role, pcm, sampleRate, file.name, synthetic, request);
+      const { pcm, sampleRate, synthetic, credit } = await loadAudioFile(file, request.controller.signal);
+      await loadClip(request.role, { pcm, sampleRate, label: file.name, synthetic, credit }, request);
     } catch (err) {
       report(request, `Could not decode ${file.name}: ${(err as Error).message}`);
     } finally {
@@ -650,13 +689,31 @@ export function mountApp(root: HTMLElement): void {
     const sampleRate = 22050;
     const pcm = synthesizeFromContour(contourPoints, baseF0, { sampleRate, duration: 0.6, seed: 42 });
     selectFocus("reference");
-    await loadClip("reference", pcm, sampleRate, label, true);
+    await loadClip("reference", { pcm, sampleRate, label, synthetic: true });
   }
 
-  async function loadClip(role: FocusRole, pcm: Float32Array, sampleRate: number, label: string, synthetic: boolean, request = beginLoad(role), excerpt?: ClipExcerpt): Promise<boolean> {
+  async function loadRecordedReference(selection: typeof RECORDED_TONES[number] | null, button: HTMLButtonElement): Promise<void> {
+    selectFocus("reference");
+    const request = beginLoad("reference");
+    report(request, "Decoding the recorded Mandarin reference…");
+    try {
+      const { pcm, sampleRate } = await loadAudioFile(recordedAudioFile(), request.controller.signal);
+      const source: ClipSource = { pcm, sampleRate, synthetic: false, label: "Recorded Mandarin: four tones", credit: RECORDED_CREDIT };
+      const bounds = selection ? regionSamples(pcm.length, sampleRate, selection.start, selection.end) : null;
+      const excerpt = bounds ? { source, ...bounds } : undefined;
+      const credit = bounds ? excerptCredit(source.credit, bounds.start / sampleRate, bounds.end / sampleRate) : source.credit;
+      const label = selection ? `Recorded Mandarin ${selection.syllable} (tone ${selection.tone})` : source.label;
+      if (await loadClip("reference", { ...source, pcm: bounds ? pcm.slice(bounds.start, bounds.end) : pcm, label, credit }, request, excerpt)) selectChip(button);
+    } catch (error) {
+      report(request, `Could not load the recorded reference: ${(error as Error).message}${clips.reference ? " Previous clip kept." : ""}`);
+    } finally { finishLoad(request); }
+  }
+
+  async function loadClip(role: FocusRole, source: ClipSource, request = beginLoad(role), excerpt?: ClipExcerpt): Promise<boolean> {
     if (!isCurrent(request)) return false;
+    const { pcm, sampleRate, label, synthetic } = source;
     report(request, `Analyzing ${label}…`);
-    const state: ClipState = { pcm, sampleRate, contour: null, spectrogram: null, label, synthetic, algorithm, excerpt };
+    const state: ClipState = { ...source, contour: null, spectrogram: null, algorithm, excerpt };
     try {
       validateAudio(pcm.length, sampleRate);
       drafts[role] = state;
@@ -696,7 +753,7 @@ export function mountApp(root: HTMLElement): void {
       const clip = drafts[role] ?? clips[role];
       if (!clip) return true;
       const request = beginLoad(role, nextStatus);
-      return loadClip(role, clip.pcm, clip.sampleRate, clip.label, clip.synthetic, request, clip.excerpt);
+      return loadClip(role, clip, request, clip.excerpt);
     });
     const results = await Promise.all(jobs);
     if (statusId === nextStatus && results.every(Boolean)) {
@@ -768,6 +825,17 @@ export function mountApp(root: HTMLElement): void {
     analysisEmpty.style.display = clip ? "none" : "grid";
     const label = `${focus === "attempt" ? "Your attempt" : "Reference"}: ${clip ? `${clip.label}${clip.synthetic ? " (synthetic)" : ""} · ${(clip.pcm.length / clip.sampleRate).toFixed(2)}s` : "no audio loaded"}`;
     if (analysisLabel.textContent !== label) analysisLabel.textContent = label;
+    if (renderedCredit !== clip?.credit) {
+      renderedCredit = clip?.credit;
+      const credit = renderedCredit;
+      audioCredit.hidden = !credit;
+      audioCredit.replaceChildren(...(credit ? [
+        document.createTextNode(`Audio credit: ${credit.title} by ${credit.creator}. `),
+        el("a", { href: credit.sourceUrl, target: "_blank", rel: "noreferrer" }, ["Source"]), document.createTextNode(". "),
+        el("a", { href: credit.licenseUrl, target: "_blank", rel: "noreferrer" }, [credit.licenseName]),
+        document.createTextNode(`. Decoded to mono${credit.excerpt ? `; excerpt ${credit.excerpt.start.toFixed(3)}–${credit.excerpt.end.toFixed(3)}s in the source` : ""}. Credit is included in WAV downloads.`),
+      ] : []));
+    }
     playBtn.disabled = !clip || !player;
     clearLoopBtn.disabled = !loopRegions[focus];
     saveBtn.disabled = !clip || savingReference || !!loads[focus];
@@ -783,7 +851,7 @@ export function mountApp(root: HTMLElement): void {
     let link: HTMLAnchorElement | undefined;
     try {
       const filename = wavFilename(clip.label, focus, clip.synthetic);
-      url = URL.createObjectURL(new Blob([encodeWav(clip.pcm, clip.sampleRate, clip.synthetic)], { type: "audio/wav" }));
+      url = URL.createObjectURL(new Blob([encodeWav(clip.pcm, clip.sampleRate, clip.synthetic, clip.credit)], { type: "audio/wav" }));
       link = el("a", { href: url, download: filename, hidden: true });
       document.body.append(link);
       link.click();
@@ -882,6 +950,7 @@ export function mountApp(root: HTMLElement): void {
         name: name.trim(),
         category: "user",
         synthetic: clip.synthetic,
+        ...(clip.credit ? { credit: clip.credit } : {}),
         pcm: clip.pcm,
         sampleRate: clip.sampleRate,
         createdAt: Date.now(),
@@ -930,7 +999,7 @@ export function mountApp(root: HTMLElement): void {
       const ref = await getReference(summary.id, request.controller.signal);
       if (!isCurrent(request)) return;
       if (!ref) throw new Error("This saved reference is no longer available. Refresh the library and choose another recording.");
-      await loadClip("reference", ref.pcm, ref.sampleRate, ref.name, ref.synthetic, request);
+      await loadClip("reference", { pcm: ref.pcm, sampleRate: ref.sampleRate, label: ref.name, synthetic: ref.synthetic, credit: ref.credit }, request);
     } catch (error) {
       if (isCurrent(request)) {
         libraryStatus.textContent = `Could not read ${summary.name}: ${(error as Error).message}`;
