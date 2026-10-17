@@ -1,0 +1,2502 @@
+{
+  "scope": "Synthetic positive/negative ramps, rendered by real OfflineAudioContext. Independent sample arrays specify passage order, the 350 ms silence and cancellation boundaries. No acoustic device or human listening assessment.",
+  "sourceSha256": "743dd89a3fdfd628a179c394dec0fbbf8376f49f28b944ea6e41eb472ed696c1",
+  "bundleSha256": "3a8b362cf0e3cb737992ca5acb6dedfcbfd0dee8763c5507c2039ee0c884368d",
+  "driverSha256": "553d2d61d647253b772fe33f9b573e8df3ab22e452293aed8837b7311fceba24",
+  "offlineCases": 56,
+  "liveCases": 8,
+  "unavailableOfflineControls": 24,
+  "results": [
+    {
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "offline": [
+        {
+          "sampleRate": 8000,
+          "cropped": false,
+          "stopDuring": "none",
+          "first": {
+            "start": 0,
+            "end": 1920
+          },
+          "second": {
+            "start": 0,
+            "end": 1440
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.62,
+          "gapSeconds": 0.35,
+          "frames": 8000,
+          "stoppedAt": null,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0
+          },
+          "stateBeforeStop": null,
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 1,
+          "expectedCompletions": 1,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 8000,
+          "cropped": false,
+          "stopDuring": "before-start",
+          "first": {
+            "start": 0,
+            "end": 1920
+          },
+          "second": {
+            "start": 0,
+            "end": 1440
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.62,
+          "gapSeconds": 0.35,
+          "frames": 8000,
+          "stoppedAt": 0,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0
+          },
+          "stateBeforeStop": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 8000,
+          "cropped": false,
+          "stopDuring": "reference",
+          "first": {
+            "start": 0,
+            "end": 1920
+          },
+          "second": {
+            "start": 0,
+            "end": 1440
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.62,
+          "gapSeconds": 0.35,
+          "frames": 8000,
+          "stoppedAt": 0.16,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0
+          },
+          "stateBeforeStop": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.13
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 8000,
+          "cropped": false,
+          "stopDuring": "gap",
+          "first": {
+            "start": 0,
+            "end": 1920
+          },
+          "second": {
+            "start": 0,
+            "end": 1440
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.62,
+          "gapSeconds": 0.35,
+          "frames": 8000,
+          "stoppedAt": 0.448,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0
+          },
+          "stateBeforeStop": {
+            "phase": "gap",
+            "role": null,
+            "positionSeconds": null
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 8000,
+          "cropped": false,
+          "stopDuring": "attempt",
+          "first": {
+            "start": 0,
+            "end": 1920
+          },
+          "second": {
+            "start": 0,
+            "end": 1440
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.62,
+          "gapSeconds": 0.35,
+          "frames": 8000,
+          "stoppedAt": 0.72,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0
+          },
+          "stateBeforeStop": {
+            "phase": "attempt",
+            "role": "attempt",
+            "positionSeconds": 0.09999999999999998
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 8000,
+          "cropped": true,
+          "stopDuring": "none",
+          "first": {
+            "start": 400,
+            "end": 1360
+          },
+          "second": {
+            "start": 320,
+            "end": 1040
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.5,
+          "gapSeconds": 0.35,
+          "frames": 8000,
+          "stoppedAt": null,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.05
+          },
+          "stateBeforeStop": null,
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 1,
+          "expectedCompletions": 1,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 8000,
+          "cropped": true,
+          "stopDuring": "before-start",
+          "first": {
+            "start": 400,
+            "end": 1360
+          },
+          "second": {
+            "start": 320,
+            "end": 1040
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.5,
+          "gapSeconds": 0.35,
+          "frames": 8000,
+          "stoppedAt": 0,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.05
+          },
+          "stateBeforeStop": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.05
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 8000,
+          "cropped": true,
+          "stopDuring": "reference",
+          "first": {
+            "start": 400,
+            "end": 1360
+          },
+          "second": {
+            "start": 320,
+            "end": 1040
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.5,
+          "gapSeconds": 0.35,
+          "frames": 8000,
+          "stoppedAt": 0.096,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.05
+          },
+          "stateBeforeStop": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.116
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 8000,
+          "cropped": true,
+          "stopDuring": "gap",
+          "first": {
+            "start": 400,
+            "end": 1360
+          },
+          "second": {
+            "start": 320,
+            "end": 1040
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.5,
+          "gapSeconds": 0.35,
+          "frames": 8000,
+          "stoppedAt": 0.336,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.05
+          },
+          "stateBeforeStop": {
+            "phase": "gap",
+            "role": null,
+            "positionSeconds": null
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 8000,
+          "cropped": true,
+          "stopDuring": "attempt",
+          "first": {
+            "start": 400,
+            "end": 1360
+          },
+          "second": {
+            "start": 320,
+            "end": 1040
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.5,
+          "gapSeconds": 0.35,
+          "frames": 8000,
+          "stoppedAt": 0.56,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.05
+          },
+          "stateBeforeStop": {
+            "phase": "attempt",
+            "role": "attempt",
+            "positionSeconds": 0.10000000000000006
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 44100,
+          "cropped": false,
+          "stopDuring": "none",
+          "first": {
+            "start": 0,
+            "end": 10584
+          },
+          "second": {
+            "start": 0,
+            "end": 7938
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.62,
+          "gapSeconds": 0.35,
+          "frames": 44100,
+          "stoppedAt": null,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0
+          },
+          "stateBeforeStop": null,
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 1,
+          "expectedCompletions": 1,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 44100,
+          "cropped": false,
+          "stopDuring": "before-start",
+          "first": {
+            "start": 0,
+            "end": 10584
+          },
+          "second": {
+            "start": 0,
+            "end": 7938
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.62,
+          "gapSeconds": 0.35,
+          "frames": 44100,
+          "stoppedAt": 0,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0
+          },
+          "stateBeforeStop": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 44100,
+          "cropped": false,
+          "stopDuring": "reference",
+          "first": {
+            "start": 0,
+            "end": 10584
+          },
+          "second": {
+            "start": 0,
+            "end": 7938
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.62,
+          "gapSeconds": 0.35,
+          "frames": 44100,
+          "stoppedAt": 0.1509297052154195,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0
+          },
+          "stateBeforeStop": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.12092970521541951
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 44100,
+          "cropped": false,
+          "stopDuring": "gap",
+          "first": {
+            "start": 0,
+            "end": 10584
+          },
+          "second": {
+            "start": 0,
+            "end": 7938
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.62,
+          "gapSeconds": 0.35,
+          "frames": 44100,
+          "stoppedAt": 0.446984126984127,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0
+          },
+          "stateBeforeStop": {
+            "phase": "gap",
+            "role": null,
+            "positionSeconds": null
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 44100,
+          "cropped": false,
+          "stopDuring": "attempt",
+          "first": {
+            "start": 0,
+            "end": 10584
+          },
+          "second": {
+            "start": 0,
+            "end": 7938
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.62,
+          "gapSeconds": 0.35,
+          "frames": 44100,
+          "stoppedAt": 0.7111111111111111,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0
+          },
+          "stateBeforeStop": {
+            "phase": "attempt",
+            "role": "attempt",
+            "positionSeconds": 0.09111111111111114
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 44100,
+          "cropped": true,
+          "stopDuring": "none",
+          "first": {
+            "start": 2205,
+            "end": 7497
+          },
+          "second": {
+            "start": 1764,
+            "end": 5733
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.5,
+          "gapSeconds": 0.35,
+          "frames": 44100,
+          "stoppedAt": null,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.05
+          },
+          "stateBeforeStop": null,
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 1,
+          "expectedCompletions": 1,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 44100,
+          "cropped": true,
+          "stopDuring": "before-start",
+          "first": {
+            "start": 2205,
+            "end": 7497
+          },
+          "second": {
+            "start": 1764,
+            "end": 5733
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.5,
+          "gapSeconds": 0.35,
+          "frames": 44100,
+          "stoppedAt": 0,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.05
+          },
+          "stateBeforeStop": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.05
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 44100,
+          "cropped": true,
+          "stopDuring": "reference",
+          "first": {
+            "start": 2205,
+            "end": 7497
+          },
+          "second": {
+            "start": 1764,
+            "end": 5733
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.5,
+          "gapSeconds": 0.35,
+          "frames": 44100,
+          "stoppedAt": 0.09287981859410431,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.05
+          },
+          "stateBeforeStop": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.11287981859410431
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 44100,
+          "cropped": true,
+          "stopDuring": "gap",
+          "first": {
+            "start": 2205,
+            "end": 7497
+          },
+          "second": {
+            "start": 1764,
+            "end": 5733
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.5,
+          "gapSeconds": 0.35,
+          "frames": 44100,
+          "stoppedAt": 0.3250793650793651,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.05
+          },
+          "stateBeforeStop": {
+            "phase": "gap",
+            "role": null,
+            "positionSeconds": null
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 44100,
+          "cropped": true,
+          "stopDuring": "attempt",
+          "first": {
+            "start": 2205,
+            "end": 7497
+          },
+          "second": {
+            "start": 1764,
+            "end": 5733
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.5,
+          "gapSeconds": 0.35,
+          "frames": 44100,
+          "stoppedAt": 0.5456689342403628,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.05
+          },
+          "stateBeforeStop": {
+            "phase": "attempt",
+            "role": "attempt",
+            "positionSeconds": 0.08566893424036279
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 48000,
+          "cropped": false,
+          "stopDuring": "none",
+          "first": {
+            "start": 0,
+            "end": 11520
+          },
+          "second": {
+            "start": 0,
+            "end": 8640
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.62,
+          "gapSeconds": 0.35,
+          "frames": 48000,
+          "stoppedAt": null,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0
+          },
+          "stateBeforeStop": null,
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 1,
+          "expectedCompletions": 1,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 48000,
+          "cropped": false,
+          "stopDuring": "before-start",
+          "first": {
+            "start": 0,
+            "end": 11520
+          },
+          "second": {
+            "start": 0,
+            "end": 8640
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.62,
+          "gapSeconds": 0.35,
+          "frames": 48000,
+          "stoppedAt": 0,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0
+          },
+          "stateBeforeStop": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 48000,
+          "cropped": false,
+          "stopDuring": "reference",
+          "first": {
+            "start": 0,
+            "end": 11520
+          },
+          "second": {
+            "start": 0,
+            "end": 8640
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.62,
+          "gapSeconds": 0.35,
+          "frames": 48000,
+          "stoppedAt": 0.152,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0
+          },
+          "stateBeforeStop": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.122
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 48000,
+          "cropped": false,
+          "stopDuring": "gap",
+          "first": {
+            "start": 0,
+            "end": 11520
+          },
+          "second": {
+            "start": 0,
+            "end": 8640
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.62,
+          "gapSeconds": 0.35,
+          "frames": 48000,
+          "stoppedAt": 0.44533333333333336,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0
+          },
+          "stateBeforeStop": {
+            "phase": "gap",
+            "role": null,
+            "positionSeconds": null
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 48000,
+          "cropped": false,
+          "stopDuring": "attempt",
+          "first": {
+            "start": 0,
+            "end": 11520
+          },
+          "second": {
+            "start": 0,
+            "end": 8640
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.62,
+          "gapSeconds": 0.35,
+          "frames": 48000,
+          "stoppedAt": 0.712,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0
+          },
+          "stateBeforeStop": {
+            "phase": "attempt",
+            "role": "attempt",
+            "positionSeconds": 0.09199999999999997
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 48000,
+          "cropped": true,
+          "stopDuring": "none",
+          "first": {
+            "start": 2400,
+            "end": 8160
+          },
+          "second": {
+            "start": 1920,
+            "end": 6240
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.5,
+          "gapSeconds": 0.35,
+          "frames": 48000,
+          "stoppedAt": null,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.05
+          },
+          "stateBeforeStop": null,
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 1,
+          "expectedCompletions": 1,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 48000,
+          "cropped": true,
+          "stopDuring": "before-start",
+          "first": {
+            "start": 2400,
+            "end": 8160
+          },
+          "second": {
+            "start": 1920,
+            "end": 6240
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.5,
+          "gapSeconds": 0.35,
+          "frames": 48000,
+          "stoppedAt": 0,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.05
+          },
+          "stateBeforeStop": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.05
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 48000,
+          "cropped": true,
+          "stopDuring": "reference",
+          "first": {
+            "start": 2400,
+            "end": 8160
+          },
+          "second": {
+            "start": 1920,
+            "end": 6240
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.5,
+          "gapSeconds": 0.35,
+          "frames": 48000,
+          "stoppedAt": 0.09066666666666667,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.05
+          },
+          "stateBeforeStop": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.11066666666666668
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 48000,
+          "cropped": true,
+          "stopDuring": "gap",
+          "first": {
+            "start": 2400,
+            "end": 8160
+          },
+          "second": {
+            "start": 1920,
+            "end": 6240
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.5,
+          "gapSeconds": 0.35,
+          "frames": 48000,
+          "stoppedAt": 0.3253333333333333,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.05
+          },
+          "stateBeforeStop": {
+            "phase": "gap",
+            "role": null,
+            "positionSeconds": null
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 48000,
+          "cropped": true,
+          "stopDuring": "attempt",
+          "first": {
+            "start": 2400,
+            "end": 8160
+          },
+          "second": {
+            "start": 1920,
+            "end": 6240
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.5,
+          "gapSeconds": 0.35,
+          "frames": 48000,
+          "stoppedAt": 0.5466666666666666,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.05
+          },
+          "stateBeforeStop": {
+            "phase": "attempt",
+            "role": "attempt",
+            "positionSeconds": 0.08666666666666664
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 96000,
+          "cropped": false,
+          "stopDuring": "none",
+          "first": {
+            "start": 0,
+            "end": 23040
+          },
+          "second": {
+            "start": 0,
+            "end": 17280
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.62,
+          "gapSeconds": 0.35,
+          "frames": 96000,
+          "stoppedAt": null,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0
+          },
+          "stateBeforeStop": null,
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 1,
+          "expectedCompletions": 1,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 96000,
+          "cropped": false,
+          "stopDuring": "before-start",
+          "first": {
+            "start": 0,
+            "end": 23040
+          },
+          "second": {
+            "start": 0,
+            "end": 17280
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.62,
+          "gapSeconds": 0.35,
+          "frames": 96000,
+          "stoppedAt": 0,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0
+          },
+          "stateBeforeStop": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 96000,
+          "cropped": false,
+          "stopDuring": "reference",
+          "first": {
+            "start": 0,
+            "end": 23040
+          },
+          "second": {
+            "start": 0,
+            "end": 17280
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.62,
+          "gapSeconds": 0.35,
+          "frames": 96000,
+          "stoppedAt": 0.15066666666666667,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0
+          },
+          "stateBeforeStop": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.12066666666666667
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 96000,
+          "cropped": false,
+          "stopDuring": "gap",
+          "first": {
+            "start": 0,
+            "end": 23040
+          },
+          "second": {
+            "start": 0,
+            "end": 17280
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.62,
+          "gapSeconds": 0.35,
+          "frames": 96000,
+          "stoppedAt": 0.44533333333333336,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0
+          },
+          "stateBeforeStop": {
+            "phase": "gap",
+            "role": null,
+            "positionSeconds": null
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 96000,
+          "cropped": false,
+          "stopDuring": "attempt",
+          "first": {
+            "start": 0,
+            "end": 23040
+          },
+          "second": {
+            "start": 0,
+            "end": 17280
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.62,
+          "gapSeconds": 0.35,
+          "frames": 96000,
+          "stoppedAt": 0.7106666666666667,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0
+          },
+          "stateBeforeStop": {
+            "phase": "attempt",
+            "role": "attempt",
+            "positionSeconds": 0.09066666666666667
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 96000,
+          "cropped": true,
+          "stopDuring": "none",
+          "first": {
+            "start": 4800,
+            "end": 16320
+          },
+          "second": {
+            "start": 3840,
+            "end": 12480
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.5,
+          "gapSeconds": 0.35,
+          "frames": 96000,
+          "stoppedAt": null,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.05
+          },
+          "stateBeforeStop": null,
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 1,
+          "expectedCompletions": 1,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 96000,
+          "cropped": true,
+          "stopDuring": "before-start",
+          "first": {
+            "start": 4800,
+            "end": 16320
+          },
+          "second": {
+            "start": 3840,
+            "end": 12480
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.5,
+          "gapSeconds": 0.35,
+          "frames": 96000,
+          "stoppedAt": 0,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.05
+          },
+          "stateBeforeStop": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.05
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 96000,
+          "cropped": true,
+          "stopDuring": "reference",
+          "first": {
+            "start": 4800,
+            "end": 16320
+          },
+          "second": {
+            "start": 3840,
+            "end": 12480
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.5,
+          "gapSeconds": 0.35,
+          "frames": 96000,
+          "stoppedAt": 0.09066666666666667,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.05
+          },
+          "stateBeforeStop": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.11066666666666668
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 96000,
+          "cropped": true,
+          "stopDuring": "gap",
+          "first": {
+            "start": 4800,
+            "end": 16320
+          },
+          "second": {
+            "start": 3840,
+            "end": 12480
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.5,
+          "gapSeconds": 0.35,
+          "frames": 96000,
+          "stoppedAt": 0.3253333333333333,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.05
+          },
+          "stateBeforeStop": {
+            "phase": "gap",
+            "role": null,
+            "positionSeconds": null
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 96000,
+          "cropped": true,
+          "stopDuring": "attempt",
+          "first": {
+            "start": 4800,
+            "end": 16320
+          },
+          "second": {
+            "start": 3840,
+            "end": 12480
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.5,
+          "gapSeconds": 0.35,
+          "frames": 96000,
+          "stoppedAt": 0.5453333333333333,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.05
+          },
+          "stateBeforeStop": {
+            "phase": "attempt",
+            "role": "attempt",
+            "positionSeconds": 0.08533333333333334
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        }
+      ],
+      "unavailableOfflineControls": [],
+      "live": [
+        {
+          "stopDuring": "before-start",
+          "stateBeforeStop": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0
+          },
+          "stoppedAt": 0,
+          "starts": [
+            0.03,
+            0.62
+          ],
+          "stops": [
+            0,
+            0
+          ],
+          "peakAfterStop": 0,
+          "observations": 32,
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "attemptStoppedBeforeStart": true
+        },
+        {
+          "stopDuring": "reference",
+          "stateBeforeStop": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.146
+          },
+          "stoppedAt": 0.176,
+          "starts": [
+            0.03,
+            0.62
+          ],
+          "stops": [
+            0.176,
+            0.176
+          ],
+          "peakAfterStop": 0,
+          "observations": 25,
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "attemptStoppedBeforeStart": true
+        },
+        {
+          "stopDuring": "gap",
+          "stateBeforeStop": {
+            "phase": "gap",
+            "role": null,
+            "positionSeconds": null
+          },
+          "stoppedAt": 0.456,
+          "starts": [
+            0.03,
+            0.62
+          ],
+          "stops": [
+            0.456,
+            0.456
+          ],
+          "peakAfterStop": 0,
+          "observations": 14,
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "attemptStoppedBeforeStart": true
+        },
+        {
+          "stopDuring": "attempt",
+          "stateBeforeStop": {
+            "phase": "attempt",
+            "role": "attempt",
+            "positionSeconds": 0.11333333333333329
+          },
+          "stoppedAt": 0.7333333333333333,
+          "starts": [
+            0.03,
+            0.62
+          ],
+          "stops": [
+            0.7333333333333333,
+            0.7333333333333333
+          ],
+          "peakAfterStop": 0,
+          "observations": 3,
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "attemptStoppedBeforeStart": false
+        }
+      ]
+    },
+    {
+      "engine": "firefox",
+      "version": "155.0",
+      "offline": [
+        {
+          "sampleRate": 8000,
+          "cropped": false,
+          "stopDuring": "none",
+          "first": {
+            "start": 0,
+            "end": 1920
+          },
+          "second": {
+            "start": 0,
+            "end": 1440
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.62,
+          "gapSeconds": 0.35,
+          "frames": 8000,
+          "stoppedAt": null,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0
+          },
+          "stateBeforeStop": null,
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 1,
+          "expectedCompletions": 1,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 8000,
+          "cropped": false,
+          "stopDuring": "before-start",
+          "first": {
+            "start": 0,
+            "end": 1920
+          },
+          "second": {
+            "start": 0,
+            "end": 1440
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.62,
+          "gapSeconds": 0.35,
+          "frames": 8000,
+          "stoppedAt": 0,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0
+          },
+          "stateBeforeStop": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 8000,
+          "cropped": true,
+          "stopDuring": "none",
+          "first": {
+            "start": 400,
+            "end": 1360
+          },
+          "second": {
+            "start": 320,
+            "end": 1040
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.5,
+          "gapSeconds": 0.35,
+          "frames": 8000,
+          "stoppedAt": null,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.05
+          },
+          "stateBeforeStop": null,
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 1,
+          "expectedCompletions": 1,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 8000,
+          "cropped": true,
+          "stopDuring": "before-start",
+          "first": {
+            "start": 400,
+            "end": 1360
+          },
+          "second": {
+            "start": 320,
+            "end": 1040
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.5,
+          "gapSeconds": 0.35,
+          "frames": 8000,
+          "stoppedAt": 0,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.05
+          },
+          "stateBeforeStop": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.05
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 44100,
+          "cropped": false,
+          "stopDuring": "none",
+          "first": {
+            "start": 0,
+            "end": 10584
+          },
+          "second": {
+            "start": 0,
+            "end": 7938
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.62,
+          "gapSeconds": 0.35,
+          "frames": 44100,
+          "stoppedAt": null,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0
+          },
+          "stateBeforeStop": null,
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 1,
+          "expectedCompletions": 1,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 44100,
+          "cropped": false,
+          "stopDuring": "before-start",
+          "first": {
+            "start": 0,
+            "end": 10584
+          },
+          "second": {
+            "start": 0,
+            "end": 7938
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.62,
+          "gapSeconds": 0.35,
+          "frames": 44100,
+          "stoppedAt": 0,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0
+          },
+          "stateBeforeStop": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 44100,
+          "cropped": true,
+          "stopDuring": "none",
+          "first": {
+            "start": 2205,
+            "end": 7497
+          },
+          "second": {
+            "start": 1764,
+            "end": 5733
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.5,
+          "gapSeconds": 0.35,
+          "frames": 44100,
+          "stoppedAt": null,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.05
+          },
+          "stateBeforeStop": null,
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 1,
+          "expectedCompletions": 1,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 44100,
+          "cropped": true,
+          "stopDuring": "before-start",
+          "first": {
+            "start": 2205,
+            "end": 7497
+          },
+          "second": {
+            "start": 1764,
+            "end": 5733
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.5,
+          "gapSeconds": 0.35,
+          "frames": 44100,
+          "stoppedAt": 0,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.05
+          },
+          "stateBeforeStop": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.05
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 48000,
+          "cropped": false,
+          "stopDuring": "none",
+          "first": {
+            "start": 0,
+            "end": 11520
+          },
+          "second": {
+            "start": 0,
+            "end": 8640
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.62,
+          "gapSeconds": 0.35,
+          "frames": 48000,
+          "stoppedAt": null,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0
+          },
+          "stateBeforeStop": null,
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 1,
+          "expectedCompletions": 1,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 48000,
+          "cropped": false,
+          "stopDuring": "before-start",
+          "first": {
+            "start": 0,
+            "end": 11520
+          },
+          "second": {
+            "start": 0,
+            "end": 8640
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.62,
+          "gapSeconds": 0.35,
+          "frames": 48000,
+          "stoppedAt": 0,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0
+          },
+          "stateBeforeStop": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 48000,
+          "cropped": true,
+          "stopDuring": "none",
+          "first": {
+            "start": 2400,
+            "end": 8160
+          },
+          "second": {
+            "start": 1920,
+            "end": 6240
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.5,
+          "gapSeconds": 0.35,
+          "frames": 48000,
+          "stoppedAt": null,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.05
+          },
+          "stateBeforeStop": null,
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 1,
+          "expectedCompletions": 1,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 48000,
+          "cropped": true,
+          "stopDuring": "before-start",
+          "first": {
+            "start": 2400,
+            "end": 8160
+          },
+          "second": {
+            "start": 1920,
+            "end": 6240
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.5,
+          "gapSeconds": 0.35,
+          "frames": 48000,
+          "stoppedAt": 0,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.05
+          },
+          "stateBeforeStop": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.05
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 96000,
+          "cropped": false,
+          "stopDuring": "none",
+          "first": {
+            "start": 0,
+            "end": 23040
+          },
+          "second": {
+            "start": 0,
+            "end": 17280
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.62,
+          "gapSeconds": 0.35,
+          "frames": 96000,
+          "stoppedAt": null,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0
+          },
+          "stateBeforeStop": null,
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 1,
+          "expectedCompletions": 1,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 96000,
+          "cropped": false,
+          "stopDuring": "before-start",
+          "first": {
+            "start": 0,
+            "end": 23040
+          },
+          "second": {
+            "start": 0,
+            "end": 17280
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.62,
+          "gapSeconds": 0.35,
+          "frames": 96000,
+          "stoppedAt": 0,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0
+          },
+          "stateBeforeStop": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 96000,
+          "cropped": true,
+          "stopDuring": "none",
+          "first": {
+            "start": 4800,
+            "end": 16320
+          },
+          "second": {
+            "start": 3840,
+            "end": 12480
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.5,
+          "gapSeconds": 0.35,
+          "frames": 96000,
+          "stoppedAt": null,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.05
+          },
+          "stateBeforeStop": null,
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 1,
+          "expectedCompletions": 1,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        },
+        {
+          "sampleRate": 96000,
+          "cropped": true,
+          "stopDuring": "before-start",
+          "first": {
+            "start": 4800,
+            "end": 16320
+          },
+          "second": {
+            "start": 3840,
+            "end": 12480
+          },
+          "firstAt": 0.03,
+          "secondAt": 0.5,
+          "gapSeconds": 0.35,
+          "frames": 96000,
+          "stoppedAt": 0,
+          "initialState": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.05
+          },
+          "stateBeforeStop": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.05
+          },
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "expectedCompletions": 0,
+          "sampleMismatches": 0,
+          "maxDifference": 0,
+          "referenceUnchanged": true,
+          "attemptUnchanged": true
+        }
+      ],
+      "unavailableOfflineControls": [
+        {
+          "sampleRate": 8000,
+          "cropped": false,
+          "stopDuring": "reference",
+          "reason": "OfflineAudioContext.suspend unavailable; live cancellation checked separately"
+        },
+        {
+          "sampleRate": 8000,
+          "cropped": false,
+          "stopDuring": "gap",
+          "reason": "OfflineAudioContext.suspend unavailable; live cancellation checked separately"
+        },
+        {
+          "sampleRate": 8000,
+          "cropped": false,
+          "stopDuring": "attempt",
+          "reason": "OfflineAudioContext.suspend unavailable; live cancellation checked separately"
+        },
+        {
+          "sampleRate": 8000,
+          "cropped": true,
+          "stopDuring": "reference",
+          "reason": "OfflineAudioContext.suspend unavailable; live cancellation checked separately"
+        },
+        {
+          "sampleRate": 8000,
+          "cropped": true,
+          "stopDuring": "gap",
+          "reason": "OfflineAudioContext.suspend unavailable; live cancellation checked separately"
+        },
+        {
+          "sampleRate": 8000,
+          "cropped": true,
+          "stopDuring": "attempt",
+          "reason": "OfflineAudioContext.suspend unavailable; live cancellation checked separately"
+        },
+        {
+          "sampleRate": 44100,
+          "cropped": false,
+          "stopDuring": "reference",
+          "reason": "OfflineAudioContext.suspend unavailable; live cancellation checked separately"
+        },
+        {
+          "sampleRate": 44100,
+          "cropped": false,
+          "stopDuring": "gap",
+          "reason": "OfflineAudioContext.suspend unavailable; live cancellation checked separately"
+        },
+        {
+          "sampleRate": 44100,
+          "cropped": false,
+          "stopDuring": "attempt",
+          "reason": "OfflineAudioContext.suspend unavailable; live cancellation checked separately"
+        },
+        {
+          "sampleRate": 44100,
+          "cropped": true,
+          "stopDuring": "reference",
+          "reason": "OfflineAudioContext.suspend unavailable; live cancellation checked separately"
+        },
+        {
+          "sampleRate": 44100,
+          "cropped": true,
+          "stopDuring": "gap",
+          "reason": "OfflineAudioContext.suspend unavailable; live cancellation checked separately"
+        },
+        {
+          "sampleRate": 44100,
+          "cropped": true,
+          "stopDuring": "attempt",
+          "reason": "OfflineAudioContext.suspend unavailable; live cancellation checked separately"
+        },
+        {
+          "sampleRate": 48000,
+          "cropped": false,
+          "stopDuring": "reference",
+          "reason": "OfflineAudioContext.suspend unavailable; live cancellation checked separately"
+        },
+        {
+          "sampleRate": 48000,
+          "cropped": false,
+          "stopDuring": "gap",
+          "reason": "OfflineAudioContext.suspend unavailable; live cancellation checked separately"
+        },
+        {
+          "sampleRate": 48000,
+          "cropped": false,
+          "stopDuring": "attempt",
+          "reason": "OfflineAudioContext.suspend unavailable; live cancellation checked separately"
+        },
+        {
+          "sampleRate": 48000,
+          "cropped": true,
+          "stopDuring": "reference",
+          "reason": "OfflineAudioContext.suspend unavailable; live cancellation checked separately"
+        },
+        {
+          "sampleRate": 48000,
+          "cropped": true,
+          "stopDuring": "gap",
+          "reason": "OfflineAudioContext.suspend unavailable; live cancellation checked separately"
+        },
+        {
+          "sampleRate": 48000,
+          "cropped": true,
+          "stopDuring": "attempt",
+          "reason": "OfflineAudioContext.suspend unavailable; live cancellation checked separately"
+        },
+        {
+          "sampleRate": 96000,
+          "cropped": false,
+          "stopDuring": "reference",
+          "reason": "OfflineAudioContext.suspend unavailable; live cancellation checked separately"
+        },
+        {
+          "sampleRate": 96000,
+          "cropped": false,
+          "stopDuring": "gap",
+          "reason": "OfflineAudioContext.suspend unavailable; live cancellation checked separately"
+        },
+        {
+          "sampleRate": 96000,
+          "cropped": false,
+          "stopDuring": "attempt",
+          "reason": "OfflineAudioContext.suspend unavailable; live cancellation checked separately"
+        },
+        {
+          "sampleRate": 96000,
+          "cropped": true,
+          "stopDuring": "reference",
+          "reason": "OfflineAudioContext.suspend unavailable; live cancellation checked separately"
+        },
+        {
+          "sampleRate": 96000,
+          "cropped": true,
+          "stopDuring": "gap",
+          "reason": "OfflineAudioContext.suspend unavailable; live cancellation checked separately"
+        },
+        {
+          "sampleRate": 96000,
+          "cropped": true,
+          "stopDuring": "attempt",
+          "reason": "OfflineAudioContext.suspend unavailable; live cancellation checked separately"
+        }
+      ],
+      "live": [
+        {
+          "stopDuring": "before-start",
+          "stateBeforeStop": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0
+          },
+          "stoppedAt": 0.021333333333333333,
+          "starts": [
+            0.05133333333333333,
+            0.6413333333333333
+          ],
+          "stops": [
+            0.021333333333333333,
+            0.021333333333333333
+          ],
+          "peakAfterStop": 0,
+          "observations": 26,
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "attemptStoppedBeforeStart": true
+        },
+        {
+          "stopDuring": "reference",
+          "stateBeforeStop": {
+            "phase": "reference",
+            "role": "reference",
+            "positionSeconds": 0.1406666666666667
+          },
+          "stoppedAt": 0.18133333333333335,
+          "starts": [
+            0.04066666666666666,
+            0.6306666666666667
+          ],
+          "stops": [
+            0.18133333333333335,
+            0.18133333333333335
+          ],
+          "peakAfterStop": 0,
+          "observations": 20,
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "attemptStoppedBeforeStart": true
+        },
+        {
+          "stopDuring": "gap",
+          "stateBeforeStop": {
+            "phase": "gap",
+            "role": null,
+            "positionSeconds": null
+          },
+          "stoppedAt": 0.4693333333333333,
+          "starts": [
+            0.05133333333333333,
+            0.6413333333333333
+          ],
+          "stops": [
+            0.4693333333333333,
+            0.4693333333333333
+          ],
+          "peakAfterStop": 0,
+          "observations": 12,
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "attemptStoppedBeforeStart": true
+        },
+        {
+          "stopDuring": "attempt",
+          "stateBeforeStop": {
+            "phase": "attempt",
+            "role": "attempt",
+            "positionSeconds": 0.11333333333333329
+          },
+          "stoppedAt": 0.744,
+          "starts": [
+            0.04066666666666666,
+            0.6306666666666667
+          ],
+          "stops": [
+            0.744,
+            0.744
+          ],
+          "peakAfterStop": 0,
+          "observations": 2,
+          "finalState": {
+            "phase": "idle",
+            "role": null,
+            "positionSeconds": null
+          },
+          "completions": 0,
+          "attemptStoppedBeforeStart": false
+        }
+      ]
+    }
+  ]
+}

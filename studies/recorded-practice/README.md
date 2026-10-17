@@ -4,6 +4,8 @@ Choose a recorded mā, má, mǎ or mà near the audio inputs, then **Play refere
 Switch to **Your attempt** and record the same syllable. This gives the workbench
 an immediate recorded example; the generated tone and accent patterns remain
 available separately and are still labeled synthetic.
+After loading both clips, [listen to the reference followed by your attempt](../paired-listening/README.md)
+without switching tabs; each selected passage plays once at normal speed.
 
 ## Recording and selection
 

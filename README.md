@@ -30,7 +30,7 @@ available for comparison, playback, saving and export. Real silence remains
 valid audio. [Native decoder and worker reproduction](studies/audio-integrity/README.md)
 documents the correction; [hosted build verification](studies/wav-export/publication/README.md) records its deployment.
 
-![Recorded Mandarin practice: choose a syllable, listen, and compare two actual recorded contours](docs/assets/recorded-practice/recorded-practice.png)
+![Recorded Mandarin practice: listen to the reference and attempt, then compare their contours](docs/assets/paired-listening/paired-listening.png)
 
 _Recorded má (rising) as reference; recorded mà (falling) loaded as the attempt.
 Both are excerpts from the credited source recording, not a learner study.
@@ -57,6 +57,11 @@ just click one of the built-in reference chips and record yourself.
 
 ## Features
 
+- **Listen to both clips:** **Play reference then attempt** plays each clip once
+  at normal speed with a short pause between them. Use a separate selected
+  loop for each passage, or listen to the full clips. Stop cancels both;
+  changing clips or starting individual playback also ends the sequence.
+  [Recorded example and native audio verification](studies/paired-listening/README.md).
 - **Recorded Mandarin practice:** four tone excerpts and the full sequence from
   [Wolfdog's 2019 recording](https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205),
   under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
@@ -97,7 +102,7 @@ just click one of the built-in reference chips and record yourself.
   Mandarin tones and every accent template, generated in-browser and
   labeled synthetic everywhere they appear. Recording or loading real
   native-speaker audio is one click away and clearly encouraged in the UI.
-- **Local processing without uploads**, no telemetry, ~267 kB
+- **Local processing without uploads**, no telemetry, ~271 kB
   of JS including workers, worklet and the pitch-preserving audio engine, uncompressed - see
   [Bundle size](#bundle-size)).
 
@@ -110,6 +115,9 @@ Recording and file loading use the tab selected when you start, even if you
 switch tabs while waiting. The waveform shows the current clip's name and
 duration. Switching tabs pauses playback, and each clip retains its loop.
 Arrow keys, Home, and End move between the audio tabs.
+**Play reference then attempt** listens to the two clips without switching tabs.
+It uses normal speed even when individual playback is set to half speed.
+It keeps each clip's loop selection, samples, saved copy and comparison intact.
 Starting or resuming outside a selected loop enters at its beginning. Moving a
 loop past a playing cursor moves the audio and cursor together. Selecting a loop
 while paused keeps that position until Play. [First-playback evidence](studies/loop-entry/README.md)
@@ -397,9 +405,9 @@ minutes long.
 `npm run build` output on this box:
 
 ```
-dist/index.html                   2.36 kB (gzip 0.90 kB)
-dist/assets/index-*.css          23.75 kB (gzip 3.70 kB)
-dist/assets/index-*.js          267.01 kB (gzip 144.90 kB)
+dist/index.html                   2.36 kB (gzip 0.89 kB)
+dist/assets/index-*.css          23.89 kB (gzip 3.75 kB)
+dist/assets/index-*.js          271.09 kB (gzip 145.98 kB)
 ```
 
 No UI framework, no charting library - Canvas 2D and vanilla DOM.

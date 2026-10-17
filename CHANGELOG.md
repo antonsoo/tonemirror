@@ -4,6 +4,13 @@ All notable changes to this project are documented in this file.
 
 ## Unreleased
 
+- Listen to the reference followed by the attempt with a brief pause, using
+  each selected passage once at normal speed. Schedule both on the same
+  audio clock. Stop, file replacement, tab changes and individual playback
+  cancel the sequence, including an attempt that has not started yet.
+  Keep source samples, credits, loop markers, half-speed settings and the
+  pitch comparison intact. [Native rendering and offline controls](studies/paired-listening/README.md).
+
 - Practice with a recorded Mandarin voice: load any of four isolated tones or
   the full sequence and listen from the audio panel, including first use offline.
   Bundle Wolfdog's original recording under CC BY-SA 4.0. Carry its source,

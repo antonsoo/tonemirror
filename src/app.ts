@@ -9,6 +9,7 @@ import { MicRecorder } from "./audio/recorder.js";
 import { loadAudioFile } from "./audio/fileLoader.js";
 import { MAX_AUDIO_SECONDS, validateAudio } from "./audio/limits.js";
 import { ClipPlayer } from "./audio/playback.js";
+import { PairedPlayer } from "./audio/pairedPlayback.js";
 import { regionSamples } from "./audio/region.js";
 import { encodeWav, wavFilename } from "./audio/wav.js";
 import { excerptCredit, type AudioCredit } from "./audio/credit.js";
@@ -86,6 +87,9 @@ export function mountApp(root: HTMLElement): void {
   let rafHandle = 0;
   let playbackRequest = 0;
   let playbackPreparation: AbortController | null = null;
+  let pairedPlayer: PairedPlayer | null = null;
+  let pairedPreparation: AbortController | null = null;
+  let pairedRafHandle = 0;
 
   function getPlaybackContext(): AudioContext {
     playbackContext ??= new AudioContext();
@@ -226,6 +230,12 @@ export function mountApp(root: HTMLElement): void {
   const comparisonNote = el("p", { class: "tm-hint tm-comparison-note", role: "status", "aria-live": "polite" });
   const retryComparisonBtn = el("button", { class: "tm-btn", hidden: true, onclick: () => updateComparison(true) }, ["Retry comparison"]);
   const stageEmpty = el("div", { class: "tm-stage-empty" }, ["Load a reference and an attempt to see their pitch contours overlaid here."]);
+  const pairedPlayBtn = el("button", {
+    class: "tm-btn", disabled: true, "aria-describedby": "paired-listening-help",
+    onclick: () => { void togglePairedPlayback(); },
+  }, ["Play reference then attempt"]);
+  const pairedHelp = el("p", { class: "tm-hint", id: "paired-listening-help" });
+  const pairedNote = el("p", { class: "tm-hint", role: "status", "aria-live": "polite", id: "paired-listening-status" });
 
   const stagePanel = el("section", { class: "tm-panel" }, [
     el("div", { class: "tm-panel-header" }, [
@@ -234,6 +244,11 @@ export function mountApp(root: HTMLElement): void {
         el("span", { class: "tm-legend-item" }, [el("span", { class: "tm-legend-swatch", style: "background:var(--color-reference)" }), "reference"]),
         el("span", { class: "tm-legend-item" }, [el("span", { class: "tm-legend-swatch", style: "background:var(--color-attempt)" }), "your attempt"]),
       ]),
+    ]),
+    el("div", { class: "tm-paired-listening" }, [
+      pairedPlayBtn,
+      pairedHelp,
+      pairedNote,
     ]),
     el("div", { class: "tm-stage-wrap" }, [stageCanvas, stageEmpty]),
     el("div", { class: "tm-score-row" }, [
@@ -250,6 +265,7 @@ export function mountApp(root: HTMLElement): void {
   const analysisLabel = el("p", { class: "tm-hint tm-clip-label" });
   const audioCredit = el("p", { class: "tm-hint tm-audio-credit", hidden: true });
   const analysis = createAnalysisView(analysisCanvas, (region) => {
+    stopPairedPlayback();
     loopRegions[focus] = region;
     players[focus]?.setLoopRegion(region ? { start: region.start, end: region.end } : null);
     syncRegionFields();
@@ -276,6 +292,7 @@ export function mountApp(root: HTMLElement): void {
   const clearLoopBtn = el("button", {
     class: "tm-btn",
     onclick: () => {
+      stopPairedPlayback();
       loopRegions[focus] = null;
       players[focus]?.setLoopRegion(null);
       syncRegionFields();
@@ -290,6 +307,7 @@ export function mountApp(root: HTMLElement): void {
     const clip = clips[focus];
     const bounds = readRegion();
     if (!clip || !bounds || loads[focus]) return;
+    stopPairedPlayback();
     const region = { start: bounds.start / clip.pcm.length, end: bounds.end / clip.pcm.length };
     loopRegions[focus] = region;
     players[focus]?.setLoopRegion(region);
@@ -484,6 +502,7 @@ export function mountApp(root: HTMLElement): void {
     sourcePanel.setAttribute("aria-busy", String(!!loads.reference || !!loads.attempt));
     stagePanel.setAttribute("aria-busy", String(!!comparison));
     refreshRegionControls();
+    refreshPairedControls();
   }
 
   function cancelRecording(): void {
@@ -517,6 +536,7 @@ export function mountApp(root: HTMLElement): void {
   }
 
   function beginLoad(role: FocusRole, nextStatus = ++statusId): AudioRequest {
+    stopPairedPlayback();
     if (role === focus) { cancelPlaybackPreparation(); renderAnalysis(); }
     loads[role]?.controller.abort();
     if (recordingRequest?.role === role) cancelRecording();
@@ -813,13 +833,15 @@ export function mountApp(root: HTMLElement): void {
   function renderAnalysis(): void {
     const clip = clips[focus];
     const player = players[focus];
+    const listening = pairedPlayer?.state;
+    const position = listening?.role === focus ? listening.positionSeconds : player?.currentPositionSeconds();
     analysis.render({
       pcm: clip?.pcm ?? null,
       sampleRate: clip?.sampleRate ?? 44100,
       spectrogram: clip?.spectrogram ?? null,
       contour: clip?.contour ?? null,
       durationSeconds: player?.duration ?? 0,
-      playheadFraction: player && player.duration > 0 ? player.currentPositionSeconds() / player.duration : null,
+      playheadFraction: player && player.duration > 0 && position !== undefined ? position / player.duration : null,
       loopRegion: loopRegions[focus],
     });
     analysisEmpty.style.display = clip ? "none" : "grid";
@@ -841,6 +863,7 @@ export function mountApp(root: HTMLElement): void {
     saveBtn.disabled = !clip || savingReference || !!loads[focus];
     saveBtn.textContent = focus === "reference" ? "Save current reference" : "Save current attempt";
     refreshRegionControls();
+    refreshPairedControls();
     playBtn.textContent = playbackPreparation ? "Cancel playback" : player?.isPlaying ? "⏸ Pause" : "▶ Play";
   }
 
@@ -866,11 +889,87 @@ export function mountApp(root: HTMLElement): void {
   }
 
   function cancelPlaybackPreparation(): number {
+    stopPairedPlayback();
     playbackRequest++;
     playbackPreparation?.abort();
     playbackPreparation = null;
     playbackNote.textContent = "";
     return playbackRequest;
+  }
+
+  function refreshPairedControls(): void {
+    const active = pairedPreparation !== null || !!pairedPlayer?.isPlaying;
+    pairedPlayBtn.disabled = !active && (!clips.reference || !clips.attempt || !!loads.reference || !!loads.attempt || !!recordingRequest);
+    pairedPlayBtn.textContent = active ? "Stop listening" : "Play reference then attempt";
+    const help = !clips.reference || !clips.attempt ? "Load a reference and an attempt to listen to them together."
+      : loads.reference || loads.attempt || recordingRequest ? "Finish loading or recording before listening."
+      : "Listen once at normal speed, with a brief pause between clips. Uses each selected loop, or the full clip.";
+    if (pairedHelp.textContent !== help) pairedHelp.textContent = help;
+    const phase = pairedPlayer?.isPlaying ? pairedPlayer.state.phase : "idle";
+    const message = phase === "reference" ? "Listening to the reference."
+      : phase === "gap" ? "Brief pause before your attempt."
+      : phase === "attempt" ? "Listening to your attempt." : null;
+    if (message && pairedNote.textContent !== message) pairedNote.textContent = message;
+  }
+
+  function stopPairedPlayback(): void {
+    if (!pairedPreparation && !pairedPlayer?.isPlaying) return;
+    pairedPreparation?.abort();
+    pairedPreparation = null;
+    pairedPlayer?.stop();
+    cancelAnimationFrame(pairedRafHandle);
+    pairedNote.textContent = "Listening stopped.";
+    refreshPairedControls();
+  }
+
+  async function togglePairedPlayback(): Promise<void> {
+    if (pairedPreparation || pairedPlayer?.isPlaying) {
+      stopPairedPlayback();
+      renderAnalysis();
+      return;
+    }
+    const reference = clips.reference, attempt = clips.attempt;
+    if (!reference || !attempt || loads.reference || loads.attempt || recordingRequest) return;
+    cancelPlaybackPreparation();
+    players.reference?.pause();
+    players.attempt?.pause();
+    cancelAnimationFrame(rafHandle);
+    const controller = new AbortController();
+    pairedPreparation = controller;
+    pairedNote.textContent = "Preparing to listen…";
+    renderAnalysis();
+    const current = (): boolean => pairedPreparation === controller && !controller.signal.aborted &&
+      clips.reference === reference && clips.attempt === attempt;
+    try {
+      const context = getPlaybackContext();
+      await abortable(context.resume(), controller.signal);
+      if (!current()) return;
+      pairedPlayer ??= new PairedPlayer(context);
+      const passage = (role: FocusRole, clip: ClipState) => {
+        const region = loopRegions[role];
+        // Recover whole-sample boundaries from the normalized display markers.
+        // Rounding avoids extending an exact selected sample by floating-point
+        // error after samples -> fraction -> samples conversion.
+        return { pcm: clip.pcm, sampleRate: clip.sampleRate,
+          region: region ? { start: Math.round(region.start * clip.pcm.length), end: Math.round(region.end * clip.pcm.length) } : undefined };
+      };
+      pairedPlayer.play(passage("reference", reference), passage("attempt", attempt), () => {
+        cancelAnimationFrame(pairedRafHandle);
+        pairedNote.textContent = "Finished listening to the reference and your attempt.";
+        renderAnalysis();
+      });
+      pairedPreparation = null;
+      const tickPair = (): void => {
+        renderAnalysis();
+        if (pairedPlayer?.isPlaying) pairedRafHandle = requestAnimationFrame(tickPair);
+      };
+      tickPair();
+    } catch (error) {
+      if (current()) pairedNote.textContent = `Listening unavailable: ${(error as Error).message} Your clips are kept; try again.`;
+    } finally {
+      if (pairedPreparation === controller) pairedPreparation = null;
+      renderAnalysis();
+    }
   }
 
   async function togglePlayback(): Promise<void> {

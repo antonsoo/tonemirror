@@ -553,6 +553,10 @@ canvas.tm-canvas {
 }
 
 .tm-recorded-practice h3 { margin: 0; font-size: 1rem; }
+
+.tm-paired-listening { margin: 0 0 1rem; }
+.tm-paired-listening .tm-hint { margin: .5rem 0 0; }
+.tm-paired-listening [role="status"]:empty { display: none; }
 .tm-recorded-tones { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
 .tm-recorded-tone { flex: 1 1 120px; text-align: left; }
 .tm-recording-credit { max-width: 80ch; margin-bottom: 0; }
