@@ -9,6 +9,13 @@ that clip; the waveform label and comparison source names identify what is
 actually loaded. Failed extraction can be retried without selecting the file
 again.
 
+File imports also capture **Channel for next file** when selection begins.
+Changing that control during decoding affects later imports. A single-channel
+choice copies that channel's decoded samples; it never falls back to another
+voice. The loaded label names the original channel and count. A near-total
+cancellation or missing-channel error keeps the previous clip. Playback, saving
+and WAV export use the selected mono audio. [Native file-channel evidence](../studies/file-channels/README.md).
+
 The saved-reference library lists metadata through an IndexedDB key cursor.
 Only **Use** reads the chosen recording's PCM, with the same ownership and
 cancellation rules as a file import. The first opening after upgrading the
@@ -50,7 +57,7 @@ reference remains an explicit, named action. The theme preference is remembered.
 | Encoded file | 25 MiB before reading |
 | Clip duration | 60 seconds; imports are rejected rather than truncated |
 | Sample rate | Integer 8,000-96,000 Hz |
-| Channels | 1-8; downmixed by channel average |
+| Channels | 1-8; average all or explicitly select one before loading; near-total cancellation refuses the mix |
 | Decoded PCM | At most 64 MiB across channels before making a mono copy |
 | Sample values | The complete clip must contain finite PCM values before analysis/commit; invalid replacements keep the previous clip |
 | Microphone | Stops and releases capture at 60 seconds of received samples; the clip name records the limit |

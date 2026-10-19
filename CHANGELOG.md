@@ -4,6 +4,12 @@ All notable changes to this project are documented in this file.
 
 ## Unreleased
 
+- Choose an individual file channel before loading, including separate
+  reference/attempt imports from the same stereo file. Keep the channel and
+  destination chosen when the load began. Refuse near-total mix cancellation
+  and unavailable channels without replacing the previous clip. Selected mono
+  samples survive playback, saving and WAV export. [Native recorded-speech controls](studies/file-channels/README.md).
+
 - Preserve unvoiced gaps in both raw and aligned contour strokes. Carry
   discontinuities through the core API's bounded sampling and do not average
   separate attempt runs together when they align to one reference instant.

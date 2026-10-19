@@ -85,7 +85,7 @@ describe("bounded audio decoding", () => {
     audio.numberOfChannels = 2;
     audio.getChannelData.mockReturnValueOnce(new Float32Array([1, -1, 0])).mockReturnValueOnce(new Float32Array([0, 1, 1]));
     context.close.mockRejectedValue(new Error("already closed"));
-    await expect(loadAudioFile(file)).resolves.toEqual({ pcm: new Float32Array([0.5, 0, 0.5]), sampleRate: 22050, synthetic: false });
+    await expect(loadAudioFile(file)).resolves.toEqual({ pcm: new Float32Array([0.5, 0, 0.5]), sampleRate: 22050, sourceChannels: 2, synthetic: false });
   });
 
   it("accepts the exact duration boundary and rejects one excess sample", () => {

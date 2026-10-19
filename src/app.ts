@@ -7,7 +7,8 @@ import { prepareSlowPlayback } from "./worker/slowPlaybackClient.js";
 import { abortable } from "./audio/cancellation.js";
 import { MicRecorder } from "./audio/recorder.js";
 import { loadAudioFile } from "./audio/fileLoader.js";
-import { MAX_AUDIO_SECONDS, validateAudio } from "./audio/limits.js";
+import type { AudioChannelChoice } from "./audio/channels.js";
+import { MAX_AUDIO_CHANNELS, MAX_AUDIO_SECONDS, validateAudio } from "./audio/limits.js";
 import { ClipPlayer } from "./audio/playback.js";
 import { PairedPlayer } from "./audio/pairedPlayback.js";
 import { regionSamples } from "./audio/region.js";
@@ -136,6 +137,17 @@ export function mountApp(root: HTMLElement): void {
     onchange: (e) => void handleFileSelected(e),
   });
   const loadBtn = el("label", { class: "tm-file-label" }, ["Load file…", fileInput]);
+  const channelSelect = el("select", { class: "tm-select", "aria-label": "Channel for next file" }, [
+    el("option", { value: "mix" }, ["Mix all channels"]),
+    ...Array.from({ length: MAX_AUDIO_CHANNELS }, (_, index) => el("option", { value: String(index) }, [`Channel ${index + 1}`])),
+  ]);
+  const fileChannels = el("details", { class: "tm-file-channels" }, [
+    el("summary", {}, ["File channels"]),
+    el("div", { class: "tm-controls-row" }, [
+      el("label", { class: "tm-hint" }, ["Channel for next file ", channelSelect]),
+      el("p", { class: "tm-hint" }, ["Choose a single channel for recordings with separate voices."]),
+    ]),
+  ]);
   const cancelBtn = el("button", { class: "tm-btn", hidden: true, onclick: () => cancelWork() }, ["Cancel work"]);
   const retryAudioBtn = el("button", { class: "tm-btn", hidden: true, onclick: () => void reanalyzeAll(true) }, ["Retry audio analysis"]);
   const algoSelect = el(
@@ -208,6 +220,7 @@ export function mountApp(root: HTMLElement): void {
     targetTabs,
     el("div", { class: "tm-controls-row" }, [recordBtn, loadBtn, algoSelect, cancelBtn, retryAudioBtn, statusLine]),
     el("p", { class: "tm-hint" }, ["Short phrases work best: up to 60 seconds and 25 MiB per file. Recordings stop at 60 seconds. A failed replacement keeps your last loaded clip."]),
+    fileChannels,
     el("div", { class: "tm-recorded-practice" }, [
       el("h3", {}, ["Practice with a recorded voice"]),
       el("p", { class: "tm-hint" }, ["Choose mā, má, mǎ or mà as your reference. Listen, then switch to Your attempt and record the same syllable."]),
@@ -693,13 +706,15 @@ export function mountApp(root: HTMLElement): void {
     const file = (e.target as HTMLInputElement).files?.[0];
     if (!file) return;
     (e.target as HTMLInputElement).value = "";
+    const channel: AudioChannelChoice = channelSelect.value === "mix" ? "mix" : Number(channelSelect.value);
     const request = beginLoad(focus);
     report(request, `Decoding ${file.name}…`);
     try {
-      const { pcm, sampleRate, synthetic, credit } = await loadAudioFile(file, request.controller.signal);
-      await loadClip(request.role, { pcm, sampleRate, label: file.name, synthetic, credit }, request);
+      const { pcm, sampleRate, synthetic, credit, sourceChannels } = await loadAudioFile(file, request.controller.signal, channel);
+      const label = channel === "mix" ? file.name : `${file.name} (channel ${channel + 1} of ${sourceChannels})`;
+      await loadClip(request.role, { pcm, sampleRate, label, synthetic, credit }, request);
     } catch (err) {
-      report(request, `Could not decode ${file.name}: ${(err as Error).message}`);
+      report(request, `Could not load ${file.name}: ${(err as Error).message}${clips[request.role] ? " Previous clip kept." : ""}`);
     } finally {
       finishLoad(request);
     }

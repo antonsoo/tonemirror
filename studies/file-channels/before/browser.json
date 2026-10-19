@@ -1,0 +1,109 @@
+{
+  "mode": "before",
+  "workflows": [
+    {
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "width": 1440,
+      "offline": true,
+      "mono": {
+        "sha256": "c94d13a85dcb1eac5dac2d708bbb60b84092d9c0687e5940d0c82bb88524c73a",
+        "samples": 250948,
+        "rate": 44100,
+        "rms": 0.035730068759773116,
+        "voicedFrames": 227,
+        "medianF0": 130.43603724875186
+      },
+      "phase": {
+        "sha256": "d62178c824094a1ef8a54369a2f42e0fb048ec7300a473cee4b2f89b4f2fb44c",
+        "samples": 250948,
+        "rate": 44100,
+        "rms": 0,
+        "voicedFrames": 0,
+        "medianF0": null
+      },
+      "selected": [],
+      "separate": null,
+      "errors": [],
+      "external": []
+    },
+    {
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "width": 375,
+      "offline": true,
+      "mono": {
+        "sha256": "c94d13a85dcb1eac5dac2d708bbb60b84092d9c0687e5940d0c82bb88524c73a",
+        "samples": 250948,
+        "rate": 44100,
+        "rms": 0.035730068759773116,
+        "voicedFrames": 227,
+        "medianF0": 130.43603724875186
+      },
+      "phase": {
+        "sha256": "d62178c824094a1ef8a54369a2f42e0fb048ec7300a473cee4b2f89b4f2fb44c",
+        "samples": 250948,
+        "rate": 44100,
+        "rms": 0,
+        "voicedFrames": 0,
+        "medianF0": null
+      },
+      "selected": [],
+      "separate": null,
+      "errors": [],
+      "external": []
+    },
+    {
+      "engine": "firefox",
+      "version": "155.0",
+      "width": 1440,
+      "offline": true,
+      "mono": {
+        "sha256": "c94d13a85dcb1eac5dac2d708bbb60b84092d9c0687e5940d0c82bb88524c73a",
+        "samples": 250948,
+        "rate": 44100,
+        "rms": 0.035730068759773116,
+        "voicedFrames": 227,
+        "medianF0": 130.43603724875186
+      },
+      "phase": {
+        "sha256": "d62178c824094a1ef8a54369a2f42e0fb048ec7300a473cee4b2f89b4f2fb44c",
+        "samples": 250948,
+        "rate": 44100,
+        "rms": 0,
+        "voicedFrames": 0,
+        "medianF0": null
+      },
+      "selected": [],
+      "separate": null,
+      "errors": [],
+      "external": []
+    },
+    {
+      "engine": "firefox",
+      "version": "155.0",
+      "width": 375,
+      "offline": true,
+      "mono": {
+        "sha256": "c94d13a85dcb1eac5dac2d708bbb60b84092d9c0687e5940d0c82bb88524c73a",
+        "samples": 250948,
+        "rate": 44100,
+        "rms": 0.035730068759773116,
+        "voicedFrames": 227,
+        "medianF0": 130.43603724875186
+      },
+      "phase": {
+        "sha256": "d62178c824094a1ef8a54369a2f42e0fb048ec7300a473cee4b2f89b4f2fb44c",
+        "samples": 250948,
+        "rate": 44100,
+        "rms": 0,
+        "voicedFrames": 0,
+        "medianF0": null
+      },
+      "selected": [],
+      "separate": null,
+      "errors": [],
+      "external": []
+    }
+  ]
+}

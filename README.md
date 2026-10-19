@@ -24,6 +24,13 @@ own attempt. The original recording is bundled for offline use; its author,
 license and selected source interval travel with saved clips and WAV exports.
 [Recording, walkthrough and limits](studies/recorded-practice/README.md).
 
+**Choose a file channel when a recording has separate voices.** Open **File channels**,
+select a channel, and load it into either audio tab. Load the same stereo file
+into both tabs to compare its channels. A mix that nearly cancels the voice now
+keeps your previous clip and explains how to choose a channel. In a native
+recorded-speech control, channel selection recovers all 227 voiced frames that
+the old mix erased. [Recorded source, recovery and exact WAV exports](studies/file-channels/README.md).
+
 The source checkout and live demo reject **non-finite decoded audio samples** before a new
 clip is committed. A damaged file or saved recording leaves the previous clip
 available for comparison, playback, saving and export. Real silence remains
@@ -85,7 +92,8 @@ just click one of the built-in reference chips and record yourself.
   alter them. Synthetic references carry a filename and WAV metadata marker,
   retained when reopened in ToneMirror. [Download and reload verification](studies/wav-export/README.md).
 - **Audio in:** record with the microphone, or load a wav/mp3/ogg/m4a file
-  (anything the browser's `decodeAudioData` supports). Recordings you save
+  (anything the browser's `decodeAudioData` supports). Mix all channels or choose
+  a single channel before loading; explicit channel labels follow the clip. Recordings you save
   are kept in IndexedDB so you can record a teacher or native speaker once
   and practice against it indefinitely.
 - **Pitch tracking**, implemented from scratch in TypeScript, running in a

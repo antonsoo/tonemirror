@@ -1,0 +1,80 @@
+{
+  "source": {
+    "file": "src/references/FourMandarinTones.ogg",
+    "title": "FourMandarinTones.ogg",
+    "creator": "Wolfdog",
+    "recorded": "2019-10-26",
+    "sourcePage": "https://commons.wikimedia.org/w/index.php?title=File:FourMandarinTones.ogg&oldid=1277043205",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a3/FourMandarinTones.ogg",
+    "sourceUpload": "2019-10-26T11:46:00Z",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "bytes": 77622,
+    "sha1": "db81e637a2f1908eacb7244845fbf9162e410ec8",
+    "sha256": "e857c893662741a9c99e527a1c54df52eb386fb83df021cb9a42faee77af9049",
+    "synthetic": false,
+    "language": "Mandarin Chinese",
+    "scope": "The source identifies the syllable ma spoken in four tones. It does not establish the speaker's native language or provide phonetic or F0 ground truth."
+  },
+  "producer": "ffmpeg version 8.0 Copyright (c) 2000-2025 the FFmpeg developers",
+  "derivedControls": true,
+  "changes": "Channel averaging, polarity inversion, excerpting, padding and channel routing only; no generated voice or pitch shifting.",
+  "derivativeLicense": "CC BY-SA 4.0",
+  "controls": [
+    {
+      "file": "mono.wav",
+      "description": "Original recording averaged to one channel",
+      "input": "FourMandarinTones.ogg",
+      "filter": "pan=mono|c0=0.5*c0+0.5*c1",
+      "bytes": 1003884,
+      "sha256": "9dbd20ef2b8f4e803694f1952db86b75afcd92afb67b0fcf8400fed0072df82c",
+      "sample_rate": "44100",
+      "channels": 1,
+      "duration": "5.690431"
+    },
+    {
+      "file": "opposite-phase.wav",
+      "description": "Same recorded voice on both channels with opposite polarity",
+      "input": "mono.wav",
+      "filter": "pan=stereo|c0=c0|c1=-1*c0",
+      "bytes": 2007676,
+      "sha256": "3d3577c8563aa70b8fccf1d212e125b49f8c52436ec2558eef72fbf7085acc0e",
+      "sample_rate": "44100",
+      "channels": 2,
+      "duration": "5.690431"
+    },
+    {
+      "file": "separate-tones.wav",
+      "description": "Recorded tone 1 on channel 1 and recorded tone 4 on channel 2, padded to one second",
+      "input": "mono.wav",
+      "filter": "[0:a]asplit[a][b];[a]atrim=start=0.4:end=1.25,asetpts=PTS-STARTPTS,apad=whole_dur=1[left];[b]atrim=start=4.35:end=5.3,asetpts=PTS-STARTPTS,apad=whole_dur=1[right];[left][right]amerge=inputs=2[out]",
+      "bytes": 352892,
+      "sha256": "a925fef27148b96e5f7920d34eb0abdc9a7d98cba9a1bcb4eba91263c08d0777",
+      "sample_rate": "44100",
+      "channels": 2,
+      "duration": "1.000000"
+    },
+    {
+      "file": "left.wav",
+      "description": "Independent FFmpeg channel 1 split",
+      "input": "separate-tones.wav",
+      "filter": "pan=mono|c0=c0",
+      "bytes": 176492,
+      "sha256": "b397c13a2dfed8fad58edc7c9500f6079c5070769783da58e5ffd074fadd076a",
+      "sample_rate": "44100",
+      "channels": 1,
+      "duration": "1.000000"
+    },
+    {
+      "file": "right.wav",
+      "description": "Independent FFmpeg channel 2 split",
+      "input": "separate-tones.wav",
+      "filter": "pan=mono|c0=c1",
+      "bytes": 176492,
+      "sha256": "1c473bd94a25b47cbd3aa7bf4bd37612881aa9abb73c0263a69e34cf7f01e3d9",
+      "sample_rate": "44100",
+      "channels": 1,
+      "duration": "1.000000"
+    }
+  ]
+}

@@ -3,6 +3,7 @@ import { abortable, cancelled } from "./cancellation.js";
 import { MAX_FILE_BYTES, validateAudio } from "./limits.js";
 import { WAV_SOFTWARE, WAV_SYNTHETIC_COMMENT } from "./wav.js";
 import { CREDIT_COMMENT_PREFIX, parseAudioCredit, type AudioCredit } from "./credit.js";
+import { selectAudioChannel, type AudioChannelChoice } from "./channels.js";
 
 function readFile(file: File, signal?: AbortSignal): Promise<ArrayBuffer> {
   return new Promise((resolve, reject) => {
@@ -79,7 +80,7 @@ function checkPcmWav(buffer: ArrayBuffer): { synthetic: boolean; credit?: AudioC
 
 /** Decode a user-supplied audio file (wav/mp3/ogg/m4a - whatever the
  * browser's decodeAudioData supports) to mono PCM at the AudioContext's sample rate. */
-export async function loadAudioFile(file: File, signal?: AbortSignal): Promise<RecordedAudio & { synthetic: boolean; credit?: AudioCredit }> {
+export async function loadAudioFile(file: File, signal?: AbortSignal, channel: AudioChannelChoice = "mix"): Promise<RecordedAudio & { synthetic: boolean; credit?: AudioCredit; sourceChannels: number }> {
   if (file.size > MAX_FILE_BYTES) throw new Error("Audio files must be 25 MiB or smaller. Choose a short phrase.");
   if (signal?.aborted) throw cancelled();
   const arrayBuffer = await readFile(file, signal);
@@ -91,17 +92,9 @@ export async function loadAudioFile(file: File, signal?: AbortSignal): Promise<R
     if (signal?.aborted) throw cancelled();
     const sampleRate = audioBuffer.sampleRate;
     validateAudio(audioBuffer.length, sampleRate, audioBuffer.numberOfChannels);
-    if (audioBuffer.numberOfChannels === 1) {
-      return { pcm: audioBuffer.getChannelData(0).slice(), sampleRate, ...metadata };
-    }
-    // Downmix to mono by averaging channels.
-    const length = audioBuffer.length;
-    const mono = new Float32Array(length);
-    for (let ch = 0; ch < audioBuffer.numberOfChannels; ch++) {
-      const data = audioBuffer.getChannelData(ch);
-      for (let i = 0; i < length; i++) mono[i]! += data[i]! / audioBuffer.numberOfChannels;
-    }
-    return { pcm: mono, sampleRate, ...metadata };
+    const pcm = selectAudioChannel(audioBuffer, channel);
+    if (signal?.aborted) throw cancelled();
+    return { pcm, sampleRate, sourceChannels: audioBuffer.numberOfChannels, ...metadata };
   } finally {
     // A close failure must not erase a successful decode or the original error.
     try { await context.close(); } catch { /* No capture or playback nodes exist here. */ }

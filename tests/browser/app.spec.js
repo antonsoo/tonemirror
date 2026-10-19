@@ -124,18 +124,22 @@ async function delayFirstDecode(page) {
   });
 }
 
-test("switching tabs during decode keeps the file in its original slot", async ({ page }) => {
+test("changing the channel and tab during decode preserves both original choices", async ({ page }) => {
   await delayFirstDecode(page);
   await page.goto("./");
+  await page.locator(".tm-file-channels summary").click();
+  const channel = page.getByLabel("Channel for next file");
+  await channel.selectOption("0");
   await input(page).setInputFiles(fixture);
   await expect.poll(() => page.evaluate(() => typeof window.releaseDecode)).toBe("function");
+  await channel.selectOption("7");
   await tab(page, "Reference").click();
   await page.evaluate(() => window.releaseDecode());
-  await expect(status(page)).toContainText("mandarin-tone2-attempt-late-rise.wav —");
+  await expect(status(page)).toContainText("mandarin-tone2-attempt-late-rise.wav (channel 1 of 1) —");
   await expect(label(page)).toHaveText("Reference: no audio loaded");
   await expect(play(page)).toBeDisabled();
   await tab(page, "Your attempt").click();
-  await expect(label(page)).toContainText("Your attempt: mandarin-tone2-attempt-late-rise.wav");
+  await expect(label(page)).toContainText("Your attempt: mandarin-tone2-attempt-late-rise.wav (channel 1 of 1)");
   await expect(play(page)).toBeEnabled();
 });
 
@@ -151,6 +155,37 @@ test("an older decode cannot replace the newer file or its status", async ({ pag
   await expect.poll(() => page.evaluate(() => window.closedDecoders)).toBe(2);
   await expect(label(page)).toContainText("Your attempt: mandarin-tone2-reference.wav");
   await expect(status(page)).toContainText("mandarin-tone2-reference.wav —");
+});
+
+test("opposite-polarity stereo keeps the previous clip and can be loaded by channel", async ({ page }) => {
+  // A native, IEEE-float WAV control. Both channels contain the same synthetic
+  // 220 Hz tone, at opposite polarity. The real browser decoder is not mocked.
+  const rate = 22050, frames = rate, bytes = Buffer.alloc(44 + frames * 8);
+  bytes.write("RIFF", 0); bytes.writeUInt32LE(bytes.length - 8, 4); bytes.write("WAVEfmt ", 8);
+  bytes.writeUInt32LE(16, 16); bytes.writeUInt16LE(3, 20); bytes.writeUInt16LE(2, 22);
+  bytes.writeUInt32LE(rate, 24); bytes.writeUInt32LE(rate * 8, 28);
+  bytes.writeUInt16LE(8, 32); bytes.writeUInt16LE(32, 34);
+  bytes.write("data", 36); bytes.writeUInt32LE(frames * 8, 40);
+  for (let i = 0; i < frames; i++) {
+    const value = 0.2 * Math.sin(2 * Math.PI * 220 * i / rate);
+    bytes.writeFloatLE(value, 44 + i * 8); bytes.writeFloatLE(-value, 48 + i * 8);
+  }
+  const stereo = { name: "opposite.wav", mimeType: "audio/wav", buffer: bytes };
+  await page.goto("./");
+  await loadAttempt(page);
+  await input(page).setInputFiles(stereo);
+  await expect(status(page)).toContainText("cancels almost all sound");
+  await expect(status(page)).toContainText("Previous clip kept");
+  await expect(label(page)).toContainText("mandarin-tone2-attempt-late-rise.wav");
+  await expect(play(page)).toBeEnabled();
+  await page.locator(".tm-file-channels summary").click();
+  const channel = page.getByLabel("Channel for next file");
+  await channel.selectOption("0"); await input(page).setInputFiles(stereo);
+  await expect(label(page)).toContainText("opposite.wav (channel 1 of 2)");
+  await expect(status(page)).toContainText("opposite.wav (channel 1 of 2) — 1.00s");
+  await channel.selectOption("7"); await input(page).setInputFiles(stereo);
+  await expect(status(page)).toContainText("This file has 2 channels");
+  await expect(label(page)).toContainText("opposite.wav (channel 1 of 2)");
 });
 
 test("worker failure is visible and changing the algorithm starts a working replacement", async ({ page }) => {
@@ -263,7 +298,7 @@ test("new analysis clears stale tone classification and comparison", async ({ pa
   await expect(page.locator(".tm-score")).toHaveText(/^\d+$/);
   await tab(page, "Your attempt").click();
   await input(page).setInputFiles({ name: "bad.wav", mimeType: "audio/wav", buffer: Buffer.from([0, 1, 2]) });
-  await expect(status(page)).toContainText("Could not decode bad.wav");
+  await expect(status(page)).toContainText("Could not load bad.wav");
   await expect(label(page)).toContainText("mandarin-tone2-attempt-late-rise.wav");
 });
 
