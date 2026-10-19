@@ -1,0 +1,179 @@
+{
+  "implementationCommit": "9c7d90bd83aaa7bc23c38d45ced891915ff4a34b",
+  "cleanNode": "24.21.0",
+  "cleanNpm": "11.19.0",
+  "workingNode": "26.7.0",
+  "checks": {
+    "cleanInstallPackages": 140,
+    "auditVulnerabilities": 0,
+    "unitTests": 231,
+    "testFiles": 23,
+    "locales": [
+      "default",
+      "de_DE.UTF-8"
+    ],
+    "productionBrowserPassed": 112,
+    "productionBrowserSkipped": 4,
+    "offlineRecordedChannelWorkflows": 4,
+    "nativeWavDownloads": 16,
+    "savedReloadAndPlaybackMatch": true,
+    "studyReportsIdenticalAcrossCleanBuild": true,
+    "lint": true,
+    "typecheck": true,
+    "build": true,
+    "sourceIntegrityControls": 7
+  },
+  "staticFiles": 30,
+  "files": [
+    {
+      "path": "assets/fraunces-italic-latin-BEbM7Mn6.woff2",
+      "bytes": 42372,
+      "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+    },
+    {
+      "path": "assets/fraunces-italic-latin-ext-C5JMU4hr.woff2",
+      "bytes": 37620,
+      "sha256": "bbf614d45de67a99e638b753611329b2cb8b5b6d8da53b2aee0267fe75cfc5c8"
+    },
+    {
+      "path": "assets/fraunces-italic-vietnamese-B7PmIdA3.woff2",
+      "bytes": 12048,
+      "sha256": "b2383049df5de759100887e80450ef360e502d5b0454954fab2dcd6b322944f5"
+    },
+    {
+      "path": "assets/fraunces-latin-DihXLNYH.woff2",
+      "bytes": 67304,
+      "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+    },
+    {
+      "path": "assets/fraunces-latin-ext-CJcjJNj7.woff2",
+      "bytes": 59388,
+      "sha256": "a2930b27d13a228bd9ab6a49269b5f800237892ad560cb9dd7fab01b1620f88e"
+    },
+    {
+      "path": "assets/fraunces-vietnamese-Czevyj-6.woff2",
+      "bytes": 19700,
+      "sha256": "f18853f63a870ebef013e30e789d8d544f102e4acd94988e57c223d9c796ddf4"
+    },
+    {
+      "path": "assets/ibm-plex-mono-400-cyrillic-BSMlKf0J.woff2",
+      "bytes": 8356,
+      "sha256": "7635422bd10ddbbcb0e0caa1154b928298f5c8319b8c00b30978d4395f4783ce"
+    },
+    {
+      "path": "assets/ibm-plex-mono-400-cyrillic-ext-xuaO2J-f.woff2",
+      "bytes": 6912,
+      "sha256": "f8c22ec1804bd6966b70f43ac7c327025645b4c09597117fca2a5a6c750106fe"
+    },
+    {
+      "path": "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2",
+      "bytes": 14708,
+      "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+    },
+    {
+      "path": "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2",
+      "bytes": 13348,
+      "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
+    },
+    {
+      "path": "assets/ibm-plex-mono-400-vietnamese-BulugwFq.woff2",
+      "bytes": 5868,
+      "sha256": "62632b6375305e70ddcafdd895218e6ae41a184fcd280a69c739460604ca00a9"
+    },
+    {
+      "path": "assets/ibm-plex-mono-500-cyrillic-Bq9vWWag.woff2",
+      "bytes": 8460,
+      "sha256": "1d89462e86cb8e87e7e9d6f6635605bd7c3081baca6caaecee84916bf7b60edc"
+    },
+    {
+      "path": "assets/ibm-plex-mono-500-cyrillic-ext-BqneJy0T.woff2",
+      "bytes": 6972,
+      "sha256": "3febe5c7f22e4b07b4552738673c3dbe8bced2dc5f48b866edf7ccd9552d109a"
+    },
+    {
+      "path": "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2",
+      "bytes": 14888,
+      "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+    },
+    {
+      "path": "assets/ibm-plex-mono-500-latin-ext-CAhNIIs5.woff2",
+      "bytes": 13432,
+      "sha256": "6bb06407c97584b0867a959e05e8874693bfeb8c317de190811c51598f2d99ea"
+    },
+    {
+      "path": "assets/ibm-plex-mono-500-vietnamese-DZ4AoWbu.woff2",
+      "bytes": 6040,
+      "sha256": "781633d95de88040fb77141d1e65d928c87c0144691fbc74da5a64d137a7e910"
+    },
+    {
+      "path": "assets/index-CYhuM6MB.js",
+      "bytes": 273177,
+      "sha256": "07f3949ca2dd1fcbab591b7b7e1bdfd747f08566086dc5dc43af3373a047dc29"
+    },
+    {
+      "path": "assets/index-CYhuM6MB.js.map",
+      "bytes": 333249,
+      "sha256": "72b2416c803a01a4f30bead4002364cb16eb9f935678431d8454ad1f53b31fa3"
+    },
+    {
+      "path": "assets/index-Dn4cIMkN.css",
+      "bytes": 24273,
+      "sha256": "9c4b249466e8f9c70263444690a8b40aceeac6c0cf5a331d0f54d34e7a76b4ab"
+    },
+    {
+      "path": "assets/inter-cyrillic-DqGufNeO.woff2",
+      "bytes": 18748,
+      "sha256": "71d5ee93cc1e9f1d520a3a8b66456de18c7879d8df09d57fcd2eaff75fef0075"
+    },
+    {
+      "path": "assets/inter-cyrillic-ext-BOeWTOD4.woff2",
+      "bytes": 25960,
+      "sha256": "ca157063339ac4ad418f214f3abfed119b0798ab4d377386ce5c9e5a7a435ebd"
+    },
+    {
+      "path": "assets/inter-greek-CkhJZR-_.woff2",
+      "bytes": 18996,
+      "sha256": "1be3448e292fbf05ffe176fe1e43f135013d50b1e7d324ad1a558f623d3bb6f6"
+    },
+    {
+      "path": "assets/inter-greek-ext-DlzME5K_.woff2",
+      "bytes": 11232,
+      "sha256": "6e9e020a25f9b56d418f2c085b1d3c09725a4da23fe693a5b463064606732190"
+    },
+    {
+      "path": "assets/inter-latin-Dx4kXJAl.woff2",
+      "bytes": 48256,
+      "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+    },
+    {
+      "path": "assets/inter-latin-ext-DO1Apj_S.woff2",
+      "bytes": 85068,
+      "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
+    },
+    {
+      "path": "assets/inter-vietnamese-CBcvBZtf.woff2",
+      "bytes": 10252,
+      "sha256": "5c66f9e07e90c6d4ac4922cc68d60de26c17b1858e677fb5e603fce3952b3ff2"
+    },
+    {
+      "path": "assets/pitchWorker-C8TDQfQo.js.map",
+      "bytes": 63570,
+      "sha256": "f4d09fc2e683bf24c80fb2e6bf6a5589faf1b5d17600f1fcd69a6267977b4d20"
+    },
+    {
+      "path": "assets/slowPlaybackWorker-CjVF_WT-.js.map",
+      "bytes": 112240,
+      "sha256": "606ac6478f6330d0be3ea438416ca295e1d40739ad656ec41b8393b10e2a615a"
+    },
+    {
+      "path": "audio-licenses.txt",
+      "bytes": 3262,
+      "sha256": "5fac2b782635cc55572e1254efd1c8cefda87f457470aac9ae2134988dfd2680"
+    },
+    {
+      "path": "index.html",
+      "bytes": 2361,
+      "sha256": "d52d9a3de8e42306b4a61710806d07d2d740b985bb09d0738c8ea9a1c6bcb47c"
+    }
+  ]
+}
