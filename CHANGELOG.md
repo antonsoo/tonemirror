@@ -4,6 +4,12 @@ All notable changes to this project are documented in this file.
 
 ## Unreleased
 
+- Preserve unvoiced gaps in both raw and aligned contour strokes. Carry
+  discontinuities through the core API's bounded sampling and do not average
+  separate attempt runs together when they align to one reference instant.
+  Keep pitch extraction, DTW paths, costs, shape scores and feedback unchanged.
+  [Recorded-speech and native canvas evidence](studies/contour-gaps/README.md).
+
 - Listen to the reference followed by the attempt with a brief pause, using
   each selected passage once at normal speed. Schedule both on the same
   audio clock. Stop, file replacement, tab changes and individual playback

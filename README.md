@@ -36,6 +36,16 @@ _Recorded má (rising) as reference; recorded mà (falling) loaded as the attemp
 Both are excerpts from the credited source recording, not a learner study.
 The plot includes pitch-tracker errors; the shape score is not a pronunciation grade._
 
+**Unvoiced gaps stay visible after alignment.** Comparing the full recorded
+four-tone sequence with itself used to draw the attempt's pitch through pauses,
+including a 0.71-second interval where the detector supplied no voiced frames.
+The corrected source preserves gaps from either clip through alignment and drawing.
+A fresh replay of 580 recordings removes 17,170 unsupported connections while
+keeping every alignment path, cost, score and feedback message unchanged.
+[Native canvas traces, recordings and before/after views](studies/contour-gaps/README.md)
+record the correction. These measurements concern the plotted observations,
+not pronunciation accuracy or an improved pitch detector.
+
 The source checkout and live demo support **first imports and recordings after the page has
 loaded, even if the connection then disappears**. Pitch analysis, matching,
 algorithm changes and saved-reference use need no additional code downloads.

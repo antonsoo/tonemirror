@@ -3,6 +3,8 @@ import type { PitchContour } from "./types.js";
 export interface DtwSample {
   time: number;
   semitone: number;
+  /** No observed voiced continuity from the preceding sample. */
+  breakBefore?: true;
 }
 
 export interface DtwStep {
@@ -30,15 +32,21 @@ export interface AlignmentResult {
   feedback: string[];
 }
 
-/** Pull out only the voiced (time, semitone) samples a contour has, in order. */
+/** Keep voiced samples in order, retaining discontinuities for drawing. */
 export function toDtwSamples(contour: PitchContour): DtwSample[] {
   const out: DtwSample[] = [];
-  for (const p of contour.points) {
+  let previousIndex = -1;
+  const hop = Math.max(1, Math.round(contour.hopSeconds * contour.sampleRate)) / contour.sampleRate;
+  for (let i = 0; i < contour.points.length; i++) {
+    const p = contour.points[i]!;
     // A semitone that is not a number has no distance to anything: one of them would turn the
     // whole alignment's cost, and the score, into NaN.
     if (p.voiced && p.semitone !== null && Number.isFinite(p.semitone) && Number.isFinite(p.time) && p.time >= 0) {
       if (out.length && p.time <= out[out.length - 1]!.time) throw new Error("Voiced contour times must be strictly increasing.");
-      out.push({ time: p.time, semitone: p.semitone });
+      const previous = out[out.length - 1];
+      const gap = previous && (i !== previousIndex + 1 || p.time - previous.time > hop * 1.5);
+      out.push({ time: p.time, semitone: p.semitone, ...(gap ? { breakBefore: true as const } : {}) });
+      previousIndex = i;
     }
   }
   return out;
@@ -58,7 +66,17 @@ function thinned(samples: DtwSample[]): DtwSample[] {
   if (samples.length <= MAX_ALIGNED_SAMPLES) return samples;
   const out: DtwSample[] = [];
   // Keep both endpoints: the final pitch movement must not vanish at the limit.
-  for (let i = 0; i < MAX_ALIGNED_SAMPLES; i++) out.push(samples[Math.floor(i * (samples.length - 1) / (MAX_ALIGNED_SAMPLES - 1))]!);
+  let previous = -1;
+  for (let i = 0; i < MAX_ALIGNED_SAMPLES; i++) {
+    const index = Math.floor(i * (samples.length - 1) / (MAX_ALIGNED_SAMPLES - 1));
+    // A selected endpoint may itself be contiguous while the discarded samples
+    // include a gap. Thinning must not turn that missing observation into ink.
+    let gap = false;
+    for (let j = previous + 1; j <= index; j++) gap ||= samples[j]!.breakBefore === true;
+    const sample = samples[index]!;
+    out.push(gap ? { ...sample, breakBefore: true } : sample);
+    previous = index;
+  }
   return out;
 }
 
@@ -250,9 +268,12 @@ export interface WarpedPoint {
   t: number;
   referenceSemitone: number;
   /** Attempt semitone value(s) mapped onto this reference instant, averaged
-   * over every DTW step that aligns to it (a reference frame can align to
-   * several attempt frames when the attempt runs slower there). */
+   * over a continuous run of DTW steps that aligns to it (a reference frame
+   * can align to several attempt frames when the attempt runs slower there).
+   * Distinct voiced runs can produce separate points at the same t. */
   attemptSemitone: number;
+  /** Start a new stroke when either source has a gap. */
+  breakBefore?: true;
 }
 
 /** Time-warps the attempt onto the reference's timeline using the DTW path,
@@ -263,22 +284,38 @@ export function warpedOverlay(result: AlignmentResult): WarpedPoint[] {
   const t0 = reference[0]!.time;
   const span = reference[reference.length - 1]!.time - t0 || 1;
 
-  const sums = new Float64Array(reference.length);
-  const counts = new Float64Array(reference.length);
-  for (const step of path) {
-    sums[step.refIndex]! += attempt[step.attemptIndex]!.semitone;
-    counts[step.refIndex]! += 1;
-  }
-
   const out: WarpedPoint[] = [];
-  for (let i = 0; i < reference.length; i++) {
-    if (counts[i] === 0) continue;
+  let refIndex = -1;
+  let previousAttempt = -1;
+  let sum = 0;
+  let count = 0;
+  let breakBefore = false;
+  const flush = (): void => {
+    if (!count) return;
     out.push({
-      t: (reference[i]!.time - t0) / span,
-      referenceSemitone: reference[i]!.semitone,
-      attemptSemitone: sums[i]! / counts[i]!,
+      t: (reference[refIndex]!.time - t0) / span,
+      referenceSemitone: reference[refIndex]!.semitone,
+      attemptSemitone: sum / count,
+      ...(breakBefore ? { breakBefore: true as const } : {}),
     });
+  };
+  for (const step of path) {
+    const refChanged = step.refIndex !== refIndex;
+    const gap =
+      (refChanged && reference[step.refIndex]!.breakBefore === true) ||
+      (step.attemptIndex !== previousAttempt && attempt[step.attemptIndex]!.breakBefore === true);
+    if (refChanged || gap) {
+      flush();
+      refIndex = step.refIndex;
+      sum = 0;
+      count = 0;
+      breakBefore = gap && out.length > 0;
+    }
+    sum += attempt[step.attemptIndex]!.semitone;
+    count++;
+    previousAttempt = step.attemptIndex;
   }
+  flush();
   return out;
 }
 

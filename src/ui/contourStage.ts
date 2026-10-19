@@ -1,7 +1,7 @@
 import { observeCanvasSize } from "./canvas.js";
 import { cssVar } from "./theme.js";
 import type { PitchContour } from "../core/types.js";
-import type { WarpedPoint } from "../core/dtw.js";
+import { toDtwSamples, type WarpedPoint } from "../core/dtw.js";
 
 export interface ContourStageData {
   reference: PitchContour | null;
@@ -118,20 +118,17 @@ function contourToPoints(
   plot: PlotArea,
   halfRange: number,
 ): { x: number; y: number; confidence: number }[] {
-  const voiced = contour.points.filter((p) => p.voiced && p.semitone !== null);
+  const voiced = toDtwSamples(contour);
   if (voiced.length === 0) return [];
+  const confidence = new Map(contour.points.map((p) => [p.time, p.confidence]));
   const t0 = voiced[0]!.time;
   const span = voiced[voiced.length - 1]!.time - t0 || 1;
   const segments: { x: number; y: number; confidence: number }[][] = [[]];
-  let lastTime = t0;
   for (const p of voiced) {
-    // Break the stroke where there's a real time gap (an unvoiced stretch),
-    // so we don't draw a straight line across silence.
-    if (p.time - lastTime > contour.hopSeconds * 3) segments.push([]);
-    lastTime = p.time;
+    if (p.breakBefore) segments.push([]);
     const x = plot.left + ((p.time - t0) / span) * (plot.right - plot.left);
-    const y = semitoneToY(p.semitone!, plot, halfRange);
-    segments[segments.length - 1]!.push({ x, y, confidence: p.confidence });
+    const y = semitoneToY(p.semitone, plot, halfRange);
+    segments[segments.length - 1]!.push({ x, y, confidence: confidence.get(p.time) ?? 0 });
   }
   return segments.flatMap((seg, i) => (i === 0 ? seg : [{ x: NaN, y: NaN, confidence: 0 }, ...seg]));
 }
@@ -189,12 +186,15 @@ export function createContourStage(canvas: HTMLCanvasElement): {
     }
 
     if (latest.warped && latest.warped.length > 1) {
-      const pts = latest.warped.map((w) => ({
-        x: plot.left + w.t * (plot.right - plot.left),
-        y: semitoneToY(w.attemptSemitone, plot, halfRange),
-        confidence: 0.85,
-      }));
-      drawInkStroke(ctx, pts, attColor, attGlow);
+      const pts = latest.warped.flatMap((w) => {
+        const point = {
+          x: plot.left + w.t * (plot.right - plot.left),
+          y: semitoneToY(w.attemptSemitone, plot, halfRange),
+          confidence: 0.85,
+        };
+        return w.breakBefore ? [{ x: NaN, y: NaN, confidence: 0 }, point] : [point];
+      });
+      drawSegmented(ctx, pts, attColor, attGlow);
     } else if (latest.attempt) {
       const pts = contourToPoints(latest.attempt, plot, halfRange);
       drawSegmented(ctx, pts, attColor, attGlow);

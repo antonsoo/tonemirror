@@ -1,0 +1,181 @@
+{
+  "count": 16,
+  "results": [
+    {
+      "id": "chromium-1440-four-mandarin-tones-yin",
+      "pcmIdentical": true,
+      "contourIdentical": true,
+      "alignmentAndScoreIdentical": true,
+      "unvoicedIntervals": 14,
+      "beforeReferenceConnections": 7,
+      "afterReferenceConnections": 0,
+      "beforeAlignedAttemptConnections": 14,
+      "afterAlignedAttemptConnections": 0
+    },
+    {
+      "id": "chromium-1440-four-mandarin-tones-mpm",
+      "pcmIdentical": true,
+      "contourIdentical": true,
+      "alignmentAndScoreIdentical": true,
+      "unvoicedIntervals": 16,
+      "beforeReferenceConnections": 6,
+      "afterReferenceConnections": 0,
+      "beforeAlignedAttemptConnections": 16,
+      "afterAlignedAttemptConnections": 0
+    },
+    {
+      "id": "chromium-1440-ptdb-f01-sa1-yin",
+      "pcmIdentical": true,
+      "contourIdentical": true,
+      "alignmentAndScoreIdentical": true,
+      "unvoicedIntervals": 13,
+      "beforeReferenceConnections": 3,
+      "afterReferenceConnections": 0,
+      "beforeAlignedAttemptConnections": 13,
+      "afterAlignedAttemptConnections": 0
+    },
+    {
+      "id": "chromium-1440-ptdb-f01-sa1-mpm",
+      "pcmIdentical": true,
+      "contourIdentical": true,
+      "alignmentAndScoreIdentical": true,
+      "unvoicedIntervals": 9,
+      "beforeReferenceConnections": 2,
+      "afterReferenceConnections": 0,
+      "beforeAlignedAttemptConnections": 9,
+      "afterAlignedAttemptConnections": 0
+    },
+    {
+      "id": "chromium-375-four-mandarin-tones-yin",
+      "pcmIdentical": true,
+      "contourIdentical": true,
+      "alignmentAndScoreIdentical": true,
+      "unvoicedIntervals": 14,
+      "beforeReferenceConnections": 7,
+      "afterReferenceConnections": 0,
+      "beforeAlignedAttemptConnections": 14,
+      "afterAlignedAttemptConnections": 0
+    },
+    {
+      "id": "chromium-375-four-mandarin-tones-mpm",
+      "pcmIdentical": true,
+      "contourIdentical": true,
+      "alignmentAndScoreIdentical": true,
+      "unvoicedIntervals": 16,
+      "beforeReferenceConnections": 6,
+      "afterReferenceConnections": 0,
+      "beforeAlignedAttemptConnections": 16,
+      "afterAlignedAttemptConnections": 0
+    },
+    {
+      "id": "chromium-375-ptdb-f01-sa1-yin",
+      "pcmIdentical": true,
+      "contourIdentical": true,
+      "alignmentAndScoreIdentical": true,
+      "unvoicedIntervals": 13,
+      "beforeReferenceConnections": 3,
+      "afterReferenceConnections": 0,
+      "beforeAlignedAttemptConnections": 13,
+      "afterAlignedAttemptConnections": 0
+    },
+    {
+      "id": "chromium-375-ptdb-f01-sa1-mpm",
+      "pcmIdentical": true,
+      "contourIdentical": true,
+      "alignmentAndScoreIdentical": true,
+      "unvoicedIntervals": 9,
+      "beforeReferenceConnections": 2,
+      "afterReferenceConnections": 0,
+      "beforeAlignedAttemptConnections": 9,
+      "afterAlignedAttemptConnections": 0
+    },
+    {
+      "id": "firefox-1440-four-mandarin-tones-yin",
+      "pcmIdentical": true,
+      "contourIdentical": true,
+      "alignmentAndScoreIdentical": true,
+      "unvoicedIntervals": 14,
+      "beforeReferenceConnections": 7,
+      "afterReferenceConnections": 0,
+      "beforeAlignedAttemptConnections": 14,
+      "afterAlignedAttemptConnections": 0
+    },
+    {
+      "id": "firefox-1440-four-mandarin-tones-mpm",
+      "pcmIdentical": true,
+      "contourIdentical": true,
+      "alignmentAndScoreIdentical": true,
+      "unvoicedIntervals": 16,
+      "beforeReferenceConnections": 6,
+      "afterReferenceConnections": 0,
+      "beforeAlignedAttemptConnections": 16,
+      "afterAlignedAttemptConnections": 0
+    },
+    {
+      "id": "firefox-1440-ptdb-f01-sa1-yin",
+      "pcmIdentical": true,
+      "contourIdentical": true,
+      "alignmentAndScoreIdentical": true,
+      "unvoicedIntervals": 13,
+      "beforeReferenceConnections": 3,
+      "afterReferenceConnections": 0,
+      "beforeAlignedAttemptConnections": 13,
+      "afterAlignedAttemptConnections": 0
+    },
+    {
+      "id": "firefox-1440-ptdb-f01-sa1-mpm",
+      "pcmIdentical": true,
+      "contourIdentical": true,
+      "alignmentAndScoreIdentical": true,
+      "unvoicedIntervals": 9,
+      "beforeReferenceConnections": 2,
+      "afterReferenceConnections": 0,
+      "beforeAlignedAttemptConnections": 9,
+      "afterAlignedAttemptConnections": 0
+    },
+    {
+      "id": "firefox-375-four-mandarin-tones-yin",
+      "pcmIdentical": true,
+      "contourIdentical": true,
+      "alignmentAndScoreIdentical": true,
+      "unvoicedIntervals": 14,
+      "beforeReferenceConnections": 7,
+      "afterReferenceConnections": 0,
+      "beforeAlignedAttemptConnections": 14,
+      "afterAlignedAttemptConnections": 0
+    },
+    {
+      "id": "firefox-375-four-mandarin-tones-mpm",
+      "pcmIdentical": true,
+      "contourIdentical": true,
+      "alignmentAndScoreIdentical": true,
+      "unvoicedIntervals": 16,
+      "beforeReferenceConnections": 6,
+      "afterReferenceConnections": 0,
+      "beforeAlignedAttemptConnections": 16,
+      "afterAlignedAttemptConnections": 0
+    },
+    {
+      "id": "firefox-375-ptdb-f01-sa1-yin",
+      "pcmIdentical": true,
+      "contourIdentical": true,
+      "alignmentAndScoreIdentical": true,
+      "unvoicedIntervals": 13,
+      "beforeReferenceConnections": 3,
+      "afterReferenceConnections": 0,
+      "beforeAlignedAttemptConnections": 13,
+      "afterAlignedAttemptConnections": 0
+    },
+    {
+      "id": "firefox-375-ptdb-f01-sa1-mpm",
+      "pcmIdentical": true,
+      "contourIdentical": true,
+      "alignmentAndScoreIdentical": true,
+      "unvoicedIntervals": 9,
+      "beforeReferenceConnections": 2,
+      "afterReferenceConnections": 0,
+      "beforeAlignedAttemptConnections": 9,
+      "afterAlignedAttemptConnections": 0
+    }
+  ]
+}

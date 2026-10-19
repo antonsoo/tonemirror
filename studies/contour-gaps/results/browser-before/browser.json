@@ -1,0 +1,2058 @@
+{
+  "mode": "baseline",
+  "node": "v26.7.0",
+  "captures": [
+    {
+      "id": "chromium-1440-four-mandarin-tones-yin",
+      "engine": "chromium",
+      "browser": "153.0.8010.12",
+      "width": 1440,
+      "fixture": {
+        "id": "four-mandarin-tones",
+        "path": "src/references/FourMandarinTones.ogg",
+        "credit": "Wolfdog (2019), CC BY-SA 4.0; see src/references/recorded.ts",
+        "bytes": 77622,
+        "sha256": "e857c893662741a9c99e527a1c54df52eb386fb83df021cb9a42faee77af9049"
+      },
+      "algorithm": "yin",
+      "nativeSampleRate": 44100,
+      "decodedSamples": 250948,
+      "pcmSha256": "11f1aa71bfc0751e85a9017a4d6263dd1f7add40e8df762f06f969525447e761",
+      "contourSha256": "08294d02ac45bfcac82bb82503a3ee511ac8b94338763d0a9704914ecf27ff19",
+      "alignmentSha256": "c0dc1fcae9c61e5414fcd24f0a2c211de079c9bd6729be5f43c9ba36c53a8e9b",
+      "score": "100",
+      "gaps": [
+        {
+          "lastVoicedTime": 1.1466666666666667,
+          "nextVoicedTime": 1.8066666666666666,
+          "omittedFrames": 65,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 1.9266666666666667,
+          "nextVoicedTime": 1.9466666666666668,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 2.5166666666666666,
+          "nextVoicedTime": 3.216666666666667,
+          "omittedFrames": 69,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.486666666666667,
+          "nextVoicedTime": 3.506666666666667,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.5366666666666666,
+          "nextVoicedTime": 3.5966666666666667,
+          "omittedFrames": 5,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.5966666666666667,
+          "nextVoicedTime": 3.6166666666666667,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.6366666666666667,
+          "nextVoicedTime": 3.6666666666666665,
+          "omittedFrames": 2,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.6766666666666667,
+          "nextVoicedTime": 3.716666666666667,
+          "omittedFrames": 3,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.7266666666666666,
+          "nextVoicedTime": 3.7466666666666666,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.9166666666666665,
+          "nextVoicedTime": 4.626666666666667,
+          "omittedFrames": 70,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.866666666666666,
+          "nextVoicedTime": 4.886666666666667,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.8966666666666665,
+          "nextVoicedTime": 4.916666666666667,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.946666666666666,
+          "nextVoicedTime": 4.986666666666666,
+          "omittedFrames": 3,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.986666666666666,
+          "nextVoicedTime": 5.076666666666667,
+          "omittedFrames": 8,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        }
+      ],
+      "illegalReferenceConnections": 7,
+      "illegalAttemptConnections": 14,
+      "nativeTrace": {
+        "path": "chromium-1440-four-mandarin-tones-yin.json.gz",
+        "bytes": 5973,
+        "sha256": "c116289bb9b77406a0c208ca11d4ebbb3021c109c8826bda83933b70d9e9fecb"
+      },
+      "errors": [],
+      "policyViolations": [],
+      "networkAfterDisconnect": [],
+      "externalRequests": [],
+      "overflow": 0
+    },
+    {
+      "id": "chromium-1440-four-mandarin-tones-mpm",
+      "engine": "chromium",
+      "browser": "153.0.8010.12",
+      "width": 1440,
+      "fixture": {
+        "id": "four-mandarin-tones",
+        "path": "src/references/FourMandarinTones.ogg",
+        "credit": "Wolfdog (2019), CC BY-SA 4.0; see src/references/recorded.ts",
+        "bytes": 77622,
+        "sha256": "e857c893662741a9c99e527a1c54df52eb386fb83df021cb9a42faee77af9049"
+      },
+      "algorithm": "mpm",
+      "nativeSampleRate": 44100,
+      "decodedSamples": 250948,
+      "pcmSha256": "11f1aa71bfc0751e85a9017a4d6263dd1f7add40e8df762f06f969525447e761",
+      "contourSha256": "fe551a44c7dd1a27176c0b0d057ad07d375cb47268e119c3b9c62374b8d842cd",
+      "alignmentSha256": "6f4fe6f553feffd04e72c6809f53e3d4b7445acc9130ca0b81ab7d3dcbf86a1a",
+      "score": "100",
+      "gaps": [
+        {
+          "lastVoicedTime": 1.1466666666666667,
+          "nextVoicedTime": 1.8066666666666666,
+          "omittedFrames": 65,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 1.9166666666666667,
+          "nextVoicedTime": 1.9366666666666668,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 2.256666666666667,
+          "nextVoicedTime": 2.276666666666667,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 2.506666666666667,
+          "nextVoicedTime": 3.1866666666666665,
+          "omittedFrames": 67,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.1866666666666665,
+          "nextVoicedTime": 3.2066666666666666,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.3966666666666665,
+          "nextVoicedTime": 3.4166666666666665,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.4266666666666667,
+          "nextVoicedTime": 3.466666666666667,
+          "omittedFrames": 3,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.4766666666666666,
+          "nextVoicedTime": 3.5366666666666666,
+          "omittedFrames": 5,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.5366666666666666,
+          "nextVoicedTime": 3.5966666666666667,
+          "omittedFrames": 5,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.5966666666666667,
+          "nextVoicedTime": 3.6266666666666665,
+          "omittedFrames": 2,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.6266666666666665,
+          "nextVoicedTime": 3.6666666666666665,
+          "omittedFrames": 3,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.6666666666666665,
+          "nextVoicedTime": 3.716666666666667,
+          "omittedFrames": 4,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.716666666666667,
+          "nextVoicedTime": 3.7466666666666666,
+          "omittedFrames": 2,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.9166666666666665,
+          "nextVoicedTime": 4.626666666666667,
+          "omittedFrames": 70,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.826666666666667,
+          "nextVoicedTime": 4.886666666666667,
+          "omittedFrames": 5,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.8966666666666665,
+          "nextVoicedTime": 4.9366666666666665,
+          "omittedFrames": 3,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        }
+      ],
+      "illegalReferenceConnections": 6,
+      "illegalAttemptConnections": 16,
+      "nativeTrace": {
+        "path": "chromium-1440-four-mandarin-tones-mpm.json.gz",
+        "bytes": 5515,
+        "sha256": "c52e3367cc17fd2245a6645fe667367341fd327b4113942bba35ff66aab00c1f"
+      },
+      "errors": [],
+      "policyViolations": [],
+      "networkAfterDisconnect": [],
+      "externalRequests": [],
+      "overflow": 0
+    },
+    {
+      "id": "chromium-1440-ptdb-f01-sa1-yin",
+      "engine": "chromium",
+      "browser": "153.0.8010.12",
+      "width": 1440,
+      "fixture": {
+        "id": "ptdb-f01-sa1",
+        "path": "studies/real-voice/cache/ptdb/F01/mic_F01_sa1.wav",
+        "credit": "PTDB-TUG F01/sa1, Open Database License; see studies/real-voice/manifest.json",
+        "bytes": 767084,
+        "sha256": "4d06714d605aafdd4f5923170b182b25879c42fe9f5275e7c076134f4f490fc1"
+      },
+      "algorithm": "yin",
+      "nativeSampleRate": 44100,
+      "decodedSamples": 352358,
+      "pcmSha256": "1c770fd3cd80c8f8f1728c86a856ac0b8a20e421de3c8d479c809d078b9a210e",
+      "contourSha256": "8d5eef2c6555d9dc06310817f3749da483cb58855cc638144d75caa96b9f8607",
+      "alignmentSha256": "b45cd3f156141ad30fb64278309cc678f0a005ba4670c4b7ceaec6eed32eec68",
+      "score": "100",
+      "gaps": [
+        {
+          "lastVoicedTime": 3.1566666666666667,
+          "nextVoicedTime": 3.2266666666666666,
+          "omittedFrames": 6,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.7466666666666666,
+          "nextVoicedTime": 3.7866666666666666,
+          "omittedFrames": 3,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.7866666666666666,
+          "nextVoicedTime": 3.8266666666666667,
+          "omittedFrames": 3,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.966666666666667,
+          "nextVoicedTime": 3.9966666666666666,
+          "omittedFrames": 2,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.006666666666667,
+          "nextVoicedTime": 4.216666666666667,
+          "omittedFrames": 20,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.366666666666666,
+          "nextVoicedTime": 4.416666666666667,
+          "omittedFrames": 4,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.416666666666667,
+          "nextVoicedTime": 4.556666666666667,
+          "omittedFrames": 13,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.6866666666666665,
+          "nextVoicedTime": 4.706666666666667,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.866666666666666,
+          "nextVoicedTime": 4.976666666666667,
+          "omittedFrames": 10,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 5.256666666666667,
+          "nextVoicedTime": 5.426666666666667,
+          "omittedFrames": 16,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 5.586666666666667,
+          "nextVoicedTime": 5.636666666666667,
+          "omittedFrames": 4,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 5.636666666666667,
+          "nextVoicedTime": 5.656666666666666,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 5.756666666666667,
+          "nextVoicedTime": 5.976666666666667,
+          "omittedFrames": 21,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        }
+      ],
+      "illegalReferenceConnections": 3,
+      "illegalAttemptConnections": 13,
+      "nativeTrace": {
+        "path": "chromium-1440-ptdb-f01-sa1-yin.json.gz",
+        "bytes": 6008,
+        "sha256": "be87620f4ae71b59e43138c9a48dedddb60b8cdfb3450d8159cac553fc6f7508"
+      },
+      "errors": [],
+      "policyViolations": [],
+      "networkAfterDisconnect": [],
+      "externalRequests": [],
+      "overflow": 0
+    },
+    {
+      "id": "chromium-1440-ptdb-f01-sa1-mpm",
+      "engine": "chromium",
+      "browser": "153.0.8010.12",
+      "width": 1440,
+      "fixture": {
+        "id": "ptdb-f01-sa1",
+        "path": "studies/real-voice/cache/ptdb/F01/mic_F01_sa1.wav",
+        "credit": "PTDB-TUG F01/sa1, Open Database License; see studies/real-voice/manifest.json",
+        "bytes": 767084,
+        "sha256": "4d06714d605aafdd4f5923170b182b25879c42fe9f5275e7c076134f4f490fc1"
+      },
+      "algorithm": "mpm",
+      "nativeSampleRate": 44100,
+      "decodedSamples": 352358,
+      "pcmSha256": "1c770fd3cd80c8f8f1728c86a856ac0b8a20e421de3c8d479c809d078b9a210e",
+      "contourSha256": "214a60607a2101f49043e1ac388854ded04447ef9972456730b0207ffed3c55a",
+      "alignmentSha256": "453c517f4834fb861237c2c298ceb515a9c8ccede4fff75857369ecc09425aee",
+      "score": "100",
+      "gaps": [
+        {
+          "lastVoicedTime": 3.716666666666667,
+          "nextVoicedTime": 3.736666666666667,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.7466666666666666,
+          "nextVoicedTime": 3.816666666666667,
+          "omittedFrames": 6,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.966666666666667,
+          "nextVoicedTime": 4.216666666666667,
+          "omittedFrames": 24,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.366666666666666,
+          "nextVoicedTime": 4.546666666666667,
+          "omittedFrames": 17,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.6866666666666665,
+          "nextVoicedTime": 4.706666666666667,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.866666666666666,
+          "nextVoicedTime": 4.966666666666667,
+          "omittedFrames": 9,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 5.256666666666667,
+          "nextVoicedTime": 5.406666666666666,
+          "omittedFrames": 14,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 5.566666666666666,
+          "nextVoicedTime": 5.636666666666667,
+          "omittedFrames": 6,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 5.746666666666667,
+          "nextVoicedTime": 5.976666666666667,
+          "omittedFrames": 22,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        }
+      ],
+      "illegalReferenceConnections": 2,
+      "illegalAttemptConnections": 9,
+      "nativeTrace": {
+        "path": "chromium-1440-ptdb-f01-sa1-mpm.json.gz",
+        "bytes": 5979,
+        "sha256": "03f3d7829b5de63a59d51e065ade6ac1f74c5482570df8d4a95ba91302a0cbe7"
+      },
+      "errors": [],
+      "policyViolations": [],
+      "networkAfterDisconnect": [],
+      "externalRequests": [],
+      "overflow": 0
+    },
+    {
+      "id": "chromium-375-four-mandarin-tones-yin",
+      "engine": "chromium",
+      "browser": "153.0.8010.12",
+      "width": 375,
+      "fixture": {
+        "id": "four-mandarin-tones",
+        "path": "src/references/FourMandarinTones.ogg",
+        "credit": "Wolfdog (2019), CC BY-SA 4.0; see src/references/recorded.ts",
+        "bytes": 77622,
+        "sha256": "e857c893662741a9c99e527a1c54df52eb386fb83df021cb9a42faee77af9049"
+      },
+      "algorithm": "yin",
+      "nativeSampleRate": 44100,
+      "decodedSamples": 250948,
+      "pcmSha256": "11f1aa71bfc0751e85a9017a4d6263dd1f7add40e8df762f06f969525447e761",
+      "contourSha256": "08294d02ac45bfcac82bb82503a3ee511ac8b94338763d0a9704914ecf27ff19",
+      "alignmentSha256": "c0dc1fcae9c61e5414fcd24f0a2c211de079c9bd6729be5f43c9ba36c53a8e9b",
+      "score": "100",
+      "gaps": [
+        {
+          "lastVoicedTime": 1.1466666666666667,
+          "nextVoicedTime": 1.8066666666666666,
+          "omittedFrames": 65,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 1.9266666666666667,
+          "nextVoicedTime": 1.9466666666666668,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 2.5166666666666666,
+          "nextVoicedTime": 3.216666666666667,
+          "omittedFrames": 69,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.486666666666667,
+          "nextVoicedTime": 3.506666666666667,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.5366666666666666,
+          "nextVoicedTime": 3.5966666666666667,
+          "omittedFrames": 5,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.5966666666666667,
+          "nextVoicedTime": 3.6166666666666667,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.6366666666666667,
+          "nextVoicedTime": 3.6666666666666665,
+          "omittedFrames": 2,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.6766666666666667,
+          "nextVoicedTime": 3.716666666666667,
+          "omittedFrames": 3,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.7266666666666666,
+          "nextVoicedTime": 3.7466666666666666,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.9166666666666665,
+          "nextVoicedTime": 4.626666666666667,
+          "omittedFrames": 70,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.866666666666666,
+          "nextVoicedTime": 4.886666666666667,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.8966666666666665,
+          "nextVoicedTime": 4.916666666666667,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.946666666666666,
+          "nextVoicedTime": 4.986666666666666,
+          "omittedFrames": 3,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.986666666666666,
+          "nextVoicedTime": 5.076666666666667,
+          "omittedFrames": 8,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        }
+      ],
+      "illegalReferenceConnections": 7,
+      "illegalAttemptConnections": 14,
+      "nativeTrace": {
+        "path": "chromium-375-four-mandarin-tones-yin.json.gz",
+        "bytes": 5827,
+        "sha256": "d05a7f9e0372fe6d31f06e96c137d567a2342b79ab17d6116dcc689a5c464f5d"
+      },
+      "errors": [],
+      "policyViolations": [],
+      "networkAfterDisconnect": [],
+      "externalRequests": [],
+      "overflow": 0
+    },
+    {
+      "id": "chromium-375-four-mandarin-tones-mpm",
+      "engine": "chromium",
+      "browser": "153.0.8010.12",
+      "width": 375,
+      "fixture": {
+        "id": "four-mandarin-tones",
+        "path": "src/references/FourMandarinTones.ogg",
+        "credit": "Wolfdog (2019), CC BY-SA 4.0; see src/references/recorded.ts",
+        "bytes": 77622,
+        "sha256": "e857c893662741a9c99e527a1c54df52eb386fb83df021cb9a42faee77af9049"
+      },
+      "algorithm": "mpm",
+      "nativeSampleRate": 44100,
+      "decodedSamples": 250948,
+      "pcmSha256": "11f1aa71bfc0751e85a9017a4d6263dd1f7add40e8df762f06f969525447e761",
+      "contourSha256": "fe551a44c7dd1a27176c0b0d057ad07d375cb47268e119c3b9c62374b8d842cd",
+      "alignmentSha256": "6f4fe6f553feffd04e72c6809f53e3d4b7445acc9130ca0b81ab7d3dcbf86a1a",
+      "score": "100",
+      "gaps": [
+        {
+          "lastVoicedTime": 1.1466666666666667,
+          "nextVoicedTime": 1.8066666666666666,
+          "omittedFrames": 65,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 1.9166666666666667,
+          "nextVoicedTime": 1.9366666666666668,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 2.256666666666667,
+          "nextVoicedTime": 2.276666666666667,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 2.506666666666667,
+          "nextVoicedTime": 3.1866666666666665,
+          "omittedFrames": 67,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.1866666666666665,
+          "nextVoicedTime": 3.2066666666666666,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.3966666666666665,
+          "nextVoicedTime": 3.4166666666666665,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.4266666666666667,
+          "nextVoicedTime": 3.466666666666667,
+          "omittedFrames": 3,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.4766666666666666,
+          "nextVoicedTime": 3.5366666666666666,
+          "omittedFrames": 5,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.5366666666666666,
+          "nextVoicedTime": 3.5966666666666667,
+          "omittedFrames": 5,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.5966666666666667,
+          "nextVoicedTime": 3.6266666666666665,
+          "omittedFrames": 2,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.6266666666666665,
+          "nextVoicedTime": 3.6666666666666665,
+          "omittedFrames": 3,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.6666666666666665,
+          "nextVoicedTime": 3.716666666666667,
+          "omittedFrames": 4,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.716666666666667,
+          "nextVoicedTime": 3.7466666666666666,
+          "omittedFrames": 2,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.9166666666666665,
+          "nextVoicedTime": 4.626666666666667,
+          "omittedFrames": 70,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.826666666666667,
+          "nextVoicedTime": 4.886666666666667,
+          "omittedFrames": 5,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.8966666666666665,
+          "nextVoicedTime": 4.9366666666666665,
+          "omittedFrames": 3,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        }
+      ],
+      "illegalReferenceConnections": 6,
+      "illegalAttemptConnections": 16,
+      "nativeTrace": {
+        "path": "chromium-375-four-mandarin-tones-mpm.json.gz",
+        "bytes": 5390,
+        "sha256": "1348dae2b75c58b0594606163f2e757b0d0fcc6413c59c7ff19fc00cb8e8bd0c"
+      },
+      "errors": [],
+      "policyViolations": [],
+      "networkAfterDisconnect": [],
+      "externalRequests": [],
+      "overflow": 0
+    },
+    {
+      "id": "chromium-375-ptdb-f01-sa1-yin",
+      "engine": "chromium",
+      "browser": "153.0.8010.12",
+      "width": 375,
+      "fixture": {
+        "id": "ptdb-f01-sa1",
+        "path": "studies/real-voice/cache/ptdb/F01/mic_F01_sa1.wav",
+        "credit": "PTDB-TUG F01/sa1, Open Database License; see studies/real-voice/manifest.json",
+        "bytes": 767084,
+        "sha256": "4d06714d605aafdd4f5923170b182b25879c42fe9f5275e7c076134f4f490fc1"
+      },
+      "algorithm": "yin",
+      "nativeSampleRate": 44100,
+      "decodedSamples": 352358,
+      "pcmSha256": "1c770fd3cd80c8f8f1728c86a856ac0b8a20e421de3c8d479c809d078b9a210e",
+      "contourSha256": "8d5eef2c6555d9dc06310817f3749da483cb58855cc638144d75caa96b9f8607",
+      "alignmentSha256": "b45cd3f156141ad30fb64278309cc678f0a005ba4670c4b7ceaec6eed32eec68",
+      "score": "100",
+      "gaps": [
+        {
+          "lastVoicedTime": 3.1566666666666667,
+          "nextVoicedTime": 3.2266666666666666,
+          "omittedFrames": 6,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.7466666666666666,
+          "nextVoicedTime": 3.7866666666666666,
+          "omittedFrames": 3,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.7866666666666666,
+          "nextVoicedTime": 3.8266666666666667,
+          "omittedFrames": 3,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.966666666666667,
+          "nextVoicedTime": 3.9966666666666666,
+          "omittedFrames": 2,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.006666666666667,
+          "nextVoicedTime": 4.216666666666667,
+          "omittedFrames": 20,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.366666666666666,
+          "nextVoicedTime": 4.416666666666667,
+          "omittedFrames": 4,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.416666666666667,
+          "nextVoicedTime": 4.556666666666667,
+          "omittedFrames": 13,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.6866666666666665,
+          "nextVoicedTime": 4.706666666666667,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.866666666666666,
+          "nextVoicedTime": 4.976666666666667,
+          "omittedFrames": 10,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 5.256666666666667,
+          "nextVoicedTime": 5.426666666666667,
+          "omittedFrames": 16,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 5.586666666666667,
+          "nextVoicedTime": 5.636666666666667,
+          "omittedFrames": 4,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 5.636666666666667,
+          "nextVoicedTime": 5.656666666666666,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 5.756666666666667,
+          "nextVoicedTime": 5.976666666666667,
+          "omittedFrames": 21,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        }
+      ],
+      "illegalReferenceConnections": 3,
+      "illegalAttemptConnections": 13,
+      "nativeTrace": {
+        "path": "chromium-375-ptdb-f01-sa1-yin.json.gz",
+        "bytes": 6001,
+        "sha256": "bc4fe7796c7ebb9a3a9833db9413af05f8404a9db284f7e8f60134a4bf339e37"
+      },
+      "errors": [],
+      "policyViolations": [],
+      "networkAfterDisconnect": [],
+      "externalRequests": [],
+      "overflow": 0
+    },
+    {
+      "id": "chromium-375-ptdb-f01-sa1-mpm",
+      "engine": "chromium",
+      "browser": "153.0.8010.12",
+      "width": 375,
+      "fixture": {
+        "id": "ptdb-f01-sa1",
+        "path": "studies/real-voice/cache/ptdb/F01/mic_F01_sa1.wav",
+        "credit": "PTDB-TUG F01/sa1, Open Database License; see studies/real-voice/manifest.json",
+        "bytes": 767084,
+        "sha256": "4d06714d605aafdd4f5923170b182b25879c42fe9f5275e7c076134f4f490fc1"
+      },
+      "algorithm": "mpm",
+      "nativeSampleRate": 44100,
+      "decodedSamples": 352358,
+      "pcmSha256": "1c770fd3cd80c8f8f1728c86a856ac0b8a20e421de3c8d479c809d078b9a210e",
+      "contourSha256": "214a60607a2101f49043e1ac388854ded04447ef9972456730b0207ffed3c55a",
+      "alignmentSha256": "453c517f4834fb861237c2c298ceb515a9c8ccede4fff75857369ecc09425aee",
+      "score": "100",
+      "gaps": [
+        {
+          "lastVoicedTime": 3.716666666666667,
+          "nextVoicedTime": 3.736666666666667,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.7466666666666666,
+          "nextVoicedTime": 3.816666666666667,
+          "omittedFrames": 6,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.966666666666667,
+          "nextVoicedTime": 4.216666666666667,
+          "omittedFrames": 24,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.366666666666666,
+          "nextVoicedTime": 4.546666666666667,
+          "omittedFrames": 17,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.6866666666666665,
+          "nextVoicedTime": 4.706666666666667,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.866666666666666,
+          "nextVoicedTime": 4.966666666666667,
+          "omittedFrames": 9,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 5.256666666666667,
+          "nextVoicedTime": 5.406666666666666,
+          "omittedFrames": 14,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 5.566666666666666,
+          "nextVoicedTime": 5.636666666666667,
+          "omittedFrames": 6,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 5.746666666666667,
+          "nextVoicedTime": 5.976666666666667,
+          "omittedFrames": 22,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        }
+      ],
+      "illegalReferenceConnections": 2,
+      "illegalAttemptConnections": 9,
+      "nativeTrace": {
+        "path": "chromium-375-ptdb-f01-sa1-mpm.json.gz",
+        "bytes": 5944,
+        "sha256": "751009b023642e79d0720afb30500cd59faeccce9306951b589170a284417969"
+      },
+      "errors": [],
+      "policyViolations": [],
+      "networkAfterDisconnect": [],
+      "externalRequests": [],
+      "overflow": 0
+    },
+    {
+      "id": "firefox-1440-four-mandarin-tones-yin",
+      "engine": "firefox",
+      "browser": "155.0",
+      "width": 1440,
+      "fixture": {
+        "id": "four-mandarin-tones",
+        "path": "src/references/FourMandarinTones.ogg",
+        "credit": "Wolfdog (2019), CC BY-SA 4.0; see src/references/recorded.ts",
+        "bytes": 77622,
+        "sha256": "e857c893662741a9c99e527a1c54df52eb386fb83df021cb9a42faee77af9049"
+      },
+      "algorithm": "yin",
+      "nativeSampleRate": 44100,
+      "decodedSamples": 250948,
+      "pcmSha256": "1c077124c33db9194191280865ea7fc21520f4108de18eda8d33a8319f201bae",
+      "contourSha256": "1d95064d2f856022246a2bd2c8c0d335f33789da1880db9c51ea7102a2974cd0",
+      "alignmentSha256": "c0dc1fcae9c61e5414fcd24f0a2c211de079c9bd6729be5f43c9ba36c53a8e9b",
+      "score": "100",
+      "gaps": [
+        {
+          "lastVoicedTime": 1.1466666666666667,
+          "nextVoicedTime": 1.8066666666666666,
+          "omittedFrames": 65,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 1.9266666666666667,
+          "nextVoicedTime": 1.9466666666666668,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 2.5166666666666666,
+          "nextVoicedTime": 3.216666666666667,
+          "omittedFrames": 69,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.486666666666667,
+          "nextVoicedTime": 3.506666666666667,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.5366666666666666,
+          "nextVoicedTime": 3.5966666666666667,
+          "omittedFrames": 5,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.5966666666666667,
+          "nextVoicedTime": 3.6166666666666667,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.6366666666666667,
+          "nextVoicedTime": 3.6666666666666665,
+          "omittedFrames": 2,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.6766666666666667,
+          "nextVoicedTime": 3.716666666666667,
+          "omittedFrames": 3,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.7266666666666666,
+          "nextVoicedTime": 3.7466666666666666,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.9166666666666665,
+          "nextVoicedTime": 4.626666666666667,
+          "omittedFrames": 70,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.866666666666666,
+          "nextVoicedTime": 4.886666666666667,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.8966666666666665,
+          "nextVoicedTime": 4.916666666666667,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.946666666666666,
+          "nextVoicedTime": 4.986666666666666,
+          "omittedFrames": 3,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.986666666666666,
+          "nextVoicedTime": 5.076666666666667,
+          "omittedFrames": 8,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        }
+      ],
+      "illegalReferenceConnections": 7,
+      "illegalAttemptConnections": 14,
+      "nativeTrace": {
+        "path": "firefox-1440-four-mandarin-tones-yin.json.gz",
+        "bytes": 5976,
+        "sha256": "9310111c9d634812b0a05c3454ed9f18769e9e1fe5df884d0ee72e242236589c"
+      },
+      "errors": [],
+      "policyViolations": [],
+      "networkAfterDisconnect": [],
+      "externalRequests": [],
+      "overflow": 0
+    },
+    {
+      "id": "firefox-1440-four-mandarin-tones-mpm",
+      "engine": "firefox",
+      "browser": "155.0",
+      "width": 1440,
+      "fixture": {
+        "id": "four-mandarin-tones",
+        "path": "src/references/FourMandarinTones.ogg",
+        "credit": "Wolfdog (2019), CC BY-SA 4.0; see src/references/recorded.ts",
+        "bytes": 77622,
+        "sha256": "e857c893662741a9c99e527a1c54df52eb386fb83df021cb9a42faee77af9049"
+      },
+      "algorithm": "mpm",
+      "nativeSampleRate": 44100,
+      "decodedSamples": 250948,
+      "pcmSha256": "1c077124c33db9194191280865ea7fc21520f4108de18eda8d33a8319f201bae",
+      "contourSha256": "58739d42863eb6cf5b68626989a55f367d95a27c4f2609f6ec349944aab2277c",
+      "alignmentSha256": "6f4fe6f553feffd04e72c6809f53e3d4b7445acc9130ca0b81ab7d3dcbf86a1a",
+      "score": "100",
+      "gaps": [
+        {
+          "lastVoicedTime": 1.1466666666666667,
+          "nextVoicedTime": 1.8066666666666666,
+          "omittedFrames": 65,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 1.9166666666666667,
+          "nextVoicedTime": 1.9366666666666668,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 2.256666666666667,
+          "nextVoicedTime": 2.276666666666667,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 2.506666666666667,
+          "nextVoicedTime": 3.1866666666666665,
+          "omittedFrames": 67,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.1866666666666665,
+          "nextVoicedTime": 3.2066666666666666,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.3966666666666665,
+          "nextVoicedTime": 3.4166666666666665,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.4266666666666667,
+          "nextVoicedTime": 3.466666666666667,
+          "omittedFrames": 3,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.4766666666666666,
+          "nextVoicedTime": 3.5366666666666666,
+          "omittedFrames": 5,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.5366666666666666,
+          "nextVoicedTime": 3.5966666666666667,
+          "omittedFrames": 5,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.5966666666666667,
+          "nextVoicedTime": 3.6266666666666665,
+          "omittedFrames": 2,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.6266666666666665,
+          "nextVoicedTime": 3.6666666666666665,
+          "omittedFrames": 3,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.6666666666666665,
+          "nextVoicedTime": 3.716666666666667,
+          "omittedFrames": 4,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.716666666666667,
+          "nextVoicedTime": 3.7466666666666666,
+          "omittedFrames": 2,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.9166666666666665,
+          "nextVoicedTime": 4.626666666666667,
+          "omittedFrames": 70,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.826666666666667,
+          "nextVoicedTime": 4.886666666666667,
+          "omittedFrames": 5,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.8966666666666665,
+          "nextVoicedTime": 4.9366666666666665,
+          "omittedFrames": 3,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        }
+      ],
+      "illegalReferenceConnections": 6,
+      "illegalAttemptConnections": 16,
+      "nativeTrace": {
+        "path": "firefox-1440-four-mandarin-tones-mpm.json.gz",
+        "bytes": 5507,
+        "sha256": "96ec186daf8be09c9e5dc4a4fca549600a0853d1d50b334dedfe62ede8d96cdf"
+      },
+      "errors": [],
+      "policyViolations": [],
+      "networkAfterDisconnect": [],
+      "externalRequests": [],
+      "overflow": 0
+    },
+    {
+      "id": "firefox-1440-ptdb-f01-sa1-yin",
+      "engine": "firefox",
+      "browser": "155.0",
+      "width": 1440,
+      "fixture": {
+        "id": "ptdb-f01-sa1",
+        "path": "studies/real-voice/cache/ptdb/F01/mic_F01_sa1.wav",
+        "credit": "PTDB-TUG F01/sa1, Open Database License; see studies/real-voice/manifest.json",
+        "bytes": 767084,
+        "sha256": "4d06714d605aafdd4f5923170b182b25879c42fe9f5275e7c076134f4f490fc1"
+      },
+      "algorithm": "yin",
+      "nativeSampleRate": 44100,
+      "decodedSamples": 352359,
+      "pcmSha256": "9c174581f9f86f12564790a6a74003cfcd94f138b20139fe17cadbbacb3b77a5",
+      "contourSha256": "329dadb81e7e6c55ff39cc5f772aaf805261a79743dcb731df5bee6be110a572",
+      "alignmentSha256": "b45cd3f156141ad30fb64278309cc678f0a005ba4670c4b7ceaec6eed32eec68",
+      "score": "100",
+      "gaps": [
+        {
+          "lastVoicedTime": 3.1566666666666667,
+          "nextVoicedTime": 3.2266666666666666,
+          "omittedFrames": 6,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.7466666666666666,
+          "nextVoicedTime": 3.7866666666666666,
+          "omittedFrames": 3,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.7866666666666666,
+          "nextVoicedTime": 3.8266666666666667,
+          "omittedFrames": 3,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.966666666666667,
+          "nextVoicedTime": 3.9966666666666666,
+          "omittedFrames": 2,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.006666666666667,
+          "nextVoicedTime": 4.216666666666667,
+          "omittedFrames": 20,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.366666666666666,
+          "nextVoicedTime": 4.416666666666667,
+          "omittedFrames": 4,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.416666666666667,
+          "nextVoicedTime": 4.556666666666667,
+          "omittedFrames": 13,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.6866666666666665,
+          "nextVoicedTime": 4.706666666666667,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.866666666666666,
+          "nextVoicedTime": 4.976666666666667,
+          "omittedFrames": 10,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 5.256666666666667,
+          "nextVoicedTime": 5.426666666666667,
+          "omittedFrames": 16,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 5.586666666666667,
+          "nextVoicedTime": 5.636666666666667,
+          "omittedFrames": 4,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 5.636666666666667,
+          "nextVoicedTime": 5.656666666666666,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 5.756666666666667,
+          "nextVoicedTime": 5.976666666666667,
+          "omittedFrames": 21,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        }
+      ],
+      "illegalReferenceConnections": 3,
+      "illegalAttemptConnections": 13,
+      "nativeTrace": {
+        "path": "firefox-1440-ptdb-f01-sa1-yin.json.gz",
+        "bytes": 6018,
+        "sha256": "3543d7885b24ab8352363aaaabfba3bef501a0cc764027781547906673fb93fd"
+      },
+      "errors": [],
+      "policyViolations": [],
+      "networkAfterDisconnect": [],
+      "externalRequests": [],
+      "overflow": 0
+    },
+    {
+      "id": "firefox-1440-ptdb-f01-sa1-mpm",
+      "engine": "firefox",
+      "browser": "155.0",
+      "width": 1440,
+      "fixture": {
+        "id": "ptdb-f01-sa1",
+        "path": "studies/real-voice/cache/ptdb/F01/mic_F01_sa1.wav",
+        "credit": "PTDB-TUG F01/sa1, Open Database License; see studies/real-voice/manifest.json",
+        "bytes": 767084,
+        "sha256": "4d06714d605aafdd4f5923170b182b25879c42fe9f5275e7c076134f4f490fc1"
+      },
+      "algorithm": "mpm",
+      "nativeSampleRate": 44100,
+      "decodedSamples": 352359,
+      "pcmSha256": "9c174581f9f86f12564790a6a74003cfcd94f138b20139fe17cadbbacb3b77a5",
+      "contourSha256": "95dc84881ef7052c1bfb9b0d2e290ecd2aeddb502d6b71ddf62cdf399616daa6",
+      "alignmentSha256": "453c517f4834fb861237c2c298ceb515a9c8ccede4fff75857369ecc09425aee",
+      "score": "100",
+      "gaps": [
+        {
+          "lastVoicedTime": 3.716666666666667,
+          "nextVoicedTime": 3.736666666666667,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.7466666666666666,
+          "nextVoicedTime": 3.816666666666667,
+          "omittedFrames": 6,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.966666666666667,
+          "nextVoicedTime": 4.216666666666667,
+          "omittedFrames": 24,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.366666666666666,
+          "nextVoicedTime": 4.546666666666667,
+          "omittedFrames": 17,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.6866666666666665,
+          "nextVoicedTime": 4.706666666666667,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.866666666666666,
+          "nextVoicedTime": 4.966666666666667,
+          "omittedFrames": 9,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 5.256666666666667,
+          "nextVoicedTime": 5.406666666666666,
+          "omittedFrames": 14,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 5.566666666666666,
+          "nextVoicedTime": 5.636666666666667,
+          "omittedFrames": 6,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 5.746666666666667,
+          "nextVoicedTime": 5.976666666666667,
+          "omittedFrames": 22,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        }
+      ],
+      "illegalReferenceConnections": 2,
+      "illegalAttemptConnections": 9,
+      "nativeTrace": {
+        "path": "firefox-1440-ptdb-f01-sa1-mpm.json.gz",
+        "bytes": 5971,
+        "sha256": "ca7614538910f65bd516f8ba3519fc109681cecddddf482e6ae2aa0133b0df42"
+      },
+      "errors": [],
+      "policyViolations": [],
+      "networkAfterDisconnect": [],
+      "externalRequests": [],
+      "overflow": 0
+    },
+    {
+      "id": "firefox-375-four-mandarin-tones-yin",
+      "engine": "firefox",
+      "browser": "155.0",
+      "width": 375,
+      "fixture": {
+        "id": "four-mandarin-tones",
+        "path": "src/references/FourMandarinTones.ogg",
+        "credit": "Wolfdog (2019), CC BY-SA 4.0; see src/references/recorded.ts",
+        "bytes": 77622,
+        "sha256": "e857c893662741a9c99e527a1c54df52eb386fb83df021cb9a42faee77af9049"
+      },
+      "algorithm": "yin",
+      "nativeSampleRate": 44100,
+      "decodedSamples": 250948,
+      "pcmSha256": "1c077124c33db9194191280865ea7fc21520f4108de18eda8d33a8319f201bae",
+      "contourSha256": "1d95064d2f856022246a2bd2c8c0d335f33789da1880db9c51ea7102a2974cd0",
+      "alignmentSha256": "c0dc1fcae9c61e5414fcd24f0a2c211de079c9bd6729be5f43c9ba36c53a8e9b",
+      "score": "100",
+      "gaps": [
+        {
+          "lastVoicedTime": 1.1466666666666667,
+          "nextVoicedTime": 1.8066666666666666,
+          "omittedFrames": 65,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 1.9266666666666667,
+          "nextVoicedTime": 1.9466666666666668,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 2.5166666666666666,
+          "nextVoicedTime": 3.216666666666667,
+          "omittedFrames": 69,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.486666666666667,
+          "nextVoicedTime": 3.506666666666667,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.5366666666666666,
+          "nextVoicedTime": 3.5966666666666667,
+          "omittedFrames": 5,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.5966666666666667,
+          "nextVoicedTime": 3.6166666666666667,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.6366666666666667,
+          "nextVoicedTime": 3.6666666666666665,
+          "omittedFrames": 2,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.6766666666666667,
+          "nextVoicedTime": 3.716666666666667,
+          "omittedFrames": 3,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.7266666666666666,
+          "nextVoicedTime": 3.7466666666666666,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.9166666666666665,
+          "nextVoicedTime": 4.626666666666667,
+          "omittedFrames": 70,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.866666666666666,
+          "nextVoicedTime": 4.886666666666667,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.8966666666666665,
+          "nextVoicedTime": 4.916666666666667,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.946666666666666,
+          "nextVoicedTime": 4.986666666666666,
+          "omittedFrames": 3,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.986666666666666,
+          "nextVoicedTime": 5.076666666666667,
+          "omittedFrames": 8,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        }
+      ],
+      "illegalReferenceConnections": 7,
+      "illegalAttemptConnections": 14,
+      "nativeTrace": {
+        "path": "firefox-375-four-mandarin-tones-yin.json.gz",
+        "bytes": 5836,
+        "sha256": "bd4eb0039880ec5f51f3bf93286b96dfee47bdfc4c4e6562a2f9ee1fcb07cb42"
+      },
+      "errors": [],
+      "policyViolations": [],
+      "networkAfterDisconnect": [],
+      "externalRequests": [],
+      "overflow": 0
+    },
+    {
+      "id": "firefox-375-four-mandarin-tones-mpm",
+      "engine": "firefox",
+      "browser": "155.0",
+      "width": 375,
+      "fixture": {
+        "id": "four-mandarin-tones",
+        "path": "src/references/FourMandarinTones.ogg",
+        "credit": "Wolfdog (2019), CC BY-SA 4.0; see src/references/recorded.ts",
+        "bytes": 77622,
+        "sha256": "e857c893662741a9c99e527a1c54df52eb386fb83df021cb9a42faee77af9049"
+      },
+      "algorithm": "mpm",
+      "nativeSampleRate": 44100,
+      "decodedSamples": 250948,
+      "pcmSha256": "1c077124c33db9194191280865ea7fc21520f4108de18eda8d33a8319f201bae",
+      "contourSha256": "58739d42863eb6cf5b68626989a55f367d95a27c4f2609f6ec349944aab2277c",
+      "alignmentSha256": "6f4fe6f553feffd04e72c6809f53e3d4b7445acc9130ca0b81ab7d3dcbf86a1a",
+      "score": "100",
+      "gaps": [
+        {
+          "lastVoicedTime": 1.1466666666666667,
+          "nextVoicedTime": 1.8066666666666666,
+          "omittedFrames": 65,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 1.9166666666666667,
+          "nextVoicedTime": 1.9366666666666668,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 2.256666666666667,
+          "nextVoicedTime": 2.276666666666667,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 2.506666666666667,
+          "nextVoicedTime": 3.1866666666666665,
+          "omittedFrames": 67,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.1866666666666665,
+          "nextVoicedTime": 3.2066666666666666,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.3966666666666665,
+          "nextVoicedTime": 3.4166666666666665,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.4266666666666667,
+          "nextVoicedTime": 3.466666666666667,
+          "omittedFrames": 3,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.4766666666666666,
+          "nextVoicedTime": 3.5366666666666666,
+          "omittedFrames": 5,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.5366666666666666,
+          "nextVoicedTime": 3.5966666666666667,
+          "omittedFrames": 5,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.5966666666666667,
+          "nextVoicedTime": 3.6266666666666665,
+          "omittedFrames": 2,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.6266666666666665,
+          "nextVoicedTime": 3.6666666666666665,
+          "omittedFrames": 3,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.6666666666666665,
+          "nextVoicedTime": 3.716666666666667,
+          "omittedFrames": 4,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.716666666666667,
+          "nextVoicedTime": 3.7466666666666666,
+          "omittedFrames": 2,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.9166666666666665,
+          "nextVoicedTime": 4.626666666666667,
+          "omittedFrames": 70,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.826666666666667,
+          "nextVoicedTime": 4.886666666666667,
+          "omittedFrames": 5,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.8966666666666665,
+          "nextVoicedTime": 4.9366666666666665,
+          "omittedFrames": 3,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        }
+      ],
+      "illegalReferenceConnections": 6,
+      "illegalAttemptConnections": 16,
+      "nativeTrace": {
+        "path": "firefox-375-four-mandarin-tones-mpm.json.gz",
+        "bytes": 5390,
+        "sha256": "c6ba7417aefd312b9b1d0690968cc776de230b2d747cacafbd3b5d7070273210"
+      },
+      "errors": [],
+      "policyViolations": [],
+      "networkAfterDisconnect": [],
+      "externalRequests": [],
+      "overflow": 0
+    },
+    {
+      "id": "firefox-375-ptdb-f01-sa1-yin",
+      "engine": "firefox",
+      "browser": "155.0",
+      "width": 375,
+      "fixture": {
+        "id": "ptdb-f01-sa1",
+        "path": "studies/real-voice/cache/ptdb/F01/mic_F01_sa1.wav",
+        "credit": "PTDB-TUG F01/sa1, Open Database License; see studies/real-voice/manifest.json",
+        "bytes": 767084,
+        "sha256": "4d06714d605aafdd4f5923170b182b25879c42fe9f5275e7c076134f4f490fc1"
+      },
+      "algorithm": "yin",
+      "nativeSampleRate": 44100,
+      "decodedSamples": 352359,
+      "pcmSha256": "9c174581f9f86f12564790a6a74003cfcd94f138b20139fe17cadbbacb3b77a5",
+      "contourSha256": "329dadb81e7e6c55ff39cc5f772aaf805261a79743dcb731df5bee6be110a572",
+      "alignmentSha256": "b45cd3f156141ad30fb64278309cc678f0a005ba4670c4b7ceaec6eed32eec68",
+      "score": "100",
+      "gaps": [
+        {
+          "lastVoicedTime": 3.1566666666666667,
+          "nextVoicedTime": 3.2266666666666666,
+          "omittedFrames": 6,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.7466666666666666,
+          "nextVoicedTime": 3.7866666666666666,
+          "omittedFrames": 3,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.7866666666666666,
+          "nextVoicedTime": 3.8266666666666667,
+          "omittedFrames": 3,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.966666666666667,
+          "nextVoicedTime": 3.9966666666666666,
+          "omittedFrames": 2,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.006666666666667,
+          "nextVoicedTime": 4.216666666666667,
+          "omittedFrames": 20,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.366666666666666,
+          "nextVoicedTime": 4.416666666666667,
+          "omittedFrames": 4,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.416666666666667,
+          "nextVoicedTime": 4.556666666666667,
+          "omittedFrames": 13,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.6866666666666665,
+          "nextVoicedTime": 4.706666666666667,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.866666666666666,
+          "nextVoicedTime": 4.976666666666667,
+          "omittedFrames": 10,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 5.256666666666667,
+          "nextVoicedTime": 5.426666666666667,
+          "omittedFrames": 16,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 5.586666666666667,
+          "nextVoicedTime": 5.636666666666667,
+          "omittedFrames": 4,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 5.636666666666667,
+          "nextVoicedTime": 5.656666666666666,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 5.756666666666667,
+          "nextVoicedTime": 5.976666666666667,
+          "omittedFrames": 21,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        }
+      ],
+      "illegalReferenceConnections": 3,
+      "illegalAttemptConnections": 13,
+      "nativeTrace": {
+        "path": "firefox-375-ptdb-f01-sa1-yin.json.gz",
+        "bytes": 5998,
+        "sha256": "a71c100001802bc6be57d094f645a0d9fd63a23805e26d68fee50b511f4b9f26"
+      },
+      "errors": [],
+      "policyViolations": [],
+      "networkAfterDisconnect": [],
+      "externalRequests": [],
+      "overflow": 0
+    },
+    {
+      "id": "firefox-375-ptdb-f01-sa1-mpm",
+      "engine": "firefox",
+      "browser": "155.0",
+      "width": 375,
+      "fixture": {
+        "id": "ptdb-f01-sa1",
+        "path": "studies/real-voice/cache/ptdb/F01/mic_F01_sa1.wav",
+        "credit": "PTDB-TUG F01/sa1, Open Database License; see studies/real-voice/manifest.json",
+        "bytes": 767084,
+        "sha256": "4d06714d605aafdd4f5923170b182b25879c42fe9f5275e7c076134f4f490fc1"
+      },
+      "algorithm": "mpm",
+      "nativeSampleRate": 44100,
+      "decodedSamples": 352359,
+      "pcmSha256": "9c174581f9f86f12564790a6a74003cfcd94f138b20139fe17cadbbacb3b77a5",
+      "contourSha256": "95dc84881ef7052c1bfb9b0d2e290ecd2aeddb502d6b71ddf62cdf399616daa6",
+      "alignmentSha256": "453c517f4834fb861237c2c298ceb515a9c8ccede4fff75857369ecc09425aee",
+      "score": "100",
+      "gaps": [
+        {
+          "lastVoicedTime": 3.716666666666667,
+          "nextVoicedTime": 3.736666666666667,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.7466666666666666,
+          "nextVoicedTime": 3.816666666666667,
+          "omittedFrames": 6,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 3.966666666666667,
+          "nextVoicedTime": 4.216666666666667,
+          "omittedFrames": 24,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.366666666666666,
+          "nextVoicedTime": 4.546666666666667,
+          "omittedFrames": 17,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.6866666666666665,
+          "nextVoicedTime": 4.706666666666667,
+          "omittedFrames": 1,
+          "referenceConnections": 1,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 4.866666666666666,
+          "nextVoicedTime": 4.966666666666667,
+          "omittedFrames": 9,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 5.256666666666667,
+          "nextVoicedTime": 5.406666666666666,
+          "omittedFrames": 14,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 5.566666666666666,
+          "nextVoicedTime": 5.636666666666667,
+          "omittedFrames": 6,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        },
+        {
+          "lastVoicedTime": 5.746666666666667,
+          "nextVoicedTime": 5.976666666666667,
+          "omittedFrames": 22,
+          "referenceConnections": 0,
+          "alignedAttemptConnections": 1
+        }
+      ],
+      "illegalReferenceConnections": 2,
+      "illegalAttemptConnections": 9,
+      "nativeTrace": {
+        "path": "firefox-375-ptdb-f01-sa1-mpm.json.gz",
+        "bytes": 5934,
+        "sha256": "09cdfc2c604eb3527337476c532c040041b6986a992fe8e885fb490b4f33ffdd"
+      },
+      "errors": [],
+      "policyViolations": [],
+      "networkAfterDisconnect": [],
+      "externalRequests": [],
+      "overflow": 0
+    }
+  ],
+  "servedFiles": [
+    {
+      "path": "index.html",
+      "bytes": 2361,
+      "sha256": "82912d270709b1ad4e6479bdff1ea08d283864c86bd1ba7e5c5fd0a64d6adc5d"
+    },
+    {
+      "path": "assets/index-Dv38E5nD.js",
+      "bytes": 271092,
+      "sha256": "c4f61543a32a25ae9d546cf37c16141c24433e0a21cc15d39bf26eba6c152bb5"
+    },
+    {
+      "path": "assets/index-C-m6Smcz.css",
+      "bytes": 23892,
+      "sha256": "f104cc095558bbda156bc258860e0c98aade3a2dd1c493ae85bc6f572c88f670"
+    },
+    {
+      "path": "assets/inter-latin-Dx4kXJAl.woff2",
+      "bytes": 48256,
+      "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+    },
+    {
+      "path": "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2",
+      "bytes": 14708,
+      "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+    },
+    {
+      "path": "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2",
+      "bytes": 14888,
+      "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+    },
+    {
+      "path": "assets/fraunces-latin-DihXLNYH.woff2",
+      "bytes": 67304,
+      "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+    },
+    {
+      "path": "assets/inter-latin-ext-DO1Apj_S.woff2",
+      "bytes": 85068,
+      "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
+    },
+    {
+      "path": "assets/fraunces-italic-latin-BEbM7Mn6.woff2",
+      "bytes": 42372,
+      "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+    },
+    {
+      "path": "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2",
+      "bytes": 13348,
+      "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
+    }
+  ]
+}
