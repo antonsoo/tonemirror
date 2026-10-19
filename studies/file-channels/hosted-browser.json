@@ -1,0 +1,385 @@
+{
+  "mode": "after",
+  "workflows": [
+    {
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "width": 1440,
+      "offline": true,
+      "mono": {
+        "sha256": "c94d13a85dcb1eac5dac2d708bbb60b84092d9c0687e5940d0c82bb88524c73a",
+        "samples": 250948,
+        "rate": 44100,
+        "rms": 0.035730068759773116,
+        "voicedFrames": 227,
+        "medianF0": 130.43603724875186
+      },
+      "phase": {
+        "message": "Could not load opposite-phase.wav: Mixing these channels cancels almost all sound. Open File channels, choose an individual channel, and load the file again. Previous clip kept.",
+        "previousClipPreserved": true
+      },
+      "selected": [
+        {
+          "channel": 1,
+          "sha256": "c94d13a85dcb1eac5dac2d708bbb60b84092d9c0687e5940d0c82bb88524c73a",
+          "samples": 250948,
+          "rate": 44100,
+          "rms": 0.035730068759773116,
+          "voicedFrames": 227,
+          "medianF0": 130.43603724875186,
+          "download": {
+            "filename": "tonemirror-attempt-opposite-phase.wav (channel 1 of 2).wav",
+            "bytes": 1003936,
+            "pcmSha256": "c94d13a85dcb1eac5dac2d708bbb60b84092d9c0687e5940d0c82bb88524c73a",
+            "samples": 250948
+          }
+        },
+        {
+          "channel": 2,
+          "sha256": "00a68fdce9922904e0921c026b456f2d39a16ac45eedbb97534e05ef67535af4",
+          "samples": 250948,
+          "rate": 44100,
+          "rms": 0.035730068759773116,
+          "voicedFrames": 227,
+          "medianF0": 130.43603724875186,
+          "download": {
+            "filename": "tonemirror-attempt-opposite-phase.wav (channel 2 of 2).wav",
+            "bytes": 1003936,
+            "pcmSha256": "00a68fdce9922904e0921c026b456f2d39a16ac45eedbb97534e05ef67535af4",
+            "samples": 250948
+          }
+        }
+      ],
+      "separate": {
+        "left": {
+          "sha256": "ce8ae2f605d68a3bb72915a1a1263eaf0402ae5ab0efb16c36a30dbdcdb88100",
+          "samples": 44100,
+          "rate": 44100,
+          "rms": 0.05259403277658507,
+          "voicedFrames": 64,
+          "medianF0": 171.58097193143666
+        },
+        "right": {
+          "sha256": "927c88a1daf00b127f7b9e5be9e72765d3d59e71f485782a0835673f5b02357c",
+          "samples": 44100,
+          "rate": 44100,
+          "rms": 0.045084607588869716,
+          "voicedFrames": 34,
+          "medianF0": 154.85689853447593
+        },
+        "download": {
+          "filename": "tonemirror-attempt-separate-tones.wav (channel 2 of 2).wav",
+          "bytes": 176544,
+          "pcmSha256": "927c88a1daf00b127f7b9e5be9e72765d3d59e71f485782a0835673f5b02357c",
+          "samples": 44100
+        },
+        "playbackBuffer": {
+          "sha256": "927c88a1daf00b127f7b9e5be9e72765d3d59e71f485782a0835673f5b02357c",
+          "rate": 44100,
+          "samples": 44100
+        },
+        "saved": {
+          "sha256": "927c88a1daf00b127f7b9e5be9e72765d3d59e71f485782a0835673f5b02357c",
+          "samples": 44100,
+          "rate": 44100,
+          "rms": 0.045084607588869716,
+          "voicedFrames": 34,
+          "medianF0": 154.85689853447593,
+          "download": {
+            "filename": "tonemirror-reference-Selected recorded channel.wav",
+            "bytes": 176544,
+            "pcmSha256": "927c88a1daf00b127f7b9e5be9e72765d3d59e71f485782a0835673f5b02357c",
+            "samples": 44100
+          }
+        }
+      },
+      "errors": [],
+      "external": []
+    },
+    {
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "width": 375,
+      "offline": true,
+      "mono": {
+        "sha256": "c94d13a85dcb1eac5dac2d708bbb60b84092d9c0687e5940d0c82bb88524c73a",
+        "samples": 250948,
+        "rate": 44100,
+        "rms": 0.035730068759773116,
+        "voicedFrames": 227,
+        "medianF0": 130.43603724875186
+      },
+      "phase": {
+        "message": "Could not load opposite-phase.wav: Mixing these channels cancels almost all sound. Open File channels, choose an individual channel, and load the file again. Previous clip kept.",
+        "previousClipPreserved": true
+      },
+      "selected": [
+        {
+          "channel": 1,
+          "sha256": "c94d13a85dcb1eac5dac2d708bbb60b84092d9c0687e5940d0c82bb88524c73a",
+          "samples": 250948,
+          "rate": 44100,
+          "rms": 0.035730068759773116,
+          "voicedFrames": 227,
+          "medianF0": 130.43603724875186,
+          "download": {
+            "filename": "tonemirror-attempt-opposite-phase.wav (channel 1 of 2).wav",
+            "bytes": 1003936,
+            "pcmSha256": "c94d13a85dcb1eac5dac2d708bbb60b84092d9c0687e5940d0c82bb88524c73a",
+            "samples": 250948
+          }
+        },
+        {
+          "channel": 2,
+          "sha256": "00a68fdce9922904e0921c026b456f2d39a16ac45eedbb97534e05ef67535af4",
+          "samples": 250948,
+          "rate": 44100,
+          "rms": 0.035730068759773116,
+          "voicedFrames": 227,
+          "medianF0": 130.43603724875186,
+          "download": {
+            "filename": "tonemirror-attempt-opposite-phase.wav (channel 2 of 2).wav",
+            "bytes": 1003936,
+            "pcmSha256": "00a68fdce9922904e0921c026b456f2d39a16ac45eedbb97534e05ef67535af4",
+            "samples": 250948
+          }
+        }
+      ],
+      "separate": {
+        "left": {
+          "sha256": "ce8ae2f605d68a3bb72915a1a1263eaf0402ae5ab0efb16c36a30dbdcdb88100",
+          "samples": 44100,
+          "rate": 44100,
+          "rms": 0.05259403277658507,
+          "voicedFrames": 64,
+          "medianF0": 171.58097193143666
+        },
+        "right": {
+          "sha256": "927c88a1daf00b127f7b9e5be9e72765d3d59e71f485782a0835673f5b02357c",
+          "samples": 44100,
+          "rate": 44100,
+          "rms": 0.045084607588869716,
+          "voicedFrames": 34,
+          "medianF0": 154.85689853447593
+        },
+        "download": {
+          "filename": "tonemirror-attempt-separate-tones.wav (channel 2 of 2).wav",
+          "bytes": 176544,
+          "pcmSha256": "927c88a1daf00b127f7b9e5be9e72765d3d59e71f485782a0835673f5b02357c",
+          "samples": 44100
+        },
+        "playbackBuffer": {
+          "sha256": "927c88a1daf00b127f7b9e5be9e72765d3d59e71f485782a0835673f5b02357c",
+          "rate": 44100,
+          "samples": 44100
+        },
+        "saved": {
+          "sha256": "927c88a1daf00b127f7b9e5be9e72765d3d59e71f485782a0835673f5b02357c",
+          "samples": 44100,
+          "rate": 44100,
+          "rms": 0.045084607588869716,
+          "voicedFrames": 34,
+          "medianF0": 154.85689853447593,
+          "download": {
+            "filename": "tonemirror-reference-Selected recorded channel.wav",
+            "bytes": 176544,
+            "pcmSha256": "927c88a1daf00b127f7b9e5be9e72765d3d59e71f485782a0835673f5b02357c",
+            "samples": 44100
+          }
+        }
+      },
+      "errors": [],
+      "external": []
+    },
+    {
+      "engine": "firefox",
+      "version": "155.0",
+      "width": 1440,
+      "offline": true,
+      "mono": {
+        "sha256": "c94d13a85dcb1eac5dac2d708bbb60b84092d9c0687e5940d0c82bb88524c73a",
+        "samples": 250948,
+        "rate": 44100,
+        "rms": 0.035730068759773116,
+        "voicedFrames": 227,
+        "medianF0": 130.43603724875186
+      },
+      "phase": {
+        "message": "Could not load opposite-phase.wav: Mixing these channels cancels almost all sound. Open File channels, choose an individual channel, and load the file again. Previous clip kept.",
+        "previousClipPreserved": true
+      },
+      "selected": [
+        {
+          "channel": 1,
+          "sha256": "c94d13a85dcb1eac5dac2d708bbb60b84092d9c0687e5940d0c82bb88524c73a",
+          "samples": 250948,
+          "rate": 44100,
+          "rms": 0.035730068759773116,
+          "voicedFrames": 227,
+          "medianF0": 130.43603724875186,
+          "download": {
+            "filename": "tonemirror-attempt-opposite-phase.wav (channel 1 of 2).wav",
+            "bytes": 1003936,
+            "pcmSha256": "c94d13a85dcb1eac5dac2d708bbb60b84092d9c0687e5940d0c82bb88524c73a",
+            "samples": 250948
+          }
+        },
+        {
+          "channel": 2,
+          "sha256": "00a68fdce9922904e0921c026b456f2d39a16ac45eedbb97534e05ef67535af4",
+          "samples": 250948,
+          "rate": 44100,
+          "rms": 0.035730068759773116,
+          "voicedFrames": 227,
+          "medianF0": 130.43603724875186,
+          "download": {
+            "filename": "tonemirror-attempt-opposite-phase.wav (channel 2 of 2).wav",
+            "bytes": 1003936,
+            "pcmSha256": "00a68fdce9922904e0921c026b456f2d39a16ac45eedbb97534e05ef67535af4",
+            "samples": 250948
+          }
+        }
+      ],
+      "separate": {
+        "left": {
+          "sha256": "ce8ae2f605d68a3bb72915a1a1263eaf0402ae5ab0efb16c36a30dbdcdb88100",
+          "samples": 44100,
+          "rate": 44100,
+          "rms": 0.05259403277658507,
+          "voicedFrames": 64,
+          "medianF0": 171.58097193143666
+        },
+        "right": {
+          "sha256": "927c88a1daf00b127f7b9e5be9e72765d3d59e71f485782a0835673f5b02357c",
+          "samples": 44100,
+          "rate": 44100,
+          "rms": 0.045084607588869716,
+          "voicedFrames": 34,
+          "medianF0": 154.856898534476
+        },
+        "download": {
+          "filename": "tonemirror-attempt-separate-tones.wav (channel 2 of 2).wav",
+          "bytes": 176544,
+          "pcmSha256": "927c88a1daf00b127f7b9e5be9e72765d3d59e71f485782a0835673f5b02357c",
+          "samples": 44100
+        },
+        "playbackBuffer": {
+          "sha256": "927c88a1daf00b127f7b9e5be9e72765d3d59e71f485782a0835673f5b02357c",
+          "rate": 44100,
+          "samples": 44100
+        },
+        "saved": {
+          "sha256": "927c88a1daf00b127f7b9e5be9e72765d3d59e71f485782a0835673f5b02357c",
+          "samples": 44100,
+          "rate": 44100,
+          "rms": 0.045084607588869716,
+          "voicedFrames": 34,
+          "medianF0": 154.856898534476,
+          "download": {
+            "filename": "tonemirror-reference-Selected recorded channel.wav",
+            "bytes": 176544,
+            "pcmSha256": "927c88a1daf00b127f7b9e5be9e72765d3d59e71f485782a0835673f5b02357c",
+            "samples": 44100
+          }
+        }
+      },
+      "errors": [],
+      "external": []
+    },
+    {
+      "engine": "firefox",
+      "version": "155.0",
+      "width": 375,
+      "offline": true,
+      "mono": {
+        "sha256": "c94d13a85dcb1eac5dac2d708bbb60b84092d9c0687e5940d0c82bb88524c73a",
+        "samples": 250948,
+        "rate": 44100,
+        "rms": 0.035730068759773116,
+        "voicedFrames": 227,
+        "medianF0": 130.43603724875186
+      },
+      "phase": {
+        "message": "Could not load opposite-phase.wav: Mixing these channels cancels almost all sound. Open File channels, choose an individual channel, and load the file again. Previous clip kept.",
+        "previousClipPreserved": true
+      },
+      "selected": [
+        {
+          "channel": 1,
+          "sha256": "c94d13a85dcb1eac5dac2d708bbb60b84092d9c0687e5940d0c82bb88524c73a",
+          "samples": 250948,
+          "rate": 44100,
+          "rms": 0.035730068759773116,
+          "voicedFrames": 227,
+          "medianF0": 130.43603724875186,
+          "download": {
+            "filename": "tonemirror-attempt-opposite-phase.wav (channel 1 of 2).wav",
+            "bytes": 1003936,
+            "pcmSha256": "c94d13a85dcb1eac5dac2d708bbb60b84092d9c0687e5940d0c82bb88524c73a",
+            "samples": 250948
+          }
+        },
+        {
+          "channel": 2,
+          "sha256": "00a68fdce9922904e0921c026b456f2d39a16ac45eedbb97534e05ef67535af4",
+          "samples": 250948,
+          "rate": 44100,
+          "rms": 0.035730068759773116,
+          "voicedFrames": 227,
+          "medianF0": 130.43603724875186,
+          "download": {
+            "filename": "tonemirror-attempt-opposite-phase.wav (channel 2 of 2).wav",
+            "bytes": 1003936,
+            "pcmSha256": "00a68fdce9922904e0921c026b456f2d39a16ac45eedbb97534e05ef67535af4",
+            "samples": 250948
+          }
+        }
+      ],
+      "separate": {
+        "left": {
+          "sha256": "ce8ae2f605d68a3bb72915a1a1263eaf0402ae5ab0efb16c36a30dbdcdb88100",
+          "samples": 44100,
+          "rate": 44100,
+          "rms": 0.05259403277658507,
+          "voicedFrames": 64,
+          "medianF0": 171.58097193143666
+        },
+        "right": {
+          "sha256": "927c88a1daf00b127f7b9e5be9e72765d3d59e71f485782a0835673f5b02357c",
+          "samples": 44100,
+          "rate": 44100,
+          "rms": 0.045084607588869716,
+          "voicedFrames": 34,
+          "medianF0": 154.856898534476
+        },
+        "download": {
+          "filename": "tonemirror-attempt-separate-tones.wav (channel 2 of 2).wav",
+          "bytes": 176544,
+          "pcmSha256": "927c88a1daf00b127f7b9e5be9e72765d3d59e71f485782a0835673f5b02357c",
+          "samples": 44100
+        },
+        "playbackBuffer": {
+          "sha256": "927c88a1daf00b127f7b9e5be9e72765d3d59e71f485782a0835673f5b02357c",
+          "rate": 44100,
+          "samples": 44100
+        },
+        "saved": {
+          "sha256": "927c88a1daf00b127f7b9e5be9e72765d3d59e71f485782a0835673f5b02357c",
+          "samples": 44100,
+          "rate": 44100,
+          "rms": 0.045084607588869716,
+          "voicedFrames": 34,
+          "medianF0": 154.856898534476,
+          "download": {
+            "filename": "tonemirror-reference-Selected recorded channel.wav",
+            "bytes": 176544,
+            "pcmSha256": "927c88a1daf00b127f7b9e5be9e72765d3d59e71f485782a0835673f5b02357c",
+            "samples": 44100
+          }
+        }
+      },
+      "errors": [],
+      "external": []
+    }
+  ]
+}

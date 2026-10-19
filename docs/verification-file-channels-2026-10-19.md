@@ -57,3 +57,17 @@ or release tag was created.
 
 Build command: `npm run build`. Deployable directory: `dist/`, base `/tonemirror/`.
 Hosted bytes and workflows require separate publication evidence.
+
+## Public app
+
+Source was pushed and the clean build appended to `gh-pages` as `336834b`,
+with parent `720f7fd`. All 31 previous asset files remain byte-identical.
+The [canonical HTTP receipt](../studies/file-channels/hosted-bytes.json)
+checks both entry URLs and all 30 current files against the clean build.
+Four fresh Chromium/Firefox desktop/phone workflows then ran against the
+public site, disconnecting before imports. Their full numeric results match
+the working and clean local reports, including sixteen sample-exact WAV
+exports, native playback buffers and saved-reference reloads.
+[Public workflow receipt](../studies/file-channels/hosted-browser.json),
+[publication boundaries](../studies/file-channels/publication.json).
+No registry release or tag was created.

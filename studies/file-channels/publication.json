@@ -1,0 +1,14 @@
+{
+  "implementationCommit": "9c7d90bd83aaa7bc23c38d45ced891915ff4a34b",
+  "sourceAtDeployment": "3db5735",
+  "pagesCommit": "336834b",
+  "pagesParent": "720f7fd000f461d48ed83a696ae127fb6f421fce",
+  "site": "https://antonsoo.github.io/tonemirror/",
+  "hostedFilesMatched": 30,
+  "publicOfflineRecordedChannelWorkflows": 4,
+  "publicExactSampleWavDownloads": 16,
+  "publicPlaybackAndSavedReloadsMatch": true,
+  "studyReportsEqualAcrossSourceCleanAndPublic": true,
+  "previousHashedAssetsPreserved": 31,
+  "registryRelease": false
+}
