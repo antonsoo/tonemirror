@@ -1,0 +1,334 @@
+{
+  "surface": "canonical public demo after deployment",
+  "checkedAt": "2026-10-19T02:39:04.644124+00:00",
+  "sourceCommit": "408d7b9c66e62890c197b1a33bbe1e78a2526539",
+  "pagesCommit": "720f7fd000f461d48ed83a696ae127fb6f421fce",
+  "canonical": {
+    "path": "",
+    "url": "https://antonsoo.github.io/tonemirror/",
+    "status": 200,
+    "bytes": 2361,
+    "sha256": "bf56f501474522e69d5dbc63b2d8cb4bef70c6a48d39791febb9843d2b38a655",
+    "testedSha256": "bf56f501474522e69d5dbc63b2d8cb4bef70c6a48d39791febb9843d2b38a655",
+    "matches": true
+  },
+  "files": [
+    {
+      "path": "assets/fraunces-italic-latin-BEbM7Mn6.woff2",
+      "url": "https://antonsoo.github.io/tonemirror/assets/fraunces-italic-latin-BEbM7Mn6.woff2",
+      "status": 200,
+      "bytes": 42372,
+      "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3",
+      "testedSha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3",
+      "matches": true
+    },
+    {
+      "path": "assets/fraunces-italic-latin-ext-C5JMU4hr.woff2",
+      "url": "https://antonsoo.github.io/tonemirror/assets/fraunces-italic-latin-ext-C5JMU4hr.woff2",
+      "status": 200,
+      "bytes": 37620,
+      "sha256": "bbf614d45de67a99e638b753611329b2cb8b5b6d8da53b2aee0267fe75cfc5c8",
+      "testedSha256": "bbf614d45de67a99e638b753611329b2cb8b5b6d8da53b2aee0267fe75cfc5c8",
+      "matches": true
+    },
+    {
+      "path": "assets/fraunces-italic-vietnamese-B7PmIdA3.woff2",
+      "url": "https://antonsoo.github.io/tonemirror/assets/fraunces-italic-vietnamese-B7PmIdA3.woff2",
+      "status": 200,
+      "bytes": 12048,
+      "sha256": "b2383049df5de759100887e80450ef360e502d5b0454954fab2dcd6b322944f5",
+      "testedSha256": "b2383049df5de759100887e80450ef360e502d5b0454954fab2dcd6b322944f5",
+      "matches": true
+    },
+    {
+      "path": "assets/fraunces-latin-DihXLNYH.woff2",
+      "url": "https://antonsoo.github.io/tonemirror/assets/fraunces-latin-DihXLNYH.woff2",
+      "status": 200,
+      "bytes": 67304,
+      "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783",
+      "testedSha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783",
+      "matches": true
+    },
+    {
+      "path": "assets/fraunces-latin-ext-CJcjJNj7.woff2",
+      "url": "https://antonsoo.github.io/tonemirror/assets/fraunces-latin-ext-CJcjJNj7.woff2",
+      "status": 200,
+      "bytes": 59388,
+      "sha256": "a2930b27d13a228bd9ab6a49269b5f800237892ad560cb9dd7fab01b1620f88e",
+      "testedSha256": "a2930b27d13a228bd9ab6a49269b5f800237892ad560cb9dd7fab01b1620f88e",
+      "matches": true
+    },
+    {
+      "path": "assets/fraunces-vietnamese-Czevyj-6.woff2",
+      "url": "https://antonsoo.github.io/tonemirror/assets/fraunces-vietnamese-Czevyj-6.woff2",
+      "status": 200,
+      "bytes": 19700,
+      "sha256": "f18853f63a870ebef013e30e789d8d544f102e4acd94988e57c223d9c796ddf4",
+      "testedSha256": "f18853f63a870ebef013e30e789d8d544f102e4acd94988e57c223d9c796ddf4",
+      "matches": true
+    },
+    {
+      "path": "assets/ibm-plex-mono-400-cyrillic-BSMlKf0J.woff2",
+      "url": "https://antonsoo.github.io/tonemirror/assets/ibm-plex-mono-400-cyrillic-BSMlKf0J.woff2",
+      "status": 200,
+      "bytes": 8356,
+      "sha256": "7635422bd10ddbbcb0e0caa1154b928298f5c8319b8c00b30978d4395f4783ce",
+      "testedSha256": "7635422bd10ddbbcb0e0caa1154b928298f5c8319b8c00b30978d4395f4783ce",
+      "matches": true
+    },
+    {
+      "path": "assets/ibm-plex-mono-400-cyrillic-ext-xuaO2J-f.woff2",
+      "url": "https://antonsoo.github.io/tonemirror/assets/ibm-plex-mono-400-cyrillic-ext-xuaO2J-f.woff2",
+      "status": 200,
+      "bytes": 6912,
+      "sha256": "f8c22ec1804bd6966b70f43ac7c327025645b4c09597117fca2a5a6c750106fe",
+      "testedSha256": "f8c22ec1804bd6966b70f43ac7c327025645b4c09597117fca2a5a6c750106fe",
+      "matches": true
+    },
+    {
+      "path": "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2",
+      "url": "https://antonsoo.github.io/tonemirror/assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2",
+      "status": 200,
+      "bytes": 14708,
+      "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7",
+      "testedSha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7",
+      "matches": true
+    },
+    {
+      "path": "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2",
+      "url": "https://antonsoo.github.io/tonemirror/assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2",
+      "status": 200,
+      "bytes": 13348,
+      "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb",
+      "testedSha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb",
+      "matches": true
+    },
+    {
+      "path": "assets/ibm-plex-mono-400-vietnamese-BulugwFq.woff2",
+      "url": "https://antonsoo.github.io/tonemirror/assets/ibm-plex-mono-400-vietnamese-BulugwFq.woff2",
+      "status": 200,
+      "bytes": 5868,
+      "sha256": "62632b6375305e70ddcafdd895218e6ae41a184fcd280a69c739460604ca00a9",
+      "testedSha256": "62632b6375305e70ddcafdd895218e6ae41a184fcd280a69c739460604ca00a9",
+      "matches": true
+    },
+    {
+      "path": "assets/ibm-plex-mono-500-cyrillic-Bq9vWWag.woff2",
+      "url": "https://antonsoo.github.io/tonemirror/assets/ibm-plex-mono-500-cyrillic-Bq9vWWag.woff2",
+      "status": 200,
+      "bytes": 8460,
+      "sha256": "1d89462e86cb8e87e7e9d6f6635605bd7c3081baca6caaecee84916bf7b60edc",
+      "testedSha256": "1d89462e86cb8e87e7e9d6f6635605bd7c3081baca6caaecee84916bf7b60edc",
+      "matches": true
+    },
+    {
+      "path": "assets/ibm-plex-mono-500-cyrillic-ext-BqneJy0T.woff2",
+      "url": "https://antonsoo.github.io/tonemirror/assets/ibm-plex-mono-500-cyrillic-ext-BqneJy0T.woff2",
+      "status": 200,
+      "bytes": 6972,
+      "sha256": "3febe5c7f22e4b07b4552738673c3dbe8bced2dc5f48b866edf7ccd9552d109a",
+      "testedSha256": "3febe5c7f22e4b07b4552738673c3dbe8bced2dc5f48b866edf7ccd9552d109a",
+      "matches": true
+    },
+    {
+      "path": "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2",
+      "url": "https://antonsoo.github.io/tonemirror/assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2",
+      "status": 200,
+      "bytes": 14888,
+      "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22",
+      "testedSha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22",
+      "matches": true
+    },
+    {
+      "path": "assets/ibm-plex-mono-500-latin-ext-CAhNIIs5.woff2",
+      "url": "https://antonsoo.github.io/tonemirror/assets/ibm-plex-mono-500-latin-ext-CAhNIIs5.woff2",
+      "status": 200,
+      "bytes": 13432,
+      "sha256": "6bb06407c97584b0867a959e05e8874693bfeb8c317de190811c51598f2d99ea",
+      "testedSha256": "6bb06407c97584b0867a959e05e8874693bfeb8c317de190811c51598f2d99ea",
+      "matches": true
+    },
+    {
+      "path": "assets/ibm-plex-mono-500-vietnamese-DZ4AoWbu.woff2",
+      "url": "https://antonsoo.github.io/tonemirror/assets/ibm-plex-mono-500-vietnamese-DZ4AoWbu.woff2",
+      "status": 200,
+      "bytes": 6040,
+      "sha256": "781633d95de88040fb77141d1e65d928c87c0144691fbc74da5a64d137a7e910",
+      "testedSha256": "781633d95de88040fb77141d1e65d928c87c0144691fbc74da5a64d137a7e910",
+      "matches": true
+    },
+    {
+      "path": "assets/index-BueCBaWv.js",
+      "url": "https://antonsoo.github.io/tonemirror/assets/index-BueCBaWv.js",
+      "status": 200,
+      "bytes": 272038,
+      "sha256": "4b18c135e96e343f8e754f80435a7222fcc248e4d9413195ed2911ca34ad203d",
+      "testedSha256": "4b18c135e96e343f8e754f80435a7222fcc248e4d9413195ed2911ca34ad203d",
+      "matches": true
+    },
+    {
+      "path": "assets/index-BueCBaWv.js.map",
+      "url": "https://antonsoo.github.io/tonemirror/assets/index-BueCBaWv.js.map",
+      "status": 200,
+      "bytes": 329249,
+      "sha256": "0e0d7316a73258e187086983dc91440830816c95b652e139be6213ebb548119e",
+      "testedSha256": "0e0d7316a73258e187086983dc91440830816c95b652e139be6213ebb548119e",
+      "matches": true
+    },
+    {
+      "path": "assets/index-C-m6Smcz.css",
+      "url": "https://antonsoo.github.io/tonemirror/assets/index-C-m6Smcz.css",
+      "status": 200,
+      "bytes": 23892,
+      "sha256": "f104cc095558bbda156bc258860e0c98aade3a2dd1c493ae85bc6f572c88f670",
+      "testedSha256": "f104cc095558bbda156bc258860e0c98aade3a2dd1c493ae85bc6f572c88f670",
+      "matches": true
+    },
+    {
+      "path": "assets/inter-cyrillic-DqGufNeO.woff2",
+      "url": "https://antonsoo.github.io/tonemirror/assets/inter-cyrillic-DqGufNeO.woff2",
+      "status": 200,
+      "bytes": 18748,
+      "sha256": "71d5ee93cc1e9f1d520a3a8b66456de18c7879d8df09d57fcd2eaff75fef0075",
+      "testedSha256": "71d5ee93cc1e9f1d520a3a8b66456de18c7879d8df09d57fcd2eaff75fef0075",
+      "matches": true
+    },
+    {
+      "path": "assets/inter-cyrillic-ext-BOeWTOD4.woff2",
+      "url": "https://antonsoo.github.io/tonemirror/assets/inter-cyrillic-ext-BOeWTOD4.woff2",
+      "status": 200,
+      "bytes": 25960,
+      "sha256": "ca157063339ac4ad418f214f3abfed119b0798ab4d377386ce5c9e5a7a435ebd",
+      "testedSha256": "ca157063339ac4ad418f214f3abfed119b0798ab4d377386ce5c9e5a7a435ebd",
+      "matches": true
+    },
+    {
+      "path": "assets/inter-greek-CkhJZR-_.woff2",
+      "url": "https://antonsoo.github.io/tonemirror/assets/inter-greek-CkhJZR-_.woff2",
+      "status": 200,
+      "bytes": 18996,
+      "sha256": "1be3448e292fbf05ffe176fe1e43f135013d50b1e7d324ad1a558f623d3bb6f6",
+      "testedSha256": "1be3448e292fbf05ffe176fe1e43f135013d50b1e7d324ad1a558f623d3bb6f6",
+      "matches": true
+    },
+    {
+      "path": "assets/inter-greek-ext-DlzME5K_.woff2",
+      "url": "https://antonsoo.github.io/tonemirror/assets/inter-greek-ext-DlzME5K_.woff2",
+      "status": 200,
+      "bytes": 11232,
+      "sha256": "6e9e020a25f9b56d418f2c085b1d3c09725a4da23fe693a5b463064606732190",
+      "testedSha256": "6e9e020a25f9b56d418f2c085b1d3c09725a4da23fe693a5b463064606732190",
+      "matches": true
+    },
+    {
+      "path": "assets/inter-latin-Dx4kXJAl.woff2",
+      "url": "https://antonsoo.github.io/tonemirror/assets/inter-latin-Dx4kXJAl.woff2",
+      "status": 200,
+      "bytes": 48256,
+      "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62",
+      "testedSha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62",
+      "matches": true
+    },
+    {
+      "path": "assets/inter-latin-ext-DO1Apj_S.woff2",
+      "url": "https://antonsoo.github.io/tonemirror/assets/inter-latin-ext-DO1Apj_S.woff2",
+      "status": 200,
+      "bytes": 85068,
+      "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956",
+      "testedSha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956",
+      "matches": true
+    },
+    {
+      "path": "assets/inter-vietnamese-CBcvBZtf.woff2",
+      "url": "https://antonsoo.github.io/tonemirror/assets/inter-vietnamese-CBcvBZtf.woff2",
+      "status": 200,
+      "bytes": 10252,
+      "sha256": "5c66f9e07e90c6d4ac4922cc68d60de26c17b1858e677fb5e603fce3952b3ff2",
+      "testedSha256": "5c66f9e07e90c6d4ac4922cc68d60de26c17b1858e677fb5e603fce3952b3ff2",
+      "matches": true
+    },
+    {
+      "path": "assets/pitchWorker-C8TDQfQo.js.map",
+      "url": "https://antonsoo.github.io/tonemirror/assets/pitchWorker-C8TDQfQo.js.map",
+      "status": 200,
+      "bytes": 63570,
+      "sha256": "f4d09fc2e683bf24c80fb2e6bf6a5589faf1b5d17600f1fcd69a6267977b4d20",
+      "testedSha256": "f4d09fc2e683bf24c80fb2e6bf6a5589faf1b5d17600f1fcd69a6267977b4d20",
+      "matches": true
+    },
+    {
+      "path": "assets/slowPlaybackWorker-CjVF_WT-.js.map",
+      "url": "https://antonsoo.github.io/tonemirror/assets/slowPlaybackWorker-CjVF_WT-.js.map",
+      "status": 200,
+      "bytes": 112240,
+      "sha256": "606ac6478f6330d0be3ea438416ca295e1d40739ad656ec41b8393b10e2a615a",
+      "testedSha256": "606ac6478f6330d0be3ea438416ca295e1d40739ad656ec41b8393b10e2a615a",
+      "matches": true
+    },
+    {
+      "path": "audio-licenses.txt",
+      "url": "https://antonsoo.github.io/tonemirror/audio-licenses.txt",
+      "status": 200,
+      "bytes": 3262,
+      "sha256": "5fac2b782635cc55572e1254efd1c8cefda87f457470aac9ae2134988dfd2680",
+      "testedSha256": "5fac2b782635cc55572e1254efd1c8cefda87f457470aac9ae2134988dfd2680",
+      "matches": true
+    },
+    {
+      "path": "index.html",
+      "url": "https://antonsoo.github.io/tonemirror/index.html",
+      "status": 200,
+      "bytes": 2361,
+      "sha256": "bf56f501474522e69d5dbc63b2d8cb4bef70c6a48d39791febb9843d2b38a655",
+      "testedSha256": "bf56f501474522e69d5dbc63b2d8cb4bef70c6a48d39791febb9843d2b38a655",
+      "matches": true
+    }
+  ],
+  "retainedPriorAssets": [
+    {
+      "path": "assets/slowPlaybackWorker-CjVF_WT-.js.map",
+      "url": "https://antonsoo.github.io/tonemirror/assets/slowPlaybackWorker-CjVF_WT-.js.map",
+      "status": 200,
+      "bytes": 112240,
+      "sha256": "606ac6478f6330d0be3ea438416ca295e1d40739ad656ec41b8393b10e2a615a",
+      "testedSha256": "606ac6478f6330d0be3ea438416ca295e1d40739ad656ec41b8393b10e2a615a",
+      "matches": true
+    },
+    {
+      "path": "assets/index-C-m6Smcz.css",
+      "url": "https://antonsoo.github.io/tonemirror/assets/index-C-m6Smcz.css",
+      "status": 200,
+      "bytes": 23892,
+      "sha256": "f104cc095558bbda156bc258860e0c98aade3a2dd1c493ae85bc6f572c88f670",
+      "testedSha256": "f104cc095558bbda156bc258860e0c98aade3a2dd1c493ae85bc6f572c88f670",
+      "matches": true
+    },
+    {
+      "path": "assets/index-Dv38E5nD.js",
+      "url": "https://antonsoo.github.io/tonemirror/assets/index-Dv38E5nD.js",
+      "status": 200,
+      "bytes": 271092,
+      "sha256": "c4f61543a32a25ae9d546cf37c16141c24433e0a21cc15d39bf26eba6c152bb5",
+      "testedSha256": "c4f61543a32a25ae9d546cf37c16141c24433e0a21cc15d39bf26eba6c152bb5",
+      "matches": true
+    },
+    {
+      "path": "assets/pitchWorker-CPJHvETi.js.map",
+      "url": "https://antonsoo.github.io/tonemirror/assets/pitchWorker-CPJHvETi.js.map",
+      "status": 200,
+      "bytes": 61571,
+      "sha256": "d169b7b5f65f9f7e727ad4ccede52765501485922e176171e3c49f4e0eaa12b5",
+      "testedSha256": "d169b7b5f65f9f7e727ad4ccede52765501485922e176171e3c49f4e0eaa12b5",
+      "matches": true
+    },
+    {
+      "path": "assets/index-Dv38E5nD.js.map",
+      "url": "https://antonsoo.github.io/tonemirror/assets/index-Dv38E5nD.js.map",
+      "status": 200,
+      "bytes": 326799,
+      "sha256": "06e7d3166e61fafe788a4acdd20f2aa7728ee234e61ba7abdee59e61ec5498b8",
+      "testedSha256": "06e7d3166e61fafe788a4acdd20f2aa7728ee234e61ba7abdee59e61ec5498b8",
+      "matches": true
+    }
+  ]
+}

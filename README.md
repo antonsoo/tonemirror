@@ -39,7 +39,7 @@ The plot includes pitch-tracker errors; the shape score is not a pronunciation g
 **Unvoiced gaps stay visible after alignment.** Comparing the full recorded
 four-tone sequence with itself used to draw the attempt's pitch through pauses,
 including a 0.71-second interval where the detector supplied no voiced frames.
-The corrected source preserves gaps from either clip through alignment and drawing.
+The source checkout and live demo preserve gaps from either clip through alignment and drawing.
 A fresh replay of 580 recordings removes 17,170 unsupported connections while
 keeping every alignment path, cost, score and feedback message unchanged.
 [Native canvas traces, recordings and before/after views](studies/contour-gaps/README.md)

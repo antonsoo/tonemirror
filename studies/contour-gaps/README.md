@@ -120,8 +120,18 @@ used for the native canvas replay. Raw commands are in [checks/](results/checks/
 
 The original [canonical public demo](results/hosted-before.json) matched all
 30 baseline build files and its canonical root before this source change.
-That is a byte verification of the original public behavior, distinct from
-the corrected local browser evidence above.
+The [corrected canonical demo](results/hosted-after.json) now matches all 30
+clean-build files and the canonical root. Five prior hashed assets remain
+available for cached pages. Source `408d7b9` and Pages `720f7fd` were verified
+separately; GitHub Actions supplied no run for this publication.
+
+The [live browser replay](results/hosted/browser.json) repeats all 16 speech
+comparisons after disconnecting each tab. There are zero unsupported aligned
+connections, page errors, policy violations, late or off-origin requests, and
+overflow. Its PCM, contours, alignment, scores, feedback and native gap counts
+match the corrected local build. All four [live screenshots](results/hosted/)
+are byte-identical to the visually reviewed local screenshots, as recorded by
+the [paired hosted comparison](results/hosted-comparison.json).
 
 With dependencies installed and the source cache verified as described by the
 real-voice study:

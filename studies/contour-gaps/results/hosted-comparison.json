@@ -1,0 +1,51 @@
+{
+  "workflows": 16,
+  "comparedFields": [
+    "PCM",
+    "complete detector contour",
+    "alignment path, cost, score, feedback",
+    "observed gaps",
+    "native canvas unsupported connections",
+    "errors, policy, requests, overflow"
+  ],
+  "identicalWorkflows": [
+    "chromium-1440-four-mandarin-tones-yin",
+    "chromium-1440-four-mandarin-tones-mpm",
+    "chromium-1440-ptdb-f01-sa1-yin",
+    "chromium-1440-ptdb-f01-sa1-mpm",
+    "chromium-375-four-mandarin-tones-yin",
+    "chromium-375-four-mandarin-tones-mpm",
+    "chromium-375-ptdb-f01-sa1-yin",
+    "chromium-375-ptdb-f01-sa1-mpm",
+    "firefox-1440-four-mandarin-tones-yin",
+    "firefox-1440-four-mandarin-tones-mpm",
+    "firefox-1440-ptdb-f01-sa1-yin",
+    "firefox-1440-ptdb-f01-sa1-mpm",
+    "firefox-375-four-mandarin-tones-yin",
+    "firefox-375-four-mandarin-tones-mpm",
+    "firefox-375-ptdb-f01-sa1-yin",
+    "firefox-375-ptdb-f01-sa1-mpm"
+  ],
+  "screenshots": [
+    {
+      "path": "chromium-1440.png",
+      "sha256": "29025dd908d837e4e4da812f47bad9c55da605b70e138428309e22fc9868daf5",
+      "identicalToReviewedLocalScreenshot": true
+    },
+    {
+      "path": "chromium-375.png",
+      "sha256": "607a2aafe6fca7edcdf989969f18dd3549e474a27953526c5af2042ffbc21ae7",
+      "identicalToReviewedLocalScreenshot": true
+    },
+    {
+      "path": "firefox-1440.png",
+      "sha256": "a8694f172611fedcc1357b9fa4b46c25f82d7f85a985e67a254ae74cae31df59",
+      "identicalToReviewedLocalScreenshot": true
+    },
+    {
+      "path": "firefox-375.png",
+      "sha256": "de03e946dd6e07c744906d45a9cf6a08264b995f92c7e17fbf89f069445db979",
+      "identicalToReviewedLocalScreenshot": true
+    }
+  ]
+}
