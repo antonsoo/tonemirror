@@ -110,6 +110,19 @@ contiguous with its immediate predecessor in the original array.
 
 ## Reproduce
 
+The [clean verification receipt](results/verification.json) covers implementation
+`cb7665f`: a fresh archive, new `npm ci`, Node 24.21.0 and npm 11.19.0. Lint,
+strict types, 228 unit tests, build, the generated-signal accuracy command and
+110 browser checks pass. Four Firefox microphone checks are skipped because
+their deterministic capture device is Chromium-specific. All 418 archived
+source files remained unchanged; all 30 built files match the Node 26 build
+used for the native canvas replay. Raw commands are in [checks/](results/checks/).
+
+The original [canonical public demo](results/hosted-before.json) matched all
+30 baseline build files and its canonical root before this source change.
+That is a byte verification of the original public behavior, distinct from
+the corrected local browser evidence above.
+
 With dependencies installed and the source cache verified as described by the
 real-voice study:
 

@@ -1,0 +1,17 @@
+
+> tonemirror@0.2.3 test
+> vitest run
+
+
+ RUN  v5.0.1 /tmp/claude-1000/tonemirror-contour-gaps/clean
+
+
+ Test Files  22 passed (22)
+      Tests  228 passed (228)
+   Start at  19:31:04
+   Duration  5.39s (tests 53%, transform 38%, import 7%, worker 2%)
+
+  Transform  transforming modules took 5.91s · 38% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+

@@ -1,0 +1,4 @@
+
+> tonemirror@0.2.3 typecheck
+> tsc --noEmit
+
