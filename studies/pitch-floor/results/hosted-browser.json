@@ -1,0 +1,1511 @@
+{
+  "origin": "https://antonsoo.github.io",
+  "scriptSha256": "800fb0cbf895b7642e0223d8819015f1c64f342636f683881fa7528b40d01b22",
+  "scope": "Worker plumbing on actual browser-decoded recordings. Native-rate laryngeal-reference accuracy is measured separately by score.py.",
+  "results": [
+    {
+      "browser": "chromium",
+      "browserVersion": "153.0.8010.12",
+      "width": 1440,
+      "source": {
+        "path": "ptdb/M09/mic_M09_si2071.wav",
+        "bytes": 514604,
+        "sha256": "e7fe15373b59df1e51d6c30593d9ecdf5277f9ed48e191fc0ba72cae8933866d"
+      },
+      "stages": [
+        {
+          "stage": "load-Reference",
+          "algorithm": "yin",
+          "floor": 60,
+          "sampleRate": 44100,
+          "samples": 236375,
+          "pcmSha256": "d0c10118e8ac45a1d6d8cef9dd62b5e1374d0890d6cebd7908913eb9ba03851d",
+          "frames": 533,
+          "voiced": 94,
+          "below60Estimates": 0,
+          "contourSha256": "2840b6dde45bd68e89042901484a7ba075c4e1a7c60313c466cb52d596323a1e",
+          "directCoreMaxHzDelta": 1.1368683772161603e-13
+        },
+        {
+          "stage": "load-Your attempt",
+          "algorithm": "yin",
+          "floor": 60,
+          "sampleRate": 44100,
+          "samples": 236375,
+          "pcmSha256": "d0c10118e8ac45a1d6d8cef9dd62b5e1374d0890d6cebd7908913eb9ba03851d",
+          "frames": 533,
+          "voiced": 94,
+          "below60Estimates": 0,
+          "contourSha256": "2840b6dde45bd68e89042901484a7ba075c4e1a7c60313c466cb52d596323a1e",
+          "directCoreMaxHzDelta": 1.1368683772161603e-13
+        },
+        {
+          "stage": "attempt-40",
+          "algorithm": "yin",
+          "floor": 40,
+          "sampleRate": 44100,
+          "samples": 236375,
+          "pcmSha256": "d0c10118e8ac45a1d6d8cef9dd62b5e1374d0890d6cebd7908913eb9ba03851d",
+          "frames": 532,
+          "voiced": 103,
+          "below60Estimates": 13,
+          "contourSha256": "e86c5f3dd641bc3c1b34640d9de73c8db660b6dd44247a381fddc5809f75325d",
+          "directCoreMaxHzDelta": 1.1368683772161603e-13
+        },
+        {
+          "stage": "kept-region-40",
+          "algorithm": "yin",
+          "floor": 40,
+          "sampleRate": 44100,
+          "samples": 44100,
+          "pcmSha256": "01c1148e85f9022956bd891b95f9a86ec1dfe1b38ad98566a37a6f28ced8f528",
+          "frames": 96,
+          "voiced": 0,
+          "below60Estimates": 0,
+          "contourSha256": "b9f2950b8e99dc26a14b71c77f8d02897e79fb872084eea52ad17a3fbd9290e4",
+          "directCoreMaxHzDelta": 0
+        },
+        {
+          "stage": "restored-40",
+          "algorithm": "yin",
+          "floor": 40,
+          "sampleRate": 44100,
+          "samples": 236375,
+          "pcmSha256": "d0c10118e8ac45a1d6d8cef9dd62b5e1374d0890d6cebd7908913eb9ba03851d",
+          "frames": 532,
+          "voiced": 103,
+          "below60Estimates": 13,
+          "contourSha256": "e86c5f3dd641bc3c1b34640d9de73c8db660b6dd44247a381fddc5809f75325d",
+          "directCoreMaxHzDelta": 1.1368683772161603e-13
+        },
+        {
+          "stage": "algorithm-change",
+          "algorithm": "mpm",
+          "floor": 60,
+          "sampleRate": 44100,
+          "samples": 236375,
+          "pcmSha256": "d0c10118e8ac45a1d6d8cef9dd62b5e1374d0890d6cebd7908913eb9ba03851d",
+          "frames": 533,
+          "voiced": 85,
+          "below60Estimates": 0,
+          "contourSha256": "5c4bfb0bea186d5ea28925e941aa9944ebf5b7cc5676494d015515b97bf40063",
+          "directCoreMaxHzDelta": 8.526512829121202e-14
+        },
+        {
+          "stage": "algorithm-change",
+          "algorithm": "mpm",
+          "floor": 40,
+          "sampleRate": 44100,
+          "samples": 236375,
+          "pcmSha256": "d0c10118e8ac45a1d6d8cef9dd62b5e1374d0890d6cebd7908913eb9ba03851d",
+          "frames": 532,
+          "voiced": 93,
+          "below60Estimates": 15,
+          "contourSha256": "dd982ae7d8208e7e32522866776344cba948c074cb34b1eaed6c6c4c60c4ebf9",
+          "directCoreMaxHzDelta": 9.947598300641403e-14
+        },
+        {
+          "stage": "attempt-restored-60",
+          "algorithm": "mpm",
+          "floor": 60,
+          "sampleRate": 44100,
+          "samples": 236375,
+          "pcmSha256": "d0c10118e8ac45a1d6d8cef9dd62b5e1374d0890d6cebd7908913eb9ba03851d",
+          "frames": 533,
+          "voiced": 85,
+          "below60Estimates": 0,
+          "contourSha256": "5c4bfb0bea186d5ea28925e941aa9944ebf5b7cc5676494d015515b97bf40063",
+          "directCoreMaxHzDelta": 8.526512829121202e-14
+        }
+      ],
+      "exports": [
+        {
+          "stage": "original-60",
+          "bytes": 945644,
+          "sha256": "ff86746cd29abf833bb5f3b9a89281ac4aacac865a80844f375616a88bc0159e"
+        },
+        {
+          "stage": "attempt-40",
+          "bytes": 945644,
+          "sha256": "ff86746cd29abf833bb5f3b9a89281ac4aacac865a80844f375616a88bc0159e"
+        },
+        {
+          "stage": "restored-40",
+          "bytes": 945644,
+          "sha256": "ff86746cd29abf833bb5f3b9a89281ac4aacac865a80844f375616a88bc0159e"
+        },
+        {
+          "stage": "restored-60-mpm",
+          "bytes": 945644,
+          "sha256": "ff86746cd29abf833bb5f3b9a89281ac4aacac865a80844f375616a88bc0159e"
+        }
+      ],
+      "sameAudioScore": "84",
+      "scoreScope": "Same recorded utterance in both tabs with different search floors; no learner or pronunciation claim.",
+      "pageErrors": [],
+      "cspViolations": [],
+      "externalRequests": [],
+      "requestsWhileOffline": [],
+      "axeViolations": 0,
+      "overflow": false,
+      "served": {
+        "index.html": {
+          "bytes": 2361,
+          "sha256": "b2fc10ce8957bd2ca32996d4f25780ee20dc316a8610ebe20675c2c0b3a23889"
+        },
+        "assets/index-Dn4cIMkN.css": {
+          "bytes": 24273,
+          "sha256": "9c4b249466e8f9c70263444690a8b40aceeac6c0cf5a331d0f54d34e7a76b4ab"
+        },
+        "assets/index-B2LIxi0K.js": {
+          "bytes": 274315,
+          "sha256": "1467a54eb9990b0ac0614690f5b0441e8240865f3a39770083f99c9b2171bf88"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        },
+        "assets/inter-latin-ext-DO1Apj_S.woff2": {
+          "bytes": 85068,
+          "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        },
+        "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2": {
+          "bytes": 13348,
+          "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
+        }
+      }
+    },
+    {
+      "browser": "chromium",
+      "browserVersion": "153.0.8010.12",
+      "width": 1440,
+      "source": {
+        "path": "ptdb/M02/mic_M02_si759.wav",
+        "bytes": 587564,
+        "sha256": "920527aea7b3da9799394e8dc96a42f1931882fa14408a07dd8b1c762cbbaab0"
+      },
+      "stages": [
+        {
+          "stage": "load-Reference",
+          "algorithm": "yin",
+          "floor": 60,
+          "sampleRate": 44100,
+          "samples": 269892,
+          "pcmSha256": "5a399eae703148037438d0b6813ef45ab827b347b483ee2fbdf3bd34add9022d",
+          "frames": 609,
+          "voiced": 121,
+          "below60Estimates": 0,
+          "contourSha256": "2eb26ad5ea1fc7514adf44fb74de3578a353eb8e9695e77f876d4d8154879e4d",
+          "directCoreMaxHzDelta": 8.526512829121202e-14
+        },
+        {
+          "stage": "load-Your attempt",
+          "algorithm": "yin",
+          "floor": 60,
+          "sampleRate": 44100,
+          "samples": 269892,
+          "pcmSha256": "5a399eae703148037438d0b6813ef45ab827b347b483ee2fbdf3bd34add9022d",
+          "frames": 609,
+          "voiced": 121,
+          "below60Estimates": 0,
+          "contourSha256": "2eb26ad5ea1fc7514adf44fb74de3578a353eb8e9695e77f876d4d8154879e4d",
+          "directCoreMaxHzDelta": 8.526512829121202e-14
+        },
+        {
+          "stage": "attempt-40",
+          "algorithm": "yin",
+          "floor": 40,
+          "sampleRate": 44100,
+          "samples": 269892,
+          "pcmSha256": "5a399eae703148037438d0b6813ef45ab827b347b483ee2fbdf3bd34add9022d",
+          "frames": 608,
+          "voiced": 113,
+          "below60Estimates": 2,
+          "contourSha256": "8fa1939a8d204e17ce42cc61b0d4f7666f70b83e8d104e22bf5b3ff1da539c96",
+          "directCoreMaxHzDelta": 1.4210854715202004e-13
+        },
+        {
+          "stage": "kept-region-40",
+          "algorithm": "yin",
+          "floor": 40,
+          "sampleRate": 44100,
+          "samples": 44100,
+          "pcmSha256": "5faf468f19bdf04cedfea3e61a49305527a2e7ec1e12fbf71ae66a43582d4f11",
+          "frames": 96,
+          "voiced": 0,
+          "below60Estimates": 0,
+          "contourSha256": "b9f2950b8e99dc26a14b71c77f8d02897e79fb872084eea52ad17a3fbd9290e4",
+          "directCoreMaxHzDelta": 0
+        },
+        {
+          "stage": "restored-40",
+          "algorithm": "yin",
+          "floor": 40,
+          "sampleRate": 44100,
+          "samples": 269892,
+          "pcmSha256": "5a399eae703148037438d0b6813ef45ab827b347b483ee2fbdf3bd34add9022d",
+          "frames": 608,
+          "voiced": 113,
+          "below60Estimates": 2,
+          "contourSha256": "8fa1939a8d204e17ce42cc61b0d4f7666f70b83e8d104e22bf5b3ff1da539c96",
+          "directCoreMaxHzDelta": 1.4210854715202004e-13
+        },
+        {
+          "stage": "algorithm-change",
+          "algorithm": "mpm",
+          "floor": 60,
+          "sampleRate": 44100,
+          "samples": 269892,
+          "pcmSha256": "5a399eae703148037438d0b6813ef45ab827b347b483ee2fbdf3bd34add9022d",
+          "frames": 609,
+          "voiced": 105,
+          "below60Estimates": 0,
+          "contourSha256": "9a8f2a4f6185666f871785e47f454f62ff50504d8aa685c57f76de90fe0da717",
+          "directCoreMaxHzDelta": 1.1368683772161603e-13
+        },
+        {
+          "stage": "algorithm-change",
+          "algorithm": "mpm",
+          "floor": 40,
+          "sampleRate": 44100,
+          "samples": 269892,
+          "pcmSha256": "5a399eae703148037438d0b6813ef45ab827b347b483ee2fbdf3bd34add9022d",
+          "frames": 608,
+          "voiced": 91,
+          "below60Estimates": 0,
+          "contourSha256": "b1befea835d83e53a3574989053305506e07310f0202ce834838106d40ae19d7",
+          "directCoreMaxHzDelta": 9.947598300641403e-14
+        },
+        {
+          "stage": "attempt-restored-60",
+          "algorithm": "mpm",
+          "floor": 60,
+          "sampleRate": 44100,
+          "samples": 269892,
+          "pcmSha256": "5a399eae703148037438d0b6813ef45ab827b347b483ee2fbdf3bd34add9022d",
+          "frames": 609,
+          "voiced": 105,
+          "below60Estimates": 0,
+          "contourSha256": "9a8f2a4f6185666f871785e47f454f62ff50504d8aa685c57f76de90fe0da717",
+          "directCoreMaxHzDelta": 1.1368683772161603e-13
+        }
+      ],
+      "exports": [
+        {
+          "stage": "original-60",
+          "bytes": 1079712,
+          "sha256": "0a20beba8b72d8b89225bb636090a7431e44263100074d75cf35e33b4d7ff614"
+        },
+        {
+          "stage": "attempt-40",
+          "bytes": 1079712,
+          "sha256": "0a20beba8b72d8b89225bb636090a7431e44263100074d75cf35e33b4d7ff614"
+        },
+        {
+          "stage": "restored-40",
+          "bytes": 1079712,
+          "sha256": "0a20beba8b72d8b89225bb636090a7431e44263100074d75cf35e33b4d7ff614"
+        },
+        {
+          "stage": "restored-60-mpm",
+          "bytes": 1079712,
+          "sha256": "0a20beba8b72d8b89225bb636090a7431e44263100074d75cf35e33b4d7ff614"
+        }
+      ],
+      "sameAudioScore": "72",
+      "scoreScope": "Same recorded utterance in both tabs with different search floors; no learner or pronunciation claim.",
+      "pageErrors": [],
+      "cspViolations": [],
+      "externalRequests": [],
+      "requestsWhileOffline": [],
+      "axeViolations": 0,
+      "overflow": false,
+      "served": {
+        "index.html": {
+          "bytes": 2361,
+          "sha256": "b2fc10ce8957bd2ca32996d4f25780ee20dc316a8610ebe20675c2c0b3a23889"
+        },
+        "assets/index-Dn4cIMkN.css": {
+          "bytes": 24273,
+          "sha256": "9c4b249466e8f9c70263444690a8b40aceeac6c0cf5a331d0f54d34e7a76b4ab"
+        },
+        "assets/index-B2LIxi0K.js": {
+          "bytes": 274315,
+          "sha256": "1467a54eb9990b0ac0614690f5b0441e8240865f3a39770083f99c9b2171bf88"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2": {
+          "bytes": 13348,
+          "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/inter-latin-ext-DO1Apj_S.woff2": {
+          "bytes": 85068,
+          "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
+        }
+      }
+    },
+    {
+      "browser": "chromium",
+      "browserVersion": "153.0.8010.12",
+      "width": 375,
+      "source": {
+        "path": "ptdb/M09/mic_M09_si2071.wav",
+        "bytes": 514604,
+        "sha256": "e7fe15373b59df1e51d6c30593d9ecdf5277f9ed48e191fc0ba72cae8933866d"
+      },
+      "stages": [
+        {
+          "stage": "load-Reference",
+          "algorithm": "yin",
+          "floor": 60,
+          "sampleRate": 44100,
+          "samples": 236375,
+          "pcmSha256": "d0c10118e8ac45a1d6d8cef9dd62b5e1374d0890d6cebd7908913eb9ba03851d",
+          "frames": 533,
+          "voiced": 94,
+          "below60Estimates": 0,
+          "contourSha256": "2840b6dde45bd68e89042901484a7ba075c4e1a7c60313c466cb52d596323a1e",
+          "directCoreMaxHzDelta": 1.1368683772161603e-13
+        },
+        {
+          "stage": "load-Your attempt",
+          "algorithm": "yin",
+          "floor": 60,
+          "sampleRate": 44100,
+          "samples": 236375,
+          "pcmSha256": "d0c10118e8ac45a1d6d8cef9dd62b5e1374d0890d6cebd7908913eb9ba03851d",
+          "frames": 533,
+          "voiced": 94,
+          "below60Estimates": 0,
+          "contourSha256": "2840b6dde45bd68e89042901484a7ba075c4e1a7c60313c466cb52d596323a1e",
+          "directCoreMaxHzDelta": 1.1368683772161603e-13
+        },
+        {
+          "stage": "attempt-40",
+          "algorithm": "yin",
+          "floor": 40,
+          "sampleRate": 44100,
+          "samples": 236375,
+          "pcmSha256": "d0c10118e8ac45a1d6d8cef9dd62b5e1374d0890d6cebd7908913eb9ba03851d",
+          "frames": 532,
+          "voiced": 103,
+          "below60Estimates": 13,
+          "contourSha256": "e86c5f3dd641bc3c1b34640d9de73c8db660b6dd44247a381fddc5809f75325d",
+          "directCoreMaxHzDelta": 1.1368683772161603e-13
+        },
+        {
+          "stage": "kept-region-40",
+          "algorithm": "yin",
+          "floor": 40,
+          "sampleRate": 44100,
+          "samples": 44100,
+          "pcmSha256": "01c1148e85f9022956bd891b95f9a86ec1dfe1b38ad98566a37a6f28ced8f528",
+          "frames": 96,
+          "voiced": 0,
+          "below60Estimates": 0,
+          "contourSha256": "b9f2950b8e99dc26a14b71c77f8d02897e79fb872084eea52ad17a3fbd9290e4",
+          "directCoreMaxHzDelta": 0
+        },
+        {
+          "stage": "restored-40",
+          "algorithm": "yin",
+          "floor": 40,
+          "sampleRate": 44100,
+          "samples": 236375,
+          "pcmSha256": "d0c10118e8ac45a1d6d8cef9dd62b5e1374d0890d6cebd7908913eb9ba03851d",
+          "frames": 532,
+          "voiced": 103,
+          "below60Estimates": 13,
+          "contourSha256": "e86c5f3dd641bc3c1b34640d9de73c8db660b6dd44247a381fddc5809f75325d",
+          "directCoreMaxHzDelta": 1.1368683772161603e-13
+        },
+        {
+          "stage": "algorithm-change",
+          "algorithm": "mpm",
+          "floor": 60,
+          "sampleRate": 44100,
+          "samples": 236375,
+          "pcmSha256": "d0c10118e8ac45a1d6d8cef9dd62b5e1374d0890d6cebd7908913eb9ba03851d",
+          "frames": 533,
+          "voiced": 85,
+          "below60Estimates": 0,
+          "contourSha256": "5c4bfb0bea186d5ea28925e941aa9944ebf5b7cc5676494d015515b97bf40063",
+          "directCoreMaxHzDelta": 8.526512829121202e-14
+        },
+        {
+          "stage": "algorithm-change",
+          "algorithm": "mpm",
+          "floor": 40,
+          "sampleRate": 44100,
+          "samples": 236375,
+          "pcmSha256": "d0c10118e8ac45a1d6d8cef9dd62b5e1374d0890d6cebd7908913eb9ba03851d",
+          "frames": 532,
+          "voiced": 93,
+          "below60Estimates": 15,
+          "contourSha256": "dd982ae7d8208e7e32522866776344cba948c074cb34b1eaed6c6c4c60c4ebf9",
+          "directCoreMaxHzDelta": 9.947598300641403e-14
+        },
+        {
+          "stage": "attempt-restored-60",
+          "algorithm": "mpm",
+          "floor": 60,
+          "sampleRate": 44100,
+          "samples": 236375,
+          "pcmSha256": "d0c10118e8ac45a1d6d8cef9dd62b5e1374d0890d6cebd7908913eb9ba03851d",
+          "frames": 533,
+          "voiced": 85,
+          "below60Estimates": 0,
+          "contourSha256": "5c4bfb0bea186d5ea28925e941aa9944ebf5b7cc5676494d015515b97bf40063",
+          "directCoreMaxHzDelta": 8.526512829121202e-14
+        }
+      ],
+      "exports": [
+        {
+          "stage": "original-60",
+          "bytes": 945644,
+          "sha256": "ff86746cd29abf833bb5f3b9a89281ac4aacac865a80844f375616a88bc0159e"
+        },
+        {
+          "stage": "attempt-40",
+          "bytes": 945644,
+          "sha256": "ff86746cd29abf833bb5f3b9a89281ac4aacac865a80844f375616a88bc0159e"
+        },
+        {
+          "stage": "restored-40",
+          "bytes": 945644,
+          "sha256": "ff86746cd29abf833bb5f3b9a89281ac4aacac865a80844f375616a88bc0159e"
+        },
+        {
+          "stage": "restored-60-mpm",
+          "bytes": 945644,
+          "sha256": "ff86746cd29abf833bb5f3b9a89281ac4aacac865a80844f375616a88bc0159e"
+        }
+      ],
+      "sameAudioScore": "84",
+      "scoreScope": "Same recorded utterance in both tabs with different search floors; no learner or pronunciation claim.",
+      "pageErrors": [],
+      "cspViolations": [],
+      "externalRequests": [],
+      "requestsWhileOffline": [],
+      "axeViolations": 0,
+      "overflow": false,
+      "served": {
+        "index.html": {
+          "bytes": 2361,
+          "sha256": "b2fc10ce8957bd2ca32996d4f25780ee20dc316a8610ebe20675c2c0b3a23889"
+        },
+        "assets/index-Dn4cIMkN.css": {
+          "bytes": 24273,
+          "sha256": "9c4b249466e8f9c70263444690a8b40aceeac6c0cf5a331d0f54d34e7a76b4ab"
+        },
+        "assets/index-B2LIxi0K.js": {
+          "bytes": 274315,
+          "sha256": "1467a54eb9990b0ac0614690f5b0441e8240865f3a39770083f99c9b2171bf88"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        },
+        "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2": {
+          "bytes": 13348,
+          "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/inter-latin-ext-DO1Apj_S.woff2": {
+          "bytes": 85068,
+          "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
+        }
+      }
+    },
+    {
+      "browser": "chromium",
+      "browserVersion": "153.0.8010.12",
+      "width": 375,
+      "source": {
+        "path": "ptdb/M02/mic_M02_si759.wav",
+        "bytes": 587564,
+        "sha256": "920527aea7b3da9799394e8dc96a42f1931882fa14408a07dd8b1c762cbbaab0"
+      },
+      "stages": [
+        {
+          "stage": "load-Reference",
+          "algorithm": "yin",
+          "floor": 60,
+          "sampleRate": 44100,
+          "samples": 269892,
+          "pcmSha256": "5a399eae703148037438d0b6813ef45ab827b347b483ee2fbdf3bd34add9022d",
+          "frames": 609,
+          "voiced": 121,
+          "below60Estimates": 0,
+          "contourSha256": "2eb26ad5ea1fc7514adf44fb74de3578a353eb8e9695e77f876d4d8154879e4d",
+          "directCoreMaxHzDelta": 8.526512829121202e-14
+        },
+        {
+          "stage": "load-Your attempt",
+          "algorithm": "yin",
+          "floor": 60,
+          "sampleRate": 44100,
+          "samples": 269892,
+          "pcmSha256": "5a399eae703148037438d0b6813ef45ab827b347b483ee2fbdf3bd34add9022d",
+          "frames": 609,
+          "voiced": 121,
+          "below60Estimates": 0,
+          "contourSha256": "2eb26ad5ea1fc7514adf44fb74de3578a353eb8e9695e77f876d4d8154879e4d",
+          "directCoreMaxHzDelta": 8.526512829121202e-14
+        },
+        {
+          "stage": "attempt-40",
+          "algorithm": "yin",
+          "floor": 40,
+          "sampleRate": 44100,
+          "samples": 269892,
+          "pcmSha256": "5a399eae703148037438d0b6813ef45ab827b347b483ee2fbdf3bd34add9022d",
+          "frames": 608,
+          "voiced": 113,
+          "below60Estimates": 2,
+          "contourSha256": "8fa1939a8d204e17ce42cc61b0d4f7666f70b83e8d104e22bf5b3ff1da539c96",
+          "directCoreMaxHzDelta": 1.4210854715202004e-13
+        },
+        {
+          "stage": "kept-region-40",
+          "algorithm": "yin",
+          "floor": 40,
+          "sampleRate": 44100,
+          "samples": 44100,
+          "pcmSha256": "5faf468f19bdf04cedfea3e61a49305527a2e7ec1e12fbf71ae66a43582d4f11",
+          "frames": 96,
+          "voiced": 0,
+          "below60Estimates": 0,
+          "contourSha256": "b9f2950b8e99dc26a14b71c77f8d02897e79fb872084eea52ad17a3fbd9290e4",
+          "directCoreMaxHzDelta": 0
+        },
+        {
+          "stage": "restored-40",
+          "algorithm": "yin",
+          "floor": 40,
+          "sampleRate": 44100,
+          "samples": 269892,
+          "pcmSha256": "5a399eae703148037438d0b6813ef45ab827b347b483ee2fbdf3bd34add9022d",
+          "frames": 608,
+          "voiced": 113,
+          "below60Estimates": 2,
+          "contourSha256": "8fa1939a8d204e17ce42cc61b0d4f7666f70b83e8d104e22bf5b3ff1da539c96",
+          "directCoreMaxHzDelta": 1.4210854715202004e-13
+        },
+        {
+          "stage": "algorithm-change",
+          "algorithm": "mpm",
+          "floor": 60,
+          "sampleRate": 44100,
+          "samples": 269892,
+          "pcmSha256": "5a399eae703148037438d0b6813ef45ab827b347b483ee2fbdf3bd34add9022d",
+          "frames": 609,
+          "voiced": 105,
+          "below60Estimates": 0,
+          "contourSha256": "9a8f2a4f6185666f871785e47f454f62ff50504d8aa685c57f76de90fe0da717",
+          "directCoreMaxHzDelta": 1.1368683772161603e-13
+        },
+        {
+          "stage": "algorithm-change",
+          "algorithm": "mpm",
+          "floor": 40,
+          "sampleRate": 44100,
+          "samples": 269892,
+          "pcmSha256": "5a399eae703148037438d0b6813ef45ab827b347b483ee2fbdf3bd34add9022d",
+          "frames": 608,
+          "voiced": 91,
+          "below60Estimates": 0,
+          "contourSha256": "b1befea835d83e53a3574989053305506e07310f0202ce834838106d40ae19d7",
+          "directCoreMaxHzDelta": 9.947598300641403e-14
+        },
+        {
+          "stage": "attempt-restored-60",
+          "algorithm": "mpm",
+          "floor": 60,
+          "sampleRate": 44100,
+          "samples": 269892,
+          "pcmSha256": "5a399eae703148037438d0b6813ef45ab827b347b483ee2fbdf3bd34add9022d",
+          "frames": 609,
+          "voiced": 105,
+          "below60Estimates": 0,
+          "contourSha256": "9a8f2a4f6185666f871785e47f454f62ff50504d8aa685c57f76de90fe0da717",
+          "directCoreMaxHzDelta": 1.1368683772161603e-13
+        }
+      ],
+      "exports": [
+        {
+          "stage": "original-60",
+          "bytes": 1079712,
+          "sha256": "0a20beba8b72d8b89225bb636090a7431e44263100074d75cf35e33b4d7ff614"
+        },
+        {
+          "stage": "attempt-40",
+          "bytes": 1079712,
+          "sha256": "0a20beba8b72d8b89225bb636090a7431e44263100074d75cf35e33b4d7ff614"
+        },
+        {
+          "stage": "restored-40",
+          "bytes": 1079712,
+          "sha256": "0a20beba8b72d8b89225bb636090a7431e44263100074d75cf35e33b4d7ff614"
+        },
+        {
+          "stage": "restored-60-mpm",
+          "bytes": 1079712,
+          "sha256": "0a20beba8b72d8b89225bb636090a7431e44263100074d75cf35e33b4d7ff614"
+        }
+      ],
+      "sameAudioScore": "72",
+      "scoreScope": "Same recorded utterance in both tabs with different search floors; no learner or pronunciation claim.",
+      "pageErrors": [],
+      "cspViolations": [],
+      "externalRequests": [],
+      "requestsWhileOffline": [],
+      "axeViolations": 0,
+      "overflow": false,
+      "served": {
+        "index.html": {
+          "bytes": 2361,
+          "sha256": "b2fc10ce8957bd2ca32996d4f25780ee20dc316a8610ebe20675c2c0b3a23889"
+        },
+        "assets/index-Dn4cIMkN.css": {
+          "bytes": 24273,
+          "sha256": "9c4b249466e8f9c70263444690a8b40aceeac6c0cf5a331d0f54d34e7a76b4ab"
+        },
+        "assets/index-B2LIxi0K.js": {
+          "bytes": 274315,
+          "sha256": "1467a54eb9990b0ac0614690f5b0441e8240865f3a39770083f99c9b2171bf88"
+        },
+        "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2": {
+          "bytes": 13348,
+          "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/inter-latin-ext-DO1Apj_S.woff2": {
+          "bytes": 85068,
+          "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        }
+      }
+    },
+    {
+      "browser": "firefox",
+      "browserVersion": "155.0",
+      "width": 1440,
+      "source": {
+        "path": "ptdb/M09/mic_M09_si2071.wav",
+        "bytes": 514604,
+        "sha256": "e7fe15373b59df1e51d6c30593d9ecdf5277f9ed48e191fc0ba72cae8933866d"
+      },
+      "stages": [
+        {
+          "stage": "load-Reference",
+          "algorithm": "yin",
+          "floor": 60,
+          "sampleRate": 44100,
+          "samples": 236376,
+          "pcmSha256": "79a124b3876f94b16859956de59cc25e6a3e6b923439af426810aadee92331af",
+          "frames": 533,
+          "voiced": 94,
+          "below60Estimates": 0,
+          "contourSha256": "3c3343d7a69e66fac0d014dbbfbb551f45136a65e8f96d4436586a142556c757",
+          "directCoreMaxHzDelta": 7.105427357601002e-14
+        },
+        {
+          "stage": "load-Your attempt",
+          "algorithm": "yin",
+          "floor": 60,
+          "sampleRate": 44100,
+          "samples": 236376,
+          "pcmSha256": "79a124b3876f94b16859956de59cc25e6a3e6b923439af426810aadee92331af",
+          "frames": 533,
+          "voiced": 94,
+          "below60Estimates": 0,
+          "contourSha256": "3c3343d7a69e66fac0d014dbbfbb551f45136a65e8f96d4436586a142556c757",
+          "directCoreMaxHzDelta": 7.105427357601002e-14
+        },
+        {
+          "stage": "attempt-40",
+          "algorithm": "yin",
+          "floor": 40,
+          "sampleRate": 44100,
+          "samples": 236376,
+          "pcmSha256": "79a124b3876f94b16859956de59cc25e6a3e6b923439af426810aadee92331af",
+          "frames": 532,
+          "voiced": 103,
+          "below60Estimates": 13,
+          "contourSha256": "dc9ca0354153d7fa180f85676834835aa02886994455af6f74331810c442f1a0",
+          "directCoreMaxHzDelta": 7.105427357601002e-14
+        },
+        {
+          "stage": "kept-region-40",
+          "algorithm": "yin",
+          "floor": 40,
+          "sampleRate": 44100,
+          "samples": 44100,
+          "pcmSha256": "680542c0934b8c44bb32a83dd1b187eaf535de46d10d584b0ff2c054ea2e24b0",
+          "frames": 96,
+          "voiced": 0,
+          "below60Estimates": 0,
+          "contourSha256": "b9f2950b8e99dc26a14b71c77f8d02897e79fb872084eea52ad17a3fbd9290e4",
+          "directCoreMaxHzDelta": 0
+        },
+        {
+          "stage": "restored-40",
+          "algorithm": "yin",
+          "floor": 40,
+          "sampleRate": 44100,
+          "samples": 236376,
+          "pcmSha256": "79a124b3876f94b16859956de59cc25e6a3e6b923439af426810aadee92331af",
+          "frames": 532,
+          "voiced": 103,
+          "below60Estimates": 13,
+          "contourSha256": "dc9ca0354153d7fa180f85676834835aa02886994455af6f74331810c442f1a0",
+          "directCoreMaxHzDelta": 7.105427357601002e-14
+        },
+        {
+          "stage": "algorithm-change",
+          "algorithm": "mpm",
+          "floor": 60,
+          "sampleRate": 44100,
+          "samples": 236376,
+          "pcmSha256": "79a124b3876f94b16859956de59cc25e6a3e6b923439af426810aadee92331af",
+          "frames": 533,
+          "voiced": 85,
+          "below60Estimates": 0,
+          "contourSha256": "6fd06c2910936ac5c93ef7c1fce2d2502afae920fa576c7d74f77222100cd054",
+          "directCoreMaxHzDelta": 1.4210854715202004e-13
+        },
+        {
+          "stage": "algorithm-change",
+          "algorithm": "mpm",
+          "floor": 40,
+          "sampleRate": 44100,
+          "samples": 236376,
+          "pcmSha256": "79a124b3876f94b16859956de59cc25e6a3e6b923439af426810aadee92331af",
+          "frames": 532,
+          "voiced": 93,
+          "below60Estimates": 15,
+          "contourSha256": "9acc69cf93b7937be0709fedcb9971b57bf56472cc3f49eea32781a4c3112247",
+          "directCoreMaxHzDelta": 2.842170943040401e-14
+        },
+        {
+          "stage": "attempt-restored-60",
+          "algorithm": "mpm",
+          "floor": 60,
+          "sampleRate": 44100,
+          "samples": 236376,
+          "pcmSha256": "79a124b3876f94b16859956de59cc25e6a3e6b923439af426810aadee92331af",
+          "frames": 533,
+          "voiced": 85,
+          "below60Estimates": 0,
+          "contourSha256": "6fd06c2910936ac5c93ef7c1fce2d2502afae920fa576c7d74f77222100cd054",
+          "directCoreMaxHzDelta": 1.4210854715202004e-13
+        }
+      ],
+      "exports": [
+        {
+          "stage": "original-60",
+          "bytes": 945648,
+          "sha256": "7767737790eff8c6d3e4d2309f23fbbaefd0d4ffa335ec881892efdff52abbf6"
+        },
+        {
+          "stage": "attempt-40",
+          "bytes": 945648,
+          "sha256": "7767737790eff8c6d3e4d2309f23fbbaefd0d4ffa335ec881892efdff52abbf6"
+        },
+        {
+          "stage": "restored-40",
+          "bytes": 945648,
+          "sha256": "7767737790eff8c6d3e4d2309f23fbbaefd0d4ffa335ec881892efdff52abbf6"
+        },
+        {
+          "stage": "restored-60-mpm",
+          "bytes": 945648,
+          "sha256": "7767737790eff8c6d3e4d2309f23fbbaefd0d4ffa335ec881892efdff52abbf6"
+        }
+      ],
+      "sameAudioScore": "84",
+      "scoreScope": "Same recorded utterance in both tabs with different search floors; no learner or pronunciation claim.",
+      "pageErrors": [],
+      "cspViolations": [],
+      "externalRequests": [],
+      "requestsWhileOffline": [],
+      "axeViolations": 0,
+      "overflow": false,
+      "served": {
+        "index.html": {
+          "bytes": 2361,
+          "sha256": "b2fc10ce8957bd2ca32996d4f25780ee20dc316a8610ebe20675c2c0b3a23889"
+        },
+        "assets/index-B2LIxi0K.js": {
+          "bytes": 274315,
+          "sha256": "1467a54eb9990b0ac0614690f5b0441e8240865f3a39770083f99c9b2171bf88"
+        },
+        "assets/index-Dn4cIMkN.css": {
+          "bytes": 24273,
+          "sha256": "9c4b249466e8f9c70263444690a8b40aceeac6c0cf5a331d0f54d34e7a76b4ab"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/inter-latin-ext-DO1Apj_S.woff2": {
+          "bytes": 85068,
+          "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
+        },
+        "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2": {
+          "bytes": 13348,
+          "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        }
+      }
+    },
+    {
+      "browser": "firefox",
+      "browserVersion": "155.0",
+      "width": 1440,
+      "source": {
+        "path": "ptdb/M02/mic_M02_si759.wav",
+        "bytes": 587564,
+        "sha256": "920527aea7b3da9799394e8dc96a42f1931882fa14408a07dd8b1c762cbbaab0"
+      },
+      "stages": [
+        {
+          "stage": "load-Reference",
+          "algorithm": "yin",
+          "floor": 60,
+          "sampleRate": 44100,
+          "samples": 269892,
+          "pcmSha256": "399e2496c6dc20fd7bc6c55e1b469a59de4ff08b010f68b8e16533df396c8bbb",
+          "frames": 609,
+          "voiced": 121,
+          "below60Estimates": 0,
+          "contourSha256": "dbab48e271db5fc002e347900b8342e1723b5e4e9608d33d6e8bb45a16ba8bea",
+          "directCoreMaxHzDelta": 1.9895196601282805e-13
+        },
+        {
+          "stage": "load-Your attempt",
+          "algorithm": "yin",
+          "floor": 60,
+          "sampleRate": 44100,
+          "samples": 269892,
+          "pcmSha256": "399e2496c6dc20fd7bc6c55e1b469a59de4ff08b010f68b8e16533df396c8bbb",
+          "frames": 609,
+          "voiced": 121,
+          "below60Estimates": 0,
+          "contourSha256": "dbab48e271db5fc002e347900b8342e1723b5e4e9608d33d6e8bb45a16ba8bea",
+          "directCoreMaxHzDelta": 1.9895196601282805e-13
+        },
+        {
+          "stage": "attempt-40",
+          "algorithm": "yin",
+          "floor": 40,
+          "sampleRate": 44100,
+          "samples": 269892,
+          "pcmSha256": "399e2496c6dc20fd7bc6c55e1b469a59de4ff08b010f68b8e16533df396c8bbb",
+          "frames": 608,
+          "voiced": 113,
+          "below60Estimates": 2,
+          "contourSha256": "8d95bf2a24d98c809ccb61d1587a9814be40eccab9eb5d23757e434092cb1c64",
+          "directCoreMaxHzDelta": 1.1368683772161603e-13
+        },
+        {
+          "stage": "kept-region-40",
+          "algorithm": "yin",
+          "floor": 40,
+          "sampleRate": 44100,
+          "samples": 44100,
+          "pcmSha256": "648248284124778c7eab2bd3fb641cc3dccf427157ec7fd9933cf57c16990cd0",
+          "frames": 96,
+          "voiced": 0,
+          "below60Estimates": 0,
+          "contourSha256": "b9f2950b8e99dc26a14b71c77f8d02897e79fb872084eea52ad17a3fbd9290e4",
+          "directCoreMaxHzDelta": 0
+        },
+        {
+          "stage": "restored-40",
+          "algorithm": "yin",
+          "floor": 40,
+          "sampleRate": 44100,
+          "samples": 269892,
+          "pcmSha256": "399e2496c6dc20fd7bc6c55e1b469a59de4ff08b010f68b8e16533df396c8bbb",
+          "frames": 608,
+          "voiced": 113,
+          "below60Estimates": 2,
+          "contourSha256": "8d95bf2a24d98c809ccb61d1587a9814be40eccab9eb5d23757e434092cb1c64",
+          "directCoreMaxHzDelta": 1.1368683772161603e-13
+        },
+        {
+          "stage": "algorithm-change",
+          "algorithm": "mpm",
+          "floor": 60,
+          "sampleRate": 44100,
+          "samples": 269892,
+          "pcmSha256": "399e2496c6dc20fd7bc6c55e1b469a59de4ff08b010f68b8e16533df396c8bbb",
+          "frames": 609,
+          "voiced": 105,
+          "below60Estimates": 0,
+          "contourSha256": "2648f2c08a1a826106e29a56fbdecd2f8ade7345a7c9656af75e5f07c48c46c4",
+          "directCoreMaxHzDelta": 5.684341886080802e-14
+        },
+        {
+          "stage": "algorithm-change",
+          "algorithm": "mpm",
+          "floor": 40,
+          "sampleRate": 44100,
+          "samples": 269892,
+          "pcmSha256": "399e2496c6dc20fd7bc6c55e1b469a59de4ff08b010f68b8e16533df396c8bbb",
+          "frames": 608,
+          "voiced": 91,
+          "below60Estimates": 0,
+          "contourSha256": "c463f2c67e4cbb7106bc274220e0b8535f5f0ccce47b4bc5d962ac70d5873094",
+          "directCoreMaxHzDelta": 5.684341886080802e-14
+        },
+        {
+          "stage": "attempt-restored-60",
+          "algorithm": "mpm",
+          "floor": 60,
+          "sampleRate": 44100,
+          "samples": 269892,
+          "pcmSha256": "399e2496c6dc20fd7bc6c55e1b469a59de4ff08b010f68b8e16533df396c8bbb",
+          "frames": 609,
+          "voiced": 105,
+          "below60Estimates": 0,
+          "contourSha256": "2648f2c08a1a826106e29a56fbdecd2f8ade7345a7c9656af75e5f07c48c46c4",
+          "directCoreMaxHzDelta": 5.684341886080802e-14
+        }
+      ],
+      "exports": [
+        {
+          "stage": "original-60",
+          "bytes": 1079712,
+          "sha256": "7a4a93acb6ef40e2de86448d83ba70c5805e217ca90f8b5ed28e8ae0f5bbbe5a"
+        },
+        {
+          "stage": "attempt-40",
+          "bytes": 1079712,
+          "sha256": "7a4a93acb6ef40e2de86448d83ba70c5805e217ca90f8b5ed28e8ae0f5bbbe5a"
+        },
+        {
+          "stage": "restored-40",
+          "bytes": 1079712,
+          "sha256": "7a4a93acb6ef40e2de86448d83ba70c5805e217ca90f8b5ed28e8ae0f5bbbe5a"
+        },
+        {
+          "stage": "restored-60-mpm",
+          "bytes": 1079712,
+          "sha256": "7a4a93acb6ef40e2de86448d83ba70c5805e217ca90f8b5ed28e8ae0f5bbbe5a"
+        }
+      ],
+      "sameAudioScore": "72",
+      "scoreScope": "Same recorded utterance in both tabs with different search floors; no learner or pronunciation claim.",
+      "pageErrors": [],
+      "cspViolations": [],
+      "externalRequests": [],
+      "requestsWhileOffline": [],
+      "axeViolations": 0,
+      "overflow": false,
+      "served": {
+        "index.html": {
+          "bytes": 2361,
+          "sha256": "b2fc10ce8957bd2ca32996d4f25780ee20dc316a8610ebe20675c2c0b3a23889"
+        },
+        "assets/index-Dn4cIMkN.css": {
+          "bytes": 24273,
+          "sha256": "9c4b249466e8f9c70263444690a8b40aceeac6c0cf5a331d0f54d34e7a76b4ab"
+        },
+        "assets/index-B2LIxi0K.js": {
+          "bytes": 274315,
+          "sha256": "1467a54eb9990b0ac0614690f5b0441e8240865f3a39770083f99c9b2171bf88"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2": {
+          "bytes": 13348,
+          "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
+        },
+        "assets/inter-latin-ext-DO1Apj_S.woff2": {
+          "bytes": 85068,
+          "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        }
+      }
+    },
+    {
+      "browser": "firefox",
+      "browserVersion": "155.0",
+      "width": 375,
+      "source": {
+        "path": "ptdb/M09/mic_M09_si2071.wav",
+        "bytes": 514604,
+        "sha256": "e7fe15373b59df1e51d6c30593d9ecdf5277f9ed48e191fc0ba72cae8933866d"
+      },
+      "stages": [
+        {
+          "stage": "load-Reference",
+          "algorithm": "yin",
+          "floor": 60,
+          "sampleRate": 44100,
+          "samples": 236376,
+          "pcmSha256": "79a124b3876f94b16859956de59cc25e6a3e6b923439af426810aadee92331af",
+          "frames": 533,
+          "voiced": 94,
+          "below60Estimates": 0,
+          "contourSha256": "3c3343d7a69e66fac0d014dbbfbb551f45136a65e8f96d4436586a142556c757",
+          "directCoreMaxHzDelta": 7.105427357601002e-14
+        },
+        {
+          "stage": "load-Your attempt",
+          "algorithm": "yin",
+          "floor": 60,
+          "sampleRate": 44100,
+          "samples": 236376,
+          "pcmSha256": "79a124b3876f94b16859956de59cc25e6a3e6b923439af426810aadee92331af",
+          "frames": 533,
+          "voiced": 94,
+          "below60Estimates": 0,
+          "contourSha256": "3c3343d7a69e66fac0d014dbbfbb551f45136a65e8f96d4436586a142556c757",
+          "directCoreMaxHzDelta": 7.105427357601002e-14
+        },
+        {
+          "stage": "attempt-40",
+          "algorithm": "yin",
+          "floor": 40,
+          "sampleRate": 44100,
+          "samples": 236376,
+          "pcmSha256": "79a124b3876f94b16859956de59cc25e6a3e6b923439af426810aadee92331af",
+          "frames": 532,
+          "voiced": 103,
+          "below60Estimates": 13,
+          "contourSha256": "dc9ca0354153d7fa180f85676834835aa02886994455af6f74331810c442f1a0",
+          "directCoreMaxHzDelta": 7.105427357601002e-14
+        },
+        {
+          "stage": "kept-region-40",
+          "algorithm": "yin",
+          "floor": 40,
+          "sampleRate": 44100,
+          "samples": 44100,
+          "pcmSha256": "680542c0934b8c44bb32a83dd1b187eaf535de46d10d584b0ff2c054ea2e24b0",
+          "frames": 96,
+          "voiced": 0,
+          "below60Estimates": 0,
+          "contourSha256": "b9f2950b8e99dc26a14b71c77f8d02897e79fb872084eea52ad17a3fbd9290e4",
+          "directCoreMaxHzDelta": 0
+        },
+        {
+          "stage": "restored-40",
+          "algorithm": "yin",
+          "floor": 40,
+          "sampleRate": 44100,
+          "samples": 236376,
+          "pcmSha256": "79a124b3876f94b16859956de59cc25e6a3e6b923439af426810aadee92331af",
+          "frames": 532,
+          "voiced": 103,
+          "below60Estimates": 13,
+          "contourSha256": "dc9ca0354153d7fa180f85676834835aa02886994455af6f74331810c442f1a0",
+          "directCoreMaxHzDelta": 7.105427357601002e-14
+        },
+        {
+          "stage": "algorithm-change",
+          "algorithm": "mpm",
+          "floor": 60,
+          "sampleRate": 44100,
+          "samples": 236376,
+          "pcmSha256": "79a124b3876f94b16859956de59cc25e6a3e6b923439af426810aadee92331af",
+          "frames": 533,
+          "voiced": 85,
+          "below60Estimates": 0,
+          "contourSha256": "6fd06c2910936ac5c93ef7c1fce2d2502afae920fa576c7d74f77222100cd054",
+          "directCoreMaxHzDelta": 1.4210854715202004e-13
+        },
+        {
+          "stage": "algorithm-change",
+          "algorithm": "mpm",
+          "floor": 40,
+          "sampleRate": 44100,
+          "samples": 236376,
+          "pcmSha256": "79a124b3876f94b16859956de59cc25e6a3e6b923439af426810aadee92331af",
+          "frames": 532,
+          "voiced": 93,
+          "below60Estimates": 15,
+          "contourSha256": "9acc69cf93b7937be0709fedcb9971b57bf56472cc3f49eea32781a4c3112247",
+          "directCoreMaxHzDelta": 2.842170943040401e-14
+        },
+        {
+          "stage": "attempt-restored-60",
+          "algorithm": "mpm",
+          "floor": 60,
+          "sampleRate": 44100,
+          "samples": 236376,
+          "pcmSha256": "79a124b3876f94b16859956de59cc25e6a3e6b923439af426810aadee92331af",
+          "frames": 533,
+          "voiced": 85,
+          "below60Estimates": 0,
+          "contourSha256": "6fd06c2910936ac5c93ef7c1fce2d2502afae920fa576c7d74f77222100cd054",
+          "directCoreMaxHzDelta": 1.4210854715202004e-13
+        }
+      ],
+      "exports": [
+        {
+          "stage": "original-60",
+          "bytes": 945648,
+          "sha256": "7767737790eff8c6d3e4d2309f23fbbaefd0d4ffa335ec881892efdff52abbf6"
+        },
+        {
+          "stage": "attempt-40",
+          "bytes": 945648,
+          "sha256": "7767737790eff8c6d3e4d2309f23fbbaefd0d4ffa335ec881892efdff52abbf6"
+        },
+        {
+          "stage": "restored-40",
+          "bytes": 945648,
+          "sha256": "7767737790eff8c6d3e4d2309f23fbbaefd0d4ffa335ec881892efdff52abbf6"
+        },
+        {
+          "stage": "restored-60-mpm",
+          "bytes": 945648,
+          "sha256": "7767737790eff8c6d3e4d2309f23fbbaefd0d4ffa335ec881892efdff52abbf6"
+        }
+      ],
+      "sameAudioScore": "84",
+      "scoreScope": "Same recorded utterance in both tabs with different search floors; no learner or pronunciation claim.",
+      "pageErrors": [],
+      "cspViolations": [],
+      "externalRequests": [],
+      "requestsWhileOffline": [],
+      "axeViolations": 0,
+      "overflow": false,
+      "served": {
+        "index.html": {
+          "bytes": 2361,
+          "sha256": "b2fc10ce8957bd2ca32996d4f25780ee20dc316a8610ebe20675c2c0b3a23889"
+        },
+        "assets/index-Dn4cIMkN.css": {
+          "bytes": 24273,
+          "sha256": "9c4b249466e8f9c70263444690a8b40aceeac6c0cf5a331d0f54d34e7a76b4ab"
+        },
+        "assets/index-B2LIxi0K.js": {
+          "bytes": 274315,
+          "sha256": "1467a54eb9990b0ac0614690f5b0441e8240865f3a39770083f99c9b2171bf88"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2": {
+          "bytes": 13348,
+          "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        },
+        "assets/inter-latin-ext-DO1Apj_S.woff2": {
+          "bytes": 85068,
+          "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        }
+      }
+    },
+    {
+      "browser": "firefox",
+      "browserVersion": "155.0",
+      "width": 375,
+      "source": {
+        "path": "ptdb/M02/mic_M02_si759.wav",
+        "bytes": 587564,
+        "sha256": "920527aea7b3da9799394e8dc96a42f1931882fa14408a07dd8b1c762cbbaab0"
+      },
+      "stages": [
+        {
+          "stage": "load-Reference",
+          "algorithm": "yin",
+          "floor": 60,
+          "sampleRate": 44100,
+          "samples": 269892,
+          "pcmSha256": "399e2496c6dc20fd7bc6c55e1b469a59de4ff08b010f68b8e16533df396c8bbb",
+          "frames": 609,
+          "voiced": 121,
+          "below60Estimates": 0,
+          "contourSha256": "dbab48e271db5fc002e347900b8342e1723b5e4e9608d33d6e8bb45a16ba8bea",
+          "directCoreMaxHzDelta": 1.9895196601282805e-13
+        },
+        {
+          "stage": "load-Your attempt",
+          "algorithm": "yin",
+          "floor": 60,
+          "sampleRate": 44100,
+          "samples": 269892,
+          "pcmSha256": "399e2496c6dc20fd7bc6c55e1b469a59de4ff08b010f68b8e16533df396c8bbb",
+          "frames": 609,
+          "voiced": 121,
+          "below60Estimates": 0,
+          "contourSha256": "dbab48e271db5fc002e347900b8342e1723b5e4e9608d33d6e8bb45a16ba8bea",
+          "directCoreMaxHzDelta": 1.9895196601282805e-13
+        },
+        {
+          "stage": "attempt-40",
+          "algorithm": "yin",
+          "floor": 40,
+          "sampleRate": 44100,
+          "samples": 269892,
+          "pcmSha256": "399e2496c6dc20fd7bc6c55e1b469a59de4ff08b010f68b8e16533df396c8bbb",
+          "frames": 608,
+          "voiced": 113,
+          "below60Estimates": 2,
+          "contourSha256": "8d95bf2a24d98c809ccb61d1587a9814be40eccab9eb5d23757e434092cb1c64",
+          "directCoreMaxHzDelta": 1.1368683772161603e-13
+        },
+        {
+          "stage": "kept-region-40",
+          "algorithm": "yin",
+          "floor": 40,
+          "sampleRate": 44100,
+          "samples": 44100,
+          "pcmSha256": "648248284124778c7eab2bd3fb641cc3dccf427157ec7fd9933cf57c16990cd0",
+          "frames": 96,
+          "voiced": 0,
+          "below60Estimates": 0,
+          "contourSha256": "b9f2950b8e99dc26a14b71c77f8d02897e79fb872084eea52ad17a3fbd9290e4",
+          "directCoreMaxHzDelta": 0
+        },
+        {
+          "stage": "restored-40",
+          "algorithm": "yin",
+          "floor": 40,
+          "sampleRate": 44100,
+          "samples": 269892,
+          "pcmSha256": "399e2496c6dc20fd7bc6c55e1b469a59de4ff08b010f68b8e16533df396c8bbb",
+          "frames": 608,
+          "voiced": 113,
+          "below60Estimates": 2,
+          "contourSha256": "8d95bf2a24d98c809ccb61d1587a9814be40eccab9eb5d23757e434092cb1c64",
+          "directCoreMaxHzDelta": 1.1368683772161603e-13
+        },
+        {
+          "stage": "algorithm-change",
+          "algorithm": "mpm",
+          "floor": 60,
+          "sampleRate": 44100,
+          "samples": 269892,
+          "pcmSha256": "399e2496c6dc20fd7bc6c55e1b469a59de4ff08b010f68b8e16533df396c8bbb",
+          "frames": 609,
+          "voiced": 105,
+          "below60Estimates": 0,
+          "contourSha256": "2648f2c08a1a826106e29a56fbdecd2f8ade7345a7c9656af75e5f07c48c46c4",
+          "directCoreMaxHzDelta": 5.684341886080802e-14
+        },
+        {
+          "stage": "algorithm-change",
+          "algorithm": "mpm",
+          "floor": 40,
+          "sampleRate": 44100,
+          "samples": 269892,
+          "pcmSha256": "399e2496c6dc20fd7bc6c55e1b469a59de4ff08b010f68b8e16533df396c8bbb",
+          "frames": 608,
+          "voiced": 91,
+          "below60Estimates": 0,
+          "contourSha256": "c463f2c67e4cbb7106bc274220e0b8535f5f0ccce47b4bc5d962ac70d5873094",
+          "directCoreMaxHzDelta": 5.684341886080802e-14
+        },
+        {
+          "stage": "attempt-restored-60",
+          "algorithm": "mpm",
+          "floor": 60,
+          "sampleRate": 44100,
+          "samples": 269892,
+          "pcmSha256": "399e2496c6dc20fd7bc6c55e1b469a59de4ff08b010f68b8e16533df396c8bbb",
+          "frames": 609,
+          "voiced": 105,
+          "below60Estimates": 0,
+          "contourSha256": "2648f2c08a1a826106e29a56fbdecd2f8ade7345a7c9656af75e5f07c48c46c4",
+          "directCoreMaxHzDelta": 5.684341886080802e-14
+        }
+      ],
+      "exports": [
+        {
+          "stage": "original-60",
+          "bytes": 1079712,
+          "sha256": "7a4a93acb6ef40e2de86448d83ba70c5805e217ca90f8b5ed28e8ae0f5bbbe5a"
+        },
+        {
+          "stage": "attempt-40",
+          "bytes": 1079712,
+          "sha256": "7a4a93acb6ef40e2de86448d83ba70c5805e217ca90f8b5ed28e8ae0f5bbbe5a"
+        },
+        {
+          "stage": "restored-40",
+          "bytes": 1079712,
+          "sha256": "7a4a93acb6ef40e2de86448d83ba70c5805e217ca90f8b5ed28e8ae0f5bbbe5a"
+        },
+        {
+          "stage": "restored-60-mpm",
+          "bytes": 1079712,
+          "sha256": "7a4a93acb6ef40e2de86448d83ba70c5805e217ca90f8b5ed28e8ae0f5bbbe5a"
+        }
+      ],
+      "sameAudioScore": "72",
+      "scoreScope": "Same recorded utterance in both tabs with different search floors; no learner or pronunciation claim.",
+      "pageErrors": [],
+      "cspViolations": [],
+      "externalRequests": [],
+      "requestsWhileOffline": [],
+      "axeViolations": 0,
+      "overflow": false,
+      "served": {
+        "index.html": {
+          "bytes": 2361,
+          "sha256": "b2fc10ce8957bd2ca32996d4f25780ee20dc316a8610ebe20675c2c0b3a23889"
+        },
+        "assets/index-Dn4cIMkN.css": {
+          "bytes": 24273,
+          "sha256": "9c4b249466e8f9c70263444690a8b40aceeac6c0cf5a331d0f54d34e7a76b4ab"
+        },
+        "assets/index-B2LIxi0K.js": {
+          "bytes": 274315,
+          "sha256": "1467a54eb9990b0ac0614690f5b0441e8240865f3a39770083f99c9b2171bf88"
+        },
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        },
+        "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2": {
+          "bytes": 13348,
+          "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        },
+        "assets/inter-latin-ext-DO1Apj_S.woff2": {
+          "bytes": 85068,
+          "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
+        }
+      }
+    }
+  ]
+}

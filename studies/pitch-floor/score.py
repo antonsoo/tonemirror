@@ -1,5 +1,5 @@
 # /// script
-# requires-python = ">=3.11"
+# requires-python = ">=3.12"
 # dependencies = ["numpy==2.5.3"]
 # ///
 """Compare explicit search floors to the pinned laryngeal reference contours.
@@ -147,7 +147,7 @@ result = {"recordings": len(utterances), "settingsPerRecording": 6,
           "sourceManifestSha256": receipts[0]["sourceManifestSha256"], "detectorFiles": receipts[0]["sourceFiles"],
           "captureSha256": receipts[0]["captureSha256"], "scorerSha256": hash_bytes(Path(__file__).read_bytes()),
           "referenceReaderSha256": hash_bytes((HERE.parent / "real-voice/refs.py").read_bytes()),
-          "numpy": np.__version__, "captureRuntimes": sorted({r["node"] for r in receipts}), "calibration": calibration, "results": results,
+          "python": sys.version.split()[0], "numpy": np.__version__, "captureRuntimes": sorted({r["node"] for r in receipts}), "calibration": calibration, "results": results,
           "frameFiles": [{**expected[name], "referenceSha256": row["referenceSha256"]} for name, row in zip(sorted(expected), utterances, strict=True)]}
 args.output.write_text(json.dumps(result, indent=2) + "\n")
 for corpus in results:

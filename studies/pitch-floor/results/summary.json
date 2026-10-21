@@ -32,8 +32,9 @@
     }
   ],
   "captureSha256": "34207bdadce5888e6f7336224d096c4e6fd960e540eb1455d8772a6b22a5dc59",
-  "scorerSha256": "88e7a4dcba60f7df24aa3787270c035be1ebcf401b5d1580f8c613737aecc8e0",
+  "scorerSha256": "72d5bdc86249ffcdfca70b620dcde05a540299d120d8e26382ee27726691750d",
   "referenceReaderSha256": "833caa174459c2b5ca09dd1198fa48d535d530bd4c1784db018e228e0920315d",
+  "python": "3.15.0",
   "numpy": "2.5.3",
   "captureRuntimes": [
     "v26.7.0"

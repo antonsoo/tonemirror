@@ -1,0 +1,201 @@
+{
+  "sourceCommit": "5f7f2de5360e80a1d4c7c833500f6182c6070ced",
+  "immutableChangedAndDetectorFiles": [
+    {
+      "path": "CHANGELOG.md",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/5f7f2de5360e80a1d4c7c833500f6182c6070ced/CHANGELOG.md",
+      "bytes": 14765,
+      "sha256": "274aa0c9564b7ebdd9371d38ce021fc55160bfa77371065d26959c4a16c8d36b",
+      "matched": true
+    },
+    {
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/5f7f2de5360e80a1d4c7c833500f6182c6070ced/README.md",
+      "bytes": 29299,
+      "sha256": "3b88f55d7e939950b02d4c2acdad5b8c95b0ee54c703067f237dffd768fc6b7a",
+      "matched": true
+    },
+    {
+      "path": "docs/assets/pitch-floor/native-example.png",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/5f7f2de5360e80a1d4c7c833500f6182c6070ced/docs/assets/pitch-floor/native-example.png",
+      "bytes": 145155,
+      "sha256": "94c07e8d56a88855c755ca4e181a79608d7f647cb6f32fdc296c05adb766c517",
+      "matched": true
+    },
+    {
+      "path": "docs/assets/pitch-floor/pitch-floor.png",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/5f7f2de5360e80a1d4c7c833500f6182c6070ced/docs/assets/pitch-floor/pitch-floor.png",
+      "bytes": 186613,
+      "sha256": "1cad6d7458c4c3143a390fc51b896730a92c187aa97dc70b719f50dc15fb74fe",
+      "matched": true
+    },
+    {
+      "path": "package-lock.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/5f7f2de5360e80a1d4c7c833500f6182c6070ced/package-lock.json",
+      "bytes": 99666,
+      "sha256": "cdf8673f71e5344de4f256571fafbf3f010ced4151782e19d743473b9a5dd167",
+      "matched": true
+    },
+    {
+      "path": "package.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/5f7f2de5360e80a1d4c7c833500f6182c6070ced/package.json",
+      "bytes": 1371,
+      "sha256": "7f23c10bddee4cefb1adb0a5e9808e0d7bc3e758d255d9c35b2497d8e354b66c",
+      "matched": true
+    },
+    {
+      "path": "src/app.ts",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/5f7f2de5360e80a1d4c7c833500f6182c6070ced/src/app.ts",
+      "bytes": 54597,
+      "sha256": "1e633740574625bbdefaf40676657ac638cd9702dd992535ca7e91a947dd24c0",
+      "matched": true
+    },
+    {
+      "path": "src/audio/analysisSettings.ts",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/5f7f2de5360e80a1d4c7c833500f6182c6070ced/src/audio/analysisSettings.ts",
+      "bytes": 461,
+      "sha256": "4affc0318fd7c9b5adf97c0dc2700e1842e7fabb76b054b69a883f4724affb7a",
+      "matched": true
+    },
+    {
+      "path": "src/core/fft.ts",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/5f7f2de5360e80a1d4c7c833500f6182c6070ced/src/core/fft.ts",
+      "bytes": 3839,
+      "sha256": "ed0b8b78459a6e2909f42e8d534d824842017c5766ac28d572222df23d42c331",
+      "matched": true
+    },
+    {
+      "path": "src/core/mpm.ts",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/5f7f2de5360e80a1d4c7c833500f6182c6070ced/src/core/mpm.ts",
+      "bytes": 3781,
+      "sha256": "51eba39acbcd37ee6ccdf870526a40968c29a4285c995efbae3ffc2a46257c5e",
+      "matched": true
+    },
+    {
+      "path": "src/core/pitchCorrelation.ts",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/5f7f2de5360e80a1d4c7c833500f6182c6070ced/src/core/pitchCorrelation.ts",
+      "bytes": 4886,
+      "sha256": "d8b01b9e56c5f40c565df5929348c13be33b38c6fea9199c78b26febe6ade742",
+      "matched": true
+    },
+    {
+      "path": "src/core/pitchTrack.ts",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/5f7f2de5360e80a1d4c7c833500f6182c6070ced/src/core/pitchTrack.ts",
+      "bytes": 6591,
+      "sha256": "9ac0b092f14fbaa1ba688c314ec38c4657eabfcd9f7c2e4d2704d4641557a134",
+      "matched": true
+    },
+    {
+      "path": "src/core/types.ts",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/5f7f2de5360e80a1d4c7c833500f6182c6070ced/src/core/types.ts",
+      "bytes": 2289,
+      "sha256": "ca7fadc7dba4e3d91d2dcda33388a6124e6673179167ef1667b1a881a664c922",
+      "matched": true
+    },
+    {
+      "path": "src/core/yin.ts",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/5f7f2de5360e80a1d4c7c833500f6182c6070ced/src/core/yin.ts",
+      "bytes": 4135,
+      "sha256": "70d37175ec9330e167f689e5c7da9ebfe8d5af949cd7e0c846a55211a6fa3908",
+      "matched": true
+    },
+    {
+      "path": "src/worker/client.ts",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/5f7f2de5360e80a1d4c7c833500f6182c6070ced/src/worker/client.ts",
+      "bytes": 4602,
+      "sha256": "2d114421eabe37454de541dba632f749d33baa0f8957db1c1f6ba4ceeeeb8925",
+      "matched": true
+    },
+    {
+      "path": "src/worker/pitchWorker.ts",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/5f7f2de5360e80a1d4c7c833500f6182c6070ced/src/worker/pitchWorker.ts",
+      "bytes": 2530,
+      "sha256": "6e390be39655677b28998ed1d80ff96dc7179597a6981c1102990e7ac6152ee2",
+      "matched": true
+    },
+    {
+      "path": "studies/pitch-floor/README.md",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/5f7f2de5360e80a1d4c7c833500f6182c6070ced/studies/pitch-floor/README.md",
+      "bytes": 11287,
+      "sha256": "7353c7581957a67d8452bc0eeacabb7000d6277cdbb552cd1c63eb941543fb4f",
+      "matched": true
+    },
+    {
+      "path": "studies/pitch-floor/browser.mjs",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/5f7f2de5360e80a1d4c7c833500f6182c6070ced/studies/pitch-floor/browser.mjs",
+      "bytes": 13808,
+      "sha256": "800fb0cbf895b7642e0223d8819015f1c64f342636f683881fa7528b40d01b22",
+      "matched": true
+    },
+    {
+      "path": "studies/pitch-floor/capture.ts",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/5f7f2de5360e80a1d4c7c833500f6182c6070ced/studies/pitch-floor/capture.ts",
+      "bytes": 5040,
+      "sha256": "34207bdadce5888e6f7336224d096c4e6fd960e540eb1455d8772a6b22a5dc59",
+      "matched": true
+    },
+    {
+      "path": "studies/pitch-floor/plot.py",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/5f7f2de5360e80a1d4c7c833500f6182c6070ced/studies/pitch-floor/plot.py",
+      "bytes": 3200,
+      "sha256": "6004acc5e73e9f77af6ba7e23f2c6316fddda29d1ef0bd67218f3ace8db2a3a7",
+      "matched": true
+    },
+    {
+      "path": "studies/pitch-floor/results/browser.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/5f7f2de5360e80a1d4c7c833500f6182c6070ced/studies/pitch-floor/results/browser.json",
+      "bytes": 56615,
+      "sha256": "c34ab074019caa494ee91d45580806f936d0bb41a0f2951b674a04c099bff2f6",
+      "matched": true
+    },
+    {
+      "path": "studies/pitch-floor/results/figure.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/5f7f2de5360e80a1d4c7c833500f6182c6070ced/studies/pitch-floor/results/figure.json",
+      "bytes": 333,
+      "sha256": "b48a13131590b74a733f115473ef10e7859b78cb1954009c4e7bb5918cc3e507",
+      "matched": true
+    },
+    {
+      "path": "studies/pitch-floor/results/measurements.json.gz",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/5f7f2de5360e80a1d4c7c833500f6182c6070ced/studies/pitch-floor/results/measurements.json.gz",
+      "bytes": 75710,
+      "sha256": "f91ea3dd2f5441eff40544226749083d6427d0007459b3d6499fe3a6a55f8157",
+      "matched": true
+    },
+    {
+      "path": "studies/pitch-floor/results/summary.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/5f7f2de5360e80a1d4c7c833500f6182c6070ced/studies/pitch-floor/results/summary.json",
+      "bytes": 19938,
+      "sha256": "6232e49c04b6eb0a32ba1bc98c3fcd75a062ce673155256d7f05b56d7d38ef9f",
+      "matched": true
+    },
+    {
+      "path": "studies/pitch-floor/results/verification.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/5f7f2de5360e80a1d4c7c833500f6182c6070ced/studies/pitch-floor/results/verification.json",
+      "bytes": 6380,
+      "sha256": "64e1d4cb0d1b6d33d3ea1cf1f5429da55ff9cc82bcfb626373ca15517b99b2b4",
+      "matched": true
+    },
+    {
+      "path": "studies/pitch-floor/score.py",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/5f7f2de5360e80a1d4c7c833500f6182c6070ced/studies/pitch-floor/score.py",
+      "bytes": 8824,
+      "sha256": "88e7a4dcba60f7df24aa3787270c035be1ebcf401b5d1580f8c613737aecc8e0",
+      "matched": true
+    },
+    {
+      "path": "tests/browser/pitch-floor.spec.js",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/5f7f2de5360e80a1d4c7c833500f6182c6070ced/tests/browser/pitch-floor.spec.js",
+      "bytes": 7297,
+      "sha256": "831ab16fecad209d1ab103aa3127c0f01d1730dc09ea837b1708fb0b67e267e3",
+      "matched": true
+    },
+    {
+      "path": "tests/workerClient.test.ts",
+      "url": "https://raw.githubusercontent.com/antonsoo/tonemirror/5f7f2de5360e80a1d4c7c833500f6182c6070ced/tests/workerClient.test.ts",
+      "bytes": 5472,
+      "sha256": "0b620c4e081563fa68c7ca519ee04e3591c534be69c34a91a76a8679d72a15bc",
+      "matched": true
+    }
+  ]
+}

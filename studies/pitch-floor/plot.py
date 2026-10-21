@@ -1,5 +1,5 @@
 # /// script
-# requires-python = ">=3.11"
+# requires-python = ">=3.12"
 # dependencies = ["numpy==2.5.3", "matplotlib==3.10.8"]
 # ///
 """Plot one explicitly selected low-pitch example, including remaining errors."""

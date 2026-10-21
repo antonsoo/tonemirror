@@ -155,10 +155,26 @@ skipped, rather than counted as passed. All eight real-recorded workflows
 were rerun on that build; their measurement results equal the working-build
 results, and the receipt pins all 30 production files.
 
+## Published workflow
+
+Source `5f7f2de` and Pages `1104d6a` publish the per-voice control. The
+[canonical byte receipt](results/hosted-bytes.json) verifies all 30 tested
+build files and all 36 previous non-entrypoint files: 41 hosted files in
+total, with the root and explicit index responses checked separately.
+The deployment uses a normal branch update and keeps the older assets.
+
+The [public browser replay](results/hosted-browser.json) repeats the eight
+offline workflows against the actual hosted page: 64 recorded analyses and
+32 byte-identical full-clip WAV downloads. Its measurements and nine
+screenshots equal those from the clean build; all screenshots were visually
+inspected. [Publication details](results/publication.json) distinguish the
+implementation, source, deployment and hosted observations. This private web
+app has no registry release associated with the change.
+
 ## Reproduce
 
 From the repository root, install the locked dependencies with `npm ci`.
-Use Node 24 or newer and Python 3.11 or newer with `uv`. If the original
+Use Node 24 or newer and Python 3.12 or newer with `uv`. If the original
 cache is absent, first run `python3 -I studies/real-voice/fetch.py`; it
 downloads the separately licensed source recordings. A complete cache
 can be verified without network access:
