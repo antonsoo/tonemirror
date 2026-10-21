@@ -129,7 +129,9 @@ from the native-rate reference study. Each workflow verifies:
 
 - Default loading, attempt-only range changes, trim/restore and a global
   algorithm change: eight worker analyses per workflow, with independent
-  reference and attempt floors and matching direct-core outputs.
+  reference and attempt floors. Frame times and voicing match direct core
+  replay; frequency differences stay below 0.000001 Hz and confidence
+  differences below 0.00000001.
 - Four WAV downloads whose bytes are identical across full-clip range,
   trim/restore and algorithm changes. Source WAV files and decoded WAV
   downloads can differ; the exported decoded samples are preserved.
@@ -144,6 +146,14 @@ The native replay used Node 26.7.0 and NumPy 2.5.3. The production build and
 browser replay use Node 24.22.0. These recordings are studio English speech,
 not a tonal-language learner study, a microphone/noise benchmark, a
 clinical voice assessment or a universally preferred search range.
+
+The [clean-install receipt](results/verification.json) records Node 24.22.0,
+`npm ci`, lint, typecheck, 232 unit cases in both default and German locales,
+seven study-source integrity controls, the production build and 122 passing
+browser workflows. Four existing Firefox fake-device microphone cases are
+skipped, rather than counted as passed. All eight real-recorded workflows
+were rerun on that build; their measurement results equal the working-build
+results, and the receipt pins all 30 production files.
 
 ## Reproduce
 

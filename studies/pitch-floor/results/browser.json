@@ -1,5 +1,6 @@
 {
   "origin": "local production build",
+  "scriptSha256": "800fb0cbf895b7642e0223d8819015f1c64f342636f683881fa7528b40d01b22",
   "scope": "Worker plumbing on actual browser-decoded recordings. Native-rate laryngeal-reference accuracy is measured separately by score.py.",
   "results": [
     {
@@ -150,15 +151,15 @@
       "served": {
         "index.html": {
           "bytes": 2361,
-          "sha256": "58cb8ce1735db28a953eda1fc8366ad19cca9fde4ecb70ffc4397a609f661088"
+          "sha256": "b2fc10ce8957bd2ca32996d4f25780ee20dc316a8610ebe20675c2c0b3a23889"
         },
         "assets/index-Dn4cIMkN.css": {
           "bytes": 24273,
           "sha256": "9c4b249466e8f9c70263444690a8b40aceeac6c0cf5a331d0f54d34e7a76b4ab"
         },
-        "assets/index-C6CYo8uG.js": {
-          "bytes": 274257,
-          "sha256": "ac56838d88f2b06eab4c04618a4ba77f9323d1ba7754dfd13e8bfa342aa4b2f0"
+        "assets/index-B2LIxi0K.js": {
+          "bytes": 274315,
+          "sha256": "1467a54eb9990b0ac0614690f5b0441e8240865f3a39770083f99c9b2171bf88"
         },
         "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
           "bytes": 14708,
@@ -168,6 +169,10 @@
           "bytes": 48256,
           "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
         },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
         "assets/fraunces-latin-DihXLNYH.woff2": {
           "bytes": 67304,
           "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
@@ -176,17 +181,13 @@
           "bytes": 42372,
           "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
         },
-        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
-          "bytes": 14888,
-          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2": {
+          "bytes": 13348,
+          "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
         },
         "assets/inter-latin-ext-DO1Apj_S.woff2": {
           "bytes": 85068,
           "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
-        },
-        "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2": {
-          "bytes": 13348,
-          "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
         }
       }
     },
@@ -338,15 +339,15 @@
       "served": {
         "index.html": {
           "bytes": 2361,
-          "sha256": "58cb8ce1735db28a953eda1fc8366ad19cca9fde4ecb70ffc4397a609f661088"
+          "sha256": "b2fc10ce8957bd2ca32996d4f25780ee20dc316a8610ebe20675c2c0b3a23889"
         },
         "assets/index-Dn4cIMkN.css": {
           "bytes": 24273,
           "sha256": "9c4b249466e8f9c70263444690a8b40aceeac6c0cf5a331d0f54d34e7a76b4ab"
         },
-        "assets/index-C6CYo8uG.js": {
-          "bytes": 274257,
-          "sha256": "ac56838d88f2b06eab4c04618a4ba77f9323d1ba7754dfd13e8bfa342aa4b2f0"
+        "assets/index-B2LIxi0K.js": {
+          "bytes": 274315,
+          "sha256": "1467a54eb9990b0ac0614690f5b0441e8240865f3a39770083f99c9b2171bf88"
         },
         "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
           "bytes": 14708,
@@ -356,6 +357,10 @@
           "bytes": 48256,
           "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
         },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
         "assets/fraunces-latin-DihXLNYH.woff2": {
           "bytes": 67304,
           "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
@@ -363,10 +368,6 @@
         "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2": {
           "bytes": 13348,
           "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
-        },
-        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
-          "bytes": 14888,
-          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
         },
         "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
           "bytes": 42372,
@@ -526,15 +527,19 @@
       "served": {
         "index.html": {
           "bytes": 2361,
-          "sha256": "58cb8ce1735db28a953eda1fc8366ad19cca9fde4ecb70ffc4397a609f661088"
+          "sha256": "b2fc10ce8957bd2ca32996d4f25780ee20dc316a8610ebe20675c2c0b3a23889"
         },
         "assets/index-Dn4cIMkN.css": {
           "bytes": 24273,
           "sha256": "9c4b249466e8f9c70263444690a8b40aceeac6c0cf5a331d0f54d34e7a76b4ab"
         },
-        "assets/index-C6CYo8uG.js": {
-          "bytes": 274257,
-          "sha256": "ac56838d88f2b06eab4c04618a4ba77f9323d1ba7754dfd13e8bfa342aa4b2f0"
+        "assets/index-B2LIxi0K.js": {
+          "bytes": 274315,
+          "sha256": "1467a54eb9990b0ac0614690f5b0441e8240865f3a39770083f99c9b2171bf88"
+        },
+        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
+          "bytes": 14708,
+          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
         },
         "assets/inter-latin-Dx4kXJAl.woff2": {
           "bytes": 48256,
@@ -544,25 +549,21 @@
           "bytes": 67304,
           "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
         },
-        "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
-          "bytes": 14708,
-          "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
         },
         "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
           "bytes": 14888,
           "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
         },
-        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
-          "bytes": 42372,
-          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
+        "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2": {
+          "bytes": 13348,
+          "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
         },
         "assets/inter-latin-ext-DO1Apj_S.woff2": {
           "bytes": 85068,
           "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
-        },
-        "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2": {
-          "bytes": 13348,
-          "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
         }
       }
     },
@@ -714,39 +715,39 @@
       "served": {
         "index.html": {
           "bytes": 2361,
-          "sha256": "58cb8ce1735db28a953eda1fc8366ad19cca9fde4ecb70ffc4397a609f661088"
+          "sha256": "b2fc10ce8957bd2ca32996d4f25780ee20dc316a8610ebe20675c2c0b3a23889"
         },
         "assets/index-Dn4cIMkN.css": {
           "bytes": 24273,
           "sha256": "9c4b249466e8f9c70263444690a8b40aceeac6c0cf5a331d0f54d34e7a76b4ab"
         },
-        "assets/index-C6CYo8uG.js": {
-          "bytes": 274257,
-          "sha256": "ac56838d88f2b06eab4c04618a4ba77f9323d1ba7754dfd13e8bfa342aa4b2f0"
+        "assets/index-B2LIxi0K.js": {
+          "bytes": 274315,
+          "sha256": "1467a54eb9990b0ac0614690f5b0441e8240865f3a39770083f99c9b2171bf88"
         },
         "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
           "bytes": 14708,
           "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
         },
-        "assets/fraunces-latin-DihXLNYH.woff2": {
-          "bytes": 67304,
-          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
         },
         "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
           "bytes": 14888,
           "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
         },
-        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
-          "bytes": 42372,
-          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
-        },
-        "assets/inter-latin-Dx4kXJAl.woff2": {
-          "bytes": 48256,
-          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        "assets/fraunces-latin-DihXLNYH.woff2": {
+          "bytes": 67304,
+          "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
         },
         "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2": {
           "bytes": 13348,
           "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
+        },
+        "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
+          "bytes": 42372,
+          "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
         },
         "assets/inter-latin-ext-DO1Apj_S.woff2": {
           "bytes": 85068,
@@ -902,27 +903,31 @@
       "served": {
         "index.html": {
           "bytes": 2361,
-          "sha256": "58cb8ce1735db28a953eda1fc8366ad19cca9fde4ecb70ffc4397a609f661088"
+          "sha256": "b2fc10ce8957bd2ca32996d4f25780ee20dc316a8610ebe20675c2c0b3a23889"
+        },
+        "assets/index-B2LIxi0K.js": {
+          "bytes": 274315,
+          "sha256": "1467a54eb9990b0ac0614690f5b0441e8240865f3a39770083f99c9b2171bf88"
         },
         "assets/index-Dn4cIMkN.css": {
           "bytes": 24273,
           "sha256": "9c4b249466e8f9c70263444690a8b40aceeac6c0cf5a331d0f54d34e7a76b4ab"
         },
-        "assets/index-C6CYo8uG.js": {
-          "bytes": 274257,
-          "sha256": "ac56838d88f2b06eab4c04618a4ba77f9323d1ba7754dfd13e8bfa342aa4b2f0"
+        "assets/inter-latin-Dx4kXJAl.woff2": {
+          "bytes": 48256,
+          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
         },
         "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
           "bytes": 42372,
           "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
         },
-        "assets/inter-latin-Dx4kXJAl.woff2": {
-          "bytes": 48256,
-          "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
-        },
         "assets/fraunces-latin-DihXLNYH.woff2": {
           "bytes": 67304,
           "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
+        },
+        "assets/inter-latin-ext-DO1Apj_S.woff2": {
+          "bytes": 85068,
+          "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
         },
         "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
           "bytes": 14888,
@@ -931,10 +936,6 @@
         "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2": {
           "bytes": 13348,
           "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
-        },
-        "assets/inter-latin-ext-DO1Apj_S.woff2": {
-          "bytes": 85068,
-          "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
         },
         "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
           "bytes": 14708,
@@ -1090,15 +1091,15 @@
       "served": {
         "index.html": {
           "bytes": 2361,
-          "sha256": "58cb8ce1735db28a953eda1fc8366ad19cca9fde4ecb70ffc4397a609f661088"
+          "sha256": "b2fc10ce8957bd2ca32996d4f25780ee20dc316a8610ebe20675c2c0b3a23889"
         },
         "assets/index-Dn4cIMkN.css": {
           "bytes": 24273,
           "sha256": "9c4b249466e8f9c70263444690a8b40aceeac6c0cf5a331d0f54d34e7a76b4ab"
         },
-        "assets/index-C6CYo8uG.js": {
-          "bytes": 274257,
-          "sha256": "ac56838d88f2b06eab4c04618a4ba77f9323d1ba7754dfd13e8bfa342aa4b2f0"
+        "assets/index-B2LIxi0K.js": {
+          "bytes": 274315,
+          "sha256": "1467a54eb9990b0ac0614690f5b0441e8240865f3a39770083f99c9b2171bf88"
         },
         "assets/inter-latin-Dx4kXJAl.woff2": {
           "bytes": 48256,
@@ -1112,21 +1113,21 @@
           "bytes": 67304,
           "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
         },
-        "assets/inter-latin-ext-DO1Apj_S.woff2": {
-          "bytes": 85068,
-          "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
-        },
         "assets/ibm-plex-mono-400-latin-ext-BmRBH3aV.woff2": {
           "bytes": 13348,
           "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb"
         },
-        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
-          "bytes": 14888,
-          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        "assets/inter-latin-ext-DO1Apj_S.woff2": {
+          "bytes": 85068,
+          "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
         },
         "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
           "bytes": 14708,
           "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+        },
+        "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
+          "bytes": 14888,
+          "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
         }
       }
     },
@@ -1278,15 +1279,15 @@
       "served": {
         "index.html": {
           "bytes": 2361,
-          "sha256": "58cb8ce1735db28a953eda1fc8366ad19cca9fde4ecb70ffc4397a609f661088"
-        },
-        "assets/index-C6CYo8uG.js": {
-          "bytes": 274257,
-          "sha256": "ac56838d88f2b06eab4c04618a4ba77f9323d1ba7754dfd13e8bfa342aa4b2f0"
+          "sha256": "b2fc10ce8957bd2ca32996d4f25780ee20dc316a8610ebe20675c2c0b3a23889"
         },
         "assets/index-Dn4cIMkN.css": {
           "bytes": 24273,
           "sha256": "9c4b249466e8f9c70263444690a8b40aceeac6c0cf5a331d0f54d34e7a76b4ab"
+        },
+        "assets/index-B2LIxi0K.js": {
+          "bytes": 274315,
+          "sha256": "1467a54eb9990b0ac0614690f5b0441e8240865f3a39770083f99c9b2171bf88"
         },
         "assets/inter-latin-Dx4kXJAl.woff2": {
           "bytes": 48256,
@@ -1466,15 +1467,15 @@
       "served": {
         "index.html": {
           "bytes": 2361,
-          "sha256": "58cb8ce1735db28a953eda1fc8366ad19cca9fde4ecb70ffc4397a609f661088"
-        },
-        "assets/index-C6CYo8uG.js": {
-          "bytes": 274257,
-          "sha256": "ac56838d88f2b06eab4c04618a4ba77f9323d1ba7754dfd13e8bfa342aa4b2f0"
+          "sha256": "b2fc10ce8957bd2ca32996d4f25780ee20dc316a8610ebe20675c2c0b3a23889"
         },
         "assets/index-Dn4cIMkN.css": {
           "bytes": 24273,
           "sha256": "9c4b249466e8f9c70263444690a8b40aceeac6c0cf5a331d0f54d34e7a76b4ab"
+        },
+        "assets/index-B2LIxi0K.js": {
+          "bytes": 274315,
+          "sha256": "1467a54eb9990b0ac0614690f5b0441e8240865f3a39770083f99c9b2171bf88"
         },
         "assets/inter-latin-Dx4kXJAl.woff2": {
           "bytes": 48256,
@@ -1483,10 +1484,6 @@
         "assets/fraunces-italic-latin-BEbM7Mn6.woff2": {
           "bytes": 42372,
           "sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3"
-        },
-        "assets/inter-latin-ext-DO1Apj_S.woff2": {
-          "bytes": 85068,
-          "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
         },
         "assets/fraunces-latin-DihXLNYH.woff2": {
           "bytes": 67304,
@@ -1499,6 +1496,10 @@
         "assets/ibm-plex-mono-500-latin-DSY6xOcd.woff2": {
           "bytes": 14888,
           "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+        },
+        "assets/inter-latin-ext-DO1Apj_S.woff2": {
+          "bytes": 85068,
+          "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956"
         },
         "assets/ibm-plex-mono-400-latin-DMJ8VG8y.woff2": {
           "bytes": 14708,
@@ -1506,6 +1507,5 @@
         }
       }
     }
-  ],
-  "scriptSha256": "800fb0cbf895b7642e0223d8819015f1c64f342636f683881fa7528b40d01b22"
+  ]
 }
