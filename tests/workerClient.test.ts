@@ -17,6 +17,18 @@ afterEach(() => { vi.unstubAllGlobals(); vi.useRealTimers(); });
 const pcm = new Float32Array([0.1, 0.2]);
 
 describe("analysis worker recovery", () => {
+  it("sends the selected floor and refuses invalid windows before starting work", async () => {
+    const client = new PitchWorkerClient();
+    for (const floor of [0, 20, NaN, Infinity, 100_000]) {
+      await expect(client.analyze(pcm, 22050, "yin", undefined, floor as 40)).rejects.toThrow("pitch search floor");
+    }
+    expect(FakeWorker.instances).toHaveLength(0);
+    const selected = expect(client.analyze(pcm, 22050, "yin", undefined, 40)).rejects.toThrow("cancelled");
+    expect(FakeWorker.instances[0]!.postMessage.mock.calls[0]![0]).toMatchObject({ algorithm: "yin", minFrequency: 40 });
+    client.terminate();
+    await selected;
+  });
+
   it("rejects all pending requests on a worker error and recovers on the next request", async () => {
     const client = new PitchWorkerClient();
     const first = expect(client.analyze(pcm, 22050, "yin")).rejects.toThrow("Audio analysis failed");

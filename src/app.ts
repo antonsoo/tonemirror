@@ -30,6 +30,7 @@ import { synthesizeFromContour } from "./core/synth.js";
 import { deleteReference, getReference, listReferences, saveReference, type ReferenceSummary } from "./storage/db.js";
 import type { Spectrogram } from "./core/spectrogram.js";
 import type { PitchAlgorithm, PitchContour } from "./core/types.js";
+import { DEFAULT_PITCH_FLOOR, PITCH_FLOORS, validatePitchFloor, type PitchFloor } from "./audio/analysisSettings.js";
 
 interface ClipSource {
   pcm: Float32Array;
@@ -49,6 +50,7 @@ interface ClipState extends ClipSource {
   contour: PitchContour | null;
   spectrogram: Spectrogram | null;
   algorithm: PitchAlgorithm;
+  pitchFloor: PitchFloor;
   excerpt: ClipExcerpt | undefined;
 }
 
@@ -66,6 +68,7 @@ export function mountApp(root: HTMLElement): void {
   const workers = { reference: new PitchWorkerClient(), attempt: new PitchWorkerClient() };
   const comparisonWorker = new PitchWorkerClient();
   let algorithm: PitchAlgorithm = "yin";
+  const pitchFloors: Record<FocusRole, PitchFloor> = { reference: DEFAULT_PITCH_FLOOR, attempt: DEFAULT_PITCH_FLOOR };
   let playbackContext: AudioContext | null = null;
   const players: Record<FocusRole, ClipPlayer | null> = { reference: null, attempt: null };
   const clips: Record<FocusRole, ClipState | null> = { reference: null, attempt: null };
@@ -149,7 +152,7 @@ export function mountApp(root: HTMLElement): void {
     ]),
   ]);
   const cancelBtn = el("button", { class: "tm-btn", hidden: true, onclick: () => cancelWork() }, ["Cancel work"]);
-  const retryAudioBtn = el("button", { class: "tm-btn", hidden: true, onclick: () => void reanalyzeAll(true) }, ["Retry audio analysis"]);
+  const retryAudioBtn = el("button", { class: "tm-btn", hidden: true, onclick: () => void reanalyzeRoles(["reference", "attempt"], true) }, ["Retry audio analysis"]);
   const algoSelect = el(
     "select",
     {
@@ -157,11 +160,22 @@ export function mountApp(root: HTMLElement): void {
       "aria-label": "Pitch detection algorithm",
       onchange: (e) => {
         algorithm = (e.target as HTMLSelectElement).value as PitchAlgorithm;
-        void reanalyzeAll();
+        void reanalyzeRoles(["reference", "attempt"]);
       },
     },
     [el("option", { value: "yin" }, ["YIN"]), el("option", { value: "mpm" }, ["McLeod (MPM)"])],
   );
+  const floorSelect = el("select", {
+    class: "tm-select",
+    "aria-label": "Pitch search floor",
+    "aria-describedby": "pitch-floor-note",
+    onchange: (event) => {
+      pitchFloors[focus] = validatePitchFloor(Number((event.target as HTMLSelectElement).value));
+      void reanalyzeRoles([focus]);
+    },
+  }, PITCH_FLOORS.map(floor => el("option", { value: String(floor), selected: floor === pitchFloors[focus] }, [
+    `${floor} Hz floor${floor === DEFAULT_PITCH_FLOOR ? " (default)" : ""}`,
+  ])));
 
   const targetTabs = el("div", { class: "tm-source-tabs", role: "tablist", "aria-label": "Load audio as" }, [
     makeTab("attempt", "Your attempt", true),
@@ -218,7 +232,8 @@ export function mountApp(root: HTMLElement): void {
   const sourcePanel = el("section", { class: "tm-panel" }, [
     el("div", { class: "tm-panel-header" }, [el("h2", {}, ["1. Get some audio"]), el("span", { class: "tm-hint" }, ["Recording and file loading use the tab selected when you start."])]),
     targetTabs,
-    el("div", { class: "tm-controls-row" }, [recordBtn, loadBtn, algoSelect, cancelBtn, retryAudioBtn, statusLine]),
+    el("div", { class: "tm-controls-row" }, [recordBtn, loadBtn, algoSelect, floorSelect, cancelBtn, retryAudioBtn, statusLine]),
+    el("p", { class: "tm-hint", id: "pitch-floor-note" }, ["The floor applies to the selected audio tab. Lower floors search lower pitches with longer frames; they can blur fast changes or report more false voicing. Reference and attempt keep separate settings."]),
     el("p", { class: "tm-hint" }, ["Short phrases work best: up to 60 seconds and 25 MiB per file. Recordings stop at 60 seconds. A failed replacement keeps your last loaded clip."]),
     fileChannels,
     el("div", { class: "tm-recorded-practice" }, [
@@ -505,6 +520,7 @@ export function mountApp(root: HTMLElement): void {
       (child as HTMLElement).tabIndex = (child as HTMLElement).dataset.role === role ? 0 : -1;
     }
     analysisPanel.setAttribute("aria-labelledby", `source-${role}`);
+    floorSelect.value = String(pitchFloors[role]);
     syncRegionFields();
     renderAnalysis();
   }
@@ -748,11 +764,11 @@ export function mountApp(root: HTMLElement): void {
     if (!isCurrent(request)) return false;
     const { pcm, sampleRate, label, synthetic } = source;
     report(request, `Analyzing ${label}…`);
-    const state: ClipState = { ...source, contour: null, spectrogram: null, algorithm, excerpt };
+    const state: ClipState = { ...source, contour: null, spectrogram: null, algorithm, pitchFloor: pitchFloors[role], excerpt };
     try {
       validateAudio(pcm.length, sampleRate);
       drafts[role] = state;
-      const result = await workers[role].analyze(pcm, sampleRate, state.algorithm, request.controller.signal);
+      const result = await workers[role].analyze(pcm, sampleRate, state.algorithm, request.controller.signal, state.pitchFloor);
       if (!isCurrent(request)) return false;
       const player = new ClipPlayer(getPlaybackContext());
       player.load(pcm, sampleRate);
@@ -779,12 +795,12 @@ export function mountApp(root: HTMLElement): void {
     }
   }
 
-  async function reanalyzeAll(onlyFailed = false): Promise<void> {
+  async function reanalyzeRoles(roles: FocusRole[], onlyFailed = false): Promise<void> {
     const nextStatus = ++statusId;
-    resetToneResult();
-    const jobs = (["reference", "attempt"] as FocusRole[]).map(async (role) => {
+    if (roles.includes("attempt")) resetToneResult();
+    const jobs = roles.map(async (role) => {
       if (onlyFailed && !drafts[role]) return true;
-      if (loads[role] && !drafts[role]) return true; // A decode/capture will use the newly selected algorithm.
+      if (loads[role] && !drafts[role]) return true; // A decode/capture uses that role's latest settings.
       const clip = drafts[role] ?? clips[role];
       if (!clip) return true;
       const request = beginLoad(role, nextStatus);
@@ -814,7 +830,7 @@ export function mountApp(root: HTMLElement): void {
       const controller = new AbortController();
       comparison = controller;
       const current = (): boolean => comparison === controller && !controller.signal.aborted;
-      const labels = `Reference: ${clips.reference!.label} (${clips.reference!.algorithm.toUpperCase()}); attempt: ${clips.attempt!.label} (${clips.attempt!.algorithm.toUpperCase()}).`;
+      const labels = `Reference: ${clips.reference!.label} (${clips.reference!.algorithm.toUpperCase()}); attempt: ${clips.attempt!.label} (${clips.attempt!.algorithm.toUpperCase()}). Pitch floors: reference ${clips.reference!.pitchFloor} Hz; attempt ${clips.attempt!.pitchFloor} Hz.`;
       comparisonNote.textContent = `Matching loaded contours. ${labels}`;
       feedbackList.replaceChildren(el("li", {}, ["Matching pitch shapes… You can cancel this work."]));
       void comparisonWorker.compare(ref, att, controller.signal).then(({ alignment: result }) => {
@@ -860,7 +876,7 @@ export function mountApp(root: HTMLElement): void {
       loopRegion: loopRegions[focus],
     });
     analysisEmpty.style.display = clip ? "none" : "grid";
-    const label = `${focus === "attempt" ? "Your attempt" : "Reference"}: ${clip ? `${clip.label}${clip.synthetic ? " (synthetic)" : ""} · ${(clip.pcm.length / clip.sampleRate).toFixed(2)}s` : "no audio loaded"}`;
+    const label = `${focus === "attempt" ? "Your attempt" : "Reference"}: ${clip ? `${clip.label}${clip.synthetic ? " (synthetic)" : ""} · ${(clip.pcm.length / clip.sampleRate).toFixed(2)}s · ${clip.algorithm.toUpperCase()}, ${clip.pitchFloor} Hz search floor` : "no audio loaded"}`;
     if (analysisLabel.textContent !== label) analysisLabel.textContent = label;
     if (renderedCredit !== clip?.credit) {
       renderedCredit = clip?.credit;

@@ -4,6 +4,7 @@ import { computeSpectrogram } from "../core/spectrogram.js";
 import { compareContours, type AlignmentResult } from "../core/dtw.js";
 import { MAX_SPECTROGRAM_FRAMES, validateAudio, validateAudioSamples } from "../audio/limits.js";
 import type { PitchAlgorithm, PitchContour } from "../core/types.js";
+import { DEFAULT_PITCH_FLOOR, validatePitchFloor, type PitchFloor } from "../audio/analysisSettings.js";
 
 export interface AnalyzeRequest {
   type: "analyze";
@@ -11,6 +12,7 @@ export interface AnalyzeRequest {
   pcm: Float32Array;
   sampleRate: number;
   algorithm: PitchAlgorithm;
+  minFrequency?: PitchFloor;
 }
 export interface CompareRequest {
   type: "compare";
@@ -41,7 +43,8 @@ self.onmessage = (event: MessageEvent<WorkerRequest>) => {
     } else if (msg.type === "analyze") {
       validateAudio(msg.pcm.length, msg.sampleRate);
       validateAudioSamples(msg.pcm);
-      const contour = trackPitch(msg.pcm, { sampleRate: msg.sampleRate, algorithm: msg.algorithm });
+      const minFrequency = validatePitchFloor(msg.minFrequency ?? DEFAULT_PITCH_FLOOR);
+      const contour = trackPitch(msg.pcm, { sampleRate: msg.sampleRate, algorithm: msg.algorithm, minFrequency });
       const hopSize = Math.max(256, Math.ceil((msg.pcm.length - 1024) / (MAX_SPECTROGRAM_FRAMES - 1)));
       const spectrogram = computeSpectrogram(msg.pcm, msg.sampleRate, { fftSize: 1024, hopSize });
       const response: AnalyzeResponse = { type: "analyzed", requestId: msg.requestId, contour, spectrogram };

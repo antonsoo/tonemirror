@@ -4,6 +4,14 @@ All notable changes to this project are documented in this file.
 
 ## Unreleased
 
+- Choose a 40, 60 or 90 Hz pitch search floor separately for reference and
+  attempt. Keep the 60 Hz default, existing detector rules and decoded audio.
+  Label each loaded clip with its actual settings through failed or cancelled
+  updates. Retain per-voice choices through trims and global algorithm changes.
+  [580-recording tradeoff measurements and offline real-file workflows](studies/pitch-floor/README.md).
+
+- Update Vite to 8.3.5, including its patched development editor launcher.
+
 - Choose an individual file channel before loading, including separate
   reference/attempt imports from the same stereo file. Keep the channel and
   destination chosen when the load began. Refuse near-total mix cancellation

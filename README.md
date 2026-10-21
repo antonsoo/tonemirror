@@ -31,6 +31,14 @@ keeps your previous clip and explains how to choose a channel. In a native
 recorded-speech control, channel selection recovers all 227 voiced frames that
 the old mix erased. [Recorded source, recovery and exact WAV exports](studies/file-channels/README.md).
 
+**Adjust the pitch range for each voice.** Select **Reference** or **Your attempt**,
+then choose a **40, 60 or 90 Hz floor**. A 40 Hz floor can recover lower pitches,
+but its longer frames can also add false voicing and blur fast changes. The
+reference and attempt keep separate choices; 60 Hz remains the default.
+[A 580-recording replay and real file walkthrough](studies/pitch-floor/README.md)
+show the tradeoff, including an identical recording whose shape score changes
+when its analysis settings differ.
+
 The source checkout and live demo reject **non-finite decoded audio samples** before a new
 clip is committed. A damaged file or saved recording leaves the previous clip
 available for comparison, playback, saving and export. Real silence remains
@@ -133,6 +141,12 @@ Recording and file loading use the tab selected when you start, even if you
 switch tabs while waiting. The waveform shows the current clip's name and
 duration. Switching tabs pauses playback, and each clip retains its loop.
 Arrow keys, Home, and End move between the audio tabs.
+The **Pitch search floor** applies to the selected tab; the algorithm selector
+applies to both. The clip label and comparison note show the settings actually
+used, including after a failed or cancelled update. Trims retain that tab's
+floor. Saved references store audio; **Use** analyzes it with the destination
+tab's current settings. Search-floor choices reset to 60 Hz on page reload.
+Changing the floor does not alter playback or WAV samples.
 **Play reference then attempt** listens to the two clips without switching tabs.
 It uses normal speed even when individual playback is set to half speed.
 It keeps each clip's loop selection, samples, saved copy and comparison intact.
@@ -197,7 +211,10 @@ for decoded-audio limits and the native decoder's allocation/cancellation limits
 ### Pitch tracking
 
 Each analysis frame is 2x the lag corresponding to the minimum trackable
-frequency (default 60 Hz), hopped every 10 ms. Two independent F0
+frequency (default 60 Hz), hopped every 10 ms. Browser presets of 40, 60 and
+90 Hz use approximately 50, 33 and 22 ms frames respectively. A search floor
+sets the detector's lag range, rather than filtering an existing contour.
+Post-processing can still produce estimates below that boundary. Two independent F0
 estimators are available:
 
 - **YIN** ([de Cheveigné & Kawahara, 2002](https://doi.org/10.1121/1.1458024)):
@@ -334,6 +351,11 @@ offsets. Voicing error is about 6% for the app trackers. These are descriptive
 measurements of studio English speech, without a significance test.
 The 2026-10-10 rerun corrected the 20% scoring formula and verified all
 580 recordings across PTDB-TUG and FDA; no detector parameters changed.
+Those figures describe the 60 Hz default. The later
+[search-floor study](studies/pitch-floor/README.md) replays 40, 60 and 90 Hz
+without changing the detectors. Lowering the floor improves agreement on the
+small subset of supplied reference points below 60 Hz, while reducing overall
+voiced-frame agreement and increasing false voicing on these recordings.
 
 **On generated signals**, where the truth is exact and the numbers are much
 kinder than speech allows:

@@ -3,6 +3,7 @@ import type { AnalyzeResponse, WorkerRequest, WorkerResponse, CompareResponse } 
 import type { PitchAlgorithm, PitchContour } from "../core/types.js";
 import { validateAudio } from "../audio/limits.js";
 import { cancelled } from "../audio/cancellation.js";
+import { DEFAULT_PITCH_FLOOR, validatePitchFloor } from "../audio/analysisSettings.js";
 
 export const AUDIO_JOB_TIMEOUT_MS = 60_000;
 
@@ -74,11 +75,12 @@ export class PitchWorkerClient {
     });
   }
 
-  async analyze(pcm: Float32Array, sampleRate: number, algorithm: PitchAlgorithm, signal?: AbortSignal): Promise<AnalyzeResponse> {
+  async analyze(pcm: Float32Array, sampleRate: number, algorithm: PitchAlgorithm, signal?: AbortSignal, minFrequency = DEFAULT_PITCH_FLOOR): Promise<AnalyzeResponse> {
     if (signal?.aborted) throw cancelled();
     validateAudio(pcm.length, sampleRate);
+    validatePitchFloor(minFrequency);
     const transferPcm = pcm.slice();
-    const result = await this.submit({ type: "analyze", requestId: this.nextId++, pcm: transferPcm, sampleRate, algorithm }, signal, [transferPcm.buffer]);
+    const result = await this.submit({ type: "analyze", requestId: this.nextId++, pcm: transferPcm, sampleRate, algorithm, minFrequency }, signal, [transferPcm.buffer]);
     if (result.type !== "analyzed" || !result.contour || !Array.isArray(result.contour.points) || !result.spectrogram || !Array.isArray(result.spectrogram.frames)) {
       this.fail(new Error("The audio analysis returned an unreadable result. Try again."));
       throw new Error("The audio analysis returned an unreadable result. Try again.");
