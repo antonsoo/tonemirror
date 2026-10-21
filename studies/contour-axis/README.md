@@ -100,3 +100,14 @@ Four existing Firefox fake-device microphone cases remain skipped. The
 [clean canvas replay](results/clean.json) repeats all eight cases and matches
 the working build's measurements and screenshots. All six pitch-detector
 files still match the earlier 580-recording replay.
+
+## Public verification
+
+Source `4e94315` and Pages `85c4e51` publish the correction.
+[Nine immutable source files](results/source-bytes.json) match their Git
+objects. The [canonical site check](results/hosted-bytes.json) verifies all
+30 tested files and the 40 previous non-entrypoint files: 43 files in total.
+The [public canvas replay](results/public.json) repeats all eight cases,
+with exactly the clean build's measurements and screenshots. The recorded
+example has no overlapping labels, and every original contour segment and
+self-comparison score is retained. [Publication receipt](results/publication.json).

@@ -1,0 +1,14 @@
+{
+  "sourceAtDeployment": "4e94315",
+  "implementationCommit": "2a96682",
+  "pagesCommit": "85c4e51aaf1cea5dca4c2b0382832b2163275b86",
+  "pagesParent": "1104d6ae02e36ffc89fac16024d3eabc68ff0801",
+  "site": "https://antonsoo.github.io/tonemirror/",
+  "testedBuildFiles": 30,
+  "canonicalHostedFiles": 43,
+  "preservedPriorNonEntrypointFiles": 40,
+  "publicCanvasCases": 8,
+  "unchangedInkSegments": 2704,
+  "publicMeasurementsAndScreenshotsEqualClean": true,
+  "registryRelease": false
+}
