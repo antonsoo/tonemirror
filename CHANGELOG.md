@@ -4,6 +4,10 @@ All notable changes to this project are documented in this file.
 
 ## Unreleased
 
+- Space contour-axis labels according to the available chart height when
+  pitch outliers widen the range. Keep the median label, full range, contour
+  strokes and comparison score. [Measured native canvas overlap and correction](studies/contour-axis/README.md).
+
 - Choose a 40, 60 or 90 Hz pitch search floor separately for reference and
   attempt. Keep the 60 Hz default, existing detector rules and decoded audio.
   Label each loaded clip with its actual settings through failed or cancelled

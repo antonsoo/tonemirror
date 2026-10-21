@@ -1,0 +1,1383 @@
+{
+  "base": "https://antonsoo.github.io/tonemirror/",
+  "phase": "before",
+  "scriptSha256": "0324f42c23440175ca9f408748365476fb94786333e3410a2764d23ca33c1c54",
+  "records": [
+    {
+      "kind": "recorded-wide",
+      "sourceSha256": "140519bd310f7413748fbc70cbbb13ab45d447af2abb38e06bf2d99f620dfee2",
+      "browser": "chromium",
+      "browserVersion": "153.0.8010.12",
+      "width": 1440,
+      "dpr": 1,
+      "labelCount": 33,
+      "minimumBaselineSpacing": 7,
+      "minimumGlyphGap": -1,
+      "overlappingGlyphPairs": 32,
+      "labels": [
+        {
+          "text": "+48",
+          "x": 64,
+          "y": 18,
+          "top": 13.171875,
+          "bottom": 21.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+45",
+          "x": 64,
+          "y": 25,
+          "top": 20.171875,
+          "bottom": 28.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+42",
+          "x": 64,
+          "y": 32,
+          "top": 27.171875,
+          "bottom": 35.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+39",
+          "x": 64,
+          "y": 39,
+          "top": 34.171875,
+          "bottom": 42.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+36",
+          "x": 64,
+          "y": 46,
+          "top": 41.171875,
+          "bottom": 49.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+33",
+          "x": 64,
+          "y": 53,
+          "top": 48.171875,
+          "bottom": 56.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+30",
+          "x": 64,
+          "y": 60,
+          "top": 55.171875,
+          "bottom": 63.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+27",
+          "x": 64,
+          "y": 67,
+          "top": 62.171875,
+          "bottom": 70.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+24",
+          "x": 64,
+          "y": 74,
+          "top": 69.171875,
+          "bottom": 77.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+21",
+          "x": 64,
+          "y": 81,
+          "top": 76.171875,
+          "bottom": 84.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+18",
+          "x": 64,
+          "y": 88,
+          "top": 83.171875,
+          "bottom": 91.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+15",
+          "x": 64,
+          "y": 95,
+          "top": 90.171875,
+          "bottom": 98.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+12",
+          "x": 64,
+          "y": 102,
+          "top": 97.171875,
+          "bottom": 105.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+9",
+          "x": 64,
+          "y": 109,
+          "top": 104.171875,
+          "bottom": 112.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+6",
+          "x": 64,
+          "y": 116,
+          "top": 111.171875,
+          "bottom": 119.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+3",
+          "x": 64,
+          "y": 123,
+          "top": 118.171875,
+          "bottom": 126.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "0",
+          "x": 64,
+          "y": 130,
+          "top": 125.171875,
+          "bottom": 133.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-3",
+          "x": 64,
+          "y": 137,
+          "top": 132.171875,
+          "bottom": 140.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-6",
+          "x": 64,
+          "y": 144,
+          "top": 139.171875,
+          "bottom": 147.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-9",
+          "x": 64,
+          "y": 151,
+          "top": 146.171875,
+          "bottom": 154.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-12",
+          "x": 64,
+          "y": 158,
+          "top": 153.171875,
+          "bottom": 161.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-15",
+          "x": 64,
+          "y": 165,
+          "top": 160.171875,
+          "bottom": 168.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-18",
+          "x": 64,
+          "y": 172,
+          "top": 167.171875,
+          "bottom": 175.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-21",
+          "x": 64,
+          "y": 179,
+          "top": 174.171875,
+          "bottom": 182.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-24",
+          "x": 64,
+          "y": 186,
+          "top": 181.171875,
+          "bottom": 189.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-27",
+          "x": 64,
+          "y": 193,
+          "top": 188.171875,
+          "bottom": 196.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-30",
+          "x": 64,
+          "y": 200,
+          "top": 195.171875,
+          "bottom": 203.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-33",
+          "x": 64,
+          "y": 207,
+          "top": 202.171875,
+          "bottom": 210.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-36",
+          "x": 64,
+          "y": 214,
+          "top": 209.171875,
+          "bottom": 217.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-39",
+          "x": 64,
+          "y": 221,
+          "top": 216.171875,
+          "bottom": 224.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-42",
+          "x": 64,
+          "y": 228,
+          "top": 223.171875,
+          "bottom": 231.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-45",
+          "x": 64,
+          "y": 235,
+          "top": 230.171875,
+          "bottom": 238.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-48",
+          "x": 64,
+          "y": 242,
+          "top": 237.171875,
+          "bottom": 245.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        }
+      ],
+      "inkSegments": 284,
+      "inkSha256": "47de6a3fef295920e03ec59fdbfdd8879796256081906522a7ea6c961cbb1f66",
+      "score": "100",
+      "pageErrors": [],
+      "cspViolations": [],
+      "requestsWhileOffline": []
+    },
+    {
+      "kind": "synthetic-flat",
+      "sourceSha256": "f7ba095095ec765254c6389cb31b407e8576f96fdee664caa6a27e5072180ae0",
+      "browser": "chromium",
+      "browserVersion": "153.0.8010.12",
+      "width": 1440,
+      "dpr": 1,
+      "labelCount": 5,
+      "minimumBaselineSpacing": 56,
+      "minimumGlyphGap": 48,
+      "overlappingGlyphPairs": 0,
+      "labels": [
+        {
+          "text": "+6",
+          "x": 64,
+          "y": 18,
+          "top": 13.171875,
+          "bottom": 21.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+3",
+          "x": 64,
+          "y": 74,
+          "top": 69.171875,
+          "bottom": 77.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "0",
+          "x": 64,
+          "y": 130,
+          "top": 125.171875,
+          "bottom": 133.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-3",
+          "x": 64,
+          "y": 186,
+          "top": 181.171875,
+          "bottom": 189.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-6",
+          "x": 64,
+          "y": 242,
+          "top": 237.171875,
+          "bottom": 245.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        }
+      ],
+      "inkSegments": 392,
+      "inkSha256": "6b5260268187d6e736691898551db2a19847570cd1a2665282a40cf8c55ce810",
+      "score": "100",
+      "pageErrors": [],
+      "cspViolations": [],
+      "requestsWhileOffline": []
+    },
+    {
+      "kind": "recorded-wide",
+      "sourceSha256": "140519bd310f7413748fbc70cbbb13ab45d447af2abb38e06bf2d99f620dfee2",
+      "browser": "chromium",
+      "browserVersion": "153.0.8010.12",
+      "width": 375,
+      "dpr": 2,
+      "labelCount": 33,
+      "minimumBaselineSpacing": 7,
+      "minimumGlyphGap": -1,
+      "overlappingGlyphPairs": 32,
+      "labels": [
+        {
+          "text": "+48",
+          "x": 64,
+          "y": 18,
+          "top": 13.171875,
+          "bottom": 21.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+45",
+          "x": 64,
+          "y": 25,
+          "top": 20.171875,
+          "bottom": 28.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+42",
+          "x": 64,
+          "y": 32,
+          "top": 27.171875,
+          "bottom": 35.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+39",
+          "x": 64,
+          "y": 39,
+          "top": 34.171875,
+          "bottom": 42.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+36",
+          "x": 64,
+          "y": 46,
+          "top": 41.171875,
+          "bottom": 49.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+33",
+          "x": 64,
+          "y": 53,
+          "top": 48.171875,
+          "bottom": 56.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+30",
+          "x": 64,
+          "y": 60,
+          "top": 55.171875,
+          "bottom": 63.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+27",
+          "x": 64,
+          "y": 67,
+          "top": 62.171875,
+          "bottom": 70.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+24",
+          "x": 64,
+          "y": 74,
+          "top": 69.171875,
+          "bottom": 77.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+21",
+          "x": 64,
+          "y": 81,
+          "top": 76.171875,
+          "bottom": 84.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+18",
+          "x": 64,
+          "y": 88,
+          "top": 83.171875,
+          "bottom": 91.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+15",
+          "x": 64,
+          "y": 95,
+          "top": 90.171875,
+          "bottom": 98.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+12",
+          "x": 64,
+          "y": 102,
+          "top": 97.171875,
+          "bottom": 105.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+9",
+          "x": 64,
+          "y": 109,
+          "top": 104.171875,
+          "bottom": 112.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+6",
+          "x": 64,
+          "y": 116,
+          "top": 111.171875,
+          "bottom": 119.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+3",
+          "x": 64,
+          "y": 123,
+          "top": 118.171875,
+          "bottom": 126.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "0",
+          "x": 64,
+          "y": 130,
+          "top": 125.171875,
+          "bottom": 133.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-3",
+          "x": 64,
+          "y": 137,
+          "top": 132.171875,
+          "bottom": 140.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-6",
+          "x": 64,
+          "y": 144,
+          "top": 139.171875,
+          "bottom": 147.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-9",
+          "x": 64,
+          "y": 151,
+          "top": 146.171875,
+          "bottom": 154.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-12",
+          "x": 64,
+          "y": 158,
+          "top": 153.171875,
+          "bottom": 161.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-15",
+          "x": 64,
+          "y": 165,
+          "top": 160.171875,
+          "bottom": 168.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-18",
+          "x": 64,
+          "y": 172,
+          "top": 167.171875,
+          "bottom": 175.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-21",
+          "x": 64,
+          "y": 179,
+          "top": 174.171875,
+          "bottom": 182.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-24",
+          "x": 64,
+          "y": 186,
+          "top": 181.171875,
+          "bottom": 189.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-27",
+          "x": 64,
+          "y": 193,
+          "top": 188.171875,
+          "bottom": 196.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-30",
+          "x": 64,
+          "y": 200,
+          "top": 195.171875,
+          "bottom": 203.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-33",
+          "x": 64,
+          "y": 207,
+          "top": 202.171875,
+          "bottom": 210.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-36",
+          "x": 64,
+          "y": 214,
+          "top": 209.171875,
+          "bottom": 217.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-39",
+          "x": 64,
+          "y": 221,
+          "top": 216.171875,
+          "bottom": 224.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-42",
+          "x": 64,
+          "y": 228,
+          "top": 223.171875,
+          "bottom": 231.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-45",
+          "x": 64,
+          "y": 235,
+          "top": 230.171875,
+          "bottom": 238.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-48",
+          "x": 64,
+          "y": 242,
+          "top": 237.171875,
+          "bottom": 245.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        }
+      ],
+      "inkSegments": 284,
+      "inkSha256": "426f224e7b4e5c25109102a07ff625afbb5c1b1f9c24fab52be5d4b31a68cc75",
+      "score": "100",
+      "pageErrors": [],
+      "cspViolations": [],
+      "requestsWhileOffline": []
+    },
+    {
+      "kind": "synthetic-flat",
+      "sourceSha256": "f7ba095095ec765254c6389cb31b407e8576f96fdee664caa6a27e5072180ae0",
+      "browser": "chromium",
+      "browserVersion": "153.0.8010.12",
+      "width": 375,
+      "dpr": 2,
+      "labelCount": 5,
+      "minimumBaselineSpacing": 56,
+      "minimumGlyphGap": 48,
+      "overlappingGlyphPairs": 0,
+      "labels": [
+        {
+          "text": "+6",
+          "x": 64,
+          "y": 18,
+          "top": 13.171875,
+          "bottom": 21.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+3",
+          "x": 64,
+          "y": 74,
+          "top": 69.171875,
+          "bottom": 77.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "0",
+          "x": 64,
+          "y": 130,
+          "top": 125.171875,
+          "bottom": 133.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-3",
+          "x": 64,
+          "y": 186,
+          "top": 181.171875,
+          "bottom": 189.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-6",
+          "x": 64,
+          "y": 242,
+          "top": 237.171875,
+          "bottom": 245.171875,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        }
+      ],
+      "inkSegments": 392,
+      "inkSha256": "37a5aee67a2f16f937a98c97109a7a30015206ce580cfc857a3e98a125a8ea5c",
+      "score": "100",
+      "pageErrors": [],
+      "cspViolations": [],
+      "requestsWhileOffline": []
+    },
+    {
+      "kind": "recorded-wide",
+      "sourceSha256": "140519bd310f7413748fbc70cbbb13ab45d447af2abb38e06bf2d99f620dfee2",
+      "browser": "firefox",
+      "browserVersion": "155.0",
+      "width": 1440,
+      "dpr": 1,
+      "labelCount": 33,
+      "minimumBaselineSpacing": 7,
+      "minimumGlyphGap": -1,
+      "overlappingGlyphPairs": 32,
+      "labels": [
+        {
+          "text": "+48",
+          "x": 64,
+          "y": 18,
+          "top": 13.173076923076923,
+          "bottom": 21.173076923076923,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+45",
+          "x": 64,
+          "y": 25,
+          "top": 20.173076923076923,
+          "bottom": 28.173076923076923,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+42",
+          "x": 64,
+          "y": 32,
+          "top": 27.173076923076923,
+          "bottom": 35.17307692307692,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+39",
+          "x": 64,
+          "y": 39,
+          "top": 34.17307692307692,
+          "bottom": 42.17307692307692,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+36",
+          "x": 64,
+          "y": 46,
+          "top": 41.17307692307692,
+          "bottom": 49.17307692307692,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+33",
+          "x": 64,
+          "y": 53,
+          "top": 48.17307692307692,
+          "bottom": 56.17307692307692,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+30",
+          "x": 64,
+          "y": 60,
+          "top": 55.17307692307692,
+          "bottom": 63.17307692307692,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+27",
+          "x": 64,
+          "y": 67,
+          "top": 62.17307692307692,
+          "bottom": 70.17307692307692,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+24",
+          "x": 64,
+          "y": 74,
+          "top": 69.17307692307692,
+          "bottom": 77.17307692307692,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+21",
+          "x": 64,
+          "y": 81,
+          "top": 76.17307692307692,
+          "bottom": 84.17307692307692,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+18",
+          "x": 64,
+          "y": 88,
+          "top": 83.17307692307692,
+          "bottom": 91.17307692307692,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+15",
+          "x": 64,
+          "y": 95,
+          "top": 90.17307692307692,
+          "bottom": 98.17307692307692,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+12",
+          "x": 64,
+          "y": 102,
+          "top": 97.17307692307692,
+          "bottom": 105.17307692307692,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+9",
+          "x": 64,
+          "y": 109,
+          "top": 104.17307692307692,
+          "bottom": 112.17307692307692,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+6",
+          "x": 64,
+          "y": 116,
+          "top": 111.17307692307692,
+          "bottom": 119.17307692307692,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+3",
+          "x": 64,
+          "y": 123,
+          "top": 118.17307692307692,
+          "bottom": 126.17307692307692,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "0",
+          "x": 64,
+          "y": 130,
+          "top": 125.17307692307692,
+          "bottom": 133.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-3",
+          "x": 64,
+          "y": 137,
+          "top": 132.17307692307693,
+          "bottom": 140.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-6",
+          "x": 64,
+          "y": 144,
+          "top": 139.17307692307693,
+          "bottom": 147.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-9",
+          "x": 64,
+          "y": 151,
+          "top": 146.17307692307693,
+          "bottom": 154.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-12",
+          "x": 64,
+          "y": 158,
+          "top": 153.17307692307693,
+          "bottom": 161.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-15",
+          "x": 64,
+          "y": 165,
+          "top": 160.17307692307693,
+          "bottom": 168.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-18",
+          "x": 64,
+          "y": 172,
+          "top": 167.17307692307693,
+          "bottom": 175.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-21",
+          "x": 64,
+          "y": 179,
+          "top": 174.17307692307693,
+          "bottom": 182.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-24",
+          "x": 64,
+          "y": 186,
+          "top": 181.17307692307693,
+          "bottom": 189.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-27",
+          "x": 64,
+          "y": 193,
+          "top": 188.17307692307693,
+          "bottom": 196.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-30",
+          "x": 64,
+          "y": 200,
+          "top": 195.17307692307693,
+          "bottom": 203.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-33",
+          "x": 64,
+          "y": 207,
+          "top": 202.17307692307693,
+          "bottom": 210.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-36",
+          "x": 64,
+          "y": 214,
+          "top": 209.17307692307693,
+          "bottom": 217.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-39",
+          "x": 64,
+          "y": 221,
+          "top": 216.17307692307693,
+          "bottom": 224.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-42",
+          "x": 64,
+          "y": 228,
+          "top": 223.17307692307693,
+          "bottom": 231.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-45",
+          "x": 64,
+          "y": 235,
+          "top": 230.17307692307693,
+          "bottom": 238.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-48",
+          "x": 64,
+          "y": 242,
+          "top": 237.17307692307693,
+          "bottom": 245.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        }
+      ],
+      "inkSegments": 284,
+      "inkSha256": "9c0f5d0488654fb7c9741e193614e8f513225ac5d73c921f5288b7eb6f70d5a7",
+      "score": "100",
+      "pageErrors": [],
+      "cspViolations": [],
+      "requestsWhileOffline": []
+    },
+    {
+      "kind": "synthetic-flat",
+      "sourceSha256": "f7ba095095ec765254c6389cb31b407e8576f96fdee664caa6a27e5072180ae0",
+      "browser": "firefox",
+      "browserVersion": "155.0",
+      "width": 1440,
+      "dpr": 1,
+      "labelCount": 5,
+      "minimumBaselineSpacing": 56,
+      "minimumGlyphGap": 48,
+      "overlappingGlyphPairs": 0,
+      "labels": [
+        {
+          "text": "+6",
+          "x": 64,
+          "y": 18,
+          "top": 13.173076923076923,
+          "bottom": 21.173076923076923,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+3",
+          "x": 64,
+          "y": 74,
+          "top": 69.17307692307692,
+          "bottom": 77.17307692307692,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "0",
+          "x": 64,
+          "y": 130,
+          "top": 125.17307692307692,
+          "bottom": 133.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-3",
+          "x": 64,
+          "y": 186,
+          "top": 181.17307692307693,
+          "bottom": 189.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-6",
+          "x": 64,
+          "y": 242,
+          "top": 237.17307692307693,
+          "bottom": 245.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        }
+      ],
+      "inkSegments": 392,
+      "inkSha256": "a3d04eb6599bc37803ed3e08690d77a8c3d34313790dd52b7eecd5db668bc340",
+      "score": "100",
+      "pageErrors": [],
+      "cspViolations": [],
+      "requestsWhileOffline": []
+    },
+    {
+      "kind": "recorded-wide",
+      "sourceSha256": "140519bd310f7413748fbc70cbbb13ab45d447af2abb38e06bf2d99f620dfee2",
+      "browser": "firefox",
+      "browserVersion": "155.0",
+      "width": 375,
+      "dpr": 2,
+      "labelCount": 33,
+      "minimumBaselineSpacing": 7,
+      "minimumGlyphGap": -1,
+      "overlappingGlyphPairs": 32,
+      "labels": [
+        {
+          "text": "+48",
+          "x": 64,
+          "y": 18,
+          "top": 13.173076923076923,
+          "bottom": 21.173076923076923,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+45",
+          "x": 64,
+          "y": 25,
+          "top": 20.173076923076923,
+          "bottom": 28.173076923076923,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+42",
+          "x": 64,
+          "y": 32,
+          "top": 27.173076923076923,
+          "bottom": 35.17307692307692,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+39",
+          "x": 64,
+          "y": 39,
+          "top": 34.17307692307692,
+          "bottom": 42.17307692307692,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+36",
+          "x": 64,
+          "y": 46,
+          "top": 41.17307692307692,
+          "bottom": 49.17307692307692,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+33",
+          "x": 64,
+          "y": 53,
+          "top": 48.17307692307692,
+          "bottom": 56.17307692307692,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+30",
+          "x": 64,
+          "y": 60,
+          "top": 55.17307692307692,
+          "bottom": 63.17307692307692,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+27",
+          "x": 64,
+          "y": 67,
+          "top": 62.17307692307692,
+          "bottom": 70.17307692307692,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+24",
+          "x": 64,
+          "y": 74,
+          "top": 69.17307692307692,
+          "bottom": 77.17307692307692,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+21",
+          "x": 64,
+          "y": 81,
+          "top": 76.17307692307692,
+          "bottom": 84.17307692307692,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+18",
+          "x": 64,
+          "y": 88,
+          "top": 83.17307692307692,
+          "bottom": 91.17307692307692,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+15",
+          "x": 64,
+          "y": 95,
+          "top": 90.17307692307692,
+          "bottom": 98.17307692307692,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+12",
+          "x": 64,
+          "y": 102,
+          "top": 97.17307692307692,
+          "bottom": 105.17307692307692,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+9",
+          "x": 64,
+          "y": 109,
+          "top": 104.17307692307692,
+          "bottom": 112.17307692307692,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+6",
+          "x": 64,
+          "y": 116,
+          "top": 111.17307692307692,
+          "bottom": 119.17307692307692,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+3",
+          "x": 64,
+          "y": 123,
+          "top": 118.17307692307692,
+          "bottom": 126.17307692307692,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "0",
+          "x": 64,
+          "y": 130,
+          "top": 125.17307692307692,
+          "bottom": 133.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-3",
+          "x": 64,
+          "y": 137,
+          "top": 132.17307692307693,
+          "bottom": 140.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-6",
+          "x": 64,
+          "y": 144,
+          "top": 139.17307692307693,
+          "bottom": 147.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-9",
+          "x": 64,
+          "y": 151,
+          "top": 146.17307692307693,
+          "bottom": 154.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-12",
+          "x": 64,
+          "y": 158,
+          "top": 153.17307692307693,
+          "bottom": 161.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-15",
+          "x": 64,
+          "y": 165,
+          "top": 160.17307692307693,
+          "bottom": 168.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-18",
+          "x": 64,
+          "y": 172,
+          "top": 167.17307692307693,
+          "bottom": 175.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-21",
+          "x": 64,
+          "y": 179,
+          "top": 174.17307692307693,
+          "bottom": 182.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-24",
+          "x": 64,
+          "y": 186,
+          "top": 181.17307692307693,
+          "bottom": 189.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-27",
+          "x": 64,
+          "y": 193,
+          "top": 188.17307692307693,
+          "bottom": 196.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-30",
+          "x": 64,
+          "y": 200,
+          "top": 195.17307692307693,
+          "bottom": 203.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-33",
+          "x": 64,
+          "y": 207,
+          "top": 202.17307692307693,
+          "bottom": 210.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-36",
+          "x": 64,
+          "y": 214,
+          "top": 209.17307692307693,
+          "bottom": 217.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-39",
+          "x": 64,
+          "y": 221,
+          "top": 216.17307692307693,
+          "bottom": 224.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-42",
+          "x": 64,
+          "y": 228,
+          "top": 223.17307692307693,
+          "bottom": 231.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-45",
+          "x": 64,
+          "y": 235,
+          "top": 230.17307692307693,
+          "bottom": 238.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-48",
+          "x": 64,
+          "y": 242,
+          "top": 237.17307692307693,
+          "bottom": 245.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        }
+      ],
+      "inkSegments": 284,
+      "inkSha256": "6227197cff80c082bf817240255fdc9c6d1c91e01c883da17a83028ff0cfbaa6",
+      "score": "100",
+      "pageErrors": [],
+      "cspViolations": [],
+      "requestsWhileOffline": []
+    },
+    {
+      "kind": "synthetic-flat",
+      "sourceSha256": "f7ba095095ec765254c6389cb31b407e8576f96fdee664caa6a27e5072180ae0",
+      "browser": "firefox",
+      "browserVersion": "155.0",
+      "width": 375,
+      "dpr": 2,
+      "labelCount": 5,
+      "minimumBaselineSpacing": 56,
+      "minimumGlyphGap": 48,
+      "overlappingGlyphPairs": 0,
+      "labels": [
+        {
+          "text": "+6",
+          "x": 64,
+          "y": 18,
+          "top": 13.173076923076923,
+          "bottom": 21.173076923076923,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "+3",
+          "x": 64,
+          "y": 74,
+          "top": 69.17307692307692,
+          "bottom": 77.17307692307692,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "0",
+          "x": 64,
+          "y": 130,
+          "top": 125.17307692307692,
+          "bottom": 133.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-3",
+          "x": 64,
+          "y": 186,
+          "top": 181.17307692307693,
+          "bottom": 189.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        },
+        {
+          "text": "-6",
+          "x": 64,
+          "y": 242,
+          "top": 237.17307692307693,
+          "bottom": 245.17307692307693,
+          "font": "11px \"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+        }
+      ],
+      "inkSegments": 392,
+      "inkSha256": "402f4bcb3bf6afb592c769972e4a981a0de195fb3299b15745ae340c13ea07a2",
+      "score": "100",
+      "pageErrors": [],
+      "cspViolations": [],
+      "requestsWhileOffline": []
+    }
+  ]
+}

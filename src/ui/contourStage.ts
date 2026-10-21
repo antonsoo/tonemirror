@@ -19,7 +19,8 @@ interface PlotArea {
   bottom: number;
 }
 
-const TICK_STEP = 3; // semitones between gridlines
+const TICK_STEP = 3; // base semitone interval for range rounding and grid steps
+const MIN_TICK_SPACING = 22; // CSS pixels, including space around the 11px labels
 const MIN_HALF_RANGE = 4; // never zoom in tighter than +-4 st, even for a near-flat contour
 
 /** Picks a symmetric, 3-semitone-tick-aligned y-range that fits the data with
@@ -52,7 +53,12 @@ function drawStaff(ctx: CanvasRenderingContext2D, plot: PlotArea, halfRange: num
   ctx.fillStyle = cssVar("--color-text-muted");
   ctx.textBaseline = "middle";
   ctx.textAlign = "right";
-  for (let semitone = -halfRange; semitone <= halfRange; semitone += TICK_STEP) {
+  // Keep the complete data range; thin only the staff when outliers widen it.
+  // Doubling preserves familiar 3/6/12-semitone steps and a labelled median.
+  let step = TICK_STEP;
+  while ((step / (2 * halfRange)) * (plot.bottom - plot.top) < MIN_TICK_SPACING) step *= 2;
+  const outerTick = Math.floor(halfRange / step) * step;
+  for (let semitone = -outerTick; semitone <= outerTick; semitone += step) {
     const y = semitoneToY(semitone, plot, halfRange);
     ctx.beginPath();
     ctx.moveTo(plot.left, y);
