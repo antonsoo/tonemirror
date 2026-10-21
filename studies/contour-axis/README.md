@@ -92,3 +92,11 @@ and pass `before` as the third argument to this replay script. The retained
 script works against both builds. The original public observation remains
 an observation of the deployment at the recorded stage, rather than a claim
 that the current public page still has the defect.
+
+The [fresh-install receipt](results/verification.json) pins Node 24.22.0,
+the 30-file production build, lint/typecheck, 232 unit cases in both required
+locales, seven source-integrity controls and 122 passing browser workflows.
+Four existing Firefox fake-device microphone cases remain skipped. The
+[clean canvas replay](results/clean.json) repeats all eight cases and matches
+the working build's measurements and screenshots. All six pitch-detector
+files still match the earlier 580-recording replay.

@@ -242,12 +242,6 @@ After per-frame detection, `src/core/pitchTrack.ts` applies:
 
 #### Why semitones, not Hz
 
-The comparison chart fits the full observed pitch range. When outliers widen
-that range, its grid uses larger semitone steps so the labels remain readable.
-A native speech example previously drew 33 overlapping labels; it now draws
-nine, with identical contour strokes and scores.
-[Canvas measurements and before/after views](studies/contour-axis/README.md).
-
 The whole point of overlaying two contours is comparing their *shape* - is
 the rise as steep, does the dip land in the same place - not their
 absolute pitch. A male reference speaker and a female or child learner can
@@ -257,6 +251,12 @@ voiced median (`12 * log2(f0 / medianF0)`) puts both speakers on the same
 scale regardless of their natural register, so the DTW and visual overlay
 are comparing contour shape, which is what actually carries tone and pitch
 accent.
+
+The comparison chart fits the full observed pitch range. When outliers widen
+that range, its grid uses larger semitone steps so the labels remain readable.
+A native speech example previously drew 33 overlapping labels; it now draws
+nine, with identical contour strokes and scores.
+[Canvas measurements and before/after views](studies/contour-axis/README.md).
 
 ### Comparison (DTW)
 
