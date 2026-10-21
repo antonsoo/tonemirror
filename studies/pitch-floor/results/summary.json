@@ -1,0 +1,605 @@
+{
+  "recordings": 580,
+  "settingsPerRecording": 6,
+  "unchangedDefaultComparisons": 1160,
+  "scope": "Descriptive agreement with supplied laryngeal references, on each setting's native frame grid. Not pronunciation, tone classification, a fresh held-out evaluation or a universally better setting.",
+  "protocol": "Fit one timing offset per algorithm/floor/corpus on the original odd PTDB speakers, or all FDA recordings, maximizing supplied-reference voiced-frame agreement within 100 cents. Exclude PTDB frames outside either end of the reference. Use the same fixed presets and detector defaults. No floor is selected by these results.",
+  "sourceManifestSha256": "072ec462eb7a113873d949c7609377202a3df3508ed330193cc5edb907687d75",
+  "detectorFiles": [
+    {
+      "file": "src/core/pitchTrack.ts",
+      "sha256": "9ac0b092f14fbaa1ba688c314ec38c4657eabfcd9f7c2e4d2704d4641557a134"
+    },
+    {
+      "file": "src/core/yin.ts",
+      "sha256": "70d37175ec9330e167f689e5c7da9ebfe8d5af949cd7e0c846a55211a6fa3908"
+    },
+    {
+      "file": "src/core/mpm.ts",
+      "sha256": "51eba39acbcd37ee6ccdf870526a40968c29a4285c995efbae3ffc2a46257c5e"
+    },
+    {
+      "file": "src/core/pitchCorrelation.ts",
+      "sha256": "d8b01b9e56c5f40c565df5929348c13be33b38c6fea9199c78b26febe6ade742"
+    },
+    {
+      "file": "src/core/fft.ts",
+      "sha256": "ed0b8b78459a6e2909f42e8d534d824842017c5766ac28d572222df23d42c331"
+    },
+    {
+      "file": "src/core/types.ts",
+      "sha256": "ca7fadc7dba4e3d91d2dcda33388a6124e6673179167ef1667b1a881a664c922"
+    }
+  ],
+  "captureSha256": "34207bdadce5888e6f7336224d096c4e6fd960e540eb1455d8772a6b22a5dc59",
+  "scorerSha256": "88e7a4dcba60f7df24aa3787270c035be1ebcf401b5d1580f8c613737aecc8e0",
+  "referenceReaderSha256": "833caa174459c2b5ca09dd1198fa48d535d530bd4c1784db018e228e0920315d",
+  "numpy": "2.5.3",
+  "captureRuntimes": [
+    "v26.7.0"
+  ],
+  "calibration": {
+    "ptdb": {
+      "mpm-40": {
+        "offsetMs": 24.0,
+        "calibrationRecordings": 240,
+        "within100CentsFraction": 0.8872697070371489,
+        "gridMs": [
+          -40,
+          60,
+          1
+        ]
+      },
+      "mpm-60": {
+        "offsetMs": 24.0,
+        "calibrationRecordings": 240,
+        "within100CentsFraction": 0.9061461794019934,
+        "gridMs": [
+          -40,
+          60,
+          1
+        ]
+      },
+      "mpm-90": {
+        "offsetMs": 21.0,
+        "calibrationRecordings": 240,
+        "within100CentsFraction": 0.8515554213228632,
+        "gridMs": [
+          -40,
+          60,
+          1
+        ]
+      },
+      "yin-40": {
+        "offsetMs": 32.0,
+        "calibrationRecordings": 240,
+        "within100CentsFraction": 0.9201651062116178,
+        "gridMs": [
+          -40,
+          60,
+          1
+        ]
+      },
+      "yin-60": {
+        "offsetMs": 26.0,
+        "calibrationRecordings": 240,
+        "within100CentsFraction": 0.9249219772475586,
+        "gridMs": [
+          -40,
+          60,
+          1
+        ]
+      },
+      "yin-90": {
+        "offsetMs": 21.0,
+        "calibrationRecordings": 240,
+        "within100CentsFraction": 0.8512533977650256,
+        "gridMs": [
+          -40,
+          60,
+          1
+        ]
+      }
+    },
+    "fda": {
+      "mpm-40": {
+        "offsetMs": 4.0,
+        "calibrationRecordings": 100,
+        "within100CentsFraction": 0.8378422161023813,
+        "gridMs": [
+          -40,
+          60,
+          1
+        ]
+      },
+      "mpm-60": {
+        "offsetMs": -1.0,
+        "calibrationRecordings": 100,
+        "within100CentsFraction": 0.86810337843312,
+        "gridMs": [
+          -40,
+          60,
+          1
+        ]
+      },
+      "mpm-90": {
+        "offsetMs": 0.0,
+        "calibrationRecordings": 100,
+        "within100CentsFraction": 0.8702728965908171,
+        "gridMs": [
+          -40,
+          60,
+          1
+        ]
+      },
+      "yin-40": {
+        "offsetMs": 11.0,
+        "calibrationRecordings": 100,
+        "within100CentsFraction": 0.8744125749473343,
+        "gridMs": [
+          -40,
+          60,
+          1
+        ]
+      },
+      "yin-60": {
+        "offsetMs": 8.0,
+        "calibrationRecordings": 100,
+        "within100CentsFraction": 0.8847336894932816,
+        "gridMs": [
+          -40,
+          60,
+          1
+        ]
+      },
+      "yin-90": {
+        "offsetMs": 3.0,
+        "calibrationRecordings": 100,
+        "within100CentsFraction": 0.8817953495908613,
+        "gridMs": [
+          -40,
+          60,
+          1
+        ]
+      }
+    }
+  },
+  "results": {
+    "ptdb": {
+      "mpm-40": {
+        "all": {
+          "frames": 346828,
+          "referenceVoiced": 77433,
+          "referenceUnvoiced": 269395,
+          "jointlyVoiced": 70460,
+          "within100Cents": 67344,
+          "missedVoiced": 6973,
+          "falseVoiced": 16289,
+          "grossErrors": 1728,
+          "below60Reference": 157,
+          "below60Within100Cents": 81,
+          "voicedWithin100CentsPct": 86.97067141916237,
+          "falseVoicedPct": 6.046511627906977,
+          "missedVoicedPct": 9.005204499373653,
+          "jointVoicedGrossErrorPct": 2.452455293783707,
+          "below60Within100CentsPct": 51.59235668789809
+        },
+        "development": {
+          "frames": 173188,
+          "referenceVoiced": 39732,
+          "referenceUnvoiced": 133456,
+          "jointlyVoiced": 36616,
+          "within100Cents": 35253,
+          "missedVoiced": 3116,
+          "falseVoiced": 7462,
+          "grossErrors": 659,
+          "below60Reference": 91,
+          "below60Within100Cents": 61,
+          "voicedWithin100CentsPct": 88.72697070371488,
+          "falseVoicedPct": 5.591355952523678,
+          "missedVoicedPct": 7.842545051847377,
+          "jointVoicedGrossErrorPct": 1.7997596679047412,
+          "below60Within100CentsPct": 67.03296703296704
+        },
+        "comparison": {
+          "frames": 173640,
+          "referenceVoiced": 37701,
+          "referenceUnvoiced": 135939,
+          "jointlyVoiced": 33844,
+          "within100Cents": 32091,
+          "missedVoiced": 3857,
+          "falseVoiced": 8827,
+          "grossErrors": 1069,
+          "below60Reference": 66,
+          "below60Within100Cents": 20,
+          "voicedWithin100CentsPct": 85.11975809660221,
+          "falseVoicedPct": 6.493353636557574,
+          "missedVoicedPct": 10.230497864778123,
+          "jointVoicedGrossErrorPct": 3.158610093369578,
+          "below60Within100CentsPct": 30.303030303030305
+        }
+      },
+      "mpm-60": {
+        "all": {
+          "frames": 346828,
+          "referenceVoiced": 77433,
+          "referenceUnvoiced": 269395,
+          "jointlyVoiced": 71004,
+          "within100Cents": 68770,
+          "missedVoiced": 6429,
+          "falseVoiced": 14063,
+          "grossErrors": 1483,
+          "below60Reference": 153,
+          "below60Within100Cents": 23,
+          "voicedWithin100CentsPct": 88.81226350522387,
+          "falseVoicedPct": 5.2202156684422505,
+          "missedVoicedPct": 8.302661655883151,
+          "jointVoicedGrossErrorPct": 2.0886147259309333,
+          "below60Within100CentsPct": 15.032679738562091
+        },
+        "development": {
+          "frames": 173188,
+          "referenceVoiced": 39732,
+          "referenceUnvoiced": 133456,
+          "jointlyVoiced": 36954,
+          "within100Cents": 36003,
+          "missedVoiced": 2778,
+          "falseVoiced": 6314,
+          "grossErrors": 570,
+          "below60Reference": 89,
+          "below60Within100Cents": 17,
+          "voicedWithin100CentsPct": 90.61461794019934,
+          "falseVoicedPct": 4.731147344443112,
+          "missedVoicedPct": 6.9918453639383875,
+          "jointVoicedGrossErrorPct": 1.5424581912648156,
+          "below60Within100CentsPct": 19.10112359550562
+        },
+        "comparison": {
+          "frames": 173640,
+          "referenceVoiced": 37701,
+          "referenceUnvoiced": 135939,
+          "jointlyVoiced": 34050,
+          "within100Cents": 32767,
+          "missedVoiced": 3651,
+          "falseVoiced": 7749,
+          "grossErrors": 913,
+          "below60Reference": 64,
+          "below60Within100Cents": 6,
+          "voicedWithin100CentsPct": 86.91281398371396,
+          "falseVoicedPct": 5.700350892679805,
+          "missedVoicedPct": 9.684093260125726,
+          "jointVoicedGrossErrorPct": 2.6813509544787077,
+          "below60Within100CentsPct": 9.375
+        }
+      },
+      "mpm-90": {
+        "all": {
+          "frames": 346828,
+          "referenceVoiced": 77433,
+          "referenceUnvoiced": 269395,
+          "jointlyVoiced": 67262,
+          "within100Cents": 64742,
+          "missedVoiced": 10171,
+          "falseVoiced": 12338,
+          "grossErrors": 1726,
+          "below60Reference": 161,
+          "below60Within100Cents": 0,
+          "voicedWithin100CentsPct": 83.61034700967288,
+          "falseVoicedPct": 4.5798919801778055,
+          "missedVoicedPct": 13.135226582981415,
+          "jointVoicedGrossErrorPct": 2.566084862180726,
+          "below60Within100CentsPct": 0.0
+        },
+        "development": {
+          "frames": 173188,
+          "referenceVoiced": 39732,
+          "referenceUnvoiced": 133456,
+          "jointlyVoiced": 34794,
+          "within100Cents": 33834,
+          "missedVoiced": 4938,
+          "falseVoiced": 5429,
+          "grossErrors": 592,
+          "below60Reference": 94,
+          "below60Within100Cents": 0,
+          "voicedWithin100CentsPct": 85.15554213228631,
+          "falseVoicedPct": 4.068007433161491,
+          "missedVoicedPct": 12.428269405013591,
+          "jointVoicedGrossErrorPct": 1.701442777490372,
+          "below60Within100CentsPct": 0.0
+        },
+        "comparison": {
+          "frames": 173640,
+          "referenceVoiced": 37701,
+          "referenceUnvoiced": 135939,
+          "jointlyVoiced": 32468,
+          "within100Cents": 30908,
+          "missedVoiced": 5233,
+          "falseVoiced": 6909,
+          "grossErrors": 1134,
+          "below60Reference": 67,
+          "below60Within100Cents": 0,
+          "voicedWithin100CentsPct": 81.98191029415665,
+          "falseVoicedPct": 5.082426676671154,
+          "missedVoicedPct": 13.88026842789316,
+          "jointVoicedGrossErrorPct": 3.49266970555624,
+          "below60Within100CentsPct": 0.0
+        }
+      },
+      "yin-40": {
+        "all": {
+          "frames": 346828,
+          "referenceVoiced": 77433,
+          "referenceUnvoiced": 269395,
+          "jointlyVoiced": 72694,
+          "within100Cents": 69978,
+          "missedVoiced": 4739,
+          "falseVoiced": 17524,
+          "grossErrors": 1894,
+          "below60Reference": 153,
+          "below60Within100Cents": 83,
+          "voicedWithin100CentsPct": 90.37232187826895,
+          "falseVoicedPct": 6.504946268490507,
+          "missedVoicedPct": 6.120129660480673,
+          "jointVoicedGrossErrorPct": 2.6054419897102923,
+          "below60Within100CentsPct": 54.248366013071895
+        },
+        "development": {
+          "frames": 173188,
+          "referenceVoiced": 39732,
+          "referenceUnvoiced": 133456,
+          "jointlyVoiced": 37704,
+          "within100Cents": 36560,
+          "missedVoiced": 2028,
+          "falseVoiced": 7790,
+          "grossErrors": 743,
+          "below60Reference": 89,
+          "below60Within100Cents": 58,
+          "voicedWithin100CentsPct": 92.01651062116179,
+          "falseVoicedPct": 5.837129840546697,
+          "missedVoicedPct": 5.104198127453941,
+          "jointVoicedGrossErrorPct": 1.9706131975387227,
+          "below60Within100CentsPct": 65.1685393258427
+        },
+        "comparison": {
+          "frames": 173640,
+          "referenceVoiced": 37701,
+          "referenceUnvoiced": 135939,
+          "jointlyVoiced": 34990,
+          "within100Cents": 33418,
+          "missedVoiced": 2711,
+          "falseVoiced": 9734,
+          "grossErrors": 1151,
+          "below60Reference": 64,
+          "below60Within100Cents": 25,
+          "voicedWithin100CentsPct": 88.63955863239701,
+          "falseVoicedPct": 7.160564665033581,
+          "missedVoicedPct": 7.190790695207023,
+          "jointVoicedGrossErrorPct": 3.289511288939697,
+          "below60Within100CentsPct": 39.0625
+        }
+      },
+      "yin-60": {
+        "all": {
+          "frames": 346828,
+          "referenceVoiced": 77433,
+          "referenceUnvoiced": 269395,
+          "jointlyVoiced": 72566,
+          "within100Cents": 70386,
+          "missedVoiced": 4867,
+          "falseVoiced": 16408,
+          "grossErrors": 1411,
+          "below60Reference": 159,
+          "below60Within100Cents": 33,
+          "voicedWithin100CentsPct": 90.89922901088683,
+          "falseVoicedPct": 6.09068468234377,
+          "missedVoicedPct": 6.285433858949027,
+          "jointVoicedGrossErrorPct": 1.9444367885786733,
+          "below60Within100CentsPct": 20.754716981132077
+        },
+        "development": {
+          "frames": 173188,
+          "referenceVoiced": 39732,
+          "referenceUnvoiced": 133456,
+          "jointlyVoiced": 37680,
+          "within100Cents": 36749,
+          "missedVoiced": 2052,
+          "falseVoiced": 7249,
+          "grossErrors": 528,
+          "below60Reference": 93,
+          "below60Within100Cents": 25,
+          "voicedWithin100CentsPct": 92.49219772475587,
+          "falseVoicedPct": 5.431752787435559,
+          "missedVoicedPct": 5.164602839021444,
+          "jointVoicedGrossErrorPct": 1.4012738853503184,
+          "below60Within100CentsPct": 26.881720430107528
+        },
+        "comparison": {
+          "frames": 173640,
+          "referenceVoiced": 37701,
+          "referenceUnvoiced": 135939,
+          "jointlyVoiced": 34886,
+          "within100Cents": 33637,
+          "missedVoiced": 2815,
+          "falseVoiced": 9159,
+          "grossErrors": 883,
+          "below60Reference": 66,
+          "below60Within100Cents": 8,
+          "voicedWithin100CentsPct": 89.22044508103234,
+          "falseVoicedPct": 6.737580826694326,
+          "missedVoicedPct": 7.46664544707037,
+          "jointVoicedGrossErrorPct": 2.5311013013816432,
+          "below60Within100CentsPct": 12.121212121212121
+        }
+      },
+      "yin-90": {
+        "all": {
+          "frames": 346828,
+          "referenceVoiced": 77433,
+          "referenceUnvoiced": 269395,
+          "jointlyVoiced": 68572,
+          "within100Cents": 64931,
+          "missedVoiced": 8861,
+          "falseVoiced": 16062,
+          "grossErrors": 2427,
+          "below60Reference": 161,
+          "below60Within100Cents": 0,
+          "voicedWithin100CentsPct": 83.85442899022381,
+          "falseVoicedPct": 5.962248742552757,
+          "missedVoicedPct": 11.443441426781863,
+          "jointVoicedGrossErrorPct": 3.539345505454121,
+          "below60Within100CentsPct": 0.0
+        },
+        "development": {
+          "frames": 173188,
+          "referenceVoiced": 39732,
+          "referenceUnvoiced": 133456,
+          "jointlyVoiced": 35395,
+          "within100Cents": 33822,
+          "missedVoiced": 4337,
+          "falseVoiced": 7166,
+          "grossErrors": 1043,
+          "below60Reference": 94,
+          "below60Within100Cents": 0,
+          "voicedWithin100CentsPct": 85.12533977650257,
+          "falseVoicedPct": 5.369560004795588,
+          "missedVoicedPct": 10.915634752844054,
+          "jointVoicedGrossErrorPct": 2.946743890379997,
+          "below60Within100CentsPct": 0.0
+        },
+        "comparison": {
+          "frames": 173640,
+          "referenceVoiced": 37701,
+          "referenceUnvoiced": 135939,
+          "jointlyVoiced": 33177,
+          "within100Cents": 31109,
+          "missedVoiced": 4524,
+          "falseVoiced": 8896,
+          "grossErrors": 1384,
+          "below60Reference": 67,
+          "below60Within100Cents": 0,
+          "voicedWithin100CentsPct": 82.51505265112331,
+          "falseVoicedPct": 6.544111697158284,
+          "missedVoicedPct": 11.999681706055542,
+          "jointVoicedGrossErrorPct": 4.171564638152938,
+          "below60Within100CentsPct": 0.0
+        }
+      }
+    },
+    "fda": {
+      "mpm-40": {
+        "all": {
+          "frames": 32760,
+          "referenceVoiced": 12346,
+          "referenceUnvoiced": 20414,
+          "jointlyVoiced": 11259,
+          "within100Cents": 10344,
+          "missedVoiced": 1087,
+          "falseVoiced": 1540,
+          "grossErrors": 217,
+          "below60Reference": 0,
+          "below60Within100Cents": 0,
+          "voicedWithin100CentsPct": 83.78422161023813,
+          "falseVoicedPct": 7.543842461056138,
+          "missedVoicedPct": 8.804471083751823,
+          "jointVoicedGrossErrorPct": 1.927347011279865,
+          "below60Within100CentsPct": null
+        }
+      },
+      "mpm-60": {
+        "all": {
+          "frames": 32860,
+          "referenceVoiced": 12343,
+          "referenceUnvoiced": 20517,
+          "jointlyVoiced": 11390,
+          "within100Cents": 10715,
+          "missedVoiced": 953,
+          "falseVoiced": 1185,
+          "grossErrors": 125,
+          "below60Reference": 0,
+          "below60Within100Cents": 0,
+          "voicedWithin100CentsPct": 86.810337843312,
+          "falseVoicedPct": 5.775698201491446,
+          "missedVoicedPct": 7.720975451673013,
+          "jointVoicedGrossErrorPct": 1.0974539069359086,
+          "below60Within100CentsPct": null
+        }
+      },
+      "mpm-90": {
+        "all": {
+          "frames": 32960,
+          "referenceVoiced": 12349,
+          "referenceUnvoiced": 20611,
+          "jointlyVoiced": 11367,
+          "within100Cents": 10747,
+          "missedVoiced": 982,
+          "falseVoiced": 1067,
+          "grossErrors": 119,
+          "below60Reference": 0,
+          "below60Within100Cents": 0,
+          "voicedWithin100CentsPct": 87.0272896590817,
+          "falseVoicedPct": 5.17684731454078,
+          "missedVoicedPct": 7.952060895619079,
+          "jointVoicedGrossErrorPct": 1.0468901205243248,
+          "below60Within100CentsPct": null
+        }
+      },
+      "yin-40": {
+        "all": {
+          "frames": 32760,
+          "referenceVoiced": 12342,
+          "referenceUnvoiced": 20418,
+          "jointlyVoiced": 11706,
+          "within100Cents": 10792,
+          "missedVoiced": 636,
+          "falseVoiced": 1491,
+          "grossErrors": 304,
+          "below60Reference": 0,
+          "below60Within100Cents": 0,
+          "voicedWithin100CentsPct": 87.44125749473343,
+          "falseVoicedPct": 7.30238025271819,
+          "missedVoicedPct": 5.153135634419057,
+          "jointVoicedGrossErrorPct": 2.596958824534427,
+          "below60Within100CentsPct": null
+        }
+      },
+      "yin-60": {
+        "all": {
+          "frames": 32860,
+          "referenceVoiced": 12354,
+          "referenceUnvoiced": 20506,
+          "jointlyVoiced": 11643,
+          "within100Cents": 10930,
+          "missedVoiced": 711,
+          "falseVoiced": 1479,
+          "grossErrors": 188,
+          "below60Reference": 0,
+          "below60Within100Cents": 0,
+          "voicedWithin100CentsPct": 88.47336894932815,
+          "falseVoicedPct": 7.212523163952014,
+          "missedVoicedPct": 5.755220981058766,
+          "jointVoicedGrossErrorPct": 1.6147041140599503,
+          "below60Within100CentsPct": null
+        }
+      },
+      "yin-90": {
+        "all": {
+          "frames": 32960,
+          "referenceVoiced": 12343,
+          "referenceUnvoiced": 20617,
+          "jointlyVoiced": 11617,
+          "within100Cents": 10884,
+          "missedVoiced": 726,
+          "falseVoiced": 1576,
+          "grossErrors": 182,
+          "below60Reference": 0,
+          "below60Within100Cents": 0,
+          "voicedWithin100CentsPct": 88.17953495908613,
+          "falseVoicedPct": 7.644177135373721,
+          "missedVoicedPct": 5.881876367171676,
+          "jointVoicedGrossErrorPct": 1.5666695360247913,
+          "below60Within100CentsPct": null
+        }
+      }
+    }
+  }
+}
