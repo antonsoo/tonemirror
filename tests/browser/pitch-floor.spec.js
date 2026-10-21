@@ -123,5 +123,10 @@ test('a failed or cancelled floor change keeps each clip labelled with its actua
   await expect(page.locator('.tm-status')).toContainText('Cancelled');
   await expect(note(page)).toContainText('reference 40 Hz; attempt 40 Hz');
   await expect(page.locator('.tm-clip-label')).toContainText('40 Hz search floor');
+  await expect(floor(page)).toHaveValue('40');
   await expect(page.getByRole('button', { name: 'Download WAV', exact: true })).toBeEnabled();
+  await page.evaluate(() => { window.floorProbe.hold = false; });
+  await floor(page).selectOption('90');
+  await expect(note(page)).toContainText('reference 40 Hz; attempt 90 Hz');
+  await expect(page.locator('.tm-clip-label')).toContainText('90 Hz search floor');
 });

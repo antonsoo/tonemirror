@@ -545,11 +545,14 @@ export function mountApp(root: HTMLElement): void {
   function cancelWork(): void {
     cancelPlaybackPreparation();
     for (const role of ["reference", "attempt"] as const) {
+      // A cancelled range update returns to the clip the user can still hear.
+      if (loads[role] && clips[role]) pitchFloors[role] = clips[role].pitchFloor;
       versions[role]++;
       loads[role]?.controller.abort();
       loads[role] = null;
       drafts[role] = null;
     }
+    floorSelect.value = String(pitchFloors[focus]);
     cancelRecording();
     if (comparison) {
       comparison.abort();

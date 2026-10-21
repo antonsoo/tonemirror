@@ -23,9 +23,10 @@ control, not a new pitch estimator or a pronunciation result.
 
 Changing the algorithm reanalyzes both clips with their own floors. A trim or
 **Restore full clip** uses that tab's current floor. Failed or cancelled work
-keeps the last successfully loaded audio and its analysis labels. The select
-can still show the requested replacement setting; **Retry audio analysis**
-retries it. Saved references retain audio, not analysis preferences; **Use**
+keeps the last successfully loaded audio and its analysis labels. After a
+failure, the select shows the requested setting and **Retry audio analysis**
+retries it. Cancellation restores the floor to the retained clip's setting.
+Saved references retain audio, not analysis preferences; **Use**
 reanalyzes the recording with the destination tab's current settings. A page
 reload resets both floors to 60 Hz. Playback and WAV samples do not change.
 
