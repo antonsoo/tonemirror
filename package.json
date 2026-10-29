@@ -2,7 +2,7 @@
   "name": "tonemirror",
   "version": "0.2.3",
   "description": "See your intonation: record a phrase, overlay your pitch contour on a reference, and practice tones and pitch accent — entirely in the browser.",
-  "author": "Anton Soloviev",
+  "author": "Anthony Mercer",
   "license": "MIT",
   "type": "module",
   "private": true,
